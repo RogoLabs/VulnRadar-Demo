@@ -1,0 +1,224 @@
+# VulnRadar Watchlist - Full Reference
+# =====================================
+# This file contains extensive examples organized by category.
+# Copy sections you need into your watchlist.yaml
+#
+# For validation, run: python etl.py --validate-watchlist
+# =====================================
+
+# ============================================================================
+# VENDORS - Organizations that publish software
+# ============================================================================
+vendors:
+  # -------------------------------------------------------------------------
+  # Big Tech
+  # -------------------------------------------------------------------------
+  - microsoft       # Windows, Office, Azure, Exchange, Teams, .NET
+  - google          # Chrome, Android, GCP, Workspace
+  - apple           # macOS, iOS, Safari, Xcode
+  - amazon          # AWS services (vendor often listed as 'amazon')
+  - meta            # Facebook, Instagram, WhatsApp
+  - oracle          # Oracle DB, Java, MySQL, VirtualBox
+  
+  # -------------------------------------------------------------------------
+  # Linux & Open Source Foundations
+  # -------------------------------------------------------------------------
+  - linux           # Linux kernel
+  - canonical       # Ubuntu
+  - redhat          # RHEL, Fedora, CentOS, Ansible
+  - debian          # Debian Linux
+  - suse            # SUSE Linux, openSUSE
+  - apache          # httpd, Tomcat, Struts, Log4j, Kafka, Spark
+  - mozilla         # Firefox, Thunderbird
+  
+  # -------------------------------------------------------------------------
+  # Networking & Security Vendors
+  # -------------------------------------------------------------------------
+  - cisco           # IOS, ASA, WebEx, Meraki, AnyConnect
+  - paloaltonetworks  # PAN-OS, GlobalProtect, Cortex
+  - fortinet        # FortiGate, FortiOS, FortiClient
+  - f5              # BIG-IP, NGINX Plus
+  - juniper         # Junos, SRX
+  - checkpoint      # Check Point firewalls
+  - sonicwall       # SonicWall firewalls
+  - sophos          # Sophos XG, Intercept X
+  - crowdstrike     # Falcon
+  - zscaler         # ZIA, ZPA
+  
+  # -------------------------------------------------------------------------
+  # Virtualization & Cloud
+  # -------------------------------------------------------------------------
+  - vmware          # ESXi, vCenter, Horizon, NSX, Workspace ONE
+  - citrix          # NetScaler, XenApp, Workspace
+  - nutanix         # Nutanix AHV, Prism
+  - hashicorp       # Terraform, Vault, Consul, Nomad
+  - docker          # Docker Engine, Docker Desktop
+  
+  # -------------------------------------------------------------------------
+  # Databases
+  # -------------------------------------------------------------------------
+  - postgresql      # PostgreSQL
+  - mongodb         # MongoDB
+  - elastic         # Elasticsearch, Kibana, Logstash
+  - redis           # Redis
+  - mysql           # MySQL (also under Oracle)
+  
+  # -------------------------------------------------------------------------
+  # DevOps & CI/CD
+  # -------------------------------------------------------------------------
+  - atlassian       # Jira, Confluence, Bitbucket, Bamboo
+  - gitlab          # GitLab CE/EE
+  - github          # GitHub Enterprise
+  - jenkins         # Jenkins CI
+  - jetbrains       # IntelliJ, PyCharm, TeamCity
+  
+  # -------------------------------------------------------------------------
+  # Identity & Access
+  # -------------------------------------------------------------------------
+  - okta            # Okta Identity
+  - auth0           # Auth0
+  - onelogin        # OneLogin
+  - pingidentity    # PingFederate, PingAccess
+
+# ============================================================================
+# PRODUCTS - Specific software/libraries
+# ============================================================================
+products:
+  # -------------------------------------------------------------------------
+  # Web Browsers
+  # -------------------------------------------------------------------------
+  - chrome          # Google Chrome
+  - firefox         # Mozilla Firefox
+  - edge            # Microsoft Edge
+  - safari          # Apple Safari
+  
+  # -------------------------------------------------------------------------
+  # Famous/Critical Vulnerabilities (keep these!)
+  # -------------------------------------------------------------------------
+  - log4j           # Log4Shell - CVE-2021-44228
+  - openssl         # Heartbleed, many others
+  - struts          # Apache Struts - Equifax breach
+  - spring          # Spring4Shell, Spring Framework
+  - jackson         # Jackson-databind deserialization
+  - fastjson        # Alibaba Fastjson
+  
+  # -------------------------------------------------------------------------
+  # Microsoft Products
+  # -------------------------------------------------------------------------
+  - exchange        # Microsoft Exchange (ProxyLogon, ProxyShell)
+  - sharepoint      # Microsoft SharePoint
+  - outlook         # Microsoft Outlook
+  - office          # Microsoft Office suite
+  - windows         # Windows OS
+  - teams           # Microsoft Teams
+  - azure           # Azure services
+  - iis             # Internet Information Services
+  - .net            # .NET Framework/Core
+  
+  # -------------------------------------------------------------------------
+  # Web Servers & Proxies
+  # -------------------------------------------------------------------------
+  - httpd           # Apache HTTP Server
+  - nginx           # NGINX
+  - tomcat          # Apache Tomcat
+  - apache traffic server
+  - haproxy         # HAProxy
+  - squid           # Squid proxy
+  - varnish         # Varnish cache
+  
+  # -------------------------------------------------------------------------
+  # Containers & Orchestration
+  # -------------------------------------------------------------------------
+  - docker          # Docker Engine
+  - containerd      # Container runtime
+  - kubernetes      # K8s
+  - helm            # K8s package manager
+  - podman          # Podman
+  - runc            # OCI runtime
+  
+  # -------------------------------------------------------------------------
+  # CI/CD & DevOps Tools
+  # -------------------------------------------------------------------------
+  - jenkins         # Jenkins CI
+  - gitlab          # GitLab CI
+  - github actions  # GitHub Actions
+  - ansible         # Ansible automation
+  - terraform       # HashiCorp Terraform
+  - puppet          # Puppet
+  - chef            # Chef
+  - argo            # Argo CD/Workflows
+  
+  # -------------------------------------------------------------------------
+  # Databases
+  # -------------------------------------------------------------------------
+  - postgresql      # PostgreSQL
+  - mysql           # MySQL
+  - mariadb         # MariaDB
+  - mongodb         # MongoDB
+  - redis           # Redis
+  - elasticsearch   # Elasticsearch
+  - sqlite          # SQLite
+  - oracle database # Oracle DB
+  - sql server      # Microsoft SQL Server
+  
+  # -------------------------------------------------------------------------
+  # Programming Languages/Runtimes
+  # -------------------------------------------------------------------------
+  - node.js         # Node runtime
+  - python          # Python interpreter
+  - java            # Java/JDK
+  - php             # PHP
+  - ruby            # Ruby
+  - golang          # Go
+  - rust            # Rust
+  
+  # -------------------------------------------------------------------------
+  # Network/Security Appliances
+  # -------------------------------------------------------------------------
+  - fortios         # Fortinet FortiOS
+  - pan-os          # Palo Alto PAN-OS
+  - big-ip          # F5 BIG-IP
+  - asa             # Cisco ASA
+  - netscaler       # Citrix NetScaler/ADC
+  - esxi            # VMware ESXi
+  - vcenter         # VMware vCenter
+  - globalprotect   # Palo Alto GlobalProtect VPN
+  - anyconnect      # Cisco AnyConnect VPN
+  
+  # -------------------------------------------------------------------------
+  # Collaboration & Productivity
+  # -------------------------------------------------------------------------
+  - jira            # Atlassian Jira
+  - confluence      # Atlassian Confluence
+  - slack           # Slack
+  - zoom            # Zoom
+  - webex           # Cisco WebEx
+  - mattermost      # Mattermost
+
+# ============================================================================
+# EXCLUSIONS
+# ============================================================================
+exclude_vendors:
+  - n/a
+  - unknown
+  - unspecified
+  - "**DISPUTED**"
+
+exclude_products:
+  - n/a
+  - unknown
+
+# ============================================================================
+# THRESHOLDS
+# ============================================================================
+thresholds:
+  min_cvss: 0.0         # Include all severities
+  min_epss: 0.0         # Include all exploit probabilities
+
+# ============================================================================
+# OPTIONS
+# ============================================================================
+options:
+  always_include_kev: true
+  always_include_patchthis: true
+  match_mode: substring   # 'substring', 'exact', or 'regex'

@@ -34,7 +34,9 @@ import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Sequence, Set, Tuple
+
 import requests
+import yaml
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 GITHUB_LATEST_RELEASE_API = "https://api.github.com/repos/CVEProject/cvelistV5/releases/latest"
@@ -42,6 +44,8 @@ CISA_KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_v
 # FIRST.org currently links EPSS CSV downloads from epss.empiricalsecurity.com
 EPSS_CURRENT_CSV_GZ_URL = "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz"
 PATCHTHIS_CSV_URL = "https://raw.githubusercontent.com/RogoLabs/patchthisapp/main/web/data.csv"
+# NVD JSON 2.0 Data Feeds (yearly files, no API key required)
+NVD_FEED_BASE_URL = "https://nvd.nist.gov/feeds/json/cve/2.0"
 
 DEFAULT_HTTP_TIMEOUT = (10, 120)  # (connect, read)
 
@@ -71,8 +75,31 @@ def _norm(s: str) -> str:
 
 
 def load_watchlist(path: Path) -> Watchlist:
+    """Load watchlist from YAML or JSON file.
+    
+    Supports both .yaml/.yml and .json files. YAML is preferred for
+    better readability and comment support.
+    """
+    # Auto-detect YAML vs JSON based on extension or try YAML first for .yaml/.yml
+    suffix = path.suffix.lower()
+    
     with path.open("r", encoding="utf-8") as f:
-        raw = json.load(f)
+        content = f.read()
+    
+    if suffix in (".yaml", ".yml"):
+        raw = yaml.safe_load(content) or {}
+    elif suffix == ".json":
+        raw = json.loads(content)
+        # Emit deprecation notice for JSON watchlists
+        print("Note: JSON watchlists are deprecated. Consider migrating to watchlist.yaml")
+        print("      YAML supports comments for documenting your choices.")
+    else:
+        # Try YAML first, fall back to JSON
+        try:
+            raw = yaml.safe_load(content) or {}
+        except yaml.YAMLError:
+            raw = json.loads(content)
+    
     vendors = {_norm(v) for v in (raw.get("vendors") or []) if isinstance(v, str) and v.strip()}
     products = {_norm(p) for p in (raw.get("products") or []) if isinstance(p, str) and p.strip()}
     return Watchlist(vendors=vendors, products=products)
@@ -353,6 +380,116 @@ def download_patchthis(session: requests.Session) -> Set[str]:
     return out
 
 
+def download_nvd_feeds(
+    session: requests.Session, years: Iterable[int]
+) -> Dict[str, Dict[str, Any]]:
+    """Download NVD JSON 2.0 data feeds for specified years.
+    
+    NVD feeds are split by CVE ID year (not publication year), matching
+    how CVE List V5 is organized. E.g., CVE-2025-* entries are in the
+    2025 feed even if published in 2026.
+    
+    Returns a dict mapping CVE ID to NVD-specific data:
+    - cvss_v3_score, cvss_v3_severity, cvss_v3_vector
+    - cvss_v2_score, cvss_v2_severity, cvss_v2_vector
+    - cwe_ids: list of CWE identifiers
+    - cpe_count: number of CPE matches
+    - reference_count: number of references
+    
+    NVD feeds are gzipped JSON files, ~15-20MB compressed per year.
+    This provides richer CVSS data than the CVE List V5 bulk export.
+    """
+    
+    nvd_data: Dict[str, Dict[str, Any]] = {}
+    years_list = sorted(set(years))
+    
+    for year in years_list:
+        url = f"{NVD_FEED_BASE_URL}/nvdcve-2.0-{year}.json.gz"
+        print(f"  Downloading NVD feed for {year}...")
+        try:
+            # NVD feeds need Accept: */* (not application/json)
+            resp = session.get(
+                url,
+                timeout=(10, 300),  # Longer read timeout for large files
+                headers={"Accept": "*/*"},
+            )
+            resp.raise_for_status()
+            raw = resp.content
+        except Exception as e:
+            print(f"    Warning: Failed to download NVD feed for {year}: {e}")
+            continue
+            
+        try:
+            with gzip.GzipFile(fileobj=io.BytesIO(raw), mode="rb") as gz:
+                feed = json.loads(gz.read().decode("utf-8", errors="replace"))
+        except Exception as e:
+            print(f"    Warning: Failed to parse NVD feed for {year}: {e}")
+            continue
+        
+        # NVD 2.0 schema: { vulnerabilities: [ { cve: { id, metrics, weaknesses, ... } } ] }
+        vulnerabilities = feed.get("vulnerabilities") or []
+        count = 0
+        for vuln in vulnerabilities:
+            cve_data = vuln.get("cve", {})
+            cve_id = (cve_data.get("id") or "").strip().upper()
+            if not cve_id.startswith("CVE-"):
+                continue
+            
+            # Skip rejected CVEs
+            if cve_data.get("vulnStatus") == "Rejected":
+                continue
+                
+            # Extract CVSS v3.x data (prefer v3.1 over v3.0)
+            metrics = cve_data.get("metrics", {})
+            cvss_v31 = metrics.get("cvssMetricV31", [])
+            cvss_v30 = metrics.get("cvssMetricV30", [])
+            cvss_v2 = metrics.get("cvssMetricV2", [])
+            
+            # Get primary (NVD) score, fallback to first available
+            def get_primary_cvss(metric_list: list) -> dict:
+                for m in metric_list:
+                    if m.get("type") == "Primary":
+                        return m.get("cvssData", {})
+                return metric_list[0].get("cvssData", {}) if metric_list else {}
+            
+            cvss3_data = get_primary_cvss(cvss_v31) or get_primary_cvss(cvss_v30)
+            cvss2_data = get_primary_cvss(cvss_v2)
+            
+            # Extract CWE IDs from weaknesses
+            cwe_ids = []
+            for weakness in cve_data.get("weaknesses", []):
+                for desc in weakness.get("description", []):
+                    val = desc.get("value", "")
+                    if val.startswith("CWE-") and val != "CWE-noinfo":
+                        cwe_ids.append(val)
+            
+            # Count CPE matches from configurations
+            cpe_count = 0
+            for config in cve_data.get("configurations", []):
+                for node in config.get("nodes", []):
+                    cpe_count += len(node.get("cpeMatch", []))
+            
+            # Count references
+            ref_count = len(cve_data.get("references", []))
+            
+            nvd_data[cve_id] = {
+                "cvss_v3_score": cvss3_data.get("baseScore"),
+                "cvss_v3_severity": cvss3_data.get("baseSeverity"),
+                "cvss_v3_vector": cvss3_data.get("vectorString"),
+                "cvss_v2_score": cvss2_data.get("baseScore"),
+                "cvss_v2_severity": cvss2_data.get("baseSeverity"),
+                "cvss_v2_vector": cvss2_data.get("vectorString"),
+                "cwe_ids": list(dict.fromkeys(cwe_ids))[:10] if cwe_ids else None,
+                "cpe_count": cpe_count,
+                "reference_count": ref_count,
+            }
+            count += 1
+        
+        print(f"    Loaded {count} CVEs from NVD {year} feed")
+    
+    return nvd_data
+
+
 def parse_cve_json(path: Path) -> Optional[Dict[str, Any]]:
     try:
         with path.open("r", encoding="utf-8") as f:
@@ -388,6 +525,7 @@ def build_radar_data(
     kev_by_cve: Dict[str, Dict[str, Any]],
     epss_by_cve: Dict[str, float],
     patchthis_cves: Set[str],
+    nvd_by_cve: Dict[str, Dict[str, Any]],
     min_year: int,
     max_year: Optional[int],
     include_kev_outside_window: bool,
@@ -475,6 +613,25 @@ def build_radar_data(
                 "requiredAction": kev.get("requiredAction"),
                 "dueDate": kev.get("dueDate"),
                 "knownRansomwareCampaignUse": kev.get("knownRansomwareCampaignUse"),
+            }
+
+        # Enrich with NVD data (better CVSS coverage, CWE, CPE info)
+        nvd = nvd_by_cve.get(cve_id)
+        if nvd:
+            # Prefer NVD CVSS v3 if we don't have CVSS from CVE List V5
+            if record.get("cvss_score") is None and nvd.get("cvss_v3_score"):
+                record["cvss_score"] = nvd["cvss_v3_score"]
+                record["cvss_severity"] = nvd.get("cvss_v3_severity")
+                record["cvss_vector"] = nvd.get("cvss_v3_vector")
+            # Add NVD-specific enrichment
+            record["nvd"] = {
+                "cvss_v3_score": nvd.get("cvss_v3_score"),
+                "cvss_v3_severity": nvd.get("cvss_v3_severity"),
+                "cvss_v2_score": nvd.get("cvss_v2_score"),
+                "cvss_v2_severity": nvd.get("cvss_v2_severity"),
+                "cwe_ids": nvd.get("cwe_ids"),
+                "cpe_count": nvd.get("cpe_count"),
+                "reference_count": nvd.get("reference_count"),
             }
 
         items.append(record)
@@ -655,9 +812,21 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]]) -> None:
     tmp.replace(path)
 
 
+def _find_watchlist() -> str:
+    """Find the watchlist file, preferring YAML over JSON."""
+    for name in ("watchlist.yaml", "watchlist.yml", "watchlist.json"):
+        if Path(name).exists():
+            return name
+    return "watchlist.yaml"  # Default to YAML for new users
+
+
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Vulnerability Radar ETL")
-    parser.add_argument("--watchlist", default="watchlist.json", help="Path to watchlist.json")
+    parser.add_argument(
+        "--watchlist",
+        default=None,
+        help="Path to watchlist file (YAML or JSON). Auto-detects watchlist.yaml or watchlist.json if not specified."
+    )
     parser.add_argument("--out", default="data/radar_data.json", help="Output JSON path")
     parser.add_argument(
         "--report",
@@ -687,15 +856,44 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "By default, KEVs are only included if they fall within the scanned year range."
         ),
     )
+    parser.add_argument(
+        "--skip-nvd",
+        action="store_true",
+        help="Skip downloading NVD data feeds (faster but less CVSS/CWE enrichment)",
+    )
     args = parser.parse_args(argv)
 
-    watchlist = load_watchlist(Path(args.watchlist))
+    # Auto-detect watchlist file if not specified
+    watchlist_path = args.watchlist if args.watchlist else _find_watchlist()
+    print(f"Using watchlist: {watchlist_path}")
+    watchlist = load_watchlist(Path(watchlist_path))
     session = _requests_session()
 
+    print("Downloading CISA KEV catalog...")
     kev_by_cve = download_cisa_kev(session)
+    print(f"  Loaded {len(kev_by_cve)} KEV entries")
+    
+    print("Downloading EPSS scores...")
     epss_by_cve = download_epss(session)
+    print(f"  Loaded {len(epss_by_cve)} EPSS scores")
+    
+    print("Downloading PatchThis intelligence...")
     patchthis_cves = download_patchthis(session)
+    print(f"  Loaded {len(patchthis_cves)} PatchThis CVEs")
 
+    # Calculate years for NVD download (same as CVE scan window)
+    years = _years_to_process(args.min_year, args.max_year)
+    
+    # Download NVD feeds for CVSS/CWE enrichment
+    nvd_by_cve: Dict[str, Dict[str, Any]] = {}
+    if not args.skip_nvd:
+        print("Downloading NVD data feeds...")
+        nvd_by_cve = download_nvd_feeds(session, years)
+        print(f"  Loaded {len(nvd_by_cve)} CVEs from NVD feeds")
+    else:
+        print("Skipping NVD data feeds (--skip-nvd)")
+
+    print("Downloading CVE List V5 bulk export...")
     zip_url = get_latest_cvelist_zip_url(session)
     zip_bytes = _download_bytes(session, zip_url)
 
@@ -707,6 +905,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             kev_by_cve=kev_by_cve,
             epss_by_cve=epss_by_cve,
             patchthis_cves=patchthis_cves,
+            nvd_by_cve=nvd_by_cve,
             min_year=args.min_year,
             max_year=args.max_year,
             include_kev_outside_window=bool(args.include_kev_outside_window),

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - demo
+      - main
     paths:
       - data/radar_data.json
   schedule:
@@ -16,6 +16,8 @@ permissions:
 
 jobs:
   notify:
+    # Only run on forks, not the upstream repo (fork & go design)
+    if: github.repository != 'RogoLabs/VulnRadar'
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -23,7 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: demo
           fetch-depth: 1
 
       - name: Set up Python

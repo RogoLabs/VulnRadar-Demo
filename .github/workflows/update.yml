@@ -10,6 +10,8 @@ permissions:
 
 jobs:
   update:
+    # Only run on forks, not the upstream repo (fork & go design)
+    if: github.repository != 'RogoLabs/VulnRadar'
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -35,7 +37,7 @@ jobs:
         run: |
           python etl.py
 
-      - name: Commit updated data (demo branch)
+      - name: Commit updated data
         run: |
           set -e
           if [ -z "$(git status --porcelain data/radar_data.json data/radar_report.md)" ]; then
@@ -46,11 +48,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Keep main clean for forks: publish scraped data to the demo branch.
-          # The demo branch is treated as an always-fresh snapshot of the workflow SHA + latest data.
-          # Because we reset demo to $GITHUB_SHA each run, pushing requires force.
-          git checkout -B demo "$GITHUB_SHA"
-
           git add data/radar_data.json data/radar_report.md
-          git commit -m "Update radar outputs"
-          git push --force origin demo
+          git commit -m "chore: update radar outputs [skip ci]"
+          git push
