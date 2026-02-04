@@ -19,13 +19,12 @@ Create/maintain these pages (filenames below match the stub files in this folder
 3. `data-sources.md`
 4. `etl.md`
 5. `data-schema.md`
-6. `dashboard.md`
-7. `automation.md`
-8. `operations.md`
-9. `troubleshooting.md`
-10. `security.md`
-11. `faq.md`
-12. `contributing.md`
+6. `automation.md`
+7. `operations.md`
+8. `troubleshooting.md`
+9. `security.md`
+10. `faq.md`
+11. `contributing.md`
 
 ## Roadmap (What to Write, In Order)
 
@@ -37,8 +36,7 @@ Create/maintain these pages (filenames below match the stub files in this folder
   - Prereqs: Python version (recommend 3.11+), pip, optional `GITHUB_TOKEN` for API rate limits.
   - Install: `pip install -r requirements.txt`.
   - Generate data: `python etl.py`.
-  - Launch UI: `streamlit run app.py`.
-  - Verify: show expected files (`data/radar_data.json`) and what success looks like.
+  - Verify: show expected files (`data/radar_report.md`, `data/radar_data.json`) and what success looks like.
 
 - Configuration (watchlist)
   - Describe `watchlist.json` schema (`vendors`, `products`).
@@ -54,8 +52,8 @@ Create/maintain these pages (filenames below match the stub files in this folder
   - What fields we extract: CVE ID, description, CVSS (when present), affected entries.
   - Default scan window: last 5 years inclusive.
   - Inclusion rules:
-    - Keep CVEs that hit watchlist OR are KEVs.
-  - Output path: `data/radar_data.json`.
+    - Keep CVEs that hit watchlist OR are KEVs OR appear in PatchThis.
+  - Output paths: `data/radar_report.md` (primary), `data/radar_data.json` (machine-readable).
 
 **Acceptance criteria:** Someone who hasn’t seen the code can run the tool end-to-end.
 
@@ -95,12 +93,6 @@ Create/maintain these pages (filenames below match the stub files in this folder
     - `active_threat`, `kev{...}`
     - `probability_score`
 
-- Dashboard page
-  - Explain filters and view modes.
-  - Explain sorting/risk model:
-    - KEV > High EPSS > High CVSS.
-  - What “Critical KEVs” means.
-
 **Acceptance criteria:** Users can parse/consume the JSON without reading source.
 
 ### Phase 4 — Security & Governance (Week 2)
@@ -128,7 +120,6 @@ Create/maintain these pages (filenames below match the stub files in this folder
 ## Cross-Cutting Tasks (Good to Do Anytime)
 
 - Add simple diagrams (Mermaid) in `etl.md` and `automation.md`.
-- Add screenshots/gifs of the Streamlit UI in `dashboard.md`.
 - Add a “Verification checklist” to every page.
 
 ## Definition of Done (Docs)

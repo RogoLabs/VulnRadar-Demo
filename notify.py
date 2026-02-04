@@ -3,8 +3,9 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Set
 
 import requests
 
@@ -33,14 +34,41 @@ def _load_items(path: Path) -> List[Dict[str, Any]]:
     return []
 
 
-def _search_issue_exists(session: requests.Session, repo: str, cve_id: str) -> bool:
-    # Search across open/closed issues to avoid duplicates.
-    q = f'repo:{repo} in:title "{cve_id}" "[VulnRadar]"'
-    url = "https://api.github.com/search/issues"
-    r = session.get(url, params={"q": q, "per_page": 1}, timeout=DEFAULT_TIMEOUT)
-    r.raise_for_status()
-    data = r.json()
-    return int(data.get("total_count") or 0) > 0
+def _iter_recent_issues(session: requests.Session, repo: str, *, max_pages: int = 3) -> Iterable[Dict[str, Any]]:
+    """Yield recent issues (not PRs) without using Search API."""
+
+    base = f"https://api.github.com/repos/{repo}/issues"
+    for page in range(1, max_pages + 1):
+        r = session.get(
+            base,
+            params={"state": "all", "per_page": 100, "page": page},
+            timeout=DEFAULT_TIMEOUT,
+        )
+        r.raise_for_status()
+        data = r.json()
+        if not isinstance(data, list) or not data:
+            return
+        for issue in data:
+            if not isinstance(issue, dict):
+                continue
+            if "pull_request" in issue:
+                continue
+            yield issue
+
+
+_CVE_RE = re.compile(r"\bCVE-\d{4}-\d+\b", re.IGNORECASE)
+
+
+def _existing_notified_cves(session: requests.Session, repo: str) -> Set[str]:
+    out: Set[str] = set()
+    for issue in _iter_recent_issues(session, repo, max_pages=4):
+        title = str(issue.get("title") or "")
+        if "[VulnRadar]" not in title:
+            continue
+        m = _CVE_RE.search(title)
+        if m:
+            out.add(m.group(0).upper())
+    return out
 
 
 def _create_issue(session: requests.Session, repo: str, title: str, body: str, labels: Optional[List[str]] = None) -> None:
@@ -60,7 +88,13 @@ def _issue_body(item: Dict[str, Any]) -> str:
     kev = bool(item.get("active_threat"))
     patch = bool(item.get("in_patchthis"))
     watch = bool(item.get("watchlist_hit"))
-    priority = str(item.get("priority_label") or "").strip()
+    is_critical = bool(item.get("is_critical"))
+    is_warning = bool(item.get("is_warning"))
+    priority = "CRITICAL" if is_critical else ("WARNING" if is_warning else "ALERT")
+    kev_due = ""
+    kev_obj = item.get("kev")
+    if isinstance(kev_obj, dict):
+        kev_due = str(kev_obj.get("dueDate") or "").strip()
 
     def fmt(x: Any, ndigits: int) -> str:
         try:
@@ -76,6 +110,8 @@ def _issue_body(item: Dict[str, Any]) -> str:
     lines.append(f"- PatchThis: {'yes' if patch else 'no'}")
     lines.append(f"- Watchlist: {'yes' if watch else 'no'}")
     lines.append(f"- CISA KEV: {'yes' if kev else 'no'}")
+    if kev_due:
+        lines.append(f"- KEV Due Date: {kev_due}")
     lines.append(f"- EPSS: {fmt(epss, 3)}")
     lines.append(f"- CVSS: {fmt(cvss, 1)}")
     lines.append("")
@@ -113,26 +149,37 @@ def main() -> int:
     items = _load_items(Path(args.inp))
 
     # Notify policy:
-    # - Always notify on CRITICAL PatchThis+Watchlist
-    # - Optionally notify on PatchThis WARNING
+    # - Always notify on is_critical
+    # - Optionally notify on is_warning
     candidates: List[Dict[str, Any]] = []
     for it in items:
-        label = str(it.get("priority_label") or "")
-        if label.startswith("CRITICAL"):
+        if bool(it.get("is_critical")):
             candidates.append(it)
-        elif args.include_warnings and label.startswith("WARNING"):
+        elif args.include_warnings and bool(it.get("is_warning")):
             candidates.append(it)
 
     # Sort to notify highest first
-    def key(it: Dict[str, Any]) -> float:
+    def key(it: Dict[str, Any]) -> tuple:
         try:
-            return float(it.get("probability_score") or 0.0)
+            epss = float(it.get("probability_score") or 0.0)
         except Exception:
-            return 0.0
+            epss = 0.0
+        try:
+            cvss = float(it.get("cvss_score") or 0.0)
+        except Exception:
+            cvss = 0.0
+        return (
+            1 if bool(it.get("is_critical")) else 0,
+            1 if bool(it.get("active_threat")) else 0,
+            1 if bool(it.get("is_warning")) else 0,
+            epss,
+            cvss,
+        )
 
     candidates = sorted(candidates, key=key, reverse=True)
 
     session = _session(token)
+    existing = _existing_notified_cves(session, repo)
     created = 0
     for it in candidates:
         if created >= args.max_items:
@@ -141,15 +188,19 @@ def main() -> int:
         if not cve_id.startswith("CVE-"):
             continue
 
-        if _search_issue_exists(session, repo, cve_id):
+        if cve_id in existing:
             continue
 
-        priority = str(it.get("priority_label") or "").strip() or "ALERT"
+        priority = "CRITICAL" if bool(it.get("is_critical")) else ("WARNING" if bool(it.get("is_warning")) else "ALERT")
         title = f"[VulnRadar] {priority}: {cve_id}"
         body = _issue_body(it)
         labels = ["vulnradar", "alert"]
-        if str(it.get("priority_label") or "").startswith("CRITICAL"):
+        if bool(it.get("is_critical")):
             labels.append("critical")
+        if bool(it.get("is_warning")):
+            labels.append("warning")
+        if bool(it.get("active_threat")):
+            labels.append("kev")
 
         if args.dry_run:
             print(f"DRY RUN: would create issue: {title}")
@@ -158,6 +209,7 @@ def main() -> int:
 
         _create_issue(session, repo, title=title, body=body, labels=labels)
         print(f"Created issue for {cve_id}")
+        existing.add(cve_id)
         created += 1
 
     print(f"Done. Created {created} issues.")

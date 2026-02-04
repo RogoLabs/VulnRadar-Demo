@@ -4,10 +4,9 @@ VulnRadar is a lightweight “Vulnerability Radar” that:
 
 - Downloads the latest CVE List V5 bulk export from `CVEProject/cvelistV5` (via GitHub Releases)
 - Filters CVEs against a local watchlist (`watchlist.json`)
-- Enriches matches with CISA KEV and FIRST.org EPSS
+- Enriches matches with CISA KEV, FIRST.org EPSS, and PatchThis intelligence
 - Writes a merged dataset to `data/radar_data.json`
-- Writes a GitHub-renderable report to `data/radar_report.md`
-- Visualizes it via a Streamlit dashboard
+- Writes a GitHub-renderable report to `data/radar_report.md` (primary output)
 
 For full documentation and an implementation roadmap, start with: [docs/README.md](docs/README.md)
 
@@ -43,7 +42,8 @@ python etl.py
 Defaults:
 
 - Scans the **last 5 years** of CVEs (inclusive of the current year) for performance.
-- Always includes any CVEs present in the CISA KEV catalog (even if outside the year window).
+- Includes CVEs if they match your watchlist, are in CISA KEV, or appear in PatchThis.
+- Keeps CISA KEV items year-scoped by default; use `--include-kev-outside-window` to widen.
 
 Override the scan window if needed:
 
@@ -64,27 +64,14 @@ Workflow: `.github/workflows/notify.yml`
 - Creates GitHub Issues for new CRITICAL PatchThis+Watchlist findings.
 - Uses the repo `GITHUB_TOKEN` (no external services required).
 
-## Dashboard (app.py)
-
-Run locally:
-
-```bash
-streamlit run app.py
-```
-
-The sidebar includes:
-
-- **Show Watchlist Only** (default)
-- **Show All Active Threats** (CISA KEVs)
-
 ## Automation
 
 GitHub Actions workflow: `.github/workflows/update.yml`
 
 - Runs the ETL every 6 hours
-- Commits updated `data/radar_data.json` to the `demo` branch (“git scraping”)
+- Commits updated `data/radar_data.json` and `data/radar_report.md` to the `demo` branch (“git scraping”)
 
 ## Branches
 
 - `main`: stable code, intended for people to fork/use without a noisy commit history.
-- `demo`: auto-updated snapshot branch for testing; it is force-updated by CI to track `main` + the latest `data/radar_data.json`.
+- `demo`: auto-updated snapshot branch for testing; it is force-updated by CI to track `main` + the latest `data/` outputs.

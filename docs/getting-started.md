@@ -2,7 +2,7 @@
 
 ## Goal
 
-Run the ETL to generate `data/radar_data.json`, then launch the Streamlit dashboard.
+Run the ETL to generate a GitHub-renderable report (`data/radar_report.md`).
 
 ## Prerequisites
 
@@ -22,13 +22,7 @@ pip install -r requirements.txt
 python etl.py
 ```
 
-## Run Dashboard
-
-```bash
-streamlit run app.py
-```
-
 ## Verify
 
-- `data/radar_data.json` exists
-- Streamlit shows a table of CVEs
+- `data/radar_report.md` exists (open it in GitHub or in your editor)
+- `data/radar_data.json` exists (machine-readable payload for notifications)

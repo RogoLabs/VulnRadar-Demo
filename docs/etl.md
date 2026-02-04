@@ -23,14 +23,15 @@ python etl.py --include-kev-outside-window
 
 ## Inclusion rules
 
-- Include if `watchlist_hit == true` OR `active_threat == true` (CISA KEV)
+- Include if `watchlist_hit == true` OR `active_threat == true` (CISA KEV) OR `in_patchthis == true`
 
 ## PatchThis prioritization
 
-- `in_patchthis == true` AND `watchlist_hit == true` => `priority_label = "CRITICAL (Active Exploit in Stack)"`
-- `in_patchthis == true` AND `watchlist_hit == false` => `priority_label = "WARNING (Shadow IT Risk)"`
+- `in_patchthis == true` AND `watchlist_hit == true` => `is_critical = true`
+- `in_patchthis == true` AND `watchlist_hit == false` => `is_warning = true`
+- `priority_label` is retained for human-readable output (report/issues)
 
 ## Verify
 
 - Run `python etl.py`
-- Ensure `data/radar_data.json` updates
+- Ensure `data/radar_report.md` and `data/radar_data.json` update

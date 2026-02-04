@@ -34,8 +34,6 @@ import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Sequence, Set, Tuple
-
-import pandas as pd
 import requests
 from tenacity import retry, stop_after_attempt, wait_exponential
 
@@ -324,32 +322,34 @@ def download_epss(session: requests.Session) -> Dict[str, float]:
     return out
 
 
-def download_patchthis(session: requests.Session) -> pd.DataFrame:
-    """Download the PatchThis intelligence CSV into a DataFrame.
+def download_patchthis(session: requests.Session) -> Set[str]:
+    """Download the PatchThis intelligence CSV as a set of CVE IDs.
 
-    Expected to contain a CVE identifier column (commonly `cveID`). This function normalizes
-    the output to a single-column DataFrame with `cveID` (uppercased, stripped).
+    The upstream CSV should contain a CVE identifier column, commonly `cveID`.
+    This function returns a normalized set of CVE IDs (uppercased, stripped).
     """
 
     raw = _download_bytes(session, PATCHTHIS_CSV_URL)
     text = raw.decode("utf-8", errors="replace")
-    df = pd.read_csv(io.StringIO(text))
-    if df is None or df.empty:
-        return pd.DataFrame(columns=["cveID"])
+    reader = csv.DictReader(io.StringIO(text))
+    if not reader.fieldnames:
+        return set()
 
+    # Identify the CVE column (case-insensitive).
     cve_col: Optional[str] = None
-    for col in df.columns:
+    for col in reader.fieldnames:
         name = str(col).strip().lower()
         if name in {"cveid", "cve_id", "cve"}:
-            cve_col = str(col)
+            cve_col = col
             break
     if cve_col is None:
         raise RuntimeError("PatchThis CSV is missing a CVE identifier column (expected cveID)")
 
-    out = df[[cve_col]].rename(columns={cve_col: "cveID"}).copy()
-    out["cveID"] = out["cveID"].astype(str).str.strip().str.upper()
-    out = out[out["cveID"].str.startswith("CVE-")]
-    out = out.dropna(subset=["cveID"]).drop_duplicates(subset=["cveID"]).reset_index(drop=True)
+    out: Set[str] = set()
+    for row in reader:
+        cve = (row.get(cve_col) or "").strip().upper()
+        if cve.startswith("CVE-"):
+            out.add(cve)
     return out
 
 
@@ -387,6 +387,7 @@ def build_radar_data(
     watchlist: Watchlist,
     kev_by_cve: Dict[str, Dict[str, Any]],
     epss_by_cve: Dict[str, float],
+    patchthis_cves: Set[str],
     min_year: int,
     max_year: Optional[int],
     include_kev_outside_window: bool,
@@ -434,13 +435,30 @@ def build_radar_data(
         kev = kev_by_cve.get(cve_id)
         active_threat = kev is not None
 
-        # Only include if it's a watchlist hit OR a KEV.
-        if not watch_hit and not active_threat:
+        in_patchthis = cve_id in patchthis_cves
+        in_watchlist = watch_hit
+        is_critical = bool(in_patchthis and in_watchlist)
+        is_warning = bool(in_patchthis and (not in_watchlist))
+
+        if in_watchlist and in_patchthis:
+            priority_label = "CRITICAL (Active Exploit in Stack)"
+        elif (not in_watchlist) and in_patchthis:
+            priority_label = "WARNING (Shadow IT Risk)"
+        else:
+            priority_label = ""
+
+        # Include if watchlist hit OR KEV OR PatchThis.
+        if (not in_watchlist) and (not active_threat) and (not in_patchthis):
             continue
 
         record: Dict[str, Any] = {
             **parsed,
             "watchlist_hit": watch_hit,
+            "in_watchlist": in_watchlist,
+            "in_patchthis": in_patchthis,
+            "is_critical": is_critical,
+            "is_warning": is_warning,
+            "priority_label": priority_label,
             "matched_terms": sorted(set(matched_terms)) if watch_hit else [],
             "active_threat": active_threat,
             "probability_score": epss_by_cve.get(cve_id),
@@ -478,9 +496,36 @@ def write_radar_data(path: Path, items: List[Dict[str, Any]]) -> None:
     tmp.replace(path)
 
 
-def _risk_score_for_report(item: Dict[str, Any]) -> float:
-    patch_watch = 1.0 if (bool(item.get("in_patchthis")) and bool(item.get("watchlist_hit"))) else 0.0
-    patch_only = 1.0 if (bool(item.get("in_patchthis")) and not bool(item.get("watchlist_hit"))) else 0.0
+def risk_bucket(item: Dict[str, Any]) -> str:
+    if bool(item.get("is_critical")):
+        return "CRITICAL"
+    if bool(item.get("is_warning")):
+        return "WARNING"
+    if bool(item.get("active_threat")):
+        return "KEV"
+    epss = item.get("probability_score")
+    cvss = item.get("cvss_score")
+    try:
+        if epss is not None and float(epss) >= 0.7:
+            return "High EPSS"
+    except Exception:
+        pass
+    try:
+        if cvss is not None and float(cvss) >= 9.0:
+            return "Critical CVSS"
+    except Exception:
+        pass
+    return "Other"
+
+
+def risk_sort_key(item: Dict[str, Any]) -> float:
+    """Sort key: PatchThis > KEV > EPSS > CVSS.
+
+    Higher numbers mean higher priority.
+    """
+
+    critical = 1.0 if bool(item.get("is_critical")) else 0.0
+    warning = 1.0 if (bool(item.get("is_warning")) and not critical) else 0.0
     kev = 1.0 if bool(item.get("active_threat")) else 0.0
     epss = item.get("probability_score")
     cvss = item.get("cvss_score")
@@ -492,7 +537,8 @@ def _risk_score_for_report(item: Dict[str, Any]) -> float:
         cvss_v = float(cvss) if cvss is not None else 0.0
     except Exception:
         cvss_v = 0.0
-    return patch_watch * 1000.0 + patch_only * 900.0 + kev * 100.0 + epss_v * 10.0 + cvss_v
+
+    return critical * 1000.0 + warning * 900.0 + kev * 800.0 + epss_v * 10.0 + cvss_v
 
 
 def write_markdown_report(path: Path, items: List[Dict[str, Any]]) -> None:
@@ -513,7 +559,9 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]]) -> None:
         1 for i in items if bool(i.get("in_patchthis")) and bool(i.get("watchlist_hit"))
     )
 
-    top = sorted(items, key=_risk_score_for_report, reverse=True)[:200]
+    top = sorted(items, key=risk_sort_key, reverse=True)[:200]
+    critical_items = [i for i in items if bool(i.get("is_critical"))]
+    critical_top = sorted(critical_items, key=risk_sort_key, reverse=True)[:25]
 
     def _cve_link(cve_id: str) -> str:
         cve = (cve_id or "").strip().upper()
@@ -528,6 +576,38 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]]) -> None:
     lines.append("")
     lines.append(f"Generated: `{generated_at}`")
     lines.append("")
+
+    lines.append("## Executive Summary")
+    lines.append("")
+    lines.append(
+        "Critical findings are CVEs that are BOTH in your watchlist AND present in the PatchThis intelligence feed."
+    )
+    lines.append("")
+    if critical_top:
+        lines.append("Top critical items:")
+        lines.append("")
+        lines.append("| CVE | EPSS | CVSS | KEV Due | Description |")
+        lines.append("|---|---:|---:|---:|---|")
+        for i in critical_top:
+            cve_id = str(i.get("cve_id") or "")
+            epss = i.get("probability_score")
+            cvss = i.get("cvss_score")
+            due = ((i.get("kev") or {}) if isinstance(i.get("kev"), dict) else {}).get("dueDate")
+            desc = _short(str(i.get("description") or ""), n=120)
+            try:
+                epss_s = f"{float(epss):.3f}" if epss is not None else ""
+            except Exception:
+                epss_s = ""
+            try:
+                cvss_s = f"{float(cvss):.1f}" if cvss is not None else ""
+            except Exception:
+                cvss_s = ""
+            lines.append(f"| {_cve_link(cve_id)} | {epss_s} | {cvss_s} | {due or ''} | {desc} |")
+        lines.append("")
+    else:
+        lines.append("No critical PatchThis+Watchlist findings in this run.")
+        lines.append("")
+
     lines.append("## Summary")
     lines.append("")
     lines.append(f"- Total items: **{total}**")
@@ -539,15 +619,17 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]]) -> None:
     lines.append("## Top Findings (max 200)")
     lines.append("")
     lines.append(
-        "| CVE | Priority | PatchThis | KEV | EPSS | CVSS | Watchlist | Description |"
+        "| CVE | Priority | Bucket | PatchThis | KEV | KEV Due | EPSS | CVSS | Watchlist | Description |"
     )
-    lines.append("|---|---|---:|---:|---:|---:|---:|---|")
+    lines.append("|---|---|---|---:|---:|---:|---:|---:|---:|---|")
 
     for i in top:
         cve_id = str(i.get("cve_id") or "")
         priority = str(i.get("priority_label") or "")
+        bucket = risk_bucket(i)
         patch = "✅" if bool(i.get("in_patchthis")) else ""
         kev = "✅" if bool(i.get("active_threat")) else ""
+        kev_due = ((i.get("kev") or {}) if isinstance(i.get("kev"), dict) else {}).get("dueDate") or ""
         epss = i.get("probability_score")
         cvss = i.get("cvss_score")
         watch = "✅" if bool(i.get("watchlist_hit")) else ""
@@ -563,7 +645,7 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]]) -> None:
             cvss_s = ""
 
         lines.append(
-            f"| {_cve_link(cve_id)} | {priority} | {patch} | {kev} | {epss_s} | {cvss_s} | {watch} | {desc} |"
+            f"| {_cve_link(cve_id)} | {priority} | {bucket} | {patch} | {kev} | {kev_due} | {epss_s} | {cvss_s} | {watch} | {desc} |"
         )
 
     tmp = path.with_suffix(path.suffix + ".tmp")
@@ -612,7 +694,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     kev_by_cve = download_cisa_kev(session)
     epss_by_cve = download_epss(session)
-    patchthis_df = download_patchthis(session)
+    patchthis_cves = download_patchthis(session)
 
     zip_url = get_latest_cvelist_zip_url(session)
     zip_bytes = _download_bytes(session, zip_url)
@@ -624,6 +706,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             watchlist=watchlist,
             kev_by_cve=kev_by_cve,
             epss_by_cve=epss_by_cve,
+            patchthis_cves=patchthis_cves,
             min_year=args.min_year,
             max_year=args.max_year,
             include_kev_outside_window=bool(args.include_kev_outside_window),
@@ -631,43 +714,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     finally:
         shutil.rmtree(extracted, ignore_errors=True)
 
-    # PatchThis enrichment + prioritization (DataFrame left-join on cveID)
-    if items:
-        main_df = pd.DataFrame(
-            {
-                "cveID": [i.get("cve_id") for i in items],
-                "in_watchlist": [bool(i.get("watchlist_hit")) for i in items],
-            }
-        )
-        patch_df = patchthis_df[["cveID"]].copy() if (patchthis_df is not None and not patchthis_df.empty) else pd.DataFrame(columns=["cveID"])
-        patch_df["in_patchthis"] = True
-
-        merged = main_df.merge(patch_df, on="cveID", how="left")
-        merged["in_patchthis"] = merged["in_patchthis"].notna()
-
-        def _priority_label(row: Any) -> str:
-            in_watchlist = bool(row.get("in_watchlist"))
-            in_patchthis = bool(row.get("in_patchthis"))
-            if in_watchlist and in_patchthis:
-                return "CRITICAL (Active Exploit in Stack)"
-            if (not in_watchlist) and in_patchthis:
-                return "WARNING (Shadow IT Risk)"
-            return ""
-
-        merged["priority_label"] = merged.apply(_priority_label, axis=1)
-        priority_by_cve = {
-            str(row["cveID"]).upper(): (bool(row["in_patchthis"]), bool(row["in_watchlist"]), str(row["priority_label"]))
-            for _, row in merged.iterrows()
-        }
-
-        for item in items:
-            cve = str(item.get("cve_id") or "").strip().upper()
-            in_patchthis, in_watchlist, label = priority_by_cve.get(cve, (False, bool(item.get("watchlist_hit")), ""))
-            item["in_patchthis"] = bool(in_patchthis)
-            item["in_watchlist"] = bool(in_watchlist)
-            item["priority_label"] = label
-    else:
-        items = []
+    items = items or []
 
     write_radar_data(Path(args.out), items)
     write_markdown_report(Path(args.report), items)

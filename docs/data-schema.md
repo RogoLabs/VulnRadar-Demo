@@ -17,8 +17,11 @@ Per item:
 - `watchlist_hit`, `matched_terms[]`
 - `in_watchlist` (bool; alias of `watchlist_hit` for reporting)
 - `in_patchthis` (bool)
-- `priority_label` (string; set when PatchThis indicates elevated risk)
+- `is_critical` (bool; PatchThis + watchlist)
+- `is_warning` (bool; PatchThis only)
+- `priority_label` (string; human-readable, derived from the booleans above)
 - `active_threat`, optional `kev{...}`
+  - `kev.dueDate` may be present when sourced from CISA KEV
 - `probability_score` (EPSS)
 
 ## Verify (JSON)
