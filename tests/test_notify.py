@@ -54,16 +54,17 @@ class TestLoadItems:
 class TestIssueBody:
     """Tests for _issue_body() function."""
 
-    def test_critical_priority_label(self, sample_radar_item: Dict[str, Any]):
-        """Critical items should show CRITICAL priority."""
+    def test_critical_cve_has_kev_signal(self, sample_radar_item: Dict[str, Any]):
+        """Critical items in KEV should show KEV signal."""
         body = _issue_body(sample_radar_item)
-        assert "Priority: CRITICAL" in body
+        assert "CISA KEV" in body
+        assert "Known Exploited" in body
 
-    def test_non_critical_priority_label(self, sample_radar_item: Dict[str, Any]):
-        """Non-critical items should show ALERT priority."""
-        item = {**sample_radar_item, "is_critical": False}
+    def test_non_critical_no_kev_signal(self, sample_radar_item: Dict[str, Any]):
+        """Non-KEV items should show No for KEV."""
+        item = {**sample_radar_item, "is_critical": False, "active_threat": False}
         body = _issue_body(item)
-        assert "Priority: ALERT" in body
+        assert "CISA KEV" in body
 
     def test_cve_id_in_body(self, sample_radar_item: Dict[str, Any]):
         """CVE ID should be in the body."""
@@ -73,24 +74,26 @@ class TestIssueBody:
     def test_signals_section(self, sample_radar_item: Dict[str, Any]):
         """Signals section should show all flags."""
         body = _issue_body(sample_radar_item)
-        assert "PatchThis: yes" in body
-        assert "Watchlist: yes" in body
-        assert "CISA KEV: yes" in body
+        assert "PatchThis" in body
+        assert "Watchlist" in body
+        assert "CISA KEV" in body
 
     def test_epss_formatting(self, sample_radar_item: Dict[str, Any]):
-        """EPSS should be formatted to 3 decimal places."""
+        """EPSS should be formatted as percentage."""
         body = _issue_body(sample_radar_item)
-        assert "EPSS: 0.850" in body
+        assert "EPSS Score" in body
+        assert "85.0%" in body
 
     def test_cvss_formatting(self, sample_radar_item: Dict[str, Any]):
         """CVSS should be formatted to 1 decimal place."""
         body = _issue_body(sample_radar_item)
-        assert "CVSS: 9.8" in body
+        assert "CVSS Score" in body
+        assert "9.8" in body
 
     def test_kev_due_date(self, sample_radar_item: Dict[str, Any]):
         """KEV due date should be shown when available."""
         body = _issue_body(sample_radar_item)
-        assert "KEV Due Date: 2024-07-01" in body
+        assert "2024-07-01" in body
 
     def test_cve_org_link(self, sample_radar_item: Dict[str, Any]):
         """CVE.org link should be included."""
@@ -110,7 +113,7 @@ class TestIssueBody:
         }
         body = _issue_body(minimal)
         assert "CVE-2024-00001" in body
-        assert "Priority: ALERT" in body
+        assert "Threat Signals" in body
 
     def test_none_epss_cvss(self):
         """Handle None values for EPSS and CVSS."""
@@ -121,9 +124,29 @@ class TestIssueBody:
             "is_critical": False,
         }
         body = _issue_body(item)
-        # Should not crash, just show empty
-        assert "EPSS:" in body
-        assert "CVSS:" in body
+        # Should not crash, show N/A
+        assert "EPSS Score" in body
+        assert "CVSS Score" in body
+        assert "N/A" in body
+
+    def test_change_reason_banner(self, sample_radar_item: Dict[str, Any]):
+        """Change reason banner should be shown when changes provided."""
+        from notify import Change
+        changes = [Change(cve_id="CVE-2024-12345", change_type="NEW_CVE")]
+        body = _issue_body(sample_radar_item, changes)
+        assert "Alert Reason" in body
+        assert "NEW" in body
+
+    def test_nvd_link_included(self, sample_radar_item: Dict[str, Any]):
+        """NVD link should be included in references."""
+        body = _issue_body(sample_radar_item)
+        assert "nvd.nist.gov" in body
+
+    def test_vendor_product_shown(self, sample_radar_item: Dict[str, Any]):
+        """Vendor and product should be shown in overview."""
+        body = _issue_body(sample_radar_item)
+        assert "Apache" in body
+        assert "Log4j" in body
 
 
 class TestDiscordPayload:
