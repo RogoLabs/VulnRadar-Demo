@@ -220,3 +220,175 @@ class TestTeamsPayload:
             card = payload["attachments"][0]["content"]
             assert card["type"] == "AdaptiveCard"
             assert card["version"] == "1.4"
+
+
+class TestStateManager:
+    """Tests for StateManager class."""
+
+    def test_empty_state_on_missing_file(self, tmp_path: Path):
+        """StateManager creates empty state when file doesn't exist."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "nonexistent.json")
+        assert state.data["schema_version"] == 1
+        assert state.data["seen_cves"] == {}
+        assert state.data["last_run"] is None
+
+    def test_save_and_load_state(self, tmp_path: Path):
+        """State persists between saves."""
+        from notify import StateManager
+
+        state_path = tmp_path / "state.json"
+        state1 = StateManager(state_path)
+        state1.update_snapshot("CVE-2024-0001", {"is_critical": True})
+        state1.save()
+
+        state2 = StateManager(state_path)
+        assert "CVE-2024-0001" in state2.data["seen_cves"]
+
+    def test_is_new_cve(self, tmp_path: Path):
+        """is_new_cve returns True for unseen CVEs."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        assert state.is_new_cve("CVE-2024-0001") is True
+
+        state.update_snapshot("CVE-2024-0001", {})
+        assert state.is_new_cve("CVE-2024-0001") is False
+
+    def test_detect_new_cve(self, tmp_path: Path):
+        """Detect NEW_CVE change type for unseen CVE."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        changes = state.detect_changes("CVE-2024-0001", {"is_critical": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "NEW_CVE"
+        assert changes[0].cve_id == "CVE-2024-0001"
+
+    def test_detect_new_kev(self, tmp_path: Path):
+        """Detect NEW_KEV when active_threat changes to True."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        # First seen - not in KEV
+        state.update_snapshot("CVE-2024-0001", {"active_threat": False})
+
+        # Now added to KEV
+        changes = state.detect_changes("CVE-2024-0001", {"active_threat": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "NEW_KEV"
+
+    def test_detect_new_patchthis(self, tmp_path: Path):
+        """Detect NEW_PATCHTHIS when in_patchthis changes to True."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {"in_patchthis": False})
+
+        changes = state.detect_changes("CVE-2024-0001", {"in_patchthis": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "NEW_PATCHTHIS"
+
+    def test_detect_became_critical(self, tmp_path: Path):
+        """Detect BECAME_CRITICAL when is_critical changes to True."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {"is_critical": False})
+
+        changes = state.detect_changes("CVE-2024-0001", {"is_critical": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "BECAME_CRITICAL"
+
+    def test_detect_epss_spike(self, tmp_path: Path):
+        """Detect EPSS_SPIKE when EPSS increases by >= 0.3."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {"probability_score": 0.1})
+
+        # 0.1 -> 0.5 is a 0.4 spike (>= 0.3 threshold)
+        changes = state.detect_changes("CVE-2024-0001", {"probability_score": 0.5})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "EPSS_SPIKE"
+        assert changes[0].old_value == 0.1
+        assert changes[0].new_value == 0.5
+
+    def test_no_change_for_stable_cve(self, tmp_path: Path):
+        """No changes detected for stable CVE."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        item = {
+            "is_critical": True,
+            "active_threat": True,
+            "in_patchthis": True,
+            "probability_score": 0.5,
+        }
+        state.update_snapshot("CVE-2024-0001", item)
+
+        changes = state.detect_changes("CVE-2024-0001", item)
+        assert len(changes) == 0
+
+    def test_mark_alerted(self, tmp_path: Path):
+        """mark_alerted records channels and updates statistics."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {})
+        state.mark_alerted("CVE-2024-0001", ["discord", "slack"])
+
+        entry = state.data["seen_cves"]["CVE-2024-0001"]
+        assert "discord" in entry["alerted_channels"]
+        assert "slack" in entry["alerted_channels"]
+        assert state.data["statistics"]["total_alerts_sent"] == 2
+        assert state.data["statistics"]["alerts_by_channel"]["discord"] == 1
+
+    def test_prune_old_entries(self, tmp_path: Path):
+        """prune_old_entries removes CVEs not seen recently."""
+        from notify import StateManager
+        import datetime as dt
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {})
+
+        # Manually set an old last_seen date
+        old_date = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=200)).isoformat()
+        state.data["seen_cves"]["CVE-2024-0001"]["last_seen"] = old_date
+
+        pruned = state.prune_old_entries(days=180)
+        assert pruned == 1
+        assert "CVE-2024-0001" not in state.data["seen_cves"]
+
+
+class TestChange:
+    """Tests for Change dataclass."""
+
+    def test_change_str_new_cve(self):
+        """Test string representation for NEW_CVE."""
+        from notify import Change
+
+        change = Change(cve_id="CVE-2024-0001", change_type="NEW_CVE")
+        assert "NEW" in str(change)
+        assert "CVE-2024-0001" in str(change)
+
+    def test_change_str_epss_spike(self):
+        """Test string representation for EPSS_SPIKE includes values."""
+        from notify import Change
+
+        change = Change(
+            cve_id="CVE-2024-0001",
+            change_type="EPSS_SPIKE",
+            old_value=0.1,
+            new_value=0.5,
+        )
+        result = str(change)
+        assert "EPSS SPIKE" in result
+        assert "10.0%" in result
+        assert "50.0%" in result
