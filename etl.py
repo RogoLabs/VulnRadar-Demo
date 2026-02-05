@@ -76,16 +76,16 @@ def _norm(s: str) -> str:
 
 def load_watchlist(path: Path) -> Watchlist:
     """Load watchlist from YAML or JSON file.
-    
+
     Supports both .yaml/.yml and .json files. YAML is preferred for
     better readability and comment support.
     """
     # Auto-detect YAML vs JSON based on extension or try YAML first for .yaml/.yml
     suffix = path.suffix.lower()
-    
+
     with path.open("r", encoding="utf-8") as f:
         content = f.read()
-    
+
     if suffix in (".yaml", ".yml"):
         raw = yaml.safe_load(content) or {}
     elif suffix == ".json":
@@ -99,7 +99,7 @@ def load_watchlist(path: Path) -> Watchlist:
             raw = yaml.safe_load(content) or {}
         except yaml.YAMLError:
             raw = json.loads(content)
-    
+
     vendors = {_norm(v) for v in (raw.get("vendors") or []) if isinstance(v, str) and v.strip()}
     products = {_norm(p) for p in (raw.get("products") or []) if isinstance(p, str) and p.strip()}
     return Watchlist(vendors=vendors, products=products)
@@ -149,7 +149,7 @@ def get_latest_cvelist_zip_url(session: requests.Session) -> str:
                 return url
     # Fallback: any asset containing the bulk-export marker.
     for asset in assets:
-        name = (asset.get("name") or "")
+        name = asset.get("name") or ""
         if "all_CVEs_at_midnight" in name:
             url = asset.get("browser_download_url")
             if url:
@@ -255,7 +255,11 @@ def _extract_cvss(containers_cna: Dict[str, Any]) -> Tuple[Optional[float], Opti
                 vec = cvss.get("vectorString")
                 if score is not None:
                     try:
-                        return float(score), (str(sev) if sev is not None else None), (str(vec) if vec is not None else None)
+                        return (
+                            float(score),
+                            (str(sev) if sev is not None else None),
+                            (str(vec) if vec is not None else None),
+                        )
                     except Exception:
                         continue
         return None
@@ -380,29 +384,27 @@ def download_patchthis(session: requests.Session) -> Set[str]:
     return out
 
 
-def download_nvd_feeds(
-    session: requests.Session, years: Iterable[int]
-) -> Dict[str, Dict[str, Any]]:
+def download_nvd_feeds(session: requests.Session, years: Iterable[int]) -> Dict[str, Dict[str, Any]]:
     """Download NVD JSON 2.0 data feeds for specified years.
-    
+
     NVD feeds are split by CVE ID year (not publication year), matching
     how CVE List V5 is organized. E.g., CVE-2025-* entries are in the
     2025 feed even if published in 2026.
-    
+
     Returns a dict mapping CVE ID to NVD-specific data:
     - cvss_v3_score, cvss_v3_severity, cvss_v3_vector
     - cvss_v2_score, cvss_v2_severity, cvss_v2_vector
     - cwe_ids: list of CWE identifiers
     - cpe_count: number of CPE matches
     - reference_count: number of references
-    
+
     NVD feeds are gzipped JSON files, ~15-20MB compressed per year.
     This provides richer CVSS data than the CVE List V5 bulk export.
     """
-    
+
     nvd_data: Dict[str, Dict[str, Any]] = {}
     years_list = sorted(set(years))
-    
+
     for year in years_list:
         url = f"{NVD_FEED_BASE_URL}/nvdcve-2.0-{year}.json.gz"
         print(f"  Downloading NVD feed for {year}...")
@@ -418,14 +420,14 @@ def download_nvd_feeds(
         except Exception as e:
             print(f"    Warning: Failed to download NVD feed for {year}: {e}")
             continue
-            
+
         try:
             with gzip.GzipFile(fileobj=io.BytesIO(raw), mode="rb") as gz:
                 feed = json.loads(gz.read().decode("utf-8", errors="replace"))
         except Exception as e:
             print(f"    Warning: Failed to parse NVD feed for {year}: {e}")
             continue
-        
+
         # NVD 2.0 schema: { vulnerabilities: [ { cve: { id, metrics, weaknesses, ... } } ] }
         vulnerabilities = feed.get("vulnerabilities") or []
         count = 0
@@ -434,27 +436,27 @@ def download_nvd_feeds(
             cve_id = (cve_data.get("id") or "").strip().upper()
             if not cve_id.startswith("CVE-"):
                 continue
-            
+
             # Skip rejected CVEs
             if cve_data.get("vulnStatus") == "Rejected":
                 continue
-                
+
             # Extract CVSS v3.x data (prefer v3.1 over v3.0)
             metrics = cve_data.get("metrics", {})
             cvss_v31 = metrics.get("cvssMetricV31", [])
             cvss_v30 = metrics.get("cvssMetricV30", [])
             cvss_v2 = metrics.get("cvssMetricV2", [])
-            
+
             # Get primary (NVD) score, fallback to first available
             def get_primary_cvss(metric_list: list) -> dict:
                 for m in metric_list:
                     if m.get("type") == "Primary":
                         return m.get("cvssData", {})
                 return metric_list[0].get("cvssData", {}) if metric_list else {}
-            
+
             cvss3_data = get_primary_cvss(cvss_v31) or get_primary_cvss(cvss_v30)
             cvss2_data = get_primary_cvss(cvss_v2)
-            
+
             # Extract CWE IDs from weaknesses
             cwe_ids = []
             for weakness in cve_data.get("weaknesses", []):
@@ -462,16 +464,16 @@ def download_nvd_feeds(
                     val = desc.get("value", "")
                     if val.startswith("CWE-") and val != "CWE-noinfo":
                         cwe_ids.append(val)
-            
+
             # Count CPE matches from configurations
             cpe_count = 0
             for config in cve_data.get("configurations", []):
                 for node in config.get("nodes", []):
                     cpe_count += len(node.get("cpeMatch", []))
-            
+
             # Count references
             ref_count = len(cve_data.get("references", []))
-            
+
             nvd_data[cve_id] = {
                 "cvss_v3_score": cvss3_data.get("baseScore"),
                 "cvss_v3_severity": cvss3_data.get("baseSeverity"),
@@ -484,9 +486,9 @@ def download_nvd_feeds(
                 "reference_count": ref_count,
             }
             count += 1
-        
+
         print(f"    Loaded {count} CVEs from NVD {year} feed")
-    
+
     return nvd_data
 
 
@@ -696,7 +698,7 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]], state_file: O
 
     This is intended to make the output 100% viewable directly in GitHub,
     without requiring Streamlit.
-    
+
     Args:
         path: Output path for the markdown report
         items: List of CVE items to report on
@@ -710,9 +712,7 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]], state_file: O
     watch_hits = sum(1 for i in items if bool(i.get("watchlist_hit")))
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    critical_patch_watch = sum(
-        1 for i in items if bool(i.get("in_patchthis")) and bool(i.get("watchlist_hit"))
-    )
+    critical_patch_watch = sum(1 for i in items if bool(i.get("in_patchthis")) and bool(i.get("watchlist_hit")))
 
     top = sorted(items, key=risk_sort_key, reverse=True)[:200]
     critical_items = [i for i in items if bool(i.get("is_critical"))]
@@ -774,9 +774,7 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]], state_file: O
     lines.append("")
     lines.append("## Top Findings (max 200)")
     lines.append("")
-    lines.append(
-        "| CVE | Priority | Bucket | PatchThis | KEV | KEV Due | EPSS | CVSS | Watchlist | Description |"
-    )
+    lines.append("| CVE | Priority | Bucket | PatchThis | KEV | KEV Due | EPSS | CVSS | Watchlist | Description |")
     lines.append("|---|---|---|---:|---:|---:|---:|---:|---:|---|")
 
     for i in top:
@@ -809,11 +807,11 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]], state_file: O
         try:
             with state_file.open("r", encoding="utf-8") as f:
                 state_data = json.load(f)
-            
+
             # Find CVEs first seen in the last 7 days
             seven_days_ago = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)
             recent_changes: List[Tuple[str, str, str]] = []  # (date, cve_id, change_type)
-            
+
             seen_cves = state_data.get("seen_cves", {})
             for cve_id, entry in seen_cves.items():
                 first_seen_str = entry.get("first_seen")
@@ -836,24 +834,24 @@ def write_markdown_report(path: Path, items: List[Dict[str, Any]], state_file: O
                         recent_changes.append((first_seen, date_str, cve_id, change_type))
                 except (ValueError, TypeError):
                     continue
-            
+
             if recent_changes:
                 # Sort by date descending
                 recent_changes.sort(key=lambda x: x[0], reverse=True)
-                
+
                 lines.append("")
                 lines.append("## Recent Changes (Last 7 Days)")
                 lines.append("")
                 lines.append("| Date | CVE | Status |")
                 lines.append("|------|-----|--------|")
-                
+
                 for _, date_str, cve_id, change_type in recent_changes[:50]:
                     lines.append(f"| {date_str} | {_cve_link(cve_id)} | {change_type} |")
-                
+
                 if len(recent_changes) > 50:
                     lines.append(f"| ... | | _and {len(recent_changes) - 50} more_ |")
                 lines.append("")
-        except (json.JSONDecodeError, KeyError, TypeError) as e:
+        except (json.JSONDecodeError, KeyError, TypeError):
             # If state file is invalid, skip this section silently
             pass
 
@@ -877,7 +875,7 @@ def _extract_all_vendors_products(extracted_dir: Path, years: List[int]) -> Tupl
     cves_root = _find_cves_root(extracted_dir)
     vendors: Set[str] = set()
     products: Set[str] = set()
-    
+
     for p in _iter_cve_json_paths(cves_root, years):
         try:
             with p.open("r", encoding="utf-8") as f:
@@ -896,29 +894,29 @@ def _extract_all_vendors_products(extracted_dir: Path, years: List[int]) -> Tupl
                     products.add(prod)
         except Exception:
             continue
-    
+
     return vendors, products
 
 
 def _handle_discovery_commands(args) -> int:
     """Handle --list-vendors, --list-products, --validate-watchlist commands."""
     session = _requests_session()
-    
+
     print("Downloading CVE List V5 bulk export for discovery...")
     zip_url = get_latest_cvelist_zip_url(session)
     zip_bytes = _download_bytes(session, zip_url)
     extracted = download_and_extract_zip_to_temp(zip_bytes)
-    
+
     try:
         # Use last 2 years for faster discovery (good enough for validation)
         current_year = dt.datetime.now().year
         years = [current_year - 1, current_year]
-        
+
         print("Scanning CVE data (last 2 years)...")
         all_vendors, all_products = _extract_all_vendors_products(extracted, years)
         print(f"  Found {len(all_vendors)} unique vendors, {len(all_products)} unique products")
         print()
-        
+
         if args.list_vendors is not None:
             filter_str = (args.list_vendors or "").lower()
             matches = sorted(v for v in all_vendors if filter_str in v)
@@ -932,7 +930,7 @@ def _handle_discovery_commands(args) -> int:
             if len(matches) > 200:
                 print(f"  ... and {len(matches) - 200} more")
             return 0
-        
+
         if args.list_products is not None:
             filter_str = (args.list_products or "").lower()
             matches = sorted(p for p in all_products if filter_str in p)
@@ -946,17 +944,17 @@ def _handle_discovery_commands(args) -> int:
             if len(matches) > 200:
                 print(f"  ... and {len(matches) - 200} more")
             return 0
-        
+
         if args.validate_watchlist:
             watchlist_path = args.watchlist if args.watchlist else _find_watchlist()
             if not Path(watchlist_path).exists():
                 print(f"❌ Watchlist not found: {watchlist_path}")
                 return 1
-            
+
             print(f"Validating watchlist: {watchlist_path}")
             print("=" * 60)
             watchlist = load_watchlist(Path(watchlist_path))
-            
+
             # Check vendors
             print(f"\n📋 Vendors ({len(watchlist.vendors)} in watchlist):")
             matched_vendors = 0
@@ -970,7 +968,7 @@ def _handle_discovery_commands(args) -> int:
                 else:
                     unmatched_vendors.append(wv)
                     print(f"  ⚠️  {wv} → no matches found (may still match future CVEs)")
-            
+
             # Check products
             print(f"\n📦 Products ({len(watchlist.products)} in watchlist):")
             matched_products = 0
@@ -983,13 +981,13 @@ def _handle_discovery_commands(args) -> int:
                 else:
                     unmatched_products.append(wp)
                     print(f"  ⚠️  {wp} → no matches found (may still match future CVEs)")
-            
+
             # Summary
             print("\n" + "=" * 60)
             print("Summary:")
             print(f"  Vendors:  {matched_vendors}/{len(watchlist.vendors)} matched")
             print(f"  Products: {matched_products}/{len(watchlist.products)} matched")
-            
+
             if unmatched_vendors or unmatched_products:
                 print("\n💡 Suggestions for unmatched terms:")
                 for uv in unmatched_vendors[:5]:
@@ -998,12 +996,12 @@ def _handle_discovery_commands(args) -> int:
                 for up in unmatched_products[:5]:
                     suggestions = sorted(all_products, key=lambda p: _fuzzy_score(up, p), reverse=True)[:3]
                     print(f"  '{up}' → try: {', '.join(suggestions)}")
-            
+
             return 0
-            
+
     finally:
         shutil.rmtree(extracted, ignore_errors=True)
-    
+
     return 0
 
 
@@ -1027,7 +1025,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument(
         "--watchlist",
         default=None,
-        help="Path to watchlist file (YAML or JSON). Auto-detects watchlist.yaml or watchlist.json if not specified."
+        help="Path to watchlist file (YAML or JSON). Auto-detects watchlist.yaml or watchlist.json if not specified.",
     )
     parser.add_argument("--out", default="data/radar_data.json", help="Output JSON path")
     parser.add_argument(
@@ -1103,18 +1101,18 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     print("Downloading CISA KEV catalog...")
     kev_by_cve = download_cisa_kev(session)
     print(f"  Loaded {len(kev_by_cve)} KEV entries")
-    
+
     print("Downloading EPSS scores...")
     epss_by_cve = download_epss(session)
     print(f"  Loaded {len(epss_by_cve)} EPSS scores")
-    
+
     print("Downloading PatchThis intelligence...")
     patchthis_cves = download_patchthis(session)
     print(f"  Loaded {len(patchthis_cves)} PatchThis CVEs")
 
     # Calculate years for NVD download (same as CVE scan window)
     years = _years_to_process(args.min_year, args.max_year)
-    
+
     # Download NVD feeds for CVSS/CWE enrichment
     nvd_by_cve: Dict[str, Dict[str, Any]] = {}
     if not args.skip_nvd:
@@ -1147,7 +1145,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     items = items or []
 
     write_radar_data(Path(args.out), items)
-    
+
     # Pass state file for Recent Changes section
     state_path = Path(args.state) if args.state else None
     write_markdown_report(Path(args.report), items, state_file=state_path)

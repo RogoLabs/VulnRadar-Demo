@@ -274,6 +274,7 @@ class TestWriteMarkdownReport:
     def test_report_includes_recent_changes_from_state(self, tmp_path: Path):
         """Report should include Recent Changes section when state file exists."""
         import datetime as dt
+
         from etl import write_markdown_report
 
         # Create a state file with recent changes
@@ -286,15 +287,15 @@ class TestWriteMarkdownReport:
                 "CVE-2024-1111": {
                     "first_seen": now.isoformat(),
                     "last_seen": now.isoformat(),
-                    "snapshot": {"is_critical": True, "active_threat": True}
+                    "snapshot": {"is_critical": True, "active_threat": True},
                 },
                 "CVE-2024-2222": {
                     "first_seen": now.isoformat(),
                     "last_seen": now.isoformat(),
-                    "snapshot": {"is_critical": False, "in_patchthis": True}
+                    "snapshot": {"is_critical": False, "in_patchthis": True},
                 },
             },
-            "statistics": {"total_alerts_sent": 0, "alerts_by_channel": {}}
+            "statistics": {"total_alerts_sent": 0, "alerts_by_channel": {}},
         }
         state_file.write_text(json.dumps(state_data))
 
@@ -331,7 +332,7 @@ class TestWriteMarkdownReport:
         items = [{"cve_id": "CVE-2024-0001", "is_critical": True}]
         report_path = tmp_path / "report.md"
         missing_state = tmp_path / "nonexistent.json"
-        
+
         write_markdown_report(report_path, items, state_file=missing_state)
 
         content = report_path.read_text()

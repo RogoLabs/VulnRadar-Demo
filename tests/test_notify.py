@@ -132,6 +132,7 @@ class TestIssueBody:
     def test_change_reason_banner(self, sample_radar_item: Dict[str, Any]):
         """Change reason banner should be shown when changes provided."""
         from notify import Change
+
         changes = [Change(cve_id="CVE-2024-12345", change_type="NEW_CVE")]
         body = _issue_body(sample_radar_item, changes)
         assert "Alert Reason" in body
@@ -375,8 +376,9 @@ class TestStateManager:
 
     def test_prune_old_entries(self, tmp_path: Path):
         """prune_old_entries removes CVEs not seen recently."""
-        from notify import StateManager
         import datetime as dt
+
+        from notify import StateManager
 
         state = StateManager(tmp_path / "state.json")
         state.update_snapshot("CVE-2024-0001", {})
@@ -446,26 +448,27 @@ class TestPruneStateCommand:
 
     def test_prune_state_removes_old_entries(self, tmp_path: Path):
         """--prune-state should remove entries older than specified days."""
-        from notify import StateManager
         import datetime as dt
+
+        from notify import StateManager
 
         state_file = tmp_path / "state.json"
         state = StateManager(state_file)
-        
+
         # Add two CVEs: one recent, one old
         state.update_snapshot("CVE-2024-NEW", {"is_critical": True})
         state.update_snapshot("CVE-2024-OLD", {"is_critical": True})
-        
+
         # Make one CVE old
         old_date = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=100)).isoformat()
         state.data["seen_cves"]["CVE-2024-OLD"]["last_seen"] = old_date
         state.save()
-        
+
         # Prune entries older than 90 days
         state = StateManager(state_file)  # Reload
         pruned = state.prune_old_entries(days=90)
         state.save()
-        
+
         assert pruned == 1
         assert "CVE-2024-NEW" in state.data["seen_cves"]
         assert "CVE-2024-OLD" not in state.data["seen_cves"]
@@ -476,14 +479,14 @@ class TestPruneStateCommand:
 
         state_file = tmp_path / "state.json"
         state = StateManager(state_file)
-        
+
         state.update_snapshot("CVE-2024-0001", {"is_critical": True})
         state.update_snapshot("CVE-2024-0002", {"is_critical": False})
         state.save()
-        
+
         # Prune with short window - both should be kept (they're recent)
         state = StateManager(state_file)
         pruned = state.prune_old_entries(days=1)
-        
+
         assert pruned == 0
         assert len(state.data["seen_cves"]) == 2

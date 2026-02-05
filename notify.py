@@ -19,14 +19,16 @@ DEFAULT_TIMEOUT = (10, 60)
 # State Management - Prevents alert spam by tracking what's been seen/alerted
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 @dataclass
 class Change:
     """Represents a change that warrants alerting."""
+
     cve_id: str
     change_type: str  # NEW_CVE, NEW_KEV, NEW_PATCHTHIS, BECAME_CRITICAL, EPSS_SPIKE
     old_value: Any = None
     new_value: Any = None
-    
+
     def __str__(self) -> str:
         if self.change_type == "NEW_CVE":
             return f"🆕 NEW: {self.cve_id}"
@@ -45,13 +47,13 @@ class Change:
 
 class StateManager:
     """Manages persistent state to track seen CVEs and prevent duplicate alerts."""
-    
+
     SCHEMA_VERSION = 1
-    
+
     def __init__(self, path: Path):
         self.path = path
         self.data = self._load()
-    
+
     def _load(self) -> Dict[str, Any]:
         """Load state from file, or create empty state."""
         if self.path.exists():
@@ -67,7 +69,7 @@ class StateManager:
                 print(f"Warning: Could not load state file ({e}), starting fresh")
                 return self._empty_state()
         return self._empty_state()
-    
+
     def _empty_state(self) -> Dict[str, Any]:
         """Create empty state structure."""
         return {
@@ -77,9 +79,9 @@ class StateManager:
             "statistics": {
                 "total_alerts_sent": 0,
                 "alerts_by_channel": {},
-            }
+            },
         }
-    
+
     def save(self) -> None:
         """Save state to file."""
         self.data["last_run"] = dt.datetime.now(dt.timezone.utc).isoformat()
@@ -88,65 +90,50 @@ class StateManager:
         with tmp.open("w", encoding="utf-8") as f:
             json.dump(self.data, f, indent=2)
         tmp.replace(self.path)
-    
+
     def is_new_cve(self, cve_id: str) -> bool:
         """Check if this CVE has never been seen before."""
         return cve_id not in self.data["seen_cves"]
-    
+
     def get_snapshot(self, cve_id: str) -> Optional[Dict[str, Any]]:
         """Get the previous snapshot for a CVE."""
         entry = self.data["seen_cves"].get(cve_id)
         if entry:
             return entry.get("snapshot")
         return None
-    
+
     def detect_changes(self, cve_id: str, item: Dict[str, Any]) -> List[Change]:
         """
         Detect changes that warrant alerting.
-        
+
         Returns list of Change objects describing what changed.
         """
         changes: List[Change] = []
         previous = self.get_snapshot(cve_id)
-        
+
         # New CVE - never seen before
         if previous is None:
             changes.append(Change(cve_id=cve_id, change_type="NEW_CVE"))
             return changes  # No need to check other changes for new CVEs
-        
+
         # Check for KEV addition
         was_kev = bool(previous.get("active_threat"))
         is_kev = bool(item.get("active_threat"))
         if is_kev and not was_kev:
-            changes.append(Change(
-                cve_id=cve_id, 
-                change_type="NEW_KEV",
-                old_value=False,
-                new_value=True
-            ))
-        
+            changes.append(Change(cve_id=cve_id, change_type="NEW_KEV", old_value=False, new_value=True))
+
         # Check for PatchThis addition
         was_patchthis = bool(previous.get("in_patchthis"))
         is_patchthis = bool(item.get("in_patchthis"))
         if is_patchthis and not was_patchthis:
-            changes.append(Change(
-                cve_id=cve_id,
-                change_type="NEW_PATCHTHIS", 
-                old_value=False,
-                new_value=True
-            ))
-        
+            changes.append(Change(cve_id=cve_id, change_type="NEW_PATCHTHIS", old_value=False, new_value=True))
+
         # Check for became critical
         was_critical = bool(previous.get("is_critical"))
         is_critical = bool(item.get("is_critical"))
         if is_critical and not was_critical:
-            changes.append(Change(
-                cve_id=cve_id,
-                change_type="BECAME_CRITICAL",
-                old_value=False,
-                new_value=True
-            ))
-        
+            changes.append(Change(cve_id=cve_id, change_type="BECAME_CRITICAL", old_value=False, new_value=True))
+
         # Check for EPSS spike (≥0.3 increase)
         old_epss = previous.get("probability_score")
         new_epss = item.get("probability_score")
@@ -155,21 +142,16 @@ class StateManager:
                 old_f = float(old_epss)
                 new_f = float(new_epss)
                 if new_f - old_f >= 0.3:  # 30% increase threshold
-                    changes.append(Change(
-                        cve_id=cve_id,
-                        change_type="EPSS_SPIKE",
-                        old_value=old_f,
-                        new_value=new_f
-                    ))
+                    changes.append(Change(cve_id=cve_id, change_type="EPSS_SPIKE", old_value=old_f, new_value=new_f))
             except (ValueError, TypeError):
                 pass
-        
+
         return changes
-    
+
     def update_snapshot(self, cve_id: str, item: Dict[str, Any]) -> None:
         """Update the stored snapshot for a CVE."""
         now = dt.datetime.now(dt.timezone.utc).isoformat()
-        
+
         if cve_id not in self.data["seen_cves"]:
             self.data["seen_cves"][cve_id] = {
                 "first_seen": now,
@@ -178,7 +160,7 @@ class StateManager:
                 "alerted_channels": [],
                 "snapshot": {},
             }
-        
+
         entry = self.data["seen_cves"][cve_id]
         entry["last_seen"] = now
         entry["snapshot"] = {
@@ -188,43 +170,44 @@ class StateManager:
             "probability_score": item.get("probability_score"),
             "cvss_score": item.get("cvss_score"),
         }
-    
+
     def mark_alerted(self, cve_id: str, channels: List[str]) -> None:
         """Mark a CVE as alerted on specific channels."""
         if cve_id not in self.data["seen_cves"]:
             return
-        
+
         now = dt.datetime.now(dt.timezone.utc).isoformat()
         entry = self.data["seen_cves"][cve_id]
         entry["alerted_at"] = now
-        
+
         # Add new channels to the list
         existing = set(entry.get("alerted_channels") or [])
         existing.update(channels)
         entry["alerted_channels"] = sorted(existing)
-        
+
         # Update statistics
         self.data["statistics"]["total_alerts_sent"] += len(channels)
         for ch in channels:
-            self.data["statistics"]["alerts_by_channel"][ch] = \
+            self.data["statistics"]["alerts_by_channel"][ch] = (
                 self.data["statistics"]["alerts_by_channel"].get(ch, 0) + 1
-    
+            )
+
     def prune_old_entries(self, days: int = 180) -> int:
         """Remove CVEs not seen in the specified number of days."""
         cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)
         cutoff_str = cutoff.isoformat()
-        
+
         to_remove = []
         for cve_id, entry in self.data["seen_cves"].items():
             last_seen = entry.get("last_seen", "")
             if last_seen < cutoff_str:
                 to_remove.append(cve_id)
-        
+
         for cve_id in to_remove:
             del self.data["seen_cves"][cve_id]
-        
+
         return len(to_remove)
-    
+
     def get_stats(self) -> Dict[str, Any]:
         """Get summary statistics."""
         return {
@@ -303,7 +286,9 @@ def _existing_notified_cves(session: requests.Session, repo: str) -> Set[str]:
     return out
 
 
-def _create_issue(session: requests.Session, repo: str, title: str, body: str, labels: Optional[List[str]] = None) -> None:
+def _create_issue(
+    session: requests.Session, repo: str, title: str, body: str, labels: Optional[List[str]] = None
+) -> None:
     url = f"https://api.github.com/repos/{repo}/issues"
     payload: Dict[str, Any] = {"title": title, "body": body}
     if labels:
@@ -312,20 +297,18 @@ def _create_issue(session: requests.Session, repo: str, title: str, body: str, l
     r.raise_for_status()
 
 
-def _create_baseline_issue(session: requests.Session, repo: str, all_items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]]) -> None:
+def _create_baseline_issue(
+    session: requests.Session, repo: str, all_items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]]
+) -> None:
     """Create a single summary issue on first run to establish baseline."""
     total = len(all_items)
     critical_count = len(critical_items)
     kev_count = sum(1 for i in all_items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in all_items if bool(i.get("in_patchthis")))
-    
+
     # Sort critical items by EPSS
-    sorted_critical = sorted(
-        critical_items,
-        key=lambda x: float(x.get("probability_score") or 0),
-        reverse=True
-    )
-    
+    sorted_critical = sorted(critical_items, key=lambda x: float(x.get("probability_score") or 0), reverse=True)
+
     lines = [
         "# 🚀 VulnRadar Baseline Established",
         "",
@@ -357,7 +340,7 @@ def _create_baseline_issue(session: requests.Session, repo: str, all_items: List
         "| CVE ID | EPSS | CVSS | KEV | PatchThis | Description |",
         "|--------|------|------|-----|-----------|-------------|",
     ]
-    
+
     for item in sorted_critical[:20]:
         cve_id = item.get("cve_id", "")
         epss = item.get("probability_score")
@@ -365,7 +348,7 @@ def _create_baseline_issue(session: requests.Session, repo: str, all_items: List
         kev = bool(item.get("active_threat"))
         patch = bool(item.get("in_patchthis"))
         desc = str(item.get("description") or "")[:60].replace("|", "\\|").replace("\n", " ")
-        
+
         try:
             epss_str = f"{float(epss):.1%}"
         except (ValueError, TypeError):
@@ -374,35 +357,37 @@ def _create_baseline_issue(session: requests.Session, repo: str, all_items: List
             cvss_str = f"{float(cvss):.1f}"
         except (ValueError, TypeError):
             cvss_str = "N/A"
-        
+
         lines.append(
             f"| [{cve_id}](https://www.cve.org/CVERecord?id={cve_id}) | {epss_str} | {cvss_str} | "
             f"{'🔴' if kev else '⚪'} | {'🟠' if patch else '⚪'} | {desc}... |"
         )
-    
+
     if len(sorted_critical) > 20:
         lines.append(f"| ... | | | | | _and {len(sorted_critical) - 20} more critical findings_ |")
-    
-    lines.extend([
-        "",
-        "---",
-        "",
-        "## 📋 Next Steps",
-        "",
-        "1. **Review the critical findings above** - these need attention",
-        "2. **Check your watchlist** (`watchlist.yaml`) to ensure it covers your vendors/products",
-        "3. **Close this issue** once you've reviewed the baseline",
-        "",
-        "Future VulnRadar runs will only alert on **new or changed** CVEs.",
-        "",
-        "---",
-        "_Generated by [VulnRadar](https://github.com/RogoLabs/VulnRadar) - First Run Baseline_",
-    ])
-    
+
+    lines.extend(
+        [
+            "",
+            "---",
+            "",
+            "## 📋 Next Steps",
+            "",
+            "1. **Review the critical findings above** - these need attention",
+            "2. **Check your watchlist** (`watchlist.yaml`) to ensure it covers your vendors/products",
+            "3. **Close this issue** once you've reviewed the baseline",
+            "",
+            "Future VulnRadar runs will only alert on **new or changed** CVEs.",
+            "",
+            "---",
+            "_Generated by [VulnRadar](https://github.com/RogoLabs/VulnRadar) - First Run Baseline_",
+        ]
+    )
+
     body = "\n".join(lines)
     title = f"[VulnRadar] 🚀 Baseline Established - {critical_count} Critical Findings"
     labels = ["vulnradar", "baseline"]
-    
+
     _create_issue(session, repo, title=title, body=body, labels=labels)
     print(f"Created baseline summary issue with {critical_count} critical findings")
 
@@ -416,7 +401,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
     kev = bool(item.get("active_threat"))
     patch = bool(item.get("in_patchthis"))
     watch = bool(item.get("watchlist_hit"))
-    
+
     # Extract additional data
     vendor = str(item.get("vendor") or "Unknown").strip()
     product = str(item.get("product") or "Unknown").strip()
@@ -427,13 +412,13 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
     kev_vendor = str(kev_obj.get("vendorProject") or "").strip() if isinstance(kev_obj, dict) else ""
     kev_product = str(kev_obj.get("product") or "").strip() if isinstance(kev_obj, dict) else ""
     kev_name = str(kev_obj.get("vulnerabilityName") or "").strip() if isinstance(kev_obj, dict) else ""
-    
+
     def fmt(x: Any, ndigits: int) -> str:
         try:
             return f"{float(x):.{ndigits}f}"
         except Exception:
             return "N/A"
-    
+
     def fmt_pct(x: Any) -> str:
         try:
             return f"{float(x):.1%}"
@@ -441,7 +426,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
             return "N/A"
 
     lines = []
-    
+
     # Change reason banner (if provided)
     if changes:
         change_strs = [str(c) for c in changes]
@@ -450,7 +435,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
         for cs in change_strs:
             lines.append(f"> {cs}")
         lines.append("")
-    
+
     # Header with key info
     lines.append("## Overview")
     lines.append("")
@@ -462,7 +447,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
     lines.append(f"| **CVSS Score** | {fmt(cvss, 1)} |")
     lines.append(f"| **EPSS Score** | {fmt_pct(epss)} |")
     lines.append("")
-    
+
     # Threat signals
     lines.append("## ⚠️ Threat Signals")
     lines.append("")
@@ -474,7 +459,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
     if kev_due:
         lines.append(f"| KEV Remediation Due | **{kev_due}** |")
     lines.append("")
-    
+
     # Description
     lines.append("## 📝 Description")
     lines.append("")
@@ -483,7 +468,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
         lines.append("")
     lines.append(desc if desc else "_No description available._")
     lines.append("")
-    
+
     # Affected versions (if available)
     if affected:
         lines.append("## 📦 Affected Versions")
@@ -498,7 +483,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
             if len(affected) > 10:
                 lines.append(f"- _...and {len(affected) - 10} more_")
         lines.append("")
-    
+
     # References
     lines.append("## 🔗 References")
     lines.append("")
@@ -506,7 +491,7 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
     lines.append(f"- [NVD Entry](https://nvd.nist.gov/vuln/detail/{cve_id})")
     if kev:
         lines.append("- [CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)")
-    
+
     # Additional references from data
     if references:
         ref_list = references if isinstance(references, list) else []
@@ -517,11 +502,11 @@ def _issue_body(item: Dict[str, Any], changes: Optional[List[Change]] = None) ->
                     lines.append(f"- [{url[:50]}...]({url})" if len(url) > 50 else f"- [{url}]({url})")
             elif isinstance(ref, str) and ref.startswith("http"):
                 lines.append(f"- [{ref[:50]}...]({ref})" if len(ref) > 50 else f"- [{ref}]({ref})")
-    
+
     lines.append("")
     lines.append("---")
     lines.append("_Generated by [VulnRadar](https://github.com/RogoLabs/VulnRadar)_")
-    
+
     return "\n".join(lines)
 
 
@@ -534,7 +519,7 @@ def send_discord_alert(webhook_url: str, item: Dict[str, Any], changes: Optional
     kev = bool(item.get("active_threat"))
     patch = bool(item.get("in_patchthis"))
     is_critical = bool(item.get("is_critical"))
-    
+
     # Color: red for critical, orange for KEV, blue for others
     if is_critical:
         color = 0xFF0000  # Red
@@ -545,12 +530,12 @@ def send_discord_alert(webhook_url: str, item: Dict[str, Any], changes: Optional
     else:
         color = 0x3498DB  # Blue
         priority = "ℹ️ ALERT"
-    
+
     # Add change reason to description if available
     if changes:
         change_str = " | ".join(str(c) for c in changes)
         desc = f"**Change:** {change_str}\n\n{desc}"
-    
+
     # Format scores
     try:
         epss_str = f"{float(epss):.1%}" if epss is not None else "N/A"
@@ -560,50 +545,54 @@ def send_discord_alert(webhook_url: str, item: Dict[str, Any], changes: Optional
         cvss_str = f"{float(cvss):.1f}" if cvss is not None else "N/A"
     except Exception:
         cvss_str = "N/A"
-    
+
     # Get KEV due date if available
     kev_due = ""
     kev_obj = item.get("kev")
     if isinstance(kev_obj, dict):
         kev_due = str(kev_obj.get("dueDate") or "")
-    
+
     fields = [
         {"name": "EPSS", "value": epss_str, "inline": True},
         {"name": "CVSS", "value": cvss_str, "inline": True},
         {"name": "KEV", "value": "✅ Yes" if kev else "❌ No", "inline": True},
         {"name": "PatchThis", "value": "✅ Yes" if patch else "❌ No", "inline": True},
     ]
-    
+
     if kev_due:
         fields.append({"name": "KEV Due Date", "value": kev_due, "inline": True})
-    
+
     payload = {
-        "embeds": [{
-            "title": f"{priority}: {cve_id}",
-            "description": desc if desc else "No description available.",
-            "color": color,
-            "fields": fields,
-            "url": f"https://www.cve.org/CVERecord?id={cve_id}",
-            "footer": {"text": "VulnRadar Alert"}
-        }]
+        "embeds": [
+            {
+                "title": f"{priority}: {cve_id}",
+                "description": desc if desc else "No description available.",
+                "color": color,
+                "fields": fields,
+                "url": f"https://www.cve.org/CVERecord?id={cve_id}",
+                "footer": {"text": "VulnRadar Alert"},
+            }
+        ]
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
 
-def send_discord_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str, changes_by_cve: Optional[Dict[str, tuple]] = None) -> None:
+def send_discord_summary(
+    webhook_url: str, items: List[Dict[str, Any]], repo: str, changes_by_cve: Optional[Dict[str, tuple]] = None
+) -> None:
     """Send a summary embed to Discord with counts and top findings."""
     total = len(items)
     critical_count = sum(1 for i in items if bool(i.get("is_critical")))
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    
+
     # Get top 5 critical items
     critical_items = [i for i in items if bool(i.get("is_critical"))]
     critical_items.sort(key=lambda x: float(x.get("probability_score") or 0), reverse=True)
     top_5 = critical_items[:5]
-    
+
     top_list = ""
     for i in top_5:
         cve = i.get("cve_id", "")
@@ -613,20 +602,22 @@ def send_discord_summary(webhook_url: str, items: List[Dict[str, Any]], repo: st
         except Exception:
             epss_str = "?"
         top_list += f"• [{cve}](https://www.cve.org/CVERecord?id={cve}) (EPSS: {epss_str})\n"
-    
+
     if not top_list:
         top_list = "No critical findings."
-    
+
     color = 0xFF0000 if critical_count > 0 else 0x00FF00
-    
+
     # Build change summary if available
     changes_summary = ""
     if changes_by_cve:
         new_count = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_CVE" for c in chs))
         kev_added = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_KEV" for c in chs))
-        patch_added = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_PATCHTHIS" for c in chs))
+        patch_added = sum(
+            1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_PATCHTHIS" for c in chs)
+        )
         epss_spike = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "EPSS_SPIKE" for c in chs))
-        
+
         parts = []
         if new_count > 0:
             parts.append(f"🆕 {new_count} new")
@@ -637,46 +628,41 @@ def send_discord_summary(webhook_url: str, items: List[Dict[str, Any]], repo: st
         if epss_spike > 0:
             parts.append(f"📈 {epss_spike} EPSS spike")
         changes_summary = " | ".join(parts) if parts else "No significant changes"
-    
+
     fields = [
         {"name": "Total CVEs", "value": str(total), "inline": True},
         {"name": "🚨 Critical", "value": str(critical_count), "inline": True},
         {"name": "⚠️ CISA KEV", "value": str(kev_count), "inline": True},
         {"name": "🔥 PatchThis", "value": str(patch_count), "inline": True},
     ]
-    
+
     if changes_summary:
         fields.append({"name": "📊 Changes Since Last Run", "value": changes_summary, "inline": False})
-    
+
     fields.append({"name": "Top Critical Findings", "value": top_list, "inline": False})
-    
+
     payload = {
-        "embeds": [{
-            "title": "📊 VulnRadar Summary",
-            "color": color,
-            "fields": fields,
-            "footer": {"text": f"Repo: {repo}"}
-        }]
+        "embeds": [
+            {"title": "📊 VulnRadar Summary", "color": color, "fields": fields, "footer": {"text": f"Repo: {repo}"}}
+        ]
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
 
-def send_discord_baseline(webhook_url: str, items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]], repo: str) -> None:
+def send_discord_baseline(
+    webhook_url: str, items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]], repo: str
+) -> None:
     """Send a baseline summary to Discord on first run instead of spamming individual alerts."""
     total = len(items)
     critical_count = len(critical_items)
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    
+
     # Sort and get top 10
-    sorted_critical = sorted(
-        critical_items,
-        key=lambda x: float(x.get("probability_score") or 0),
-        reverse=True
-    )[:10]
-    
+    sorted_critical = sorted(critical_items, key=lambda x: float(x.get("probability_score") or 0), reverse=True)[:10]
+
     top_list = ""
     for item in sorted_critical:
         cve = item.get("cve_id", "")
@@ -687,33 +673,35 @@ def send_discord_baseline(webhook_url: str, items: List[Dict[str, Any]], critica
         except Exception:
             epss_str = "?"
         top_list += f"{kev} [{cve}](https://www.cve.org/CVERecord?id={cve}) (EPSS: {epss_str})\n"
-    
+
     if not top_list:
         top_list = "No critical findings."
-    
+
     payload = {
-        "embeds": [{
-            "title": "🚀 VulnRadar Baseline Established",
-            "description": (
-                "**First run complete!** Your vulnerability baseline has been established.\n\n"
-                "Going forward, you'll only receive alerts for:\n"
-                "• 🆕 New CVEs matching your watchlist\n"
-                "• ⚠️ CVEs added to CISA KEV\n"
-                "• 🔥 CVEs added to PatchThis\n"
-                "• 📈 Significant EPSS increases"
-            ),
-            "color": 0x00FF00,  # Green
-            "fields": [
-                {"name": "Total CVEs", "value": str(total), "inline": True},
-                {"name": "🚨 Critical", "value": str(critical_count), "inline": True},
-                {"name": "⚠️ CISA KEV", "value": str(kev_count), "inline": True},
-                {"name": "🔥 PatchThis", "value": str(patch_count), "inline": True},
-                {"name": "Top 10 Critical (by EPSS)", "value": top_list, "inline": False},
-            ],
-            "footer": {"text": f"Repo: {repo} | No more alert spam!"}
-        }]
+        "embeds": [
+            {
+                "title": "🚀 VulnRadar Baseline Established",
+                "description": (
+                    "**First run complete!** Your vulnerability baseline has been established.\n\n"
+                    "Going forward, you'll only receive alerts for:\n"
+                    "• 🆕 New CVEs matching your watchlist\n"
+                    "• ⚠️ CVEs added to CISA KEV\n"
+                    "• 🔥 CVEs added to PatchThis\n"
+                    "• 📈 Significant EPSS increases"
+                ),
+                "color": 0x00FF00,  # Green
+                "fields": [
+                    {"name": "Total CVEs", "value": str(total), "inline": True},
+                    {"name": "🚨 Critical", "value": str(critical_count), "inline": True},
+                    {"name": "⚠️ CISA KEV", "value": str(kev_count), "inline": True},
+                    {"name": "🔥 PatchThis", "value": str(patch_count), "inline": True},
+                    {"name": "Top 10 Critical (by EPSS)", "value": top_list, "inline": False},
+                ],
+                "footer": {"text": f"Repo: {repo} | No more alert spam!"},
+            }
+        ]
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
@@ -721,6 +709,7 @@ def send_discord_baseline(webhook_url: str, items: List[Dict[str, Any]], critica
 # ─────────────────────────────────────────────────────────────────────────────
 # Slack Webhooks
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def send_slack_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[List[Change]] = None) -> None:
     """Send a formatted Slack message for a CVE finding."""
@@ -731,7 +720,7 @@ def send_slack_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[L
     kev = bool(item.get("active_threat"))
     patch = bool(item.get("in_patchthis"))
     is_critical = bool(item.get("is_critical"))
-    
+
     # Priority indicator
     if is_critical:
         priority = "🚨 *CRITICAL*"
@@ -742,12 +731,12 @@ def send_slack_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[L
     else:
         priority = "ℹ️ *ALERT*"
         color = "#3498DB"
-    
+
     # Add change reason if available
     if changes:
         change_str = " | ".join(str(c) for c in changes)
         desc = f"*Change:* {change_str}\n\n{desc}"
-    
+
     # Format scores
     try:
         epss_str = f"{float(epss):.1%}" if epss is not None else "N/A"
@@ -757,53 +746,51 @@ def send_slack_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[L
         cvss_str = f"{float(cvss):.1f}" if cvss is not None else "N/A"
     except Exception:
         cvss_str = "N/A"
-    
+
     cve_url = f"https://www.cve.org/CVERecord?id={cve_id}"
-    
+
     payload = {
-        "attachments": [{
-            "color": color,
-            "blocks": [
-                {
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text": f"{priority}: <{cve_url}|{cve_id}>\n{desc}"
-                    }
-                },
-                {
-                    "type": "section",
-                    "fields": [
-                        {"type": "mrkdwn", "text": f"*EPSS:* {epss_str}"},
-                        {"type": "mrkdwn", "text": f"*CVSS:* {cvss_str}"},
-                        {"type": "mrkdwn", "text": f"*KEV:* {'✅ Yes' if kev else '❌ No'}"},
-                        {"type": "mrkdwn", "text": f"*PatchThis:* {'✅ Yes' if patch else '❌ No'}"},
-                    ]
-                },
-                {
-                    "type": "context",
-                    "elements": [{"type": "mrkdwn", "text": "VulnRadar Alert"}]
-                }
-            ]
-        }]
+        "attachments": [
+            {
+                "color": color,
+                "blocks": [
+                    {
+                        "type": "section",
+                        "text": {"type": "mrkdwn", "text": f"{priority}: <{cve_url}|{cve_id}>\n{desc}"},
+                    },
+                    {
+                        "type": "section",
+                        "fields": [
+                            {"type": "mrkdwn", "text": f"*EPSS:* {epss_str}"},
+                            {"type": "mrkdwn", "text": f"*CVSS:* {cvss_str}"},
+                            {"type": "mrkdwn", "text": f"*KEV:* {'✅ Yes' if kev else '❌ No'}"},
+                            {"type": "mrkdwn", "text": f"*PatchThis:* {'✅ Yes' if patch else '❌ No'}"},
+                        ],
+                    },
+                    {"type": "context", "elements": [{"type": "mrkdwn", "text": "VulnRadar Alert"}]},
+                ],
+            }
+        ]
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
 
-def send_slack_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str, changes_by_cve: Optional[Dict[str, tuple]] = None) -> None:
+def send_slack_summary(
+    webhook_url: str, items: List[Dict[str, Any]], repo: str, changes_by_cve: Optional[Dict[str, tuple]] = None
+) -> None:
     """Send a summary message to Slack with counts and top findings."""
     total = len(items)
     critical_count = sum(1 for i in items if bool(i.get("is_critical")))
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    
+
     # Get top 5 critical items
     critical_items = [i for i in items if bool(i.get("is_critical"))]
     critical_items.sort(key=lambda x: float(x.get("probability_score") or 0), reverse=True)
     top_5 = critical_items[:5]
-    
+
     top_list = ""
     for i in top_5:
         cve = i.get("cve_id", "")
@@ -814,20 +801,22 @@ def send_slack_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str,
         except Exception:
             epss_str = "?"
         top_list += f"• <{cve_url}|{cve}> (EPSS: {epss_str})\n"
-    
+
     if not top_list:
         top_list = "No critical findings."
-    
+
     color = "danger" if critical_count > 0 else "good"
-    
+
     # Build change summary if available
     changes_summary = ""
     if changes_by_cve:
         new_count = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_CVE" for c in chs))
         kev_added = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_KEV" for c in chs))
-        patch_added = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_PATCHTHIS" for c in chs))
+        patch_added = sum(
+            1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_PATCHTHIS" for c in chs)
+        )
         epss_spike = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "EPSS_SPIKE" for c in chs))
-        
+
         parts = []
         if new_count > 0:
             parts.append(f"🆕 {new_count} new")
@@ -838,12 +827,9 @@ def send_slack_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str,
         if epss_spike > 0:
             parts.append(f"📈 {epss_spike} EPSS spike")
         changes_summary = " | ".join(parts) if parts else "No significant changes"
-    
+
     blocks = [
-        {
-            "type": "header",
-            "text": {"type": "plain_text", "text": "📊 VulnRadar Summary", "emoji": True}
-        },
+        {"type": "header", "text": {"type": "plain_text", "text": "📊 VulnRadar Summary", "emoji": True}},
         {
             "type": "section",
             "fields": [
@@ -851,51 +837,39 @@ def send_slack_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str,
                 {"type": "mrkdwn", "text": f"*🚨 Critical:* {critical_count}"},
                 {"type": "mrkdwn", "text": f"*⚠️ CISA KEV:* {kev_count}"},
                 {"type": "mrkdwn", "text": f"*🔥 PatchThis:* {patch_count}"},
-            ]
+            ],
         },
     ]
-    
+
     if changes_summary:
-        blocks.append({
-            "type": "section",
-            "text": {"type": "mrkdwn", "text": f"*📊 Changes Since Last Run:*\n{changes_summary}"}
-        })
-    
-    blocks.extend([
-        {
-            "type": "section",
-            "text": {"type": "mrkdwn", "text": f"*Top Critical Findings:*\n{top_list}"}
-        },
-        {
-            "type": "context",
-            "elements": [{"type": "mrkdwn", "text": f"Repo: {repo}"}]
-        }
-    ])
-    
-    payload = {
-        "attachments": [{
-            "color": color,
-            "blocks": blocks
-        }]
-    }
-    
+        blocks.append(
+            {"type": "section", "text": {"type": "mrkdwn", "text": f"*📊 Changes Since Last Run:*\n{changes_summary}"}}
+        )
+
+    blocks.extend(
+        [
+            {"type": "section", "text": {"type": "mrkdwn", "text": f"*Top Critical Findings:*\n{top_list}"}},
+            {"type": "context", "elements": [{"type": "mrkdwn", "text": f"Repo: {repo}"}]},
+        ]
+    )
+
+    payload = {"attachments": [{"color": color, "blocks": blocks}]}
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
 
-def send_slack_baseline(webhook_url: str, items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]], repo: str) -> None:
+def send_slack_baseline(
+    webhook_url: str, items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]], repo: str
+) -> None:
     """Send a baseline summary to Slack on first run."""
     total = len(items)
     critical_count = len(critical_items)
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    
-    sorted_critical = sorted(
-        critical_items,
-        key=lambda x: float(x.get("probability_score") or 0),
-        reverse=True
-    )[:10]
-    
+
+    sorted_critical = sorted(critical_items, key=lambda x: float(x.get("probability_score") or 0), reverse=True)[:10]
+
     top_list = ""
     for item in sorted_critical:
         cve = item.get("cve_id", "")
@@ -907,53 +881,55 @@ def send_slack_baseline(webhook_url: str, items: List[Dict[str, Any]], critical_
         except Exception:
             epss_str = "?"
         top_list += f"{kev} <{cve_url}|{cve}> (EPSS: {epss_str})\n"
-    
+
     if not top_list:
         top_list = "No critical findings."
-    
+
     payload = {
-        "attachments": [{
-            "color": "good",
-            "blocks": [
-                {
-                    "type": "header",
-                    "text": {"type": "plain_text", "text": "🚀 VulnRadar Baseline Established", "emoji": True}
-                },
-                {
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text": (
-                            "*First run complete!* Your vulnerability baseline has been established.\n\n"
-                            "Going forward, you'll only receive alerts for:\n"
-                            "• 🆕 New CVEs matching your watchlist\n"
-                            "• ⚠️ CVEs added to CISA KEV\n"
-                            "• 🔥 CVEs added to PatchThis\n"
-                            "• 📈 Significant EPSS increases"
-                        )
-                    }
-                },
-                {
-                    "type": "section",
-                    "fields": [
-                        {"type": "mrkdwn", "text": f"*Total CVEs:* {total}"},
-                        {"type": "mrkdwn", "text": f"*🚨 Critical:* {critical_count}"},
-                        {"type": "mrkdwn", "text": f"*⚠️ CISA KEV:* {kev_count}"},
-                        {"type": "mrkdwn", "text": f"*🔥 PatchThis:* {patch_count}"},
-                    ]
-                },
-                {
-                    "type": "section",
-                    "text": {"type": "mrkdwn", "text": f"*Top 10 Critical (by EPSS):*\n{top_list}"}
-                },
-                {
-                    "type": "context",
-                    "elements": [{"type": "mrkdwn", "text": f"Repo: {repo} | No more alert spam!"}]
-                }
-            ]
-        }]
+        "attachments": [
+            {
+                "color": "good",
+                "blocks": [
+                    {
+                        "type": "header",
+                        "text": {"type": "plain_text", "text": "🚀 VulnRadar Baseline Established", "emoji": True},
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": (
+                                "*First run complete!* Your vulnerability baseline has been established.\n\n"
+                                "Going forward, you'll only receive alerts for:\n"
+                                "• 🆕 New CVEs matching your watchlist\n"
+                                "• ⚠️ CVEs added to CISA KEV\n"
+                                "• 🔥 CVEs added to PatchThis\n"
+                                "• 📈 Significant EPSS increases"
+                            ),
+                        },
+                    },
+                    {
+                        "type": "section",
+                        "fields": [
+                            {"type": "mrkdwn", "text": f"*Total CVEs:* {total}"},
+                            {"type": "mrkdwn", "text": f"*🚨 Critical:* {critical_count}"},
+                            {"type": "mrkdwn", "text": f"*⚠️ CISA KEV:* {kev_count}"},
+                            {"type": "mrkdwn", "text": f"*🔥 PatchThis:* {patch_count}"},
+                        ],
+                    },
+                    {
+                        "type": "section",
+                        "text": {"type": "mrkdwn", "text": f"*Top 10 Critical (by EPSS):*\n{top_list}"},
+                    },
+                    {
+                        "type": "context",
+                        "elements": [{"type": "mrkdwn", "text": f"Repo: {repo} | No more alert spam!"}],
+                    },
+                ],
+            }
+        ]
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
@@ -961,6 +937,7 @@ def send_slack_baseline(webhook_url: str, items: List[Dict[str, Any]], critical_
 # ─────────────────────────────────────────────────────────────────────────────
 # Microsoft Teams Webhooks (Adaptive Cards)
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def send_teams_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[List[Change]] = None) -> None:
     """Send a formatted Teams Adaptive Card for a CVE finding."""
@@ -971,7 +948,7 @@ def send_teams_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[L
     kev = bool(item.get("active_threat"))
     patch = bool(item.get("in_patchthis"))
     is_critical = bool(item.get("is_critical"))
-    
+
     # Priority indicator and color
     if is_critical:
         priority = "🚨 CRITICAL"
@@ -982,12 +959,12 @@ def send_teams_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[L
     else:
         priority = "ℹ️ ALERT"
         color = "accent"
-    
+
     # Add change reason if available
     if changes:
         change_str = " | ".join(str(c) for c in changes)
         desc = f"**Change:** {change_str}\n\n{desc}"
-    
+
     # Format scores
     try:
         epss_str = f"{float(epss):.1%}" if epss is not None else "N/A"
@@ -997,67 +974,61 @@ def send_teams_alert(webhook_url: str, item: Dict[str, Any], changes: Optional[L
         cvss_str = f"{float(cvss):.1f}" if cvss is not None else "N/A"
     except Exception:
         cvss_str = "N/A"
-    
+
     cve_url = f"https://www.cve.org/CVERecord?id={cve_id}"
-    
+
     payload = {
         "type": "message",
-        "attachments": [{
-            "contentType": "application/vnd.microsoft.card.adaptive",
-            "content": {
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                "type": "AdaptiveCard",
-                "version": "1.4",
-                "body": [
-                    {
-                        "type": "TextBlock",
-                        "text": f"{priority}: {cve_id}",
-                        "weight": "Bolder",
-                        "size": "Large",
-                        "color": color
-                    },
-                    {
-                        "type": "TextBlock",
-                        "text": desc if desc else "No description available.",
-                        "wrap": True
-                    },
-                    {
-                        "type": "FactSet",
-                        "facts": [
-                            {"title": "EPSS", "value": epss_str},
-                            {"title": "CVSS", "value": cvss_str},
-                            {"title": "KEV", "value": "✅ Yes" if kev else "❌ No"},
-                            {"title": "PatchThis", "value": "✅ Yes" if patch else "❌ No"},
-                        ]
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "Action.OpenUrl",
-                        "title": "View CVE Details",
-                        "url": cve_url
-                    }
-                ]
+        "attachments": [
+            {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                    "type": "AdaptiveCard",
+                    "version": "1.4",
+                    "body": [
+                        {
+                            "type": "TextBlock",
+                            "text": f"{priority}: {cve_id}",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": color,
+                        },
+                        {"type": "TextBlock", "text": desc if desc else "No description available.", "wrap": True},
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {"title": "EPSS", "value": epss_str},
+                                {"title": "CVSS", "value": cvss_str},
+                                {"title": "KEV", "value": "✅ Yes" if kev else "❌ No"},
+                                {"title": "PatchThis", "value": "✅ Yes" if patch else "❌ No"},
+                            ],
+                        },
+                    ],
+                    "actions": [{"type": "Action.OpenUrl", "title": "View CVE Details", "url": cve_url}],
+                },
             }
-        }]
+        ],
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
 
-def send_teams_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str, changes_by_cve: Optional[Dict[str, tuple]] = None) -> None:
+def send_teams_summary(
+    webhook_url: str, items: List[Dict[str, Any]], repo: str, changes_by_cve: Optional[Dict[str, tuple]] = None
+) -> None:
     """Send a summary Adaptive Card to Teams with counts and top findings."""
     total = len(items)
     critical_count = sum(1 for i in items if bool(i.get("is_critical")))
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    
+
     # Get top 5 critical items
     critical_items = [i for i in items if bool(i.get("is_critical"))]
     critical_items.sort(key=lambda x: float(x.get("probability_score") or 0), reverse=True)
     top_5 = critical_items[:5]
-    
+
     top_list = ""
     for i in top_5:
         cve = i.get("cve_id", "")
@@ -1067,20 +1038,22 @@ def send_teams_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str,
         except Exception:
             epss_str = "?"
         top_list += f"- [{cve}](https://www.cve.org/CVERecord?id={cve}) (EPSS: {epss_str})\n"
-    
+
     if not top_list:
         top_list = "No critical findings."
-    
+
     color = "attention" if critical_count > 0 else "good"
-    
+
     # Build change summary if available
     changes_summary = ""
     if changes_by_cve:
         new_count = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_CVE" for c in chs))
         kev_added = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_KEV" for c in chs))
-        patch_added = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_PATCHTHIS" for c in chs))
+        patch_added = sum(
+            1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "NEW_PATCHTHIS" for c in chs)
+        )
         epss_spike = sum(1 for _, (_, chs) in changes_by_cve.items() if any(c.change_type == "EPSS_SPIKE" for c in chs))
-        
+
         parts = []
         if new_count > 0:
             parts.append(f"🆕 {new_count} new")
@@ -1091,14 +1064,9 @@ def send_teams_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str,
         if epss_spike > 0:
             parts.append(f"📈 {epss_spike} EPSS spike")
         changes_summary = " | ".join(parts) if parts else "No significant changes"
-    
+
     body = [
-        {
-            "type": "TextBlock",
-            "text": "📊 VulnRadar Summary",
-            "weight": "Bolder",
-            "size": "Large"
-        },
+        {"type": "TextBlock", "text": "📊 VulnRadar Summary", "weight": "Bolder", "size": "Large"},
         {
             "type": "ColumnSet",
             "columns": [
@@ -1107,96 +1075,85 @@ def send_teams_summary(webhook_url: str, items: List[Dict[str, Any]], repo: str,
                     "width": "stretch",
                     "items": [
                         {"type": "TextBlock", "text": "Total CVEs", "weight": "Bolder"},
-                        {"type": "TextBlock", "text": str(total), "size": "ExtraLarge", "color": color}
-                    ]
+                        {"type": "TextBlock", "text": str(total), "size": "ExtraLarge", "color": color},
+                    ],
                 },
                 {
                     "type": "Column",
                     "width": "stretch",
                     "items": [
                         {"type": "TextBlock", "text": "🚨 Critical", "weight": "Bolder"},
-                        {"type": "TextBlock", "text": str(critical_count), "size": "ExtraLarge", "color": "attention"}
-                    ]
+                        {"type": "TextBlock", "text": str(critical_count), "size": "ExtraLarge", "color": "attention"},
+                    ],
                 },
                 {
                     "type": "Column",
                     "width": "stretch",
                     "items": [
                         {"type": "TextBlock", "text": "⚠️ KEV", "weight": "Bolder"},
-                        {"type": "TextBlock", "text": str(kev_count), "size": "ExtraLarge", "color": "warning"}
-                    ]
+                        {"type": "TextBlock", "text": str(kev_count), "size": "ExtraLarge", "color": "warning"},
+                    ],
                 },
                 {
                     "type": "Column",
                     "width": "stretch",
                     "items": [
                         {"type": "TextBlock", "text": "🔥 PatchThis", "weight": "Bolder"},
-                        {"type": "TextBlock", "text": str(patch_count), "size": "ExtraLarge"}
-                    ]
-                }
-            ]
+                        {"type": "TextBlock", "text": str(patch_count), "size": "ExtraLarge"},
+                    ],
+                },
+            ],
         },
     ]
-    
+
     if changes_summary:
-        body.append({
-            "type": "TextBlock",
-            "text": f"**📊 Changes Since Last Run:** {changes_summary}",
-            "wrap": True,
-            "spacing": "Medium"
-        })
-    
-    body.extend([
-        {
-            "type": "TextBlock",
-            "text": "**Top Critical Findings:**",
-            "weight": "Bolder",
-            "spacing": "Medium"
-        },
-        {
-            "type": "TextBlock",
-            "text": top_list,
-            "wrap": True
-        },
-        {
-            "type": "TextBlock",
-            "text": f"Repo: {repo}",
-            "size": "Small",
-            "isSubtle": True,
-            "spacing": "Medium"
-        }
-    ])
-    
+        body.append(
+            {
+                "type": "TextBlock",
+                "text": f"**📊 Changes Since Last Run:** {changes_summary}",
+                "wrap": True,
+                "spacing": "Medium",
+            }
+        )
+
+    body.extend(
+        [
+            {"type": "TextBlock", "text": "**Top Critical Findings:**", "weight": "Bolder", "spacing": "Medium"},
+            {"type": "TextBlock", "text": top_list, "wrap": True},
+            {"type": "TextBlock", "text": f"Repo: {repo}", "size": "Small", "isSubtle": True, "spacing": "Medium"},
+        ]
+    )
+
     payload = {
         "type": "message",
-        "attachments": [{
-            "contentType": "application/vnd.microsoft.card.adaptive",
-            "content": {
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                "type": "AdaptiveCard",
-                "version": "1.4",
-                "body": body
+        "attachments": [
+            {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                    "type": "AdaptiveCard",
+                    "version": "1.4",
+                    "body": body,
+                },
             }
-        }]
+        ],
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
 
-def send_teams_baseline(webhook_url: str, items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]], repo: str) -> None:
+def send_teams_baseline(
+    webhook_url: str, items: List[Dict[str, Any]], critical_items: List[Dict[str, Any]], repo: str
+) -> None:
     """Send a baseline summary to Teams on first run."""
     total = len(items)
     critical_count = len(critical_items)
     kev_count = sum(1 for i in items if bool(i.get("active_threat")))
     patch_count = sum(1 for i in items if bool(i.get("in_patchthis")))
-    
-    sorted_critical = sorted(
-        critical_items,
-        key=lambda x: float(x.get("probability_score") or 0),
-        reverse=True
-    )[:10]
-    
+
+    sorted_critical = sorted(critical_items, key=lambda x: float(x.get("probability_score") or 0), reverse=True)[:10]
+
     top_list = ""
     for item in sorted_critical:
         cve = item.get("cve_id", "")
@@ -1207,98 +1164,106 @@ def send_teams_baseline(webhook_url: str, items: List[Dict[str, Any]], critical_
         except Exception:
             epss_str = "?"
         top_list += f"- {kev} [{cve}](https://www.cve.org/CVERecord?id={cve}) (EPSS: {epss_str})\n"
-    
+
     if not top_list:
         top_list = "No critical findings."
-    
+
     payload = {
         "type": "message",
-        "attachments": [{
-            "contentType": "application/vnd.microsoft.card.adaptive",
-            "content": {
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                "type": "AdaptiveCard",
-                "version": "1.4",
-                "body": [
-                    {
-                        "type": "TextBlock",
-                        "text": "🚀 VulnRadar Baseline Established",
-                        "weight": "Bolder",
-                        "size": "Large",
-                        "color": "Good"
-                    },
-                    {
-                        "type": "TextBlock",
-                        "text": (
-                            "**First run complete!** Your vulnerability baseline has been established.\n\n"
-                            "Going forward, you'll only receive alerts for:\n"
-                            "- 🆕 New CVEs matching your watchlist\n"
-                            "- ⚠️ CVEs added to CISA KEV\n"
-                            "- 🔥 CVEs added to PatchThis\n"
-                            "- 📈 Significant EPSS increases"
-                        ),
-                        "wrap": True
-                    },
-                    {
-                        "type": "ColumnSet",
-                        "columns": [
-                            {
-                                "type": "Column",
-                                "width": "stretch",
-                                "items": [
-                                    {"type": "TextBlock", "text": "Total CVEs", "weight": "Bolder"},
-                                    {"type": "TextBlock", "text": str(total), "size": "ExtraLarge"}
-                                ]
-                            },
-                            {
-                                "type": "Column",
-                                "width": "stretch",
-                                "items": [
-                                    {"type": "TextBlock", "text": "🚨 Critical", "weight": "Bolder"},
-                                    {"type": "TextBlock", "text": str(critical_count), "size": "ExtraLarge", "color": "Attention"}
-                                ]
-                            },
-                            {
-                                "type": "Column",
-                                "width": "stretch",
-                                "items": [
-                                    {"type": "TextBlock", "text": "⚠️ KEV", "weight": "Bolder"},
-                                    {"type": "TextBlock", "text": str(kev_count), "size": "ExtraLarge", "color": "Warning"}
-                                ]
-                            },
-                            {
-                                "type": "Column",
-                                "width": "stretch",
-                                "items": [
-                                    {"type": "TextBlock", "text": "🔥 PatchThis", "weight": "Bolder"},
-                                    {"type": "TextBlock", "text": str(patch_count), "size": "ExtraLarge"}
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "type": "TextBlock",
-                        "text": "**Top 10 Critical (by EPSS):**",
-                        "weight": "Bolder",
-                        "spacing": "Medium"
-                    },
-                    {
-                        "type": "TextBlock",
-                        "text": top_list,
-                        "wrap": True
-                    },
-                    {
-                        "type": "TextBlock",
-                        "text": f"Repo: {repo} | No more alert spam!",
-                        "size": "Small",
-                        "isSubtle": True,
-                        "spacing": "Medium"
-                    }
-                ]
+        "attachments": [
+            {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                    "type": "AdaptiveCard",
+                    "version": "1.4",
+                    "body": [
+                        {
+                            "type": "TextBlock",
+                            "text": "🚀 VulnRadar Baseline Established",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "Good",
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": (
+                                "**First run complete!** Your vulnerability baseline has been established.\n\n"
+                                "Going forward, you'll only receive alerts for:\n"
+                                "- 🆕 New CVEs matching your watchlist\n"
+                                "- ⚠️ CVEs added to CISA KEV\n"
+                                "- 🔥 CVEs added to PatchThis\n"
+                                "- 📈 Significant EPSS increases"
+                            ),
+                            "wrap": True,
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {"type": "TextBlock", "text": "Total CVEs", "weight": "Bolder"},
+                                        {"type": "TextBlock", "text": str(total), "size": "ExtraLarge"},
+                                    ],
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {"type": "TextBlock", "text": "🚨 Critical", "weight": "Bolder"},
+                                        {
+                                            "type": "TextBlock",
+                                            "text": str(critical_count),
+                                            "size": "ExtraLarge",
+                                            "color": "Attention",
+                                        },
+                                    ],
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {"type": "TextBlock", "text": "⚠️ KEV", "weight": "Bolder"},
+                                        {
+                                            "type": "TextBlock",
+                                            "text": str(kev_count),
+                                            "size": "ExtraLarge",
+                                            "color": "Warning",
+                                        },
+                                    ],
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {"type": "TextBlock", "text": "🔥 PatchThis", "weight": "Bolder"},
+                                        {"type": "TextBlock", "text": str(patch_count), "size": "ExtraLarge"},
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "**Top 10 Critical (by EPSS):**",
+                            "weight": "Bolder",
+                            "spacing": "Medium",
+                        },
+                        {"type": "TextBlock", "text": top_list, "wrap": True},
+                        {
+                            "type": "TextBlock",
+                            "text": f"Repo: {repo} | No more alert spam!",
+                            "size": "Small",
+                            "isSubtle": True,
+                            "spacing": "Medium",
+                        },
+                    ],
+                },
             }
-        }]
+        ],
     }
-    
+
     r = requests.post(webhook_url, json=payload, timeout=DEFAULT_TIMEOUT)
     r.raise_for_status()
 
@@ -1402,7 +1367,7 @@ def main() -> int:
 
     # Handle state management commands first
     state_path = Path(args.state_file)
-    
+
     if args.reset_state:
         if state_path.exists():
             state_path.unlink()
@@ -1410,7 +1375,7 @@ def main() -> int:
         else:
             print(f"ℹ️  State file doesn't exist: {state_path}")
         return 0
-    
+
     if args.prune_state is not None:
         if not state_path.exists():
             print(f"ℹ️  State file doesn't exist: {state_path}")
@@ -1432,14 +1397,16 @@ def main() -> int:
         raise SystemExit("GITHUB_TOKEN (or GH_TOKEN) is required")
 
     items = _load_items(Path(args.inp))
-    
+
     # Initialize state manager (unless --no-state)
     state: Optional[StateManager] = None
     if not args.no_state:
         state = StateManager(Path(args.state_file))
         stats = state.get_stats()
-        print(f"State loaded: {stats['total_tracked']} CVEs tracked, {stats['total_alerts_sent']} alerts sent historically")
-        
+        print(
+            f"State loaded: {stats['total_tracked']} CVEs tracked, {stats['total_alerts_sent']} alerts sent historically"
+        )
+
         # Prune old entries on each run
         pruned = state.prune_old_entries(days=180)
         if pruned > 0:
@@ -1448,24 +1415,24 @@ def main() -> int:
     # Detect changes for all items and build candidates list
     # Change format: {cve_id: (item, [Change, ...])}
     changes_by_cve: Dict[str, tuple] = {}
-    
+
     for it in items:
         cve_id = str(it.get("cve_id") or "").strip().upper()
         if not cve_id.startswith("CVE-"):
             continue
-        
+
         if state and not args.force:
             changes = state.detect_changes(cve_id, it)
             # Update snapshot regardless of whether there are changes
             state.update_snapshot(cve_id, it)
-            
+
             if changes:
                 changes_by_cve[cve_id] = (it, changes)
         else:
             # No state or --force: treat all critical items as "new"
             if bool(it.get("is_critical")):
                 changes_by_cve[cve_id] = (it, [Change(cve_id=cve_id, change_type="NEW_CVE")])
-    
+
     # Filter to critical items that have changes
     candidates: List[Dict[str, Any]] = []
     for _cve_id, (it, _changes) in changes_by_cve.items():
@@ -1490,7 +1457,7 @@ def main() -> int:
         )
 
     candidates = sorted(candidates, key=key, reverse=True)
-    
+
     # Print change summary
     if state and not args.force:
         if changes_by_cve:
@@ -1503,7 +1470,7 @@ def main() -> int:
             print()
         else:
             print("\n✅ No new changes detected. Skipping notifications.\n")
-    
+
     # If no changes (and state is enabled), skip webhook notifications
     if state and not args.force and not changes_by_cve:
         # Still save state to update last_run
@@ -1515,7 +1482,7 @@ def main() -> int:
     session = _session(token)
     existing = _existing_notified_cves(session, repo)
     created = 0
-    
+
     # Check if issues are enabled on the repo
     issues_enabled = True
     try:
@@ -1525,15 +1492,17 @@ def main() -> int:
             issues_enabled = repo_data.get("has_issues", True)
     except Exception:
         pass  # Assume issues are enabled if we can't check
-    
+
     # Detect first run (no state file existed before)
     is_first_run = state and state.data.get("last_run") is None and not args.force
-    
+
     if not issues_enabled:
         print(f"GitHub Issues are disabled on {repo}, skipping issue creation.")
     elif is_first_run and len(candidates) > 5:
         # FIRST RUN: Create a single baseline summary issue instead of many individual issues
-        print(f"\n🚀 First run detected! Creating baseline summary issue instead of {len(candidates)} individual issues.")
+        print(
+            f"\n🚀 First run detected! Creating baseline summary issue instead of {len(candidates)} individual issues."
+        )
         _create_baseline_issue(session, repo, items, candidates)
         created = 1
     else:
@@ -1543,7 +1512,7 @@ def main() -> int:
             cve_id = str(it.get("cve_id") or "").strip().upper()
             if not cve_id.startswith("CVE-"):
                 continue
-            
+
             # Get changes for this CVE
             item_changes = changes_by_cve.get(cve_id, (None, []))[1]
 
@@ -1574,10 +1543,10 @@ def main() -> int:
                 break
 
         print(f"Done. Created {created} GitHub issues.")
-    
+
     # Track channels alerted for state
     alerted_channels: Dict[str, List[str]] = {}  # cve_id -> list of channels
-    
+
     # Discord notifications
     if args.discord_webhook:
         print("Sending Discord notifications...")
@@ -1590,14 +1559,14 @@ def main() -> int:
                 # Normal run with changes
                 send_discord_summary(args.discord_webhook, items, repo, changes_by_cve if state else None)
                 print("Sent Discord summary.")
-                
+
                 # Send individual alerts unless summary-only
                 if not args.discord_summary_only:
                     discord_sent = 0
-                    for it in candidates[:args.discord_max]:
+                    for it in candidates[: args.discord_max]:
                         cve_id = str(it.get("cve_id") or "").strip().upper()
                         changes = changes_by_cve.get(cve_id, (None, []))[1] if changes_by_cve else []
-                        
+
                         if args.dry_run:
                             print(f"DRY RUN: would send Discord alert for {cve_id}")
                         else:
@@ -1613,7 +1582,7 @@ def main() -> int:
                     print(f"Sent {discord_sent} Discord alerts.")
         except Exception as e:
             print(f"Discord notification failed: {e}")
-    
+
     # Slack notifications
     if args.slack_webhook:
         print("Sending Slack notifications...")
@@ -1625,14 +1594,14 @@ def main() -> int:
             elif changes_by_cve or args.force or args.no_state:
                 send_slack_summary(args.slack_webhook, items, repo, changes_by_cve if state else None)
                 print("Sent Slack summary.")
-                
+
                 # Send individual alerts unless summary-only
                 if not args.slack_summary_only:
                     slack_sent = 0
-                    for it in candidates[:args.slack_max]:
+                    for it in candidates[: args.slack_max]:
                         cve_id = str(it.get("cve_id") or "").strip().upper()
                         changes = changes_by_cve.get(cve_id, (None, []))[1] if changes_by_cve else []
-                        
+
                         if args.dry_run:
                             print(f"DRY RUN: would send Slack alert for {cve_id}")
                         else:
@@ -1647,7 +1616,7 @@ def main() -> int:
                     print(f"Sent {slack_sent} Slack alerts.")
         except Exception as e:
             print(f"Slack notification failed: {e}")
-    
+
     # Microsoft Teams notifications
     if args.teams_webhook:
         print("Sending Teams notifications...")
@@ -1659,14 +1628,14 @@ def main() -> int:
             elif changes_by_cve or args.force or args.no_state:
                 send_teams_summary(args.teams_webhook, items, repo, changes_by_cve if state else None)
                 print("Sent Teams summary.")
-                
+
                 # Send individual alerts unless summary-only
                 if not args.teams_summary_only:
                     teams_sent = 0
-                    for it in candidates[:args.teams_max]:
+                    for it in candidates[: args.teams_max]:
                         cve_id = str(it.get("cve_id") or "").strip().upper()
                         changes = changes_by_cve.get(cve_id, (None, []))[1] if changes_by_cve else []
-                        
+
                         if args.dry_run:
                             print(f"DRY RUN: would send Teams alert for {cve_id}")
                         else:
@@ -1681,7 +1650,7 @@ def main() -> int:
                     print(f"Sent {teams_sent} Teams alerts.")
         except Exception as e:
             print(f"Teams notification failed: {e}")
-    
+
     # Update state with alerted CVEs
     if state and not args.dry_run:
         for cve_id, channels in alerted_channels.items():
@@ -1689,7 +1658,7 @@ def main() -> int:
         state.save()
         stats = state.get_stats()
         print(f"State saved to {args.state_file} ({stats['total_tracked']} CVEs tracked)")
-    
+
     return 0
 
 

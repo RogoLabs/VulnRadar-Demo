@@ -102,9 +102,7 @@ def sample_cve_no_metrics() -> Dict[str, Any]:
                         "versions": [{"version": "1.0", "status": "affected"}],
                     }
                 ],
-                "descriptions": [
-                    {"lang": "en", "value": "A vulnerability exists in Widget."}
-                ],
+                "descriptions": [{"lang": "en", "value": "A vulnerability exists in Widget."}],
             }
         },
     }
