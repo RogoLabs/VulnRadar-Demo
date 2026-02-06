@@ -384,12 +384,19 @@ def download_patchthis(session: requests.Session) -> Set[str]:
     return out
 
 
-def download_nvd_feeds(session: requests.Session, years: Iterable[int]) -> Dict[str, Dict[str, Any]]:
+def download_nvd_feeds(
+    session: requests.Session,
+    years: Iterable[int],
+    cache_dir: Optional[Path] = None,
+) -> Dict[str, Dict[str, Any]]:
     """Download NVD JSON 2.0 data feeds for specified years.
 
     NVD feeds are split by CVE ID year (not publication year), matching
     how CVE List V5 is organized. E.g., CVE-2025-* entries are in the
     2025 feed even if published in 2026.
+    
+    If cache_dir is provided, feeds will be cached there and reused if
+    the cached file is less than 24 hours old.
 
     Returns a dict mapping CVE ID to NVD-specific data:
     - cvss_v3_score, cvss_v3_severity, cvss_v3_vector
@@ -404,22 +411,43 @@ def download_nvd_feeds(session: requests.Session, years: Iterable[int]) -> Dict[
 
     nvd_data: Dict[str, Dict[str, Any]] = {}
     years_list = sorted(set(years))
+    
+    # Set up cache directory if provided
+    if cache_dir:
+        cache_dir.mkdir(parents=True, exist_ok=True)
 
     for year in years_list:
         url = f"{NVD_FEED_BASE_URL}/nvdcve-2.0-{year}.json.gz"
-        print(f"  Downloading NVD feed for {year}...")
-        try:
-            # NVD feeds need Accept: */* (not application/json)
-            resp = session.get(
-                url,
-                timeout=(10, 300),  # Longer read timeout for large files
-                headers={"Accept": "*/*"},
-            )
-            resp.raise_for_status()
-            raw = resp.content
-        except Exception as e:
-            print(f"    Warning: Failed to download NVD feed for {year}: {e}")
-            continue
+        cache_file = cache_dir / f"nvdcve-2.0-{year}.json.gz" if cache_dir else None
+        raw = None
+        
+        # Check cache first (use if less than 24 hours old)
+        if cache_file and cache_file.exists():
+            cache_age = dt.datetime.now().timestamp() - cache_file.stat().st_mtime
+            if cache_age < 86400:  # 24 hours in seconds
+                print(f"  Using cached NVD feed for {year} (age: {cache_age/3600:.1f}h)")
+                raw = cache_file.read_bytes()
+        
+        # Download if not cached or cache expired
+        if raw is None:
+            print(f"  Downloading NVD feed for {year}...")
+            try:
+                # NVD feeds need Accept: */* (not application/json)
+                resp = session.get(
+                    url,
+                    timeout=(10, 300),  # Longer read timeout for large files
+                    headers={"Accept": "*/*"},
+                )
+                resp.raise_for_status()
+                raw = resp.content
+                
+                # Save to cache
+                if cache_file:
+                    cache_file.write_bytes(raw)
+                    print(f"    Cached NVD feed for {year}")
+            except Exception as e:
+                print(f"    Warning: Failed to download NVD feed for {year}: {e}")
+                continue
 
         try:
             with gzip.GzipFile(fileobj=io.BytesIO(raw), mode="rb") as gz:
@@ -1062,6 +1090,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         help="Skip downloading NVD data feeds (faster but less CVSS/CWE enrichment)",
     )
     parser.add_argument(
+        "--nvd-cache",
+        default=None,
+        help="Directory to cache NVD feeds (reused if <24h old). Speeds up repeated runs.",
+    )
+    parser.add_argument(
         "--state",
         default="data/state.json",
         help="Path to state file for Recent Changes section in report (default: data/state.json)",
@@ -1117,7 +1150,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     nvd_by_cve: Dict[str, Dict[str, Any]] = {}
     if not args.skip_nvd:
         print("Downloading NVD data feeds...")
-        nvd_by_cve = download_nvd_feeds(session, years)
+        nvd_cache = Path(args.nvd_cache) if args.nvd_cache else None
+        nvd_by_cve = download_nvd_feeds(session, years, cache_dir=nvd_cache)
         print(f"  Loaded {len(nvd_by_cve)} CVEs from NVD feeds")
     else:
         print("Skipping NVD data feeds (--skip-nvd)")

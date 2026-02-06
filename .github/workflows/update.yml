@@ -31,11 +31,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Get date for cache key
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Cache NVD Data
+        uses: actions/cache@v4
+        with:
+          path: .nvd_cache
+          key: nvd-${{ runner.os }}-${{ steps.date.outputs.date }}
+          restore-keys: |
+            nvd-${{ runner.os }}-
+
       - name: Run ETL
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python etl.py
+          python etl.py --nvd-cache .nvd_cache
 
       - name: Commit updated data
         run: |
