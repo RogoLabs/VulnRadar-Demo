@@ -58,32 +58,25 @@ echo ""
 # Change to demo repo
 cd "$DEMO_REPO"
 
-# Step 1: Sync code from main repo
-echo -e "${YELLOW}📦 Step 1: Syncing code from main VulnRadar...${NC}"
+# Step 1: Sync git history from upstream (RogoLabs/VulnRadar)
+echo -e "${YELLOW}📦 Step 1: Syncing from upstream VulnRadar...${NC}"
 
-# Copy Python files and key configs
-for file in etl.py notify.py requirements.txt requirements-dev.txt pyproject.toml; do
-    if [ -f "$MAIN_REPO/$file" ]; then
-        cp "$MAIN_REPO/$file" "./$file"
-        echo "  → $file"
-    fi
-done
-
-# Copy directories
-for dir in .github scripts tests docs; do
-    if [ -d "$MAIN_REPO/$dir" ]; then
-        rm -rf "./$dir"
-        cp -r "$MAIN_REPO/$dir" "./$dir"
-        echo "  → $dir/"
-    fi
-done
-
-# Copy devcontainer if exists
-if [ -d "$MAIN_REPO/.devcontainer" ]; then
-    rm -rf "./.devcontainer"
-    cp -r "$MAIN_REPO/.devcontainer" "./.devcontainer"
-    echo "  → .devcontainer/"
+# Add upstream remote if it doesn't exist
+if ! git remote get-url upstream &>/dev/null; then
+    echo "  → Adding upstream remote..."
+    git remote add upstream https://github.com/RogoLabs/VulnRadar.git
+else
+    echo "  → Upstream remote already exists"
 fi
+
+# Fetch upstream
+echo "  → Fetching upstream changes..."
+git fetch upstream
+
+# Reset to upstream/main (this syncs all files AND history)
+echo "  → Resetting to upstream/main..."
+git reset --hard upstream/main
+echo -e "  ${GREEN}→ Synced with upstream!${NC}"
 
 echo ""
 
