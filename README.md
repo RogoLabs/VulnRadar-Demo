@@ -1,5 +1,6 @@
 <p align="center">
-  <h1 align="center">🛡️ VulnRadar</h1>
+  <img src="assets/vulnradar-logo.svg" alt="VulnRadar Logo" width="100" height="100">
+  <h1 align="center">VulnRadar</h1>
   <p align="center">
     <strong>Your personal vulnerability intelligence radar — fork, configure, and go!</strong>
   </p>
@@ -430,6 +431,8 @@ Contributions welcome! See [CONTRIBUTING](docs/contributing.md) for guidelines.
 ## 📄 License
 
 MIT License — see [LICENSE](LICENSE) for details.
+
+Radar icon by [Lucide](https://lucide.dev/icons/radar) (ISC License).
 
 ---
 
