@@ -11,7 +11,7 @@ import pytest
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from notify import _issue_body, _load_items
+from notify import _issue_body, _load_items, _escalation_comment, Change
 
 
 class TestLoadItems:
@@ -490,3 +490,48 @@ class TestPruneStateCommand:
 
         assert pruned == 0
         assert len(state.data["seen_cves"]) == 2
+
+
+class TestEscalationComment:
+    """Tests for _escalation_comment() function."""
+
+    @pytest.fixture
+    def sample_item(self) -> Dict[str, Any]:
+        """Sample radar item for testing."""
+        return {
+            "cve_id": "CVE-2024-12345",
+            "description": "Test vulnerability",
+            "active_threat": True,
+            "in_patchthis": True,
+            "kev": {"dueDate": "2024-02-15"},
+        }
+
+    def test_new_kev_escalation(self, sample_item: Dict[str, Any]):
+        """NEW_KEV escalation comment includes CISA info."""
+        change = Change(cve_id="CVE-2024-12345", change_type="NEW_KEV", old_value=False, new_value=True)
+        comment = _escalation_comment(change, sample_item)
+
+        assert "Status Update" in comment
+        assert "CVE-2024-12345" in comment
+        assert "CISA KEV" in comment
+        assert "actively exploited" in comment
+        assert "2024-02-15" in comment  # Due date
+        assert "Prioritize patching immediately" in comment
+
+    def test_new_patchthis_escalation(self, sample_item: Dict[str, Any]):
+        """NEW_PATCHTHIS escalation comment mentions exploit intel."""
+        change = Change(cve_id="CVE-2024-12345", change_type="NEW_PATCHTHIS", old_value=False, new_value=True)
+        comment = _escalation_comment(change, sample_item)
+
+        assert "Status Update" in comment
+        assert "CVE-2024-12345" in comment
+        assert "Exploit Intel" in comment
+        assert "PoC Available" in comment
+        assert "Increase priority" in comment
+
+    def test_comment_includes_vulnradar_footer(self, sample_item: Dict[str, Any]):
+        """Escalation comments include VulnRadar attribution."""
+        change = Change(cve_id="CVE-2024-12345", change_type="NEW_KEV", old_value=False, new_value=True)
+        comment = _escalation_comment(change, sample_item)
+
+        assert "VulnRadar" in comment

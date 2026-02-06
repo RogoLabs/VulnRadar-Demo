@@ -286,6 +286,84 @@ def _existing_notified_cves(session: requests.Session, repo: str) -> Set[str]:
     return out
 
 
+def _existing_issues_map(session: requests.Session, repo: str) -> Dict[str, int]:
+    """Return a mapping of CVE ID -> issue number for VulnRadar issues.
+
+    Only returns OPEN issues, as we only want to comment on open issues.
+    """
+    out: Dict[str, int] = {}
+    for issue in _iter_recent_issues(session, repo, max_pages=4):
+        title = str(issue.get("title") or "")
+        if "[VulnRadar]" not in title:
+            continue
+        if issue.get("state") != "open":
+            continue
+        m = _CVE_RE.search(title)
+        if m:
+            cve_id = m.group(0).upper()
+            issue_num = issue.get("number")
+            if issue_num and cve_id not in out:  # Keep first (most recent) match
+                out[cve_id] = int(issue_num)
+    return out
+
+
+def _add_issue_comment(
+    session: requests.Session, repo: str, issue_number: int, body: str
+) -> None:
+    """Add a comment to an existing GitHub issue."""
+    url = f"https://api.github.com/repos/{repo}/issues/{issue_number}/comments"
+    payload = {"body": body}
+    r = session.post(url, json=payload, timeout=DEFAULT_TIMEOUT)
+    r.raise_for_status()
+
+
+def _escalation_comment(change: "Change", item: Dict[str, Any]) -> str:
+    """Generate a comment body for escalation events (NEW_KEV, NEW_PATCHTHIS)."""
+    cve_id = change.cve_id
+    lines = ["## ⚠️ Status Update", ""]
+
+    if change.change_type == "NEW_KEV":
+        lines.extend([
+            f"🚨 **{cve_id} has been added to CISA KEV!**",
+            "",
+            "This vulnerability is now confirmed to be actively exploited in the wild.",
+            "",
+        ])
+        kev = item.get("kev") if isinstance(item.get("kev"), dict) else {}
+        if kev:
+            due = kev.get("dueDate")
+            if due:
+                lines.append(f"**Remediation Due Date:** {due}")
+            lines.append("")
+        lines.extend([
+            "**Action Required:** Prioritize patching immediately.",
+            "",
+            "[View CISA KEV Entry](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)",
+        ])
+    elif change.change_type == "NEW_PATCHTHIS":
+        lines.extend([
+            f"🔥 **{cve_id} now has Exploit Intel (PoC Available)!**",
+            "",
+            "A proof-of-concept or exploit code has been identified for this vulnerability.",
+            "",
+            "**Action Required:** Increase priority - exploitation is now easier.",
+        ])
+    else:
+        lines.extend([
+            f"📢 **{cve_id} status has changed**",
+            "",
+            f"Change type: {change.change_type}",
+        ])
+
+    lines.extend([
+        "",
+        "---",
+        "_Escalation comment by [VulnRadar](https://github.com/RogoLabs/VulnRadar)_",
+    ])
+
+    return "\n".join(lines)
+
+
 def _create_issue(
     session: requests.Session, repo: str, title: str, body: str, labels: Optional[List[str]] = None
 ) -> None:
@@ -1481,7 +1559,9 @@ def main() -> int:
 
     session = _session(token)
     existing = _existing_notified_cves(session, repo)
+    issue_number_map = _existing_issues_map(session, repo)  # CVE -> issue number for open issues
     created = 0
+    escalated = 0  # Track escalation comments
 
     # Check if issues are enabled on the repo
     issues_enabled = True
@@ -1506,6 +1586,33 @@ def main() -> int:
         _create_baseline_issue(session, repo, items, candidates)
         created = 1
     else:
+        # Process ALL CVEs with changes for escalation comments (not just candidates)
+        escalation_types = {"NEW_KEV", "NEW_PATCHTHIS"}
+
+        for cve_id, (it, item_changes) in changes_by_cve.items():
+            # Check for escalation-worthy changes on existing issues
+            escalation_changes = [c for c in item_changes if c.change_type in escalation_types]
+
+            if escalation_changes and cve_id in issue_number_map:
+                # This CVE has an open issue AND has escalation-worthy changes
+                issue_num = issue_number_map[cve_id]
+
+                for change in escalation_changes:
+                    comment_body = _escalation_comment(change, it)
+
+                    if args.dry_run:
+                        print(f"DRY RUN: would add escalation comment to #{issue_num} for {cve_id}: {change.change_type}")
+                        escalated += 1
+                        continue
+
+                    try:
+                        _add_issue_comment(session, repo, issue_num, comment_body)
+                        print(f"Added escalation comment to #{issue_num} for {cve_id}: {change.change_type}")
+                        escalated += 1
+                    except Exception as e:
+                        print(f"Failed to add comment to #{issue_num}: {e}")
+
+        # Create new issues for critical CVEs that don't have existing issues
         for it in candidates:
             if created >= args.max_items:
                 break
@@ -1542,7 +1649,7 @@ def main() -> int:
                 print(f"Failed to create issue for {cve_id}: {e}")
                 break
 
-        print(f"Done. Created {created} GitHub issues.")
+        print(f"Done. Created {created} GitHub issues, added {escalated} escalation comments.")
 
     # Track channels alerted for state
     alerted_channels: Dict[str, List[str]] = {}  # cve_id -> list of channels
