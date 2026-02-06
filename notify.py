@@ -1137,7 +1137,7 @@ def send_discord_baseline(
                     {"name": "🔥 Exploit Intel", "value": str(patch_count), "inline": True},
                     {"name": "Top 10 Critical (by EPSS)", "value": top_list, "inline": False},
                 ],
-                "footer": {"text": f"Repo: {repo} | No more alert spam!"},
+                "footer": {"text": repo},
             }
         ]
     }
@@ -1363,7 +1363,7 @@ def send_slack_baseline(
                     },
                     {
                         "type": "context",
-                        "elements": [{"type": "mrkdwn", "text": f"Repo: {repo} | No more alert spam!"}],
+                        "elements": [{"type": "mrkdwn", "text": repo}],
                     },
                 ],
             }
@@ -1693,7 +1693,7 @@ def send_teams_baseline(
                         {"type": "TextBlock", "text": top_list, "wrap": True},
                         {
                             "type": "TextBlock",
-                            "text": f"Repo: {repo} | No more alert spam!",
+                            "text": repo,
                             "size": "Small",
                             "isSubtle": True,
                             "spacing": "Medium",
