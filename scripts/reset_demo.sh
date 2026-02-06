@@ -250,7 +250,10 @@ echo ""
 # Step 6: Push changes
 echo -e "${YELLOW}🚀 Step 6: Pushing changes...${NC}"
 
-git push
+# Force push since we're resetting the demo repo to a clean state
+# This overwrites any previous run data (e.g., workflow commits) on the remote
+echo "  → Force pushing to reset demo repo..."
+git push --force origin main
 echo -e "  ${GREEN}→ Changes pushed to remote${NC}"
 
 echo ""
