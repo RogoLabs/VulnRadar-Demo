@@ -68,10 +68,10 @@ def calculate_metrics(items: List[Dict[str, Any]]) -> Dict[str, Any]:
 def generate_metrics_section(metrics: Dict[str, Any]) -> str:
     """Generate the metrics markdown section."""
     lines = [
-        f"| 📊 **CVEs Tracked** | 🚨 **Critical** | ⚠️ **In KEV** | 🔥 **Exploit Intel** |",
-        f"|:---:|:---:|:---:|:---:|",
+        "| 📊 **CVEs Tracked** | 🚨 **Critical** | ⚠️ **In KEV** | 🔥 **Exploit Intel** |",
+        "|:---:|:---:|:---:|:---:|",
         f"| {metrics['total']} | {metrics['critical']} | {metrics['kev']} | {metrics['exploit_intel']} |",
-        f"",
+        "",
         f"_Last scanned: {metrics['last_updated']}_",
     ]
     return "\n".join(lines)
@@ -107,7 +107,7 @@ def update_readme(readme_path: Path, metrics: Dict[str, Any]) -> bool:
         return False
     
     readme_path.write_text(new_content, encoding="utf-8")
-    print(f"Updated README metrics:")
+    print("Updated README metrics:")
     print(f"  - Total CVEs: {metrics['total']}")
     print(f"  - Critical: {metrics['critical']}")
     print(f"  - KEV: {metrics['kev']}")

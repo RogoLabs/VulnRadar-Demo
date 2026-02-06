@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Validate watchlist YAML files."""
-import yaml
-import sys
 import os
+import sys
+
+import yaml
+
 
 def validate_watchlist(path):
     with open(path) as f:

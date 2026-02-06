@@ -745,10 +745,9 @@ def _create_weekly_summary_issue(
 
     # Get stats from state if available
     new_cves_this_week = 0
-    escalations_this_week = 0
 
     if state:
-        for cve_id, entry in state.data.get("seen_cves", {}).items():
+        for _, entry in state.data.get("seen_cves", {}).items():
             first_seen = entry.get("first_seen")
             if first_seen:
                 try:
@@ -764,7 +763,7 @@ def _create_weekly_summary_issue(
     top_10 = critical_items[:10]
 
     lines = [
-        f"# 📊 VulnRadar Weekly Summary",
+        "# 📊 VulnRadar Weekly Summary",
         "",
         f"**Week of {week_start} - {week_end}**",
         "",
@@ -1978,7 +1977,7 @@ def main() -> int:
                 project_info['number']
             )
             if project_id:
-                print(f"📋 GitHub Project found, issues will be added to board")
+                print("📋 GitHub Project found, issues will be added to board")
             else:
                 print(f"⚠️ Could not find GitHub Project at {args.project_url}")
         else:
@@ -2079,7 +2078,7 @@ def main() -> int:
                 # Add to GitHub Project if configured
                 if project_id and issue_data and issue_data.get('node_id'):
                     if _add_item_to_project(session, project_id, issue_data['node_id']):
-                        print(f"  → Added to project board")
+                        print("  → Added to project board")
             except Exception as e:
                 print(f"Failed to create issue for {cve_id}: {e}")
                 break
