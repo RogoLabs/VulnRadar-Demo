@@ -1,69 +1,49 @@
-# VulnRadar Watchlist Configuration
-# ==================================
-# Add vendors and products from YOUR tech stack.
-# Matching is case-insensitive and uses substring matching.
+# VulnRadar Demo Watchlist
+# ========================
+# A focused demo watchlist designed to show VulnRadar features
+# while keeping data size under GitHub's 100MB limit.
 #
-# HOW TO FIND VALID NAMES:
-#   1. Run: python etl.py --list-vendors         (shows all vendors in CVE data)
-#   2. Run: python etl.py --list-products        (shows all products)
-#   3. Run: python etl.py --search "apache"      (fuzzy search both)
-#   4. Run: python etl.py --validate-watchlist   (check for typos)
-#   5. Browse: https://cve.org and look at affected products
-#
-# For more examples, see: examples/watchlists/
-# ==================================
+# This watchlist targets ~500-2000 CVEs with high-signal entries
+# (critical, KEV, exploit intel) for compelling demos.
 
 # ============================================================================
-# VENDORS - Organizations that publish software
+# VENDORS - Focused selection for demos
 # ============================================================================
 vendors:
-  # --- Uncomment and customize for your stack ---
-  - microsoft       # Windows, Office, Azure, Exchange, etc.
-  - apache          # httpd, Tomcat, Struts, Log4j, Kafka, etc.
-  # - google        # Chrome, Android, GCP, etc.
-  # - apple         # macOS, iOS, Safari, etc.
-  # - linux         # Linux kernel
-  # - cisco         # IOS, ASA, WebEx
-  # - vmware        # ESXi, vCenter, Horizon
-  # - fortinet      # FortiGate, FortiOS
-  # - paloaltonetworks  # Firewalls, GlobalProtect
+  # Security vendors (often in KEV with critical CVEs)
+  - fortinet            # FortiGate, FortiOS - frequent KEV entries
+  - paloaltonetworks    # PAN-OS firewalls - high-profile vulns
+  - ivanti              # VPN/MDM - recent high-profile CVEs
+  
+  # Popular targets
+  - atlassian           # Confluence, Jira - enterprise targets
+  - gitlab              # GitLab - CI/CD
+  - hashicorp           # Terraform, Vault
 
 # ============================================================================
-# PRODUCTS - Specific software/libraries (more precise than vendors)
+# PRODUCTS - Specific high-signal products
 # ============================================================================
 products:
-  - log4j           # Log4Shell - CVE-2021-44228 and related
-  - chrome          # Google Chrome browser
-  # - firefox       # Mozilla Firefox
-  # - openssl       # Heartbleed and many others
-  # - exchange      # Microsoft Exchange (ProxyLogon, etc.)
-  # - jenkins       # CI/CD server
-  # - kubernetes    # K8s
-  # - docker        # Docker Engine
+  # Famous vulnerabilities
+  - log4j               # Log4Shell and variants
+  - openssl             # Heartbleed, etc.
+  
+  # Enterprise collaboration
+  - confluence          # Atlassian Confluence
+  - jira                # Atlassian Jira
+  
+  # Security products (ironic targets)
+  - fortigate           # Fortinet firewall
+  - pan-os              # Palo Alto firewall
+  
+  # Infrastructure
+  - jenkins             # CI/CD - many CVEs
+  - grafana             # Monitoring
 
 # ============================================================================
-# EXCLUSIONS - Filter out noise (optional)
+# EXCLUSIONS
 # ============================================================================
 exclude_vendors:
   - n/a
   - unknown
   - unspecified
-
-exclude_products:
-  - n/a
-  - unknown
-
-# ============================================================================
-# THRESHOLDS - Minimum severity to include (optional)
-# ============================================================================
-# thresholds:
-#   min_cvss: 0.0       # 0.0 = all, 7.0 = high+, 9.0 = critical only
-#   min_epss: 0.0       # 0.0 = all, 0.1 = 10%+ exploit probability
-
-# ============================================================================
-# BEHAVIOR FLAGS (optional)
-# ============================================================================
-# options:
-#   always_include_kev: true       # Include CISA KEV even if not in watchlist
-#   always_include_patchthis: true # Include PatchThis items
-#   match_mode: substring          # 'substring', 'exact', or 'regex'
