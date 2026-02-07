@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-02-07T06:19:07+00:00`
+Generated: `2026-02-07T12:13:51+00:00`
 
 ## Executive Summary
 
@@ -303,4 +303,4 @@ Top critical items:
 | Feb 07 | [CVE-2022-1105](https://www.cve.org/CVERecord?id=CVE-2022-1105) | 🆕 New |
 | Feb 07 | [CVE-2022-1111](https://www.cve.org/CVERecord?id=CVE-2022-1111) | 🆕 New |
 | Feb 07 | [CVE-2022-1120](https://www.cve.org/CVERecord?id=CVE-2022-1120) | 🆕 New |
-| ... | | _and 4135 more_ |
+| ... | | _and 4137 more_ |
