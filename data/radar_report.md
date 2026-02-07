@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-02-07T01:05:17+00:00`
+Generated: `2026-02-07T06:19:07+00:00`
 
 ## Executive Summary
 
@@ -38,8 +38,8 @@ Top critical items:
 
 ## Summary
 
-- Total items: **4185**
-- Watchlist hits: **3628**
+- Total items: **4187**
+- Watchlist hits: **3630**
 - CISA KEVs: **612**
 - Exploit Intel (PoC): **653**
 - Exploit Intel + Watchlist (CRITICAL): **96**
@@ -248,3 +248,59 @@ Top critical items:
 | [CVE-2024-28987](https://www.cve.org/CVERecord?id=CVE-2024-28987) |  | KEV | ✅ | ✅ | 2024-11-05 | 0.943 | 9.1 |  | The SolarWinds Web Help Desk (WHD) software is affected by a hardcoded credential vulnerability, allowing remote unauthenticated user to access internal functi… |
 | [CVE-2023-28461](https://www.cve.org/CVERecord?id=CVE-2023-28461) |  | KEV | ✅ | ✅ | 2024-12-16 | 0.872 | 9.8 |  | Array Networks Array AG Series and vxAG (9.4.0.481 and earlier) allow remote code execution. An attacker can browse the filesystem on the SSL VPN gateway using… |
 | [CVE-2024-41713](https://www.cve.org/CVERecord?id=CVE-2024-41713) |  | KEV | ✅ | ✅ | 2025-01-28 | 0.941 | 9.1 |  | A vulnerability in the NuPoint Unified Messaging (NPM) component of Mitel MiCollab through 9.8 SP1 FP2 (9.8.1.201) could allow an unauthenticated attacker to c… |
+
+## Recent Changes (Last 7 Days)
+
+| Date | CVE | Status |
+|------|-----|--------|
+| Feb 07 | [CVE-2022-0011](https://www.cve.org/CVERecord?id=CVE-2022-0011) | 🆕 New |
+| Feb 07 | [CVE-2022-0022](https://www.cve.org/CVERecord?id=CVE-2022-0022) | 🆕 New |
+| Feb 07 | [CVE-2022-0023](https://www.cve.org/CVERecord?id=CVE-2022-0023) | 🆕 New |
+| Feb 07 | [CVE-2022-0024](https://www.cve.org/CVERecord?id=CVE-2022-0024) | 🆕 New |
+| Feb 07 | [CVE-2022-0028](https://www.cve.org/CVERecord?id=CVE-2022-0028) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-0030](https://www.cve.org/CVERecord?id=CVE-2022-0030) | 🆕 New |
+| Feb 07 | [CVE-2022-0070](https://www.cve.org/CVERecord?id=CVE-2022-0070) | 🆕 New |
+| Feb 07 | [CVE-2022-0090](https://www.cve.org/CVERecord?id=CVE-2022-0090) | 🆕 New |
+| Feb 07 | [CVE-2022-0093](https://www.cve.org/CVERecord?id=CVE-2022-0093) | 🆕 New |
+| Feb 07 | [CVE-2022-0123](https://www.cve.org/CVERecord?id=CVE-2022-0123) | 🆕 New |
+| Feb 07 | [CVE-2022-0124](https://www.cve.org/CVERecord?id=CVE-2022-0124) | 🆕 New |
+| Feb 07 | [CVE-2022-0125](https://www.cve.org/CVERecord?id=CVE-2022-0125) | 🆕 New |
+| Feb 07 | [CVE-2022-0136](https://www.cve.org/CVERecord?id=CVE-2022-0136) | 🆕 New |
+| Feb 07 | [CVE-2022-0151](https://www.cve.org/CVERecord?id=CVE-2022-0151) | 🆕 New |
+| Feb 07 | [CVE-2022-0152](https://www.cve.org/CVERecord?id=CVE-2022-0152) | 🆕 New |
+| Feb 07 | [CVE-2022-0154](https://www.cve.org/CVERecord?id=CVE-2022-0154) | 🆕 New |
+| Feb 07 | [CVE-2022-0167](https://www.cve.org/CVERecord?id=CVE-2022-0167) | 🆕 New |
+| Feb 07 | [CVE-2022-0172](https://www.cve.org/CVERecord?id=CVE-2022-0172) | 🆕 New |
+| Feb 07 | [CVE-2022-0185](https://www.cve.org/CVERecord?id=CVE-2022-0185) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-0244](https://www.cve.org/CVERecord?id=CVE-2022-0244) | 🆕 New |
+| Feb 07 | [CVE-2022-0249](https://www.cve.org/CVERecord?id=CVE-2022-0249) | 🆕 New |
+| Feb 07 | [CVE-2022-0283](https://www.cve.org/CVERecord?id=CVE-2022-0283) | 🆕 New |
+| Feb 07 | [CVE-2022-0344](https://www.cve.org/CVERecord?id=CVE-2022-0344) | 🆕 New |
+| Feb 07 | [CVE-2022-0371](https://www.cve.org/CVERecord?id=CVE-2022-0371) | 🆕 New |
+| Feb 07 | [CVE-2022-0373](https://www.cve.org/CVERecord?id=CVE-2022-0373) | 🆕 New |
+| Feb 07 | [CVE-2022-0390](https://www.cve.org/CVERecord?id=CVE-2022-0390) | 🆕 New |
+| Feb 07 | [CVE-2022-0425](https://www.cve.org/CVERecord?id=CVE-2022-0425) | 🆕 New |
+| Feb 07 | [CVE-2022-0427](https://www.cve.org/CVERecord?id=CVE-2022-0427) | 🆕 New |
+| Feb 07 | [CVE-2022-0477](https://www.cve.org/CVERecord?id=CVE-2022-0477) | 🆕 New |
+| Feb 07 | [CVE-2022-0488](https://www.cve.org/CVERecord?id=CVE-2022-0488) | 🆕 New |
+| Feb 07 | [CVE-2022-0489](https://www.cve.org/CVERecord?id=CVE-2022-0489) | 🆕 New |
+| Feb 07 | [CVE-2022-0538](https://www.cve.org/CVERecord?id=CVE-2022-0538) | 🆕 New |
+| Feb 07 | [CVE-2022-0540](https://www.cve.org/CVERecord?id=CVE-2022-0540) | 🟠 In PatchThis |
+| Feb 07 | [CVE-2022-0543](https://www.cve.org/CVERecord?id=CVE-2022-0543) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-0549](https://www.cve.org/CVERecord?id=CVE-2022-0549) | 🆕 New |
+| Feb 07 | [CVE-2022-0609](https://www.cve.org/CVERecord?id=CVE-2022-0609) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-0735](https://www.cve.org/CVERecord?id=CVE-2022-0735) | 🟠 In PatchThis |
+| Feb 07 | [CVE-2022-0738](https://www.cve.org/CVERecord?id=CVE-2022-0738) | 🆕 New |
+| Feb 07 | [CVE-2022-0740](https://www.cve.org/CVERecord?id=CVE-2022-0740) | 🆕 New |
+| Feb 07 | [CVE-2022-0741](https://www.cve.org/CVERecord?id=CVE-2022-0741) | 🆕 New |
+| Feb 07 | [CVE-2022-0751](https://www.cve.org/CVERecord?id=CVE-2022-0751) | 🆕 New |
+| Feb 07 | [CVE-2022-0778](https://www.cve.org/CVERecord?id=CVE-2022-0778) | 🆕 New |
+| Feb 07 | [CVE-2022-0847](https://www.cve.org/CVERecord?id=CVE-2022-0847) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-1040](https://www.cve.org/CVERecord?id=CVE-2022-1040) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-1096](https://www.cve.org/CVERecord?id=CVE-2022-1096) | 🔴 In CISA KEV |
+| Feb 07 | [CVE-2022-1099](https://www.cve.org/CVERecord?id=CVE-2022-1099) | 🆕 New |
+| Feb 07 | [CVE-2022-1100](https://www.cve.org/CVERecord?id=CVE-2022-1100) | 🆕 New |
+| Feb 07 | [CVE-2022-1105](https://www.cve.org/CVERecord?id=CVE-2022-1105) | 🆕 New |
+| Feb 07 | [CVE-2022-1111](https://www.cve.org/CVERecord?id=CVE-2022-1111) | 🆕 New |
+| Feb 07 | [CVE-2022-1120](https://www.cve.org/CVERecord?id=CVE-2022-1120) | 🆕 New |
+| ... | | _and 4135 more_ |
