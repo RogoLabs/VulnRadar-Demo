@@ -501,10 +501,10 @@ class GitHubIssueProvider(NotificationProvider):
         # Build monitoring list
         monitoring_lines = []
         if vendors:
-            monitoring_lines.append(f"**Vendors:** {', '.join(vendors)}")
+            monitoring_lines.append(f"- **Vendors:** {', '.join(vendors)}")
         if products:
-            monitoring_lines.append(f"**Products:** {', '.join(products)}")
-        monitoring_text = "  \\n".join(monitoring_lines) if monitoring_lines else "_No watchlist configured_"
+            monitoring_lines.append(f"- **Products:** {', '.join(products)}")
+        monitoring_text = "\n".join(monitoring_lines) if monitoring_lines else "_No watchlist configured_"
 
         lines = [
             "# 🚀 VulnRadar Baseline Established",
