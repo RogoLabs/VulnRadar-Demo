@@ -1,69 +1,47 @@
-# VulnRadar Watchlist Configuration
-# ==================================
-# Add vendors and products from YOUR tech stack.
-# Matching is case-insensitive and uses substring matching.
-#
-# HOW TO FIND VALID NAMES:
-#   1. Run: python etl.py --list-vendors         (shows all vendors in CVE data)
-#   2. Run: python etl.py --list-products        (shows all products)
-#   3. Run: python etl.py --search "apache"      (fuzzy search both)
-#   4. Run: python etl.py --validate-watchlist   (check for typos)
-#   5. Browse: https://cve.org and look at affected products
-#
-# For more examples, see: examples/watchlists/
-# ==================================
+# VulnRadar Demo Watchlist
+# ========================
+# A comprehensive demo watchlist with major vendors.
+# Uses min_cvss: 7.0 threshold to keep data size under GitHub's 100MB limit.
 
 # ============================================================================
-# VENDORS - Organizations that publish software
+# VENDORS - Major software vendors for comprehensive demo coverage
 # ============================================================================
 vendors:
-  # --- Uncomment and customize for your stack ---
-  - microsoft       # Windows, Office, Azure, Exchange, etc.
-  - apache          # httpd, Tomcat, Struts, Log4j, Kafka, etc.
-  - google          # Chrome, Android, GCP, etc.
-  - apple           # macOS, iOS, Safari, etc.
-  - linux           # Linux kernel
-  - cisco           # IOS, ASA, WebEx
-  - vmware          # ESXi, vCenter, Horizon
-  # - fortinet      # FortiGate, FortiOS
-  # - paloaltonetworks  # Firewalls, GlobalProtect
+  # Big tech (Patch Tuesday, monthly updates)
+  - microsoft           # Windows, Office, Azure, Exchange
+  - apple               # macOS, iOS, Safari
+  - google              # Chrome, Android, GCP
+  
+  # Infrastructure & security
+  - cisco               # IOS, ASA, WebEx
+  - vmware              # ESXi, vCenter, Horizon
+  - linux               # Linux kernel
+  - apache              # httpd, Tomcat, Log4j, Kafka
+  
+  # Security vendors (often in KEV)
+  - fortinet            # FortiGate, FortiOS
+  - paloaltonetworks    # PAN-OS firewalls
+  - ivanti              # VPN/MDM
 
 # ============================================================================
-# PRODUCTS - Specific software/libraries (more precise than vendors)
+# PRODUCTS - High-signal products
 # ============================================================================
 products:
-  - log4j           # Log4Shell - CVE-2021-44228 and related
-  - chrome          # Google Chrome browser
-  # - firefox       # Mozilla Firefox
-  # - openssl       # Heartbleed and many others
-  # - exchange      # Microsoft Exchange (ProxyLogon, etc.)
-  # - jenkins       # CI/CD server
-  # - kubernetes    # K8s
-  # - docker        # Docker Engine
+  - log4j               # Log4Shell and variants
+  - chrome              # Google Chrome browser
+  - openssl             # Heartbleed, etc.
+  - jenkins             # CI/CD - many CVEs
 
 # ============================================================================
-# EXCLUSIONS - Filter out noise (optional)
+# EXCLUSIONS
 # ============================================================================
 exclude_vendors:
   - n/a
   - unknown
   - unspecified
 
-exclude_products:
-  - n/a
-  - unknown
-
 # ============================================================================
-# THRESHOLDS - Minimum severity to include (optional)
+# THRESHOLDS - High+ severity only to keep file size manageable
 # ============================================================================
 thresholds:
-  min_cvss: 7.0         # High+ severity only (keeps file size manageable)
-  # min_epss: 0.0       # 0.0 = all, 0.1 = 10%+ exploit probability
-
-# ============================================================================
-# BEHAVIOR FLAGS (optional)
-# ============================================================================
-# options:
-#   always_include_kev: true       # Include CISA KEV even if not in watchlist
-#   always_include_patchthis: true # Include PatchThis items
-#   match_mode: substring          # 'substring', 'exact', or 'regex'
+  min_cvss: 7.0         # High (7.0-8.9) and Critical (9.0+) only
