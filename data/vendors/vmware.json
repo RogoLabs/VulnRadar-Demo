@@ -1,0 +1,5462 @@
+{
+  "generated_at": "2026-03-05T20:51:07+00:00",
+  "vendor": "vmware",
+  "count": 87,
+  "items": [
+    {
+      "cve_id": "CVE-2022-22962",
+      "description": "VMware Horizon Agent for Linux (prior to 22.x) contains a local privilege escalation as a user is able to change the default shared folder location due to a vulnerable symbolic link. Successful exploitation can result in linking to a root owned file.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware horizon agent for linux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware Horizon Agent for Linux prior to 22.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware horizon agent for linux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00031,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2022-22964",
+      "description": "VMware Horizon Agent for Linux (prior to 22.x) contains a local privilege escalation that allows a user to escalate to root due to a vulnerable configuration file.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware horizon agent for linux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware Horizon Agent for Linux prior to 22.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware horizon agent for linux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00037,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20867",
+      "description": "A fully compromised ESXi host can force VMware Tools to fail to authenticate host-to-guest operations, impacting the confidentiality and integrity of the guest virtual machine.",
+      "cvss_score": 3.9,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware tools",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "12.2.5"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:vmware tools",
+        "vendor:vmware"
+      ],
+      "active_threat": true,
+      "probability_score": 0.02719,
+      "kev": {
+        "cveID": "CVE-2023-20867",
+        "vendorProject": "VMware",
+        "product": "Tools",
+        "vulnerabilityName": "VMware Tools Authentication Bypass Vulnerability",
+        "dateAdded": "2023-06-23",
+        "shortDescription": "VMware Tools contains an authentication bypass vulnerability in the vgauth module. A fully compromised ESXi host can force VMware Tools to fail to authenticate host-to-guest operations, impacting the confidentiality and integrity of the guest virtual machine. An attacker must have root access over ESXi to exploit this vulnerability.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "dueDate": "2023-07-14",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 3.9,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 7,
+        "reference_count": 19
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20891",
+      "description": "The VMware Tanzu Application Service for VMs and Isolation Segment contain an information disclosure vulnerability due to the logging of credentials in hex encoding in platform system audit logs.\u00a0A malicious non-admin user who has access to the platform system audit logs can access hex encoded CF API admin credentials and can push new malicious versions of an application. In a default deployment non-admin users do not have access to the platform system audit logs.",
+      "cvss_score": 6.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware tanzu application service for vms",
+          "versions": [
+            {
+              "lessThan": "4.0.5",
+              "status": "affected",
+              "version": "4.0.x",
+              "versionType": "4.0.5"
+            },
+            {
+              "lessThan": "3.0.14",
+              "status": "affected",
+              "version": "3.0.x",
+              "versionType": "3.0.14"
+            },
+            {
+              "lessThan": "2.13.24",
+              "status": "affected",
+              "version": "2.13.x",
+              "versionType": "2.13.24"
+            },
+            {
+              "lessThan": "2.11.42",
+              "status": "affected",
+              "version": "2.11.x",
+              "versionType": "2.11.42"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "isolation segment",
+          "versions": [
+            {
+              "lessThan": "4.0.4",
+              "status": "affected",
+              "version": "4.0.x",
+              "versionType": "4.0.4"
+            },
+            {
+              "lessThan": "3.0.13",
+              "status": "affected",
+              "version": "3.0.x",
+              "versionType": "3.0.13"
+            },
+            {
+              "lessThan": "2.13.20",
+              "status": "affected",
+              "version": "2.13.x",
+              "versionType": "2.13.20"
+            },
+            {
+              "lessThan": "2.11.35",
+              "status": "affected",
+              "version": "2.11.x",
+              "versionType": "2.11.35"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:isolation segment",
+        "product:vmware tanzu application service for vms",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00243,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 8,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20892",
+      "description": "The vCenter Server contains a heap overflow vulnerability due to the usage of uninitialized memory in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may exploit\u00a0heap-overflow vulnerability\u00a0to execute arbitrary code on the underlying operating system that hosts vCenter Server.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "8.0 U1b",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0 u1b"
+            },
+            {
+              "lessThan": "7.0 u3m",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0 u3m"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            },
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware cloud foundation (vcenter server)",
+        "product:vmware vcenter server (vcenter server)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02678,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20893",
+      "description": "The VMware vCenter Server contains a use-after-free vulnerability in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may exploit this issue to execute arbitrary code on the underlying operating system that hosts vCenter Server.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "8.0 U1b",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0 u1b"
+            },
+            {
+              "lessThan": "7.0 u3m",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0 u3m"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            },
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware cloud foundation (vcenter server)",
+        "product:vmware vcenter server (vcenter server)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0233,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20894",
+      "description": "The VMware vCenter Server contains an out-of-bounds write vulnerability in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may trigger an out-of-bound write by sending a specially crafted packet leading to memory corruption.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "8.0 U1b",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0 u1b"
+            },
+            {
+              "lessThan": "7.0 u3m",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0 u3m"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            },
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware cloud foundation (vcenter server)",
+        "product:vmware vcenter server (vcenter server)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.43881,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20895",
+      "description": "The VMware vCenter Server contains a memory corruption vulnerability in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may trigger a memory corruption vulnerability which may bypass authentication.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "8.0 U1b",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0 u1b"
+            },
+            {
+              "lessThan": "7.0 u3m",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0 u3m"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            },
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware cloud foundation (vcenter server)",
+        "product:vmware vcenter server (vcenter server)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00396,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-20896",
+      "description": "The VMware vCenter Server contains an out-of-bounds read vulnerability in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may trigger an out-of-bounds read by sending a specially crafted packet leading to denial-of-service of certain services (vmcad, vmdird, and vmafdd).",
+      "cvss_score": 5.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "8.0 U1b",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0 u1b"
+            },
+            {
+              "lessThan": "7.0 u3m",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0 u3m"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vcenter server)",
+          "versions": [
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            },
+            {
+              "lessThan": "7.0 U3m, 8.0 U1b",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "7.0 U3m, 8.0 U1b"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware cloud foundation (vcenter server)",
+        "product:vmware vcenter server (vcenter server)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00289,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-34044",
+      "description": "VMware Workstation( 17.x prior to 17.5) and Fusion(13.x prior to 13.5) contain an out-of-bounds \nread vulnerability that exists in the functionality for sharing host \nBluetooth devices with the virtual machine.\u00a0A malicious actor with local administrative privileges on a virtual \nmachine may be able to read privileged information contained in \nhypervisor memory from a virtual machine.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.5",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "17.5"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.5",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "13.5"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fusion",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00039,
+      "nvd": {
+        "cvss_v3_score": 6.0,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2023-34045",
+      "description": "VMware Fusion(13.x prior to 13.5)\u00a0contains a local privilege escalation vulnerability that occurs during \ninstallation for the first time (the user needs to drag or copy the \napplication to a folder from the '.dmg' volume) or when installing an \nupgrade.\u00a0A malicious actor with local non-administrative user privileges may \nexploit this vulnerability to escalate privileges to root on the system \nwhere Fusion is installed or being installed for the first time.",
+      "cvss_score": 6.6,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.5",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "13.5"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fusion",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00092,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2023-34046",
+      "description": "VMware Fusion(13.x prior to 13.5) contains a TOCTOU (Time-of-check Time-of-use) \nvulnerability that occurs during installation for the first time (the \nuser needs to drag or copy the application to a folder from the '.dmg' \nvolume) or when installing an upgrade.\u00a0A malicious actor with local non-administrative user privileges may \nexploit this vulnerability to escalate privileges to root on the system \nwhere Fusion is installed or being installed for the first time.",
+      "cvss_score": 6.7,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.5",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "13.5"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fusion",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00108,
+      "nvd": {
+        "cvss_v3_score": 7.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-367"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2023-34048",
+      "description": "vCenter Server contains an out-of-bounds write vulnerability in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may trigger an out-of-bounds write potentially leading to remote code execution.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server",
+          "versions": [
+            {
+              "lessThan": "8.0U2",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0U2"
+            },
+            {
+              "lessThan": "7.0U3o",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0U3o"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vmware vcenter server)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:vmware cloud foundation (vmware vcenter server)",
+        "product:vmware vcenter server",
+        "vendor:vmware"
+      ],
+      "active_threat": true,
+      "probability_score": 0.93213,
+      "kev": {
+        "cveID": "CVE-2023-34048",
+        "vendorProject": "VMware",
+        "product": "vCenter Server",
+        "vulnerabilityName": "VMware vCenter Server Out-of-Bounds Write Vulnerability",
+        "dateAdded": "2024-01-22",
+        "shortDescription": "VMware vCenter Server contains an out-of-bounds write vulnerability in the implementation of the DCERPC protocol that allows an attacker to conduct remote code execution.",
+        "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2024-02-12",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 37,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-34056",
+      "description": "vCenter Server contains a partial information disclosure vulnerability.\u00a0A malicious actor with non-administrative privileges to vCenter Server may leverage this issue to access unauthorized data.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter server",
+          "versions": [
+            {
+              "lessThan": "8.0U2",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "8.0U2"
+            },
+            {
+              "lessThan": "7.0U3o",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "7.0U3o"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vmware vcenter server)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware cloud foundation (vmware vcenter server)",
+        "product:vmware vcenter server",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00196,
+      "nvd": {
+        "cvss_v3_score": 4.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-922"
+        ],
+        "cpe_count": 38,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22231",
+      "description": "Syndic cache directory creation is vulnerable to a directory traversal attack in salt project which can lead\u00a0a malicious attacker to create an arbitrary directory on a Salt master.",
+      "cvss_score": 5.0,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt project",
+          "versions": [
+            {
+              "lessThan": "3005.5, 3006.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "3005.5, 3006.6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt project",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0058,
+      "nvd": {
+        "cvss_v3_score": 5.0,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22232",
+      "description": "A specially crafted url can be created which leads to a directory traversal in the salt file server.\nA malicious user can read an arbitrary file from a Salt master\u2019s filesystem.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt project",
+          "versions": [
+            {
+              "lessThan": "3005.5, 3006.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "3005.5, 3006.6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt project",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00439,
+      "nvd": {
+        "cvss_v3_score": 7.7,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22245",
+      "description": "Arbitrary Authentication Relay and Session Hijack vulnerabilities in the deprecated VMware Enhanced Authentication Plug-in (EAP) could allow\u00a0a\u00a0malicious actor that could trick a target domain user with EAP installed in their web browser into requesting and relaying service tickets for arbitrary Active Directory Service Principal Names (SPNs).",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware enhanced authentication plug-in (eap)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "All"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware enhanced authentication plug-in (eap)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00698,
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22250",
+      "description": "Session Hijack vulnerability in Deprecated VMware Enhanced Authentication Plug-in could allow a\u00a0malicious actor with unprivileged local access to a windows operating system can hijack a privileged EAP session when initiated by a privileged domain user on the same system.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware enhanced authentication plug-in (eap)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "All"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware enhanced authentication plug-in (eap)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00109,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-384"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22264",
+      "description": "VMware Avi Load Balancer contains a privilege escalation vulnerability.\u00a0A malicious actor with admin privileges on VMware Avi Load Balancer can create, modify, execute and delete files as a root user on the host system.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware avi load balancer",
+          "versions": [
+            {
+              "lessThan": "22.1.6",
+              "status": "affected",
+              "version": "22.1.x",
+              "versionType": "22.1.6"
+            },
+            {
+              "lessThan": "30.2.1",
+              "status": "affected",
+              "version": "30.x.x",
+              "versionType": "30.2.1"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware avi load balancer",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00319,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22266",
+      "description": "\u00a0VMware Avi Load Balancer contains an information disclosure vulnerability.\u00a0A malicious actor with access to the system logs can view cloud connection\u00a0credentials in plaintext.",
+      "cvss_score": 6.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware avi load balancer",
+          "versions": [
+            {
+              "lessThan": "30.2.1",
+              "status": "affected",
+              "version": "30.x.x",
+              "versionType": "30.2.1"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware avi load balancer",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00255,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-522"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22280",
+      "description": "VMware Aria Automation does not apply correct input validation which allows for SQL-injection in the product.\u00a0An authenticated malicious user could enter specially crafted SQL queries and perform unauthorised read/write operations in the database.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria automation",
+          "versions": [
+            {
+              "lessThan": "8.17.0",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "8.17.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria automation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01906,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38820",
+      "description": "The fix for CVE-2022-22968 made disallowedFields\u00a0patterns in DataBinder\u00a0case insensitive. However, String.toLowerCase()\u00a0has some Locale dependent exceptions that could potentially result in fields not protected as expected.",
+      "cvss_score": 3.1,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring",
+          "versions": [
+            {
+              "lessThan": "5.3.41",
+              "status": "affected",
+              "version": "5.3.x",
+              "versionType": "Enterprise Support Only"
+            },
+            {
+              "lessThan": "6.0.25",
+              "status": "affected",
+              "version": "6.0.x",
+              "versionType": "Enterprise Support Only"
+            },
+            {
+              "lessThan": "6.1.14",
+              "status": "affected",
+              "version": "6.1.x",
+              "versionType": "OSS"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01473,
+      "nvd": {
+        "cvss_v3_score": 5.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-178"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38822",
+      "description": "Multiple methods in the salt master skip minion token validation. Therefore a misbehaving minion can impersonate another minion.",
+      "cvss_score": 2.7,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00067,
+      "nvd": {
+        "cvss_v3_score": 2.7,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38823",
+      "description": "Salt's request server is vulnerable to replay attacks when not using a TLS encrypted transport.",
+      "cvss_score": 2.7,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00067,
+      "nvd": {
+        "cvss_v3_score": 2.7,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-294"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38824",
+      "description": "Directory traversal vulnerability in recv_file method allows arbitrary files to be written to the master cache directory.",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00187,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38825",
+      "description": "The salt.auth.pki module does not properly authenticate callers. The \"password\" field contains a public certificate which is validated against a CA certificate by the module. This is not pki authentication, as the caller does not need access to the corresponding private key for the authentication attempt to be accepted.",
+      "cvss_score": 6.4,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00047,
+      "nvd": {
+        "cvss_v3_score": 6.4,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38830",
+      "description": "VMware Aria Operations contains a local privilege escalation vulnerability.\u00a0A malicious actor with local administrative privileges may trigger this vulnerability to escalate privileges to root user on the appliance running VMware Aria Operations.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.2",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "proprietary"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00056,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38831",
+      "description": "VMware Aria Operations contains a local privilege escalation vulnerability.\u00a0\u00a0A malicious actor with local administrative privileges can insert malicious commands into the properties file to escalate privileges to \u00a0a root user on the appliance running VMware Aria Operations.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.2",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "proprietary"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00116,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38832",
+      "description": "VMware Aria Operations contains a stored cross-site scripting vulnerability.\u00a0A malicious actor with editing access to views may be able to inject malicious script leading to stored cross-site scripting in the product VMware Aria Operations.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.2",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "proprietary"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00251,
+      "nvd": {
+        "cvss_v3_score": 6.4,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38833",
+      "description": "VMware Aria Operations contains a stored cross-site scripting vulnerability.\u00a0A malicious actor with editing access to email templates might inject malicious script leading to stored cross-site scripting in the product VMware Aria Operations.",
+      "cvss_score": 6.8,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.2",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "proprietary"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00167,
+      "nvd": {
+        "cvss_v3_score": 5.4,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2024-38834",
+      "description": "VMware Aria Operations contains a stored cross-site scripting vulnerability.\u00a0A malicious actor with editing access to cloud provider might be able to inject malicious script leading to stored cross-site scripting in the product VMware Aria Operations.",
+      "cvss_score": 6.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.2",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "proprietary"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00381,
+      "nvd": {
+        "cvss_v3_score": 4.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22215",
+      "description": "VMware Aria Automation contains a server-side request forgery (SSRF) vulnerability.\u00a0A malicious actor with \"Organization Member\" access to Aria Automation may exploit this vulnerability enumerate internal services running on the host/network.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria automation",
+          "versions": [
+            {
+              "lessThan": "8.18.1 patch 1",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "8.18.1 patch 1"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation (vmware aria automation)",
+          "versions": [
+            {
+              "lessThan": "8.18.1 patch 1",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "8.18.1 patch 1"
+            },
+            {
+              "lessThan": "8.18.1 patch 1",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "8.18.1 patch 1"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria automation",
+        "product:vmware cloud foundation (vmware aria automation)",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.002,
+      "nvd": {
+        "cvss_v3_score": 4.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22218",
+      "description": "VMware Aria Operations for Logs contains an information disclosure vulnerability.\u00a0A malicious actor with View Only Admin permissions may be able to read the credentials\u00a0of a VMware product integrated with VMware Aria Operations for Logs",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations for logs",
+          "versions": [
+            {
+              "lessThan": "8.18.3",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "release"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations for logs",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00205,
+      "nvd": {
+        "cvss_v3_score": 7.7,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-209"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22219",
+      "description": "VMware Aria Operations for Logs contains a stored cross-site scripting vulnerability.\u00a0A malicious actor with non-administrative privileges may be able to inject a malicious script that  (can perform stored cross-site scripting) may lead to arbitrary operations as admin\u00a0user.",
+      "cvss_score": 6.8,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations for logs",
+          "versions": [
+            {
+              "lessThan": "8.18.3",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "release"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations for logs",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00202,
+      "nvd": {
+        "cvss_v3_score": 9.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22220",
+      "description": "VMware Aria Operations for Logs contains a privilege escalation\u00a0vulnerability.\u00a0A malicious actor with non-administrative privileges and network access to Aria Operations for Logs API may be able to perform certain operations in the context of an admin user.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations for logs",
+          "versions": [
+            {
+              "lessThan": "8.18.3",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "release"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations for logs",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00115,
+      "nvd": {
+        "cvss_v3_score": 5.4,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22221",
+      "description": "VMware Aria Operation for Logs contains a stored cross-site scripting vulnerability.\u00a0A malicious actor with admin privileges to VMware Aria Operations for Logs may be able to inject a malicious script that could be executed in a victim's browser when performing a delete action in the Agent Configuration.",
+      "cvss_score": 5.2,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations for logs",
+          "versions": [
+            {
+              "lessThan": "8.18.3",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "release"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations for logs",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00173,
+      "nvd": {
+        "cvss_v3_score": 4.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22222",
+      "description": "VMware Aria Operations contains an information disclosure vulnerability.\u00a0A malicious user with non-administrative privileges\u00a0may exploit this vulnerability to retrieve credentials for an outbound plugin if a valid service credential ID is known.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.3",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "release"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00309,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-497"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22224",
+      "description": "VMware ESXi, and Workstation\u00a0contain a TOCTOU (Time-of-Check Time-of-Use) vulnerability that leads to an out-of-bounds write.\u00a0A malicious actor with local administrative privileges on a virtual machine may exploit this issue to execute code as the virtual machine's VMX process running on the host.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3d-24585383",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi80U2d-24585300",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3s-24585291",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.6.3",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:esxi",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vmware cloud foundation",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": true,
+      "probability_score": 0.52665,
+      "kev": {
+        "cveID": "CVE-2025-22224",
+        "vendorProject": "VMware",
+        "product": "ESXi and Workstation",
+        "vulnerabilityName": "VMware ESXi and Workstation TOCTOU Race Condition Vulnerability",
+        "dateAdded": "2025-03-04",
+        "shortDescription": "VMware ESXi and Workstation contain a time-of-check time-of-use (TOCTOU) race condition vulnerability that leads to an out-of-bounds write. Successful exploitation enables an attacker with local administrative privileges on a virtual machine to execute code as the virtual machine's VMX process running on the host.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2025-03-25",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-367"
+        ],
+        "cpe_count": 56,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22227",
+      "description": "In some specific scenarios with chained redirects, Reactor Netty HTTP client leaks credentials. In order for this to happen, the HTTP client must have been explicitly configured to follow redirects.",
+      "cvss_score": 6.1,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "reactor netty",
+          "versions": [
+            {
+              "lessThan": "1.0.49 (Reactor BOM 2020.0.48)",
+              "status": "affected",
+              "version": "1.0.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "1.1.32 (Reactor BOM 2022.0.27 and 2023.0.20)",
+              "status": "affected",
+              "version": "1.1.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "1.2.8 (Reactor BOM 2024.0.8)",
+              "status": "affected",
+              "version": "1.2.x",
+              "versionType": "OSS"
+            },
+            {
+              "lessThan": "1.3.0-M5 (Reactor BOM 2025.0.0-M5)",
+              "status": "affected",
+              "version": "1.3.x",
+              "versionType": "OSS"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:reactor netty",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00094,
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22231",
+      "description": "VMware Aria Operations contains a local privilege escalation vulnerability.\u00a0A malicious actor with local administrative privileges can escalate their privileges to root on the appliance running VMware Aria Operations.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18 HF5",
+              "status": "affected",
+              "version": "8.x",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00076,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22236",
+      "description": "Minion event bus authorization bypass. An attacker with access to a minion key can craft a message which may be able to execute a job on other minions (>= 3007.0).",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00041,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22237",
+      "description": "An attacker with access to a minion key can exploit the 'on demand' pillar functionality with a specially crafted git url which could cause and arbitrary command to be run on the master with the same privileges as the master process.",
+      "cvss_score": 6.7,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00036,
+      "nvd": {
+        "cvss_v3_score": 6.7,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22238",
+      "description": "Directory traversal attack in minion file cache creation. The master's default cache is vulnerable to a directory traversal attack. Which could be leveraged to write or overwrite 'cache' files outside of the cache directory.",
+      "cvss_score": 4.2,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00151,
+      "nvd": {
+        "cvss_v3_score": 4.2,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22239",
+      "description": "Arbitrary event injection on Salt Master. The master's \"_minion_event\" method can be used by and authorized minion to send arbitrary events onto the master's event bus.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00041,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-285"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22240",
+      "description": "Arbitrary directory creation or file deletion. In the find_file method of the GitFS class, a path is created using os.path.join using unvalidated input from the \u201ctgt_env\u201d variable. This can be exploited by an attacker to delete any file on the Master's process has permissions to.",
+      "cvss_score": 6.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00025,
+      "nvd": {
+        "cvss_v3_score": 6.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22241",
+      "description": "File contents overwrite the VirtKey class is called when \u201con-demand pillar\u201d data is requested and uses un-validated input to create paths to the \u201cpki directory\u201d. The functionality is used to auto-accept Minion authentication keys based on a pre-placed \u201cauthorization file\u201d at a specific location and is present in the default configuration.",
+      "cvss_score": 5.6,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00044,
+      "nvd": {
+        "cvss_v3_score": 5.6,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22242",
+      "description": "Worker process denial of service through file read operation. .A vulnerability exists in the Master's \u201cpub_ret\u201d method which is exposed to all minions. The un-sanitized input value \u201cjid\u201d is used to construct a path which is then opened for reading. An attacker could exploit this vulnerabilities by attempting to read from a filename that will not return any data, e.g. by targeting a pipe node on the proc file system.",
+      "cvss_score": 5.6,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "salt",
+          "versions": [
+            {
+              "lessThan": "3006.12",
+              "status": "affected",
+              "version": "3006.x",
+              "versionType": "lts"
+            },
+            {
+              "lessThan": "3007.4",
+              "status": "affected",
+              "version": "3007.x",
+              "versionType": "sts"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:salt",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00035,
+      "nvd": {
+        "cvss_v3_score": 5.6,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22243",
+      "description": "VMware NSX Manager UI is vulnerable to a stored Cross-Site Scripting (XSS) attack due to improper input validation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware nsx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware NSX 4.0.x, VMware NSX 4.1.x, VMware NSX 4.2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware nsx",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00043,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22244",
+      "description": "VMware NSX contains a stored Cross-Site Scripting (XSS) vulnerability in the gateway firewall due to improper input validation.",
+      "cvss_score": 6.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware nsx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware NSX 4.0.x, VMware NSX 4.1.x, VMware NSX 4.2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware nsx",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00038,
+      "nvd": {
+        "cvss_v3_score": 6.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22245",
+      "description": "VMware NSX contains a stored Cross-Site Scripting (XSS) vulnerability in the router port due to improper input validation.",
+      "cvss_score": 5.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware nsx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware NSX 4.0.x, VMware NSX 4.1.x, VMware NSX 4.2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware nsx",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00042,
+      "nvd": {
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22248",
+      "description": "The bitnami/pgpool\u00a0Docker image, and the bitnami/postgres-ha\u00a0k8s chart, under default configurations, comes with an 'repmgr' user that allows unauthenticated access to the database inside the cluster.\u00a0The PGPOOL_SR_CHECK_USER\u00a0is the user that Pgpool itself uses to perform streaming replication checks against nodes, and should not be at trust\u00a0level. This allows to log into a PostgreSQL database using the repgmr\u00a0user without authentication. If Pgpool is exposed externally, a potential attacker could use this user to get access to the service. This is also present within the bitnami/postgres-ha\u00a0Kubernetes Helm chart.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "bitnami",
+          "versions": [
+            {
+              "lessThan": "4.6.0-debian-12-r8",
+              "status": "affected",
+              "version": "*",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "bitnami",
+          "versions": [
+            {
+              "lessThan": "16.0.0",
+              "status": "affected",
+              "version": "*",
+              "versionType": "git"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bitnami",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00089,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1188"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22249",
+      "description": "VMware Aria automation contains a DOM based Cross-Site Scripting (XSS) vulnerability.\u00a0A malicious actor may exploit this issue to steal the access token of a logged in user of VMware Aria automation appliance by tricking the user into clicking a malicious crafted payload URL.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria automation",
+          "versions": [
+            {
+              "lessThan": "8.18.1 patch2",
+              "status": "affected",
+              "version": "8.18.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation",
+          "versions": [
+            {
+              "lessThan": "8.18.1 patch 2",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "8.18.1 patch 2",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud platform",
+          "versions": [
+            {
+              "lessThan": "8.18.1 patch 2",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria automation",
+        "product:vmware cloud foundation",
+        "product:vmware telco cloud platform",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00053,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 5,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41225",
+      "description": "The vCenter Server contains an authenticated command-execution vulnerability.\u00a0A malicious actor with privileges to create or modify alarms and run script action may exploit this issue to run arbitrary commands on the vCenter Server.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vcenter server",
+          "versions": [
+            {
+              "lessThan": "8.0 U3e",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.0 U3v",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vcenter server",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00046,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41226",
+      "description": "VMware\u00a0ESXi contains a denial-of-service vulnerability that occurs when performing a guest operation.\u00a0A malicious actor with guest operation privileges on a VM, who is already authenticated through vCenter Server or ESXi may trigger this issue to create a denial-of-service condition of guest VMs with VMware Tools running and guest operations enabled.",
+      "cvss_score": 6.8,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3se-24659227",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3sv-24723868",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00048,
+      "nvd": {
+        "cvss_v3_score": 6.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41227",
+      "description": "VMware ESXi,\u00a0Workstation, and Fusion contain a denial-of-service vulnerability due to certain guest options.\u00a0A malicious actor with non-administrative privileges within a guest operating system may be able to exploit this issue by exhausting memory of the host process leading to a denial-of-service condition.",
+      "cvss_score": 5.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3se-24659227",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3sv-24723868",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.6.3",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.6.3",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:fusion",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00033,
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41228",
+      "description": "VMware ESXi and vCenter Server contain a reflected cross-site scripting vulnerability due to improper input validation.\u00a0A malicious actor with network access to the login page of certain ESXi host or vCenter Server URL paths may exploit this issue to steal cookies or redirect to malicious websites.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vcenter server",
+          "versions": [
+            {
+              "lessThan": "8.0 U3e",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x,2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3se-24659227",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3sv-24723868",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vcenter server",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.03048,
+      "nvd": {
+        "cvss_v3_score": 4.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41229",
+      "description": "VMware Cloud Foundation\u00a0contains a directory traversal vulnerability.\u00a0A malicious actor with network access to port 443 on VMware Cloud Foundation may exploit this issue to access certain internal services.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "lessThan": "5.2.1.2",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.5.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00918,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41230",
+      "description": "VMware Cloud Foundation\u00a0contains an information disclosure vulnerability.\u00a0A malicious actor with network access to port 443 on VMware Cloud Foundation may exploit this issue to gain access to sensitive information.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "lessThan": "5.2.1.2",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.5.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00098,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41233",
+      "description": "Description:\n\nVMware AVI Load Balancer contains an authenticated blind SQL Injection vulnerability. VMware has evaluated the severity of the issue to be in the  Moderate severity range https://www.broadcom.com/support/vmware-services/security-response \u00a0with a maximum CVSSv3 base score of  6.8 https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N .\n\nKnown Attack Vectors:\n\nAn authenticated malicious user with network access may be able to use specially crafted SQL queries to gain database access.\n\nResolution:\n\nTo remediate CVE-2025-41233 apply the patches to the Avi Controller listed in the 'Fixed Version' column of the 'Response Matrix' found below.\n\nWorkarounds:\n\nNone.\n\nAdditional Documentation:\n\nNone.\n\nAcknowledgements:\n\nVMware would like to thank  Alexandru Copaceanu https://www.linkedin.com/in/alexandru-copaceanu-b39aaa1a8/ \u00a0for reporting this issue to us.\n\nNotes:\n\nNone.\n\n\u00a0\n\nResponse Matrix:\n\nProductVersionRunning OnCVECVSSv4SeverityFixed VersionWorkaroundsAdditional DocumentsVMware Avi Load Balancer30.1.1AnyCVE-2025-41233 6.8 https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N Moderate 30.1.2-2p3 https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer/avi-load-balancer/30-1/vmware-avi-load-balancer-release-notes/release-notes-30-1-2.html NoneNoneVMware Avi Load Balancer30.1.2AnyCVE-2025-41233 6.8 https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N Moderate 30.1.2-2p3 https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer/avi-load-balancer/30-1/vmware-avi-load-balancer-release-notes/release-notes-30-1-2.html NoneNoneVMware Avi Load Balancer30.2.1AnyCVE-2025-41233 6.8 https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N Moderate 30.2.1-2p6 https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer/avi-load-balancer/30-2/vmware-avi-load-balancer-release-notes/release-notes-for-avi-load-balancer-version-30-2-1.html NoneNoneVMware Avi Load Balancer30.2.2AnyCVE-2025-41233 6.8 https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N Moderate 30.2.2-2p5 https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer/avi-load-balancer/30-2/vmware-avi-load-balancer-release-notes/release-notes-for-avi-load-balancer-version-30-2-2.html NoneNoneVMware Avi Load Balancer30.2.3AnyCVE-2025-41233N/AN/AUnaffectedNoneNoneVMware Avi Load Balancer31.1.1AnyCVE-2025-41233 6.8 https://www.first.org/cvss/calculator/3-0#CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N Moderate 31.1.1-2p2 https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer/avi-load-balancer/31-1/vmware-avi-load-balancer-release-notes/Release-Note-Section-20627.html NoneNone\n\nCWE-89 in the Avi Load Balancer component of VMware allows an authenticated attacker to execute blind SQL injections in versions 30.1.1, 30.1.2, 30.2.1, and 30.2.2 due to improper input validation, enabling unauthorized database access.",
+      "cvss_score": 6.8,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "avi load balancer",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "30.1.1",
+              "versionType": "ANY"
+            },
+            {
+              "status": "affected",
+              "version": "30.1.2",
+              "versionType": "ANY"
+            },
+            {
+              "status": "affected",
+              "version": "30.2.1",
+              "versionType": "ANY"
+            },
+            {
+              "status": "affected",
+              "version": "30.2.2",
+              "versionType": "ANY"
+            },
+            {
+              "status": "unaffected",
+              "version": "30.2.3"
+            },
+            {
+              "status": "affected",
+              "version": "31.1.1",
+              "versionType": "ANY"
+            },
+            {
+              "status": "unaffected",
+              "version": "30.1.2-2p3",
+              "versionType": "ANY"
+            },
+            {
+              "status": "unaffected",
+              "version": "30.2.1-2p6",
+              "versionType": "ANY"
+            },
+            {
+              "status": "unaffected",
+              "version": "30.2.2-2p5",
+              "versionType": "ANY"
+            },
+            {
+              "status": "unaffected",
+              "version": "31.1.1-2p2",
+              "versionType": "ANY"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:avi load balancer",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00068,
+      "nvd": {
+        "cvss_v3_score": 6.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41234",
+      "description": "Description\n\nIn Spring Framework, versions 6.0.x as of 6.0.5, versions 6.1.x and 6.2.x, an application is vulnerable to a reflected file download (RFD) attack when it sets a \u201cContent-Disposition\u201d header with a non-ASCII charset, where the filename attribute is derived from user-supplied input.\n\nSpecifically, an application is vulnerable when all the following are true:\n\n  *  The header is prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via ContentDisposition.Builder#filename(String, Charset).\n  *  The value for the filename is derived from user-supplied input.\n  *  The application does not sanitize the user-supplied input.\n  *  The downloaded content of the response is injected with malicious commands by the attacker (see RFD paper reference for details).\n\n\nAn application is not vulnerable if any of the following is true:\n\n  *  The application does not set a \u201cContent-Disposition\u201d response header.\n  *  The header is not prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via one of:  *  ContentDisposition.Builder#filename(String), or\n  *  ContentDisposition.Builder#filename(String, ASCII)\n\n\n\n  *  The filename is not derived from user-supplied input.\n  *  The filename is derived from user-supplied input but sanitized by the application.\n  *  The attacker cannot inject malicious content in the downloaded content of the response.\n\n\nAffected Spring Products and VersionsSpring Framework:\n\n  *  6.2.0 - 6.2.7\n  *  6.1.0 - 6.1.20\n  *  6.0.5 - 6.0.28\n  *  Older, unsupported versions are not affected\n\n\nMitigationUsers of affected versions should upgrade to the corresponding fixed version.\n\nAffected version(s)Fix versionAvailability6.2.x6.2.8OSS6.1.x6.1.21OSS6.0.x6.0.29 Commercial https://enterprise.spring.io/ No further mitigation steps are necessary.\n\n\nCWE-113 in `Content-Disposition` handling in VMware Spring Framework versions 6.0.5 to 6.2.7 allows remote attackers to launch Reflected File Download (RFD) attacks via unsanitized user input in `ContentDisposition.Builder#filename(String, Charset)` with non-ASCII charsets.",
+      "cvss_score": 6.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring framework",
+          "versions": [
+            {
+              "changes": [
+                {
+                  "at": "6.0.29",
+                  "status": "unaffected"
+                }
+              ],
+              "lessThanOrEqual": "6.0.28",
+              "status": "affected",
+              "version": "6.0.5",
+              "versionType": "COMMERCIAL"
+            },
+            {
+              "changes": [
+                {
+                  "at": "6.1.21",
+                  "status": "unaffected"
+                }
+              ],
+              "lessThanOrEqual": "6.1.20",
+              "status": "affected",
+              "version": "6.1.0",
+              "versionType": "OSS"
+            },
+            {
+              "changes": [
+                {
+                  "at": "6.2.8",
+                  "status": "unaffected"
+                }
+              ],
+              "lessThanOrEqual": "6.2.7",
+              "status": "affected",
+              "version": "6.2.0",
+              "versionType": "OSS"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring framework",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00109,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-113"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41235",
+      "description": "Spring Cloud Gateway Server forwards the X-Forwarded-For\u00a0and Forwarded\u00a0headers from untrusted proxies.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring cloud gateway",
+          "versions": [
+            {
+              "lessThan": "4.3.0, 4.2.3, 4.1.8, 4.0.12, 3.1.10",
+              "status": "affected",
+              "version": "2.2.10.RELEASE - 4.2.2, 4.3.0-{M1, M2, RC1}",
+              "versionType": "oss, commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "spring cloud gateway server mvc",
+          "versions": [
+            {
+              "lessThan": "4.3.0, 4.2.3, 4.1.8",
+              "status": "affected",
+              "version": "4.1.7 - 4.2.2, 4.3.0-{M1, M2, RC1}",
+              "versionType": "OSS"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring cloud gateway",
+        "product:spring cloud gateway server mvc",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.001,
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-444"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41236",
+      "description": "VMware ESXi, Workstation, and Fusion contain an integer-overflow vulnerability in the VMXNET3 virtual network adapter.\u00a0A malicious actor with local administrative privileges on a virtual machine with VMXNET3 virtual network adapter may exploit this issue to execute code on the host. Non VMXNET3 virtual adapters are not affected by this issue.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3f-24784735",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi80U2e-24789317",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3w-24784741",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.6.4",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThanOrEqual": "13.6.4",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:fusion",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00034,
+      "nvd": {
+        "cvss_v3_score": 9.3,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41237",
+      "description": "VMware ESXi,\u00a0Workstation, and Fusion\u00a0contain an integer-underflow in VMCI (Virtual Machine Communication Interface) that leads to an out-of-bounds write.\u00a0A malicious actor with local administrative privileges on a virtual machine may exploit this issue to execute code as the virtual machine's VMX process running on the host. On ESXi, the exploitation is contained within the VMX sandbox whereas, on Workstation and Fusion, this may lead to code execution on the machine where Workstation or Fusion is installed.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.0.0.0, 5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.0.0.0"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3f-24784735",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi80U2e-24789317",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3w-24784741",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.6.4",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.6.4",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:fusion",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vsphere foundation",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00029,
+      "nvd": {
+        "cvss_v3_score": 9.3,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41238",
+      "description": "VMware ESXi, Workstation, and Fusion contain a heap-overflow vulnerability in the PVSCSI (Paravirtualized SCSI) controller that leads to an out of-bounds write.\u00a0A malicious actor with local administrative privileges on a virtual machine may exploit this issue to execute code as the virtual machine's VMX process running on the host. On ESXi, the exploitation is contained within the VMX sandbox and exploitable only with configurations that are unsupported. On Workstation and Fusion, this may lead to code execution on the machine where Workstation or Fusion is installed.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3f-24784735",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi80U2e-24789317",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3w-24784741",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.6.4",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.6.4",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:fusion",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00029,
+      "nvd": {
+        "cvss_v3_score": 9.3,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41239",
+      "description": "VMware ESXi, Workstation, Fusion, and VMware Tools contains an information disclosure vulnerability due to the usage of an uninitialised memory in vSockets.\u00a0A malicious actor with local administrative privileges on a virtual machine may be able to exploit this issue to leak memory from processes communicating with vSockets.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "esxi",
+          "versions": [
+            {
+              "lessThan": "ESXi80U3f-24784735",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi80U2e-24789317",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "ESXi70U3w-24784741",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "17.6.4",
+              "status": "affected",
+              "version": "17.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "13.6.4",
+              "status": "affected",
+              "version": "13.x",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "tools",
+          "versions": [
+            {
+              "lessThan": "13.0.1.0",
+              "status": "affected",
+              "version": "13.x.x",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "12.5.3",
+              "status": "affected",
+              "version": "12.x.x, 11.x.x,",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esxi",
+        "product:fusion",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:tools",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00036,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41240",
+      "description": "Three Bitnami Helm charts mount Kubernetes Secrets under a predictable path (/opt/bitnami/*/secrets) that is located within the web server document root.\nIn affected versions, this can lead to unauthenticated access to sensitive credentials via HTTP/S. A remote attacker could retrieve these secrets by accessing specific URLs if the application is exposed externally. The issue affects deployments using the default value of usePasswordFiles=true, which mounts secrets as files into the container filesystem.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "bitnamicharts/appsmith",
+          "versions": [
+            {
+              "lessThanOrEqual": "22.0.4",
+              "status": "affected",
+              "version": "21.2.0",
+              "versionType": "Helm"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "bitnamicharts/drupal",
+          "versions": [
+            {
+              "lessThan": "6.0.19",
+              "status": "affected",
+              "version": "5.2.0",
+              "versionType": "Helm"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "bitnamicharts/wordpress",
+          "versions": [
+            {
+              "lessThan": "25.0.4",
+              "status": "affected",
+              "version": "24.2.0",
+              "versionType": "Helm"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bitnamicharts/appsmith",
+        "product:bitnamicharts/drupal",
+        "product:bitnamicharts/wordpress",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00289,
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-552"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41241",
+      "description": "VMware vCenter contains a denial-of-service vulnerability.\u00a0A malicious actor who is authenticated through vCenter and has permission to perform API calls for guest OS customisation may trigger this vulnerability to create a denial-of-service condition.",
+      "cvss_score": 4.4,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vcenter",
+          "versions": [
+            {
+              "lessThan": "8.0 U3g",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.0 U3v",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vcenter",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00051,
+      "nvd": {
+        "cvss_v3_score": 4.4,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-754"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41242",
+      "description": "Spring Framework MVC applications can be vulnerable to a \u201cPath Traversal Vulnerability\u201d when deployed on a non-compliant Servlet container.\n\nAn application can be vulnerable when all the following are true:\n\n  *  the application is deployed as a WAR or with an embedded Servlet container\n  *  the Servlet container  does not reject suspicious sequences https://jakarta.ee/specifications/servlet/6.1/jakarta-servlet-spec-6.1.html#uri-path-canonicalization \n  *  the application  serves static resources https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/static-resources.html#page-title \u00a0with Spring resource handling\n\n\nWe have verified that applications deployed on Apache Tomcat or Eclipse Jetty are not vulnerable, as long as default security features are not disabled in the configuration. Because we cannot check exploits against all Servlet containers and configuration variants, we strongly recommend upgrading your application.",
+      "cvss_score": 5.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring framework",
+          "versions": [
+            {
+              "lessThan": "6.2.10",
+              "status": "affected",
+              "version": "6.2.x",
+              "versionType": "OSS"
+            },
+            {
+              "lessThan": "6.1.22",
+              "status": "affected",
+              "version": "6.1.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "5.3.44",
+              "status": "affected",
+              "version": "5.3.x",
+              "versionType": "commercial"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring framework",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00067,
+      "nvd": {
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41244",
+      "description": "VMware Aria Operations and VMware Tools contain a local privilege escalation vulnerability.\u00a0A malicious local actor with non-administrative privileges having access to a VM with VMware Tools\u00a0installed and managed by Aria Operations with SDMP enabled may exploit this vulnerability to escalate privileges to root on the same VM.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vcf operations",
+          "versions": [
+            {
+              "lessThan": "9.0.1.0",
+              "status": "affected",
+              "version": "9.0.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware tools",
+          "versions": [
+            {
+              "lessThan": "13.0.5.0",
+              "status": "affected",
+              "version": "13.x.x.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "12.5.4",
+              "status": "affected",
+              "version": "12.5.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "8.18.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud platform",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud infrastructure",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "3.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "2.x",
+              "versionType": "commercial"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:vcf operations",
+        "product:vmware aria operations",
+        "product:vmware cloud foundation",
+        "product:vmware telco cloud infrastructure",
+        "product:vmware telco cloud platform",
+        "product:vmware tools",
+        "vendor:vmware"
+      ],
+      "active_threat": true,
+      "probability_score": 0.00601,
+      "kev": {
+        "cveID": "CVE-2025-41244",
+        "vendorProject": "Broadcom",
+        "product": "VMware Aria Operations and VMware Tools",
+        "vulnerabilityName": "Broadcom VMware Aria Operations and VMware Tools Privilege Defined with Unsafe Actions Vulnerability",
+        "dateAdded": "2025-10-30",
+        "shortDescription": "Broadcom VMware Aria Operations and VMware Tools contain a privilege defined with unsafe actions vulnerability. A malicious local actor with non-administrative privileges having access to a VM with VMware Tools installed and managed by Aria Operations with SDMP enabled may exploit this vulnerability to escalate privileges to root on the same VM.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2025-11-20",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-267"
+        ],
+        "cpe_count": 12,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41245",
+      "description": "VMware Aria Operations contains an information disclosure vulnerability.\u00a0A malicious actor with non-administrative privileges in Aria Operations may exploit this vulnerability to disclose credentials of other users of Aria Operations.",
+      "cvss_score": 4.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "8.18.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud platform",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "commercial"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud infrastructure",
+          "versions": [
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "3.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "8.18.5",
+              "status": "affected",
+              "version": "2.x",
+              "versionType": "commercial"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "product:vmware cloud foundation",
+        "product:vmware telco cloud infrastructure",
+        "product:vmware telco cloud platform",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00041,
+      "nvd": {
+        "cvss_v3_score": 4.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1188"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41246",
+      "description": "VMware Tools for Windows contains an improper authorisation\u00a0vulnerability due to the way it handles user access controls.\u00a0A malicious actor with non-administrative privileges on a guest VM, who is already authenticated through vCenter or ESX may exploit this issue to access other guest VMs. Successful exploitation requires knowledge of credentials of the targeted VMs and vCenter or ESX.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "tools",
+          "versions": [
+            {
+              "lessThan": "13.0.5.0",
+              "status": "affected",
+              "version": "13.x.x.x",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "12.5.4",
+              "status": "affected",
+              "version": "12.x.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "11.x.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:tools",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00024,
+      "nvd": {
+        "cvss_v3_score": 7.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41248",
+      "description": "The Spring Security annotation detection mechanism may not correctly resolve annotations on methods within type hierarchies with a parameterized super type with unbounded generics. This can be an issue when using @PreAuthorize\u00a0and other method security annotations, resulting in an authorization bypass.\n\nYour application may be affected by this if you are using Spring Security's @EnableMethodSecurity\u00a0feature.\n\nYou are not affected by this if you are not using @EnableMethodSecurity\u00a0or if you do not use security annotations on methods in generic superclasses or generic interfaces.\n\nThis CVE is published in conjunction with  CVE-2025-41249 https://spring.io/security/cve-2025-41249 .",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring security",
+          "versions": [
+            {
+              "lessThan": "6.4.11",
+              "status": "affected",
+              "version": "6.4.x",
+              "versionType": "OSS"
+            },
+            {
+              "lessThan": "6.5.5",
+              "status": "affected",
+              "version": "6.5.x",
+              "versionType": "OSS"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring security",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00057,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-289"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41249",
+      "description": "The Spring Framework annotation detection mechanism may not correctly resolve annotations on methods within type hierarchies with a parameterized super type with unbounded generics. This can be an issue if such annotations are used for authorization decisions.\n\nYour application may be affected by this if you are using Spring Security's @EnableMethodSecurity\u00a0feature.\n\nYou are not affected by this if you are not using @EnableMethodSecurity\u00a0or if you do not use security annotations on methods in generic superclasses or generic interfaces.\n\nThis CVE is published in conjunction with  CVE-2025-41248 https://spring.io/security/cve-2025-41248 .",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring framework",
+          "versions": [
+            {
+              "lessThan": "6.2.11",
+              "status": "affected",
+              "version": "6.2.x",
+              "versionType": "OSS"
+            },
+            {
+              "lessThan": "6.1.23",
+              "status": "affected",
+              "version": "6.1.x",
+              "versionType": "commercial"
+            },
+            {
+              "lessThan": "5.3.45",
+              "status": "affected",
+              "version": "5.3.x",
+              "versionType": "COMMERCIAL"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring framework",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00064,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-285"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41250",
+      "description": "VMware vCenter contains an SMTP header injection vulnerability.\u00a0A malicious actor with non-administrative privileges on vCenter who has permission to create scheduled tasks may be able to manipulate the notification emails sent for scheduled tasks.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vcenter",
+          "versions": [
+            {
+              "lessThan": "8.0 U3g",
+              "status": "affected",
+              "version": "8.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.0 U3w",
+              "status": "affected",
+              "version": "7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "lessThan": "9.0.1.0",
+              "status": "affected",
+              "version": "9.x.x.x",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.2.2",
+              "status": "affected",
+              "version": "5.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.x, 4.x, 3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.x, 2.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "lessThan": "9.0.1.0",
+              "status": "affected",
+              "version": "9.x.x.x",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vcenter",
+        "product:vsphere foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00063,
+      "nvd": {
+        "cvss_v3_score": 8.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41251",
+      "description": "VMware NSX contains a weak password recovery mechanism vulnerability. An unauthenticated malicious actor may exploit this to enumerate valid usernames, potentially enabling brute-force attacks.\n\nImpact:\u00a0Username enumeration \u2192 credential brute force risk.\nAttack Vector:\u00a0Remote, unauthenticated.\nSeverity:\u00a0Important.\nCVSSv3:\u00a08.1 (High).\n\nAcknowledgments:\u00a0Reported by the National Security Agency.\n\nAffected Products:VMware NSX 9.x.x.x, 4.2.x, 4.1.x, 4.0.x\n\nNSX-T 3.x\nVMware Cloud Foundation (with NSX) 5.x, 4.5.x\n\nFixed Versions: NSX 9.0.1.0;  4.2.2.2/4.2.3.1 http://4.2.2.2/4.2.3.1 ; 4.1.2.7; NSX-T 3.2.4.3; CCF async patch (KB88287).\nWorkarounds: None.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "nsx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware NSX - 9.x.x.x, 4.2.x, 4.1.x, 4.0.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "VMware NSX-T - 3.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "VMware Cloud Foundation (with NSX) - 5.x, 4.5.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "VMware NSX 9.0.1.0; 4.2.2.2/4.2.3.1; 4.1.2.7; NSX-T 3.2.4.3; CCF async patch (KB88287)",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:nsx",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00049,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-640"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41252",
+      "description": "Description: VMware NSX contains a username enumeration vulnerability. An unauthenticated malicious actor may exploit this to enumerate valid usernames, potentially leading to unauthorized access attempts.\n\n\nImpact: Username enumeration \u2192 facilitates unauthorized access.\n\n\nAttack Vector: Remote, unauthenticated.\n\n\nSeverity: Important.\n\n\nCVSSv3: 7.5 (High).\n\n\nAcknowledgments: Reported by the National Security Agency.\n\n\nAffected Products:\n\n\n\n  *  VMware NSX 9.x.x.x, 4.2.x, 4.1.x, 4.0.x\n\n  *  NSX-T 3.x\n\n  *  VMware Cloud Foundation (with NSX) 5.x, 4.5.x\n\n\n\n\n\n\n\n\n\n\n\n\nFixed Versions:\u00a0\n\n\n\n  *  NSX 9.0.1.0;  4.2.2.2/4.2.3.1 http://4.2.2.2/4.2.3.1 ; 4.1.2.7; NSX-T 3.2.4.3; CCF async patch (KB88287).\n\n\n\n\n\n\nWorkarounds: None.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "nsx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware NSX 9.x.x.x, 4.2.x, 4.1.x, 4.0.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "VMware NSX-T 3.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "VMware Cloud Foundation (with NSX) 5.x, 4.5.x"
+            },
+            {
+              "status": "unaffected",
+              "version": "VMware NSX 9.0.1.0; 4.2.2.2/4.2.3.1; 4.1.2.7; NSX-T 3.2.4.3; CCF async patch (KB88287)"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:nsx",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00053,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-203"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41253",
+      "description": "The following versions of Spring Cloud Gateway Server Webflux may be vulnerable to the ability to expose environment variables and system properties to attackers.\n\nAn application should be considered vulnerable when all the following are true:\n\n  *  The application is using Spring Cloud Gateway Server Webflux (Spring Cloud Gateway Server WebMVC is not vulnerable).\n  *  An admin or untrusted third party using Spring Expression Language (SpEL) to access environment variables or system properties via routes.\n  *  An untrusted third party could create a route that uses SpEL to access environment variables or system properties if:  *  The Spring Cloud Gateway Server Webflux actuator web endpoint is enabled via management.endpoints.web.exposure.include=gateway\u00a0and management.endpoint.gateway.enabled=trueor management.endpoint.gateway.access=unrestricte.\n  *  The actuator endpoints are available to attackers.\n  *  The actuator endpoints are unsecured.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring cloud gateway server webflux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.2.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.3.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring cloud gateway server webflux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00076,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-917"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-41254",
+      "description": "STOMP over WebSocket applications may be vulnerable to a security bypass that allows an attacker to send unauthorized messages.\n\nAffected Spring Products and VersionsSpring Framework:\n\n  *  6.2.0 - 6.2.11\n  *  6.1.0 - 6.1.23\n  *  6.0.x - 6.0.29\n  *  5.3.0 - 5.3.45\n  *  Older, unsupported versions are also affected.\n\n\nMitigationUsers of affected versions should upgrade to the corresponding fixed version.\n\nAffected version(s)Fix versionAvailability6.2.x6.2.12OSS6.1.x6.1.24 Commercial https://enterprise.spring.io/ 6.0.xN/A Out of support https://spring.io/projects/spring-framework#support 5.3.x5.3.46 Commercial https://enterprise.spring.io/ No further mitigation steps are necessary.\n\nCreditThis vulnerability was discovered and responsibly reported by Jannis Kaiser.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring framework",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.3.x"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.x"
+            },
+            {
+              "status": "affected",
+              "version": "6.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "6.2.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring framework",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00117,
+      "nvd": {
+        "cvss_v3_score": 4.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-352"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22715",
+      "description": "VMWare Workstation and Fusion contain a logic flaw in the management of network packets.\u00a0\n\nKnown attack vectors: A malicious actor with administrative privileges on a Guest VM may be able to interrupt or intercept network connections of other Guest VM's.\u00a0\n\nResolution: To remediate CVE-2026-22715 please upgrade to VMware Workstation or Fusion Version 25H2U1",
+      "cvss_score": 5.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "25H2U1",
+              "status": "affected",
+              "version": "17.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "25H2U1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "lessThan": "25H2U1",
+              "status": "affected",
+              "version": "13.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "25H2U1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fusion",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00029,
+      "nvd": {
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-923"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22716",
+      "description": "Out-of-bound write vulnerability in VMware Workstation 25H1 and below on any platform allows an actor with non-administrative privileges on a guest VM to terminate certain\u00a0Workstation processes.",
+      "cvss_score": 5.0,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "25H2U1",
+              "status": "affected",
+              "version": "25H2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00023,
+      "nvd": {
+        "cvss_v3_score": 5.0,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22717",
+      "description": "Out-of-bound read vulnerability in VMware Workstation 25H1 and below on any platform allows an actor with non-administrative privileges on a guest VM to obtain limited information disclosure from the machine where VMware Workstation is installed.",
+      "cvss_score": 2.7,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:C/C:L/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "25H1U1",
+              "status": "affected",
+              "version": "25H2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00021,
+      "nvd": {
+        "cvss_v3_score": 2.7,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22719",
+      "description": "VMware Aria Operations contains a command injection vulnerability. A malicious unauthenticated actor may exploit this issue to execute arbitrary commands which may lead to remote code execution in VMware Aria Operations while support-assisted product migration is in progress.\u00a0\n\nTo remediate CVE-2026-22719, apply the patches listed in the 'Fixed Version' column of the ' Response Matrix https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947 ' in VMSA-2026-0001\u00a0\n\nWorkarounds for CVE-2026-22719 are documented in the 'Workarounds' column of the ' Response Matrix https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947 ' in VMSA-2026-0001",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.6",
+              "status": "affected",
+              "version": "8.18.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "8.18.6"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "cloud foundationcust",
+          "versions": [
+            {
+              "lessThan": "9.0.2",
+              "status": "affected",
+              "version": "9.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "9.0.2",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "4.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "2.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "2.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:aria operations",
+        "product:cloud foundationcust",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "vendor:vmware"
+      ],
+      "active_threat": true,
+      "probability_score": 0.07353,
+      "kev": {
+        "cveID": "CVE-2026-22719",
+        "vendorProject": "Broadcom",
+        "product": "VMware Aria Operations",
+        "vulnerabilityName": "Broadcom VMware Aria Operations Command Injection Vulnerability",
+        "dateAdded": "2026-03-03",
+        "shortDescription": "Broadcom VMware Aria Operations formerly known as vRealize Operations (vROps) contains a command injection vulnerability that allows an unauthenticated attacker to execute arbitrary commands, potentially leading to remote code execution during support\u2011assisted product migration.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-03-24",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22720",
+      "description": "VMware Aria Operations contains a stored cross-site scripting vulnerability. A malicious actor with privileges to create custom benchmarks may be able to inject script to perform administrative actions in VMware Aria Operations.\u00a0\n\nTo remediate CVE-2026-22720, apply the patches listed in the 'Fixed Version' column of the 'Response Matrix' of\u00a0 VMSA-2026-0001 https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947https:// .",
+      "cvss_score": 8.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.6",
+              "status": "affected",
+              "version": "8.18.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "8.18.6"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "4.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "9.0.2",
+              "status": "affected",
+              "version": "9.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.2"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud platform",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "4.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud infrastructure",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "2.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "product:vmware cloud foundation",
+        "product:vmware telco cloud infrastructure",
+        "product:vmware telco cloud platform",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0008,
+      "nvd": {
+        "cvss_v3_score": 8.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22721",
+      "description": "VMware Aria Operations contains a privilege escalation vulnerability. A malicious actor with privileges in vCenter to access Aria Operations may leverage this vulnerability to obtain administrative access in VMware Aria Operations. To remediate CVE-2026-22721, apply the patches listed in the 'Fixed Version' column of the 'Response Matrix' found in\u00a0 VMSA-2026-0001 https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947 .",
+      "cvss_score": 6.2,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware aria operations",
+          "versions": [
+            {
+              "lessThan": "8.18.6",
+              "status": "affected",
+              "version": "8.18.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "8.18.6"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware cloud foundation",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "4.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "9.0.2",
+              "status": "affected",
+              "version": "9.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3"
+            },
+            {
+              "status": "unaffected",
+              "version": "9.0.2"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud platform",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "4.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vmware telco cloud infrastructure",
+          "versions": [
+            {
+              "lessThan": "5.2.3",
+              "status": "affected",
+              "version": "2.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.2.3",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware aria operations",
+        "product:vmware cloud foundation",
+        "product:vmware telco cloud infrastructure",
+        "product:vmware telco cloud platform",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0009,
+      "nvd": {
+        "cvss_v3_score": 6.2,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-22722",
+      "description": "A malicious actor with authenticated user privileges on a Windows based Workstation host may be able to cause a null pointer dereference error. To Remediate CVE-2026-22722, apply the patches listed in the \"Fixed version\" column of the 'Response Matrix'",
+      "cvss_score": 6.1,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "lessThan": "25H2u1",
+              "status": "affected",
+              "version": "17.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "25H2u1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00016,
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-2817",
+      "description": "Use of insecure directory in Spring Data Geode snapshot import extracts archives into predictable, permissive directories under the system temp location. On shared hosts, a local user with basic privileges can access another user\u2019s extracted snapshot\u00a0contents, leading to unintended exposure of cache data.",
+      "cvss_score": 4.4,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring data geode",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.7.18",
+              "status": "affected",
+              "version": "2.0.0.RELEASE",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "spring data gemfire",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.2.13.RELEASE",
+              "status": "affected",
+              "version": "1.7.0.RELEASE",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring data gemfire",
+        "product:spring data geode",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00014,
+      "nvd": {
+        "cvss_v3_score": 4.4,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-378",
+          "CWE-379",
+          "CWE-538"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-2818",
+      "description": "A zip-slip path traversal vulnerability in Spring Data Geode's import snapshot functionality allows attackers to write files outside the intended extraction directory. This vulnerability appears to be susceptible on Windows OS only.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring data geode",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.7.18",
+              "status": "affected",
+              "version": "2.0.0.RELEASE",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "spring data gemfire",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.2.13.RELEASE",
+              "status": "affected",
+              "version": "1.7.0.RELEASE",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring data gemfire",
+        "product:spring data geode",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00068,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-23"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    }
+  ]
+}
