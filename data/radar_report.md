@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-13T03:09:49+00:00`
+Generated: `2026-03-13T04:43:14+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,9 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Mar 13 | [CVE-2023-43010](https://www.cve.org/CVERecord?id=CVE-2023-43010) | 🆕 New |
+| Mar 13 | [CVE-2026-3909](https://www.cve.org/CVERecord?id=CVE-2026-3909) | 🆕 New |
+| Mar 13 | [CVE-2026-3910](https://www.cve.org/CVERecord?id=CVE-2026-3910) | 🆕 New |
 | Mar 12 | [CVE-2022-0028](https://www.cve.org/CVERecord?id=CVE-2022-0028) | 🔴 In CISA KEV |
 | Mar 12 | [CVE-2022-0070](https://www.cve.org/CVERecord?id=CVE-2022-0070) | 🆕 New |
 | Mar 12 | [CVE-2022-0096](https://www.cve.org/CVERecord?id=CVE-2022-0096) | 🆕 New |
@@ -300,7 +303,4 @@ Top critical items:
 | Mar 12 | [CVE-2022-0307](https://www.cve.org/CVERecord?id=CVE-2022-0307) | 🆕 New |
 | Mar 12 | [CVE-2022-0308](https://www.cve.org/CVERecord?id=CVE-2022-0308) | 🆕 New |
 | Mar 12 | [CVE-2022-0309](https://www.cve.org/CVERecord?id=CVE-2022-0309) | 🆕 New |
-| Mar 12 | [CVE-2022-0310](https://www.cve.org/CVERecord?id=CVE-2022-0310) | 🆕 New |
-| Mar 12 | [CVE-2022-0311](https://www.cve.org/CVERecord?id=CVE-2022-0311) | 🆕 New |
-| Mar 12 | [CVE-2022-0317](https://www.cve.org/CVERecord?id=CVE-2022-0317) | 🆕 New |
-| ... | | _and 24327 more_ |
+| ... | | _and 24330 more_ |
