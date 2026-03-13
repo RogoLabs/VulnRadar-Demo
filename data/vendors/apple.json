@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-13T01:43:13+00:00",
+  "generated_at": "2026-03-13T03:09:45+00:00",
   "vendor": "apple",
-  "count": 2229,
+  "count": 2230,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -55387,7 +55387,7 @@
     },
     {
       "cve_id": "CVE-2023-41974",
-      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in iOS 17 and iPadOS 17. An app may be able to execute arbitrary code with kernel privileges.",
+      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in iOS 17 and iPadOS 17, iOS 15.8.7 and iPadOS 15.8.7. An app may be able to execute arbitrary code with kernel privileges.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
@@ -55400,6 +55400,18 @@
               "version": "unspecified",
               "status": "affected",
               "lessThan": "17",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "15.8.7",
               "versionType": "custom"
             }
           ]
@@ -65348,7 +65360,7 @@
     },
     {
       "cve_id": "CVE-2023-43000",
-      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in macOS Ventura 13.5, iOS 16.6 and iPadOS 16.6, Safari 16.6. Processing maliciously crafted web content may lead to memory corruption.",
+      "description": "A use-after-free issue was addressed with improved memory management. This issue is fixed in macOS Ventura 13.5, iOS 16.6 and iPadOS 16.6, Safari 16.6, iOS 15.8.7 and iPadOS 15.8.7. Processing maliciously crafted web content may lead to memory corruption.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
@@ -65388,6 +65400,18 @@
               "versionType": "custom"
             }
           ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "15.8.7",
+              "versionType": "custom"
+            }
+          ]
         }
       ],
       "watchlist_hit": true,
@@ -65424,6 +65448,97 @@
         ],
         "cpe_count": 4,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2023-43010",
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 17.2 and iPadOS 17.2, macOS Sonoma 14.2, Safari 17.2, iOS 16.7.15 and iPadOS 16.7.15, iOS 15.8.7 and iPadOS 15.8.7. Processing maliciously crafted web content may lead to memory corruption.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "17.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "safari",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "17.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "14.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "16.7.15",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "15.8.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:safari",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00018,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 5
       }
     },
     {
@@ -67019,7 +67134,7 @@
     },
     {
       "cve_id": "CVE-2024-23222",
-      "description": "A type confusion issue was addressed with improved checks. This issue is fixed in iOS 17.3 and iPadOS 17.3, macOS Sonoma 14.3, tvOS 17.3. Processing maliciously crafted web content may lead to arbitrary code execution. Apple is aware of a report that this issue may have been exploited.",
+      "description": "A type confusion issue was addressed with improved checks. This issue is fixed in iOS 17.3 and iPadOS 17.3, macOS Sonoma 14.3, tvOS 17.3, iOS 16.7.5 and iPadOS 16.7.5, iOS 15.8.7 and iPadOS 15.8.7. Processing maliciously crafted web content may lead to arbitrary code execution. Apple is aware of a report that this issue may have been exploited.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
@@ -67056,6 +67171,30 @@
               "version": "unspecified",
               "status": "affected",
               "lessThan": "14.3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "16.7.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "15.8.7",
               "versionType": "custom"
             }
           ]
