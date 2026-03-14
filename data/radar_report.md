@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-14T15:15:17+00:00`
+Generated: `2026-03-14T16:16:34+00:00`
 
 ## Executive Summary
 
@@ -161,6 +161,7 @@ Top critical items:
 | [CVE-2022-26925](https://www.cve.org/CVERecord?id=CVE-2022-26925) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-07-22 | 0.374 | 8.1 | ✅ | Windows LSA Spoofing Vulnerability |
 | [CVE-2025-20333](https://www.cve.org/CVERecord?id=CVE-2025-20333) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-26 | 0.188 | 9.9 | ✅ | A vulnerability in the VPN web server of Cisco Secure Firewall Adaptive Security Appliance (ASA) Software and Cisco Secure Firewall Threat Defense (FTD) Softwa… |
 | [CVE-2025-4428](https://www.cve.org/CVERecord?id=CVE-2025-4428) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.434 | 7.2 | ✅ | Remote Code Execution in API component in Ivanti Endpoint Manager Mobile 12.5.0.0 and prior on unspecified platforms allows authenticated attackers to execute … |
+| [CVE-2026-3909](https://www.cve.org/CVERecord?id=CVE-2026-3909) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-27 | 0.271 | 8.8 | ✅ | Out of bounds write in Skia in Google Chrome prior to 146.0.7680.75 allowed a remote attacker to perform out of bounds memory access via a crafted HTML page. (… |
 | [CVE-2024-7965](https://www.cve.org/CVERecord?id=CVE-2024-7965) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-18 | 0.271 | 8.8 | ✅ | Inappropriate implementation in V8 in Google Chrome prior to 128.0.6613.84 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML … |
 | [CVE-2025-58034](https://www.cve.org/CVERecord?id=CVE-2025-58034) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-11-25 | 0.476 | 6.7 | ✅ | An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] vulnerability in Fortinet FortiWeb 8.0.0 t… |
 | [CVE-2023-29360](https://www.cve.org/CVERecord?id=CVE-2023-29360) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-21 | 0.303 | 8.4 | ✅ | Microsoft Streaming Service Elevation of Privilege Vulnerability |
@@ -168,6 +169,7 @@ Top critical items:
 | [CVE-2024-26169](https://www.cve.org/CVERecord?id=CVE-2024-26169) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-07-04 | 0.346 | 7.8 | ✅ | Windows Error Reporting Service Elevation of Privilege Vulnerability |
 | [CVE-2023-2033](https://www.cve.org/CVERecord?id=CVE-2023-2033) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-08 | 0.243 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 112.0.5615.121 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2024-30040](https://www.cve.org/CVERecord?id=CVE-2024-30040) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-04 | 0.235 | 8.8 | ✅ | Windows MSHTML Platform Security Feature Bypass Vulnerability |
+| [CVE-2026-3910](https://www.cve.org/CVERecord?id=CVE-2026-3910) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-27 | 0.219 | 8.8 | ✅ | Inappropriate implementation in V8 in Google Chrome prior to 146.0.7680.75 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted H… |
 | [CVE-2023-41993](https://www.cve.org/CVERecord?id=CVE-2023-41993) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-16 | 0.217 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. Processing web content may lead to arbitrary code execution. Apple is awa… |
 | [CVE-2025-24989](https://www.cve.org/CVERecord?id=CVE-2025-24989) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-14 | 0.257 | 8.2 | ✅ | An improper access control vulnerability in Power Pages allows an unauthorized attacker to elevate privileges over a network potentially bypassing the user reg… |
 | [CVE-2025-20393](https://www.cve.org/CVERecord?id=CVE-2025-20393) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-24 | 0.063 | 10.0 | ✅ | A vulnerability in the Spam Quarantine feature of Cisco AsyncOS Software for Cisco Secure Email Gateway and Cisco Secure Email and Web Manager could allow an u… |
@@ -246,8 +248,6 @@ Top critical items:
 | [CVE-2025-21418](https://www.cve.org/CVERecord?id=CVE-2025-21418) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-04 | 0.095 | 7.8 | ✅ | Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability |
 | [CVE-2022-22718](https://www.cve.org/CVERecord?id=CVE-2022-22718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-10 | 0.093 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.093 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
-| [CVE-2025-24472](https://www.cve.org/CVERecord?id=CVE-2025-24472) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-08 | 0.059 | 8.1 | ✅ | An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS 7.0.0 through 7.0.16 and FortiProxy 7.2.0 through 7.2.12,… |
-| [CVE-2024-21351](https://www.cve.org/CVERecord?id=CVE-2024-21351) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-05 | 0.108 | 7.6 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 
 ## Recent Changes (Last 7 Days)
 
