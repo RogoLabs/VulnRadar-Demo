@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-14T01:42:42+00:00",
+  "generated_at": "2026-03-14T03:07:34+00:00",
   "vendor": "apache_software_foundation",
-  "count": 968,
+  "count": 970,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -41627,6 +41627,38 @@
       }
     },
     {
+      "cve_id": "CVE-2025-60012",
+      "description": "Malicious configuration can lead to unauthorized file access in Apache Livy.\n\nThis issue affects Apache Livy 0.7.0 and 0.8.0 when connecting to Apache\u00a0Spark 3.1 or later.\n\nA request that includes a Spark configuration value supported from Apache\u00a0Spark version 3.1 can lead to users gaining access to files they do not have permissions to.\n\nFor the vulnerability to be exploitable, the user needs to have access to Apache Livy's REST or JDBC interface and be able to send requests with arbitrary Spark configuration values.\n\nUsers are recommended to upgrade to version 0.9.0 or later, which fixes the issue.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache livy",
+          "versions": [
+            {
+              "lessThan": "0.9.0-incubating",
+              "status": "affected",
+              "version": "0.7.0-incubating",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache livy",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2025-60021",
       "description": "Remote command injection vulnerability in heap profiler builtin service in Apache bRPC ((all versions < 1.15.0)) on all platforms allows attacker to inject remote command.\n\n\n\nRoot Cause: The bRPC heap profiler built-in service (/pprof/heap) does not validate the user-provided extra_options parameter and executes it as a command-line argument. Attackers can execute remote commands using the extra_options parameter..\n\nAffected scenarios:\u00a0Use the built-in bRPC heap profiler service to perform jemalloc memory profiling.\n\nHow to Fix: we provide two methods, you can choose one of them:\n\n1. Upgrade bRPC to version 1.15.0.\n2. Apply this patch ( https://github.com/apache/brpc/pull/3101 ) manually.",
       "cvss_score": 9.8,
@@ -43066,6 +43098,38 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2025-66249",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Livy.\n\nThis issue affects Apache Livy: from 0.3.0 before 0.9.0.\n\nThe vulnerability can only be exploited with non-default Apache Livy Server settings. If\u00a0the configuration value \"livy.file.local-dir-whitelist\" is set to a non-default value, the directory checking can be bypassed.\n\nUsers are recommended to upgrade to version 0.9.0, which fixes the issue.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache livy",
+          "versions": [
+            {
+              "lessThan": "0.9.0-incubating",
+              "status": "affected",
+              "version": "0.3.0-incubating",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache livy",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2025-66388",
