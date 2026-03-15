@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-15T03:17:07+00:00`
+Generated: `2026-03-15T04:56:50+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,7 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Mar 15 | [CVE-2025-54920](https://www.cve.org/CVERecord?id=CVE-2025-54920) | 🆕 New |
 | Mar 14 | [CVE-2025-60012](https://www.cve.org/CVERecord?id=CVE-2025-60012) | 🆕 New |
 | Mar 14 | [CVE-2025-66249](https://www.cve.org/CVERecord?id=CVE-2025-66249) | 🆕 New |
 | Mar 14 | [CVE-2026-0385](https://www.cve.org/CVERecord?id=CVE-2026-0385) | 🆕 New |
@@ -302,5 +303,4 @@ Top critical items:
 | Mar 12 | [CVE-2022-0298](https://www.cve.org/CVERecord?id=CVE-2022-0298) | 🆕 New |
 | Mar 12 | [CVE-2022-0300](https://www.cve.org/CVERecord?id=CVE-2022-0300) | 🆕 New |
 | Mar 12 | [CVE-2022-0301](https://www.cve.org/CVERecord?id=CVE-2022-0301) | 🆕 New |
-| Mar 12 | [CVE-2022-0302](https://www.cve.org/CVERecord?id=CVE-2022-0302) | 🆕 New |
-| ... | | _and 24336 more_ |
+| ... | | _and 24337 more_ |
