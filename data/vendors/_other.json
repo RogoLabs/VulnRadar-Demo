@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-17T01:43:50+00:00",
+  "generated_at": "2026-03-17T03:12:04+00:00",
   "vendor": "_other",
   "count": 932,
   "items": [
@@ -27778,7 +27778,7 @@
     },
     {
       "cve_id": "CVE-2024-0202",
-      "description": "A security vulnerability has been identified in the cryptlib cryptographic library when cryptlib is compiled with the support for RSA key exchange ciphersuites in TLS (by setting the USE_RSA_SUITES define), it will be vulnerable to the timing variant of the Bleichenbacher attack. An attacker that is able to perform a large number of connections to the server will be able to decrypt RSA ciphertexts or forge signatures using server's certificate.",
+      "description": "A security vulnerability has been identified in the cryptlib cryptographic library when cryptlib is compiled with the support for RSA key exchange ciphersuites in TLS (by setting the USE_RSA_SUITES define), it will be vulnerable to the timing variant of the Bleichenbacher attack. An attacker that is able to perform a large number of connections to the server will be able to decrypt RSA ciphertexts or forge signatures using server's certificate. THIS CVE ID IS CURRENTLY DISPUTED - MAINTAINER NOTE: There are only two situations where it's enabled, one is for fuzz-testing to exercise code paths that wouldn't otherwise be available, the other is for static source code analysis with tools like Coverity and Prefast, again to open up code paths that otherwise wouldn't be available.  It can also be enabled manually in two specific test builds just to make sure the code still compiles OK, to avoid bit rot and verify that the fuzz-testing build will compile without errors.",
       "cvss_score": 5.9,
       "cvss_severity": "MEDIUM",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
