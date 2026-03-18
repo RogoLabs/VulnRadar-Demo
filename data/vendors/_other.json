@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-18T01:45:23+00:00",
+  "generated_at": "2026-03-18T03:16:46+00:00",
   "vendor": "_other",
-  "count": 932,
+  "count": 936,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -19417,6 +19417,36 @@
         "cpe_count": 6,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-1376",
+      "description": "IBM i 7.6 could allow a remote attacker to cause a denial of service using failed authentication connections due to improper allocation of resources.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "ibm",
+          "product": "i",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:i",
+        "vendor:ibm"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2022-22536",
@@ -56670,6 +56700,66 @@
       }
     },
     {
+      "cve_id": "CVE-2026-27448",
+      "description": "pyOpenSSL is a Python wrapper around the OpenSSL library. Starting in version 0.14.0 and prior to version 26.0.0, if a user provided callback to `set_tlsext_servername_callback` raised an unhandled exception, this would result in a connection being accepted. If a user was relying on this callback for any security-sensitive behavior, this could allow bypassing it. Starting in version 26.0.0, unhandled exceptions now result in rejecting the connection.",
+      "cvss_score": 1.7,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U",
+      "affected": [
+        {
+          "vendor": "pyca",
+          "product": "pyopenssl",
+          "versions": [
+            {
+              "version": ">= 0.14.0, < 26.0.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:pyopenssl",
+        "vendor:pyca"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-27459",
+      "description": "pyOpenSSL is a Python wrapper around the OpenSSL library. Starting in version 22.0.0 and prior to version 26.0.0, if a user provided callback to `set_cookie_generate_callback` returned a cookie value greater than 256 bytes, pyOpenSSL would overflow an OpenSSL provided buffer. Starting in version 26.0.0, cookie values that are too long are now rejected.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:U",
+      "affected": [
+        {
+          "vendor": "pyca",
+          "product": "pyopenssl",
+          "versions": [
+            {
+              "version": ">= 22.0.0, < 26.0.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:pyopenssl",
+        "vendor:pyca"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-28403",
       "description": "Textream is a free macOS teleprompter app. Prior to version 1.5.1, the `DirectorServer` WebSocket server (`ws://127.0.0.1:<httpPort+1>`) accepts connections from any origin without validating the HTTP `Origin` header during the WebSocket handshake. A malicious web page visited in the same browser session can silently connect to the local WebSocket server and send arbitrary `DirectorCommand` payloads, allowing full remote control of the teleprompter content. Version 1.5.1 fixes the issue.",
       "cvss_score": 7.6,
@@ -56790,6 +56880,95 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-3888",
+      "description": "Local privilege escalation in snapd on Linux allows local attackers to get root privilege by re-creating snap's private /tmp directory when systemd-tmpfiles is configured to automatically clean up this directory. This issue affects Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS, 22.04 LTS, and 24.04 LTS.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.75.1",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 16.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.61.4ubuntu0.16.04.1+esm2",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 18.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.61.4ubuntu0.18.04.1+esm2",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 20.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.67.1+20.04ubuntu1~esm1",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 22.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.73+ubuntu22.04.1",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 24.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.73+ubuntu24.04.1",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
