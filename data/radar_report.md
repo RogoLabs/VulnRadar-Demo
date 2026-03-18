@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-18T18:35:48+00:00`
+Generated: `2026-03-18T19:29:42+00:00`
 
 ## Executive Summary
 
@@ -40,7 +40,7 @@ Top critical items:
 
 - Total items: **24400**
 - Watchlist hits: **24059**
-- CISA KEVs: **642**
+- CISA KEVs: **643**
 - Exploit Intel (PoC): **721**
 - Exploit Intel + Watchlist (CRITICAL): **380**
 
@@ -222,6 +222,7 @@ Top critical items:
 | [CVE-2025-13223](https://www.cve.org/CVERecord?id=CVE-2025-13223) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-10 | 0.021 | 8.8 | ✅ | Type Confusion in V8 in Google Chrome prior to 142.0.7444.175 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-37969](https://www.cve.org/CVERecord?id=CVE-2022-37969) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-10-05 | 0.121 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
 | [CVE-2023-3079](https://www.cve.org/CVERecord?id=CVE-2023-3079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-28 | 0.020 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 114.0.5735.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
+| [CVE-2026-20963](https://www.cve.org/CVERecord?id=CVE-2026-20963) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-03-21 | 0.016 | 8.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network. |
 | [CVE-2024-44308](https://www.cve.org/CVERecord?id=CVE-2024-44308) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-12 | 0.015 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in Safari 18.1.1, iOS 17.7.2 and iPadOS 17.7.2, macOS Sequoia 15.1.1, iOS 18.1.1 and iPadOS 1… |
 | [CVE-2024-21351](https://www.cve.org/CVERecord?id=CVE-2024-21351) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-05 | 0.132 | 7.6 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 | [CVE-2022-2294](https://www.cve.org/CVERecord?id=CVE-2022-2294) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-15 | 0.010 | 8.8 | ✅ | Heap buffer overflow in WebRTC in Google Chrome prior to 103.0.5060.114 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
@@ -247,7 +248,6 @@ Top critical items:
 | [CVE-2023-37450](https://www.cve.org/CVERecord?id=CVE-2023-37450) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-03 | 0.000 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in iOS 16.6 and iPadOS 16.6, Safari 16.5.2, tvOS 16.6, macOS Ventura 13.5, watchOS 9.6. Proce… |
 | [CVE-2023-32373](https://www.cve.org/CVERecord?id=CVE-2023-32373) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.000 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.6 and iPadOS … |
 | [CVE-2025-21418](https://www.cve.org/CVERecord?id=CVE-2025-21418) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-04 | 0.095 | 7.8 | ✅ | Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability |
-| [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.093 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
 
 ## Recent Changes (Last 7 Days)
 
@@ -264,6 +264,7 @@ Top critical items:
 | Mar 18 | [CVE-2026-28779](https://www.cve.org/CVERecord?id=CVE-2026-28779) | 🆕 New |
 | Mar 18 | [CVE-2026-30911](https://www.cve.org/CVERecord?id=CVE-2026-30911) | 🆕 New |
 | Mar 18 | [CVE-2026-3888](https://www.cve.org/CVERecord?id=CVE-2026-3888) | 🆕 New |
+| Mar 18 | [CVE-2025-66376](https://www.cve.org/CVERecord?id=CVE-2025-66376) | 🔴 In CISA KEV |
 | Mar 16 | [CVE-2025-47813](https://www.cve.org/CVERecord?id=CVE-2025-47813) | 🔴 In CISA KEV |
 | Mar 15 | [CVE-2025-54920](https://www.cve.org/CVERecord?id=CVE-2025-54920) | 🆕 New |
 | Mar 14 | [CVE-2025-60012](https://www.cve.org/CVERecord?id=CVE-2025-60012) | 🆕 New |
@@ -302,5 +303,4 @@ Top critical items:
 | Mar 12 | [CVE-2022-0118](https://www.cve.org/CVERecord?id=CVE-2022-0118) | 🆕 New |
 | Mar 12 | [CVE-2022-0120](https://www.cve.org/CVERecord?id=CVE-2022-0120) | 🆕 New |
 | Mar 12 | [CVE-2022-0185](https://www.cve.org/CVERecord?id=CVE-2022-0185) | 🔴 In CISA KEV |
-| Mar 12 | [CVE-2022-0247](https://www.cve.org/CVERecord?id=CVE-2022-0247) | 🆕 New |
-| ... | | _and 24349 more_ |
+| ... | | _and 24350 more_ |
