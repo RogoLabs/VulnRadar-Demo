@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-19T01:46:40+00:00",
+  "generated_at": "2026-03-19T03:19:40+00:00",
   "vendor": "jenkins_project",
-  "count": 782,
+  "count": 786,
   "items": [
     {
       "cve_id": "CVE-2022-0538",
@@ -35949,6 +35949,158 @@
         "cpe_count": 2,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-33001",
+      "description": "Jenkins 2.554 and earlier, LTS 2.541.2 and earlier does not safely handle symbolic links during the extraction of .tar and .tar.gz archives, allowing crafted archives to write files to arbitrary locations on the filesystem, restricted only by file system access permissions of the user running Jenkins.\nThis can be exploited to deploy malicious scripts or plugins on the controller by attackers with Item/Configure permission, or able to control agent processes.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.555",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.541.3",
+              "versionType": "maven",
+              "lessThan": "2.541.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-33002",
+      "description": "Jenkins 2.442 through 2.554 (both inclusive), LTS 2.426.3 through LTS 2.541.2 (both inclusive) performs origin validation of requests made through the CLI WebSocket endpoint by computing the expected origin for comparison using the Host or X-Forwarded-Host HTTP request headers, making it vulnerable to DNS rebinding attacks that allow bypassing origin validation.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThan": "2.426.3",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.427",
+              "versionType": "maven",
+              "lessThan": "2.442",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.555",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.541.3",
+              "versionType": "maven",
+              "lessThan": "2.541.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-33003",
+      "description": "Jenkins LoadNinja Plugin 2.1 and earlier stores LoadNinja API keys unencrypted in job config.xml files on the Jenkins controller where they can be viewed by users with Item/Extended Read permission or access to the Jenkins controller file system.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins loadninja plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "2.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins loadninja plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-33004",
+      "description": "Jenkins LoadNinja Plugin 2.1 and earlier does not mask LoadNinja API keys displayed on the job configuration form, increasing the potential for attackers to observe and capture them.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins loadninja plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "2.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins loadninja plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
