@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-19T15:31:56+00:00",
+  "generated_at": "2026-03-19T16:35:34+00:00",
   "vendor": "cisco",
   "count": 1218,
   "items": [
@@ -586998,14 +586998,25 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:cisco secure firewall management center (fmc)",
         "vendor:cisco"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.00575,
+      "kev": {
+        "cveID": "CVE-2026-20131",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Management Center (FMC)",
+        "vulnerabilityName": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability",
+        "dateAdded": "2026-03-19",
+        "shortDescription": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain a deserialization of untrusted data vulnerability in the web-based management interface that could allow an unauthenticated, remote attacker to execute arbitrary Java code as root on an affected device.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-03-22",
+        "knownRansomwareCampaignUse": "Known"
+      },
       "nvd": {
         "cvss_v3_score": 10.0,
         "cvss_v3_severity": "CRITICAL",
