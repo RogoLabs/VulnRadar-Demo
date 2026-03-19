@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-19T06:35:19+00:00",
+  "generated_at": "2026-03-19T07:31:57+00:00",
   "vendor": "apple",
   "count": 2231,
   "items": [
@@ -148526,7 +148526,8 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-787"
+          "CWE-787",
+          "CWE-120"
         ],
         "cpe_count": 10,
         "reference_count": 8
@@ -154567,9 +154568,9 @@
     {
       "cve_id": "CVE-2026-20643",
       "description": "A cross-origin issue in the Navigation API was addressed with improved input validation. This issue is fixed in Background Security Improvements for iOS 26.3.1, iPadOS 26.3.1, macOS 26.3.1, and macOS 26.3.2. Processing maliciously crafted web content may bypass Same Origin Policy.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 5.4,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
       "affected": [
         {
           "vendor": "apple",
@@ -154634,12 +154635,15 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 5.4,
+        "cvss_v3_severity": "MEDIUM",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-346"
+        ],
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
