@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-18T23:24:22+00:00`
+Generated: `2026-03-19T00:53:52+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **24400**
 - Watchlist hits: **24059**
 - CISA KEVs: **643**
-- Exploit Intel (PoC): **721**
-- Exploit Intel + Watchlist (CRITICAL): **380**
+- Exploit Intel (PoC): **722**
+- Exploit Intel + Watchlist (CRITICAL): **381**
 
 ## Top Findings (max 200)
 
@@ -222,7 +222,7 @@ Top critical items:
 | [CVE-2025-13223](https://www.cve.org/CVERecord?id=CVE-2025-13223) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-10 | 0.021 | 8.8 | ✅ | Type Confusion in V8 in Google Chrome prior to 142.0.7444.175 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-37969](https://www.cve.org/CVERecord?id=CVE-2022-37969) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-10-05 | 0.121 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
 | [CVE-2023-3079](https://www.cve.org/CVERecord?id=CVE-2023-3079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-28 | 0.020 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 114.0.5735.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
-| [CVE-2026-20963](https://www.cve.org/CVERecord?id=CVE-2026-20963) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-03-21 | 0.016 | 8.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network. |
+| [CVE-2026-20963](https://www.cve.org/CVERecord?id=CVE-2026-20963) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-21 | 0.016 | 8.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network. |
 | [CVE-2024-44308](https://www.cve.org/CVERecord?id=CVE-2024-44308) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-12 | 0.015 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in Safari 18.1.1, iOS 17.7.2 and iPadOS 17.7.2, macOS Sequoia 15.1.1, iOS 18.1.1 and iPadOS 1… |
 | [CVE-2024-21351](https://www.cve.org/CVERecord?id=CVE-2024-21351) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-05 | 0.132 | 7.6 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 | [CVE-2022-2294](https://www.cve.org/CVERecord?id=CVE-2022-2294) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-15 | 0.010 | 8.8 | ✅ | Heap buffer overflow in WebRTC in Google Chrome prior to 103.0.5060.114 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
