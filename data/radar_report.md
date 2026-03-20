@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-20T15:25:55+00:00`
+Generated: `2026-03-20T16:25:48+00:00`
 
 ## Executive Summary
 
@@ -38,10 +38,10 @@ Top critical items:
 
 ## Summary
 
-- Total items: **24452**
+- Total items: **24454**
 - Watchlist hits: **24111**
-- CISA KEVs: **644**
-- Exploit Intel (PoC): **723**
+- CISA KEVs: **649**
+- Exploit Intel (PoC): **725**
 - Exploit Intel + Watchlist (CRITICAL): **382**
 
 ## Top Findings (max 200)
@@ -241,13 +241,13 @@ Top critical items:
 | [CVE-2022-32893](https://www.cve.org/CVERecord?id=CVE-2022-32893) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-08 | 0.002 | 8.8 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.6.1 and iPadOS 15.6.1, macOS Monterey 12.5.1, Safari 15… |
 | [CVE-2025-6558](https://www.cve.org/CVERecord?id=CVE-2025-6558) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-12 | 0.002 | 8.8 | ✅ | Insufficient validation of untrusted input in ANGLE and GPU in Google Chrome prior to 138.0.7204.157 allowed a remote attacker to potentially perform a sandbox… |
 | [CVE-2026-2441](https://www.cve.org/CVERecord?id=CVE-2026-2441) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-10 | 0.001 | 8.8 | ✅ | Use after free in CSS in Google Chrome prior to 145.0.7632.75 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
+| [CVE-2025-31277](https://www.cve.org/CVERecord?id=CVE-2025-31277) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-04-03 | 0.001 | 8.8 | ✅ | The issue was addressed with improved memory handling. This issue is fixed in Safari 18.6, watchOS 11.6, visionOS 2.6, iOS 18.6 and iPadOS 18.6, macOS Sequoia … |
 | [CVE-2023-28205](https://www.cve.org/CVERecord?id=CVE-2023-28205) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-01 | 0.001 | 8.8 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in Safari 16.4.1, iOS 15.7.5 and iPadOS 15.7.5, iOS 16.4.1 and iPadOS… |
 | [CVE-2023-43000](https://www.cve.org/CVERecord?id=CVE-2023-43000) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-26 | 0.001 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in macOS Ventura 13.5, iOS 16.6 and iPadOS 16.6, Safari 16.6, iOS 15.… |
 | [CVE-2023-42917](https://www.cve.org/CVERecord?id=CVE-2023-42917) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-25 | 0.001 | 8.8 | ✅ | A memory corruption vulnerability was addressed with improved locking. This issue is fixed in iOS 17.1.2 and iPadOS 17.1.2, macOS Sonoma 14.1.2, Safari 17.1.2.… |
 | [CVE-2025-43529](https://www.cve.org/CVERecord?id=CVE-2025-43529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-05 | 0.001 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 26.2, Safari 26.2, iOS 18.7.3 and iPadOS 18.7.3, iOS 26.2 … |
 | [CVE-2023-23529](https://www.cve.org/CVERecord?id=CVE-2023-23529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-03-07 | 0.000 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in iOS 15.7.4 and iPadOS 15.7.4, iOS 16.3.1 and iPadOS 16.3.1, macOS Ventura 13.… |
 | [CVE-2023-37450](https://www.cve.org/CVERecord?id=CVE-2023-37450) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-03 | 0.000 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in iOS 16.6 and iPadOS 16.6, Safari 16.5.2, tvOS 16.6, macOS Ventura 13.5, watchOS 9.6. Proce… |
-| [CVE-2023-32373](https://www.cve.org/CVERecord?id=CVE-2023-32373) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.000 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.6 and iPadOS … |
 
 ## Recent Changes (Last 7 Days)
 
