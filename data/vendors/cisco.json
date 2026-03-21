@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T01:43:49+00:00",
+  "generated_at": "2026-03-21T03:07:05+00:00",
   "vendor": "cisco",
   "count": 1218,
   "items": [
@@ -584741,7 +584741,7 @@
     },
     {
       "cve_id": "CVE-2026-20128",
-      "description": "A vulnerability in the Data Collection Agent (DCA) feature of Cisco Catalyst SD-WAN Manager could allow an authenticated, local attacker to gain DCA user privileges on an affected system. To exploit this vulnerability, the attacker must have valid&nbsp;vmanage credentials on the affected system.\r\n\r\nThis vulnerability is due to the presence of a credential file for the DCA user on an affected system. An attacker could exploit this vulnerability by accessing the filesystem as a low-privileged user and reading the file that contains the DCA password from that affected system. A successful exploit could allow the attacker to access another affected system and gain DCA user privileges.\r\nNote: Cisco Catalyst SD-WAN Manager releases 20.18 and later are not affected by this vulnerability.",
+      "description": "A vulnerability in the Data Collection Agent (DCA) feature of Cisco Catalyst SD-WAN Manager could allow an unauthenticated, remote attacker to gain DCA user privileges on an affected system.\r\n\r\nThis vulnerability is due to the presence of a credential file for the DCA user on an affected system. An attacker could exploit this vulnerability by sending a crafted HTTP request and reading the file that contains the DCA password from that affected system. A successful exploit could allow the attacker to access another affected system and gain DCA user privileges.\r\nNote: Cisco Catalyst SD-WAN Manager releases 20.18 and later are not affected by this vulnerability.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
@@ -586699,7 +586699,7 @@
     },
     {
       "cve_id": "CVE-2026-20131",
-      "description": "A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker to execute arbitrary Java code as root on an affected device.\r\n\r This vulnerability is due to insecure deserialization of a user-supplied Java byte stream. An attacker could exploit this vulnerability by sending a crafted serialized Java object to the web-based management interface of an affected device. A successful exploit could allow the attacker to execute arbitrary code on the device and elevate privileges to root.\r\n\r Note: If the FMC management interface does not have public internet access, the attack surface that is associated with this vulnerability is reduced.",
+      "description": "A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker to execute arbitrary Java code as root on an affected device.\r\n\n This vulnerability is due to insecure deserialization of a user-supplied Java byte stream. An attacker could exploit this vulnerability by sending a crafted serialized Java object to the web-based management interface of an affected device. A successful exploit could allow the attacker to execute arbitrary code on the device and elevate privileges to root.\r\n\n Note: If the FMC management interface does not have public internet access, the attack surface that is associated with this vulnerability is reduced.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
@@ -587025,8 +587025,8 @@
         "cwe_ids": [
           "CWE-502"
         ],
-        "cpe_count": 0,
-        "reference_count": 1
+        "cpe_count": 71,
+        "reference_count": 3
       }
     },
     {
