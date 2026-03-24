@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-03-24T03:14:35+00:00`
+Generated: `2026-03-24T04:49:03+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,14 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Mar 24 | [CVE-2026-4673](https://www.cve.org/CVERecord?id=CVE-2026-4673) | 🆕 New |
+| Mar 24 | [CVE-2026-4674](https://www.cve.org/CVERecord?id=CVE-2026-4674) | 🆕 New |
+| Mar 24 | [CVE-2026-4675](https://www.cve.org/CVERecord?id=CVE-2026-4675) | 🆕 New |
+| Mar 24 | [CVE-2026-4676](https://www.cve.org/CVERecord?id=CVE-2026-4676) | 🆕 New |
+| Mar 24 | [CVE-2026-4677](https://www.cve.org/CVERecord?id=CVE-2026-4677) | 🆕 New |
+| Mar 24 | [CVE-2026-4678](https://www.cve.org/CVERecord?id=CVE-2026-4678) | 🆕 New |
+| Mar 24 | [CVE-2026-4679](https://www.cve.org/CVERecord?id=CVE-2026-4679) | 🆕 New |
+| Mar 24 | [CVE-2026-4680](https://www.cve.org/CVERecord?id=CVE-2026-4680) | 🆕 New |
 | Mar 21 | [CVE-2026-23271](https://www.cve.org/CVERecord?id=CVE-2026-23271) | 🆕 New |
 | Mar 21 | [CVE-2026-23272](https://www.cve.org/CVERecord?id=CVE-2026-23272) | 🆕 New |
 | Mar 21 | [CVE-2026-23273](https://www.cve.org/CVERecord?id=CVE-2026-23273) | 🆕 New |
@@ -295,12 +303,4 @@ Top critical items:
 | Mar 20 | [CVE-2026-26137](https://www.cve.org/CVERecord?id=CVE-2026-26137) | 🆕 New |
 | Mar 20 | [CVE-2026-26138](https://www.cve.org/CVERecord?id=CVE-2026-26138) | 🆕 New |
 | Mar 20 | [CVE-2026-26139](https://www.cve.org/CVERecord?id=CVE-2026-26139) | 🆕 New |
-| Mar 20 | [CVE-2026-32169](https://www.cve.org/CVERecord?id=CVE-2026-32169) | 🆕 New |
-| Mar 20 | [CVE-2026-32191](https://www.cve.org/CVERecord?id=CVE-2026-32191) | 🆕 New |
-| Mar 20 | [CVE-2026-32194](https://www.cve.org/CVERecord?id=CVE-2026-32194) | 🆕 New |
-| Mar 20 | [CVE-2025-32432](https://www.cve.org/CVERecord?id=CVE-2025-32432) | 🔴 In CISA KEV |
-| Mar 20 | [CVE-2025-54068](https://www.cve.org/CVERecord?id=CVE-2025-54068) | 🔴 In CISA KEV |
-| Mar 19 | [CVE-2025-71265](https://www.cve.org/CVERecord?id=CVE-2025-71265) | 🆕 New |
-| Mar 19 | [CVE-2025-71266](https://www.cve.org/CVERecord?id=CVE-2025-71266) | 🆕 New |
-| Mar 19 | [CVE-2025-71267](https://www.cve.org/CVERecord?id=CVE-2025-71267) | 🆕 New |
-| ... | | _and 50 more_ |
+| ... | | _and 58 more_ |
