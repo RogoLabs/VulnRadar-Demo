@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-04-28T14:46:18+00:00`
+Generated: `2026-04-28T15:01:32+00:00`
 
 ## Executive Summary
 
@@ -248,3 +248,59 @@ Top critical items:
 | [CVE-2025-48543](https://www.cve.org/CVERecord?id=CVE-2025-48543) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-25 | 0.003 | 8.8 | ✅ | In multiple locations, there is a possible way to escape chrome sandbox to attack android system_server due to a use after free. This could lead to local escal… |
 | [CVE-2023-32435](https://www.cve.org/CVERecord?id=CVE-2023-32435) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.002 | 8.8 | ✅ | A memory corruption issue was addressed with improved state management. This issue is fixed in macOS Ventura 13.3, Safari 16.4, iOS 16.4 and iPadOS 16.4, iOS 1… |
 | [CVE-2025-6558](https://www.cve.org/CVERecord?id=CVE-2025-6558) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-12 | 0.002 | 8.8 | ✅ | Insufficient validation of untrusted input in ANGLE and GPU in Google Chrome prior to 138.0.7204.157 allowed a remote attacker to potentially perform a sandbox… |
+
+## Recent Changes (Last 7 Days)
+
+| Date | CVE | Status |
+|------|-----|--------|
+| Apr 28 | [CVE-2022-0028](https://www.cve.org/CVERecord?id=CVE-2022-0028) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-0012](https://www.cve.org/CVERecord?id=CVE-2024-0012) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-3393](https://www.cve.org/CVERecord?id=CVE-2024-3393) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-3400](https://www.cve.org/CVERecord?id=CVE-2024-3400) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-5910](https://www.cve.org/CVERecord?id=CVE-2024-5910) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-9463](https://www.cve.org/CVERecord?id=CVE-2024-9463) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-9465](https://www.cve.org/CVERecord?id=CVE-2024-9465) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2024-9474](https://www.cve.org/CVERecord?id=CVE-2024-9474) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2025-0108](https://www.cve.org/CVERecord?id=CVE-2025-0108) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2025-0111](https://www.cve.org/CVERecord?id=CVE-2025-0111) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-0070](https://www.cve.org/CVERecord?id=CVE-2022-0070) | 🆕 New |
+| Apr 28 | [CVE-2022-0185](https://www.cve.org/CVERecord?id=CVE-2022-0185) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-0847](https://www.cve.org/CVERecord?id=CVE-2022-0847) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22706](https://www.cve.org/CVERecord?id=CVE-2022-22706) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22947](https://www.cve.org/CVERecord?id=CVE-2022-22947) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22948](https://www.cve.org/CVERecord?id=CVE-2022-22948) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22954](https://www.cve.org/CVERecord?id=CVE-2022-22954) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22960](https://www.cve.org/CVERecord?id=CVE-2022-22960) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22963](https://www.cve.org/CVERecord?id=CVE-2022-22963) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-22965](https://www.cve.org/CVERecord?id=CVE-2022-22965) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-23176](https://www.cve.org/CVERecord?id=CVE-2022-23176) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-23227](https://www.cve.org/CVERecord?id=CVE-2022-23227) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-23748](https://www.cve.org/CVERecord?id=CVE-2022-23748) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-24682](https://www.cve.org/CVERecord?id=CVE-2022-24682) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-24990](https://www.cve.org/CVERecord?id=CVE-2022-24990) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-26143](https://www.cve.org/CVERecord?id=CVE-2022-26143) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-26258](https://www.cve.org/CVERecord?id=CVE-2022-26258) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-26318](https://www.cve.org/CVERecord?id=CVE-2022-26318) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-26352](https://www.cve.org/CVERecord?id=CVE-2022-26352) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-26500](https://www.cve.org/CVERecord?id=CVE-2022-26500) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-26501](https://www.cve.org/CVERecord?id=CVE-2022-26501) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-27924](https://www.cve.org/CVERecord?id=CVE-2022-27924) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-27925](https://www.cve.org/CVERecord?id=CVE-2022-27925) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-27926](https://www.cve.org/CVERecord?id=CVE-2022-27926) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-28810](https://www.cve.org/CVERecord?id=CVE-2022-28810) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-29303](https://www.cve.org/CVERecord?id=CVE-2022-29303) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-29464](https://www.cve.org/CVERecord?id=CVE-2022-29464) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-29499](https://www.cve.org/CVERecord?id=CVE-2022-29499) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-30333](https://www.cve.org/CVERecord?id=CVE-2022-30333) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-31199](https://www.cve.org/CVERecord?id=CVE-2022-31199) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-35405](https://www.cve.org/CVERecord?id=CVE-2022-35405) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-35914](https://www.cve.org/CVERecord?id=CVE-2022-35914) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-36537](https://www.cve.org/CVERecord?id=CVE-2022-36537) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-37042](https://www.cve.org/CVERecord?id=CVE-2022-37042) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-37055](https://www.cve.org/CVERecord?id=CVE-2022-37055) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-38181](https://www.cve.org/CVERecord?id=CVE-2022-38181) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-39197](https://www.cve.org/CVERecord?id=CVE-2022-39197) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-40765](https://www.cve.org/CVERecord?id=CVE-2022-40765) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-40799](https://www.cve.org/CVERecord?id=CVE-2022-40799) | 🔴 In CISA KEV |
+| Apr 28 | [CVE-2022-41223](https://www.cve.org/CVERecord?id=CVE-2022-41223) | 🔴 In CISA KEV |
+| ... | | _and 11067 more_ |
