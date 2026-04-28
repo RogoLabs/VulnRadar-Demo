@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-28T16:46:58+00:00",
+  "generated_at": "2026-04-28T17:41:34+00:00",
   "vendor": "_other",
-  "count": 699,
+  "count": 700,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -33993,6 +33993,63 @@
         ],
         "cpe_count": 3,
         "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2024-1708",
+      "description": "ConnectWise ScreenConnect 23.9.7 and prior are affected by path-traversal vulnerability, which may allow an attacker \n\nthe ability to execute remote code or directly impact confidential data or critical systems.\n\n",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "connectwise",
+          "product": "screenconnect",
+          "versions": [
+            {
+              "changes": [
+                {
+                  "at": "23.9.8",
+                  "status": "unaffected"
+                }
+              ],
+              "lessThanOrEqual": "23.9.7 ",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.53657,
+      "kev": {
+        "cveID": "CVE-2024-1708",
+        "vendorProject": "ConnectWise",
+        "product": "ScreenConnect",
+        "vulnerabilityName": "ConnectWise ScreenConnect Path Traversal Vulnerability",
+        "dateAdded": "2026-04-28",
+        "shortDescription": "ConnectWise ScreenConnect contains a path traversal vulnerability which could allow an attacker to execute remote code or directly impact confidential data and critical systems.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-05-12",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
       }
     },
     {
