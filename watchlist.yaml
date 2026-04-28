@@ -1,0 +1,47 @@
+# VulnRadar Demo Watchlist
+# ========================
+# A comprehensive demo watchlist with major vendors.
+# Uses min_cvss: 7.0 threshold to keep data size under GitHub's 100MB limit.
+
+# ============================================================================
+# VENDORS - Major software vendors for comprehensive demo coverage
+# ============================================================================
+vendors:
+  # Big tech (Patch Tuesday, monthly updates)
+  - microsoft           # Windows, Office, Azure, Exchange
+  - apple               # macOS, iOS, Safari
+  - google              # Chrome, Android, GCP
+
+  # Infrastructure & security
+  - cisco               # IOS, ASA, WebEx
+  - vmware              # ESXi, vCenter, Horizon
+  - linux               # Linux kernel
+  - apache              # httpd, Tomcat, Log4j, Kafka
+
+  # Security vendors (often in KEV)
+  - fortinet            # FortiGate, FortiOS
+  - paloaltonetworks    # PAN-OS firewalls
+  - ivanti              # VPN/MDM
+
+# ============================================================================
+# PRODUCTS - High-signal products
+# ============================================================================
+products:
+  - log4j               # Log4Shell and variants
+  - chrome              # Google Chrome browser
+  - openssl             # Heartbleed, etc.
+  - jenkins             # CI/CD - many CVEs
+
+# ============================================================================
+# EXCLUSIONS
+# ============================================================================
+exclude_vendors:
+  - n/a
+  - unknown
+  - unspecified
+
+# ============================================================================
+# THRESHOLDS - High+ severity only to keep file size manageable
+# ============================================================================
+thresholds:
+  min_cvss: 7.0         # High (7.0-8.9) and Critical (9.0+) only

@@ -1,0 +1,768 @@
+"""Unit tests for notify.py."""
+
+import json
+import sys
+from pathlib import Path
+from typing import Any, Dict
+from unittest.mock import MagicMock, patch
+
+import pytest
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from notify import (
+    Change,
+    _create_weekly_summary_issue,
+    _escalation_comment,
+    _extract_dynamic_labels,
+    _extract_severity_label,
+    _generate_demo_cve,
+    _issue_body,
+    _load_items,
+    _parse_project_url,
+)
+
+
+class TestLoadItems:
+    """Tests for _load_items() function."""
+
+    def test_load_items_from_dict_with_items_key(self, tmp_path: Path):
+        """Load items from {"items": [...]} format."""
+        data = {
+            "meta": {"generated": "2024-01-01"},
+            "items": [
+                {"cve_id": "CVE-2024-0001"},
+                {"cve_id": "CVE-2024-0002"},
+            ],
+        }
+        path = tmp_path / "data.json"
+        path.write_text(json.dumps(data))
+        items = _load_items(path)
+        assert len(items) == 2
+        assert items[0]["cve_id"] == "CVE-2024-0001"
+
+    def test_load_items_from_list(self, tmp_path: Path):
+        """Load items from raw list format."""
+        data = [
+            {"cve_id": "CVE-2024-0001"},
+            {"cve_id": "CVE-2024-0002"},
+        ]
+        path = tmp_path / "data.json"
+        path.write_text(json.dumps(data))
+        items = _load_items(path)
+        assert len(items) == 2
+
+    def test_load_items_empty(self, tmp_path: Path):
+        """Empty data returns empty list."""
+        path = tmp_path / "empty.json"
+        path.write_text(json.dumps({"items": []}))
+        items = _load_items(path)
+        assert items == []
+
+
+class TestIssueBody:
+    """Tests for _issue_body() function."""
+
+    def test_critical_cve_has_kev_signal(self, sample_radar_item: Dict[str, Any]):
+        """Critical items in KEV should show KEV signal."""
+        body = _issue_body(sample_radar_item)
+        assert "CISA KEV" in body
+        assert "Known Exploited" in body
+
+    def test_non_critical_no_kev_signal(self, sample_radar_item: Dict[str, Any]):
+        """Non-KEV items should show No for KEV."""
+        item = {**sample_radar_item, "is_critical": False, "active_threat": False}
+        body = _issue_body(item)
+        assert "CISA KEV" in body
+
+    def test_cve_id_in_body(self, sample_radar_item: Dict[str, Any]):
+        """CVE ID should be in the body."""
+        body = _issue_body(sample_radar_item)
+        assert "CVE-2024-12345" in body
+
+    def test_signals_section(self, sample_radar_item: Dict[str, Any]):
+        """Signals section should show all flags."""
+        body = _issue_body(sample_radar_item)
+        assert "Exploit Intel" in body
+        assert "Watchlist" in body
+        assert "CISA KEV" in body
+
+    def test_epss_formatting(self, sample_radar_item: Dict[str, Any]):
+        """EPSS should be formatted as percentage."""
+        body = _issue_body(sample_radar_item)
+        assert "EPSS Score" in body
+        assert "85.0%" in body
+
+    def test_cvss_formatting(self, sample_radar_item: Dict[str, Any]):
+        """CVSS should be formatted to 1 decimal place."""
+        body = _issue_body(sample_radar_item)
+        assert "CVSS Score" in body
+        assert "9.8" in body
+
+    def test_kev_due_date(self, sample_radar_item: Dict[str, Any]):
+        """KEV due date should be shown when available."""
+        body = _issue_body(sample_radar_item)
+        assert "2024-07-01" in body
+
+    def test_cve_org_link(self, sample_radar_item: Dict[str, Any]):
+        """CVE.org link should be included."""
+        body = _issue_body(sample_radar_item)
+        assert "https://www.cve.org/CVERecord?id=CVE-2024-12345" in body
+
+    def test_description_included(self, sample_radar_item: Dict[str, Any]):
+        """Description should be in body."""
+        body = _issue_body(sample_radar_item)
+        assert "A critical vulnerability" in body
+
+    def test_missing_optional_fields(self):
+        """Handle items with missing optional fields gracefully."""
+        minimal = {
+            "cve_id": "CVE-2024-00001",
+            "is_critical": False,
+        }
+        body = _issue_body(minimal)
+        assert "CVE-2024-00001" in body
+        assert "Threat Signals" in body
+
+    def test_none_epss_cvss(self):
+        """Handle None values for EPSS and CVSS."""
+        item = {
+            "cve_id": "CVE-2024-00001",
+            "probability_score": None,
+            "cvss_score": None,
+            "is_critical": False,
+        }
+        body = _issue_body(item)
+        # Should not crash, show N/A
+        assert "EPSS Score" in body
+        assert "CVSS Score" in body
+        assert "N/A" in body
+
+    def test_change_reason_banner(self, sample_radar_item: Dict[str, Any]):
+        """Change reason banner should be shown when changes provided."""
+        from notify import Change
+
+        changes = [Change(cve_id="CVE-2024-12345", change_type="NEW_CVE")]
+        body = _issue_body(sample_radar_item, changes)
+        assert "Alert Reason" in body
+        assert "NEW" in body
+
+    def test_nvd_link_included(self, sample_radar_item: Dict[str, Any]):
+        """NVD link should be included in references."""
+        body = _issue_body(sample_radar_item)
+        assert "nvd.nist.gov" in body
+
+    def test_vendor_product_shown(self, sample_radar_item: Dict[str, Any]):
+        """Vendor and product should be shown in overview."""
+        body = _issue_body(sample_radar_item)
+        assert "Apache" in body
+        assert "Log4j" in body
+
+
+class TestDiscordPayload:
+    """Tests for Discord notification formatting."""
+
+    def test_discord_alert_structure(self, sample_radar_item: Dict[str, Any]):
+        """Test Discord embed structure (without actually sending)."""
+        # Import the function
+        from notify import send_discord_alert
+
+        # Mock requests.post in the discord provider module
+        with patch("vulnradar.notifications.discord.requests.post") as mock_post:
+            mock_response = MagicMock()
+            mock_response.raise_for_status = MagicMock()
+            mock_post.return_value = mock_response
+
+            send_discord_alert("https://fake.webhook.url", sample_radar_item)
+
+            # Verify it was called
+            mock_post.assert_called_once()
+            call_args = mock_post.call_args
+            payload = call_args.kwargs.get("json") or call_args[1].get("json")
+
+            # Check embed structure
+            assert "embeds" in payload
+            embed = payload["embeds"][0]
+            assert "CVE-2024-12345" in embed["title"]
+            assert "CRITICAL" in embed["title"]
+            assert embed["color"] == 0xFF0000  # Red for critical
+
+    def test_discord_summary_structure(self, sample_radar_item: Dict[str, Any]):
+        """Test Discord summary embed structure."""
+        from notify import send_discord_summary
+
+        with patch("vulnradar.notifications.discord.requests.post") as mock_post:
+            mock_response = MagicMock()
+            mock_response.raise_for_status = MagicMock()
+            mock_post.return_value = mock_response
+
+            items = [sample_radar_item]
+            send_discord_summary("https://fake.webhook.url", items, "test/repo")
+
+            mock_post.assert_called_once()
+            call_args = mock_post.call_args
+            payload = call_args.kwargs.get("json") or call_args[1].get("json")
+
+            embed = payload["embeds"][0]
+            assert "Summary" in embed["title"]
+            assert any("Critical" in f["name"] for f in embed["fields"])
+
+
+class TestSlackPayload:
+    """Tests for Slack notification formatting."""
+
+    def test_slack_alert_structure(self, sample_radar_item: Dict[str, Any]):
+        """Test Slack message structure."""
+        from notify import send_slack_alert
+
+        with patch("vulnradar.notifications.slack.requests.post") as mock_post:
+            mock_response = MagicMock()
+            mock_response.raise_for_status = MagicMock()
+            mock_post.return_value = mock_response
+
+            send_slack_alert("https://hooks.slack.com/fake", sample_radar_item)
+
+            mock_post.assert_called_once()
+            call_args = mock_post.call_args
+            payload = call_args.kwargs.get("json") or call_args[1].get("json")
+
+            assert "attachments" in payload
+            assert payload["attachments"][0]["color"] == "danger"
+
+
+class TestTeamsPayload:
+    """Tests for Teams notification formatting."""
+
+    def test_teams_alert_structure(self, sample_radar_item: Dict[str, Any]):
+        """Test Teams Adaptive Card structure."""
+        from notify import send_teams_alert
+
+        with patch("vulnradar.notifications.teams.requests.post") as mock_post:
+            mock_response = MagicMock()
+            mock_response.raise_for_status = MagicMock()
+            mock_post.return_value = mock_response
+
+            send_teams_alert("https://teams.webhook.url", sample_radar_item)
+
+            mock_post.assert_called_once()
+            call_args = mock_post.call_args
+            payload = call_args.kwargs.get("json") or call_args[1].get("json")
+
+            assert payload["type"] == "message"
+            assert "attachments" in payload
+            card = payload["attachments"][0]["content"]
+            assert card["type"] == "AdaptiveCard"
+            assert card["version"] == "1.4"
+
+
+class TestStateManager:
+    """Tests for StateManager class."""
+
+    def test_empty_state_on_missing_file(self, tmp_path: Path):
+        """StateManager creates empty state when file doesn't exist."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "nonexistent.json")
+        assert state.data["schema_version"] == 1
+        assert state.data["seen_cves"] == {}
+        assert state.data["last_run"] is None
+
+    def test_save_and_load_state(self, tmp_path: Path):
+        """State persists between saves."""
+        from notify import StateManager
+
+        state_path = tmp_path / "state.json"
+        state1 = StateManager(state_path)
+        state1.update_snapshot("CVE-2024-0001", {"is_critical": True})
+        state1.save()
+
+        state2 = StateManager(state_path)
+        assert "CVE-2024-0001" in state2.data["seen_cves"]
+
+    def test_is_new_cve(self, tmp_path: Path):
+        """is_new_cve returns True for unseen CVEs."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        assert state.is_new_cve("CVE-2024-0001") is True
+
+        state.update_snapshot("CVE-2024-0001", {})
+        assert state.is_new_cve("CVE-2024-0001") is False
+
+    def test_detect_new_cve(self, tmp_path: Path):
+        """Detect NEW_CVE change type for unseen CVE."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        changes = state.detect_changes("CVE-2024-0001", {"is_critical": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "NEW_CVE"
+        assert changes[0].cve_id == "CVE-2024-0001"
+
+    def test_detect_new_kev(self, tmp_path: Path):
+        """Detect NEW_KEV when active_threat changes to True."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        # First seen - not in KEV
+        state.update_snapshot("CVE-2024-0001", {"active_threat": False})
+
+        # Now added to KEV
+        changes = state.detect_changes("CVE-2024-0001", {"active_threat": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "NEW_KEV"
+
+    def test_detect_new_patchthis(self, tmp_path: Path):
+        """Detect NEW_PATCHTHIS when in_patchthis changes to True."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {"in_patchthis": False})
+
+        changes = state.detect_changes("CVE-2024-0001", {"in_patchthis": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "NEW_PATCHTHIS"
+
+    def test_detect_became_critical(self, tmp_path: Path):
+        """Detect BECAME_CRITICAL when is_critical changes to True."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {"is_critical": False})
+
+        changes = state.detect_changes("CVE-2024-0001", {"is_critical": True})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "BECAME_CRITICAL"
+
+    def test_detect_epss_spike(self, tmp_path: Path):
+        """Detect EPSS_SPIKE when EPSS increases by >= 0.3."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {"probability_score": 0.1})
+
+        # 0.1 -> 0.5 is a 0.4 spike (>= 0.3 threshold)
+        changes = state.detect_changes("CVE-2024-0001", {"probability_score": 0.5})
+
+        assert len(changes) == 1
+        assert changes[0].change_type == "EPSS_SPIKE"
+        assert changes[0].old_value == 0.1
+        assert changes[0].new_value == 0.5
+
+    def test_no_change_for_stable_cve(self, tmp_path: Path):
+        """No changes detected for stable CVE."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        item = {
+            "is_critical": True,
+            "active_threat": True,
+            "in_patchthis": True,
+            "probability_score": 0.5,
+        }
+        state.update_snapshot("CVE-2024-0001", item)
+
+        changes = state.detect_changes("CVE-2024-0001", item)
+        assert len(changes) == 0
+
+    def test_mark_alerted(self, tmp_path: Path):
+        """mark_alerted records channels and updates statistics."""
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {})
+        state.mark_alerted("CVE-2024-0001", ["discord", "slack"])
+
+        entry = state.data["seen_cves"]["CVE-2024-0001"]
+        assert "discord" in entry["alerted_channels"]
+        assert "slack" in entry["alerted_channels"]
+        assert state.data["statistics"]["total_alerts_sent"] == 2
+        assert state.data["statistics"]["alerts_by_channel"]["discord"] == 1
+
+    def test_prune_old_entries(self, tmp_path: Path):
+        """prune_old_entries removes CVEs not seen recently."""
+        import datetime as dt
+
+        from notify import StateManager
+
+        state = StateManager(tmp_path / "state.json")
+        state.update_snapshot("CVE-2024-0001", {})
+
+        # Manually set an old last_seen date
+        old_date = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=200)).isoformat()
+        state.data["seen_cves"]["CVE-2024-0001"]["last_seen"] = old_date
+
+        pruned = state.prune_old_entries(days=180)
+        assert pruned == 1
+        assert "CVE-2024-0001" not in state.data["seen_cves"]
+
+
+class TestChange:
+    """Tests for Change dataclass."""
+
+    def test_change_str_new_cve(self):
+        """Test string representation for NEW_CVE."""
+        from notify import Change
+
+        change = Change(cve_id="CVE-2024-0001", change_type="NEW_CVE")
+        assert "NEW" in str(change)
+        assert "CVE-2024-0001" in str(change)
+
+    def test_change_str_epss_spike(self):
+        """Test string representation for EPSS_SPIKE includes values."""
+        from notify import Change
+
+        change = Change(
+            cve_id="CVE-2024-0001",
+            change_type="EPSS_SPIKE",
+            old_value=0.1,
+            new_value=0.5,
+        )
+        result = str(change)
+        assert "EPSS SPIKE" in result
+        assert "10.0%" in result
+        assert "50.0%" in result
+
+
+class TestResetState:
+    """Tests for --reset-state functionality."""
+
+    def test_reset_state_deletes_file(self, tmp_path: Path):
+        """--reset-state should delete the state file."""
+        from notify import StateManager
+
+        state_file = tmp_path / "state.json"
+        state = StateManager(state_file)
+        state.update_snapshot("CVE-2024-0001", {"is_critical": True})
+        state.save()
+        assert state_file.exists()
+
+        # Simulate reset
+        state_file.unlink()
+        assert not state_file.exists()
+
+    def test_reset_state_on_missing_file(self, tmp_path: Path):
+        """--reset-state on missing file should not raise."""
+        state_file = tmp_path / "nonexistent.json"
+        assert not state_file.exists()
+        # Should not raise when file doesn't exist
+
+
+class TestPruneStateCommand:
+    """Tests for --prune-state functionality."""
+
+    def test_prune_state_removes_old_entries(self, tmp_path: Path):
+        """--prune-state should remove entries older than specified days."""
+        import datetime as dt
+
+        from notify import StateManager
+
+        state_file = tmp_path / "state.json"
+        state = StateManager(state_file)
+
+        # Add two CVEs: one recent, one old
+        state.update_snapshot("CVE-2024-NEW", {"is_critical": True})
+        state.update_snapshot("CVE-2024-OLD", {"is_critical": True})
+
+        # Make one CVE old
+        old_date = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=100)).isoformat()
+        state.data["seen_cves"]["CVE-2024-OLD"]["last_seen"] = old_date
+        state.save()
+
+        # Prune entries older than 90 days
+        state = StateManager(state_file)  # Reload
+        pruned = state.prune_old_entries(days=90)
+        state.save()
+
+        assert pruned == 1
+        assert "CVE-2024-NEW" in state.data["seen_cves"]
+        assert "CVE-2024-OLD" not in state.data["seen_cves"]
+
+    def test_prune_state_keeps_recent_entries(self, tmp_path: Path):
+        """--prune-state should keep recent entries."""
+        from notify import StateManager
+
+        state_file = tmp_path / "state.json"
+        state = StateManager(state_file)
+
+        state.update_snapshot("CVE-2024-0001", {"is_critical": True})
+        state.update_snapshot("CVE-2024-0002", {"is_critical": False})
+        state.save()
+
+        # Prune with short window - both should be kept (they're recent)
+        state = StateManager(state_file)
+        pruned = state.prune_old_entries(days=1)
+
+        assert pruned == 0
+        assert len(state.data["seen_cves"]) == 2
+
+
+class TestEscalationComment:
+    """Tests for _escalation_comment() function."""
+
+    @pytest.fixture
+    def sample_item(self) -> Dict[str, Any]:
+        """Sample radar item for testing."""
+        return {
+            "cve_id": "CVE-2024-12345",
+            "description": "Test vulnerability",
+            "active_threat": True,
+            "in_patchthis": True,
+            "kev": {"dueDate": "2024-02-15"},
+        }
+
+    def test_new_kev_escalation(self, sample_item: Dict[str, Any]):
+        """NEW_KEV escalation comment includes CISA info."""
+        change = Change(cve_id="CVE-2024-12345", change_type="NEW_KEV", old_value=False, new_value=True)
+        comment = _escalation_comment(change, sample_item)
+
+        assert "Status Update" in comment
+        assert "CVE-2024-12345" in comment
+        assert "CISA KEV" in comment
+        assert "actively exploited" in comment
+        assert "2024-02-15" in comment  # Due date
+        assert "Prioritize patching immediately" in comment
+
+    def test_new_patchthis_escalation(self, sample_item: Dict[str, Any]):
+        """NEW_PATCHTHIS escalation comment mentions exploit intel."""
+        change = Change(cve_id="CVE-2024-12345", change_type="NEW_PATCHTHIS", old_value=False, new_value=True)
+        comment = _escalation_comment(change, sample_item)
+
+        assert "Status Update" in comment
+        assert "CVE-2024-12345" in comment
+        assert "Exploit Intel" in comment
+        assert "PoC Available" in comment
+        assert "Increase priority" in comment
+
+    def test_comment_includes_vulnradar_footer(self, sample_item: Dict[str, Any]):
+        """Escalation comments include VulnRadar attribution."""
+        change = Change(cve_id="CVE-2024-12345", change_type="NEW_KEV", old_value=False, new_value=True)
+        comment = _escalation_comment(change, sample_item)
+
+        assert "VulnRadar" in comment
+
+
+class TestDynamicLabels:
+    """Tests for _extract_dynamic_labels() function."""
+
+    def test_extracts_vendor_labels(self):
+        """Extracts vendor labels from matched_terms."""
+        item = {"matched_terms": ["vendor:Apache", "product:Log4j"]}
+        labels = _extract_dynamic_labels(item)
+
+        assert "vendor:apache" in labels
+        assert "product:log4j" in labels
+
+    def test_handles_empty_matched_terms(self):
+        """Returns empty list when no matched_terms."""
+        item = {}
+        labels = _extract_dynamic_labels(item)
+        assert labels == []
+
+        item = {"matched_terms": []}
+        labels = _extract_dynamic_labels(item)
+        assert labels == []
+
+    def test_limits_max_labels(self):
+        """Respects max_labels limit."""
+        item = {"matched_terms": ["vendor:A", "vendor:B", "vendor:C", "vendor:D", "vendor:E"]}
+        labels = _extract_dynamic_labels(item, max_labels=2)
+
+        assert len(labels) == 2
+
+    def test_replaces_spaces_with_hyphens(self):
+        """Spaces in terms are converted to hyphens."""
+        item = {"matched_terms": ["vendor:Apache Software Foundation"]}
+        labels = _extract_dynamic_labels(item)
+
+        assert "vendor:apache-software-foundation" in labels
+
+    def test_deduplicates_labels(self):
+        """Duplicate labels are removed."""
+        item = {"matched_terms": ["vendor:Apache", "vendor:apache", "vendor:Apache"]}
+        labels = _extract_dynamic_labels(item)
+
+        assert len(labels) == 1
+        assert "vendor:apache" in labels
+
+
+class TestDemoMode:
+    """Tests for demo mode functionality."""
+
+    def test_generate_demo_cve_structure(self):
+        """Demo CVE has all required fields."""
+        demo = _generate_demo_cve()
+
+        assert demo["cve_id"] == "CVE-2099-DEMO"
+        assert demo["is_critical"] is True
+        assert demo["active_threat"] is True
+        assert demo["in_patchthis"] is True
+        assert demo["watchlist_hit"] is True
+        assert demo["cvss_score"] == 9.8
+        assert 0.85 <= demo["probability_score"] <= 1.0
+
+    def test_generate_demo_cve_has_kev(self):
+        """Demo CVE includes KEV data."""
+        demo = _generate_demo_cve()
+
+        assert "kev" in demo
+        assert demo["kev"]["vendorProject"] == "Apache"
+        assert "dueDate" in demo["kev"]
+
+    def test_generate_demo_cve_matched_terms(self):
+        """Demo CVE has matched terms for dynamic labels."""
+        demo = _generate_demo_cve()
+
+        assert "vendor:apache" in demo["matched_terms"]
+        assert "product:http_server" in demo["matched_terms"]
+
+
+class TestSeverityLabels:
+    """Tests for _extract_severity_label() function."""
+
+    def test_critical_severity(self):
+        """CVSS >= 9.0 returns severity:critical."""
+        item = {"cvss_score": 9.8}
+        assert _extract_severity_label(item) == "severity:critical"
+
+        item = {"cvss_score": 9.0}
+        assert _extract_severity_label(item) == "severity:critical"
+
+    def test_high_severity(self):
+        """CVSS 7.0-8.9 returns severity:high."""
+        item = {"cvss_score": 8.5}
+        assert _extract_severity_label(item) == "severity:high"
+
+        item = {"cvss_score": 7.0}
+        assert _extract_severity_label(item) == "severity:high"
+
+    def test_medium_severity(self):
+        """CVSS 4.0-6.9 returns severity:medium."""
+        item = {"cvss_score": 5.5}
+        assert _extract_severity_label(item) == "severity:medium"
+
+        item = {"cvss_score": 4.0}
+        assert _extract_severity_label(item) == "severity:medium"
+
+    def test_low_severity(self):
+        """CVSS < 4.0 returns severity:low."""
+        item = {"cvss_score": 3.5}
+        assert _extract_severity_label(item) == "severity:low"
+
+        item = {"cvss_score": 0.0}
+        assert _extract_severity_label(item) == "severity:low"
+
+    def test_no_cvss_score(self):
+        """Returns None when no CVSS score."""
+        item = {}
+        assert _extract_severity_label(item) is None
+
+        item = {"cvss_score": None}
+        assert _extract_severity_label(item) is None
+
+    def test_invalid_cvss_score(self):
+        """Returns None for invalid CVSS values."""
+        item = {"cvss_score": "invalid"}
+        assert _extract_severity_label(item) is None
+
+
+class TestWeeklySummary:
+    """Tests for _create_weekly_summary_issue function."""
+
+    def test_weekly_summary_creates_issue(self):
+        """Weekly summary creates a GitHub issue with correct content."""
+        mock_session = MagicMock()
+        mock_response = MagicMock()
+        mock_response.status_code = 201
+        mock_response.json.return_value = {"html_url": "https://github.com/test/repo/issues/1"}
+        mock_session.post.return_value = mock_response
+
+        # Use is_critical=True to ensure it appears in top 10
+        items = [
+            {"cve_id": "CVE-2024-0001", "cvss_score": 9.8, "is_critical": True, "probability_score": 0.95},
+            {"cve_id": "CVE-2024-0002", "cvss_score": 7.5, "kev": False, "has_poc": False},
+            {"cve_id": "CVE-2024-0003", "cvss_score": 5.0, "kev": False, "has_poc": True},
+        ]
+
+        _create_weekly_summary_issue(mock_session, "owner/repo", items, None)
+
+        mock_session.post.assert_called_once()
+        call_args = mock_session.post.call_args
+        assert "api.github.com/repos/owner/repo/issues" in call_args[0][0]
+        payload = call_args[1]["json"]
+        assert "Weekly Summary" in payload["title"]
+        assert "weekly-summary" in payload["labels"]
+        assert "CVE-2024-0001" in payload["body"]  # Critical CVE should appear in top 10
+
+    def test_weekly_summary_counts_metrics(self):
+        """Weekly summary includes correct metric counts."""
+        mock_session = MagicMock()
+        mock_response = MagicMock()
+        mock_response.status_code = 201
+        mock_response.json.return_value = {"html_url": "https://github.com/test/repo/issues/1"}
+        mock_session.post.return_value = mock_response
+
+        items = [
+            {"cve_id": "CVE-2024-0001", "cvss_score": 9.5, "kev": True, "has_poc": True},
+            {"cve_id": "CVE-2024-0002", "cvss_score": 9.1, "kev": False, "has_poc": False},
+            {"cve_id": "CVE-2024-0003", "cvss_score": 7.0, "kev": False, "has_poc": True},
+        ]
+
+        _create_weekly_summary_issue(mock_session, "owner/repo", items, None)
+
+        payload = mock_session.post.call_args[1]["json"]
+        body = payload["body"]
+        # Should have CVEs tracked count
+        assert "Total CVEs Tracked" in body
+        # Should have exploit intel metric
+        assert "Exploit Intel Available" in body
+
+    def test_weekly_summary_empty_items(self):
+        """Weekly summary handles empty items list."""
+        mock_session = MagicMock()
+        mock_response = MagicMock()
+        mock_response.status_code = 201
+        mock_response.json.return_value = {"html_url": "https://github.com/test/repo/issues/1"}
+        mock_session.post.return_value = mock_response
+
+        _create_weekly_summary_issue(mock_session, "owner/repo", [], None)
+
+        payload = mock_session.post.call_args[1]["json"]
+        assert "0" in payload["body"]  # Should show 0 counts
+
+
+class TestGitHubProjects:
+    """Tests for GitHub Projects v2 integration."""
+
+    def test_parse_user_project_url(self):
+        """Parse user project URL."""
+        result = _parse_project_url("https://github.com/users/gamblin/projects/1")
+        assert result is not None
+        assert result["owner"] == "gamblin"
+        assert result["type"] == "user"
+        assert result["number"] == 1
+
+    def test_parse_org_project_url(self):
+        """Parse organization project URL."""
+        result = _parse_project_url("https://github.com/orgs/RogoLabs/projects/5")
+        assert result is not None
+        assert result["owner"] == "RogoLabs"
+        assert result["type"] == "organization"
+        assert result["number"] == 5
+
+    def test_parse_invalid_project_url(self):
+        """Invalid URLs return None."""
+        assert _parse_project_url("https://github.com/gamblin/repo") is None
+        assert _parse_project_url("https://example.com/users/x/projects/1") is None
+        assert _parse_project_url("not a url") is None
+
+    def test_parse_project_url_with_trailing_slash(self):
+        """URL with path works."""
+        result = _parse_project_url("https://github.com/users/test/projects/99")
+        assert result is not None
+        assert result["number"] == 99

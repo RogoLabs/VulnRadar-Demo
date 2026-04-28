@@ -1,0 +1,74 @@
+name: Update Vulnerability Radar Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 * * * *" # every hour, offset by 5 min to avoid NVD ZIP generation at :00
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-radar
+  cancel-in-progress: true
+
+jobs:
+  update:
+    # Only run on forks, not the upstream repo (fork & go design)
+    if: github.repository != 'RogoLabs/VulnRadar'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Get date for cache key
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Cache NVD Data
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: .nvd_cache
+          key: nvd-${{ runner.os }}-${{ steps.date.outputs.date }}
+          restore-keys: |
+            nvd-${{ runner.os }}-
+
+      - name: Run ETL
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python etl.py --nvd-cache .nvd_cache --vendor-split
+
+      - name: Update README metrics
+        run: |
+          python scripts/update_readme_metrics.py
+
+      - name: Commit updated data
+        run: |
+          set -e
+          if [ -z "$(git status --porcelain data/)" ]; then
+            echo "No changes to radar outputs"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/radar_data.json data/radar_report.md data/radar_index.json data/vendors/ README.md
+          git commit -m "chore: update radar outputs [skip ci]"
+          git pull --rebase
+          git push

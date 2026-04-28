@@ -1,0 +1,48 @@
+# VulnRadar Report
+
+Generated: `{{ generated_at }}`
+
+## Executive Summary
+
+Critical findings are CVEs that are BOTH in your watchlist AND have exploit intelligence (PoC available).
+
+{% if critical_top %}
+Top critical items:
+
+| CVE | EPSS | CVSS | KEV Due | Description |
+|---|---:|---:|---:|---|
+{% for i in critical_top -%}
+| [{{ i.cve_id }}](https://www.cve.org/CVERecord?id={{ i.cve_id }}) | {{ "%.3f"|format(i.probability_score|default(0, true)|float) if i.probability_score is not none else "" }} | {{ "%.1f"|format(i.cvss_score|default(0, true)|float) if i.cvss_score is not none else "" }} | {{ i.kev.dueDate|default("", true) if i.kev is mapping else "" }} | {{ i.description|default("", true)|replace("|", "\\|")|replace("\n", " ")|truncate(120, true, "…") }} |
+{% endfor %}
+{% else %}
+No critical Exploit Intel + Watchlist findings in this run.
+{% endif %}
+
+## Summary
+
+- Total items: **{{ total }}**
+- Watchlist hits: **{{ watch_hits }}**
+- CISA KEVs: **{{ kev_count }}**
+- Exploit Intel (PoC): **{{ patch_count }}**
+- Exploit Intel + Watchlist (CRITICAL): **{{ critical_patch_watch }}**
+
+## Top Findings (max 200)
+
+| CVE | Priority | Bucket | Exploit | KEV | KEV Due | EPSS | CVSS | Watchlist | Description |
+|---|---|---|---:|---:|---:|---:|---:|---:|---|
+{% for i in top -%}
+| [{{ i.cve_id }}](https://www.cve.org/CVERecord?id={{ i.cve_id }}) | {{ i.priority_label|default("", true) }} | {{ i.bucket }} | {{ "✅" if i.in_patchthis else "" }} | {{ "✅" if i.active_threat else "" }} | {{ i.kev.dueDate|default("", true) if i.kev is mapping else "" }} | {{ "%.3f"|format(i.probability_score|default(0, true)|float) if i.probability_score is not none else "" }} | {{ "%.1f"|format(i.cvss_score|default(0, true)|float) if i.cvss_score is not none else "" }} | {{ "✅" if i.watchlist_hit else "" }} | {{ i.description|default("", true)|replace("|", "\\|")|replace("\n", " ")|truncate(160, true, "…") }} |
+{% endfor %}
+{% if recent_changes %}
+
+## Recent Changes (Last 7 Days)
+
+| Date | CVE | Status |
+|------|-----|--------|
+{% for date, cve_id, change_type in recent_changes[:50] -%}
+| {{ date }} | [{{ cve_id }}](https://www.cve.org/CVERecord?id={{ cve_id }}) | {{ change_type }} |
+{% endfor %}
+{% if recent_changes|length > 50 -%}
+| ... | | _and {{ recent_changes|length - 50 }} more_ |
+{% endif %}
+{% endif %}

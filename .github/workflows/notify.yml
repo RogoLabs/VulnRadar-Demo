@@ -1,0 +1,92 @@
+name: VulnRadar Notifications
+
+on:
+  workflow_dispatch:
+    inputs:
+      demo:
+        description: 'Demo mode - inject fake CVE-2099-DEMO for presentations'
+        type: boolean
+        default: false
+  workflow_run:
+    workflows: ["Update Vulnerability Radar Data"]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "20 * * * *" # Backup: run after ETL job in case workflow_run fails
+
+concurrency:
+  group: vulnradar-notify
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  notify:
+    # Only run on forks, not the upstream repo (fork & go design)
+    # Skip if triggered by workflow_run and ETL failed
+    if: |
+      github.repository != 'RogoLabs/VulnRadar' &&
+      (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+          # Need token for pushing state changes
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Create GitHub Issue alerts
+        env:
+          # Use PAT_TOKEN if available (for forks with restricted GITHUB_TOKEN)
+          # Otherwise fall back to GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        run: |
+          DEMO_FLAG=""
+          if [ "${{ inputs.demo }}" == "true" ]; then
+            DEMO_FLAG="--demo"
+            echo "🎭 Demo mode enabled - injecting CVE-2099-DEMO"
+          fi
+          python notify.py --in data/ --max 25 --discord-max 10 --slack-max 10 --teams-max 10 $DEMO_FLAG
+
+      - name: Commit state file
+        run: |
+          # Configure git
+          git config --global user.name "VulnRadar Bot"
+          git config --global user.email "vulnradar[bot]@users.noreply.github.com"
+          
+          # Check if state file exists
+          if [ ! -f "data/state.json" ]; then
+            echo "No state file found"
+            exit 0
+          fi
+          
+          # Add state file (works for both new and modified files)
+          git add data/state.json
+          
+          # Check if there are staged changes
+          if git diff --cached --quiet data/state.json; then
+            echo "No state changes to commit"
+          else
+            git commit -m "Update notification state [skip ci]"
+            git pull --rebase -X theirs
+            git push
+            echo "State file committed"
+          fi
