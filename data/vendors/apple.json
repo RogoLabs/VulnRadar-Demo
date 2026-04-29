@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-29T01:08:06+00:00",
+  "generated_at": "2026-04-29T03:31:20+00:00",
   "vendor": "apple",
-  "count": 953,
+  "count": 954,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -66329,6 +66329,61 @@
         ],
         "cpe_count": 3,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-28825",
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Sequoia 15.7.5, macOS Sonoma 14.8.5, macOS Tahoe 26.4. An app may be able to modify protected parts of the file system.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8.5",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.5",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00052,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 3,
+        "reference_count": 5
       }
     },
     {

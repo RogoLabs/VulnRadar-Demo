@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-29T01:08:06+00:00",
+  "generated_at": "2026-04-29T03:31:20+00:00",
   "vendor": "apache_software_foundation",
-  "count": 626,
+  "count": 635,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -26982,7 +26982,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -28504,6 +28504,109 @@
       }
     },
     {
+      "cve_id": "CVE-2026-33453",
+      "description": "Improperly Controlled Modification of Dynamically-Determined Object Attributes vulnerability in Apache Camel Camel-Coap component.\n\nApache Camel's camel-coap component is vulnerable to Camel message header injection, leading to remote code execution when routes forward CoAP requests to header-sensitive producers (e.g. camel-exec)\n\nThe camel-coap component maps incoming CoAP request URI query parameters directly into Camel Exchange In message headers without applying any HeaderFilterStrategy.  \u00a0 \nSpecifically, CamelCoapResource.handleRequest() iterates over OptionSet.getUriQuery() and calls camelExchange.getIn().setHeader(...) for every query parameter. CoAPEndpoint extends DefaultEndpoint rather than DefaultHeaderFilterStrategyEndpoint, and CoAPComponent does not implement HeaderFilterStrategyComponent; the component contains no references to HeaderFilterStrategy at all.\n\nAs a result, an unauthenticated attacker who can send a single CoAP UDP packet to a Camel route consuming from coap:// can inject arbitrary Camel internal headers (those prefixed with Camel*) into the Exchange. When the route delivers the message to a header-sensitive producer such as camel-exec, camel-sql, camel-bean, camel-file, or template components (camel-freemarker, camel-velocity), the injected headers can alter the producer's behavior. In the case of camel-exec, the CamelExecCommandExecutable and CamelExecCommandArgs headers override the executable and arguments configured on the endpoint, resulting in arbitrary OS command execution under the privileges of the Camel process.\n\nThe producer's output is written back to the Exchange body and returned in the CoAP response payload by CamelCoapResource, giving the attacker an interactive RCE channel without any need for out-of-band exfiltration.\n\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0  \nExploitation prerequisites are minimal: a single unauthenticated UDP datagram to the CoAP port (default 5683). CoAP (RFC 7252) has no built-in authentication, and DTLS is optional and disabled by default. Because the protocol is UDP-based, HTTP-layer WAF/IDS controls do not apply.\nThis issue affects Apache Camel: from 4.14.0 through 4.14.5, from 4.18.0 before 4.18.1, 4.19.0.\n\nUsers are recommended to upgrade to version 4.18.1 or 4.19.0, fixing the issue.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "lessThanOrEqual": "4.14.5",
+              "status": "affected",
+              "version": "4.14.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.1",
+              "status": "affected",
+              "version": "4.18.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00507,
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-915"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-33454",
+      "description": "The Camel-Mail component is vulnerable to Camel message header injection. The custom header filter strategy used by the component (MailHeaderFilterStrategy) only filters the 'out' direction via setOutFilterStartsWith, while it does not configure the 'in' direction via setInFilterStartsWith. As a result, when a Camel application consumes mail through camel-mail (for example via from(\\\"imap://...\\\") or from(\\\"pop3://...\\\")) the inbound filter check is skipped and Camel-prefixed MIME headers are mapped unfiltered into the Exchange. An attacker who can deliver an email to a mailbox monitored by such a consumer can inject Camel-specific headers that, for some Camel components downstream of the mail consumer (such as camel-bean, camel-exec, or camel-sql), can alter the behaviour of the route. This is the same pattern that was previously addressed in camel-undertow (CVE-2025-30177) and the broader incoming-header filter (CVE-2025-27636 and CVE-2025-29891).\n\nThis issue affects Apache Camel: from 3.0.0 before 4.14.6, from 4.15.0 before 4.18.1.\n\nUsers are recommended to upgrade to version 4.19.0, which fixes the issue. If users are on the 4.18.x LTS releases stream, then they are suggested to upgrade to 4.18.1. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.6.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "lessThan": "4.14.6",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.1",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00045,
+      "nvd": {
+        "cvss_v3_score": 9.4,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-33557",
       "description": "A possible security vulnerability has been identified in Apache Kafka.\n\nBy default, the broker property `sasl.oauthbearer.jwt.validator.class` is\u00a0set to `org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator`. It accepts any JWT token without validating its\u00a0signature, issuer, or audience. An attacker can generate a JWT\u00a0token from any issuer with the `preferred_username` set to any user, and the broker will accept it.\n\nWe advise the Kafka users using kafka v4.1.0 or v4.1.1 to set the config `sasl.oauthbearer.jwt.validator.class` to `org.apache.kafka.common.security.oauthbearer.BrokerJwtValidator` explicitly to avoid this vulnerability. Since Kafka v4.1.2 and v4.2.0 and later, the issue is fixed and will correctly validate the JWT token.",
       "cvss_score": 9.1,
@@ -29153,6 +29256,55 @@
       }
     },
     {
+      "cve_id": "CVE-2026-40022",
+      "description": "When authentication is enabled on the Apache Camel embedded HTTP server or embedded management server (camel-platform-http-main) and a non-root context path such as /api or /admin is configured via camel.server.path or camel.management.path, the BasicAuthenticationConfigurer and JWTAuthenticationConfigurer classes derive the authentication path from properties.getPath() when camel.server.authenticationPath / camel.management.authenticationPath is not explicitly set. Combined with the Vert.x sub-router mounting model - the sub-router is mounted at _path_* and the authentication handler is registered inside the sub-router at the resolved path - this causes the authentication handler to match only the exact configured context path, not its subpaths. Unauthenticated requests to subpaths such as /api/_route_ or /admin/observe/info therefore reach protected business routes and management endpoints without being challenged for credentials. The /observe/info endpoint can disclose runtime metadata such as the user, working directory, home directory, process ID, JVM and operating system information.\n\nThis issue affects Apache Camel: from 4.14.1 before 4.14.6, from 4.18.0 before 4.18.2.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, they are suggested to upgrade to 4.14.6. If users are on the 4.18.x LTS releases stream, they are suggested to upgrade to 4.18.2.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel platform http main",
+          "versions": [
+            {
+              "lessThan": "4.14.6",
+              "status": "affected",
+              "version": "4.14.1",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.18.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel platform http main",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00063,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-288"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-40046",
       "description": "Integer Overflow or Wraparound vulnerability in Apache ActiveMQ, Apache ActiveMQ All, Apache ActiveMQ MQTT.\n\nThe fix for \"CVE-2025-66168: MQTT control packet remaining length field is not properly validated\" was only applied to 5.19.2 (and future 5.19.x) releases but was missed for all 6.0.0+ versions.\n\n\nThis issue affects Apache ActiveMQ: from 6.0.0 before 6.2.4; Apache ActiveMQ All: from 6.0.0 before 6.2.4; Apache ActiveMQ MQTT: from 6.0.0 before 6.2.4.\n\n\n\nUsers are recommended to upgrade to version 6.2.4 or a 5.19.x version starting with 5.19.2 or later (currently latest is 5.19.5), which fixes the issue.",
       "cvss_score": 7.5,
@@ -29219,6 +29371,160 @@
         ],
         "cpe_count": 0,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40048",
+      "description": "The Camel-PQC FileBasedKeyLifecycleManager class deserializes the contents of `<keyId>.key` files in the configured key directory using java.io.ObjectInputStream without applying any ObjectInputFilter or class-loading restrictions. The cast to `java.security.KeyPair` is evaluated only after `readObject()` has already returned, so any `readObject()` side effects in the deserialized object run before the type check. An attacker who can write to the key directory used by a Camel application \u2014 for example through a path traversal into the directory, misconfigured filesystem permissions on the volume where keys are stored, a compromised key provisioning pipeline, or a symlink attack \u2014 can place a crafted serialized Java object that, when deserialized during normal key lifecycle operations, results in arbitrary code execution in the context of the application.\n\nThis issue affects Apache Camel: from 4.19.0 before 4.20.0, from 4.18.0 before 4.18.2.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue by replacing java.io.ObjectInputStream-based key and metadata storage with standard PKCS#8 (private key) / X.509 SubjectPublicKeyInfo (public key) Base64 JSON encoding. For users on the 4.18.x LTS releases stream, upgrade to 4.18.2.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel pqc",
+          "versions": [
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.18.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel pqc",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00052,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40453",
+      "description": "The fix for CVE-2025-27636 added setLowerCase(true) to HttpHeaderFilterStrategy so that case-variant header names such as 'CAmelExecCommandExecutable' are filtered out alongside 'CamelExecCommandExecutable'. The same setLowerCase(true) call was not applied to five non-HTTP HeaderFilterStrategy implementations: JmsHeaderFilterStrategy and ClassicJmsHeaderFilterStrategy in camel-jms, SjmsHeaderFilterStrategy in camel-sjms, CoAPHeaderFilterStrategy in camel-coap, and GooglePubsubHeaderFilterStrategy in camel-google-pubsub. Because those strategies use case-sensitive String.startsWith('Camel'/'camel') filtering while the Camel Exchange stores headers in a case-insensitive map, an attacker with JMS (or equivalent) producer access to the broker consumed by a Camel route can inject case-variant Camel internal headers, which are then resolved by downstream components such as camel-exec and camel-file using their canonical casing. This enables remote code execution and arbitrary file write on routes that forward JMS messages to header-driven components.\n\nThis issue affects Apache Camel: from 3.0.0 before 4.14.6, from 4.15.0 before 4.18.2, from 4.19.0 before 4.20.0.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.6. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.2.",
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel jms",
+          "versions": [
+            {
+              "lessThan": "4.14.6",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel coap",
+          "versions": [
+            {
+              "lessThan": "4.14.6",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel google pubsub",
+          "versions": [
+            {
+              "lessThan": "4.14.6",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel coap",
+        "product:apache camel google pubsub",
+        "product:apache camel jms",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00208,
+      "nvd": {
+        "cvss_v3_score": 9.9,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-178"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -29305,8 +29611,63 @@
           "CWE-20",
           "CWE-94"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40473",
+      "description": "The camel-mina component's MinaConverter.toObjectInput(IoBuffer) type converter wraps an IoBuffer in a java.io.ObjectInputStream without applying any ObjectInputFilter or class-loading restrictions. When a Camel route uses camel-mina as a TCP or UDP consumer and requests conversion to ObjectInput (for example via getBody(ObjectInput.class) or @Body ObjectInput), an attacker sending a crafted serialized Java object over the network to the MINA consumer port can trigger arbitrary code execution in the context of the application during readObject().\n\nThis issue affects Apache Camel: from 3.0.0 before 4.14.6, from 4.15.0 before 4.18.2, from 4.19.0 before 4.20.0.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.6. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.2.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel mina",
+          "versions": [
+            {
+              "lessThan": "4.14.6",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel mina",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0008,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -29347,6 +29708,116 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-304"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40858",
+      "description": "The camel-infinispan component's ProtoStream-based remote aggregation repository deserializes data read from a remote Infinispan cache using java.io.ObjectInputStream without applying any ObjectInputFilter. An attacker who can write to the Infinispan cache used by a Camel application can inject a crafted serialized Java object that, when read during normal aggregation repository operations such as get or recover, results in arbitrary code execution in the context of the application.\n\nThis issue affects Apache Camel: from 4.0.0 before 4.14.7, from 4.15.0 before 4.18.2, from 4.19.0 before 4.20.0.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.7. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.2.\n\nThe JIRA ticket:  https://issues.apache.org/jira/browse/CAMEL-23322  refers to the various commits that resolved the issue, and have more details. This issue follows the same class of vulnerability previously addressed in CVE-2024-22369, CVE-2024-23114 and CVE-2026-25747.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "lessThan": "4.14.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00081,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40860",
+      "description": "JmsBinding.extractBodyFromJms() in camel-jms, and the equivalent JmsBinding class in camel-sjms, deserialized the payload of incoming JMS ObjectMessage values via javax.jms.ObjectMessage.getObject() without applying any ObjectInputFilter, class allowlist or class denylist. Because this code path is reached whenever the mapJmsMessage option is enabled (the default) and Camel acts as a JMS consumer, an attacker able to publish a crafted ObjectMessage to a queue or topic consumed by a Camel application could achieve remote code execution when a deserialization gadget chain was present on the classpath. The same handling was reached transitively through camel-sjms2 (whose Sjms2Endpoint extends SjmsEndpoint) and through camel-amqp (whose AMQPJmsBinding extends JmsBinding), and by other JMS-family components built on JmsComponent such as camel-activemq and camel-activemq6.\n\nThis issue affects Apache Camel: from 3.0.0 before 4.14.7, from 4.15.0 before 4.18.2, from 4.19.0 before 4.20.0.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.7. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.2.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "lessThan": "4.14.7",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.18.2",
+              "status": "affected",
+              "version": "4.15.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.20.0",
+              "status": "affected",
+              "version": "4.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0039,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -29436,7 +29907,7 @@
           "CWE-20",
           "CWE-94"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -29482,7 +29953,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00046
+      "probability_score": 0.00046,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-41635",
@@ -29526,7 +30008,50 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00046
+      "probability_score": 0.00046,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-41636",
+      "description": "Uncontrolled Recursion vulnerability in Apache Thrift Node.js bindings\n\nThis issue affects Apache Thrift: before 0.23.0.\n\nUsers are recommended to upgrade to version 0.23.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "lessThan": "0.23.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00042
     }
   ]
 }
