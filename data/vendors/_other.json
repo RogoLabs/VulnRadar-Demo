@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-05T01:46:14+00:00",
+  "generated_at": "2026-05-05T03:20:47+00:00",
   "vendor": "_other",
-  "count": 701,
+  "count": 702,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -44581,6 +44581,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-29004",
+      "description": "BusyBox before commit 42202bf contains a heap buffer overflow vulnerability in the DHCPv6 client (udhcpc6) DNS_SERVERS option handler in networking/udhcp/d6_dhcpc.c that allows network-adjacent attackers to trigger memory corruption by sending a crafted DHCPv6 response with a malformed D6_OPT_DNS_SERVERS option. Attackers can exploit incorrect heap buffer allocation calculations in the option_to_env() function to cause denial of service or achieve arbitrary code execution on embedded systems without heap hardening.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "vda-linux",
+          "product": "busybox_mirror",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "versionType": "git",
+              "lessThan": "42202bfb1e6ac51fa995beda8be4d7b654aeee2a"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:busybox_mirror",
+        "vendor:vda-linux"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-2749",
       "description": "Vulnerability in Centreon Centreon Open Tickets on Central Server on Linux (Centroen Open Ticket modules).This issue affects Centreon Open Tickets on Central Server: from all before 25.10.3, 24.10.8, 24.04.7.",
       "cvss_score": 9.9,
@@ -45108,6 +45140,12 @@
               "status": "affected",
               "version": "11.120.0.0",
               "versionType": "custom",
+              "lessThan": "11.124.0.35"
+            },
+            {
+              "status": "affected",
+              "version": "11.125.0.0",
+              "versionType": "custom",
               "lessThan": "11.126.0.54"
             },
             {
@@ -45172,6 +45210,12 @@
             {
               "status": "affected",
               "version": "11.120.0.0",
+              "versionType": "custom",
+              "lessThan": "11.124.0.35"
+            },
+            {
+              "status": "affected",
+              "version": "11.125.0.0",
               "versionType": "custom",
               "lessThan": "11.126.0.54"
             },
