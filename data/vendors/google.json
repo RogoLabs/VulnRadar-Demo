@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-05T23:28:09+00:00",
+  "generated_at": "2026-05-06T01:18:10+00:00",
   "vendor": "google",
-  "count": 1597,
+  "count": 1598,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -62591,6 +62591,59 @@
           "CWE-280"
         ],
         "cpe_count": 3,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-0073",
+      "description": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "16-qpr2"
+            },
+            {
+              "status": "affected",
+              "version": "16"
+            },
+            {
+              "status": "affected",
+              "version": "15"
+            },
+            {
+              "status": "affected",
+              "version": "14"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00011,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-303"
+        ],
+        "cpe_count": 0,
         "reference_count": 1
       }
     },
