@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-07T01:09:47+00:00",
+  "generated_at": "2026-05-07T03:40:25+00:00",
   "vendor": "cisco",
-  "count": 410,
+  "count": 415,
   "items": [
     {
       "cve_id": "CVE-2022-20622",
@@ -247374,6 +247374,226 @@
       }
     },
     {
+      "cve_id": "CVE-2026-20034",
+      "description": "A vulnerability in the web-based management interface of Cisco Unity Connection could allow an authenticated, remote attacker to execute arbitrary code on an affected device.\r\n\r\nThis vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by submitting a crafted API request. A successful exploit could allow the attacker to execute arbitrary code as root, possibly resulting in the complete compromise of a targeted device.&nbsp;To exploit this vulnerability, the attacker must have valid user credentials on the affected device.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco unity connection",
+          "versions": [
+            {
+              "version": "12.5(1)",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU1",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU2",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU3",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU4",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU5",
+              "status": "affected"
+            },
+            {
+              "version": "14SU1",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU6",
+              "status": "affected"
+            },
+            {
+              "version": "14SU2",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU7",
+              "status": "affected"
+            },
+            {
+              "version": "14SU3",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU8",
+              "status": "affected"
+            },
+            {
+              "version": "14SU3a",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU8a",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "15SU1",
+              "status": "affected"
+            },
+            {
+              "version": "14SU4",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU9",
+              "status": "affected"
+            },
+            {
+              "version": "15SU2",
+              "status": "affected"
+            },
+            {
+              "version": "15SU3",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco unity connection",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20035",
+      "description": "A vulnerability in the web UI of Cisco Unity Connection Web Inbox could allow an unauthenticated, remote attacker to conduct SSRF attacks through an affected device.\r\n\r\nThis vulnerability is due to improper input validation for specific HTTP requests. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to send arbitrary network requests that are sourced from the affected device.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco unity connection",
+          "versions": [
+            {
+              "version": "12.5(1)",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU1",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU2",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU3",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU4",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU5",
+              "status": "affected"
+            },
+            {
+              "version": "14SU1",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU6",
+              "status": "affected"
+            },
+            {
+              "version": "14SU2",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU7",
+              "status": "affected"
+            },
+            {
+              "version": "14SU3",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU8",
+              "status": "affected"
+            },
+            {
+              "version": "14SU3a",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU8a",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "15SU1",
+              "status": "affected"
+            },
+            {
+              "version": "14SU4",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SU9",
+              "status": "affected"
+            },
+            {
+              "version": "15SU2",
+              "status": "affected"
+            },
+            {
+              "version": "15SU3",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco unity connection",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-20039",
       "description": "A vulnerability in the VPN web server of Cisco Secure Firewall Adaptive Security Appliance (ASA) Software and Cisco Secure Firewall Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.\r\n\r\nThis vulnerability is due to ineffective memory management of the VPN web server. An attacker could exploit this vulnerability by sending a large number of&nbsp;crafted HTTP requests to an affected device. A successful exploit could allow the attacker to cause the device to reload, resulting in a DoS condition.",
       "cvss_score": 8.6,
@@ -270039,6 +270259,152 @@
       }
     },
     {
+      "cve_id": "CVE-2026-20167",
+      "description": "A vulnerability in the web-based management interface of Cisco IoT Field Network Director could allow an authenticated, remote attacker with low privileges to cause a DoS condition on a remotely managed router.\r\n\r\nThis vulnerability is due to improper error handling. An attacker could exploit this vulnerability by submitting crafted input to the web-based management interface. A successful exploit could allow the attacker to request unauthorized files from a remote router, causing the router to reload and resulting in a DoS condition.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco iot field network director (iot-fnd)",
+          "versions": [
+            {
+              "version": "4.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.4.3",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "4.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.4.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.3.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.6.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.4.4",
+              "status": "affected"
+            },
+            {
+              "version": "4.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.5.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.7.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.8.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.9.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.10.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.11.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.12.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.12.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco iot field network director (iot-fnd)",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-20180",
       "description": "A vulnerability in Cisco Identity Services Engine (ISE) could allow an authenticated, remote attacker to execute arbitrary commands on the underlying operating system of an affected device. To exploit this vulnerability, the attacker must have at least Read Only Admin credentials.\r\n\r\nThis vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to obtain user-level access to the underlying operating system and then elevate privileges to&nbsp;root. In single-node ISE deployments, successful exploitation of these vulnerabilities could cause the affected ISE node to become unavailable, resulting in a denial of service (DoS) condition. In that condition, endpoints that have not already authenticated would be unable to access the network until the node is restored.",
       "cvss_score": 9.9,
@@ -270469,6 +270835,40 @@
       }
     },
     {
+      "cve_id": "CVE-2026-20185",
+      "description": "A vulnerability in the Simple Network Management Protocol (SNMP) subsystem of&nbsp;Cisco 350 Series Managed Switches (SG350) and Cisco 350X Series Stackable Managed Switches (SG350X)&nbsp;firmware could allow an authenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.&nbsp;\r\n\r\nThis vulnerability is due to improper error handling when parsing response data for a specific SNMP request. An attacker could exploit this vulnerability by sending a specific SNMP request to an affected device. A successful exploit could allow the attacker to cause the device to reload unexpectedly, resulting in a DoS condition.\r\nThis vulnerability affects SNMP versions 1, 2c, and 3. To exploit this vulnerability through SNMPv2c or earlier, the attacker must know a valid read-write or read-only SNMP community string for the affected system. To exploit this vulnerability through SNMPv3, the attacker must have valid SNMP user credentials for the affected system.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco small business smart and managed switches",
+          "versions": [
+            {
+              "version": "2.5.9.54",
+              "status": "affected"
+            },
+            {
+              "version": "2.5.9.55",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco small business smart and managed switches",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-20186",
       "description": "A vulnerability in Cisco Identity Services Engine (ISE) could allow an authenticated, remote attacker to execute arbitrary commands on the underlying operating system of an affected device. To exploit this vulnerability, the attacker must have at least Read Only Admin credentials.\r\n\r\nThis vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to obtain user-level access to the underlying operating system and then elevate privileges to&nbsp;root. In single-node ISE deployments, successful exploitation of these vulnerabilities could cause the affected ISE node to become unavailable, resulting in a denial of service (DoS) condition. In that condition, endpoints that have not already authenticated would be unable to access the network until the node is restored.",
       "cvss_score": 9.9,
@@ -270628,6 +271028,435 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-20188",
+      "description": "A vulnerability in the connection-handling mechanism of Cisco Crosswork Network Controller (CNC) and Cisco Network Services Orchestrator (NSO) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected system.\r\n\r\nThis vulnerability is due to an inadequate implementation of rate-limiting on incoming network connections. An attacker could exploit this vulnerability by sending a large number of connection requests to an affected system. A successful exploit could allow the attacker to exhaust available connection resources, causing Cisco CNC and Cisco NSO to become unresponsive and resulting in a DoS condition for legitimate users and dependent services. A manual reboot of the system is required to recover from this condition.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco crosswork network change automation",
+          "versions": [
+            {
+              "version": "3.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "1.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "2.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.5.0",
+              "status": "affected"
+            },
+            {
+              "version": "5.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "4.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "5.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "4.1.4",
+              "status": "affected"
+            },
+            {
+              "version": "5.0.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "cisco",
+          "product": "cisco network services orchestrator",
+          "versions": [
+            {
+              "version": "5.7",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "5.8",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.7",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.6",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.5",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.6",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.3",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.8",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.4",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.7",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.9",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.5",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.8",
+              "status": "affected"
+            },
+            {
+              "version": "6.0",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.10",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.6",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.9",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.11",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.7",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.3",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.10",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.12",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.8",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.4",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.11",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.5",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.13",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.9",
+              "status": "affected"
+            },
+            {
+              "version": "6.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.6",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.12",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.14",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.7",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.13",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.11",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.8",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.14.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.9",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.13",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.14",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.15.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.0.13",
+              "status": "affected"
+            },
+            {
+              "version": "5.6.14.3",
+              "status": "affected"
+            },
+            {
+              "version": "5.8.13.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.16",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.17",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.17.1",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.18",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.19",
+              "status": "affected"
+            },
+            {
+              "version": "5.7.19.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco crosswork network change automation",
+        "product:cisco network services orchestrator",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

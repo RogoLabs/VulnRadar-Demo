@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-07T01:09:47+00:00",
+  "generated_at": "2026-05-07T03:40:25+00:00",
   "vendor": "apache_software_foundation",
-  "count": 655,
+  "count": 659,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28294,6 +28294,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-29168",
+      "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's\u00a0 mod_md via OCSP response data.\n\nThis issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.66",
+              "status": "affected",
+              "version": "2.4.30",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00059,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-29169",
       "description": "A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.\n\nThe only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.\n\nUsers are recommended to upgrade to version 2.4.66, which fixes this issue, or remove mod_dav_lock.",
       "cvss_score": 7.5,
@@ -28333,7 +28376,7 @@
           "CWE-476"
         ],
         "cpe_count": 1,
-        "reference_count": 2
+        "reference_count": 3
       }
     },
     {
@@ -30015,6 +30058,55 @@
         "cwe_ids": [
           "CWE-94"
         ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40682",
+      "description": "XML External Entity (XXE) via Unsanitized Dictionary Parsing in Apache OpenNLP DictionaryEntryPersistor\n\n\nVersions Affected: before 2.5.9, before 3.0.0-M3\n\n\nDescription: The DictionaryEntryPersistor class initializes a static SAXParserFactory at class-load time without enabling FEATURE_SECURE_PROCESSING or disabling DTD processing. When create(InputStream, EntryInserter) is invoked, the only feature set on the XMLReader is namespace support \u2014 external entity resolution and DOCTYPE declarations remain fully enabled. An attacker who can supply a crafted dictionary file (e.g., a stop-word list or domain dictionary) containing a malicious DOCTYPE declaration can trigger local file disclosure via file:// entity references or server-side request forgery via http:// entity references during SAX parsing, before the application processes a single dictionary entry. This is inconsistent with the project's own XmlUtil.createSaxParser() helper, which correctly sets FEATURE_SECURE_PROCESSING and disallow-doctype-decl and is used by all other XML parsing paths in the codebase. The public Dictionary(InputStream) constructor delegates directly to this method and is the documented API for loading user-supplied dictionaries, making untrusted input a realistic scenario.\n\n\nMitigation: 2.x users should upgrade to 2.5.9. 3.x users should upgrade to 3.0.0-M3. Users who cannot upgrade immediately should ensure that all dictionary files are sourced from trusted origins and should consider wrapping the Dictionary(InputStream) constructor with input validation that rejects any XML containing a DOCTYPE declaration before it reaches the parser.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache opennlp",
+          "versions": [
+            {
+              "lessThan": "2.5.9",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.0-M3",
+              "status": "affected",
+              "version": "3.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache opennlp",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00036,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
         "cpe_count": 0,
         "reference_count": 2
       }
@@ -30587,6 +30679,55 @@
       }
     },
     {
+      "cve_id": "CVE-2026-42027",
+      "description": "Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader\n\n\n\n\n\nVersions Affected: before 2.5.9, before 3.0.0-M3\n\n\n\n\n\nDescription:\u00a0\n\nThe ExtensionLoader.instantiateExtension(Class, String)\u00a0method loads a class by its fully-qualified name via Class.forName()\u00a0and invokes its no-arg constructor, with the class name sourced from the manifest.properties\u00a0entry of a model archive. The existing isAssignableFrom\u00a0check correctly rejects classes that are not subtypes of the expected extension interface (BaseToolFactory\u00a0for factory=, ArtifactSerializer\u00a0for serializer-class-*), but the check runs after\u00a0Class.forName()\u00a0has already loaded and initialized the named class. \n\nClass.forName()\u00a0with default initialization semantics executes the target class's static initializer before returning, so an attacker who can supply a crafted model archive can cause the static initializer of any class on the classpath to run during model loading, regardless of whether that class passes the subsequent type check. \n\nExploitation requires a class with attacker-useful side effects in its static initializer (for example, JNDI lookup, outbound network I/O, or filesystem access) to be present on the classpath, so this is not a drop-in remote code execution; however, the attack surface grows as third-party model distribution becomes more common (community model repositories, Hugging Face-style sharing), where users routinely load model files from origins they do not control. A secondary, narrower vector affects deployments that ship legitimate BaseToolFactory\u00a0or ArtifactSerializer\u00a0subclasses with side-effecting no-arg constructors: a malicious manifest can name such a class and force its constructor to run during model load.\n\n\n\n\n\nMitigation:\u00a0\n\n\n\n  *  2.x users should upgrade to 2.5.9. \n  *  3.x users should upgrade to 3.0.0-M3. \n\n\n\n\nNote: The fix introduces a package-prefix allowlist that is consulted before Class.forName()\u00a0is invoked, so the static initializer of a disallowed class is never executed. Classes under the opennlp.\u00a0prefix remain permitted by default. Deployments that load models referencing factories or serializers outside opennlp.*\u00a0must opt those packages in, either programmatically via ExtensionLoader.registerAllowedPackage(String)\u00a0before the first model load, or by setting the OPENNLP_EXT_ALLOWED_PACKAGES\u00a0system property to a comma-separated list of allowed package prefixes. \n\nUsers who cannot upgrade immediately should ensure that all model files are sourced from trusted origins\u00a0and should audit their classpath for classes with side-effecting static initializers or constructors, particularly any that perform JNDI lookups, network requests, or filesystem operations during class initialization.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache opennlp",
+          "versions": [
+            {
+              "lessThan": "2.5.9",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.0-M3",
+              "status": "affected",
+              "version": "3.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache opennlp",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00324,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-42402",
       "description": "Apache Neethi is vulnerable to a Denial of Service attack through algorithmic complexity in policy normalization. Specially crafted WS-Policy documents can trigger an exponential Cartesian cross-product expansion during the normalization process, causing unbounded memory allocation that exhausts the JVM heap. This occurs when the normalization process generates an excessive number of policy alternatives without bounds, leading to runtime memory exhaustion.\n\nUsers should upgrade to 3.2.2 which limits the maximum number of normalized policy alternatives.",
       "cvss_score": 7.5,
@@ -30669,6 +30810,55 @@
           "CWE-400"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42440",
+      "description": "OOM Denial of Service via Unbounded Array Allocation in Apache OpenNLP AbstractModelReader\u00a0\n\nVersions Affected:\u00a0\n\nbefore 2.5.9\n\nbefore 3.0.0-M3\u00a0\n\nDescription:\n\n\nThe AbstractModelReader methods getOutcomes(), getOutcomePatterns(), and getPredicates() each read a 32-bit signed integer count field from a binary model stream and pass that value directly to an array allocation (new String[numOutcomes], new int[numOCTypes][], new String[NUM_PREDS]) without validating that the value is non-negative or within a reasonable bound. The count is therefore fully attacker-controlled when the model file originates from an untrusted source.\n\n\nA crafted .bin model file in which any of these count fields is set to Integer.MAX_VALUE (or any value large enough to exhaust the available heap) triggers an OutOfMemoryError at the array allocation itself, before the corresponding label or pattern data is consumed from the stream. The error occurs very early in deserialization: for a GIS model, getOutcomes() is reached after only the model-type string, the correction constant, and the correction parameter have been read; so the attacker pays no meaningful size cost to weaponize a payload, and a single small file can crash a JVM that loads it. Any code path that deserializes a .bin model is affected, including direct use of GenericModelReader and any higher-level component that delegates to it during model load.\n\n\nThe practical impact is denial of service against processes that load model files from untrusted or semi-trusted origins.\u00a0\u00a0\n\n\nMitigation:\n\n\n\n  *  2.x users should upgrade to 2.5.9.\n\n  *  3.x users should upgrade to 3.0.0-M3.\n\n\n\n\nNote: The fix introduces an upper bound on each of the three count fields, checked before array allocation; counts that are negative or exceed the bound cause an IllegalArgumentException to be thrown and the read to fail fast with no large allocation. The default bound is 10,000,000, which is well above the entry counts of legitimate OpenNLP models but far below any value that would threaten heap exhaustion. Deployments that legitimately need to load models with more entries than the default can raise the limit at JVM startup by setting the OPENNLP_MAX_ENTRIES system property to the desired positive integer (e.g. -DOPENNLP_MAX_ENTRIES=50000000); invalid or non-positive values fall back to the default.\n\n\nUsers who cannot upgrade immediately should treat all .bin model files as untrusted input unless their provenance is verified, and should avoid loading models supplied by end users or fetched from third-party repositories without integrity checks.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache opennlp",
+          "versions": [
+            {
+              "lessThan": "2.5.9",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.0-M3",
+              "status": "affected",
+              "version": "3.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache opennlp",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00036,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-789"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
