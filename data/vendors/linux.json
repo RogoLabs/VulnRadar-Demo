@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-09T06:58:44+00:00",
+  "generated_at": "2026-05-09T07:44:08+00:00",
   "vendor": "linux",
-  "count": 2579,
+  "count": 2588,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -265962,7 +265962,7 @@
           "CWE-669"
         ],
         "cpe_count": 158,
-        "reference_count": 81
+        "reference_count": 83
       }
     },
     {
@@ -284997,8 +284997,159 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 13,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-31759",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: ulpi: fix double free in ulpi_register_interface() error path\n\nWhen device_register() fails, ulpi_register() calls put_device() on\nulpi->dev.\n\nThe device release callback ulpi_dev_release() drops the OF node\nreference and frees ulpi, but the current error path in\nulpi_register_interface() then calls kfree(ulpi) again, causing a\ndouble free.\n\nLet put_device() handle the cleanup through ulpi_dev_release() and\navoid freeing ulpi again in ulpi_register_interface().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "2f70ba9dae13a190673cc3f9b4aad52179738f60",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "ee248e6e941e4f2e634df2bd43e5f1ef810ab6df",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "272a9b26c336a295e4e209157fed809706c1b1f7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "aaeae6533d77e6ed4def85baec01e2815ebbef61",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "8763f8317bb389aded32a32b08f6751cfff657d2",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "38c28fe25611099230f0965c925499bfcf46a795",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "a6e5461f076c2ef63159f18e5cdbd30b50f0bc15",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "289fcff4bcdb1dcc0ce8788b7ea0f58a9e4a495f",
+              "lessThan": "01af542392b5d41fd659d487015a71f627accce3",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.2",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.2",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.253",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.203",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.168",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.134",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.81",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.22",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.12",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00032,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -285144,9 +285295,88 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 13,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-31764",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\niio: imu: st_lsm6dsx: Set buffer sampling frequency for accelerometer only\n\nThe st_lsm6dsx_hwfifo_odr_store() function, which is called when userspace\nwrites the buffer sampling frequency sysfs attribute, calls\nst_lsm6dsx_check_odr(), which accesses the odr_table array at index\n`sensor->id`; since this array is only 2 entries long, an access for any\nsensor type other than accelerometer or gyroscope is an out-of-bounds\naccess.\n\nThe motivation for being able to set a buffer frequency different from the\nsensor sampling frequency is to support use cases that need accurate event\ndetection (which requires a high sampling frequency) while retrieving\nsensor data at low frequency. Since all the supported event types are\ngenerated from acceleration data only, do not create the buffer sampling\nfrequency attribute for sensor types other than the accelerometer.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6b648a36c200dfd3e776e657a4c8a8ce63fb52d3",
+              "lessThan": "3225a81e8d264442b14c7c1bc965ebafa3c0ee01",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6b648a36c200dfd3e776e657a4c8a8ce63fb52d3",
+              "lessThan": "679c04c10d65d32a3f269e696b22912ff0a001b9",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.19",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.19",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.12",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00024,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-129"
+        ],
+        "cpe_count": 7,
+        "reference_count": 2
       }
     },
     {
@@ -287581,8 +287811,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 11,
         "reference_count": 6
       }
     },
@@ -287690,9 +287922,160 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 11,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43020",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: MGMT: validate LTK enc_size on load\n\nLoad Long Term Keys stores the user-provided enc_size and later uses\nit to size fixed-size stack operations when replying to LE LTK\nrequests. An enc_size larger than the 16-byte key buffer can therefore\noverflow the reply stack buffer.\n\nReject oversized enc_size values while validating the management LTK\nrecord so invalid keys never reach the stored key state.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "0f37d1e65c6d71ad94ccfb5c602163c525db789d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "257cdb960d8ff6d60bb6461b03c814b6cf0c9e64",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "c34577f517b556fb6ca173d45bf7e766ae2564ce",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "f71695e81f4cb428f3c7e2138eae88199005b52c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "82f342b3b006ca1d65f4890c05f2ec32fcb808b6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "50fb64defa72a3fecd0af1ca7c6b47b5c5c2b257",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "40ba329e8b4cd2fb11b0caf5e6a543ceaebb6009",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "346af67b8d116f01ef696fd47959a55deb2db8b6",
+              "lessThan": "b8dbe9648d69059cfe3a28917bfbf7e61efd7f15",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "3.4",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "3.4",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.253",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.203",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.168",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.134",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.81",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.22",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.12",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00032,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 13,
+        "reference_count": 8
       }
     },
     {
@@ -287813,8 +288196,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 13,
         "reference_count": 6
       }
     },
@@ -287936,9 +288321,160 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 11,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43027",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: nf_conntrack_helper: pass helper to expect cleanup\n\nnf_conntrack_helper_unregister() calls nf_ct_expect_iterate_destroy()\nto remove expectations belonging to the helper being unregistered.\nHowever, it passes NULL instead of the helper pointer as the data\nargument, so expect_iter_me() never matches any expectation and all\nof them survive the cleanup.\n\nAfter unregister returns, nfnl_cthelper_del() frees the helper\nobject immediately.  Subsequent expectation dumps or packet-driven\ninit_conntrack() calls then dereference the freed exp->helper,\ncausing a use-after-free.\n\nPass the actual helper pointer so expectations referencing it are\nproperly destroyed before the helper object is freed.\n\n  BUG: KASAN: slab-use-after-free in string+0x38f/0x430\n  Read of size 1 at addr ffff888003b14d20 by task poc/103\n  Call Trace:\n   string+0x38f/0x430\n   vsnprintf+0x3cc/0x1170\n   seq_printf+0x17a/0x240\n   exp_seq_show+0x2e5/0x560\n   seq_read_iter+0x419/0x1280\n   proc_reg_read+0x1ac/0x270\n   vfs_read+0x179/0x930\n   ksys_read+0xef/0x1c0\n  Freed by task 103:\n  The buggy address is located 32 bytes inside of\n   freed 192-byte region [ffff888003b14d00, ffff888003b14dc0)",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "5cf28d5c8dcbbe8af6d3b145babe491906d7bad1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "504ba4168466c91210c45acdc332479cfd5f2da6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "dc1739eff48e34cc71d4e2f03715493fbcebd8af",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "2cf2737c85a2ba2b52024dafe68ffad2676f97be",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "2c16e4d64dd91227742dfe196a3e7b0568bef65a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "620f3d14c1ef51d425060a3056ad8dbae8f998a3",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "90bd7e8501349db3006d21fbc09df9ffcb172965",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ac7b848390036dadd4351899d2a23748075916bd",
+              "lessThan": "a242a9ae58aa46ff7dae51ce64150a93957abe65",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.14",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.14",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.253",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.203",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.168",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.134",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.81",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.22",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.12",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00032,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 13,
+        "reference_count": 8
       }
     },
     {
@@ -288084,7 +288620,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -288185,8 +288721,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 16,
         "reference_count": 3
       }
     },
@@ -288333,7 +288871,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -288420,7 +288958,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 3
       }
     },
@@ -288567,7 +289105,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -288863,7 +289401,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 20,
         "reference_count": 8
       }
     },
@@ -288938,8 +289476,157 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43040",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: ipv6: ndisc: fix ndisc_ra_useropt to initialize nduseropt_padX fields to zero to prevent an info-leak\n\nWhen processing Router Advertisements with user options the kernel\nbuilds an RTM_NEWNDUSEROPT netlink message. The nduseroptmsg struct\nhas three padding fields that are never zeroed and can leak kernel data\n\nThe fix is simple, just zeroes the padding fields.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "1da9023f6b071a38e5430ffbce4b70b2b1ac4f9c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "2fe4d0ba690a69ad6ae9f7ab9bdc96e02610b648",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "11d7fe97421cfc81549940c20ed5ac9472d6db05",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "7f56d87e527bb5a13c3e8b0d5840cb6332822f6d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "4f810c686fde509d1cdaa706322d9d2531f8f1a4",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "b485eef3d97b7aae55ce669b6de555ec81f3d21c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "ef3645606e4a635d5062a492f22b7f490852ee67",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31910575a9de61e78065e93846e8e7a4894a18bf",
+              "lessThan": "ae05340ccaa9d347fe85415609e075545bec589f",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.24",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.24",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.253",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.203",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.168",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.134",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.81",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.22",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.12",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00032,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-909"
+        ],
+        "cpe_count": 13,
+        "reference_count": 8
       }
     },
     {
@@ -289012,8 +289699,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -289124,7 +289813,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 10,
         "reference_count": 5
       }
     },
@@ -289275,8 +289964,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -290338,8 +291029,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -290485,8 +291176,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -290584,8 +291275,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -290696,8 +291387,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -290767,8 +291458,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -290910,8 +291601,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291021,8 +291712,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291132,8 +291823,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291243,8 +291934,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291390,8 +292081,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291477,8 +292168,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291560,8 +292251,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291671,8 +292362,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291797,8 +292488,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291908,8 +292599,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -291995,8 +292686,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -292070,8 +292761,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -292181,12 +292872,12 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 5
       }
     },
@@ -292292,12 +292983,14 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 11,
         "reference_count": 5
       }
     },
@@ -292408,12 +293101,14 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 14,
         "reference_count": 5
       }
     },
@@ -292519,12 +293214,14 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 10,
         "reference_count": 5
       }
     },
@@ -292630,12 +293327,12 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.4,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 5
       }
     },
@@ -292717,12 +293414,14 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 7,
         "reference_count": 3
       }
     },
@@ -292828,12 +293527,12 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 5
       }
     },
@@ -292939,8 +293638,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -293038,12 +293737,14 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 3,
         "reference_count": 4
       }
     },
@@ -293137,12 +293838,12 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 4
       }
     },
@@ -293260,12 +293961,14 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 6,
         "reference_count": 6
       }
     },
@@ -293395,12 +294098,12 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.9,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -293542,8 +294245,8 @@
       "active_threat": false,
       "probability_score": 0.00014,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -293689,8 +294392,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -293812,8 +294515,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -293911,8 +294614,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294058,8 +294761,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294145,8 +294848,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294232,8 +294935,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294319,8 +295022,8 @@
       "active_threat": false,
       "probability_score": 0.00019,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294406,8 +295109,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294505,8 +295208,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294652,8 +295355,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294799,8 +295502,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -294886,8 +295589,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295021,8 +295724,8 @@
       "active_threat": false,
       "probability_score": 0.00052,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295168,8 +295871,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295315,8 +296018,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295462,8 +296165,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295549,8 +296252,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295636,8 +296339,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295735,8 +296438,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -295882,8 +296585,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296029,8 +296732,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296176,8 +296879,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296263,8 +296966,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296425,8 +297128,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296548,8 +297251,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296635,8 +297338,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296758,8 +297461,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296869,8 +297572,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -296980,12 +297683,12 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 5
       }
     },
@@ -297127,12 +297830,12 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -297274,12 +297977,12 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -297446,8 +298149,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -297593,8 +298296,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -297740,8 +298443,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -297827,8 +298530,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -297938,8 +298641,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298025,8 +298728,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298124,8 +298827,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298258,8 +298961,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298369,8 +299072,8 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298456,8 +299159,8 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298579,8 +299282,8 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -298678,12 +299381,113 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43260",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbnxt_en: Fix RSS context delete logic\n\nWe need to free the corresponding RSS context VNIC\nin FW everytime an RSS context is deleted in driver.\nCommit 667ac333dbb7 added a check to delete the VNIC\nin FW only when netif_running() is true to help delete\nRSS contexts with interface down.\n\nHaving that condition will make the driver leak VNICs\nin FW whenever close() happens with active RSS contexts.\nOn the subsequent open(), as part of RSS context restoration,\nwe will end up trying to create extra VNICs for which we\ndid not make any reservation. FW can fail this request,\nthereby making us lose active RSS contexts.\n\nSuppose an RSS context is deleted already and we try to\nprocess a delete request again, then the HWRM functions\nwill check for validity of the request and they simply\nreturn if the resource is already freed. So, even for\ndelete-when-down cases, netif_running() check is not\nnecessary.\n\nRemove the netif_running() condition check when deleting\nan RSS context.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "667ac333dbb7e265b3f5bc4bc94e236f64682c86",
+              "lessThan": "348a5f8d06c7bdf954e13c17ad5f80b59a075604",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "667ac333dbb7e265b3f5bc4bc94e236f64682c86",
+              "lessThan": "079986d6db1f8e3d50c55f400cf998ac9690d2c8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "667ac333dbb7e265b3f5bc4bc94e236f64682c86",
+              "lessThan": "9a9b89eea4a9cc7726702946ff688d716962fabd",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "667ac333dbb7e265b3f5bc4bc94e236f64682c86",
+              "lessThan": "e123d9302d223767bd910bfbcfe607bae909f8ac",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.11",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.11",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.75",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.16",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.6",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00018,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 4,
         "reference_count": 4
       }
     },
@@ -298765,12 +299569,14 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -298852,12 +299658,103 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43276",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: mana: Fix double destroy_workqueue on service rescan PCI path\n\nWhile testing corner cases in the driver, a use-after-free crash\nwas found on the service rescan PCI path.\n\nWhen mana_serv_reset() calls mana_gd_suspend(), mana_gd_cleanup()\ndestroys gc->service_wq. If the subsequent mana_gd_resume() fails\nwith -ETIMEDOUT or -EPROTO, the code falls through to\nmana_serv_rescan() which triggers pci_stop_and_remove_bus_device().\nThis invokes the PCI .remove callback (mana_gd_remove), which calls\nmana_gd_cleanup() a second time, attempting to destroy the already-\nfreed workqueue. Fix this by NULL-checking gc->service_wq in\nmana_gd_cleanup() and setting it to NULL after destruction.\n\nCall stack of issue for reference:\n[Sat Feb 21 18:53:48 2026] Call Trace:\n[Sat Feb 21 18:53:48 2026]  <TASK>\n[Sat Feb 21 18:53:48 2026]  mana_gd_cleanup+0x33/0x70 [mana]\n[Sat Feb 21 18:53:48 2026]  mana_gd_remove+0x3a/0xc0 [mana]\n[Sat Feb 21 18:53:48 2026]  pci_device_remove+0x41/0xb0\n[Sat Feb 21 18:53:48 2026]  device_remove+0x46/0x70\n[Sat Feb 21 18:53:48 2026]  device_release_driver_internal+0x1e3/0x250\n[Sat Feb 21 18:53:48 2026]  device_release_driver+0x12/0x20\n[Sat Feb 21 18:53:48 2026]  pci_stop_bus_device+0x6a/0x90\n[Sat Feb 21 18:53:48 2026]  pci_stop_and_remove_bus_device+0x13/0x30\n[Sat Feb 21 18:53:48 2026]  mana_do_service+0x180/0x290 [mana]\n[Sat Feb 21 18:53:48 2026]  mana_serv_func+0x24/0x50 [mana]\n[Sat Feb 21 18:53:48 2026]  process_one_work+0x190/0x3d0\n[Sat Feb 21 18:53:48 2026]  worker_thread+0x16e/0x2e0\n[Sat Feb 21 18:53:48 2026]  kthread+0xf7/0x130\n[Sat Feb 21 18:53:48 2026]  ? __pfx_worker_thread+0x10/0x10\n[Sat Feb 21 18:53:48 2026]  ? __pfx_kthread+0x10/0x10\n[Sat Feb 21 18:53:48 2026]  ret_from_fork+0x269/0x350\n[Sat Feb 21 18:53:48 2026]  ? __pfx_kthread+0x10/0x10\n[Sat Feb 21 18:53:48 2026]  ret_from_fork_asm+0x1a/0x30\n[Sat Feb 21 18:53:48 2026]  </TASK>",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "505cc26bcae00699bacaee66cd50ede7a9cc89cb",
+              "lessThan": "fa3c2f8d9152344a478abb847081c1b5f84a94f5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "505cc26bcae00699bacaee66cd50ede7a9cc89cb",
+              "lessThan": "a9a7c3203fdc4d4a8d8a7a3b1ed05d2bb4c6e77e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "505cc26bcae00699bacaee66cd50ede7a9cc89cb",
+              "lessThan": "f975a0955276579e2176a134366ed586071c7c6a",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.16",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.16",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.16",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.6",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00017,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -298975,13 +299872,15 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
-        "reference_count": 6
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 5,
+        "reference_count": 8
       }
     },
     {
@@ -299110,12 +300009,14 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -299197,13 +300098,140 @@
       "active_threat": false,
       "probability_score": 0.00017,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43281",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nmailbox: Prevent out-of-bounds access in fw_mbox_index_xlate()\n\nAlthough it is guided that `#mbox-cells` must be at least 1, there are\nmany instances of `#mbox-cells = <0>;` in the device tree. If that is\nthe case and the corresponding mailbox controller does not provide\n`fw_xlate` and of_xlate` function pointers, `fw_mbox_index_xlate()` will\nbe used by default and out-of-bounds accesses could occur due to lack of\nbounds check in that function.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2b6d83e2b8b7de82331a6a1dcd64b51020a6031c",
+              "lessThan": "2662ed331a69c0b551f78af58f12eb629a89a36f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "2b6d83e2b8b7de82331a6a1dcd64b51020a6031c",
+              "lessThan": "31c4c67dec3362094a6747a171a4848e98542265",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "2b6d83e2b8b7de82331a6a1dcd64b51020a6031c",
+              "lessThan": "01d9a8c2615d436b2b30c19c1afe9fcd5726ff6d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "2b6d83e2b8b7de82331a6a1dcd64b51020a6031c",
+              "lessThan": "4caae8168d1b808c7d4ff481295292e3f97f90fb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "2b6d83e2b8b7de82331a6a1dcd64b51020a6031c",
+              "lessThan": "f50b39fd7c72a8734153644ee945ca0d8b2e65ab",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "2b6d83e2b8b7de82331a6a1dcd64b51020a6031c",
+              "lessThan": "fcd7f96c783626c07ee3ed75fa3739a8a2052310",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "3.18",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "3.18",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.167",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.130",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.77",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.16",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.6",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00024,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 12,
+        "reference_count": 6
       }
     },
     {
@@ -299344,13 +300372,174 @@
       "active_threat": false,
       "probability_score": 0.00024,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 10,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43284",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfrm: esp: avoid in-place decrypt on shared skb frags\n\nMSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP\nmarks such skbs with SKBFL_SHARED_FRAG after skb_splice_from_iter(),\nso later paths that may modify packet data can first make a private\ncopy. The IPv4/IPv6 datagram append paths did not set this flag when\nsplicing pages into UDP skbs.\n\nThat leaves an ESP-in-UDP packet made from shared pipe pages looking\nlike an ordinary uncloned nonlinear skb. ESP input then takes the no-COW\nfast path for uncloned skbs without a frag_list and decrypts in place\nover data that is not owned privately by the skb.\n\nMark IPv4/IPv6 datagram splice frags with SKBFL_SHARED_FRAG, matching\nTCP. Also make ESP input fall back to skb_cow_data() when the flag is\npresent, so ESP does not decrypt externally backed frags in place.\nPrivate nonlinear skb frags still use the existing fast path.\n\nThis intentionally does not change ESP output. In esp_output_head(),\nthe path that appends the ESP trailer to existing skb tailroom without\ncalling skb_cow_data() is not reachable for nonlinear skbs:\nskb_tailroom() returns zero when skb->data_len is nonzero, while ESP\ntailen is positive. Thus ESP output will either use the separate\ndestination-frag path or fall back to skb_cow_data().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "a6cb440f274a22456ef3e86b457344f1678f38f9",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "ab8b995323e5237041472d07e5055f5f7dcdf15b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "fe785bb3a8096dffcc4048a85cd0c83337eeecad",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "5d55c7336f8032d434adcc5fab987ccc93a44aec",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "8253aab4659ca16116b522203c2a6b18dccacea7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "50ed1e7873100f77abad20fd31c51029bc49cd03",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "b54edf1e9a3fd3491bdcb82a21f8d21315271e0d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "71a1d9d985d26716f74d21f18ee8cac821b06e97",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cac2661c53f35cbe651bef9b07026a5a05ab8ce0",
+              "lessThan": "52646cbd00e765a6db9c3afe9535f26218276034",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.11",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.11",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.255",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.205",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.206",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.171",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.172",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.138",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.87",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.28",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.5",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00014,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-123"
+        ],
+        "cpe_count": 7,
+        "reference_count": 11
       }
     }
   ]
