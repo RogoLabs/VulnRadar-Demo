@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-09T01:49:39+00:00",
+  "generated_at": "2026-05-09T03:22:10+00:00",
   "vendor": "apache_software_foundation",
-  "count": 664,
+  "count": 666,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -26309,6 +26309,44 @@
       }
     },
     {
+      "cve_id": "CVE-2025-66467",
+      "description": "Missing MinIO policy cleanup on bucket deletion via Apache CloudStack allows users to retain access to buckets which they previously owned. If another user creates a new bucket with the same name, the previous owners can gain unauthorized read and write access to it by using the previously generated access and secret keys.\n\nUsers are recommended to upgrade to Apache CloudStack versions 4.20.3.0 or 4.22.0.1, or later, which fixes this issue.",
+      "cvss_score": 8.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cloudstack",
+          "versions": [
+            {
+              "lessThanOrEqual": "4.20.2.0",
+              "status": "affected",
+              "version": "4.19.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "4.22.0.0",
+              "status": "affected",
+              "version": "4.21.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cloudstack",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2025-66516",
       "description": "Critical XXE in Apache Tika tika-core (1.13-3.2.1), tika-pdf-module (2.0.0-3.2.1) and tika-parsers (1.13-1.28.5) modules on all platforms allows an attacker to carry out XML External Entity injection via a crafted XFA file inside of a PDF. \n\nThis CVE covers the same vulnerability as in\u00a0CVE-2025-54988. However, this CVE expands the scope of affected packages in two ways. \n\nFirst, while the entrypoint for the vulnerability was the tika-parser-pdf-module as reported in CVE-2025-54988, the vulnerability and its fix were in tika-core. Users who upgraded the tika-parser-pdf-module but did not upgrade tika-core to >= 3.2.2 would still be vulnerable. \n\nSecond, the original report failed to mention that in the 1.x Tika releases, the PDFParser was in the \"org.apache.tika:tika-parsers\" module.",
       "cvss_score": 8.4,
@@ -29603,6 +29641,38 @@
         "cpe_count": 4,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-39816",
+      "description": "The optional extension component TinkerpopClientService is missing the Restricted annotation with the Execute Code Required Permission in Apache NiFi 2.0.0-M1 through 2.8.0. The TinkerpopClientService supports configuration of ByteCode Submission for the Script Submission Type, enabling Groovy Script execution in the service prior to submitting the query. The missing Restricted annotation allows users without the Execute Code Permission to configure the Service in installations that use fine-grained authorization and have the optional TinkerpopClientService installed. Apache NiFi installations that do not have the nifi-other-graph-services-nar installed are not subject to this vulnerability. Upgrading to Apache NiFi 2.9.0 is the recommended mitigation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/AU:Y/R:I/V:C/RE:L/U:Green",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache nifi",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.8.0",
+              "status": "affected",
+              "version": "2.0.0-M1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache nifi",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-40010",
