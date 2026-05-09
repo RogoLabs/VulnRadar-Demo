@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-09T01:08:25+00:00",
+  "generated_at": "2026-05-09T01:49:39+00:00",
   "vendor": "google",
-  "count": 1658,
+  "count": 1660,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -71965,6 +71965,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-7910",
+      "description": "Use after free in Views in Google Chrome prior to 148.0.7778.96 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "148.0.7778.96",
+              "status": "affected",
+              "lessThan": "148.0.7778.96",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00027,
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-7911",
       "description": "Use after free in Aura in Google Chrome on Windows prior to 148.0.7778.96 allowed a remote attacker who had compromised the renderer process to potentially perform a sandbox escape via a crafted HTML page. (Chromium security severity: High)",
       "cvss_score": 8.3,
@@ -72947,7 +72990,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -73333,6 +73376,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-416"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-7981",
+      "description": "Out of bounds read in Codecs in Google Chrome prior to 148.0.7778.96 allowed a remote attacker to obtain potentially sensitive information from process memory via a malicious file. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "148.0.7778.96",
+              "status": "affected",
+              "lessThan": "148.0.7778.96",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00026,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
         ],
         "cpe_count": 4,
         "reference_count": 2
@@ -73807,7 +73893,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -73850,7 +73936,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -73893,7 +73979,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -73936,7 +74022,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -73979,7 +74065,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -74020,7 +74106,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     }
