@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-12T01:08:13+00:00",
+  "generated_at": "2026-05-12T01:54:47+00:00",
   "vendor": "_other",
-  "count": 704,
+  "count": 705,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -44719,7 +44719,7 @@
               "lessThanOrEqual": "1.14",
               "status": "affected",
               "version": "0",
-              "versionType": "semver"
+              "versionType": "custom"
             }
           ]
         }
@@ -45527,6 +45527,244 @@
         "cpe_count": 1,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-42349",
+      "description": "Clerk JavaScript is the official JavaScript repository for Clerk authentication. has(), auth.protect(), and related authorization predicates in @clerk/shared, @clerk/nextjs, @clerk/backend, and other framework SDKs can return true for certain combined authorization checks when the result should be false, allowing a gated action to proceed for a user who does not satisfy the full set of requested conditions. This call shape can be bypassed if certain conditions are met: a has() or auth.protect() call that combines a reverification check with any of role, permission, feature, or plan, or that combines a billing check (feature or plan) with a role or permission check. This vulnerability is fixed in  @clerk/clerk-js 5.125.10 and 6.7.5.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "clerk",
+          "product": "javascript",
+          "versions": [
+            {
+              "version": ">= 5.22.0, < 5.125.10",
+              "status": "affected"
+            },
+            {
+              "version": ">= 6.0.0, < 6.7.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "shared",
+          "versions": [
+            {
+              "version": ">= 3.0.0, <= 3.47.4",
+              "status": "affected"
+            },
+            {
+              "version": ">= 4.0.0, <= 4.8.2",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "backend",
+          "versions": [
+            {
+              "version": ">= 2.0.0, <= 2.33.2",
+              "status": "affected"
+            },
+            {
+              "version": ">= 3.0.0, <= 3.2.13",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "nextjs",
+          "versions": [
+            {
+              "version": ">= 6.0.0, <= 6.39.2",
+              "status": "affected"
+            },
+            {
+              "version": ">= 7.0.0, <= 7.2.3",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "clerk-react",
+          "versions": [
+            {
+              "version": ">= 5.9.0, <= 5.61.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "react",
+          "versions": [
+            {
+              "version": ">= 6.0.0, <= 6.4.2",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "vue",
+          "versions": [
+            {
+              "version": ">= 1.0.0, <= 1.17.20",
+              "status": "affected"
+            },
+            {
+              "version": ">= 2.0.0, <= 2.0.15",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "astro",
+          "versions": [
+            {
+              "version": ">= 2.0.0, <= 2.17.10",
+              "status": "affected"
+            },
+            {
+              "version": ">= 3.0.0, <= 3.0.17",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "nuxt",
+          "versions": [
+            {
+              "version": ">= 1.0.0, <= 1.13.28",
+              "status": "affected"
+            },
+            {
+              "version": ">= 2.0.0, <= 2.2.4",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "clerk-expo",
+          "versions": [
+            {
+              "version": ">= 2.2.11, <= 2.19.35",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "expo",
+          "versions": [
+            {
+              "version": ">= 3.0.0, <= 3.2.1",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "react-router",
+          "versions": [
+            {
+              "version": ">= 0.0.1, <= 2.4.12",
+              "status": "affected"
+            },
+            {
+              "version": ">= 3.0.0, <= 3.1.3",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "tanstack-react-start",
+          "versions": [
+            {
+              "version": ">= 0.0.1, <= 0.29.10",
+              "status": "affected"
+            },
+            {
+              "version": ">= 1.0.0, <= 1.1.3",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "chrome-extension",
+          "versions": [
+            {
+              "version": ">= 1.3.5, <= 2.9.14",
+              "status": "affected"
+            },
+            {
+              "version": ">= 3.0.0, <= 3.1.14",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "fastify",
+          "versions": [
+            {
+              "version": ">= 1.0.42, <= 2.6.30",
+              "status": "affected"
+            },
+            {
+              "version": ">= 3.0.0, <= 3.1.15",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "express",
+          "versions": [
+            {
+              "version": ">= 0.1.0, <= 1.7.78",
+              "status": "affected"
+            },
+            {
+              "version": ">= 2.0.0, <= 2.1.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@clerk",
+          "product": "hono",
+          "versions": [
+            {
+              "version": ">= 0.0.2, <= 0.1.15",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome-extension",
+        "vendor:@clerk"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

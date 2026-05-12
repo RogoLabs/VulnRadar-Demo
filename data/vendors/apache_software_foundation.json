@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-12T01:08:13+00:00",
+  "generated_at": "2026-05-12T01:54:47+00:00",
   "vendor": "apache_software_foundation",
-  "count": 667,
+  "count": 669,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -26266,6 +26266,49 @@
       }
     },
     {
+      "cve_id": "CVE-2025-66172",
+      "description": "The CloudStack Backup plugin has an improper access logic in versions 4.21.0.0 and 4.22.0.0. Anyone with authenticated user-account access in CloudStack 4.21.0.0+ environments, where this plugin is enabled and have access to specific APIs can restore a volume from any other user's backups and attach the volume to their own VMs.\n\nBackup plugin users using CloudStack 4.21.0.0+ are recommended to upgrade to CloudStack version 4.22.0.1, which fixes this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cloudstack",
+          "versions": [
+            {
+              "lessThanOrEqual": "4.22.0.0",
+              "status": "affected",
+              "version": "4.21.0.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cloudstack",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00011,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-359"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2025-66236",
       "description": "Before Airflow 3.2.0, it was unclear that secure Airflow deployments require the Deployment Manager to take appropriate actions and pay attention to security details and security model of Airflow. Some assumptions the Deployment Manager could make were not clear or explicit enough, even though Airflow's intentions and security model of Airflow did not suggest different assumptions. The overall security model [1], workload isolation [2], and JWT authentication details [3] are now described in more detail. Users concerned with role isolation and following the Airflow security model of Airflow are advised to upgrade to Airflow 3.2, where several security improvements have been implemented. They should also read and follow the relevant documents to make sure that their deployment is secure enough. It also clarifies that the Deployment Manager is ultimately responsible for securing your Airflow deployment. This had also been communicated via Airflow 3.2.0 Blog announcement [4].\n\n[1] Security Model:  https://airflow.apache.org/docs/apache-airflow/stable/security/jwt_token_authentication.html \n[2] Workload isolation:  https://airflow.apache.org/docs/apache-airflow/stable/security/workload.html \n[3] JWT Token authentication:  https://airflow.apache.org/docs/apache-airflow/stable/security/jwt_token_authentication.html \n[4] Airflow 3.2.0 Blog announcement:  https://airflow.apache.org/blog/airflow-3.2.0/ \n\n\n\nUsers are recommended to upgrade to version 3.2.0, which fixes this issue.",
       "cvss_score": 7.5,
@@ -27744,6 +27787,55 @@
           "CWE-444"
         ],
         "cpe_count": 3,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-25077",
+      "description": "Account users are allowed by default to register templates to be downloaded directly to the primary storage for deploying instances using the KVM hypervisor. Due to missing file name sanitization, an attacker can register malicious templates to execute arbitrary code on the KVM hosts. This can result in the compromise of resource integrity and confidentiality, data loss, denial of service, and availability of the KVM-based infrastructure managed by CloudStack.\n\n\nUsers are recommended to upgrade to Apache CloudStack versions 4.20.3.0 or 4.22.0.1, or later, which fixes this issue.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cloudstack",
+          "versions": [
+            {
+              "lessThanOrEqual": "4.20.2.0",
+              "status": "affected",
+              "version": "4.11.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "4.22.0.0",
+              "status": "affected",
+              "version": "4.21.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cloudstack",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00022,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
