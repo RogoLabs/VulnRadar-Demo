@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-13T01:34:11+00:00",
+  "generated_at": "2026-05-13T03:24:23+00:00",
   "vendor": "_other",
-  "count": 705,
+  "count": 706,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -39722,6 +39722,38 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-7428",
+      "description": "Prior to 2025-11-03,\u00a0well-intended users of Terraform or REST API for Google Cloud AlloyDB for PostgreSQL could have created clusters\u00a0with an insecure default password which could have been exploited by a\u00a0remote\u00a0attacker\u00a0to\u00a0gain full administrative access to the database.\n\n\n\n\nExploitation required network access to the AlloyDB cluster and was limited to Terraform or the REST API, as other clients blocked it.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "alloydb for postgresql",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2025-11-03",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:alloydb for postgresql",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00041
     },
     {
       "cve_id": "CVE-2025-0994",

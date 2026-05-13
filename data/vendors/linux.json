@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-13T01:34:11+00:00",
+  "generated_at": "2026-05-13T03:24:23+00:00",
   "vendor": "linux",
-  "count": 2652,
+  "count": 2653,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -307939,6 +307939,38 @@
         "cpe_count": 7,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2026-8449",
+      "description": "Linux ksmbd contains a remote memory corruption vulnerability in the ACL inheritance path that allows remote clients with directory creation permissions to trigger a heap out-of-bounds read and subsequent heap corruption by setting a crafted DACL with a malformed SID containing an inflated num_subauth field. Attackers can exploit this vulnerability by creating a directory, setting the malicious DACL via SMB2_SET_INFO, and creating child entries to cause kernel instability, denial of service, or potentially achieve privilege escalation to kernel code execution.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "ksmbd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "996454b",
+              "versionType": "git"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ksmbd",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

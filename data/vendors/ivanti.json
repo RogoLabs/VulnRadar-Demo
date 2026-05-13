@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-13T01:34:11+00:00",
+  "generated_at": "2026-05-13T03:24:23+00:00",
   "vendor": "ivanti",
-  "count": 287,
+  "count": 292,
   "items": [
     {
       "cve_id": "CVE-2022-36971",
@@ -14105,6 +14105,36 @@
       }
     },
     {
+      "cve_id": "CVE-2026-7432",
+      "description": "A race condition in Ivanti Secure Access Client before 22.8R6 allows a locally authenticated user to escalate privileges to SYSTEM",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "secure access client",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "22.8R6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:secure access client",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-7821",
       "description": "Improper certificate validation in Ivanti EPMM before\u00a0versions 12.6.1.1, 12.7.0.1, and 12.8.0.1\u00a0allows a remote unauthenticated attacker\u00a0to enroll a device belonging to a restricted set of unenrolled devices, leading to information disclosure about EPMM appliance and\u00a0impacting\u00a0on the integrity of the newly enrolled device identity.",
       "cvss_score": 7.4,
@@ -14152,6 +14182,126 @@
         "cpe_count": 3,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-8043",
+      "description": "External control of a file name in Ivanti Xtraction before version 2026.2 allows a remote authenticated attacker to read sensitive files and write arbitrary HTML files to a web directory, leading to information disclosure and possible client-side attacks.",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "xtraction",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2026.2"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:xtraction",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-8051",
+      "description": "OS command injection in Ivanti Virtual Traffic Manager before version 22.9r4 allows a remote authenticated attacker with admin privileges to achieve remote code execution.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "virtual traffic manager",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "22.9r4"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:virtual traffic manager",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-8110",
+      "description": "Incorrect permissions assignment in\u00a0the agent of\u00a0Ivanti Endpoint Manager before\u00a0version 2024\u00a0SU6\u00a0allows a\u00a0local\u00a0authenticated\u00a0attacker to\u00a0escalate their privileges.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "endpoint manager",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2024 SU6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:endpoint manager",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-8111",
+      "description": "SQL injection in the web console\u00a0of Ivanti Endpoint Manager\u00a0before version 2024 SU6 allows a remote authenticated attacker to achieve remote code execution.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "endpoint manager",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2024 SU6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:endpoint manager",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

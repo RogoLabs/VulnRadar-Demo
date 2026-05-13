@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-13T01:34:11+00:00",
+  "generated_at": "2026-05-13T03:24:23+00:00",
   "vendor": "vmware",
-  "count": 51,
+  "count": 53,
   "items": [
     {
       "cve_id": "CVE-2022-22962",
@@ -3300,6 +3300,82 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-41712",
+      "description": "Spring AI's chat memory component contained a problematic default that, when not explicitly overridden, could result in unintended data exposure between users.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring ai",
+          "versions": [
+            {
+              "version": "1.0.0",
+              "status": "affected",
+              "lessThan": "1.0.7",
+              "versionType": "semver"
+            },
+            {
+              "version": "1.1.0",
+              "status": "affected",
+              "lessThan": "1.1.6",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring ai",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00035
+    },
+    {
+      "cve_id": "CVE-2026-41713",
+      "description": "A malicious user could craft input that is stored in conversation memory and later interpreted by the model in an unintended way. Applications using the affected advisor with user-controlled input may be susceptible to manipulation of model behavior across conversation turns.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "spring ai",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.0.0",
+              "lessThan": "1.0.7",
+              "versionType": "oss"
+            },
+            {
+              "status": "affected",
+              "version": "1.1.0",
+              "lessThan": "1.1.6",
+              "versionType": "oss"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:spring ai",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00033
     }
   ]
 }

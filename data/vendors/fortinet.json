@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-13T01:34:11+00:00",
+  "generated_at": "2026-05-13T03:24:23+00:00",
   "vendor": "fortinet",
-  "count": 224,
+  "count": 227,
   "items": [
     {
       "cve_id": "CVE-2022-22299",
@@ -14448,6 +14448,74 @@
       }
     },
     {
+      "cve_id": "CVE-2025-53844",
+      "description": "A out-of-bounds write vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS 7.2.0 through 7.2.11 allows attacker to execute unauthorized code or commands via specially crafted packets.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortios",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.6.0",
+              "lessThanOrEqual": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.8",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.11",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.17",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.4.0",
+              "lessThanOrEqual": "6.4.16",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.2.0",
+              "lessThanOrEqual": "6.2.17",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.0.0",
+              "lessThanOrEqual": "6.0.18",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortios",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2025-53949",
       "description": "An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.2, FortiSandbox 4.4.0 through 4.4.7, FortiSandbox 4.2 all versions, FortiSandbox 4.0 all versions may allow an authenticated attacker to execute unauthorized code on the underlying system via crafted HTTP requests.",
       "cvss_score": 7.0,
@@ -15809,6 +15877,124 @@
       }
     },
     {
+      "cve_id": "CVE-2026-26083",
+      "description": "A missing authorization vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.1, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox Cloud 5.0.2 through 5.0.5, FortiSandbox PaaS 23.4 all versions, FortiSandbox PaaS 23.3 all versions, FortiSandbox PaaS 23.1 all versions, FortiSandbox PaaS 22.2 all versions, FortiSandbox PaaS 22.1 all versions, FortiSandbox PaaS 21.4 all versions, FortiSandbox PaaS 21.3 all versions, FortiSandbox PaaS 5.0.0 through 5.0.1, FortiSandbox PaaS 4.4.5 through 4.4.8 may allow an unauthenticated attacker to execute unauthorized code or commands via HTTP requests.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox cloud",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.5",
+              "lessThanOrEqual": "4.4.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.0",
+              "lessThanOrEqual": "4.4.8",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.2.1",
+              "lessThanOrEqual": "4.2.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox paas",
+          "versions": [
+            {
+              "version": "23.4.4374",
+              "status": "affected"
+            },
+            {
+              "version": "23.4.4350",
+              "status": "affected"
+            },
+            {
+              "version": "23.3.4329",
+              "status": "affected"
+            },
+            {
+              "version": "23.1.4245",
+              "status": "affected"
+            },
+            {
+              "version": "22.2.4151",
+              "status": "affected"
+            },
+            {
+              "version": "22.2.4134",
+              "status": "affected"
+            },
+            {
+              "version": "22.1.4113",
+              "status": "affected"
+            },
+            {
+              "version": "21.4.4072",
+              "status": "affected"
+            },
+            {
+              "version": "21.3.4055",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.5",
+              "lessThanOrEqual": "4.4.8",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortisandbox",
+        "product:fortisandbox cloud",
+        "product:fortisandbox paas",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-35616",
       "description": "A improper access control vulnerability in Fortinet FortiClientEMS 7.4.5 through 7.4.6 may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
       "cvss_score": 9.1,
@@ -16060,6 +16246,58 @@
         "cpe_count": 1,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-44277",
+      "description": "A improper access control vulnerability in Fortinet FortiAuthenticator 8.0.2, FortiAuthenticator 8.0.0, FortiAuthenticator 6.6.0 through 6.6.8, FortiAuthenticator 6.5.0 through 6.5.6 may allow attacker to execute unauthorized code or commands via <insert attack vector here>",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortiauthenticator",
+          "versions": [
+            {
+              "version": "8.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "8.0.0",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.6.0",
+              "lessThanOrEqual": "6.6.8",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.5.0",
+              "lessThanOrEqual": "6.5.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.4.0",
+              "lessThanOrEqual": "6.4.10",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortiauthenticator",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
