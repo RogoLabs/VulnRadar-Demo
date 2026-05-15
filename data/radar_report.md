@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-05-15T03:24:24+00:00`
+Generated: `2026-05-15T05:31:01+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,12 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| May 15 | [CVE-2026-42327](https://www.cve.org/CVERecord?id=CVE-2026-42327) | 🆕 New |
+| May 15 | [CVE-2026-20182](https://www.cve.org/CVERecord?id=CVE-2026-20182) | 🔴 In CISA KEV |
+| May 15 | [CVE-2026-20224](https://www.cve.org/CVERecord?id=CVE-2026-20224) | 🆕 New |
+| May 15 | [CVE-2026-41615](https://www.cve.org/CVERecord?id=CVE-2026-41615) | 🆕 New |
+| May 15 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | 🆕 New |
+| May 15 | [CVE-2026-44503](https://www.cve.org/CVERecord?id=CVE-2026-44503) | 🆕 New |
 | May 14 | [CVE-2025-43524](https://www.cve.org/CVERecord?id=CVE-2025-43524) | 🆕 New |
 | May 14 | [CVE-2025-46311](https://www.cve.org/CVERecord?id=CVE-2025-46311) | 🆕 New |
 | May 14 | [CVE-2026-28840](https://www.cve.org/CVERecord?id=CVE-2026-28840) | 🆕 New |
@@ -297,10 +303,4 @@ Top critical items:
 | May 14 | [CVE-2026-39871](https://www.cve.org/CVERecord?id=CVE-2026-39871) | 🆕 New |
 | May 14 | [CVE-2026-43655](https://www.cve.org/CVERecord?id=CVE-2026-43655) | 🆕 New |
 | May 14 | [CVE-2026-43656](https://www.cve.org/CVERecord?id=CVE-2026-43656) | 🆕 New |
-| May 14 | [CVE-2026-43658](https://www.cve.org/CVERecord?id=CVE-2026-43658) | 🆕 New |
-| May 14 | [CVE-2026-43660](https://www.cve.org/CVERecord?id=CVE-2026-43660) | 🆕 New |
-| May 14 | [CVE-2026-43661](https://www.cve.org/CVERecord?id=CVE-2026-43661) | 🆕 New |
-| May 14 | [CVE-2026-43668](https://www.cve.org/CVERecord?id=CVE-2026-43668) | 🆕 New |
-| May 14 | [CVE-2026-43005](https://www.cve.org/CVERecord?id=CVE-2026-43005) | 🆕 New |
-| May 14 | [CVE-2026-43138](https://www.cve.org/CVERecord?id=CVE-2026-43138) | 🆕 New |
-| ... | | _and 297 more_ |
+| ... | | _and 303 more_ |
