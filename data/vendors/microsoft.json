@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T16:48:15+00:00",
+  "generated_at": "2026-05-15T17:42:00+00:00",
   "vendor": "microsoft",
   "count": 3614,
   "items": [
@@ -697122,8 +697122,8 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:microsoft exchange server 2016 cumulative update 23",
         "product:microsoft exchange server 2019 cumulative update 14",
@@ -697131,8 +697131,19 @@
         "product:microsoft exchange server subscription edition rtm",
         "vendor:microsoft"
       ],
-      "active_threat": false,
-      "probability_score": 0.0022
+      "active_threat": true,
+      "probability_score": 0.0022,
+      "kev": {
+        "cveID": "CVE-2026-42897",
+        "vendorProject": "Microsoft",
+        "product": "Microsoft",
+        "vulnerabilityName": "Microsoft Exchange Server Cross-Site Scripting Vulnerability",
+        "dateAdded": "2026-05-15",
+        "shortDescription": "Microsoft Exchange Server contains a cross-site scripting vulnerability during web page generation in Outlook Web Access and when certain interaction conditions are met, arbitrary JavaScript can be executed in the browser context.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-05-29",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
     },
     {
       "cve_id": "CVE-2026-42898",
