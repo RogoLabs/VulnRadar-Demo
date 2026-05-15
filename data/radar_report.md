@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-05-15T01:11:51+00:00`
+Generated: `2026-05-15T03:24:24+00:00`
 
 ## Executive Summary
 
@@ -38,9 +38,9 @@ Top critical items:
 
 ## Summary
 
-- Total items: **11710**
-- Watchlist hits: **11347**
-- CISA KEVs: **685**
+- Total items: **11715**
+- Watchlist hits: **11352**
+- CISA KEVs: **686**
 - Exploit Intel (PoC): **755**
 - Exploit Intel + Watchlist (CRITICAL): **392**
 
@@ -196,6 +196,7 @@ Top critical items:
 | [CVE-2026-20131](https://www.cve.org/CVERecord?id=CVE-2026-20131) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-22 | 0.017 | 10.0 | ✅ | A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker… |
 | [CVE-2025-20337](https://www.cve.org/CVERecord?id=CVE-2025-20337) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-18 | 0.014 | 10.0 | ✅ | A vulnerability in a specific API of Cisco ISE and Cisco ISE-PIC could allow an unauthenticated, remote attacker to execute arbitrary code on the underlying op… |
 | [CVE-2025-24201](https://www.cve.org/CVERecord?id=CVE-2025-24201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-03 | 0.002 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions. This issue is fixed in Safari 18.3.1, iOS 15.8.4 and iPadOS 15… |
+| [CVE-2026-20182](https://www.cve.org/CVERecord?id=CVE-2026-20182) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-05-17 |  | 10.0 | ✅ | May 2026: This security advisory provides the details and fix information for a vulnerability that was discovered and fixed after the  was disclosed in Februar… |
 | [CVE-2025-31201](https://www.cve.org/CVERecord?id=CVE-2025-31201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.019 | 9.8 | ✅ | This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, visionOS 2.4.… |
 | [CVE-2025-31200](https://www.cve.org/CVERecord?id=CVE-2025-31200) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.018 | 9.8 | ✅ | A memory corruption issue was addressed with improved bounds checking. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, … |
 | [CVE-2023-21674](https://www.cve.org/CVERecord?id=CVE-2023-21674) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-31 | 0.116 | 8.8 | ✅ | Windows Advanced Local Procedure Call (ALPC) Elevation of Privilege Vulnerability |
@@ -247,7 +248,6 @@ Top critical items:
 | [CVE-2026-3909](https://www.cve.org/CVERecord?id=CVE-2026-3909) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-27 | 0.004 | 8.8 | ✅ | Out of bounds write in Skia in Google Chrome prior to 146.0.7680.75 allowed a remote attacker to perform out of bounds memory access via a crafted HTML page. (… |
 | [CVE-2025-6558](https://www.cve.org/CVERecord?id=CVE-2025-6558) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-12 | 0.003 | 8.8 | ✅ | Insufficient validation of untrusted input in ANGLE and GPU in Google Chrome prior to 138.0.7204.157 allowed a remote attacker to potentially perform a sandbox… |
 | [CVE-2025-48543](https://www.cve.org/CVERecord?id=CVE-2025-48543) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-25 | 0.003 | 8.8 | ✅ | In multiple locations, there is a possible way to escape chrome sandbox to attack android system_server due to a use after free. This could lead to local escal… |
-| [CVE-2025-14174](https://www.cve.org/CVERecord?id=CVE-2025-14174) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-02 | 0.003 | 8.8 | ✅ | Out of bounds memory access in ANGLE in Google Chrome on Mac prior to 143.0.7499.110 allowed a remote attacker to perform out of bounds memory access via a cra… |
 
 ## Recent Changes (Last 7 Days)
 
@@ -303,4 +303,4 @@ Top critical items:
 | May 14 | [CVE-2026-43668](https://www.cve.org/CVERecord?id=CVE-2026-43668) | 🆕 New |
 | May 14 | [CVE-2026-43005](https://www.cve.org/CVERecord?id=CVE-2026-43005) | 🆕 New |
 | May 14 | [CVE-2026-43138](https://www.cve.org/CVERecord?id=CVE-2026-43138) | 🆕 New |
-| ... | | _and 314 more_ |
+| ... | | _and 297 more_ |

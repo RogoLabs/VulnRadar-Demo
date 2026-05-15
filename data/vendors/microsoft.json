@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-15T01:11:50+00:00",
+  "generated_at": "2026-05-15T03:24:22+00:00",
   "vendor": "microsoft",
-  "count": 3611,
+  "count": 3614,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -688494,6 +688494,66 @@
               "status": "affected"
             }
           ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft .net framework 3.5",
+          "versions": [
+            {
+              "version": "3.5.0",
+              "lessThan": "4.8.9334.0 and 4.8.4802.0",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft .net framework 3.5 and 4.7.2",
+          "versions": [
+            {
+              "version": "4.7.0",
+              "lessThan": "4.8.9334.0 and 4.8.4802.0",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft .net framework 3.5 and 4.8",
+          "versions": [
+            {
+              "version": "4.8.0",
+              "lessThan": "4.8.9334.0 and 4.8.4802.0",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft .net framework 3.5 and 4.8.1",
+          "versions": [
+            {
+              "version": "4.8.1",
+              "lessThan": "4.8.9334.0 and 4.8.4802.0",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft .net framework 4.8",
+          "versions": [
+            {
+              "version": "4.8.0",
+              "lessThan": "4.8.9334.0 and 4.8.4802.0",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
         }
       ],
       "watchlist_hit": true,
@@ -688505,6 +688565,11 @@
         "product:.net 10.0",
         "product:.net 8.0",
         "product:.net 9.0",
+        "product:microsoft .net framework 3.5",
+        "product:microsoft .net framework 3.5 and 4.7.2",
+        "product:microsoft .net framework 3.5 and 4.8",
+        "product:microsoft .net framework 3.5 and 4.8.1",
+        "product:microsoft .net framework 4.8",
         "vendor:microsoft"
       ],
       "active_threat": false,
@@ -696244,6 +696309,51 @@
       }
     },
     {
+      "cve_id": "CVE-2026-41615",
+      "description": "Exposure of sensitive information to an unauthorized actor in Microsoft Authenticator allows an unauthorized attacker to disclose information over a network.",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft authenticator for android",
+          "versions": [
+            {
+              "version": "6.0.0",
+              "lessThan": "6.2605.2973",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft authenticator for ios",
+          "versions": [
+            {
+              "version": "6.0.0",
+              "lessThan": "6.8.47",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft authenticator for android",
+        "product:microsoft authenticator for ios",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-42823",
       "description": "Improper access control in Azure Logic Apps allows an authorized attacker to elevate privileges over a network.",
       "cvss_score": 9.9,
@@ -696962,6 +697072,69 @@
       }
     },
     {
+      "cve_id": "CVE-2026-42897",
+      "description": "Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform spoofing over a network.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N/E:F/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft exchange server 2016 cumulative update 23",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft exchange server 2019 cumulative update 14",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft exchange server 2019 cumulative update 15",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft exchange server subscription edition rtm",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft exchange server 2016 cumulative update 23",
+        "product:microsoft exchange server 2019 cumulative update 14",
+        "product:microsoft exchange server 2019 cumulative update 15",
+        "product:microsoft exchange server subscription edition rtm",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-42898",
       "description": "Improper control of generation of code ('code injection') in Microsoft Dynamics 365 (on-premises) allows an authorized attacker to execute code over a network.",
       "cvss_score": 9.9,
@@ -697072,6 +697245,91 @@
         "cpe_count": 6,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-44503",
+      "description": "The RedirectHandler middleware in microsoft/kiota-java (com.microsoft.kiota:microsoft-kiota-http-okHttp v1.9.0) and other Kiota libraries fails to strip sensitive HTTP headers when following 3xx redirects to a different host or scheme. Only the Authorization header is removed; Cookie, Proxy-Authorization, and all custom headers are forwarded to the redirect target.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "kiota-java",
+          "versions": [
+            {
+              "version": "< 1.9.1",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft.kiota.abstractions",
+          "versions": [
+            {
+              "version": "< 1.22.0",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "github.com/microsoft/kiota-http-go",
+          "versions": [
+            {
+              "version": "< 1.5.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "kiota-typescript",
+          "versions": [
+            {
+              "version": "< 1.0.0-preview.100",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft-kiota-abstractions",
+          "versions": [
+            {
+              "version": "< 1.9.1",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft-kiota-http",
+          "versions": [
+            {
+              "version": "< 1.9.9",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:github.com/microsoft/kiota-http-go",
+        "product:kiota-java",
+        "product:kiota-typescript",
+        "product:microsoft-kiota-abstractions",
+        "product:microsoft-kiota-http",
+        "product:microsoft.kiota.abstractions",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

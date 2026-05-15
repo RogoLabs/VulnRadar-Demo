@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-15T01:11:50+00:00",
+  "generated_at": "2026-05-15T03:24:22+00:00",
   "vendor": "_other",
-  "count": 706,
+  "count": 707,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -23313,7 +23313,7 @@
               "lessThanOrEqual": "5.4",
               "status": "affected",
               "version": "Unknown",
-              "versionType": "semver"
+              "versionType": "custom"
             }
           ]
         }
@@ -23520,7 +23520,7 @@
               "lessThanOrEqual": "5.4",
               "status": "affected",
               "version": "0",
-              "versionType": "semver"
+              "versionType": "custom"
             }
           ]
         }
@@ -24882,7 +24882,7 @@
     },
     {
       "cve_id": "CVE-2024-0241",
-      "description": "encoded_id-rails versions before 1.0.0.beta2 are affected by an uncontrolled resource consumption vulnerability. A remote and unauthenticated attacker might cause a denial of service condition by sending an HTTP request with an extremely long \"id\" parameter.\n\n",
+      "description": "encoded_id-rails versions before 1.0.0.beta2 are affected by an uncontrolled resource consumption vulnerability. A remote and unauthenticated attacker might cause a denial of service condition by sending an HTTP request with an extremely long \"id\" parameter.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -24895,7 +24895,7 @@
               "lessThan": "1.0.0.beta2",
               "status": "affected",
               "version": "0",
-              "versionType": "semver"
+              "versionType": "custom"
             }
           ]
         }
@@ -45327,6 +45327,36 @@
         "cpe_count": 1,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2026-42327",
+      "description": "rust-openssl provides OpenSSL bindings for the Rust programming language. From 0.9.7 to before 0.10.79, X509Ref::ocsp_responders returns OCSP responder URLs from a certificate's AIA extension as OpensslString, whose Deref<Target = str> wraps the raw bytes with str::from_utf8_unchecked. OpenSSL does not enforce that the underlying IA5String is ASCII, so a certificate with non-UTF-8 bytes in its OCSP accessLocation causes safe Rust code to construct a &str that violates the UTF-8 invariant \u2014 resulting in undefined behavior. This vulnerability is fixed in 0.10.79.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "rust-openssl",
+          "product": "rust-openssl",
+          "versions": [
+            {
+              "version": ">= 0.9.7, < 0.10.79",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:rust-openssl",
+        "vendor:rust-openssl"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-41940",
