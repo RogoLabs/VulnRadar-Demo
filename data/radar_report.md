@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-05-15T17:42:02+00:00`
+Generated: `2026-05-15T18:49:00+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **11715**
 - Watchlist hits: **11352**
 - CISA KEVs: **687**
-- Exploit Intel (PoC): **755**
-- Exploit Intel + Watchlist (CRITICAL): **392**
+- Exploit Intel (PoC): **757**
+- Exploit Intel + Watchlist (CRITICAL): **394**
 
 ## Top Findings (max 200)
 
@@ -195,7 +195,7 @@ Top critical items:
 | [CVE-2024-5274](https://www.cve.org/CVERecord?id=CVE-2024-5274) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-18 | 0.066 | 9.6 | ✅ | Type Confusion in V8 in Google Chrome prior to 125.0.6422.112 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
 | [CVE-2022-20703](https://www.cve.org/CVERecord?id=CVE-2022-20703) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.020 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
 | [CVE-2026-20131](https://www.cve.org/CVERecord?id=CVE-2026-20131) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-22 | 0.017 | 10.0 | ✅ | A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker… |
-| [CVE-2026-20182](https://www.cve.org/CVERecord?id=CVE-2026-20182) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-05-17 | 0.016 | 10.0 | ✅ | May 2026: This security advisory provides the details and fix information for a vulnerability that was discovered and fixed after the  was disclosed in Februar… |
+| [CVE-2026-20182](https://www.cve.org/CVERecord?id=CVE-2026-20182) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-17 | 0.016 | 10.0 | ✅ | May 2026: This security advisory provides the details and fix information for a vulnerability that was discovered and fixed after the  was disclosed in Februar… |
 | [CVE-2025-20337](https://www.cve.org/CVERecord?id=CVE-2025-20337) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-18 | 0.014 | 10.0 | ✅ | A vulnerability in a specific API of Cisco ISE and Cisco ISE-PIC could allow an unauthenticated, remote attacker to execute arbitrary code on the underlying op… |
 | [CVE-2025-24201](https://www.cve.org/CVERecord?id=CVE-2025-24201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-03 | 0.002 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions. This issue is fixed in Safari 18.3.1, iOS 15.8.4 and iPadOS 15… |
 | [CVE-2025-31201](https://www.cve.org/CVERecord?id=CVE-2025-31201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.019 | 9.8 | ✅ | This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, visionOS 2.4.… |
@@ -257,7 +257,7 @@ Top critical items:
 | May 15 | [CVE-2026-20182](https://www.cve.org/CVERecord?id=CVE-2026-20182) | 🔴 In CISA KEV |
 | May 15 | [CVE-2026-20224](https://www.cve.org/CVERecord?id=CVE-2026-20224) | 🆕 New |
 | May 15 | [CVE-2026-41615](https://www.cve.org/CVERecord?id=CVE-2026-41615) | 🆕 New |
-| May 15 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | 🆕 New |
+| May 15 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | 🔴 In CISA KEV |
 | May 15 | [CVE-2026-44503](https://www.cve.org/CVERecord?id=CVE-2026-44503) | 🆕 New |
 | May 14 | [CVE-2025-43524](https://www.cve.org/CVERecord?id=CVE-2025-43524) | 🆕 New |
 | May 14 | [CVE-2025-46311](https://www.cve.org/CVERecord?id=CVE-2025-46311) | 🆕 New |
