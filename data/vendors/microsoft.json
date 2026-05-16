@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-16T01:48:52+00:00",
+  "generated_at": "2026-05-16T03:22:03+00:00",
   "vendor": "microsoft",
-  "count": 3614,
+  "count": 3616,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -690834,7 +690834,7 @@
       "affected": [
         {
           "vendor": "microsoft",
-          "product": "microsoft enterprise security token service (ests)",
+          "product": "microsoft entra",
           "versions": [
             {
               "version": "-",
@@ -690849,7 +690849,7 @@
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [
-        "product:microsoft enterprise security token service (ests)",
+        "product:microsoft entra",
         "vendor:microsoft"
       ],
       "active_threat": false,
@@ -697374,6 +697374,66 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-44641",
+      "description": "Microsoft APM is an open-source, community-driven dependency manager for AI agents. Prior to 0.8.12, Microsoft APM normalizes marketplace plugins by copying plugin components referenced in plugin.json into .apm/. The manifest fields agents, skills, commands, and hooks are attacker-controlled, but the implementation does not enforce that those paths remain inside the plugin directory. A malicious plugin can therefore use absolute paths or ../ traversal paths to copy arbitrary readable host files or directories from the installer's machine during apm install. This vulnerability is fixed in 0.8.12.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "apm",
+          "versions": [
+            {
+              "version": "< 0.8.12",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apm",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-45539",
+      "description": "Microsoft APM is an open-source, community-driven dependency manager for AI agents. From 0.5.4 to 0.12.4, two primitive integrators in apm-cli enumerate package files with bare Path.glob() / Path.rglob() calls and read each match with Path.read_text(), transparently following symbolic links. A symlink committed inside a remote APM dependency under .apm/prompts/<x>.prompt.md or .apm/agents/<x>.agent.md is preserved verbatim into apm_modules/ on clone and then dereferenced during integration, with the resolved content written as a regular file into the project's deploy directories. The package content_hash, the pre-deploy SecurityGate scan, and apm audit do not flag this. The deploy roots are not added to the auto-generated .gitignore, so the resulting files are staged by git add by default. This vulnerability is fixed in 0.13.0.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "apm",
+          "versions": [
+            {
+              "version": ">= 0.5.4, < 0.13.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apm",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
