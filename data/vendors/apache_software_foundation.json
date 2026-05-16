@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-16T01:07:43+00:00",
+  "generated_at": "2026-05-16T01:48:52+00:00",
   "vendor": "apache_software_foundation",
-  "count": 671,
+  "count": 675,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -30703,6 +30703,73 @@
         "cwe_ids": [
           "CWE-770"
         ],
+        "cpe_count": 6,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-41293",
+      "description": "Improper Input Validation vulnerability in Apache Tomcat.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 10.0.0-M1 through 10.0.27.\nOlder, end of support versions may also be affected.\n\nUsers are recommended to upgrade to version [FIXED_VERSION], which fixes the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "lessThanOrEqual": "11.0.21",
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.54",
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.0.117",
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.0.27",
+              "status": "affected",
+              "version": "10.0.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "8.5.100",
+              "status": "affected",
+              "version": "8.5.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00063,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
         "cpe_count": 0,
         "reference_count": 2
       }
@@ -31323,7 +31390,7 @@
         "cwe_ids": [
           "CWE-200"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
@@ -31600,6 +31667,225 @@
           "CWE-863"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43512",
+      "description": "DEPRECATED: Authentication Bypass Issues vulnerability in digest authentication in Apache Tomcat.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from before 7.0.0.\nOlder unsupported versions any also be affect\n\nUsers are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "lessThanOrEqual": "11.0.21",
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.54",
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.0.117",
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "8.5.100",
+              "status": "affected",
+              "version": "8.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "7.0.109",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "7.0.0",
+              "status": "unknown",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00092,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-592"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43513",
+      "description": "Improper Handling of Case Sensitivity vulnerability in LockOutRealm in Apache Tomcat.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.\nOlder unsupported versions may also be affected.\n\nUsers are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "lessThanOrEqual": "11.0.21",
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.54",
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.0.117",
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "8.5.100",
+              "status": "affected",
+              "version": "8.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "7.0.109",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "7.00",
+              "status": "unknown",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00031,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-178"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43515",
+      "description": "Improper Authorization vulnerability when multiple method constraints define an HTTP method for the same extension in Apache Tomcat.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.21, from 10.1.0-M1 through 10.1.54, from 9.0.0.M1 through 9.0.117, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.\n\nUsers are recommended to upgrade to version 11.0.22, 10.1.55 or 9.0.118 which fix the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "lessThanOrEqual": "11.0.21",
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.54",
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.0.117",
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "8.5.100",
+              "status": "affected",
+              "version": "8.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "7.0.109",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "7.00",
+              "status": "unknown",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0003,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-285"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
