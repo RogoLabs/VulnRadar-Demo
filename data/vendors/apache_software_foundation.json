@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-16T07:02:35+00:00",
+  "generated_at": "2026-05-16T07:46:05+00:00",
   "vendor": "apache_software_foundation",
-  "count": 675,
+  "count": 676,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -29584,6 +29584,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-35194",
+      "description": "Code injection in SQL code generation in Apache Flink 1.15.0 through 1.20.x and 2.0.0 through 2.x allows authenticated users with query submission privileges to execute arbitrary code on TaskManagers via maliciously crafted SQL queries. The vulnerability affects JSON functions (1.15.0+) and LIKE expressions with ESCAPE clauses (1.17.0+). User-controlled strings are interpolated into generated Java code without proper escaping, allowing attackers to break out of string literals and inject arbitrary expressions.\n\nUsers are recommended to upgrade to either version 1.20.4, 2.0.2, 2.1.2 or 2.2.1, which fixes this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache flink",
+          "versions": [
+            {
+              "lessThan": "1.20.4,2.0.2,2.1.2,2.2.1",
+              "status": "affected",
+              "version": "1.15.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache flink",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-35337",
       "description": "Deserialization of Untrusted Data vulnerability in Apache Storm.\n\nVersions Affected:\nbefore 2.8.6.\n\n\nDescription:\nWhen processing topology credentials submitted via the Nimbus Thrift API, Storm deserializes the base64-encoded TGT blob using ObjectInputStream.readObject() without any class filtering or validation.\u00a0An authenticated user with topology submission rights could supply a crafted serialized object in the \"TGT\" credential field, leading to remote code execution in both the Nimbus and Worker JVMs.\n\n\nMitigation:\n2.x users should upgrade to 2.8.6.\n\n\nUsers who cannot upgrade immediately should monkey-patch an ObjectInputFilter allow-list to ClientAuthUtils.deserializeKerberosTicket() restricting deserialized classes to javax.security.auth.kerberos.KerberosTicket and its known dependencies. A guide on how to do this is available in the release notes of 2.8.6.\n\nCredit: This issue was discovered by K.",
       "cvss_score": 8.8,
@@ -30770,7 +30813,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
@@ -31739,7 +31782,7 @@
         "cwe_ids": [
           "CWE-592"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
@@ -31812,7 +31855,7 @@
         "cwe_ids": [
           "CWE-178"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
@@ -31885,7 +31928,7 @@
         "cwe_ids": [
           "CWE-285"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
