@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-19T01:17:19+00:00",
+  "generated_at": "2026-05-19T03:24:27+00:00",
   "vendor": "microsoft",
-  "count": 3616,
+  "count": 3618,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -674039,30 +674039,6 @@
         },
         {
           "vendor": "microsoft",
-          "product": "microsoft visual studio 2017 version 15.9 (includes 15.0 - 15.8)",
-          "versions": [
-            {
-              "version": "15.9.0",
-              "lessThan": "15.9.80",
-              "versionType": "custom",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "microsoft",
-          "product": "microsoft visual studio 2019 version 16.11 (includes 16.0 - 16.10)",
-          "versions": [
-            {
-              "version": "16.11.0",
-              "lessThan": "16.11.56",
-              "versionType": "custom",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "microsoft",
           "product": "microsoft visual studio 2022 version 17.12",
           "versions": [
             {
@@ -674113,8 +674089,6 @@
         "product:microsoft .net framework 3.5 and 4.8.1",
         "product:microsoft .net framework 4.6.2/4.7/4.7.1/4.7.2",
         "product:microsoft .net framework 4.8",
-        "product:microsoft visual studio 2017 version 15.9 (includes 15.0 - 15.8)",
-        "product:microsoft visual studio 2019 version 16.11 (includes 16.0 - 16.10)",
         "product:microsoft visual studio 2022 version 17.12",
         "product:microsoft visual studio 2022 version 17.14",
         "product:microsoft visual studio 2026 version 18.5",
@@ -696367,6 +696341,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-42822",
+      "description": "Improper authentication in Azure Local Disconnected Operations allows an unauthorized attacker to elevate privileges over a network.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "azure local",
+          "versions": [
+            {
+              "version": "1.0.0",
+              "lessThan": "2604.2.25645",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "azure resource manager",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:azure local",
+        "product:azure resource manager",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-42823",
       "description": "Improper access control in Azure Logic Apps allows an authorized attacker to elevate privileges over a network.",
       "cvss_score": 9.9,
@@ -697418,6 +697435,38 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-45495",
+      "description": "Microsoft Edge (Chromium-based) Remote Code Execution Vulnerability",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft edge (chromium-based)",
+          "versions": [
+            {
+              "version": "1.0.0.0",
+              "lessThan": "148.0.3967.70",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft edge (chromium-based)",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-45539",
