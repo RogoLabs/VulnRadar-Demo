@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-19T23:36:26+00:00",
+  "generated_at": "2026-05-20T01:22:06+00:00",
   "vendor": "linux",
-  "count": 2657,
+  "count": 2658,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -265998,7 +265998,7 @@
           "CWE-669"
         ],
         "cpe_count": 175,
-        "reference_count": 85
+        "reference_count": 86
       }
     },
     {
@@ -277402,9 +277402,11 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
+        "cwe_ids": [
+          "CWE-130"
+        ],
         "cpe_count": 10,
-        "reference_count": 3
+        "reference_count": 4
       }
     },
     {
@@ -302841,6 +302843,148 @@
       }
     },
     {
+      "cve_id": "CVE-2026-43328",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncpufreq: governor: fix double free in cpufreq_dbs_governor_init() error path\n\nWhen kobject_init_and_add() fails, cpufreq_dbs_governor_init() calls\nkobject_put(&dbs_data->attr_set.kobj).\n\nThe kobject release callback cpufreq_dbs_data_release() calls\ngov->exit(dbs_data) and kfree(dbs_data), but the current error path\nthen calls gov->exit(dbs_data) and kfree(dbs_data) again, causing a\ndouble free.\n\nKeep the direct kfree(dbs_data) for the gov->init() failure path, but\nafter kobject_init_and_add() has been called, let kobject_put() handle\nthe cleanup through cpufreq_dbs_data_release().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "56bc91ee78babe9578585a2bc137abc4b3115ff3",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "019ea28629720c220daedf38107c8787f330dc05",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "da39ee627fd82b52068d4d5f115749a8b7d271f9",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "427d048e4f6acbfa01b5a8062449fe0ee8987c0d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "d2703b4f8fb7cc6f0dfdb2dc2359cc46189e7357",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "3bf9d023d2329a0e5379f2fd09d06ef09729cd9d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4ebe36c94aed95de71a8ce6a6762226d31c938ee",
+              "lessThan": "6dcf9d0064ce2f3e3dfe5755f98b93abe6a98e1e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "e977b1477a6725868302957e6b5c330220391797",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.2",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.2",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.253",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.168",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.134",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.81",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.22",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.12",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00013,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 13,
+        "reference_count": 7
+      }
+    },
+    {
       "cve_id": "CVE-2026-43329",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: flowtable: strictly check for maximum number of actions\n\nThe maximum number of flowtable hardware offload actions in IPv6 is:\n\n* ethernet mangling (4 payload actions, 2 for each ethernet address)\n* SNAT (4 payload actions)\n* DNAT (4 payload actions)\n* Double VLAN (4 vlan actions, 2 for popping vlan, and 2 for pushing)\n  for QinQ.\n* Redirect (1 action)\n\nWhich makes 17, while the maximum is 16. But act_ct supports for tunnels\nactions too. Note that payload action operates at 32-bit word level, so\nmangling an IPv6 address takes 4 payload actions.\n\nUpdate flow_action_entry_next() calls to check for the maximum number of\nsupported actions.\n\nWhile at it, rise the maximum number of actions per flow from 16 to 24\nso this works fine with IPv6 setups.",
       "cvss_score": 7.8,
@@ -302971,7 +303115,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 7
       }
     },
@@ -303081,8 +303225,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 10,
         "reference_count": 5
       }
     },
@@ -303198,7 +303344,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 5
       }
     },
