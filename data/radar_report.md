@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-05-20T01:22:08+00:00`
+Generated: `2026-05-20T03:24:58+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,9 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| May 20 | [CVE-2026-8507](https://www.cve.org/CVERecord?id=CVE-2026-8507) | 🆕 New |
+| May 20 | [CVE-2026-8721](https://www.cve.org/CVERecord?id=CVE-2026-8721) | 🆕 New |
+| May 20 | [CVE-2026-43328](https://www.cve.org/CVERecord?id=CVE-2026-43328) | 🆕 New |
 | May 19 | [CVE-2026-42822](https://www.cve.org/CVERecord?id=CVE-2026-42822) | 🆕 New |
 | May 19 | [CVE-2026-45495](https://www.cve.org/CVERecord?id=CVE-2026-45495) | 🆕 New |
 | May 16 | [CVE-2026-41293](https://www.cve.org/CVERecord?id=CVE-2026-41293) | 🆕 New |
@@ -300,7 +303,4 @@ Top critical items:
 | May 16 | [CVE-2026-8574](https://www.cve.org/CVERecord?id=CVE-2026-8574) | 🆕 New |
 | May 16 | [CVE-2026-8575](https://www.cve.org/CVERecord?id=CVE-2026-8575) | 🆕 New |
 | May 16 | [CVE-2026-8577](https://www.cve.org/CVERecord?id=CVE-2026-8577) | 🆕 New |
-| May 16 | [CVE-2026-8580](https://www.cve.org/CVERecord?id=CVE-2026-8580) | 🆕 New |
-| May 16 | [CVE-2026-8581](https://www.cve.org/CVERecord?id=CVE-2026-8581) | 🆕 New |
-| May 16 | [CVE-2026-8587](https://www.cve.org/CVERecord?id=CVE-2026-8587) | 🆕 New |
-| ... | | _and 188 more_ |
+| ... | | _and 78 more_ |
