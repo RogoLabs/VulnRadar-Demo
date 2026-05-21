@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-21T01:18:01+00:00",
+  "generated_at": "2026-05-21T03:24:39+00:00",
   "vendor": "apache_software_foundation",
-  "count": 676,
+  "count": 684,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28121,6 +28121,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-27173",
+      "description": "JWT tokens that were used by workers in Kubernetes Executors have been exposed to users who had read only access to Kuberentes Pods. This could allow users with just read-only access to perform actions that were only available to running tasks via Task SDK and potentially allow to modify state of Airflow Database for tasks.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow cncf kubernetes provider",
+          "versions": [
+            {
+              "lessThan": "10.17.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow cncf kubernetes provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00012,
+      "nvd": {
+        "cvss_v3_score": 8.7,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-538"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-27314",
       "description": "Privilege escalation\u00a0in Apache Cassandra 5.0 on an mTLS environment using MutualTlsAuthenticator\u00a0allows a user with only CREATE permission\u00a0to associate their own certificate identity with an arbitrary role,\nincluding a superuser role, and authenticate as that role\u00a0via ADD IDENTITY.\n\nUsers are recommended to upgrade to version 5.0.7+, which fixes this issue.",
       "cvss_score": 8.8,
@@ -28607,6 +28650,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-29226",
+      "description": "Server-Side Request Forgery (SSRF) vulnerability in Apache OFBiz via Content component operations.\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00082,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-30778",
       "description": "The SkyWalking OAP /debugging/config/dump endpoint may leak sensitive configuration information of MySQL/PostgreSQL.\n\nThis issue affects Apache SkyWalking: from 9.7.0 through 10.3.0.\n\nUsers are recommended to upgrade to version 10.4.0, which fixes the issue.",
       "cvss_score": 7.5,
@@ -28822,6 +28908,92 @@
       }
     },
     {
+      "cve_id": "CVE-2026-31909",
+      "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache OFBiz.\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00062,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-31910",
+      "description": "Server-Side Request Forgery (SSRF) vulnerability in Apache OFBiz.\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00076,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-31923",
       "description": "Cleartext Transmission of Sensitive Information vulnerability in Apache APISIX.\n\nThis can occur due to `ssl_verify` in openid-connect plugin configuration being set to false by default.\nThis issue affects Apache APISIX: from 0.7 through 3.15.0.\n\nUsers are recommended to upgrade to version 3.16.0, which fixes the issue.",
       "cvss_score": 7.5,
@@ -28859,6 +29031,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-319"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-31986",
+      "description": "Use of Hard-coded Cryptographic Key vulnerability in Apache OFBiz.\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00072,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-321"
         ],
         "cpe_count": 1,
         "reference_count": 2
@@ -31187,6 +31402,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-41919",
+      "description": "Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') vulnerability in Apache OFBiz.\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00073,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-90"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-42027",
       "description": "Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader\n\n\n\n\n\nVersions Affected: before 2.5.9, before 3.0.0-M3\n\n\n\n\n\nDescription:\u00a0\n\nThe ExtensionLoader.instantiateExtension(Class, String)\u00a0method loads a class by its fully-qualified name via Class.forName()\u00a0and invokes its no-arg constructor, with the class name sourced from the manifest.properties\u00a0entry of a model archive. The existing isAssignableFrom\u00a0check correctly rejects classes that are not subtypes of the expected extension interface (BaseToolFactory\u00a0for factory=, ArtifactSerializer\u00a0for serializer-class-*), but the check runs after\u00a0Class.forName()\u00a0has already loaded and initialized the named class. \n\nClass.forName()\u00a0with default initialization semantics executes the target class's static initializer before returning, so an attacker who can supply a crafted model archive can cause the static initializer of any class on the classpath to run during model loading, regardless of whether that class passes the subsequent type check. \n\nExploitation requires a class with attacker-useful side effects in its static initializer (for example, JNDI lookup, outbound network I/O, or filesystem access) to be present on the classpath, so this is not a drop-in remote code execution; however, the attack surface grows as third-party model distribution becomes more common (community model repositories, Hugging Face-style sharing), where users routinely load model files from origins they do not control. A secondary, narrower vector affects deployments that ship legitimate BaseToolFactory\u00a0or ArtifactSerializer\u00a0subclasses with side-effecting no-arg constructors: a malicious manifest can name such a class and force its constructor to run during model load.\n\n\n\n\n\nMitigation:\u00a0\n\n\n\n  *  2.x users should upgrade to 2.5.9. \n  *  3.x users should upgrade to 3.0.0-M3. \n\n\n\n\nNote: The fix introduces a package-prefix allowlist that is consulted before Class.forName()\u00a0is invoked, so the static initializer of a disallowed class is never executed. Classes under the opennlp.\u00a0prefix remain permitted by default. Deployments that load models referencing factories or serializers outside opennlp.*\u00a0must opt those packages in, either programmatically via ExtensionLoader.registerAllowedPackage(String)\u00a0before the first model load, or by setting the OPENNLP_EXT_ALLOWED_PACKAGES\u00a0system property to a comma-separated list of allowed package prefixes. \n\nUsers who cannot upgrade immediately should ensure that all model files are sourced from trusted origins\u00a0and should audit their classpath for classes with side-effecting static initializers or constructors, particularly any that perform JNDI lookups, network requests, or filesystem operations during class initialization.",
       "cvss_score": 9.8,
@@ -32071,6 +32329,93 @@
           "CWE-113",
           "CWE-346",
           "CWE-400"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45434",
+      "description": "Improper Authentication vulnerability in Apache OFBiz via Password-Change Logic Flaw Leading to Remote Code Execution\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00259,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-46586",
+      "description": "Improper Control of Generation of Code ('Code Injection'), Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection') vulnerability in Apache OFBiz.\n\nThis issue affects Apache OFBiz: before 24.09.06.\n\nUsers are recommended to upgrade to version 24.09.06, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.06",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00106,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94",
+          "CWE-95"
         ],
         "cpe_count": 1,
         "reference_count": 2

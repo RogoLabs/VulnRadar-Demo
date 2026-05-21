@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-21T01:18:01+00:00",
+  "generated_at": "2026-05-21T03:24:39+00:00",
   "vendor": "microsoft",
-  "count": 3618,
+  "count": 3622,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -688680,7 +688680,7 @@
         "cwe_ids": [
           "CWE-1220"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 1
       }
     },
@@ -688982,7 +688982,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 1
       }
     },
@@ -689116,7 +689116,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 1
       }
     },
@@ -689250,7 +689250,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 1
       }
     },
@@ -689371,7 +689371,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 1
       }
     },
@@ -689505,7 +689505,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 1
       }
     },
@@ -689639,7 +689639,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 1
       }
     },
@@ -689762,7 +689762,7 @@
           "CWE-843",
           "CWE-908"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 1
       }
     },
@@ -689952,7 +689952,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 1
       }
     },
@@ -690112,7 +690112,7 @@
         "cwe_ids": [
           "CWE-822"
         ],
-        "cpe_count": 0,
+        "cpe_count": 15,
         "reference_count": 1
       }
     },
@@ -694977,7 +694977,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 1
       }
     },
@@ -695059,7 +695059,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 1
       }
     },
@@ -695141,7 +695141,7 @@
         "cwe_ids": [
           "CWE-284"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 1
       }
     },
@@ -695545,6 +695545,47 @@
         ],
         "cpe_count": 7,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-41091",
+      "description": "Improper link resolution before file access ('link following') in Microsoft Defender allows an authorized attacker to elevate privileges locally.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft malware protection engine",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
+      "matched_terms": [
+        "product:microsoft malware protection engine",
+        "vendor:microsoft"
+      ],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-41091",
+        "vendorProject": "Microsoft",
+        "product": "Defender",
+        "vulnerabilityName": "Microsoft Defender Link Following Vulnerability",
+        "dateAdded": "2026-05-20",
+        "shortDescription": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
@@ -696974,6 +697015,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-42834",
+      "description": "Improper link resolution before file access ('link following') in Azure Portal Windows Admin Center allows an authorized attacker to elevate privileges locally.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "windows admin center in azure portal",
+          "versions": [
+            {
+              "version": "1.0",
+              "lessThan": "0.72.0.0.",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:windows admin center in azure portal",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-42893",
       "description": "Improper neutralization of special elements used in a command ('command injection') in M365 Copilot allows an unauthorized attacker to perform tampering over a network.",
       "cvss_score": 7.4,
@@ -697479,8 +697552,8 @@
       "active_threat": false,
       "probability_score": 0.00136,
       "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
@@ -697488,8 +697561,49 @@
           "CWE-94",
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45498",
+      "description": "Microsoft Defender Denial of Service Vulnerability",
+      "cvss_score": 4.0,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft defender antimalware platform",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
+      "matched_terms": [
+        "product:microsoft defender antimalware platform",
+        "vendor:microsoft"
+      ],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-45498",
+        "vendorProject": "Microsoft",
+        "product": "Defender",
+        "vulnerabilityName": "Microsoft Defender Denial of Service Vulnerability",
+        "dateAdded": "2026-05-20",
+        "shortDescription": "Microsoft Defender contains an unspecified vulnerability that allows for denial of service.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
@@ -697533,6 +697647,36 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-45584",
+      "description": "Heap-based buffer overflow in Microsoft Defender allows an unauthorized attacker to execute code over a network.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft malware protection engine",
+          "versions": [
+            {
+              "version": "-",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft malware protection engine",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

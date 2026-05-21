@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-21T01:18:01+00:00",
+  "generated_at": "2026-05-21T03:24:39+00:00",
   "vendor": "_other",
-  "count": 709,
+  "count": 713,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -9151,6 +9151,74 @@
       }
     },
     {
+      "cve_id": "CVE-2026-3039",
+      "description": "BIND servers that are configured to use TKEY-based authentication via GSS-API tokens are vulnerable to excessive memory consumption when receiving and processing maliciously-constructed packets.  Typically these servers will be found in Active Directory integrated DNS deployments and/or Kerberos-secured DNS environments.\nThis issue affects BIND 9 versions 9.0.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.9.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.48",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.9.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.48-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-3104",
       "description": "A specially crafted domain can be used to cause a memory leak in a BIND resolver simply by querying this domain.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.20, 9.21.0 through 9.21.19, and 9.20.9-S1 through 9.20.20-S1.\nBIND 9 versions 9.18.0 through 9.18.46 and 9.18.11-S1 through 9.18.46-S1 are NOT affected.",
       "cvss_score": 7.5,
@@ -9218,6 +9286,62 @@
       }
     },
     {
+      "cve_id": "CVE-2026-3593",
+      "description": "A use-after-free vulnerability exists within the DNS-over-HTTPS implementation.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, and 9.20.9-S1 through 9.20.22-S1.\nBIND 9 versions 9.18.0 through 9.18.48 and 9.18.11-S1 through 9.18.48-S1 are NOT affected.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.48",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.48-S1",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-3608",
       "description": "Sending a maliciously crafted message to the kea-ctrl-agent, kea-dhcp-ddns, kea-dhcp4, or kea-dhcp6 daemons over any configured API socket or HA listener can cause the receiving daemon to exit with a stack overflow error.\nThis issue affects Kea versions 2.6.0 through 2.6.4 and 3.0.0 through 3.0.2.",
       "cvss_score": 7.5,
@@ -9265,6 +9389,130 @@
         "cpe_count": 0,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2026-5946",
+      "description": "Multiple flaws have been identified in `named` related to the handling of DNS messages whose CLASS is not Internet (`IN`) \u2014 for example, `CHAOS` or `HESIOD`, or DNS messages that specify meta-classes (`ANY` or `NONE`) in the question section. Specially crafted requests reaching the affected code paths \u2014 recursion, dynamic updates (`UPDATE`), zone change notifications (`NOTIFY`), or processing of `IN`-specific record types in non-`IN` data \u2014 can cause assertion failures in `named`.\nThis issue affects BIND 9 versions 9.11.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.48",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.48-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-5947",
+      "description": "Undefined behavior may result due to a race condition leading to a use-after-free violation.  If BIND receives an incoming DNS message signed with SIG(0), it begins work to validate that signature.  If, during that validation, the \"recursive-clients\" limit is reached (as would occur during a query flood), and that same DNS message is discarded per the limit, there is a brief window of time while the SIG(0) validation may attempt to read the now-discarded DNS message.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, and 9.20.9-S1 through 9.20.22-S1.\nBIND 9 versions 9.18.28 through 9.18.49 and 9.18.28-S1 through 9.18.49-S1 are NOT affected.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.28",
+              "lessThanOrEqual": "9.18.49",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.28-S1",
+              "lessThanOrEqual": "9.18.49-S1",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2022-0778",
