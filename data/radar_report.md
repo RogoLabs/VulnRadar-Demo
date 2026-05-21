@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-05-21T17:51:40+00:00`
+Generated: `2026-05-21T18:51:15+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **11815**
 - Watchlist hits: **11452**
 - CISA KEVs: **689**
-- Exploit Intel (PoC): **759**
-- Exploit Intel + Watchlist (CRITICAL): **396**
+- Exploit Intel (PoC): **762**
+- Exploit Intel + Watchlist (CRITICAL): **399**
 
 ## Top Findings (max 200)
 
@@ -235,7 +235,7 @@ Top critical items:
 | [CVE-2024-38014](https://www.cve.org/CVERecord?id=CVE-2024-38014) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-01 | 0.128 | 7.8 | ✅ | Windows Installer Elevation of Privilege Vulnerability |
 | [CVE-2025-13223](https://www.cve.org/CVERecord?id=CVE-2025-13223) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-10 | 0.028 | 8.8 | ✅ | Type Confusion in V8 in Google Chrome prior to 142.0.7444.175 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-37969](https://www.cve.org/CVERecord?id=CVE-2022-37969) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-10-05 | 0.128 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
-| [CVE-2026-41091](https://www.cve.org/CVERecord?id=CVE-2026-41091) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-06-03 | 0.121 | 7.8 | ✅ | Improper link resolution before file access ('link following') in Microsoft Defender allows an authorized attacker to elevate privileges locally. |
+| [CVE-2026-41091](https://www.cve.org/CVERecord?id=CVE-2026-41091) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-03 | 0.121 | 7.8 | ✅ | Improper link resolution before file access ('link following') in Microsoft Defender allows an authorized attacker to elevate privileges locally. |
 | [CVE-2023-3079](https://www.cve.org/CVERecord?id=CVE-2023-3079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-28 | 0.015 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 114.0.5735.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-2294](https://www.cve.org/CVERecord?id=CVE-2022-2294) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-15 | 0.013 | 8.8 | ✅ | Heap buffer overflow in WebRTC in Google Chrome prior to 103.0.5060.114 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
 | [CVE-2023-32439](https://www.cve.org/CVERecord?id=CVE-2023-32439) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.012 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in iOS 16.5.1 and iPadOS 16.5.1, iOS 15.7.7 and iPadOS 15.7.7, macOS Ventura 13.… |
