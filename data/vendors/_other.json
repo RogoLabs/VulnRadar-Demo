@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-22T01:17:26+00:00",
+  "generated_at": "2026-05-22T03:24:50+00:00",
   "vendor": "_other",
-  "count": 714,
+  "count": 715,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -31698,6 +31698,58 @@
         ],
         "cpe_count": 1,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-34926",
+      "description": "A directory traversal vulnerability in the Apex One (on-premise) server could allow a pre-authenticated local attacker to modify a key table on the server to inject malicious code to deploy to agents on affected installations.\n\n\r\nThis vulnerability is only exploitable on the on-premise version of Apex One and a potential attacker must have access to the Apex One Server and already obtained administrative credentials to the server via some other method to exploit this vulnerability.",
+      "cvss_score": 6.7,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "trend micro, inc.",
+          "product": "trendai apex one",
+          "versions": [
+            {
+              "version": "2019 (14.0)",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "14.0.0.17079"
+            }
+          ]
+        },
+        {
+          "vendor": "trend micro, inc.",
+          "product": "trendai apex one as a service",
+          "versions": [
+            {
+              "version": "SaaS",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "14.0.20731"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-34926",
+        "vendorProject": "Trend Micro",
+        "product": "Apex One",
+        "vulnerabilityName": "Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability",
+        "dateAdded": "2026-05-21",
+        "shortDescription": "Trend Micro Apex One (on-premise) contains a directory traversal vulnerability that could allow a pre-authenticated local attacker to modify a key table on the server to inject malicious code to deploy to agents on affected installations.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-04",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
