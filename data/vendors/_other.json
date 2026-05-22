@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-22T17:45:13+00:00",
+  "generated_at": "2026-05-22T18:51:20+00:00",
   "vendor": "_other",
-  "count": 715,
+  "count": 716,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -31734,7 +31734,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],
@@ -46340,6 +46340,87 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-9082",
+      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Drupal Drupal core allows SQL Injection.\n\nThis issue affects Drupal core: from 8.9.0 before 10.4.10, from 10.5.0 before 10.5.10, from 10.6.0 before 10.6.9, from 11.0.0 before 11.1.10, from 11.2.0 before 11.2.12, from 11.3.0 before 11.3.10.",
+      "cvss_score": 6.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "drupal",
+          "product": "drupal core",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "8.9.0",
+              "lessThan": "10.4.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.5.0",
+              "lessThan": "10.5.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.6.0",
+              "lessThan": "10.6.9",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "11.0.0",
+              "lessThan": "11.1.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "11.2.0",
+              "lessThan": "11.2.12",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "11.3.0",
+              "lessThan": "11.3.10",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00017,
+      "kev": {
+        "cveID": "CVE-2026-9082",
+        "vendorProject": "Drupal",
+        "product": "Core",
+        "vulnerabilityName": "Drupal Core SQL Injection Vulnerability",
+        "dateAdded": "2026-05-22",
+        "shortDescription": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-05-27",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     }
   ]
