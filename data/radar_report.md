@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-05-23T08:55:23+00:00`
+Generated: `2026-05-23T09:45:42+00:00`
 
 ## Executive Summary
 
@@ -276,6 +276,13 @@ Top critical items:
 | May 23 | [CVE-2026-42901](https://www.cve.org/CVERecord?id=CVE-2026-42901) | 🆕 New |
 | May 23 | [CVE-2026-45659](https://www.cve.org/CVERecord?id=CVE-2026-45659) | 🆕 New |
 | May 23 | [CVE-2026-47280](https://www.cve.org/CVERecord?id=CVE-2026-47280) | 🆕 New |
+| May 23 | [CVE-2026-44417](https://www.cve.org/CVERecord?id=CVE-2026-44417) | 🆕 New |
+| May 23 | [CVE-2026-44930](https://www.cve.org/CVERecord?id=CVE-2026-44930) | 🆕 New |
+| May 23 | [CVE-2026-45760](https://www.cve.org/CVERecord?id=CVE-2026-45760) | 🆕 New |
+| May 23 | [CVE-2026-28847](https://www.cve.org/CVERecord?id=CVE-2026-28847) | 🆕 New |
+| May 23 | [CVE-2025-71066](https://www.cve.org/CVERecord?id=CVE-2025-71066) | 🆕 New |
+| May 23 | [CVE-2026-23262](https://www.cve.org/CVERecord?id=CVE-2026-23262) | 🆕 New |
+| May 23 | [CVE-2026-43059](https://www.cve.org/CVERecord?id=CVE-2026-43059) | 🆕 New |
 | May 22 | [CVE-2026-34926](https://www.cve.org/CVERecord?id=CVE-2026-34926) | 🔴 In CISA KEV |
 | May 22 | [CVE-2026-9082](https://www.cve.org/CVERecord?id=CVE-2026-9082) | 🔴 In CISA KEV |
 | May 21 | [CVE-2026-3039](https://www.cve.org/CVERecord?id=CVE-2026-3039) | 🆕 New |
@@ -296,11 +303,4 @@ Top critical items:
 | May 21 | [CVE-2026-43476](https://www.cve.org/CVERecord?id=CVE-2026-43476) | 🆕 New |
 | May 21 | [CVE-2026-43481](https://www.cve.org/CVERecord?id=CVE-2026-43481) | 🆕 New |
 | May 21 | [CVE-2026-43490](https://www.cve.org/CVERecord?id=CVE-2026-43490) | 🆕 New |
-| May 21 | [CVE-2026-43493](https://www.cve.org/CVERecord?id=CVE-2026-43493) | 🆕 New |
-| May 21 | [CVE-2026-46333](https://www.cve.org/CVERecord?id=CVE-2026-46333) | 🆕 New |
-| May 21 | [CVE-2026-41091](https://www.cve.org/CVERecord?id=CVE-2026-41091) | 🔴 In CISA KEV |
-| May 21 | [CVE-2026-42834](https://www.cve.org/CVERecord?id=CVE-2026-42834) | 🆕 New |
-| May 21 | [CVE-2026-45498](https://www.cve.org/CVERecord?id=CVE-2026-45498) | 🔴 In CISA KEV |
-| May 21 | [CVE-2026-45584](https://www.cve.org/CVERecord?id=CVE-2026-45584) | 🆕 New |
-| May 21 | [CVE-2026-47323](https://www.cve.org/CVERecord?id=CVE-2026-47323) | 🆕 New |
-| ... | | _and 22 more_ |
+| ... | | _and 29 more_ |
