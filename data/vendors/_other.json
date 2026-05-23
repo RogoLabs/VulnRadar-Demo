@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-23T01:13:48+00:00",
+  "generated_at": "2026-05-23T03:22:20+00:00",
   "vendor": "_other",
-  "count": 716,
+  "count": 717,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -9146,7 +9146,7 @@
         "cwe_ids": [
           "CWE-606"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 5
       }
     },
@@ -9225,7 +9225,7 @@
         "cwe_ids": [
           "CWE-771"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 4
       }
     },
@@ -9290,9 +9290,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-772"
+          "CWE-772",
+          "CWE-401"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -9352,14 +9353,14 @@
       "active_threat": false,
       "probability_score": 0.00018,
       "nvd": {
-        "cvss_v3_score": 7.4,
-        "cvss_v3_severity": "HIGH",
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -9491,7 +9492,7 @@
           "CWE-754",
           "CWE-843"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 4
       }
     },
@@ -9551,15 +9552,15 @@
       "active_threat": false,
       "probability_score": 0.00021,
       "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-362",
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -29699,6 +29700,37 @@
       }
     },
     {
+      "cve_id": "CVE-2026-9277",
+      "description": "shell-quote's `quote()` function did not validate object-token inputs against the operator model used by `parse()`. The `.op` field was backslash-escaped character by character using `/(.)/g`, which in JavaScript does not match line terminators (\\n, \\r, U+2028, U+2029). A line terminator in `.op` therefore passed through unescaped into the output; POSIX shells treat a literal newline as a command separator, so any content after it would execute as a second command. The vulnerable code path is reachable in two ways: (1) direct construction of `{ op: '...\\n...' }` from external input, and (2) via `parse(cmd, envFn)` when `envFn` returns object tokens whose `.op` is attacker-influenced. Both are documented API surface. Fixed by replacing the per-character escape with strict shape validation: `.op` must match the parser's control-operator allowlist; `{ op: 'glob', pattern }` validates `pattern` and forbids line terminators; `{ comment }` validates `comment` and forbids line terminators; any other object shape throws `TypeError`.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "shell-quote",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.1.0",
+              "lessThan": "1.8.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:shell-quote"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2023-23752",
       "description": "An issue was discovered in Joomla! 4.0.0 through 4.2.7. An improper access check allows unauthorized access to webservice endpoints.",
       "cvss_score": 5.3,
@@ -30352,7 +30384,7 @@
     },
     {
       "cve_id": "CVE-2023-35065",
-      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Osoft Paint Production Management allows SQL Injection.This issue affects Paint Production Management: before 2.1.\n\n",
+      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Osoft Paint Production Management allows SQL Injection.\n\nThis issue affects Paint Production Management: before 2.1.",
       "cvss_score": 9.8,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -30362,9 +30394,9 @@
           "product": "paint production management",
           "versions": [
             {
-              "lessThan": "2.1",
               "status": "affected",
               "version": "0",
+              "lessThan": "2.1",
               "versionType": "custom"
             }
           ]
@@ -31750,6 +31782,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-06-04",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.7,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-23"
+        ],
+        "cpe_count": 0,
+        "reference_count": 5
       }
     },
     {
@@ -41802,7 +41845,7 @@
           "CWE-346"
         ],
         "cpe_count": 1,
-        "reference_count": 3
+        "reference_count": 5
       }
     },
     {
@@ -42084,7 +42127,7 @@
           "CWE-306"
         ],
         "cpe_count": 1,
-        "reference_count": 8
+        "reference_count": 7
       }
     },
     {
@@ -46345,9 +46388,9 @@
     {
       "cve_id": "CVE-2026-9082",
       "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Drupal Drupal core allows SQL Injection.\n\nThis issue affects Drupal core: from 8.9.0 before 10.4.10, from 10.5.0 before 10.5.10, from 10.6.0 before 10.6.9, from 11.0.0 before 11.1.10, from 11.2.0 before 11.2.12, from 11.3.0 before 11.3.10.",
-      "cvss_score": 6.5,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "drupal",
