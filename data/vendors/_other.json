@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-26T17:19:05+00:00",
+  "generated_at": "2026-05-26T19:02:55+00:00",
   "vendor": "_other",
-  "count": 717,
+  "count": 718,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -46309,6 +46309,69 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-48172",
+      "description": "LiteSpeed User-End cPanel Plugin before 2.4.5 allows privilege escalation (possibly to root), as exploited in the wild in May 2026. Detection is best done via a command line of grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null in Bash. If you get no output, you have not been hit with exploitation of the vulnerability. If there is output, we recommend you examine the IP addresses in the list, determine if they are valid IP addresses, and if not, block them. To determine damage done, examine the system logs for use by the detected IP addresses. The issue is related to mishandling of Redis enable/disable features. The recommended minimum version is 2.4.7.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "litespeed technologies",
+          "product": "cpanel plugin",
+          "versions": [
+            {
+              "lessThan": "2.4.7",
+              "status": "affected",
+              "version": "2.3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "litespeed technologies",
+          "product": "whm plugin",
+          "versions": [
+            {
+              "lessThan": "5.3.1.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00014,
+      "kev": {
+        "cveID": "CVE-2026-48172",
+        "vendorProject": "LiteSpeed",
+        "product": "cPanel Plugin",
+        "vulnerabilityName": "LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+        "dateAdded": "2026-05-26",
+        "shortDescription": "LiteSpeed cPanel Plugin contains privilege escalation vulnerability that is exposed via the user-end cPanel plugin, which can be abused by any cPanel user account to execute arbitrary scripts with root privileges.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-05-29",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-266"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
