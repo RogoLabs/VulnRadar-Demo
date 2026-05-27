@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-27T17:20:28+00:00",
+  "generated_at": "2026-05-27T19:04:25+00:00",
   "vendor": "_other",
-  "count": 719,
+  "count": 721,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -46356,6 +46356,633 @@
       }
     },
     {
+      "cve_id": "CVE-2026-45321",
+      "description": "On 2026-05-11, between approximately 19:20 and 19:26 UTC, 84 malicious versions across 42 @tanstack/* packages were published to the npm registry. The publishes were authenticated via the legitimate GitHub Actions OIDC trusted-publisher binding for TanStack/router, but the publish workflow itself was not modified. The attacker chained three known vulnerability classes \u2014 a pull_request_target \"Pwn Request\" misconfiguration, GitHub Actions cache poisoning across the fork\u2194base trust boundary, and runtime memory extraction of the OIDC token from the Actions runner process \u2014 to publish credential-stealing malware under a trusted identity. Each affected package received exactly two malicious versions, published a few minutes apart.",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "@tanstack",
+          "product": "arktype-adapter",
+          "versions": [
+            {
+              "version": "1.166.12",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.15",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "eslint-plugin-router",
+          "versions": [
+            {
+              "version": "1.161.9",
+              "status": "affected"
+            },
+            {
+              "version": "1.161.12",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "eslint-plugin-start",
+          "versions": [
+            {
+              "version": "0.0.4",
+              "status": "affected"
+            },
+            {
+              "version": "0.0.7",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "history",
+          "versions": [
+            {
+              "version": "1.161.9",
+              "status": "affected"
+            },
+            {
+              "version": "1.161.12",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "nitro-v2-vite-plugin",
+          "versions": [
+            {
+              "version": "1.154.12",
+              "status": "affected"
+            },
+            {
+              "version": "1.154.15",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-router",
+          "versions": [
+            {
+              "version": "1.169.5",
+              "status": "affected"
+            },
+            {
+              "version": "1.169.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-router-devtools",
+          "versions": [
+            {
+              "version": "1.166.16",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.19",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-router-ssr-query",
+          "versions": [
+            {
+              "version": "1.166.15",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.18",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-start",
+          "versions": [
+            {
+              "version": "1.167.68",
+              "status": "affected"
+            },
+            {
+              "version": "1.167.71",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-start-client",
+          "versions": [
+            {
+              "version": "1.166.51",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.54",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-start-rsc",
+          "versions": [
+            {
+              "version": "0.0.47",
+              "status": "affected"
+            },
+            {
+              "version": "0.0.50",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "react-start-server",
+          "versions": [
+            {
+              "version": "1.166.55",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.58",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-cli",
+          "versions": [
+            {
+              "version": "1.166.46",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.49",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-core",
+          "versions": [
+            {
+              "version": "1.169.5",
+              "status": "affected"
+            },
+            {
+              "version": "1.169.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-devtools",
+          "versions": [
+            {
+              "version": "1.166.16",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.19",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-devtools-core",
+          "versions": [
+            {
+              "version": "1.167.6",
+              "status": "affected"
+            },
+            {
+              "version": "1.167.9",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-generator",
+          "versions": [
+            {
+              "version": "1.166.45",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.48",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-plugin",
+          "versions": [
+            {
+              "version": "1.167.38",
+              "status": "affected"
+            },
+            {
+              "version": "1.167.41",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-ssr-query-core",
+          "versions": [
+            {
+              "version": "1.168.3",
+              "status": "affected"
+            },
+            {
+              "version": "1.168.6",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "router-utils",
+          "versions": [
+            {
+              "version": "1.161.11",
+              "status": "affected"
+            },
+            {
+              "version": "1.161.14",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "outer-vite-plugin",
+          "versions": [
+            {
+              "version": "1.166.53",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.56",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "solid-router",
+          "versions": [
+            {
+              "version": "1.169.5",
+              "status": "affected"
+            },
+            {
+              "version": "1.169.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "solid-router-devtools",
+          "versions": [
+            {
+              "version": "1.166.16",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.19",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "solid-router-ssr-query",
+          "versions": [
+            {
+              "version": "1.166.15",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.18",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "solid-start",
+          "versions": [
+            {
+              "version": "1.167.65",
+              "status": "affected"
+            },
+            {
+              "version": "1.167.68",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "solid-start-client",
+          "versions": [
+            {
+              "version": "1.166.50",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.53",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "solid-start-server",
+          "versions": [
+            {
+              "version": "1.166.54",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.57",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "start-client-core",
+          "versions": [
+            {
+              "version": "1.168.5",
+              "status": "affected"
+            },
+            {
+              "version": "1.168.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "start-fn-stubs",
+          "versions": [
+            {
+              "version": "1.161.9",
+              "status": "affected"
+            },
+            {
+              "version": "1.161.12",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "start-plugin-core",
+          "versions": [
+            {
+              "version": "1.169.23",
+              "status": "affected"
+            },
+            {
+              "version": "1.169.26",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "start-server-core",
+          "versions": [
+            {
+              "version": "1.167.33",
+              "status": "affected"
+            },
+            {
+              "version": "1.167.36",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "start-static-server-functions",
+          "versions": [
+            {
+              "version": "1.166.44",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.47",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "start-storage-context",
+          "versions": [
+            {
+              "version": "1.166.38",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.41",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "valibot-adapter",
+          "versions": [
+            {
+              "version": "1.166.12",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.15",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "virtual-file-routes",
+          "versions": [
+            {
+              "version": "1.161.10",
+              "status": "affected"
+            },
+            {
+              "version": "1.161.13",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "vue-router",
+          "versions": [
+            {
+              "version": "1.169.5",
+              "status": "affected"
+            },
+            {
+              "version": "1.169.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "vue-router-devtools",
+          "versions": [
+            {
+              "version": "1.166.16",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.19",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "vue-router-ssr-query",
+          "versions": [
+            {
+              "version": "1.166.15",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.18",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "vue-start",
+          "versions": [
+            {
+              "version": "1.167.61",
+              "status": "affected"
+            },
+            {
+              "version": "1.167.64",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "vue-start-client",
+          "versions": [
+            {
+              "version": "1.166.46",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.49",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "vue-start-server",
+          "versions": [
+            {
+              "version": "1.166.50",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.53",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "@tanstack",
+          "product": "zod-adapter",
+          "versions": [
+            {
+              "version": "1.166.12",
+              "status": "affected"
+            },
+            {
+              "version": "1.166.15",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00027,
+      "kev": {
+        "cveID": "CVE-2026-45321",
+        "vendorProject": "TanStack",
+        "product": "TanStack",
+        "vulnerabilityName": "TanStack Unspecified Vulnerability",
+        "dateAdded": "2026-05-27",
+        "shortDescription": "TanStack contains an unspecified vulnerability that allowed malicious versions of the product to be published to the npm registry to publish credential-stealing malware under a trusted identity.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-506"
+        ],
+        "cpe_count": 84,
+        "reference_count": 4
+      }
+    },
+    {
       "cve_id": "CVE-2026-48172",
       "description": "LiteSpeed User-End cPanel Plugin before 2.4.5 allows privilege escalation (possibly to root), as exploited in the wild in May 2026. Detection is best done via a command line of grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null in Bash. If you get no output, you have not been hit with exploitation of the vulnerability. If there is output, we recommend you examine the IP addresses in the list, determine if they are valid IP addresses, and if not, block them. To determine damage done, examine the system logs for use by the detected IP addresses. The issue is related to mishandling of Redis enable/disable features. The recommended minimum version is 2.4.7.",
       "cvss_score": 10.0,
@@ -46416,6 +47043,57 @@
         ],
         "cpe_count": 0,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8398",
+      "description": "A supply chain attack compromised the official installation packages of DAEMON Tools Lite (Windows versions 12.5.0.2421 through 12.5.0.2434), distributed from the legitimate website daemon-tools.cc between approximately April 8, 2026, and May 5, 2026. Attackers gained unauthorized access to the vendor's (AVB Disc Soft) build or distribution infrastructure and trojanized three binaries: DTHelper.exe, DiscSoftBusServiceLite.exe, and DTShellHlp.exe. These files were digitally signed with the legitimate AVB Disc Soft code-signing certificate, allowing the malicious installers to appear trustworthy and bypass signature-based detection.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "avb disc soft",
+          "product": "daemon tools lite",
+          "versions": [
+            {
+              "version": "12.5.0.2421",
+              "versionType": "semver",
+              "lessThan": "2.6.0.*",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.0004,
+      "kev": {
+        "cveID": "CVE-2026-8398",
+        "vendorProject": "Daemon",
+        "product": "Daemon Tools Lite",
+        "vulnerabilityName": "Daemon Tools Lite Embedded Malicious Code Vulnerability",
+        "dateAdded": "2026-05-27",
+        "shortDescription": "Daemon Tools contains an unspecified vulnerability that has a high impact on confidentiality, integrity, and availability.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-05-30",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-506"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
