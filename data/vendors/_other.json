@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-27T01:20:30+00:00",
+  "generated_at": "2026-05-27T03:26:01+00:00",
   "vendor": "_other",
-  "count": 718,
+  "count": 719,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -39901,6 +39901,50 @@
       }
     },
     {
+      "cve_id": "CVE-2026-2264",
+      "description": "A vulnerability in the Google Cloud Apigee\u00a0SetIntegrationRequest\u00a0policy allowed remote attackers to perform Server-Side Request Forgery (SSRF) and exfiltrate service account access tokens.\n\nFor successful exploitation, an administrator must initially establish an insecure configuration of the API proxy.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "apigee-x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.14.4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.15.2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.16.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apigee-x",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-2472",
       "description": "Stored Cross-Site Scripting (XSS) in the _genai/_evals_visualization component of Google Cloud Vertex AI SDK (google-cloud-aiplatform) versions from 1.98.0 up to (but not including) 1.131.0 allows an unauthenticated remote attacker to execute arbitrary JavaScript in a victim's Jupyter or Colab environment via injecting script escape sequences into model evaluation results or dataset JSON data.",
       "cvss_score": 8.6,
@@ -44771,7 +44815,7 @@
     },
     {
       "cve_id": "CVE-2026-22661",
-      "description": "prompts.chat prior to commit 0f8d4c3 contains a path traversal vulnerability in skill file handling that allows attackers to write arbitrary files to the client system by crafting malicious ZIP archives with unsanitized filenames containing path traversal sequences. Attackers can exploit missing server-side filename validation to inject path traversal sequences ../ into skill file archives, which when extracted by vulnerable tools write files outside the intended directory and overwrite shell initialization files to achieve code execution.",
+      "description": "prompts.chat prior to commit 0f8d4c3 contains a path traversal vulnerability in skill file handling that allows attackers to write arbitrary files to the client system by crafting malicious ZIP archives with unsanitized filenames containing path traversal sequences. Attackers can exploit missing server-side filename validation to inject path traversal sequences ../ into skill file archives, which when extracted by vulnerable tools writing files outside the intended directory and overwriting shell initialization files to achieve code execution.",
       "cvss_score": 8.6,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
@@ -44857,7 +44901,7 @@
     },
     {
       "cve_id": "CVE-2026-22664",
-      "description": "prompts.chat prior to commit 30a8f04 contains a server-side request forgery vulnerability in Fal.ai media status polling that allows authenticated users to perform arbitrary outbound requests by supplying attacker-controlled URLs in the token parameter. Attackers can exploit the lack of URL validation to disclose the FAL_API_KEY in the Authorization header, enabling credential theft, internal network probing, and abuse of the victim's Fal.ai account.",
+      "description": "prompts.chat prior to commit 30a8f04 contains a server-side request forgery vulnerability in the Fal.ai media status polling feature that allows authenticated users to perform arbitrary outbound requests by supplying attacker-controlled URLs in the token parameter. Attackers can exploit the lack of URL validation to disclose the FAL_API_KEY in the Authorization header, enabling credential theft, internal network probing, and abuse of the victim's Fal.ai account.",
       "cvss_score": 7.1,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
@@ -44900,7 +44944,7 @@
     },
     {
       "cve_id": "CVE-2026-22665",
-      "description": "prompts.chat prior to commit 1464475 contains an identity confusion vulnerability due to inconsistent case-sensitive and case-insensitive handling of usernames across write and read paths, allowing attackers to create case-variant usernames that bypass uniqueness checks. Attackers can exploit non-deterministic username resolution to impersonate victim accounts, replace profile content on canonical URLs, and inject attacker-controlled metadata and content across the platform.",
+      "description": "prompts.chat prior to commit 1464475, contains an identity confusion vulnerability due to inconsistent case-sensitive and case-insensitive handling of usernames across write and read paths, allowing attackers to create case-variant usernames that bypass uniqueness checks. Attackers can exploit non-deterministic username resolution to impersonate victim accounts, replace profile content on canonical URLs, and inject attacker-controlled metadata and content across the platform.",
       "cvss_score": 8.6,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
