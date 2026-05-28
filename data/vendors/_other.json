@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-28T01:12:37+00:00",
+  "generated_at": "2026-05-28T03:28:35+00:00",
   "vendor": "_other",
-  "count": 721,
+  "count": 722,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -39942,7 +39942,18 @@
         "vendor:google cloud"
       ],
       "active_threat": false,
-      "probability_score": 0.00143
+      "probability_score": 0.00143,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-2472",
@@ -46983,6 +46994,44 @@
       }
     },
     {
+      "cve_id": "CVE-2026-48027",
+      "description": "Nx Console is the user interface for Nx & Lerna. On 19 May 2026, a malicious version of Nx Console, 18.95.0, was published at 12:30 PM UTC and removed soon after at 12:48 PM UTC, leaving it available for ~18 minutes in Visual Studio Marketplace. For OpenVSX, the problem was detected later, and the compromised version was available from 12:33 UTC to 13:09 UTC (~36 minutes). Version 18.100.0 of Nx Console is not compromised and users may remediate by upgrading to that version.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "nrwl",
+          "product": "nx-console",
+          "versions": [
+            {
+              "version": "= 18.95.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-48027",
+        "vendorProject": "Nx",
+        "product": "Nx Console",
+        "vulnerabilityName": "Nx Console Embedded Malicious Code Vulnerability",
+        "dateAdded": "2026-05-27",
+        "shortDescription": "Nx Console contains an embedded malicious code vulnerability that allowed a malicious version of Nx Console to be published. The compromised extension fetched an obfuscated payload that could harvested credentials from multiple sources on disk and in memory.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
       "cve_id": "CVE-2026-48172",
       "description": "LiteSpeed User-End cPanel Plugin before 2.4.5 allows privilege escalation (possibly to root), as exploited in the wild in May 2026. Detection is best done via a command line of grep -rE \"cpanel_jsonapi_func=redisAble\" /var/cpanel/logs /usr/local/cpanel/logs/ 2>/dev/null in Bash. If you get no output, you have not been hit with exploitation of the vulnerability. If there is output, we recommend you examine the IP addresses in the list, determine if they are valid IP addresses, and if not, block them. To determine damage done, examine the system logs for use by the detected IP addresses. The issue is related to mishandling of Redis enable/disable features. The recommended minimum version is 2.4.7.",
       "cvss_score": 10.0,
@@ -47034,14 +47083,14 @@
         "knownRansomwareCampaignUse": "Unknown"
       },
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-266"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 4
       }
     },

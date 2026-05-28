@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-28T01:12:37+00:00",
+  "generated_at": "2026-05-28T03:28:35+00:00",
   "vendor": "apple",
-  "count": 1012,
+  "count": 1014,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -59378,6 +59378,61 @@
       }
     },
     {
+      "cve_id": "CVE-2025-43306",
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Sequoia 15.7, macOS Sonoma 14.8, macOS Tahoe 26. A malicious app may be able to gain root privileges.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2025-43316",
       "description": "A permissions issue was addressed with additional restrictions. This issue is fixed in macOS Tahoe 26, visionOS 26. A malicious app may be able to gain root privileges.",
       "cvss_score": 7.8,
@@ -63894,6 +63949,55 @@
         ],
         "cpe_count": 1,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-46284",
+      "description": "A race condition was addressed with additional validation. This issue is fixed in macOS Sequoia 15.7, macOS Tahoe 26. An app may be able to gain root privileges.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {

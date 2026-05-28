@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-28T01:12:37+00:00",
+  "generated_at": "2026-05-28T03:28:35+00:00",
   "vendor": "google",
-  "count": 1714,
+  "count": 1715,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -76438,6 +76438,38 @@
         "cpe_count": 4,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-9739",
+      "description": "Vulnerable to DNS rebinding attacks when using SSE (http://b/499408790). During the beta phase, we implemented `allowed-origins` and `allowed-hosts` flags to align with MCP security guidelines. However, the hardcoded `Access-Control-Allow-Origin: *` header in the SSE initialization handler was inadvertently retained. This vulnerability specifically impacts users connecting via Toolbox using SSE under specification v2024-11-05.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "mcp toolbox for databases",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "PR 3054 (Fix CORS bypass)",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:mcp toolbox for databases",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-28T01:12:37+00:00",
+  "generated_at": "2026-05-28T03:28:35+00:00",
   "vendor": "microsoft",
-  "count": 3634,
+  "count": 3637,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -617113,7 +617113,7 @@
           "CWE-280"
         ],
         "cpe_count": 8,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -623192,7 +623192,7 @@
           "CWE-122"
         ],
         "cpe_count": 11,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -626573,7 +626573,7 @@
           "CWE-362"
         ],
         "cpe_count": 19,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -628435,7 +628435,7 @@
           "CWE-73"
         ],
         "cpe_count": 19,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -648740,7 +648740,7 @@
           "CWE-59"
         ],
         "cpe_count": 25,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -651731,7 +651731,7 @@
           "CWE-287"
         ],
         "cpe_count": 25,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -653169,7 +653169,7 @@
           "CWE-357"
         ],
         "cpe_count": 25,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -667511,7 +667511,7 @@
           "CWE-822"
         ],
         "cpe_count": 25,
-        "reference_count": 1
+        "reference_count": 3
       }
     },
     {
@@ -676179,7 +676179,7 @@
           "CWE-693"
         ],
         "cpe_count": 25,
-        "reference_count": 2
+        "reference_count": 4
       }
     },
     {
@@ -697952,6 +697952,36 @@
       }
     },
     {
+      "cve_id": "CVE-2026-45322",
+      "description": "Microsoft UFO open-source framework for intelligent automation across devices and platforms. Microsoft UFO tagged releases up to and including v3.0.0 contain an OS command injection vulnerability in the shell action replay path. In affected releases, ShellReceiver.run_shell() passes a command string from action parameters directly to subprocess.Popen() with shell=True and executable=powershell.exe. The same shell-execution behavior is also reachable through ShellReceiver.execute_command(). The shell receiver is invoked by action classes such as RunShellCommand.execute() and ExecuteCommand.execute(), which forward stored action parameters to the shell receiver. Because UFO stores planned and executed actions in per-session JSON records, an attacker who can write or modify a session/action JSON file can plant a shell action. When the session is resumed or replayed, UFO executes the attacker's command as the UFO process user.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "ufo",
+          "versions": [
+            {
+              "version": "<= 3.0.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ufo",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-45495",
       "description": "Microsoft Edge (Chromium-based) Remote Code Execution Vulnerability",
       "cvss_score": 8.8,
@@ -697988,6 +698018,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-35",
           "CWE-20",
           "CWE-94",
           "CWE-119"
@@ -698203,6 +698234,66 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-46402",
+      "description": "Microsoft UFO open-source framework for intelligent automation across devices and platforms. In 3.0.1-4-ge2626659, Microsoft UFO uses the user-controlled task_name value directly when constructing session log paths. An authenticated client can supply path traversal sequences in task_name and cause UFO to create log directories and log files outside the intended logs/ directory.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "ufo",
+          "versions": [
+            {
+              "version": "3.0.1-4-ge2626659",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ufo",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-46414",
+      "description": "Microsoft UFO open-source framework for intelligent automation across devices and platforms. In 3.0.1-4-ge2626659, Microsoft UFO's WebSocket control plane trusts client-supplied identity and role fields in task messages. A client connection can register as a normal device, but later send a TASK message claiming client_type=\"constellation\" and target_id=<victim-device-id>. The server trusts the role and target values from the wire message rather than enforcing the role registered for that WebSocket connection. As a result, any authenticated WebSocket client with the shared server token can spoof the higher-privilege constellation role and dispatch attacker-controlled tasks to another connected device. The same client registry also allows duplicate client_id registration, overwriting an existing live client's stored websocket, role, and task protocol. This is an authenticated WebSocket role/identity spoofing issue leading to peer task hijacking.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "ufo",
+          "versions": [
+            {
+              "version": "3.0.1-4-ge2626659",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ufo",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-47280",
