@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-29T01:22:41+00:00",
+  "generated_at": "2026-05-29T03:26:26+00:00",
   "vendor": "apache_software_foundation",
-  "count": 691,
+  "count": 692,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -23478,6 +23478,38 @@
         "cpe_count": 7,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2025-48977",
+      "description": "Relative Path Traversal vulnerability in Apache Ignite REST API.\n\nAuthenticated REST API users can read any file on the server with \"cmd=log\" command and a log path crafted in a certain way.\nThis issue affects Apache Ignite: from 2.0.0 through 2.17.0.\n\nUsers are recommended to upgrade to version 2.18.0, which fixes the issue.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ignite",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.17.0",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ignite",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00043
     },
     {
       "cve_id": "CVE-2025-48988",
