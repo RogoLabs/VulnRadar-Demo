@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-30T01:14:53+00:00",
+  "generated_at": "2026-05-30T03:22:07+00:00",
   "vendor": "linux",
-  "count": 2686,
+  "count": 2687,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -148664,7 +148664,7 @@
         "cwe_ids": [
           "CWE-129"
         ],
-        "cpe_count": 6,
+        "cpe_count": 12,
         "reference_count": 13
       }
     },
@@ -149284,7 +149284,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 6,
+        "cpe_count": 9,
         "reference_count": 10
       }
     },
@@ -261213,6 +261213,95 @@
       }
     },
     {
+      "cve_id": "CVE-2026-23305",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\naccel/rocket: fix unwinding in error path in rocket_probe\n\nWhen rocket_core_init() fails (as could be the case with EPROBE_DEFER),\nwe need to properly unwind by decrementing the counter we just\nincremented and if this is the first core we failed to probe, remove the\nrocket DRM device with rocket_device_fini() as well. This matches the\nlogic in rocket_remove(). Failing to properly unwind results in\nout-of-bounds accesses.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "0810d5ad88a18f1e6d549853a388ad0316f74e36",
+              "lessThan": "7fc4b49474c836cee7d9801abf05e0198fcbfa74",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0810d5ad88a18f1e6d549853a388ad0316f74e36",
+              "lessThan": "eeaf28c8f4defe371a008a5ddefaf18abf534f81",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0810d5ad88a18f1e6d549853a388ad0316f74e36",
+              "lessThan": "34f4495a7f72895776b81969639f527c99eb12b9",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.18",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.18",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.17",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.7",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00015,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-23306",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: pm8001: Fix use-after-free in pm8001_queue_command()\n\nCommit e29c47fe8946 (\"scsi: pm8001: Simplify pm8001_task_exec()\") refactors\npm8001_queue_command(), however it introduces a potential cause of a double\nfree scenario when it changes the function to return -ENODEV in case of phy\ndown/device gone state.\n\nIn this path, pm8001_queue_command() updates task status and calls\ntask_done to indicate to upper layer that the task has been handled.\nHowever, this also frees the underlying SAS task. A -ENODEV is then\nreturned to the caller. When libsas sas_ata_qc_issue() receives this error\nvalue, it assumes the task wasn't handled/queued by LLDD and proceeds to\nclean up and free the task again, resulting in a double free.\n\nSince pm8001_queue_command() handles the SAS task in this case, it should\nreturn 0 to the caller indicating that the task has been handled.",
       "cvss_score": 7.8,
@@ -261330,8 +261419,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 6,
         "reference_count": 6
       }
     },

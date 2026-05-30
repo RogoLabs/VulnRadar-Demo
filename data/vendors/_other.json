@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-30T01:14:53+00:00",
+  "generated_at": "2026-05-30T03:22:07+00:00",
   "vendor": "_other",
-  "count": 723,
+  "count": 728,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -1154,9 +1154,9 @@
     {
       "cve_id": "CVE-2026-0257",
       "description": "Authentication bypass vulnerabilities in the GlobalProtect portal and gateway of Palo Alto Networks PAN-OS\u00ae software allows the attacker to bypass security restrictions and establish an unauthorized VPN connection.\n\nPanorama and Cloud NGFW are not impacted by these issues.",
-      "cvss_score": 4.7,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:H/SI:H/SA:N/E:U/AU:N/R:A/V:D/RE:M/U:Amber",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:H/SI:H/SA:N/E:A/AU:N/R:A/V:D/RE:M/U:Red",
       "affected": [
         {
           "vendor": "palo alto networks",
@@ -29886,6 +29886,53 @@
       }
     },
     {
+      "cve_id": "CVE-2026-4776",
+      "description": "An SQL injection vulnerability exists in Mautic's API contact filtering mechanism. Due to insufficient recursive sanitization of nested query parameters, an authenticated API user can bypass input filtering and inject arbitrary SQL commands.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.6.0",
+              "lessThan": "4.4.20",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.0",
+              "lessThan": "5.2.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.0.9",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.0003
+    },
+    {
       "cve_id": "CVE-2026-9277",
       "description": "shell-quote's `quote()` function did not validate object-token inputs against the operator model used by `parse()`. The `.op` field was backslash-escaped character by character using `/(.)/g`, which in JavaScript does not match line terminators (\\n, \\r, U+2028, U+2029). A line terminator in `.op` therefore passed through unescaped into the output; POSIX shells treat a literal newline as a command separator, so any content after it would execute as a second command. The vulnerable code path is reachable in two ways: (1) direct construction of `{ op: '...\\n...' }` from external input, and (2) via `parse(cmd, envFn)` when `envFn` returns object tokens whose `.op` is attacker-influenced. Both are documented API surface. Fixed by replacing the per-character escape with strict shape validation: `.op` must match the parser's control-operator allowlist; `{ op: 'glob', pattern }` validates `pattern` and forbids line terminators; `{ comment }` validates `comment` and forbids line terminators; any other object shape throws `TypeError`.",
       "cvss_score": 8.1,
@@ -29927,6 +29974,140 @@
         "cpe_count": 0,
         "reference_count": 6
       }
+    },
+    {
+      "cve_id": "CVE-2026-9558",
+      "description": "A Server-Side Template Injection (SSTI) vulnerability exists in Mautic's theme engine. The platform renders uploaded Twig templates without a sandbox or strict function restrictions. Authenticated users with permissions to create or upload themes can abuse this to execute arbitrary code on the hosting server (Remote Code Execution) or access restricted system files and configuration settings.",
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.3.0",
+              "lessThan": "4.4.20",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.0",
+              "lessThan": "5.2.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.0.9",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00196
+    },
+    {
+      "cve_id": "CVE-2026-9559",
+      "description": "A path traversal vulnerability exists in the campaign import feature of Mautic 7. When extracting uploaded ZIP files during campaign imports, a flaw in the validation logic allows file paths to escape the intended temporary directories. An authenticated user with campaign import privileges (campaign:imports:create) can write arbitrary PHP files to sensitive system directories. An attacker can exploit this to overwrite critical internal configuration or cache components, resulting in Remote Code Execution (RCE) under the context of the web server user.",
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00209
+    },
+    {
+      "cve_id": "CVE-2026-9808",
+      "description": "An authorization bypass vulnerability exists in the Mautic 7 API v2 endpoints (utilizing API Platform). Under certain conditions, roles configured with owner-scope restrictions (such as `viewown` or `editown`) are not properly enforced. This allows low-privilege authenticated API users to bypass ownership-logic controls and access or modify resources belonging to other users.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00028
+    },
+    {
+      "cve_id": "CVE-2026-9809",
+      "description": "A stored Cross-Site Scripting (XSS) vulnerability exists in the Projects component of Mautic 7. When displaying project tags and popovers on administrative detail views (such as campaigns, emails, or forms), user-supplied project names are rendered without proper sanitization. An authenticated user with permissions to create or edit projects can exploit this to inject malicious script payloads. When an administrative user views an entity associated with a compromised project and hovers over its tag, the injected script executes within the context of their active browser session. This could allow an attacker to perform administrative actions on behalf of the victim, alter system configurations, or exfiltrate sensitive data.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00024
     },
     {
       "cve_id": "CVE-2023-23752",
@@ -47338,7 +47519,7 @@
         "cwe_ids": [
           "CWE-506"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
