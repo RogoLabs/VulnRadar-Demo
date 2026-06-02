@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T15:41:22+00:00",
+  "generated_at": "2026-06-02T17:48:47+00:00",
   "vendor": "google",
   "count": 1846,
   "items": [
@@ -58372,14 +58372,25 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:android",
         "vendor:google"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 6e-05,
+      "kev": {
+        "cveID": "CVE-2025-48595",
+        "vendorProject": "Android",
+        "product": "Framework",
+        "vulnerabilityName": "Android Framework Integer Overflow Vulnerability",
+        "dateAdded": "2026-06-02",
+        "shortDescription": "Android Framework contains an integer overflow vulnerability that allows for code execution that could allow for local privilege escalation.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-05",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 8.4,
         "cvss_v3_severity": "HIGH",

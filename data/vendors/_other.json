@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-02T15:41:22+00:00",
+  "generated_at": "2026-06-02T17:48:47+00:00",
   "vendor": "_other",
-  "count": 729,
+  "count": 730,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -1596,6 +1596,56 @@
         ],
         "cpe_count": 20,
         "reference_count": 11
+      }
+    },
+    {
+      "cve_id": "CVE-2022-0492",
+      "description": "A vulnerability was found in the Linux kernel\u2019s cgroup_release_agent_write in the kernel/cgroup/cgroup-v1.c function. This flaw, under certain circumstances, allows the use of the cgroups v1 release_agent feature to escalate privileges and bypass the namespace isolation unexpectedly.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "n/a",
+          "product": "kernel",
+          "versions": [
+            {
+              "version": "kernel 5.17 rc3",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.05238,
+      "kev": {
+        "cveID": "CVE-2022-0492",
+        "vendorProject": "Linux",
+        "product": "Kernel",
+        "vulnerabilityName": "Linux Kernel Improper Authentication Vulnerability",
+        "dateAdded": "2026-06-02",
+        "shortDescription": "Linux Kernel contains an improper authentication vulnerability which could allow for privilege escalation via the cgroups v1 release_agent feature.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-05",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 6.9,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287",
+          "CWE-862"
+        ],
+        "cpe_count": 50,
+        "reference_count": 20
       }
     },
     {
