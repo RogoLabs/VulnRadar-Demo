@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-02T01:26:47+00:00",
+  "generated_at": "2026-06-02T03:29:36+00:00",
   "vendor": "apache_software_foundation",
-  "count": 692,
+  "count": 695,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -29984,6 +29984,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-35563",
+      "description": "It was identified that the LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP \nhostname. While the underlying code validates the certificate chain \nagainst a trusted authority, the absence of endpoint identification \nallows a valid certificate issued for an entirely unrelated host to be \nimproperly accepted. This oversight leaves the connection highly \nvulnerable to server impersonation and complete connection compromise.\n\n\nThe\n root cause of this vulnerability lies in the incomplete TLS server \nidentity verification within the LDAP client implementation.\n\n\n\n\nThe attacker requires MITM capability on the network to exploit this vulnerability. This attacker must be able to present a certificate trusted by the client's configured trust store.\n\n\n\n\nThe hostname verification has been enforced in the new version of the LDAP API",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:H/VI:H/VA:N/SC:H/SI:L/SA:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache directory ldap api",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.1.7",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache directory ldap api",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00023
+    },
+    {
       "cve_id": "CVE-2026-39304",
       "description": "Denial of Service via Out of Memory vulnerability in Apache ActiveMQ Client, Apache ActiveMQ Broker, Apache ActiveMQ.\n\nActiveMQ NIO SSL transports do not correctly handle TLSv1.3 handshake KeyUpdates triggered by clients. This makes it possible for a client to rapidly trigger updates which causes the broker to exhaust all its memory in the SSL engine leading to DoS.\n\nNote: TLS versions before TLSv1.3 (such as TLSv1.2) are broken but are not vulnerable to OOM. Previous TLS versions require a full handshake renegotiation which causes a connection to hang but not OOM. This is fixed as well.\nThis issue affects Apache ActiveMQ Client: before 5.19.4, from 6.0.0 before 6.2.4; Apache ActiveMQ Broker: before 5.19.4, from 6.0.0 before 6.2.4; Apache ActiveMQ: before 5.19.4, from 6.0.0 before 6.2.4.\n\nUsers are recommended to upgrade to version 6.2.4 or 5.19.5, which fixes the issue.",
       "cvss_score": 7.5,
@@ -32488,6 +32520,43 @@
       }
     },
     {
+      "cve_id": "CVE-2026-44825",
+      "description": "Hardcoded credentials in the Basic Authentication setup tool (bin/solr auth enable) in Apache Solr versions 9.4.0 through 9.10.1 and 10.0.0 allows a remote attacker to gain full administrative access to the cluster via publicly known default credentials installed silently alongside the user-specified account. \n\nAs an immediate workaround without upgrading, delete the template users (superadmin, admin, search, index) from security.json\u00a0or change their passwords.\nThe future, not yet released, versions 9.11.0 and 10.1.0 will not be vulnerable, and it will be enough to upgrade to solve the issue.\n\nNot affected:\n  *  Clusters where bin/solr auth enable was not used to bootstrap BasicAuth\n  *  Clusters where template users have been assigned strong passwords after bootstrap",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache solr",
+          "versions": [
+            {
+              "lessThanOrEqual": "9.10.1",
+              "status": "affected",
+              "version": "9.4.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache solr",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00213
+    },
+    {
       "cve_id": "CVE-2026-44930",
       "description": "An LDAP injection vulnerability in the LDAP Certificate repository of the XKMS server in Apache CXF may allow an attacker to retrieve arbitrary certificates from the repository.\u00a0\nUsers are recommended to upgrade to versions 4.2.1, 4.1.6 or 3.6.11, which fix this issue.",
       "cvss_score": 9.8,
@@ -32819,6 +32888,44 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-48827",
+      "description": "Path traversal vulnerability in Apache MINA SSHD bundle sshd-git. Lack of path validation in git-upload-pack, git-receive-pack, and other git operations allows users authenticated over SSH access to git repositories outside the configured git server root directory.\n\n\n\n\nApplications are affected if they use org.apache.sshd:sshd-git. Applications not using sshd-git are not affected.\n\n\n\n\nUsers are advised to upgrade affected applications to Apche MINA SSHD 2.18.0, which fixes the issue.\n\n\n\n\nThe issue also is present in the pre-release milestones 3.0.0-M1 to 3.0.0-M3 for a new upcoming new major version 3.0.0. Again, applications are affected only if they use sshd-git. Upgrade affected applications to 3.0.0-M4.\n\n\n\n\nWe would like to point out that a professional git server should not rely solely on file system layout and permissions, but should implement additional security controls to govern access to git repositories and operations allowed on particular git repositories.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina sshd",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.17.1",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "maven"
+            },
+            {
+              "lessThanOrEqual": "3.0.0-M3",
+              "status": "affected",
+              "version": "3.0.0-M1",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina sshd",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0003
     }
   ]
 }

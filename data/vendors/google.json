@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-02T01:26:47+00:00",
+  "generated_at": "2026-06-02T03:29:36+00:00",
   "vendor": "google",
-  "count": 1831,
+  "count": 1832,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -58715,7 +58715,7 @@
     },
     {
       "cve_id": "CVE-2025-48612",
-      "description": "In multiple locations, there is a possible way for an application on a work profile to set the main user's default NFC payment setting due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "description": "In setDefaultKey of DefaultPaymentSettings.java, there is a possible way for an application to set the main user's default NFC payment setting due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -58724,6 +58724,10 @@
           "vendor": "google",
           "product": "android",
           "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
             {
               "version": "16",
               "status": "affected"
@@ -58734,10 +58738,6 @@
             },
             {
               "version": "14",
-              "status": "affected"
-            },
-            {
-              "version": "13",
               "status": "affected"
             }
           ]
@@ -58819,6 +58819,10 @@
           "product": "android",
           "versions": [
             {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
               "version": "16",
               "status": "affected"
             },
@@ -58828,10 +58832,6 @@
             },
             {
               "version": "14",
-              "status": "affected"
-            },
-            {
-              "version": "13",
               "status": "affected"
             }
           ]
@@ -62593,6 +62593,36 @@
         "cpe_count": 3,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-0072",
+      "description": "In addInputMethodListener of com.android.server.inputmethod.InputMethodManagerService, there is a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android xr",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "14"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android xr",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-0073",
