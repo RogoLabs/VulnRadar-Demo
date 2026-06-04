@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-03T23:44:59+00:00",
+  "generated_at": "2026-06-04T01:32:31+00:00",
   "vendor": "google",
-  "count": 1846,
+  "count": 1857,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -51606,6 +51606,57 @@
       }
     },
     {
+      "cve_id": "CVE-2025-22424",
+      "description": "In multiple locations, there is a possible way to reveal images across users due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0006,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2025-22427",
       "description": "In onCreate of NotificationAccessConfirmationActivity.java, there is a possible way to grant notification access above the lock screen due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
       "cvss_score": 7.3,
@@ -54141,6 +54192,59 @@
         ],
         "cpe_count": 4,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-32348",
+      "description": "In multiple locations, there is a possible background activity launch due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 3e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 6,
+        "reference_count": 1
       }
     },
     {
@@ -57495,6 +57599,47 @@
       }
     },
     {
+      "cve_id": "CVE-2025-48570",
+      "description": "In multiple functions of PipTaskOrganizer.java, there is a possible way to launch an activity from the background due to a confused deputy. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 3e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-441"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2025-48572",
       "description": "In multiple locations, there is a possible way to launch activities from the background due to a permissions bypass. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 7.8,
@@ -58399,8 +58544,8 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
-        "reference_count": 1
+        "cpe_count": 6,
+        "reference_count": 2
       }
     },
     {
@@ -60043,6 +60188,59 @@
       }
     },
     {
+      "cve_id": "CVE-2025-48649",
+      "description": "In multiple locations, there is a possible way to reset user-selected permissions selections due to a permissions bypass. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 6e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2025-48650",
       "description": "In multiple locations, there is a possible information disclosure due to SQL injection. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 8.4,
@@ -60088,6 +60286,55 @@
           "CWE-89"
         ],
         "cpe_count": 3,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-48652",
+      "description": "In performPreInstallChecks of InstallRepository.kt, there is a possible way to bypass MDM policy due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 7e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -62538,6 +62785,59 @@
       }
     },
     {
+      "cve_id": "CVE-2026-0036",
+      "description": "In startAnimation of StageCoordinator.java, there is a possible tapjacking issue due to a tapjacking/overlay attack. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1021"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-0037",
       "description": "In multiple functions of ffa.c, there is a possible memory corruption due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 8.4,
@@ -62615,6 +62915,59 @@
         "cwe_ids": null,
         "cpe_count": 1,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-0045",
+      "description": "In bta_jv_rfcomm_connect of bta_jv_act.cc, there is a possible bypass of bonding for a secure connection due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 7e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -62707,7 +63060,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -62802,6 +63155,218 @@
           "CWE-303"
         ],
         "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-0076",
+      "description": "In validateNode of ResourceTypes.cpp, there is a possible out of bounds read due to an incorrect bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-0078",
+      "description": "In setGlobalProxy of DevicePolicyManagerService.java, there is a possible desync in persistence due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 7e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-0087",
+      "description": "In approvalLevelForDomainInternal of DomainVerificationService.java, there is a possible way to hijack an arbitrary app link due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 7e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-0088",
+      "description": "In getCallingAppLabel of CertInstaller.java, there is a possible way to hide a sensitive security dialogue due to misleading or insufficient UI. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-451"
+        ],
+        "cpe_count": 0,
         "reference_count": 1
       }
     },
@@ -63099,7 +63664,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -63152,7 +63717,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -63205,7 +63770,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -63255,8 +63820,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-273"
+        ],
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -63309,7 +63876,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -64356,7 +64923,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -64915,7 +65482,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -65356,7 +65923,7 @@
         "cwe_ids": [
           "CWE-1021"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -65401,7 +65968,7 @@
         "cwe_ids": [
           "CWE-120"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -78446,7 +79013,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -78575,7 +79142,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -78618,7 +79185,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -78791,7 +79358,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -78920,7 +79487,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -78963,7 +79530,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -79006,7 +79573,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -79178,7 +79745,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -79221,7 +79788,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -79307,7 +79874,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -79350,7 +79917,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },

