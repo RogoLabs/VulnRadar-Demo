@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-04T01:32:31+00:00",
+  "generated_at": "2026-06-04T03:29:44+00:00",
   "vendor": "cisco",
-  "count": 417,
+  "count": 418,
   "items": [
     {
       "cve_id": "CVE-2022-20622",
@@ -273178,6 +273178,36 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-20230",
+      "description": "A vulnerability in Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) could allow an unauthenticated, remote attacker to conduct server-side request forgery (SSRF) attacks through an affected device.\r\n\r This vulnerability is due to improper input validation for specific HTTP requests. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to write files to the underlying operating system that could be used later to elevate to root.\r\n\r Note: Cisco has assigned this security advisory a Security Impact Rating (SIR) of Critical rather than High as the score indicates. The reason is that exploitation of this vulnerability could result in an attacker elevating privileges to root.\r\n\r Note: To exploit this vulnerability, the WebDialer service must be enabled. WebDialer is disabled by default.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco unified communications manager",
+          "versions": [
+            {
+              "version": "N/A",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco unified communications manager",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }

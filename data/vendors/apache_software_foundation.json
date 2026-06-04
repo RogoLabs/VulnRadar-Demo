@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-04T01:32:31+00:00",
+  "generated_at": "2026-06-04T03:29:44+00:00",
   "vendor": "apache_software_foundation",
-  "count": 705,
+  "count": 706,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -33210,6 +33210,50 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-47065",
+      "description": "ZDRES-232: resolveProxyClass Not Overridden - acceptMatchers Filter Bypass via java.lang.reflect.Proxy\n\n\nAssessment: Fully addressed.\n\n\nWhen the serialised stream contains a TC_PROXYCLASSDESC (the marker \nfor a java.lang.reflect.Proxy ), JDK\u2019s ObjectInputStream.readProxyDesc()\n is\ndispatched. JDK then calls the default \nObjectInputStream.resolveProxyClass(interfaces) implementation, which \nperforms Class.forName(intf, false, latestUserDefinedLoader()) for EACH \ninterface name and constructs the proxy class \u00e2\u20ac\u201d bypassing the accepted\n classes list .\n\n\nZDRES-233: Class.forName(name, initialize=true, classLoader) in \nreadClassDescriptor Triggers Static Initialiser of Allow-Listed Classes\n\n\nAssessment: Fully addressed.\n\n\nFor ANY class on the allow-list, deserialising a stream that names it triggers the class\u2019s \n (static initialiser) BEFORE any instance is constructed. This means an \nattacker who supplies a class name on the allow-list (e.g., the \ndeveloper wrote accept(\u201ccom.myapp.*\") , attacker supplies \ncom.myapp.SomeClass ) causes <clinit> of SomeClass \u00e2\u20ac\u201d and many \nreal-world classes have side-effecting static initialisers\n\n\nBoth issues have been fixed.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina",
+          "versions": [
+            {
+              "lessThan": "2.2.8",
+              "status": "affected",
+              "version": "2.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "2.1.13",
+              "status": "affected",
+              "version": "2.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "2.0.29",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00046
     },
     {
       "cve_id": "CVE-2026-47323",
