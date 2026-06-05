@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-05T17:01:08+00:00",
+  "generated_at": "2026-06-05T17:45:14+00:00",
   "vendor": "_other",
-  "count": 737,
+  "count": 738,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -35926,6 +35926,55 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-28318",
+      "description": "SolarWinds Serv-U is susceptible to specially crafted POST requests that crash the Serv-U service without authentication using Content-Encoding: deflate. Mitigation steps are provided to secure customer environments in the SolarWinds Trust Center if you are unable to deploy the update",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "solarwinds",
+          "product": "serv-u",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "15.5.4 and previous versions"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00062,
+      "kev": {
+        "cveID": "CVE-2026-28318",
+        "vendorProject": "SolarWinds",
+        "product": "Serv-U",
+        "vulnerabilityName": "SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+        "dateAdded": "2026-06-05",
+        "shortDescription": "SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-19",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
       }
     },
     {
