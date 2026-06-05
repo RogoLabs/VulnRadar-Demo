@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-05T05:46:22+00:00",
+  "generated_at": "2026-06-05T07:48:58+00:00",
   "vendor": "_other",
-  "count": 731,
+  "count": 737,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -46187,7 +46187,7 @@
         "cwe_ids": [
           "CWE-268"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 6
       }
     },
@@ -47816,6 +47816,262 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8874",
+      "description": "Version 3.0.7 of the Securly Chrome Extension downloads JSON files containing crisis alert keywords and filtering rules over unencrypted HTTP via the Fetch API. Other endpoints in the same extension correctly fetch IWF and CIPA data over HTTPS, demonstrating an inconsistent implementation of TLS.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "securly",
+          "product": "securly chrome extension",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.0.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:securly chrome extension",
+        "vendor:securly"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00013,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-319"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8876",
+      "description": "Version 3.0.7 of the Securly Chrome Extension contains hardcoded, plaintext AES passphrases in securly.min.js. These keys decrypt crisis alert keyword data and intervention site data.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "securly",
+          "product": "securly chrome extension",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "3.0.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:securly chrome extension",
+        "vendor:securly"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00017,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8878",
+      "description": "Version 3.0.7 of the Securly Chrome Extension exposes multiple publicly accessible endpoints that allow unauthenticated access to sensitive data. The exposed information consists of SHA-1 hashes that are inadequately obfuscated using a simple Caesar cipher, which can be easily reversed to recover the original hash values and access the protected data.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "securly",
+          "product": "securly chrome extension",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "3.0.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:securly chrome extension",
+        "vendor:securly"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00018,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-326"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8879",
+      "description": "Version 3.0.7 of the Securly Chrome Extension dynamically registers content13.min.js as a content script via chrome.scripting.registerContentScripts() at runtime. This script is NOT declared in manifest.json and bypasses Chrome Web Store static security review. It runs on all URLs and immediately hides all page content, creates a full-page overlay, pauses all videos, and only restores content when the service worker confirms the page passes filtering. If Securly's servers are unreachable, pages remain indefinitely hidden.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "securly",
+          "product": "securly chrome extension",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "3.0.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:securly chrome extension",
+        "vendor:securly"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00018,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-829"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8881",
+      "description": "Version 3.0.7 of the Securly Chrome Extension uses EVP_BytesToKey key derivation with MD5 and a single iteration for AES encryption. MD5 has been broken since 2004 and a single iteration provides no key stretching.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "securly",
+          "product": "securly chrome extension",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "3.0.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:securly chrome extension",
+        "vendor:securly"
+      ],
+      "active_threat": false,
+      "probability_score": 8e-05,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8888",
+      "description": "Version 3.0.7 of the Securly Chrome Extension downloads config.json over HTTP and compiles server-provided patterns as JavaScript regular expressions via new RegExp() without complexity validation. An on-path attacker can inject specific patterns to cause catastrophic backtracking, resulting in denial of service on all browsing.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "securly",
+          "product": "securly chrome extension",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "3.0.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:securly chrome extension",
+        "vendor:securly"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00018,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1333"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {

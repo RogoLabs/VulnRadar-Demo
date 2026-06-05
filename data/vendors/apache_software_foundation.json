@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-05T05:46:22+00:00",
+  "generated_at": "2026-06-05T07:48:58+00:00",
   "vendor": "apache_software_foundation",
-  "count": 706,
+  "count": 707,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -33311,7 +33311,7 @@
         "cwe_ids": [
           "CWE-178"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -33544,6 +33544,49 @@
           "CWE-770"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-50076",
+      "description": "Deserialization of Untrusted Data in the Java replace-resolve path in Apache Fory fory-core Java SDK before 1.1.0 on Java/JVM platforms allows a remote attacker to bypass class registration, TypeChecker, and DisallowedList checks and invoke classpath-present readResolve/readExternal hooks via crafted Fory serialized data.\n\nUsers are recommended to upgrade to version 1.1.0 or later, which fixes this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache fory",
+          "versions": [
+            {
+              "lessThan": "1.1.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache fory",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     }
