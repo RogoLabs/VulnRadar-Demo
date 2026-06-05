@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-05T01:20:59+00:00",
+  "generated_at": "2026-06-05T03:24:56+00:00",
   "vendor": "google",
-  "count": 1857,
+  "count": 1861,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -51651,7 +51651,62 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 6,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-22426",
+      "description": "In many functions of ComputerEngine.java, there is a possible way to access URIs across users due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            },
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00053,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
         "cpe_count": 6,
         "reference_count": 1
       }
@@ -52226,6 +52281,51 @@
         ],
         "cpe_count": 3,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-26418",
+      "description": "In setUserDisclaimerAcknowledged of CarDevicePolicyService.java, there is a possible way to bypass the user dialog when adding an account to a managed device due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "15",
+              "status": "affected"
+            },
+            {
+              "version": "14",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
       }
     },
     {
@@ -60236,7 +60336,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -62021,6 +62121,51 @@
       }
     },
     {
+      "cve_id": "CVE-2026-0009",
+      "description": "In multiple locations, there is a possible tapjacking due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16",
+              "status": "affected"
+            },
+            {
+              "version": "15",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 5e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-0010",
       "description": "In onTransact of IDrmManagerService.cpp, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 8.4,
@@ -62833,7 +62978,7 @@
         "cwe_ids": [
           "CWE-1021"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -62966,7 +63111,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63060,7 +63205,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63094,14 +63239,14 @@
       "active_threat": false,
       "probability_score": 0.00015,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-285"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -63212,6 +63357,47 @@
       }
     },
     {
+      "cve_id": "CVE-2026-0077",
+      "description": "In resumeConfigurationDispatch of ActivityRecord.java, there is a possible background application launch (bal) due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "16-qpr2",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 7e-05,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 3,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-0078",
       "description": "In setGlobalProxy of DevicePolicyManagerService.java, there is a possible desync in persistence due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 7.8,
@@ -63260,7 +63446,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63313,7 +63499,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63366,7 +63552,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63407,7 +63593,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -63460,7 +63646,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63513,7 +63699,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63566,7 +63752,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63619,7 +63805,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63664,7 +63850,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 2,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -63717,7 +63903,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63770,7 +63956,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63823,7 +64009,7 @@
         "cwe_ids": [
           "CWE-273"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -63876,7 +64062,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -65923,7 +66109,7 @@
         "cwe_ids": [
           "CWE-1021"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -65968,7 +66154,7 @@
         "cwe_ids": [
           "CWE-120"
         ],
-        "cpe_count": 2,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
