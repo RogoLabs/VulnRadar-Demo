@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-08T17:21:18+00:00",
+  "generated_at": "2026-06-08T19:07:28+00:00",
   "vendor": "_other",
-  "count": 739,
+  "count": 740,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -46688,6 +46688,56 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42271",
+      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. From version 1.74.2 to before version 1.83.7, two endpoints used to preview an MCP server before saving it \u2014 POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list \u2014 accepted a full server configuration in the request body, including the command, args, and env fields used by the stdio transport. When called with a stdio configuration, the endpoints attempted to connect, which spawned the supplied command as a subprocess on the proxy host with the privileges of the proxy process. The endpoints were gated only by a valid proxy API key, with no role check. Any authenticated user \u2014 including holders of low-privilege internal-user keys \u2014 could therefore run arbitrary commands on the host. This issue has been patched in version 1.83.7.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "berriai",
+          "product": "litellm",
+          "versions": [
+            {
+              "version": ">= 1.74.2, < 1.83.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.04116,
+      "kev": {
+        "cveID": "CVE-2026-42271",
+        "vendorProject": "BerriAI",
+        "product": "LiteLLM",
+        "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
+        "dateAdded": "2026-06-08",
+        "shortDescription": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-22",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77",
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
