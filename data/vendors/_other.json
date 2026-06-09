@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-09T17:10:43+00:00",
+  "generated_at": "2026-06-09T17:53:37+00:00",
   "vendor": "_other",
-  "count": 741,
+  "count": 742,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -47849,6 +47849,92 @@
         ],
         "cpe_count": 2,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-7473",
+      "description": "On affected platforms running Arista EOS where a tunnel decapsulation configuration\u2014such as VXLAN (Virtual Extensible LAN), decap-groups, or a GRE (Generic Routing Encapsulation) tunnel interface\u2014is present, the switch will incorrectly decapsulate and forward other unexpected tunneled packet with a destination IP matching its configured decapsulation IP. This occurs because the switch does not verify the tunnel protocol type, potentially leading to the unexpected processing of non-configured tunnel traffic.\n\n\n\nThis issue has been reported as being exploited in the wild.",
+      "cvss_score": 5.8,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "arista networks",
+          "product": "eos",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.36.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.35.0",
+              "lessThanOrEqual": "4.35",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.34.0",
+              "lessThanOrEqual": "4.34",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.33.0",
+              "lessThanOrEqual": "4.33",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.32.0",
+              "lessThanOrEqual": "4.32",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.31.0",
+              "lessThanOrEqual": "4.31",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "*",
+              "lessThanOrEqual": "4.30",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00029,
+      "kev": {
+        "cveID": "CVE-2026-7473",
+        "vendorProject": "Arista",
+        "product": "Extensible Operating System",
+        "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+        "dateAdded": "2026-06-09",
+        "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1023"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
