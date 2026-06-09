@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-09T01:17:23+00:00",
+  "generated_at": "2026-06-09T03:26:28+00:00",
   "vendor": "_other",
-  "count": 740,
+  "count": 741,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -35587,6 +35587,66 @@
         ],
         "cpe_count": 20,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-50751",
+      "description": "A logic flow weakness in Remote Access and Mobile Access certificate validation in deprecated IKEv1 key exchange allows an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "checkpoint",
+          "product": "quantum security gateway",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "R82.10 with Jumbo Hotfix Take 19 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R82 with Jumbo Hotfix Take 103 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81.20 with Jumbo Hotfix Take 141 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81.10, R81, and R80.40"
+            }
+          ]
+        },
+        {
+          "vendor": "checkpoint",
+          "product": "spark firewalls",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "R80.20.X, R81.10.X, and R82.00.X"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.0001,
+      "kev": {
+        "cveID": "CVE-2026-50751",
+        "vendorProject": "Check Point",
+        "product": "Security Gateway",
+        "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
+        "dateAdded": "2026-06-08",
+        "shortDescription": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-11",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {

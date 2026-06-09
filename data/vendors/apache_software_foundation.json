@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-09T01:17:23+00:00",
+  "generated_at": "2026-06-09T03:26:28+00:00",
   "vendor": "apache_software_foundation",
-  "count": 707,
+  "count": 708,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -33314,6 +33314,38 @@
         "cpe_count": 2,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-47430",
+      "description": "## Summary\n\nThe iOS implementation of `cordova-plugin-inappbrowser` passes the `id` field from a `WKScriptMessage` body to `commandDelegate sendPluginResult:callbackId:` with no format validation (`CDVWKInAppBrowser.m:560\u2013574`). Any web content loaded inside the InAppBrowser can fire any pending Cordova callback in the host app by posting a message whose `id` field is a guessable or enumerated callback identifier. An attack abusing this weakness must be tailored to the specific plugins and callback IDs the host app uses. Though an attacker with knowledge of common Cordova plugin configurations could craft reusable payloads targeting widely-adopted plugins.\n\n\n## Impact\n\nAn unauthenticated remote attacker who controls content displayed in the InAppBrowser \u2014 via a URL the app opens (OAuth redirect, marketing link, deep-link target) or a network interception \u2014 can call `window.webkit.messageHandlers.cordova_iab.postMessage({id: '<victim-callback-id>', d: '...'})` to fire callbacks belonging to any other installed Cordova plugin (Camera, Contacts, File, Geolocation). Cordova callback IDs follow the predictable format `<PluginName><sequential-integer>`, making enumeration feasible. Successful exploitation allows the attacker to spoof plugin results across trust boundaries \u2014 for example, injecting a forged camera approval, a fabricated contacts list, or a crafted file-read response.\n\nThis issue affects Cordova Plugin InAppBrowser: from 3.1.0 through 6.0.0.\n\nUsers are recommended to upgrade to version 6.0.1, which fixes the issue.",
+      "cvss_score": 9.5,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "cordova plugin inappbrowser",
+          "versions": [
+            {
+              "lessThanOrEqual": "6.0.0",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cordova plugin inappbrowser",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00129
     },
     {
       "cve_id": "CVE-2026-48207",
