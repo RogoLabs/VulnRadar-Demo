@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-10T01:21:05+00:00",
+  "generated_at": "2026-06-10T03:23:36+00:00",
   "vendor": "fortinet",
-  "count": 227,
+  "count": 228,
   "items": [
     {
       "cve_id": "CVE-2022-22299",
@@ -15699,11 +15699,47 @@
     },
     {
       "cve_id": "CVE-2026-24858",
-      "description": "An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] vulnerability in Fortinet FortiAnalyzer 7.6.0 through 7.6.5, FortiAnalyzer 7.4.0 through 7.4.9, FortiAnalyzer 7.2.0 through 7.2.11, FortiAnalyzer 7.0.0 through 7.0.15, FortiManager 7.6.0 through 7.6.5, FortiManager 7.4.0 through 7.4.9, FortiManager 7.2.0 through 7.2.11, FortiManager 7.0.0 through 7.0.15, FortiOS 7.6.0 through 7.6.5, FortiOS 7.4.0 through 7.4.10, FortiOS 7.2.0 through 7.2.12, FortiOS 7.0.0 through 7.0.18, FortiProxy 7.6.0 through 7.6.4, FortiProxy 7.4.0 through 7.4.12, FortiProxy 7.2.0 through 7.2.15, FortiProxy 7.0.0 through 7.0.22, FortiWeb 8.0.0 through 8.0.3, FortiWeb 7.6.0 through 7.6.6, FortiWeb 7.4.0 through 7.4.11 may allow an attacker with a FortiCloud account and a registered device to log into other devices registered to other accounts, if FortiCloud SSO authentication is enabled on those devices.",
+      "description": "An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] vulnerability in Fortinet FortiAnalyzer 7.6.0 through 7.6.5, FortiAnalyzer 7.4.0 through 7.4.9, FortiAnalyzer 7.2.0 through 7.2.11, FortiAnalyzer 7.0.0 through 7.0.15, FortiManager 7.6.0 through 7.6.5, FortiManager 7.4.0 through 7.4.9, FortiManager 7.2.0 through 7.2.11, FortiManager 7.0.0 through 7.0.15, FortiNAC-F 7.6.3 through 7.6.5, FortiOS 7.6.0 through 7.6.5, FortiOS 7.4.0 through 7.4.10, FortiOS 7.2.0 through 7.2.12, FortiOS 7.0.0 through 7.0.18, FortiProxy 7.6.0 through 7.6.4, FortiProxy 7.4.0 through 7.4.12, FortiProxy 7.2.0 through 7.2.15, FortiProxy 7.0.0 through 7.0.22, FortiWeb 8.0.0 through 8.0.3, FortiWeb 7.6.0 through 7.6.6, FortiWeb 7.4.0 through 7.4.11 may allow an attacker with a FortiCloud account and a registered device to log into other devices registered to other accounts, if FortiCloud SSO authentication is enabled on those devices.",
       "cvss_score": 9.4,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
       "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortiweb",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "8.0.0",
+              "lessThanOrEqual": "8.0.3",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.6.0",
+              "lessThanOrEqual": "7.6.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.11",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortinac-f",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.6.3",
+              "lessThanOrEqual": "7.6.5",
+              "status": "affected"
+            }
+          ]
+        },
         {
           "vendor": "fortinet",
           "product": "fortios",
@@ -15730,36 +15766,6 @@
               "versionType": "semver",
               "version": "7.0.0",
               "lessThanOrEqual": "7.0.18",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortimanager",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "7.6.0",
-              "lessThanOrEqual": "7.6.5",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "7.4.0",
-              "lessThanOrEqual": "7.4.9",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "7.2.0",
-              "lessThanOrEqual": "7.2.11",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "7.0.0",
-              "lessThanOrEqual": "7.0.15",
               "status": "affected"
             }
           ]
@@ -15826,24 +15832,30 @@
         },
         {
           "vendor": "fortinet",
-          "product": "fortiweb",
+          "product": "fortimanager",
           "versions": [
             {
               "versionType": "semver",
-              "version": "8.0.0",
-              "lessThanOrEqual": "8.0.3",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
               "version": "7.6.0",
-              "lessThanOrEqual": "7.6.6",
+              "lessThanOrEqual": "7.6.5",
               "status": "affected"
             },
             {
               "versionType": "semver",
               "version": "7.4.0",
-              "lessThanOrEqual": "7.4.11",
+              "lessThanOrEqual": "7.4.9",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.11",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.15",
               "status": "affected"
             }
           ]
@@ -15857,6 +15869,7 @@
       "matched_terms": [
         "product:fortianalyzer",
         "product:fortimanager",
+        "product:fortinac-f",
         "product:fortios",
         "product:fortiproxy",
         "product:fortiweb",
@@ -15886,6 +15899,76 @@
         "cpe_count": 21,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2026-25089",
+      "description": "A improper neutralization of special elements used in an os command ('os command injection') vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.5, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox 4.2 all versions, FortiSandbox Cloud 5.0.4 through 5.0.5, FortiSandbox PaaS 5.0.4 through 5.0.5 may allow an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.5",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.0",
+              "lessThanOrEqual": "4.4.8",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.2.1",
+              "lessThanOrEqual": "4.2.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox cloud",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.4",
+              "lessThanOrEqual": "5.0.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox paas",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.4",
+              "lessThanOrEqual": "5.0.5",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortisandbox",
+        "product:fortisandbox cloud",
+        "product:fortisandbox paas",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-26083",
