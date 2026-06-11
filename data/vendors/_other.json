@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-10T23:41:14+00:00",
+  "generated_at": "2026-06-11T01:23:45+00:00",
   "vendor": "_other",
-  "count": 742,
+  "count": 749,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -1333,8 +1333,8 @@
         "cwe_ids": [
           "CWE-565"
         ],
-        "cpe_count": 189,
-        "reference_count": 2
+        "cpe_count": 191,
+        "reference_count": 3
       }
     },
     {
@@ -10915,7 +10915,7 @@
           "CWE-787"
         ],
         "cpe_count": 5,
-        "reference_count": 9
+        "reference_count": 10
       }
     },
     {
@@ -11708,6 +11708,493 @@
         ],
         "cpe_count": 5,
         "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-34180",
+      "description": "Issue summary: Parsing a crafted DER-encoded ASN.1 structure with a primitive\nelement whose content exceeds 2 gigabytes in length may cause a heap buffer\nover-read on 64-bit Unix and Unix-like platforms.\n\nImpact summary: The heap buffer over-read may crash the application (Denial of\nService) or to load into the decoded ASN.1 object contents of memory beyond the\nend of the input buffer.  More typically such ASN.1 elements would instead be\ntruncated.\n\nAn integer truncation in OpenSSL's ASN.1 decoder causes the content length of\nan ASN.1 primitive element to be mishandled when it exceeds 2 gigabytes. In the\nworst case the truncated length is treated as a request to scan the binary\ncontent for a terminating zero byte, possibly causing OpenSSL to read either\nless than or beyond the end of the allocated buffer.\n\nApplications that pass attacker-supplied data to d2i_X509(), d2i_PKCS7(), or\nany other d2i_* decoding function are affected. OpenSSL's own command-line\ntools are not vulnerable, as data read through the BIO layer is checked before\nit reaches the affected code. The issue only affects 64-bit Unix and Unix-like\nplatforms; 32-bit platforms and 64-bit Windows are not affected.\n\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by this issue,\nas the affected code is outside the OpenSSL FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.7",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.4.6",
+              "status": "affected",
+              "version": "3.4.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.21",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1zh",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zq",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00059,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42764",
+      "description": "Issue summary: Receiving a QUIC initial packet with an invalid token may\ntrigger a NULL pointer dereference in the OpenSSL QUIC server with\naddress validation disabled.\n\nImpact summary: NULL pointer dereference typically causes abnormal termination\nof the affected QUIC server process and a Denial of Service.\n\nIf the address validation is disabled in the OpenSSL QUIC server\nimplementation, an attacker can crash the server by sending an initial\npacket with an invalid or expired token.\n\nBy default, the client address validation is enabled in the OpenSSL QUIC server\nimplementation, which makes the default configuration not vulnerable\nto this issue. However if the SSL_LISTENER_FLAG_NO_VALIDATE is used with\nthe SSL_new_listener() call, the address validation is disabled making the\nvulnerable code reachable.\n\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.7",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00042,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42765",
+      "description": "Issue summary: When a partial-chain certificate verification is enabled\ntogether with OCSP response checking for the whole chain, a NULL dereference\nwill happen if the verified chain does not have a self-signed trusted anchor,\ncrashing the process.\n\nImpact summary: A NULL pointer dereference can trigger a crash which leads to a\nDenial of Service for an application.\n\nWhen performing OCSP response checking for certificates in the verification\nchain, the code always tries to access the next certificate as the issuer.\nThere is a check for a self-signed certificate. However with the partial\nchain verification enabled when the chain does not have a self-signed trusted\nanchor, the issuer will be NULL for the last certificate in the chain. A NULL\npointer dereference then happens.\n\nThis issue affects only applications which enable both OCSP verification\nof the certificate chain (X509_V_FLAG_OCSP_RESP_CHECK_ALL) and partial\nchain verification (X509_V_FLAG_PARTIAL_CHAIN) in the certificate\nverification. Both flags are disabled by default. For that reason, we have\nassigned Low severity to the issue.\n\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00033,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45445",
+      "description": "Issue summary: When an application drives an AES-OCB context through the\npublic EVP_Cipher() one-shot interface, the application-supplied\ninitialisation vector (IV) is silently discarded.\n\nImpact summary: Every message encrypted under the same key uses the\nsame effective nonce regardless of the IV supplied by the caller,\nresulting in (key, nonce) reuse and loss of confidentiality.  If the\nsame code path is used to compute the authentication tag, the tag\ndepends only on the (key, IV) pair and not on the plaintext or\nciphertext, allowing universal forgery of arbitrary ciphertext from a\nsingle captured message.\n\nOpenSSL provides two ways to drive a cipher: the documented streaming\ninterface (EVP_CipherUpdate / EVP_CipherFinal_ex) and a lower-level\none-shot, EVP_Cipher(), whose documentation explicitly recommends\nagainst use by applications in favour of EVP_CipherUpdate() and\nEVP_CipherFinal_ex().  The OCB provider's streaming handler flushes\nthe application-supplied IV into the OCB context before processing\ndata; the one-shot handler did not.  Every call to EVP_Cipher() on an\nAES-OCB context therefore ran with the all-zero key-derived offset\nstate left by cipher initialisation, regardless of the caller's IV.\n\nIf EVP_EncryptFinal_ex() is subsequently used to obtain the\nauthentication tag, the deferred IV setup runs at that point and\nclears the running checksum that should have been accumulated over the\nplaintext.  The resulting tag is a function of (key, IV) only and\nverifies against any ciphertext produced under the same (key, IV)\npair.\n\nThe OpenSSL SSL/TLS implementation is not affected: AES-OCB is not a\nTLS cipher suite, and libssl does not call EVP_Cipher() in any case.\nApplications that drive AES-OCB through the documented streaming AEAD\nAPI (EVP_CipherUpdate / EVP_CipherFinal_ex) are not affected.  Only\napplications that combine the AES-OCB cipher with the EVP_Cipher()\none-shot API are vulnerable.\n\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by\nthis issue, as AES-OCB is outside the OpenSSL FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.7",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.4.6",
+              "status": "affected",
+              "version": "3.4.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.21",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0002,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-325"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45447",
+      "description": "Issue summary: A specially crafted PKCS#7 or S/MIME signed message could\ntrigger a use-after-free during PKCS#7 signature verification.\n\nImpact summary: A use-after-free may result in process crashes, heap\ncorruption, or potentially remote code execution.\n\nWhen processing a PKCS#7 or S/MIME signed message, if the SignedData\ndigestAlgorithms field is present as an empty ASN.1 SET, OpenSSL may\nincorrectly free a caller-owned BIO during PKCS7_verify(). A subsequent\nuse of the BIO by the calling application results in a use-after-free\ncondition.\n\nIn the common case this occurs when the application later calls\nBIO_free() on the BIO originally passed to PKCS7_verify(). Depending\non allocator behavior and application-specific BIO usage patterns, this\nmay result in a crash or other memory corruption. In some application\ncontexts this may potentially be exploitable for remote code execution.\n\nApplications that process PKCS#7 or S/MIME signed messages using OpenSSL\nPKCS#7 APIs may be affected. Applications using the CMS APIs for this\nprocessing are not affected.\n\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.7",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.4.6",
+              "status": "affected",
+              "version": "3.4.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.21",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1zh",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zq",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00116,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-7383",
+      "description": "Issue summary: A signed integer overflow when sizing the destination\nbuffer for Unicode output in ASN1_mbstring_ncopy() can lead to a heap\nbuffer overflow.\n\nImpact summary: A heap buffer overflow may lead to a crash or possibly\nattacker controlled code execution or other undefined behaviour.\n\nIn ASN1_mbstring_copy() and ASN1_mbstring_ncopy() the destination\nsize for Unicode output is computed in a signed int: by left shift\nof the input character count for BMPSTRING (UTF-16) and\nUNIVERSALSTRING (UTF-32), and by summing per-character byte counts\nfor UTF8STRING. The calculation overflows when the input reaches\naround 2^30 characters. In the worst case (UNIVERSALSTRING at 2^30\ncharacters) the size wraps to zero, OPENSSL_malloc(1) is called, and\nthe subsequent character copy writes several gigabytes past the\none-byte allocation.\n\nX.509 certificate processing routes through ASN1_STRING_set_by_NID(),\nwhose DIRSTRING_TYPE mask excludes UNIVERSALSTRING and whose per-NID\nsize limits cap the input length; no network protocol or\ncertificate-handling path in OpenSSL exercises the overflow.\nTriggering the bug requires an application that calls\nASN1_mbstring_copy() or ASN1_mbstring_ncopy() directly, or registers\na custom string type via ASN1_STRING_TABLE_add(), with\nattacker-controlled input on the order of half a gigabyte or more.\nFor these reasons this issue was assigned Low severity.\n\nThe FIPS modules in 4.0, 3.6, 3.5, 3.4 and 3.0 are not affected by\nthis issue, as the affected code is outside the OpenSSL FIPS module\nboundary.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.7",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.4.6",
+              "status": "affected",
+              "version": "3.4.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.21",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1zh",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zq",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00067,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-9076",
+      "description": "Issue summary: When CMS password-based decryption (RFC 3211 / PWRI key unwrap)\nprocesses attacker-supplied CMS data, an attacker-chosen stream-mode KEK\ncipher can trigger a heap out-of-bounds read in kek_unwrap_key().\n\nImpact summary: A heap buffer over-read may trigger a crash which leads to\nDenial of Service for an application if the input buffer ends at a memory\npage boundary and the following page is unmapped. There is no information\ndisclosure as the over-read bytes are not revealed to the attacker.\n\nThe key unwrapping function performs a check-byte test as specified in the\nRFC that reads 7 bytes from a heap allocation that is based on the wrapped\nkey length from the message. There is a minimum length check based on the\nblock length of the wrapping cipher. However the cipher is selected from\nan OID carried in the attacker's PWRI keyEncryptionAlgorithm with no\nrequirement that the cipher be a block cipher. When an attacker selects\na stream-mode cipher the guard will be ineffective and the allocated buffer\ncontaining the unwrapped key can be too small to fit the check-bytes\nspecified in the RFC and a buffer over-read can happen.\n\nApplications calling CMS_decrypt() or CMS_decrypt_set1_password()\n(equivalently openssl cms -decrypt -pwri_password ...) on untrusted CMS\ndata are vulnerable to this issue. No password knowledge is required: the\nover-read happens during the unwrap attempt before any authentication\nsucceeds.\n\nThe over-read is limited to a few bytes and is not written to output, so\nthere is no information disclosure. Triggering a crash requires the\nallocation to border unmapped memory, which is unlikely with the normal\nallocator.\n\nThe FIPS modules are not affected by this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.3",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.7",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.4.6",
+              "status": "affected",
+              "version": "3.4.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.21",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1zh",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zq",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00096,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
       }
     },
     {
@@ -35656,7 +36143,7 @@
         "cwe_ids": [
           "CWE-287"
         ],
-        "cpe_count": 0,
+        "cpe_count": 93,
         "reference_count": 3
       }
     },
@@ -47933,8 +48420,8 @@
         "cwe_ids": [
           "CWE-1023"
         ],
-        "cpe_count": 0,
-        "reference_count": 2
+        "cpe_count": 102,
+        "reference_count": 3
       }
     },
     {

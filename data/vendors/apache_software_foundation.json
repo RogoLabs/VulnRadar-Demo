@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-10T23:41:14+00:00",
+  "generated_at": "2026-06-11T01:23:45+00:00",
   "vendor": "apache_software_foundation",
-  "count": 714,
+  "count": 718,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28607,6 +28607,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-29167",
+      "description": "Use After Free vulnerability in Apache HTTP Server with mod_ldap in per-directory configuration\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.\n\nUsers are recommended to upgrade to version 2.4.68, which fixes the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.67",
+              "status": "affected",
+              "version": "2.4.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00113,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-29168",
       "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's\u00a0 mod_md via OCSP response data.\n\nThis issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes the issue.",
       "cvss_score": 7.3,
@@ -29664,7 +29707,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -29707,7 +29750,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -32040,6 +32083,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-42535",
+      "description": "A path handling issue in mod_dav_fs in Apache 2.4.67 and earlier\u00a0allows a WebDAV content author to directly manipulate trusted DAV property databases, potentially causing child process crashes.\n\nUsers are recommended to upgrade to version 2.4.68, which fixes this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.67",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00308,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-668"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-42536",
       "description": "Heap-based Buffer Overflow vulnerability in Apache HTTP Server with\u00a0mod_xml2enc, xml2StartParse, and untrusted content\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.67.\n\nUsers are recommended to upgrade to version 2.4.68, which fixes the issue.",
       "cvss_score": 7.5,
@@ -32078,7 +32164,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -32902,6 +32988,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-126"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-44186",
+      "description": "Loop with Unreachable Exit Condition ('Infinite Loop') vulnerability in the mod_proxy_ftp module in Apache HTTP Server with an attacker controlled backend FTP server.\n\nThis issue affects undefined: from 2.4.0 through 2.4.67.\n\nUsers are recommended to upgrade to version 2.4.68, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.67",
+              "status": "affected",
+              "version": "2.4.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00037,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-835"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -33846,6 +33975,49 @@
         ],
         "cpe_count": 1,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-49975",
+      "description": "Memory Allocation with Excessive Size Value vulnerability in Apache HTTP Server's mod_http leads to denial of service via malicious HTTP requests.\n\nThis issue affects Apache HTTP Server: from 2.4.17 through 2.4.67.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.67",
+              "status": "affected",
+              "version": "2.4.17",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00041,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
