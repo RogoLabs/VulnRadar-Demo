@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-11T17:29:56+00:00`
+Generated: `2026-06-11T19:19:11+00:00`
 
 ## Executive Summary
 
@@ -40,7 +40,7 @@ Top critical items:
 
 - Total items: **12665**
 - Watchlist hits: **12287**
-- CISA KEVs: **707**
+- CISA KEVs: **708**
 - Exploit Intel (PoC): **781**
 - Exploit Intel + Watchlist (CRITICAL): **403**
 
@@ -193,6 +193,7 @@ Top critical items:
 | [CVE-2024-20353](https://www.cve.org/CVERecord?id=CVE-2024-20353) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-01 | 0.188 | 8.6 | ✅ | A vulnerability in the management and VPN web servers for Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software co… |
 | [CVE-2025-43300](https://www.cve.org/CVERecord?id=CVE-2025-43300) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-11 | 0.044 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.8.5 and iPadOS 15.8.5, iOS 16.7.12 and iPadOS 16.7.12, … |
 | [CVE-2024-21410](https://www.cve.org/CVERecord?id=CVE-2024-21410) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-07 | 0.061 | 9.8 | ✅ | Microsoft Exchange Server Elevation of Privilege Vulnerability |
+| [CVE-2026-10520](https://www.cve.org/CVERecord?id=CVE-2026-10520) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-14 | 0.033 | 10.0 | ✅ | An OS Command Injection vulnerability in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated user to achieve root-le… |
 | [CVE-2025-59718](https://www.cve.org/CVERecord?id=CVE-2025-59718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-23 | 0.121 | 9.1 | ✅ | A improper verification of cryptographic signature vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS 7.2.0 through 7.… |
 | [CVE-2024-5274](https://www.cve.org/CVERecord?id=CVE-2024-5274) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-18 | 0.066 | 9.6 | ✅ | Type Confusion in V8 in Google Chrome prior to 125.0.6422.112 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
 | [CVE-2022-20703](https://www.cve.org/CVERecord?id=CVE-2022-20703) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.020 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
@@ -247,7 +248,6 @@ Top critical items:
 | [CVE-2026-3909](https://www.cve.org/CVERecord?id=CVE-2026-3909) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-27 | 0.005 | 8.8 | ✅ | Out of bounds write in Skia in Google Chrome prior to 146.0.7680.75 allowed a remote attacker to perform out of bounds memory access via a crafted HTML page. (… |
 | [CVE-2023-32435](https://www.cve.org/CVERecord?id=CVE-2023-32435) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.004 | 8.8 | ✅ | A memory corruption issue was addressed with improved state management. This issue is fixed in macOS Ventura 13.3, Safari 16.4, iOS 16.4 and iPadOS 16.4, iOS 1… |
 | [CVE-2025-6558](https://www.cve.org/CVERecord?id=CVE-2025-6558) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-12 | 0.003 | 8.8 | ✅ | Insufficient validation of untrusted input in ANGLE and GPU in Google Chrome prior to 138.0.7204.157 allowed a remote attacker to potentially perform a sandbox… |
-| [CVE-2025-48543](https://www.cve.org/CVERecord?id=CVE-2025-48543) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-25 | 0.003 | 8.8 | ✅ | In multiple locations, there is a possible way to escape chrome sandbox to attack android system_server due to a use after free. This could lead to local escal… |
 
 ## Recent Changes (Last 7 Days)
 
