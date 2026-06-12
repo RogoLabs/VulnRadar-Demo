@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-12T01:27:36+00:00",
+  "generated_at": "2026-06-12T03:27:04+00:00",
   "vendor": "_other",
-  "count": 688,
+  "count": 690,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -18912,6 +18912,48 @@
       "probability_score": 0.00095
     },
     {
+      "cve_id": "CVE-2026-7870",
+      "description": "IBM i 7.6, 7.5, 7.4, and 7.3 could allow a user to gain elevated privileges due to an unqualified library call. A malicious actor could cause user-controlled code to run with administrator privilege.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ibm",
+          "product": "i",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.6"
+            },
+            {
+              "status": "affected",
+              "version": "7.5"
+            },
+            {
+              "status": "affected",
+              "version": "7.4"
+            },
+            {
+              "status": "affected",
+              "version": "7.3"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:i",
+        "vendor:ibm"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2022-43507",
       "description": "Improper buffer restrictions in the Intel(R) QAT Engine for OpenSSL before version 0.6.16 may allow a privileged user to potentially enable escalation of privilege via network access.",
       "cvss_score": 7.5,
@@ -33307,6 +33349,38 @@
       ],
       "active_threat": false,
       "probability_score": 0.00054
+    },
+    {
+      "cve_id": "CVE-2026-4764",
+      "description": "A Missing Authorization vulnerability in the playbook import functionality in Dialogflow CX on Google Cloud Platform allows an authenticated user with specific roles to escalate privileges and potentially take over a GCP project using a maliciously crafted playbook import.\n\n\nThis vulnerability was patched on 15 March 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "dialogflow cx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-03-15",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:dialogflow cx",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00038
     },
     {
       "cve_id": "CVE-2026-4810",

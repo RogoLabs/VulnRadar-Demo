@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-12T01:27:37+00:00`
+Generated: `2026-06-12T03:27:05+00:00`
 
 ## Executive Summary
 
@@ -38,8 +38,8 @@ Top critical items:
 
 ## Summary
 
-- Total items: **7621**
-- Watchlist hits: **7243**
+- Total items: **7623**
+- Watchlist hits: **7245**
 - CISA KEVs: **708**
 - Exploit Intel (PoC): **757**
 - Exploit Intel + Watchlist (CRITICAL): **379**
@@ -253,6 +253,12 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Jun 12 | [CVE-2022-26758](https://www.cve.org/CVERecord?id=CVE-2022-26758) | 🆕 New |
+| Jun 12 | [CVE-2026-1220](https://www.cve.org/CVERecord?id=CVE-2026-1220) | 🆕 New |
+| Jun 12 | [CVE-2026-46180](https://www.cve.org/CVERecord?id=CVE-2026-46180) | 🆕 New |
+| Jun 12 | [CVE-2026-46183](https://www.cve.org/CVERecord?id=CVE-2026-46183) | 🆕 New |
+| Jun 12 | [CVE-2026-46189](https://www.cve.org/CVERecord?id=CVE-2026-46189) | 🆕 New |
+| Jun 12 | [CVE-2026-46191](https://www.cve.org/CVERecord?id=CVE-2026-46191) | 🆕 New |
 | Jun 11 | [CVE-2026-34180](https://www.cve.org/CVERecord?id=CVE-2026-34180) | 🆕 New |
 | Jun 11 | [CVE-2026-42764](https://www.cve.org/CVERecord?id=CVE-2026-42764) | 🆕 New |
 | Jun 11 | [CVE-2026-42765](https://www.cve.org/CVERecord?id=CVE-2026-42765) | 🆕 New |
@@ -297,10 +303,4 @@ Top critical items:
 | Jun 11 | [CVE-2026-8863](https://www.cve.org/CVERecord?id=CVE-2026-8863) | 🆕 New |
 | Jun 10 | [CVE-2026-25089](https://www.cve.org/CVERecord?id=CVE-2026-25089) | 🆕 New |
 | Jun 10 | [CVE-2026-10520](https://www.cve.org/CVERecord?id=CVE-2026-10520) | 🔴 In CISA KEV |
-| Jun 10 | [CVE-2026-10523](https://www.cve.org/CVERecord?id=CVE-2026-10523) | 🆕 New |
-| Jun 10 | [CVE-2026-10727](https://www.cve.org/CVERecord?id=CVE-2026-10727) | 🆕 New |
-| Jun 10 | [CVE-2026-26142](https://www.cve.org/CVERecord?id=CVE-2026-26142) | 🆕 New |
-| Jun 10 | [CVE-2026-32193](https://www.cve.org/CVERecord?id=CVE-2026-32193) | 🆕 New |
-| Jun 10 | [CVE-2026-33828](https://www.cve.org/CVERecord?id=CVE-2026-33828) | 🆕 New |
-| Jun 10 | [CVE-2026-34335](https://www.cve.org/CVERecord?id=CVE-2026-34335) | 🆕 New |
-| ... | | _and 451 more_ |
+| ... | | _and 449 more_ |
