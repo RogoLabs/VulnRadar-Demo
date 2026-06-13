@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-13T05:44:09+00:00",
+  "generated_at": "2026-06-13T07:36:33+00:00",
   "vendor": "apache_software_foundation",
-  "count": 92,
+  "count": 97,
   "items": [
     {
       "cve_id": "CVE-2022-24112",
@@ -3517,6 +3517,49 @@
       "probability_score": 0.0006
     },
     {
+      "cve_id": "CVE-2026-47342",
+      "description": "A privilege escalation vulnerability in Apache OFBiz allows a low-privileged authenticated user to obtain higher privileges\n\n\n\nThis issue affects Apache OFBiz: before 24.09.07.\n\nUsers are recommended to upgrade to version 24.09.07, which fixes the issue.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "lessThan": "24.09.07",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00017,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-285"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-47430",
       "description": "## Summary\n\nThe iOS implementation of `cordova-plugin-inappbrowser` passes the `id` field from a `WKScriptMessage` body to `commandDelegate sendPluginResult:callbackId:` with no format validation (`CDVWKInAppBrowser.m:560\u2013574`). Any web content loaded inside the InAppBrowser can fire any pending Cordova callback in the host app by posting a message whose `id` field is a guessable or enumerated callback identifier. An attack abusing this weakness must be tailored to the specific plugins and callback IDs the host app uses. Though an attacker with knowledge of common Cordova plugin configurations could craft reusable payloads targeting widely-adopted plugins.\n\n\n## Impact\n\nAn unauthenticated remote attacker who controls content displayed in the InAppBrowser \u2014 via a URL the app opens (OAuth redirect, marketing link, deep-link target) or a network interception \u2014 can call `window.webkit.messageHandlers.cordova_iab.postMessage({id: '<victim-callback-id>', d: '...'})` to fire callbacks belonging to any other installed Cordova plugin (Camera, Contacts, File, Geolocation). Cordova callback IDs follow the predictable format `<PluginName><sequential-integer>`, making enumeration feasible. Successful exploitation allows the attacker to spoof plugin results across trust boundaries \u2014 for example, injecting a forged camera approval, a fabricated contacts list, or a crafted file-read response.\n\nThis issue affects Cordova Plugin InAppBrowser: from 3.1.0 through 6.0.0.\n\nUsers are recommended to upgrade to version 6.0.1, which fixes the issue.",
       "cvss_score": 9.5,
@@ -3625,7 +3668,203 @@
         "cwe_ids": [
           "CWE-94"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-50631",
+      "description": "A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when 'recycleRefreshTokens' is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cxf",
+          "versions": [
+            {
+              "lessThan": "4.2.2",
+              "status": "affected",
+              "version": "4.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cxf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00017,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-367"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-50632",
+      "description": "A further incomplete fix for\u00a0a previous advisory CVE-2026-44417\u00a0(Untrusted JMS configuration can lead to RCE) for Apache CXF has been identified, which can allow code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cxf",
+          "versions": [
+            {
+              "lessThan": "4.2.2",
+              "status": "affected",
+              "version": "4.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cxf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00039,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-50633",
+      "description": "A JNDI Injection vulnerability has been discovered in Apache CXF's JCA integration module, which can allow for code execution, if an attacker is able to manipulate the JCA deployment descriptor (ra.xml) or runtime activation parameters.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cxf",
+          "versions": [
+            {
+              "lessThan": "4.2.2",
+              "status": "affected",
+              "version": "4.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cxf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00039,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-50645",
+      "description": "There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fix this issue by imposing a maximum default of 500 attachments per message.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache cxf",
+          "versions": [
+            {
+              "lessThan": "4.2.2",
+              "status": "affected",
+              "version": "4.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache cxf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00018,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 2,
         "reference_count": 2
       }
     }
