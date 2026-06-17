@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-17T01:27:40+00:00",
+  "generated_at": "2026-06-17T03:26:17+00:00",
   "vendor": "linux",
-  "count": 2870,
+  "count": 2872,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -83244,7 +83244,7 @@
         "cwe_ids": [
           "CWE-415"
         ],
-        "cpe_count": 2,
+        "cpe_count": 3,
         "reference_count": 4
       }
     },
@@ -149976,7 +149976,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 3,
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -150141,7 +150141,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 3,
+        "cpe_count": 7,
         "reference_count": 9
       }
     },
@@ -150302,7 +150302,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 6,
+        "cpe_count": 9,
         "reference_count": 11
       }
     },
@@ -151159,7 +151159,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 4,
+        "cpe_count": 6,
         "reference_count": 6
       }
     },
@@ -151284,7 +151284,7 @@
         "cwe_ids": [
           "CWE-415"
         ],
-        "cpe_count": 3,
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -151397,7 +151397,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 3,
+        "cpe_count": 5,
         "reference_count": 6
       }
     },
@@ -151659,7 +151659,7 @@
         "cwe_ids": [
           "CWE-120"
         ],
-        "cpe_count": 3,
+        "cpe_count": 8,
         "reference_count": 10
       }
     },
@@ -152082,7 +152082,7 @@
         "cwe_ids": [
           "CWE-129"
         ],
-        "cpe_count": 6,
+        "cpe_count": 9,
         "reference_count": 11
       }
     },
@@ -324155,7 +324155,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -324229,9 +324229,159 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 1,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45946",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\npower: supply: ab8500: Fix use-after-free in power_supply_changed()\n\nUsing the `devm_` variant for requesting IRQ _before_ the `devm_`\nvariant for allocating/registering the `power_supply` handle, means that\nthe `power_supply` handle will be deallocated/unregistered _before_ the\ninterrupt handler (since `devm_` naturally deallocates in reverse\nallocation order). This means that during removal, there is a race\ncondition where an interrupt can fire just _after_ the `power_supply`\nhandle has been freed, *but* just _before_ the corresponding\nunregistration of the IRQ handler has run.\n\nThis will lead to the IRQ handler calling `power_supply_changed()` with\na freed `power_supply` handle. Which usually crashes the system or\notherwise silently corrupts the memory...\n\nNote that there is a similar situation which can also happen during\n`probe()`; the possibility of an interrupt firing _before_ registering\nthe `power_supply` handle. This would then lead to the nasty situation\nof using the `power_supply` handle *uninitialized* in\n`power_supply_changed()`.\n\nCommit 1c1f13a006ed (\"power: supply: ab8500: Move to componentized\nbinding\") introduced this issue during a refactorization. Fix this racy\nuse-after-free by making sure the IRQ is requested _after_ the\nregistration of the `power_supply` handle.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "43cbb78ee047b9b12d096d40e3be265969d4c1f8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "551672981fe227122258a25a385a05f5c0746ad6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "f50433f2603def08b21a4bf2fd238687fb5cbde9",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "847eeb6c0efcd76c7def73857cf798a4fcd8f79b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "709db4b476e254579d9c48ec34d397a41ca0c407",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "46dbda27b028d78087667e8280966b99cec015ca",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c1f13a006ed0d71bb5664c8b7e3e77a28da3beb",
+              "lessThan": "c4af8a98bb52825a5331ae1d0604c0ea6956ba4b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "341db343768bc44f3512facc464021730d64071c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5.13.4",
+              "lessThan": "5.14",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.14",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.14",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.202",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.165",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.128",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.75",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.14",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.4",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00159,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 6,
+        "reference_count": 7
       }
     },
     {
@@ -324316,8 +324466,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -324404,7 +324556,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -324538,9 +324690,124 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45957",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nrcu: Fix rcu_read_unlock() deadloop due to softirq\n\nCommit 5f5fa7ea89dc (\"rcu: Don't use negative nesting depth in\n__rcu_read_unlock()\") removes the recursion-protection code from\n__rcu_read_unlock(). Therefore, we could invoke the deadloop in\nraise_softirq_irqoff() with ftrace enabled as follows:\n\nWARNING: CPU: 0 PID: 0 at kernel/trace/trace.c:3021 __ftrace_trace_stack.constprop.0+0x172/0x180\nModules linked in: my_irq_work(O)\nCPU: 0 UID: 0 PID: 0 Comm: swapper/0 Tainted: G O 6.18.0-rc7-dirty #23 PREEMPT(full)\nTainted: [O]=OOT_MODULE\nHardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.15.0-1 04/01/2014\nRIP: 0010:__ftrace_trace_stack.constprop.0+0x172/0x180\nRSP: 0018:ffffc900000034a8 EFLAGS: 00010002\nRAX: 0000000000000000 RBX: 0000000000000004 RCX: 0000000000000000\nRDX: 0000000000000003 RSI: ffffffff826d7b87 RDI: ffffffff826e9329\nRBP: 0000000000090009 R08: 0000000000000005 R09: ffffffff82afbc4c\nR10: 0000000000000008 R11: 0000000000011d7a R12: 0000000000000000\nR13: ffff888003874100 R14: 0000000000000003 R15: ffff8880038c1054\nFS:  0000000000000000(0000) GS:ffff8880fa8ea000(0000) knlGS:0000000000000000\nCS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\nCR2: 000055b31fa7f540 CR3: 00000000078f4005 CR4: 0000000000770ef0\nPKRU: 55555554\nCall Trace:\n <IRQ>\n trace_buffer_unlock_commit_regs+0x6d/0x220\n trace_event_buffer_commit+0x5c/0x260\n trace_event_raw_event_softirq+0x47/0x80\n raise_softirq_irqoff+0x6e/0xa0\n rcu_read_unlock_special+0xb1/0x160\n unwind_next_frame+0x203/0x9b0\n __unwind_start+0x15d/0x1c0\n arch_stack_walk+0x62/0xf0\n stack_trace_save+0x48/0x70\n __ftrace_trace_stack.constprop.0+0x144/0x180\n trace_buffer_unlock_commit_regs+0x6d/0x220\n trace_event_buffer_commit+0x5c/0x260\n trace_event_raw_event_softirq+0x47/0x80\n raise_softirq_irqoff+0x6e/0xa0\n rcu_read_unlock_special+0xb1/0x160\n unwind_next_frame+0x203/0x9b0\n __unwind_start+0x15d/0x1c0\n arch_stack_walk+0x62/0xf0\n stack_trace_save+0x48/0x70\n __ftrace_trace_stack.constprop.0+0x144/0x180\n trace_buffer_unlock_commit_regs+0x6d/0x220\n trace_event_buffer_commit+0x5c/0x260\n trace_event_raw_event_softirq+0x47/0x80\n raise_softirq_irqoff+0x6e/0xa0\n rcu_read_unlock_special+0xb1/0x160\n unwind_next_frame+0x203/0x9b0\n __unwind_start+0x15d/0x1c0\n arch_stack_walk+0x62/0xf0\n stack_trace_save+0x48/0x70\n __ftrace_trace_stack.constprop.0+0x144/0x180\n trace_buffer_unlock_commit_regs+0x6d/0x220\n trace_event_buffer_commit+0x5c/0x260\n trace_event_raw_event_softirq+0x47/0x80\n raise_softirq_irqoff+0x6e/0xa0\n rcu_read_unlock_special+0xb1/0x160\n __is_insn_slot_addr+0x54/0x70\n kernel_text_address+0x48/0xc0\n __kernel_text_address+0xd/0x40\n unwind_get_return_address+0x1e/0x40\n arch_stack_walk+0x9c/0xf0\n stack_trace_save+0x48/0x70\n __ftrace_trace_stack.constprop.0+0x144/0x180\n trace_buffer_unlock_commit_regs+0x6d/0x220\n trace_event_buffer_commit+0x5c/0x260\n trace_event_raw_event_softirq+0x47/0x80\n __raise_softirq_irqoff+0x61/0x80\n __flush_smp_call_function_queue+0x115/0x420\n __sysvec_call_function_single+0x17/0xb0\n sysvec_call_function_single+0x8c/0xc0\n </IRQ>\n\nCommit b41642c87716 (\"rcu: Fix rcu_read_unlock() deadloop due to IRQ work\")\nfixed the infinite loop in rcu_read_unlock_special() for IRQ work by\nsetting a flag before calling irq_work_queue_on(). We fix this issue by\nsetting the same flag before calling raise_softirq_irqoff() and rename the\nflag to defer_qs_pending for more common.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5f5fa7ea89dc82d34ed458f4d7a8634e8e9eefce",
+              "lessThan": "979c708e6c9d7fc461daef2dad8b45f22e23464c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5f5fa7ea89dc82d34ed458f4d7a8634e8e9eefce",
+              "lessThan": "1f16679a5aa60238466ce339c35f5e82ece60337",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5f5fa7ea89dc82d34ed458f4d7a8634e8e9eefce",
+              "lessThan": "4a4a6e12c9c829be3f74b7206fa8640fc4e1c566",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5f5fa7ea89dc82d34ed458f4d7a8634e8e9eefce",
+              "lessThan": "c2932e16d8c354404b17123e64daa8e33191e145",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5f5fa7ea89dc82d34ed458f4d7a8634e8e9eefce",
+              "lessThan": "d41e37f26b3157b3f1d10223863519a943aa239b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.8",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.8",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.128",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.75",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.14",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.4",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00125,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 4,
+        "reference_count": 5
       }
     },
     {
@@ -324685,8 +324952,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -324772,8 +325041,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -324919,8 +325190,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -325066,8 +325339,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 6,
         "reference_count": 6
       }
     },
@@ -325164,8 +325439,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -325311,8 +325588,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -327905,8 +328184,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
