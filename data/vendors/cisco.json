@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-18T01:30:15+00:00",
+  "generated_at": "2026-06-18T03:26:41+00:00",
   "vendor": "cisco",
-  "count": 420,
+  "count": 422,
   "items": [
     {
       "cve_id": "CVE-2022-20622",
@@ -270607,6 +270607,235 @@
       }
     },
     {
+      "cve_id": "CVE-2026-20181",
+      "description": "A vulnerability in Cisco ISE and ISE-PIC could allow an authenticated, remote attacker to execute arbitrary commands on the underlying operating system of an affected device. To exploit this vulnerability, the attacker must have valid administrative credentials.\r\n\r\nThis vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. A successful exploit could allow the attacker to obtain user-level access to the underlying operating system and then elevate privileges to root. In single-node deployments, successful exploitation of this vulnerability could cause the affected ISE node to become unavailable, resulting in a denial of service (DoS) condition. In that condition, endpoints that have not already authenticated would be unable to access the network until the node is restored.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco identity services engine software",
+          "versions": [
+            {
+              "version": "3.1.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p1",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p3",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p2",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p4",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p5",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p1",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p6",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p2",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p7",
+              "status": "affected"
+            },
+            {
+              "version": "3.3.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p3",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p4",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p8",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p5",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p6",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p9",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 2",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 1",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 3",
+              "status": "affected"
+            },
+            {
+              "version": "3.4.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.2.0 p7",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 4",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 1",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p10",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 5",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 6",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 2",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 7",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 3",
+              "status": "affected"
+            },
+            {
+              "version": "3.5.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 4",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 8",
+              "status": "affected"
+            },
+            {
+              "version": "3.2 Patch 8",
+              "status": "affected"
+            },
+            {
+              "version": "3.5 Patch 1",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 9",
+              "status": "affected"
+            },
+            {
+              "version": "3.2 Patch 9",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 5",
+              "status": "affected"
+            },
+            {
+              "version": "3.5 Patch 3",
+              "status": "affected"
+            },
+            {
+              "version": "3.5 Patch 2",
+              "status": "affected"
+            },
+            {
+              "version": "3.3 Patch 10",
+              "status": "affected"
+            },
+            {
+              "version": "3.2 Patch 10",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0 p11",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "cisco",
+          "product": "cisco ise passive identity connector",
+          "versions": [
+            {
+              "version": "3.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.3.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.4.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.5.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco identity services engine software",
+        "product:cisco ise passive identity connector",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-20182",
       "description": "May 2026: This security advisory provides the details and fix information for a vulnerability that was discovered and fixed after the  was disclosed in February 2026. This new advisory is for a new vulnerability in the control connection handshaking. The  section of this advisory includes Show Control Connections guidance to help with system checks.&nbsp;\r\n\r\nA vulnerability in the peering authentication in Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, and Cisco Catalyst SD-WAN Validator, formerly SD-WAN vBond, could allow an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.\r\nThis vulnerability exists because the peering authentication mechanism in an affected system is not working properly. An attacker could exploit this vulnerability by sending crafted requests to the affected system. A successful exploit could allow the attacker to log in to an affected Cisco Catalyst SD-WAN Controller as an internal, high-privileged, non-root user account. Using this account, the attacker could access NETCONF, which would then allow the attacker to manipulate network configuration for the SD-WAN fabric.",
       "cvss_score": 10.0,
@@ -271779,6 +272008,79 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-20190",
+      "description": "A vulnerability in Cisco ISE and ISE-PIC could allow an unauthenticated, remote attacker to view sensitive information on an affected device.\r\n\r\nThis vulnerability is due to improper authorization checks when a resource is accessed. An attacker could exploit this vulnerability by sending crafted traffic to an affected device. A successful exploit could allow the attacker to gain access to sensitive information, including hashed credentials that could be used in future attacks.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco identity services engine software",
+          "versions": [
+            {
+              "version": "3.4.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 1",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 2",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 3",
+              "status": "affected"
+            },
+            {
+              "version": "3.5.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 4",
+              "status": "affected"
+            },
+            {
+              "version": "3.5 Patch 1",
+              "status": "affected"
+            },
+            {
+              "version": "3.4 Patch 5",
+              "status": "affected"
+            },
+            {
+              "version": "3.5 Patch 2",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "cisco",
+          "product": "cisco ise passive identity connector",
+          "versions": [
+            {
+              "version": "3.4.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco identity services engine software",
+        "product:cisco ise passive identity connector",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-20223",

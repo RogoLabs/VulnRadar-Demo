@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-18T01:30:15+00:00",
+  "generated_at": "2026-06-18T03:26:41+00:00",
   "vendor": "linux",
-  "count": 2884,
+  "count": 2883,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -289758,71 +289758,6 @@
         ],
         "cpe_count": 5,
         "reference_count": 9
-      }
-    },
-    {
-      "cve_id": "CVE-2026-31688",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndriver core: enforce device_lock for driver_match_device()\n\nCurrently, driver_match_device() is called from three sites. One site\n(__device_attach_driver) holds device_lock(dev), but the other two\n(bind_store and __driver_attach) do not. This inconsistency means that\nbus match() callbacks are not guaranteed to be called with the lock\nheld.\n\nFix this by introducing driver_match_device_locked(), which guarantees\nholding the device lock using a scoped guard. Replace the unlocked calls\nin bind_store() and __driver_attach() with this new helper. Also add a\nlock assertion to driver_match_device() to enforce this guarantee.\n\nThis consistency also fixes a known race condition. The driver_override\nimplementation relies on the device_lock, so the missing lock led to the\nuse-after-free (UAF) reported in Bugzilla for buses using this field.\n\nStress testing the two newly locked paths for 24 hours with\nCONFIG_PROVE_LOCKING and CONFIG_LOCKDEP enabled showed no UAF recurrence\nand no lockdep warnings.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "49b420a13ff95b449947181190b08367348e3e1b",
-              "lessThan": "dc23806a7c47ec5f1293aba407fb69519f976ee0",
-              "status": "affected",
-              "versionType": "git"
-            }
-          ]
-        },
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "2.6.30",
-              "status": "affected"
-            },
-            {
-              "version": "0",
-              "lessThan": "2.6.30",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.0",
-              "lessThanOrEqual": "*",
-              "status": "unaffected",
-              "versionType": "original_commit_for_fix"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:linux",
-        "vendor:linux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.0011,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416"
-        ],
-        "cpe_count": 1,
-        "reference_count": 1
       }
     },
     {
