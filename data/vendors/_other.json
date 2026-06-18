@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-18T15:19:28+00:00",
+  "generated_at": "2026-06-18T17:18:59+00:00",
   "vendor": "_other",
-  "count": 771,
+  "count": 772,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -47033,6 +47033,63 @@
         ],
         "cpe_count": 6,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-20253",
+      "description": "In Splunk Enterprise 10.2 versions below 10.2.4 and 10 versions below 10.0.7, an unauthenticated user could create or truncate arbitrary files through a PostgreSQL sidecar service endpoint. The vulnerability exists because the PostgreSQL sidecar service endpoint lacks authentication controls, allowing any network-reachable user to invoke file operations without credentials. Splunk Enterprise versions 9.4 and earlier are not affected. If you cannot immediately upgrade to a fixed version, you can mitigate this vulnerability by disabling the PostgreSQL sidecar service.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "splunk",
+          "product": "splunk enterprise",
+          "versions": [
+            {
+              "version": "10.2",
+              "status": "affected",
+              "versionType": "custom",
+              "lessThan": "10.2.4"
+            },
+            {
+              "version": "10.0",
+              "status": "affected",
+              "versionType": "custom",
+              "lessThan": "10.0.7"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01731,
+      "kev": {
+        "cveID": "CVE-2026-20253",
+        "vendorProject": "Splunk",
+        "product": "Enterprise",
+        "vulnerabilityName": "Splunk Enterprise Missing Authentication for Critical Function Vulnerability",
+        "dateAdded": "2026-06-18",
+        "shortDescription": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-06-21",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
       }
     },
     {
