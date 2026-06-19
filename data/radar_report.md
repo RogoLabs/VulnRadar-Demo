@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-19T12:37:08+00:00`
+Generated: `2026-06-19T14:25:34+00:00`
 
 ## Executive Summary
 
@@ -162,7 +162,7 @@ Top critical items:
 | [CVE-2022-21882](https://www.cve.org/CVERecord?id=CVE-2022-21882) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-02-18 | 0.557 | 7.0 | ✅ | Win32k Elevation of Privilege Vulnerability |
 | [CVE-2025-24054](https://www.cve.org/CVERecord?id=CVE-2025-24054) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.590 | 6.5 | ✅ | External control of file name or path in Windows NTLM allows an unauthorized attacker to perform spoofing over a network. |
 | [CVE-2023-5217](https://www.cve.org/CVERecord?id=CVE-2023-5217) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-23 | 0.344 | 8.8 | ✅ | Heap buffer overflow in vp8 encoding in libvpx in Google Chrome prior to 117.0.5938.132 and libvpx 1.13.1 allowed a remote attacker to potentially exploit heap… |
-| [CVE-2023-24880](https://www.cve.org/CVERecord?id=CVE-2023-24880) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-04-04 | 0.780 | 4.4 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
+| [CVE-2023-24880](https://www.cve.org/CVERecord?id=CVE-2023-24880) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-04-04 | 0.782 | 4.4 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 | [CVE-2025-58034](https://www.cve.org/CVERecord?id=CVE-2025-58034) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-11-25 | 0.544 | 6.7 | ✅ | An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] vulnerability in Fortinet FortiWeb 8.0.0 t… |
 | [CVE-2025-43300](https://www.cve.org/CVERecord?id=CVE-2025-43300) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-11 | 0.200 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.8.5 and iPadOS 15.8.5, iOS 16.7.12 and iPadOS 16.7.12, … |
 | [CVE-2025-24085](https://www.cve.org/CVERecord?id=CVE-2025-24085) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-19 | 0.197 | 10.0 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.3 and iPadOS 18.3, iPadOS 17.7.6, macOS Sequoia 15.3, macOS… |
@@ -237,9 +237,9 @@ Top critical items:
 | [CVE-2022-42856](https://www.cve.org/CVERecord?id=CVE-2022-42856) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-04 | 0.085 | 8.8 | ✅ | A type confusion issue was addressed with improved state handling. This issue is fixed in Safari 16.2, tvOS 16.2, macOS Ventura 13.1, iOS 15.7.2 and iPadOS 15.… |
 | [CVE-2025-43529](https://www.cve.org/CVERecord?id=CVE-2025-43529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-05 | 0.080 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 26.2, iOS 18.7.3 and iPadOS 18.7.3, iOS 26.2 and iPadOS 26.… |
 | [CVE-2025-29824](https://www.cve.org/CVERecord?id=CVE-2025-29824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-29 | 0.180 | 7.8 | ✅ | Use after free in Windows Common Log File System Driver allows an authorized attacker to elevate privileges locally. |
+| [CVE-2025-30397](https://www.cve.org/CVERecord?id=CVE-2025-30397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-03 | 0.209 | 7.5 | ✅ | Access of resource using incompatible type ('type confusion') in Microsoft Scripting Engine allows an unauthorized attacker to execute code over a network. |
 | [CVE-2024-38189](https://www.cve.org/CVERecord?id=CVE-2024-38189) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.079 | 8.8 | ✅ | Microsoft Project Remote Code Execution Vulnerability |
 | [CVE-2023-7024](https://www.cve.org/CVERecord?id=CVE-2023-7024) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-01-23 | 0.074 | 8.8 | ✅ | Heap buffer overflow in WebRTC in Google Chrome prior to 120.0.6099.129 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML pag… |
-| [CVE-2025-30397](https://www.cve.org/CVERecord?id=CVE-2025-30397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-03 | 0.200 | 7.5 | ✅ | Access of resource using incompatible type ('type confusion') in Microsoft Scripting Engine allows an unauthorized attacker to execute code over a network. |
 | [CVE-2022-3723](https://www.cve.org/CVERecord?id=CVE-2022-3723) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-11-18 | 0.068 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 107.0.5304.87 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromiu… |
 | [CVE-2025-22224](https://www.cve.org/CVERecord?id=CVE-2025-22224) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-25 | 0.015 | 9.3 | ✅ | VMware ESXi, and Workstation contain a TOCTOU (Time-of-Check Time-of-Use) vulnerability that leads to an out-of-bounds write. A malicious actor with local admi… |
 | [CVE-2025-5419](https://www.cve.org/CVERecord?id=CVE-2025-5419) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-26 | 0.065 | 8.8 | ✅ | Out of bounds read and write in V8 in Google Chrome prior to 137.0.7151.68 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML … |
