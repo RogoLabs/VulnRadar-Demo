@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-20T01:24:01+00:00",
+  "generated_at": "2026-06-20T03:28:08+00:00",
   "vendor": "apache_software_foundation",
-  "count": 732,
+  "count": 733,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -30432,6 +30432,38 @@
         "cpe_count": 1,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-39999",
+      "description": "Authentication Bypass by Spoofing vulnerability in Apache APISIX.\n\nThe attacker can completely bypass authentication capitalising on certain configurations of jwt-auth plugin.\nThis issue affects Apache APISIX: from v2.2 through v3.16.0.\n\nUsers are recommended to upgrade to version v3.17.0, which fixes the issue.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache apisix",
+          "versions": [
+            {
+              "lessThanOrEqual": "3.16.0",
+              "status": "affected",
+              "version": "2.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache apisix",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-40010",
