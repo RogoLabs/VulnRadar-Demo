@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-23T01:34:08+00:00",
+  "generated_at": "2026-06-23T03:24:21+00:00",
   "vendor": "_other",
-  "count": 772,
+  "count": 775,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -24494,6 +24494,100 @@
       }
     },
     {
+      "cve_id": "CVE-2026-8858",
+      "description": "IBM i 7.6, 7.5, 7.4, and 7.3, IBM WebSphere Application Server and IBM WebSphere Application Server Liberty are vulnerable to remote code execution and denial of service in the WebSphere Web Server Plug-in component. This vulnerability can be exploited when an attacker impersonates the application server and sends crafted responses to the plug-in.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ibm",
+          "product": "i",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.6.0",
+              "lessThanOrEqual": "1.8.4",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.5.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.4.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.3.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:i",
+        "vendor:ibm"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-9072",
+      "description": "IBM i 7.6, 7.5, 7.4, and 7.3, IBM WebSphere Application Server, and IBM WebSphere Application Server Liberty - when using Intelligent Management with the WebSphere WebServer Plug-in component - are vulnerable to remote code execution and denial of service. This vulnerability can be exploited when an attacker impersonates backend servers and sends crafted responses to the plug-in.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ibm",
+          "product": "i",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.6.0",
+              "lessThanOrEqual": "1.8.4",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.5.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.4.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.3.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:i",
+        "vendor:ibm"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2022-43769",
       "description": "Hitachi Vantara Pentaho Business Analytics Server prior to versions 9.4.0.1 and 9.3.0.2, including 8.3.x allow certain web services to set property values which contain Spring templates that are interpreted downstream.",
       "cvss_score": 8.8,
@@ -47091,6 +47185,190 @@
       }
     },
     {
+      "cve_id": "CVE-2026-12249",
+      "description": "An issue was discovered in Canonical ADSys upstream versions through v0.16.2. During Active Directory Certificate Services (AD CS) certificate auto-enrollment via the vendored Samba client script (internal/policies/certificate/python/vendor_samba/gp/gp_cert_auto_enroll_ext.py), ADSys utilizes a plaintext HTTP connection (http://) instead of a secure HTTPS connection (https://) to request the CA certificate from the Active Directory Certificate Services server (GetCACert). An unauthenticated network attacker positioned between the managed Ubuntu host and the configured AD CS CA hostname can conduct a Man-in-the-Middle (MITM) attack. By intercepting the plaintext HTTP request, the attacker can supply an arbitrary, attacker-controlled Root CA certificate. Because the system automatically accepts this certificate and registers it into the local system trust store via update-ca-certificates, this results in system-wide trust store poisoning. Consequently, TLS clients utilizing the operating system trust store on the affected machine will accept rogue certificates for arbitrary domains, enabling persistent decryption and interception of subsequent TLS connections. This issue is resolved in version v0.16.3.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.13.0",
+              "lessThan": "0.16.3",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 20.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "0.9.2~20.04.2ubuntu0.1+esm2",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 22.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "0.16.3~22.04.2ubuntu0.22.04.1",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 24.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "0.16.3~24.04.2ubuntu0.24.04.1",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 25.10",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "0.16.3",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 26.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "0.16.4ubuntu1",
+              "versionType": "dpkg"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-3888",
+      "description": "Local privilege escalation in snapd on Linux allows local attackers to get root privilege by re-creating snap's private /tmp directory when systemd-tmpfiles is configured to automatically clean up this directory. This issue affects Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS, 22.04 LTS, and 24.04 LTS.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.75.1",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 16.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.61.4ubuntu0.16.04.1+esm2",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 18.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.61.4ubuntu0.18.04.1+esm2",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 20.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.67.1+20.04ubuntu1~esm1",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 22.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.73+ubuntu22.04.1",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        },
+        {
+          "vendor": "canonical",
+          "product": "ubuntu 24.04 lts",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2.73+ubuntu24.04.2",
+              "lessThan": "*",
+              "versionType": "dpkg"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00383,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-268"
+        ],
+        "cpe_count": 5,
+        "reference_count": 6
+      }
+    },
+    {
       "cve_id": "CVE-2026-20253",
       "description": "In Splunk Enterprise 10.2 versions below 10.2.4 and 10 versions below 10.0.7, an unauthenticated user could create or truncate arbitrary files through a PostgreSQL sidecar service endpoint. The vulnerability exists because the PostgreSQL sidecar service endpoint lacks authentication controls, allowing any network-reachable user to invoke file operations without credentials. Splunk Enterprise versions 9.4 and earlier are not affected. If you cannot immediately upgrade to a fixed version, you can mitigate this vulnerability by disabling the PostgreSQL sidecar service.",
       "cvss_score": 9.8,
@@ -47887,106 +48165,6 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
-      }
-    },
-    {
-      "cve_id": "CVE-2026-3888",
-      "description": "Local privilege escalation in snapd on Linux allows local attackers to get root privilege by re-creating snap's private /tmp directory when systemd-tmpfiles is configured to automatically clean up this directory. This issue affects Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS, 22.04 LTS, and 24.04 LTS.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "",
-          "product": "",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "0",
-              "lessThan": "2.75.1",
-              "versionType": "semver"
-            }
-          ]
-        },
-        {
-          "vendor": "canonical",
-          "product": "ubuntu 16.04 lts",
-          "versions": [
-            {
-              "status": "unaffected",
-              "version": "2.61.4ubuntu0.16.04.1+esm2",
-              "lessThan": "*",
-              "versionType": "dpkg"
-            }
-          ]
-        },
-        {
-          "vendor": "canonical",
-          "product": "ubuntu 18.04 lts",
-          "versions": [
-            {
-              "status": "unaffected",
-              "version": "2.61.4ubuntu0.18.04.1+esm2",
-              "lessThan": "*",
-              "versionType": "dpkg"
-            }
-          ]
-        },
-        {
-          "vendor": "canonical",
-          "product": "ubuntu 20.04 lts",
-          "versions": [
-            {
-              "status": "unaffected",
-              "version": "2.67.1+20.04ubuntu1~esm1",
-              "lessThan": "*",
-              "versionType": "dpkg"
-            }
-          ]
-        },
-        {
-          "vendor": "canonical",
-          "product": "ubuntu 22.04 lts",
-          "versions": [
-            {
-              "status": "unaffected",
-              "version": "2.73+ubuntu22.04.1",
-              "lessThan": "*",
-              "versionType": "dpkg"
-            }
-          ]
-        },
-        {
-          "vendor": "canonical",
-          "product": "ubuntu 24.04 lts",
-          "versions": [
-            {
-              "status": "unaffected",
-              "version": "2.73+ubuntu24.04.2",
-              "lessThan": "*",
-              "versionType": "dpkg"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": false,
-      "probability_score": 0.00383,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-268"
-        ],
-        "cpe_count": 5,
-        "reference_count": 6
       }
     },
     {
