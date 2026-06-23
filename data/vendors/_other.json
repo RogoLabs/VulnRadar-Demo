@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-23T17:02:35+00:00",
+  "generated_at": "2026-06-23T17:45:47+00:00",
   "vendor": "_other",
-  "count": 775,
+  "count": 779,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -6613,6 +6613,55 @@
         ],
         "cpe_count": 94,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2025-67038",
+      "description": "An issue was discovered in Lantronix EDS5000 2.1.0.0R3. The HTTP RPC module executes a shell command to write logs when user's authantication fails. The username is directly concatenated with the command without any sanitization. This allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "n/a",
+          "product": "n/a",
+          "versions": [
+            {
+              "version": "n/a",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00469,
+      "kev": {
+        "cveID": "CVE-2025-67038",
+        "vendorProject": "Lantronix",
+        "product": "EDS5000",
+        "vulnerabilityName": "Lantronix EDS5000 Code Injection Vulnerability",
+        "dateAdded": "2026-06-23",
+        "shortDescription": "Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-06-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 6,
+        "reference_count": 3
       }
     },
     {
@@ -48067,6 +48116,1251 @@
         ],
         "cpe_count": 7,
         "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2026-34908",
+      "description": "A malicious actor with access to the network could exploit an Improper Access Control vulnerability found in UniFi OS devices to make unauthorized changes to the system.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unifi os server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.0.8",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-se",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-pro-max",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-beast",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.11",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "efg",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udw",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr7",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr-5g",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "express 7",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-instant",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-g2",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-g2-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "envr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "envr-core",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-2",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-4",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro-4",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro-8",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uckp",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uck",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uck-enterprise",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-ultra",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-max",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-fiber",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-industrial",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.0086,
+      "kev": {
+        "cveID": "CVE-2026-34908",
+        "vendorProject": "Ubiquiti",
+        "product": "UniFi OS",
+        "vulnerabilityName": "Ubiquiti UniFi OS Improper Access Control Vulnerability",
+        "dateAdded": "2026-06-23",
+        "shortDescription": "Ubiquiti UniFi OS contains an improper access control vulnerability which could allow a malicious actor with access to the network to make unauthorized changes to the system.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-06-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-34909",
+      "description": "A malicious actor with access to the network could exploit a Path Traversal vulnerability found in UniFi OS devices to access files on the underlying system that could be manipulated to access an underlying account.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unifi os server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.0.8",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "express",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "4.0.14",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-se",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-pro-max",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-beast",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.11",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "efg",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udw",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr7",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr-5g",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "express 7",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-instant",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-g2",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-g2-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "envr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "envr-core",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-2",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-4",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro-4",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro-8",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uckp",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uck",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uck-enterprise",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-ultra",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-max",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-fiber",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-industrial",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00895,
+      "kev": {
+        "cveID": "CVE-2026-34909",
+        "vendorProject": "Ubiquiti",
+        "product": "UniFi OS",
+        "vulnerabilityName": "Ubiquiti UniFi OS Path Traversal Vulnerability",
+        "dateAdded": "2026-06-23",
+        "shortDescription": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-06-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-34910",
+      "description": "A malicious actor with access to the network could exploit an Improper Input Validation vulnerability found in UniFi OS devices to execute a Command Injection.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unifi os server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.0.8",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-se",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-pro-max",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udm-beast",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.11",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "efg",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udw",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr7",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "udr-5g",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "express 7",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-instant",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-g2",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unvr-g2-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "envr",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "envr-core",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-2",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-4",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro-4",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "unas-pro-8",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.10",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uckp",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uck",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "uck-enterprise",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-ultra",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-max",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-fiber",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "ubiquiti inc",
+          "product": "ucg-industrial",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "5.1.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.33615,
+      "kev": {
+        "cveID": "CVE-2026-34910",
+        "vendorProject": "Ubiquiti",
+        "product": "UniFi OS",
+        "vulnerabilityName": "Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+        "dateAdded": "2026-06-23",
+        "shortDescription": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-06-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
