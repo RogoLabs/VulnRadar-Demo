@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-23T17:45:48+00:00`
+Generated: `2026-06-23T18:58:41+00:00`
 
 ## Executive Summary
 
@@ -41,7 +41,7 @@ Top critical items:
 - Total items: **12856**
 - Watchlist hits: **12470**
 - CISA KEVs: **717**
-- Exploit Intel (PoC): **793**
+- Exploit Intel (PoC): **796**
 - Exploit Intel + Watchlist (CRITICAL): **410**
 
 ## Top Findings (max 200)
@@ -257,6 +257,10 @@ Top critical items:
 | Jun 23 | [CVE-2026-9072](https://www.cve.org/CVERecord?id=CVE-2026-9072) | 🆕 New |
 | Jun 23 | [CVE-2026-12249](https://www.cve.org/CVERecord?id=CVE-2026-12249) | 🆕 New |
 | Jun 23 | [CVE-2026-44914](https://www.cve.org/CVERecord?id=CVE-2026-44914) | 🆕 New |
+| Jun 23 | [CVE-2025-67038](https://www.cve.org/CVERecord?id=CVE-2025-67038) | 🔴 In CISA KEV |
+| Jun 23 | [CVE-2026-34908](https://www.cve.org/CVERecord?id=CVE-2026-34908) | 🔴 In CISA KEV |
+| Jun 23 | [CVE-2026-34909](https://www.cve.org/CVERecord?id=CVE-2026-34909) | 🔴 In CISA KEV |
+| Jun 23 | [CVE-2026-34910](https://www.cve.org/CVERecord?id=CVE-2026-34910) | 🔴 In CISA KEV |
 | Jun 20 | [CVE-2026-39999](https://www.cve.org/CVERecord?id=CVE-2026-39999) | 🆕 New |
 | Jun 20 | [CVE-2026-32208](https://www.cve.org/CVERecord?id=CVE-2026-32208) | 🆕 New |
 | Jun 20 | [CVE-2026-45480](https://www.cve.org/CVERecord?id=CVE-2026-45480) | 🆕 New |
@@ -299,8 +303,4 @@ Top critical items:
 | Jun 19 | [CVE-2026-12467](https://www.cve.org/CVERecord?id=CVE-2026-12467) | 🆕 New |
 | Jun 19 | [CVE-2026-12468](https://www.cve.org/CVERecord?id=CVE-2026-12468) | 🆕 New |
 | Jun 19 | [CVE-2026-11717](https://www.cve.org/CVERecord?id=CVE-2026-11717) | 🆕 New |
-| Jun 19 | [CVE-2026-11718](https://www.cve.org/CVERecord?id=CVE-2026-11718) | 🆕 New |
-| Jun 19 | [CVE-2026-11719](https://www.cve.org/CVERecord?id=CVE-2026-11719) | 🆕 New |
-| Jun 19 | [CVE-2026-28573](https://www.cve.org/CVERecord?id=CVE-2026-28573) | 🆕 New |
-| Jun 19 | [CVE-2026-32174](https://www.cve.org/CVERecord?id=CVE-2026-32174) | 🆕 New |
-| ... | | _and 58 more_ |
+| ... | | _and 62 more_ |
