@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-24T18:06:19+00:00",
+  "generated_at": "2026-06-24T19:11:00+00:00",
   "vendor": "_other",
-  "count": 707,
+  "count": 695,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -139,17 +139,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-12",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.6,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-406"
-        ],
-        "cpe_count": 16,
-        "reference_count": 3
       }
     },
     {
@@ -1411,26 +1400,14 @@
         "vendor:amazon web services"
       ],
       "active_threat": false,
-      "probability_score": 0.00374,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 7.2,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-250",
-          "CWE-269"
-        ],
-        "cpe_count": 2,
-        "reference_count": 4
-      }
+      "probability_score": 0.00374
     },
     {
       "cve_id": "CVE-2022-0185",
       "description": "A heap-based buffer overflow flaw was found in the way the legacy_parse_param function in the Filesystem Context functionality of the Linux kernel verified the supplied parameters length. An unprivileged (in case of unprivileged user namespaces enabled, otherwise needs namespaced CAP_SYS_ADMIN privilege) local user able to open a filesystem that does not support the Filesystem Context API (and thus fallbacks to legacy handling) could use this flaw to escalate their privileges on the system.",
-      "cvss_score": 8.4,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1461,26 +1438,14 @@
         "requiredAction": "Apply updates per vendor instructions or discontinue use of the product if updates are unavailable.",
         "dueDate": "2024-09-11",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.4,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 7.2,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-190",
-          "CWE-191"
-        ],
-        "cpe_count": 20,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-0492",
       "description": "A vulnerability was found in the Linux kernel\u2019s cgroup_release_agent_write in the kernel/cgroup/cgroup-v1.c function. This flaw, under certain circumstances, allows the use of the cgroups v1 release_agent feature to escalate privileges and bypass the namespace isolation unexpectedly.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1511,26 +1476,14 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-06-05",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 6.9,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-287",
-          "CWE-862"
-        ],
-        "cpe_count": 53,
-        "reference_count": 21
       }
     },
     {
       "cve_id": "CVE-2022-0847",
       "description": "A flaw was found in the way the \"flags\" member of the new pipe buffer structure was lacking proper initialization in copy_page_to_iter_pipe and push_pipe functions in the Linux kernel and could thus contain stale values. An unprivileged local user could use this flaw to write to pages in the page cache backed by read only files and as such escalate their privileges on the system.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1561,25 +1514,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-05-16",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 7.2,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-665"
-        ],
-        "cpe_count": 59,
-        "reference_count": 21
       }
     },
     {
       "cve_id": "CVE-2022-22706",
       "description": "Arm Mali GPU Kernel Driver allows a non-privileged user to achieve write access to read-only memory pages. This affects Midgard r26p0 through r31p0, Bifrost r0p0 through r35p0, and Valhall r19p0 through r35p0.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1610,25 +1552,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-04-20",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 4.6,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-119"
-        ],
-        "cpe_count": 3,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-22947",
       "description": "In spring cloud gateway versions prior to 3.1.1+ and 3.0.7+ , applications are vulnerable to a code injection attack when the Gateway Actuator endpoint is enabled, exposed and unsecured. A remote attacker could make a maliciously crafted request that could allow arbitrary remote execution on the remote host.",
-      "cvss_score": 10.0,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1659,26 +1590,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-06-06",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 10.0,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 6.8,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94",
-          "CWE-917"
-        ],
-        "cpe_count": 16,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-22948",
       "description": "The vCenter Server contains an information disclosure vulnerability due to improper permission of files. A malicious actor with non-administrative access to the vCenter Server may exploit this issue to gain access to sensitive information.",
-      "cvss_score": 6.5,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1709,25 +1628,14 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-07",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.5,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": 4.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-276"
-        ],
-        "cpe_count": 63,
-        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2022-22954",
       "description": "VMware Workspace ONE Access and Identity Manager contain a remote code execution vulnerability due to server-side template injection. A malicious actor with network access can trigger a server-side template injection that may result in remote code execution.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1758,25 +1666,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-05-05",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94"
-        ],
-        "cpe_count": 12,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-22960",
       "description": "VMware Workspace ONE Access, Identity Manager and vRealize Automation contain a privilege escalation vulnerability due to improper permissions in support scripts. A malicious actor with local access can escalate privileges to 'root'.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1807,25 +1704,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-05-06",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 7.2,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-732"
-        ],
-        "cpe_count": 12,
-        "reference_count": 9
       }
     },
     {
       "cve_id": "CVE-2022-22963",
       "description": "In Spring Cloud Function versions 3.1.6, 3.2.2 and older unsupported versions, when using routing functionality it is possible for a user to provide a specially crafted SpEL as a routing-expression that may result in remote code execution and access to local resources.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1856,26 +1742,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-15",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94",
-          "CWE-917"
-        ],
-        "cpe_count": 47,
-        "reference_count": 13
       }
     },
     {
       "cve_id": "CVE-2022-22965",
       "description": "A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1906,25 +1780,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-04-25",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94"
-        ],
-        "cpe_count": 98,
-        "reference_count": 18
       }
     },
     {
       "cve_id": "CVE-2022-23176",
       "description": "WatchGuard Firebox and XTM appliances allow a remote attacker with unprivileged credentials to access the system with a privileged management session via exposed management access. This vulnerability impacts Fireware OS before 12.7.2_U1, 12.x before 12.1.3_U3, and 12.2.x through 12.5.x before 12.5.7_U3.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -1955,23 +1818,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-05-02",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 9.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 9,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-23227",
       "description": "NUUO NVRmini2 through 3.11 allows an unauthenticated attacker to upload an encrypted TAR archive, which can be abused to add arbitrary users because of the lack of handle_import_user.php authentication. When combined with another flaw (CVE-2011-5325), it is possible to overwrite arbitrary files under the web root and achieve code execution as root.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2002,25 +1856,14 @@
         "requiredAction": "The impacted product is end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue utilization of the product.",
         "dueDate": "2025-01-08",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 2,
-        "reference_count": 9
       }
     },
     {
       "cve_id": "CVE-2022-23748",
       "description": "mDNSResponder.exe is vulnerable to DLL Sideloading attack. Executable improperly specifies how to load the DLL, from which folder and under what conditions. In these scenarios, a malicious attacker could be using the valid and legitimate executable to load malicious files.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2051,26 +1894,14 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-02-27",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-114",
-          "CWE-426"
-        ],
-        "cpe_count": 2,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-24682",
       "description": "An issue was discovered in the Calendar feature in Zimbra Collaboration Suite 8.8.x before 8.8.15 patch 30 (update 1), as exploited in the wild starting in December 2021. An attacker could place HTML containing executable JavaScript inside element attributes. This markup becomes unescaped, causing arbitrary markup to be injected into the document.",
-      "cvss_score": 6.1,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2101,25 +1932,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-03-11",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.1,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": 4.3,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-116"
-        ],
-        "cpe_count": 31,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-24990",
       "description": "TerraMaster NAS 4.2.29 and earlier allows remote attackers to discover the administrative password by sending \"User-Agent: TNAS\" to module/api.php?mobile/webNasIPS and then reading the PWD field in the response.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2150,25 +1970,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-03",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 30,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-26143",
       "description": "The TP-240 (aka tp240dvr) component in Mitel MiCollab before 9.4 SP1 FP1 and MiVoice Business Express through 8.1 allows remote attackers to obtain sensitive information and cause a denial of service (performance degradation and excessive outbound traffic). This was exploited in the wild in February and March 2022 for the TP240PhoneHome DDoS attack.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2199,25 +2008,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-04-15",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 9.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 4,
-        "reference_count": 15
       }
     },
     {
       "cve_id": "CVE-2022-26258",
       "description": "D-Link DIR-820L 1.05B03 was discovered to contain remote command execution (RCE) vulnerability via HTTP POST to get set ccp.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2248,25 +2046,14 @@
         "requiredAction": "The impacted product is end-of-life and should be disconnected if still in use.",
         "dueDate": "2022-09-29",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 2,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-26318",
       "description": "On WatchGuard Firebox and XTM appliances, an unauthenticated user can execute arbitrary code, aka FBX-22786. This vulnerability impacts Fireware OS before 12.7.2_U2, 12.x before 12.1.3_U8, and 12.2.x through 12.5.x before 12.5.9_U2.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2297,23 +2084,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-04-15",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 13,
-        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2022-26352",
       "description": "An issue was discovered in the ContentResource API in dotCMS 3.0 through 22.02. Attackers can craft a multipart form request to post a file whose filename is not initially sanitized. This allows directory traversal, in which the file is saved outside of the intended storage location. If anonymous content creation is enabled, this allows an unauthenticated attacker to upload an executable file, such as a .jsp file, that can lead to remote code execution.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2344,23 +2122,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-15",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 6.8,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 1,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-26500",
       "description": "Improper limitation of path names in Veeam Backup & Replication 9.5U3, 9.5U4,10.x, and 11.x allows remote authenticated users access to internal API functions that allows attackers to upload and execute arbitrary code.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2391,25 +2160,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-01-03",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 6.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 10,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-26501",
       "description": "Veeam Backup & Replication 10.x and 11.x has Incorrect Access Control (issue 1 of 2).",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2440,25 +2198,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-01-03",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 8,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-27924",
       "description": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 allows an unauthenticated attacker to inject arbitrary memcache commands into a targeted instance. These memcache commands becomes unescaped, causing an overwrite of arbitrary cached entries.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2489,25 +2236,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-08-25",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-74"
-        ],
-        "cpe_count": 56,
-        "reference_count": 7
       }
     },
     {
       "cve_id": "CVE-2022-27925",
       "description": "Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 has mboximport functionality that receives a ZIP archive and extracts files from it. An authenticated user with administrator rights has the ability to upload arbitrary files to the system, leading to directory traversal.",
-      "cvss_score": 7.2,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2538,25 +2274,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-01",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.2,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 6.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 55,
-        "reference_count": 9
       }
     },
     {
       "cve_id": "CVE-2022-27926",
       "description": "A reflected cross-site scripting (XSS) vulnerability in the /public/launchNewWindow.jsp component of Zimbra Collaboration (aka ZCS) 9.0 allows unauthenticated attackers to execute arbitrary web script or HTML via request parameters.",
-      "cvss_score": 6.1,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2587,25 +2312,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-04-24",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.1,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": 4.3,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-79"
-        ],
-        "cpe_count": 24,
-        "reference_count": 7
       }
     },
     {
       "cve_id": "CVE-2022-28810",
       "description": "Zoho ManageEngine ADSelfService Plus before build 6122 allows a remote authenticated administrator to execute arbitrary operating OS commands as SYSTEM via the policy custom script feature. Due to the use of a default administrator password, attackers may be able to abuse this functionality with minimal effort. Additionally, a remote and partially authenticated attacker may be able to inject arbitrary commands into the custom script due to an unsanitized password field.",
-      "cvss_score": 6.8,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2636,26 +2350,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-28",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.8,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": 7.1,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78",
-          "CWE-798"
-        ],
-        "cpe_count": 24,
-        "reference_count": 9
       }
     },
     {
       "cve_id": "CVE-2022-29303",
       "description": "SolarView Compact ver.6.00 was discovered to contain a command injection vulnerability via conf_mail.php.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2686,17 +2388,6 @@
         "requiredAction": "Apply updates per vendor instructions or discontinue use of the product if updates are unavailable.",
         "dueDate": "2023-08-03",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 2,
-        "reference_count": 5
       }
     },
     {
@@ -2735,25 +2426,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-05-16",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 11,
-        "reference_count": 9
       }
     },
     {
       "cve_id": "CVE-2022-29499",
       "description": "The Service Appliance component in Mitel MiVoice Connect through 19.2 SP3 allows remote code execution because of incorrect data validation. The Service Appliances are SA 100, SA 400, and Virtual SA.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2784,25 +2464,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-07-18",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20"
-        ],
-        "cpe_count": 1,
-        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2022-30333",
       "description": "RARLAB UnRAR before 6.12 on Linux and UNIX allows directory traversal to write to files during an extract (aka unpack) operation, as demonstrated by creating a ~/.ssh/authorized_keys file. NOTE: WinRAR and Android RAR are unaffected.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2833,26 +2502,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-08-30",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22",
-          "CWE-59"
-        ],
-        "cpe_count": 4,
-        "reference_count": 13
       }
     },
     {
       "cve_id": "CVE-2022-31199",
       "description": "Remote code execution vulnerabilities exist in the Netwrix Auditor User Activity Video Recording component affecting both the Netwrix Auditor server and agents installed on monitored systems. The remote code execution vulnerabilities exist within the underlying protocol used by the component, and potentially allow an unauthenticated remote attacker to execute arbitrary code as the NT AUTHORITY\\SYSTEM user on affected systems, including on systems Netwrix Auditor monitors.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2883,25 +2540,14 @@
         "requiredAction": "Apply updates per vendor instructions or discontinue use of the product if updates are unavailable.",
         "dueDate": "2023-08-01",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-502"
-        ],
-        "cpe_count": 1,
-        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2022-35405",
       "description": "Zoho ManageEngine Password Manager Pro before 12101 and PAM360 before 5510 are vulnerable to unauthenticated remote code execution. (This also affects ManageEngine Access Manager Plus before 4303 with authentication.)",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2932,25 +2578,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-10-13",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-502"
-        ],
-        "cpe_count": 8,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-35914",
       "description": "/vendor/htmlawed/htmlawed/htmLawedTest.php in the htmlawed module for GLPI through 10.0.2 allows PHP code injection.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -2981,25 +2616,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-28",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-74"
-        ],
-        "cpe_count": 1,
-        "reference_count": 12
       }
     },
     {
       "cve_id": "CVE-2022-36537",
       "description": "ZK Framework v9.6.1, 9.6.0.1, 9.5.1.3, 9.0.1.2 and 8.6.4.1 allows attackers to access sensitive information via a crafted POST request sent to the component AuUploader.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3030,23 +2654,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-20",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 4,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-37042",
       "description": "Zimbra Collaboration Suite (ZCS) 8.8.15 and 9.0 has mboximport functionality that receives a ZIP archive and extracts files from it. By bypassing authentication (i.e., not having an authtoken), an attacker can upload arbitrary files to the system, leading to directory traversal and remote code execution. NOTE: this issue exists because of an incomplete fix for CVE-2022-27925.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3077,25 +2692,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-01",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 61,
-        "reference_count": 7
       }
     },
     {
       "cve_id": "CVE-2022-37055",
       "description": "D-Link Go-RT-AC750 GORTAC750_revA_v101b03 and GO-RT-AC750_revB_FWv200b02 are vulnerable to Buffer Overflow via cgibin, hnap_main,",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3126,25 +2730,14 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-12-29",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-120"
-        ],
-        "cpe_count": 4,
-        "reference_count": 7
       }
     },
     {
       "cve_id": "CVE-2022-38181",
       "description": "The Arm Mali GPU kernel driver allows unprivileged users to access freed memory because GPU memory operations are mishandled. This affects Bifrost r0p0 through r38p1, and r39p0; Valhall r19p0 through r38p1, and r39p0; and Midgard r4p0 through r32p0.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3175,25 +2768,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-04-20",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416"
-        ],
-        "cpe_count": 5,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-39197",
       "description": "An XSS (Cross Site Scripting) vulnerability was found in HelpSystems Cobalt Strike through 4.7 that allowed a remote attacker to execute HTML on the Cobalt Strike teamserver. To exploit the vulnerability, one must first inspect a Cobalt Strike payload, and then modify the username field in the payload (or create a new payload with the extracted information and then modify that username field to be malformed).",
-      "cvss_score": 6.1,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3224,25 +2806,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-04-20",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.1,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-79"
-        ],
-        "cpe_count": 1,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-40765",
       "description": "A vulnerability in the Edge Gateway component of Mitel MiVoice Connect through 19.3 (22.22.6100.0) could allow an authenticated attacker with internal network access to conduct a command-injection attack, due to insufficient restriction of URL parameters.",
-      "cvss_score": 6.8,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3273,25 +2844,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-14",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.8,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-77"
-        ],
-        "cpe_count": 1,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-40799",
       "description": "Data Integrity Failure in 'Backup Config' in D-Link DNR-322L <= 2.60B15 allows an authenticated attacker to execute OS level commands on the device.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3322,25 +2882,14 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-08-26",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-494"
-        ],
-        "cpe_count": 2,
-        "reference_count": 4
       }
     },
     {
       "cve_id": "CVE-2022-41223",
       "description": "The Director database component of MiVoice Connect through 19.3 (22.22.6100.0) could allow an authenticated attacker to conduct a code-injection attack via crafted data due to insufficient restrictions on the database data type.",
-      "cvss_score": 6.8,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3371,25 +2920,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-14",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 6.8,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94"
-        ],
-        "cpe_count": 1,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-41352",
       "description": "An issue was discovered in Zimbra Collaboration (ZCS) 8.8.15 and 9.0. An attacker can upload arbitrary files through amavis via a cpio loophole (extraction to /opt/zimbra/jetty/webapps/zimbra/public) that can lead to incorrect access to any other user accounts. Zimbra recommends pax over cpio. Also, pax is in the prerequisites of Zimbra on Ubuntu; however, pax is no longer part of a default Red Hat installation after RHEL 6 (or CentOS 6). Once pax is installed, amavis automatically prefers it over cpio.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3420,25 +2958,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-11-10",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 63,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-42948",
       "description": "Cobalt Strike 4.7.1 fails to properly escape HTML tags when they are displayed on Swing components. By injecting crafted HTML code, it is possible to remotely execute code in the Cobalt Strike UI.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3469,25 +2996,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-04-20",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-116"
-        ],
-        "cpe_count": 1,
-        "reference_count": 7
       }
     },
     {
       "cve_id": "CVE-2022-44877",
       "description": "login/index.php in CWP (aka Control Web Panel or CentOS Web Panel) 7 before 0.9.8.1147 allows remote attackers to execute arbitrary OS commands via shell metacharacters in the login parameter.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3518,25 +3034,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-02-07",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 1,
-        "reference_count": 13
       }
     },
     {
       "cve_id": "CVE-2022-47966",
       "description": "Multiple Zoho ManageEngine on-premise products, such as ServiceDesk Plus through 14003, allow remote code execution due to use of Apache Santuario xmlsec (aka XML Security for Java) 1.4.1, because the xmlsec XSLT features, by design in that version, make the application responsible for certain security protections, and the ManageEngine applications did not provide those protections. This affects Access Manager Plus before 4308, Active Directory 360 before 4310, ADAudit Plus before 7081, ADManager Plus before 7162, ADSelfService Plus before 6211, Analytics Plus before 5150, Application Control Plus before 10.1.2220.18, Asset Explorer before 6983, Browser Security Plus before 11.1.2238.6, Device Control Plus before 10.1.2220.18, Endpoint Central before 10.1.2228.11, Endpoint Central MSP before 10.1.2228.11, Endpoint DLP before 10.1.2137.6, Key Manager Plus before 6401, OS Deployer before 1.1.2243.1, PAM 360 before 5713, Password Manager Pro before 12124, Patch Manager Plus before 10.1.2220.18, Remote Access Plus before 10.1.2228.11, Remote Monitoring and Management (RMM) before 10.1.41. ServiceDesk Plus before 14004, ServiceDesk Plus MSP before 13001, SupportCenter Plus before 11026, and Vulnerability Manager Plus before 10.1.2220.18. Exploitation is only possible if SAML SSO has ever been configured for a product (for some products, exploitation requires that SAML SSO is currently active).",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "n/a",
@@ -3567,17 +3072,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-02-13",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20"
-        ],
-        "cpe_count": 156,
-        "reference_count": 21
       }
     },
     {
@@ -5986,18 +5480,7 @@
         "vendor:google llc"
       ],
       "active_threat": false,
-      "probability_score": 0.00079,
-      "nvd": {
-        "cvss_v3_score": 5.5,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": 2.1,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-732"
-        ],
-        "cpe_count": 1,
-        "reference_count": 2
-      }
+      "probability_score": 0.00079
     },
     {
       "cve_id": "CVE-2022-1798",
@@ -6035,135 +5518,7 @@
         "vendor:google llc"
       ],
       "active_threat": false,
-      "probability_score": 0.00356,
-      "nvd": {
-        "cvss_v3_score": 6.5,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20",
-          "CWE-22"
-        ],
-        "cpe_count": 1,
-        "reference_count": 2
-      }
-    },
-    {
-      "cve_id": "CVE-2022-1941",
-      "description": "A parsing vulnerability for the MessageSet type in the ProtocolBuffers versions prior to and including 3.16.1, 3.17.3, 3.18.2, 3.19.4, 3.20.1 and 3.21.5 for protobuf-cpp, and versions prior to and including 3.16.1, 3.17.3, 3.18.2, 3.19.4, 3.20.1 and 4.21.5 for protobuf-python can lead to out of memory failures. A specially crafted message with multiple key-value per elements creates parsing issues, and can lead to a Denial of Service against services receiving unsanitized input. We recommend upgrading to versions 3.18.3, 3.19.5, 3.20.2, 3.21.6 for protobuf-cpp and 3.18.3, 3.19.5, 3.20.2, 4.21.6 for protobuf-python. Versions for 3.16 and 3.17 are no longer updated.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "google llc",
-          "product": "protobuf-cpp",
-          "versions": [
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.16.1",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.17.3",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.18.2",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.19.4",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.20.1",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.21.5",
-              "status": "affected",
-              "versionType": "custom"
-            }
-          ]
-        },
-        {
-          "vendor": "google llc",
-          "product": "protobuf-python",
-          "versions": [
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.16.1",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.17.3",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.18.2",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.19.4",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "3.20.1",
-              "status": "affected",
-              "versionType": "custom"
-            },
-            {
-              "version": "unspecified",
-              "lessThanOrEqual": "4.21.5",
-              "status": "affected",
-              "versionType": "custom"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:protobuf-cpp",
-        "product:protobuf-python",
-        "vendor:google llc"
-      ],
-      "active_threat": false,
-      "probability_score": 0.01151,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-1286"
-        ],
-        "cpe_count": 11,
-        "reference_count": 14
-      }
+      "probability_score": 0.00356
     },
     {
       "cve_id": "CVE-2022-3095",
@@ -6201,18 +5556,7 @@
         "vendor:google llc"
       ],
       "active_threat": false,
-      "probability_score": 0.00867,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20"
-        ],
-        "cpe_count": 2,
-        "reference_count": 2
-      }
+      "probability_score": 0.00867
     },
     {
       "cve_id": "CVE-2022-0324",
@@ -6242,26 +5586,14 @@
         "vendor:linux foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01108,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-120",
-          "CWE-787"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
+      "probability_score": 0.01108
     },
     {
       "cve_id": "CVE-2022-0543",
       "description": "It was discovered, that redis, a persistent key-value database, due to a packaging issue, is prone to a (Debian-specific) Lua sandbox escape, which could result in remote code execution.",
-      "cvss_score": 10.0,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "debian",
@@ -6292,17 +5624,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-04-18",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 10.0,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-862"
-        ],
-        "cpe_count": 6,
-        "reference_count": 13
       }
     },
     {
@@ -6333,18 +5654,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.01285,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-617"
-        ],
-        "cpe_count": 17,
-        "reference_count": 4
-      }
+      "probability_score": 0.01285
     },
     {
       "cve_id": "CVE-2022-0667",
@@ -6374,18 +5684,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.01285,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-617"
-        ],
-        "cpe_count": 17,
-        "reference_count": 4
-      }
+      "probability_score": 0.01285
     },
     {
       "cve_id": "CVE-2022-1183",
@@ -6419,18 +5718,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.04531,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 4.3,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-617"
-        ],
-        "cpe_count": 12,
-        "reference_count": 4
-      }
+      "probability_score": 0.04531
     },
     {
       "cve_id": "CVE-2022-2906",
@@ -6464,18 +5752,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.01574,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-401"
-        ],
-        "cpe_count": 2,
-        "reference_count": 6
-      }
+      "probability_score": 0.01574
     },
     {
       "cve_id": "CVE-2022-38177",
@@ -6513,18 +5790,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.02198,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-401"
-        ],
-        "cpe_count": 34,
-        "reference_count": 18
-      }
+      "probability_score": 0.02198
     },
     {
       "cve_id": "CVE-2022-38178",
@@ -6578,18 +5844,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.0208,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-401"
-        ],
-        "cpe_count": 30,
-        "reference_count": 18
-      }
+      "probability_score": 0.0208
     },
     {
       "cve_id": "CVE-2022-3080",
@@ -6631,18 +5886,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.01486,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-613"
-        ],
-        "cpe_count": 9,
-        "reference_count": 16
-      }
+      "probability_score": 0.01486
     },
     {
       "cve_id": "CVE-2022-3094",
@@ -6692,19 +5936,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.13108,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416",
-          "CWE-400"
-        ],
-        "cpe_count": 10,
-        "reference_count": 2
-      }
+      "probability_score": 0.13108
     },
     {
       "cve_id": "CVE-2022-3488",
@@ -6742,18 +5974,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.19045,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-617"
-        ],
-        "cpe_count": 4,
-        "reference_count": 2
-      }
+      "probability_score": 0.19045
     },
     {
       "cve_id": "CVE-2022-3736",
@@ -6803,18 +6024,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.5017,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20"
-        ],
-        "cpe_count": 9,
-        "reference_count": 2
-      }
+      "probability_score": 0.5017
     },
     {
       "cve_id": "CVE-2022-3924",
@@ -6864,18 +6074,7 @@
         "vendor:isc"
       ],
       "active_threat": false,
-      "probability_score": 0.16445,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-617"
-        ],
-        "cpe_count": 9,
-        "reference_count": 2
-      }
+      "probability_score": 0.16445
     },
     {
       "cve_id": "CVE-2023-2828",
@@ -8712,452 +7911,6 @@
       "probability_score": 0.01222
     },
     {
-      "cve_id": "CVE-2022-0778",
-      "description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "version": "Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1)",
-              "status": "affected"
-            },
-            {
-              "version": "Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m)",
-              "status": "affected"
-            },
-            {
-              "version": "Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.70561,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-835"
-        ],
-        "cpe_count": 32,
-        "reference_count": 63
-      }
-    },
-    {
-      "cve_id": "CVE-2022-1292",
-      "description": "The c_rehash script does not properly sanitise shell metacharacters to prevent command injection. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2). Fixed in OpenSSL 1.1.1o (Affected 1.1.1-1.1.1n). Fixed in OpenSSL 1.0.2ze (Affected 1.0.2-1.0.2zd).",
-      "cvss_score": 7.3,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "version": "Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2)",
-              "status": "affected"
-            },
-            {
-              "version": "Fixed in OpenSSL 1.1.1o (Affected 1.1.1-1.1.1n)",
-              "status": "affected"
-            },
-            {
-              "version": "Fixed in OpenSSL 1.0.2ze (Affected 1.0.2-1.0.2zd)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.83583,
-      "nvd": {
-        "cvss_v3_score": 7.3,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 60,
-        "reference_count": 29
-      }
-    },
-    {
-      "cve_id": "CVE-2022-1473",
-      "description": "The OPENSSL_LH_flush() function, which empties a hash table, contains a bug that breaks reuse of the memory occuppied by the removed hash table entries. This function is used when decoding certificates or keys. If a long lived process periodically decodes certificates or keys its memory usage will expand without bounds and the process might be terminated by the operating system causing a denial of service. Also traversing the empty hash table entries will take increasingly more time. Typically such long lived processes might be TLS clients or TLS servers configured to accept client certificate authentication. The function was added in the OpenSSL 3.0 version thus older releases are not affected by the issue. Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2).",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "version": "Fixed in OpenSSL 3.0.3 (Affected 3.0.0,3.0.1,3.0.2)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.02255,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-459"
-        ],
-        "cpe_count": 43,
-        "reference_count": 10
-      }
-    },
-    {
-      "cve_id": "CVE-2022-2068",
-      "description": "In addition to the c_rehash shell command injection identified in CVE-2022-1292, further circumstances where the c_rehash script does not properly sanitise shell metacharacters to prevent command injection were found by code review. When the CVE-2022-1292 was fixed it was not discovered that there are other places in the script where the file names of certificates being hashed were possibly passed to a command executed through the shell. This script is distributed by some operating systems in a manner where it is automatically executed. On such operating systems, an attacker could execute arbitrary commands with the privileges of the script. Use of the c_rehash script is considered obsolete and should be replaced by the OpenSSL rehash command line tool. Fixed in OpenSSL 3.0.4 (Affected 3.0.0,3.0.1,3.0.2,3.0.3). Fixed in OpenSSL 1.1.1p (Affected 1.1.1-1.1.1o). Fixed in OpenSSL 1.0.2zf (Affected 1.0.2-1.0.2ze).",
-      "cvss_score": 7.3,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "version": "Fixed in OpenSSL 3.0.4 (Affected 3.0.0,3.0.1,3.0.2,3.0.3)",
-              "status": "affected"
-            },
-            {
-              "version": "Fixed in OpenSSL 1.1.1p (Affected 1.1.1-1.1.1o)",
-              "status": "affected"
-            },
-            {
-              "version": "Fixed in OpenSSL 1.0.2zf (Affected 1.0.2-1.0.2ze)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": true,
-      "is_critical": true,
-      "priority_label": "CRITICAL (Active Exploit in Stack)",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.95764,
-      "nvd": {
-        "cvss_v3_score": 7.3,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 50,
-        "reference_count": 20
-      }
-    },
-    {
-      "cve_id": "CVE-2022-2274",
-      "description": "The OpenSSL 3.0.4 release introduced a serious bug in the RSA implementation for X86_64 CPUs supporting the AVX512IFMA instructions. This issue makes the RSA implementation with 2048 bit private keys incorrect on such machines and memory corruption will happen during the computation. As a consequence of the memory corruption an attacker may be able to trigger a remote code execution on the machine performing the computation. SSL/TLS servers or other servers using 2048 bit RSA private keys running on machines supporting AVX512IFMA instructions of the X86_64 architecture are affected by this issue.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "Affects OpenSSL 3.0.4"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.36513,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-787"
-        ],
-        "cpe_count": 12,
-        "reference_count": 8
-      }
-    },
-    {
-      "cve_id": "CVE-2022-3358",
-      "description": "OpenSSL supports creating a custom cipher via the legacy EVP_CIPHER_meth_new() function and associated function calls. This function was deprecated in OpenSSL 3.0 and application authors are instead encouraged to use the new provider mechanism in order to implement custom ciphers. OpenSSL versions 3.0.0 to 3.0.5 incorrectly handle legacy custom ciphers passed to the EVP_EncryptInit_ex2(), EVP_DecryptInit_ex2() and EVP_CipherInit_ex2() functions (as well as other similarly named encryption and decryption initialisation functions). Instead of using the custom cipher directly it incorrectly tries to fetch an equivalent cipher from the available providers. An equivalent cipher is found based on the NID passed to EVP_CIPHER_meth_new(). This NID is supposed to represent the unique NID for a given cipher. However it is possible for an application to incorrectly pass NID_undef as this value in the call to EVP_CIPHER_meth_new(). When NID_undef is used in this way the OpenSSL encryption/decryption initialisation function will match the NULL cipher as being equivalent and will fetch this from the available providers. This will succeed if the default provider has been loaded (or if a third party provider has been loaded that offers this cipher). Using the NULL cipher means that the plaintext is emitted as the ciphertext. Applications are only affected by this issue if they call EVP_CIPHER_meth_new() using NID_undef and subsequently use it in a call to an encryption/decryption initialisation function. Applications that only use SSL/TLS are not impacted by this issue. Fixed in OpenSSL 3.0.6 (Affected 3.0.0-3.0.5).",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "version": "Fixed in OpenSSL 3.0.6 (Affected 3.0.0-3.0.5)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": true,
-      "is_critical": true,
-      "priority_label": "CRITICAL (Active Exploit in Stack)",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.0287,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-476"
-        ],
-        "cpe_count": 1,
-        "reference_count": 10
-      }
-    },
-    {
-      "cve_id": "CVE-2022-3602",
-      "description": "A buffer overrun can be triggered in X.509 certificate verification, specifically in name constraint checking. Note that this occurs after certificate chain signature verification and requires either a CA to have signed the malicious certificate or for the application to continue certificate verification despite failure to construct a path to a trusted issuer. An attacker can craft a malicious email address to overflow four attacker-controlled bytes on the stack. This buffer overflow could result in a crash (causing a denial of service) or potentially remote code execution. Many platforms implement stack overflow protections which would mitigate against the risk of remote code execution. The risk may be further mitigated based on stack layout for any given platform/compiler. Pre-announcements of CVE-2022-3602 described this issue as CRITICAL. Further analysis based on some of the mitigating factors described above have led this to be downgraded to HIGH. Users are still encouraged to upgrade to a new version as soon as possible. In a TLS client, this can be triggered by connecting to a malicious server. In a TLS server, this can be triggered if the server requests client authentication and a malicious client connects. Fixed in OpenSSL 3.0.7 (Affected 3.0.0,3.0.1,3.0.2,3.0.3,3.0.4,3.0.5,3.0.6).",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "version": "Fixed in OpenSSL 3.0.7 (Affected 3.0.0,3.0.1,3.0.2,3.0.3,3.0.4,3.0.5,3.0.6)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.89804,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-787"
-        ],
-        "cpe_count": 9,
-        "reference_count": 82
-      }
-    },
-    {
-      "cve_id": "CVE-2022-3786",
-      "description": "A buffer overrun can be triggered in X.509 certificate verification, specifically in name constraint checking. Note that this occurs after certificate chain signature verification and requires either a CA to have signed a malicious certificate or for an application to continue certificate verification despite failure to construct a path to a trusted issuer. An attacker can craft a malicious email address in a certificate to overflow an arbitrary number of bytes containing the `.' character (decimal 46) on the stack. This buffer overflow could result in a crash (causing a denial of service). In a TLS client, this can be triggered by connecting to a malicious server. In a TLS server, this can be triggered if the server requests client authentication and a malicious client connects.\n\n",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "lessThan": "3.0.7",
-              "status": "affected",
-              "version": "3.0.0",
-              "versionType": "semver"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.91153,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-120"
-        ],
-        "cpe_count": 6,
-        "reference_count": 7
-      }
-    },
-    {
-      "cve_id": "CVE-2022-3996",
-      "description": "If an X.509 certificate contains a malformed policy constraint and\npolicy processing is enabled, then a write lock will be taken twice\nrecursively.  On some operating systems (most widely: Windows) this\nresults in a denial of service when the affected process hangs.  Policy\nprocessing being enabled on a publicly facing server is not considered\nto be a common setup.\n\nPolicy processing is enabled by passing the `-policy'\nargument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.\n\nUpdate (31 March 2023): The description of the policy processing enablement\nwas corrected based on CVE-2023-0466.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "lessThanOrEqual": "3.0.7",
-              "status": "affected",
-              "version": "3.0.0",
-              "versionType": "semver"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.0123,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-667"
-        ],
-        "cpe_count": 1,
-        "reference_count": 5
-      }
-    },
-    {
-      "cve_id": "CVE-2022-4450",
-      "description": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and\ndecodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data.\nIf the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are\npopulated with pointers to buffers containing the relevant decoded data. The\ncaller is responsible for freeing those buffers. It is possible to construct a\nPEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex()\nwill return a failure code but will populate the header argument with a pointer\nto a buffer that has already been freed. If the caller also frees this buffer\nthen a double free will occur. This will most likely lead to a crash. This\ncould be exploited by an attacker who has the ability to supply malicious PEM\nfiles for parsing to achieve a denial of service attack.\n\nThe functions PEM_read_bio() and PEM_read() are simple wrappers around\nPEM_read_bio_ex() and therefore these functions are also directly affected.\n\nThese functions are also called indirectly by a number of other OpenSSL\nfunctions including PEM_X509_INFO_read_bio_ex() and\nSSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal\nuses of these functions are not vulnerable because the caller does not free the\nheader argument if PEM_read_bio_ex() returns a failure code. These locations\ninclude the PEM_read_bio_TYPE() functions as well as the decoders introduced in\nOpenSSL 3.0.\n\nThe OpenSSL asn1parse command line application is also impacted by this issue.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "openssl",
-          "product": "openssl",
-          "versions": [
-            {
-              "lessThan": "3.0.8",
-              "status": "affected",
-              "version": "3.0.0",
-              "versionType": "semver"
-            },
-            {
-              "lessThan": "1.1.1t",
-              "status": "affected",
-              "version": "1.1.1",
-              "versionType": "custom"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl",
-        "vendor:openssl"
-      ],
-      "active_threat": false,
-      "probability_score": 0.20444,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-415"
-        ],
-        "cpe_count": 4,
-        "reference_count": 9
-      }
-    },
-    {
       "cve_id": "CVE-2022-1040",
       "description": "An authentication bypass vulnerability in the User Portal and Webadmin allows a remote attacker to execute code in Sophos Firewall version v18.5 MR3 and older.",
       "cvss_score": 9.8,
@@ -9195,15 +7948,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-04-21",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 1,
-        "reference_count": 7
       }
     },
     {
@@ -9250,17 +7994,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-10-14",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94"
-        ],
-        "cpe_count": 1,
-        "reference_count": 3
       }
     },
     {
@@ -9377,17 +8110,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-05-31",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 66,
-        "reference_count": 11
       }
     },
     {
@@ -9645,212 +8367,6 @@
       }
     },
     {
-      "cve_id": "CVE-2022-21142",
-      "description": "Authentication bypass vulnerability in a-blog cms Ver.2.8.x series versions prior to Ver.2.8.74, Ver.2.9.x series versions prior to Ver.2.9.39, Ver.2.10.x series versions prior to Ver.2.10.43, and Ver.2.11.x series versions prior to Ver.2.11.41 allows a remote unauthenticated attacker to bypass authentication under the specific condition.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "Ver.2.8.x series versions prior to Ver.2.8.74, Ver.2.9.x series versions prior to Ver.2.9.39, Ver.2.10.x series versions prior to Ver.2.10.43, and Ver.2.11.x series versions prior to Ver.2.11.41"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:a-blog cms",
-        "vendor:appleple inc."
-      ],
-      "active_threat": false,
-      "probability_score": 0.01487,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 6.8,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-290"
-        ],
-        "cpe_count": 4,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2025-31103",
-      "description": "Untrusted data deserialization vulnerability exists in a-blog cms. Processing a specially crafted request may store arbitrary files on the server where the product is running. This can be leveraged to execute an arbitrary script on the server.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-      "affected": [
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms (ver.3.1.x series)",
-          "versions": [
-            {
-              "version": "prior to Ver.3.1.37",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms (ver.3.0.x series)",
-          "versions": [
-            {
-              "version": "prior to Ver.3.0.41",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms (ver.2.11.x series)",
-          "versions": [
-            {
-              "version": "prior to Ver.2.11.70",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms (ver.2.10.x series)",
-          "versions": [
-            {
-              "version": "prior to Ver.2.10.58",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms (ver.2.9.x series)",
-          "versions": [
-            {
-              "version": "prior to Ver.2.9.46",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms (ver. 2.8.x series)",
-          "versions": [
-            {
-              "version": "prior to Ver.2.8.80",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:a-blog cms (ver. 2.8.x series)",
-        "product:a-blog cms (ver.2.10.x series)",
-        "product:a-blog cms (ver.2.11.x series)",
-        "product:a-blog cms (ver.2.9.x series)",
-        "product:a-blog cms (ver.3.0.x series)",
-        "product:a-blog cms (ver.3.1.x series)",
-        "vendor:appleple inc."
-      ],
-      "active_threat": false,
-      "probability_score": 0.00456
-    },
-    {
-      "cve_id": "CVE-2025-36560",
-      "description": "Server-side request forgery vulnerability exists in a-blog cms multiple versions. If this vulnerability is exploited, a remote unauthenticated attacker may gain access to sensitive information by sending a specially crafted request.",
-      "cvss_score": 8.6,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
-      "affected": [
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "version": "Ver. 2.8.85 and earlier (Ver. 2.8.x series)",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "version": "Ver. 3.1.43 and earlier (Ver. 3.1.x series)",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "version": "Ver. 3.0.47 and earlier (Ver. 3.0.x series)",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "version": "Ver. 2.11.75 and earlier (Ver. 2.11.x series)",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "version": "Ver. 2.10.63 and earlier (Ver. 2.10.x series)",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "appleple inc.",
-          "product": "a-blog cms",
-          "versions": [
-            {
-              "version": "Ver. 2.9.52 and earlier (Ver. 2.9.x series)",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:a-blog cms",
-        "vendor:appleple inc."
-      ],
-      "active_threat": false,
-      "probability_score": 0.00447
-    },
-    {
       "cve_id": "CVE-2022-21445",
       "description": "Vulnerability in the Oracle Application Development Framework (ADF) product of Oracle Fusion Middleware (component: ADF Faces).  Supported versions that are affected are 12.2.1.3.0 and  12.2.1.4.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Application Development Framework (ADF).  Successful attacks of this vulnerability can result in takeover of Oracle Application Development Framework (ADF). Note: Oracle Application Development Framework (ADF) is downloaded via Oracle JDeveloper Product. Please refer to Fusion Middleware Patch Advisor for more details. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
       "cvss_score": 9.8,
@@ -9890,17 +8406,6 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-10-09",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-502"
-        ],
-        "cpe_count": 2,
-        "reference_count": 3
       }
     },
     {
@@ -9939,17 +8444,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-02-23",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 1,
-        "reference_count": 5
       }
     },
     {
@@ -10318,17 +8812,6 @@
         "requiredAction": "Apply remediations or mitigations per vendor instructions or discontinue use of the product if remediation or mitigations are unavailable.",
         "dueDate": "2023-12-26",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 7.2,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416"
-        ],
-        "cpe_count": 180,
-        "reference_count": 3
       }
     },
     {
@@ -15321,17 +13804,6 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2023-10-09",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": 4.6,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-703"
-        ],
-        "cpe_count": 5,
-        "reference_count": 3
       }
     },
     {
@@ -15453,9 +13925,9 @@
     {
       "cve_id": "CVE-2022-22536",
       "description": "SAP NetWeaver Application Server ABAP, SAP NetWeaver Application Server Java, ABAP Platform, SAP Content Server 7.53 and SAP Web Dispatcher are vulnerable for request smuggling and request concatenation. An unauthenticated attacker can prepend a victim's request with arbitrary data. This way, the attacker can execute functions impersonating the victim or poison intermediary Web caches. A successful attack could result in complete compromise of Confidentiality, Integrity and Availability of the system.",
-      "cvss_score": 10.0,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "sap se",
@@ -15582,17 +14054,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-08",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 10.0,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-444"
-        ],
-        "cpe_count": 26,
-        "reference_count": 5
       }
     },
     {
@@ -15713,17 +14174,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-03-08",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 5.1,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-290"
-        ],
-        "cpe_count": 2,
-        "reference_count": 3
       }
     },
     {
@@ -15768,18 +14218,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-03-08",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 5.3,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": 5.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-284",
-          "CWE-287"
-        ],
-        "cpe_count": 12,
-        "reference_count": 9
       }
     },
     {
@@ -15832,17 +14270,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-03-01",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20"
-        ],
-        "cpe_count": 14,
-        "reference_count": 3
       }
     },
     {
@@ -16469,25 +14896,14 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-07-17",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 10.0,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94"
-        ],
-        "cpe_count": 1,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-26134",
       "description": "In affected versions of Confluence Server and Data Center, an OGNL injection vulnerability exists that would allow an unauthenticated attacker to execute arbitrary code on a Confluence Server or Data Center instance. The affected versions are from 1.3.0 before 7.4.17, from 7.13.0 before 7.13.7, from 7.14.0 before 7.14.3, from 7.15.0 before 7.15.2, from 7.16.0 before 7.16.4, from 7.17.0 before 7.17.4, and from 7.18.0 before 7.18.1.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "atlassian",
@@ -16688,25 +15104,14 @@
         "requiredAction": "Immediately block all internet traffic to and from affected products AND apply the update per vendor instructions [https://confluence.atlassian.com/doc/confluence-security-advisory-2022-06-02-1130377146.html] OR remove the affected products by the due date on the right. Note: Once the update is successfully deployed, agencies can reassess the internet blocking rules.",
         "dueDate": "2022-06-06",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-917"
-        ],
-        "cpe_count": 14,
-        "reference_count": 13
       }
     },
     {
       "cve_id": "CVE-2022-26138",
       "description": "The Atlassian Questions For Confluence app for Confluence Server and Data Center creates a Confluence user account in the confluence-users group with the username disabledsystemuser and a hardcoded password. A remote, unauthenticated attacker with knowledge of the hardcoded password could exploit this to log into Confluence and access all content accessible to users in the confluence-users group. This user account is created when installing versions 2.7.34, 2.7.35, and 3.0.2 of the app.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "atlassian",
@@ -16745,25 +15150,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-08-19",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-798"
-        ],
-        "cpe_count": 5,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-36804",
       "description": "Multiple API endpoints in Atlassian Bitbucket Server and Data Center 7.0.0 before version 7.6.17, from version 7.7.0 before version 7.17.10, from version 7.18.0 before version 7.21.4, from version 8.0.0 before version 8.0.3, from version 8.1.0 before version 8.1.3, and from version 8.2.0 before version 8.2.2, and from version 8.3.0 before 8.3.1 allows remote attackers with read permissions to a public or private Bitbucket repository to execute arbitrary code by sending a malicious HTTP request. This vulnerability was reported via our Bug Bounty Program by TheGrandPew.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "atlassian",
@@ -16964,18 +15358,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-10-21",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78",
-          "CWE-88"
-        ],
-        "cpe_count": 7,
-        "reference_count": 7
       }
     },
     {
@@ -17433,9 +15815,9 @@
     {
       "cve_id": "CVE-2022-26485",
       "description": "Removing an XSLT parameter during processing could have lead to an exploitable use-after-free. We have had reports of attacks in the wild abusing this flaw. This vulnerability affects Firefox < 97.0.2, Firefox ESR < 91.6.1, Firefox for Android < 97.3.0, Thunderbird < 91.6.2, and Focus < 97.3.0.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "mozilla",
@@ -17516,25 +15898,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-03-21",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416"
-        ],
-        "cpe_count": 5,
-        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2022-26486",
       "description": "An unexpected message in the WebGPU IPC framework could lead to a use-after-free and exploitable sandbox escape. We have had reports of attacks in the wild abusing this flaw. This vulnerability affects Firefox < 97.0.2, Firefox ESR < 91.6.1, Firefox for Android < 97.3.0, Thunderbird < 91.6.2, and Focus < 97.3.0.",
-      "cvss_score": 9.6,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "mozilla",
@@ -17615,17 +15986,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-03-21",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.6,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416"
-        ],
-        "cpe_count": 5,
-        "reference_count": 5
       }
     },
     {
@@ -17731,9 +16091,9 @@
     {
       "cve_id": "CVE-2022-26871",
       "description": "An arbitrary file upload vulnerability in Trend Micro Apex Central could allow an unauthenticated remote attacker to upload an arbitrary file which could lead to remote code execution.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "trend micro",
@@ -17764,25 +16124,14 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-04-21",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 7.5,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-345"
-        ],
-        "cpe_count": 2,
-        "reference_count": 11
       }
     },
     {
       "cve_id": "CVE-2022-40139",
       "description": "Improper validation of some components used by the rollback mechanism in Trend Micro Apex One and Trend Micro Apex One as a Service clients could allow a Apex One server administrator to instruct affected clients to download an unverified rollback package, which could lead to remote code execution. Please note: an attacker must first obtain Apex One server administration console access in order to exploit this vulnerability.",
-      "cvss_score": 7.2,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "trend micro",
@@ -17813,15 +16162,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-10-06",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.2,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 3,
-        "reference_count": 3
       }
     },
     {
@@ -17868,17 +16208,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-01-03",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-664"
-        ],
-        "cpe_count": 8,
-        "reference_count": 3
       }
     },
     {
@@ -18253,17 +16582,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-09-29",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.1,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-610"
-        ],
-        "cpe_count": 11,
-        "reference_count": 3
       }
     },
     {
@@ -18336,19 +16654,7 @@
         "vendor:linux kernel"
       ],
       "active_threat": false,
-      "probability_score": 0.00256,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416",
-          "CWE-415"
-        ],
-        "cpe_count": 1,
-        "reference_count": 6
-      }
+      "probability_score": 0.00256
     },
     {
       "cve_id": "CVE-2022-2586",
@@ -18391,17 +16697,6 @@
         "requiredAction": "Apply updates per vendor instructions or discontinue use of the product if updates are unavailable.",
         "dueDate": "2024-07-17",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-416"
-        ],
-        "cpe_count": 7,
-        "reference_count": 28
       }
     },
     {
@@ -18542,17 +16837,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2022-06-06",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": 10.0,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 32,
-        "reference_count": 11
       }
     },
     {
@@ -19002,87 +17286,6 @@
       }
     },
     {
-      "cve_id": "CVE-2022-3479",
-      "description": "A vulnerability found in nss. By this security vulnerability, nss client auth crash without a user certificate in the database and this can lead us to a segmentation fault or crash.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "n/a",
-          "product": "nss",
-          "versions": [
-            {
-              "version": "3.81",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:nss",
-        "vendor:n/a"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00696,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 1,
-        "reference_count": 6
-      }
-    },
-    {
-      "cve_id": "CVE-2022-43507",
-      "description": "Improper buffer restrictions in the Intel(R) QAT Engine for OpenSSL before version 0.6.16 may allow a privileged user to potentially enable escalation of privilege via network access.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "n/a",
-          "product": "intel(r) qat engine for openssl",
-          "versions": [
-            {
-              "version": "before version 0.6.16",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:intel(r) qat engine for openssl",
-        "vendor:n/a"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00611,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-92",
-          "CWE-120"
-        ],
-        "cpe_count": 1,
-        "reference_count": 2
-      }
-    },
-    {
       "cve_id": "CVE-2022-3875",
       "description": "A vulnerability classified as critical was found in Click Studios Passwordstate and Passwordstate Browser Extension Chrome. This vulnerability affects unknown code of the component API. The manipulation leads to authentication bypass by assumed-immutable data. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. It is recommended to upgrade the affected component. The identifier of this vulnerability is VDB-216244.",
       "cvss_score": 7.3,
@@ -19120,19 +17323,7 @@
         "vendor:click studios"
       ],
       "active_threat": false,
-      "probability_score": 0.00968,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-302",
-          "CWE-287"
-        ],
-        "cpe_count": 2,
-        "reference_count": 6
-      }
+      "probability_score": 0.00968
     },
     {
       "cve_id": "CVE-2022-40746",
@@ -19170,19 +17361,7 @@
         "vendor:ibm"
       ],
       "active_threat": false,
-      "probability_score": 0.00337,
-      "nvd": {
-        "cvss_v3_score": 6.7,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-77",
-          "CWE-427"
-        ],
-        "cpe_count": 3,
-        "reference_count": 4
-      }
+      "probability_score": 0.00337
     },
     {
       "cve_id": "CVE-2022-47986",
@@ -19220,17 +17399,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-14",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-502"
-        ],
-        "cpe_count": 5,
-        "reference_count": 7
       }
     },
     {
@@ -20184,6 +18352,36 @@
       "probability_score": 0.00409
     },
     {
+      "cve_id": "CVE-2022-43507",
+      "description": "Improper buffer restrictions in the Intel(R) QAT Engine for OpenSSL before version 0.6.16 may allow a privileged user to potentially enable escalation of privilege via network access.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "n/a",
+          "product": "intel(r) qat engine for openssl",
+          "versions": [
+            {
+              "version": "before version 0.6.16",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:intel(r) qat engine for openssl",
+        "vendor:n/a"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00611
+    },
+    {
       "cve_id": "CVE-2022-43769",
       "description": "Hitachi Vantara Pentaho Business Analytics Server prior to versions 9.4.0.1 and 9.3.0.2, including 8.3.x allow certain web services to set property values which contain Spring templates that are interpreted downstream.",
       "cvss_score": 8.8,
@@ -20227,18 +18425,6 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-24",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.2,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-74",
-          "CWE-94"
-        ],
-        "cpe_count": 2,
-        "reference_count": 5
       }
     },
     {
@@ -20285,17 +18471,6 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-24",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-647"
-        ],
-        "cpe_count": 2,
-        "reference_count": 5
       }
     },
     {
@@ -20334,19 +18509,6 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-03-09",
         "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-74",
-          "CWE-78",
-          "CWE-863"
-        ],
-        "cpe_count": 1,
-        "reference_count": 9
       }
     },
     {
@@ -20379,18 +18541,7 @@
         "vendor:minidvblinux"
       ],
       "active_threat": false,
-      "probability_score": 0.01261,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
+      "probability_score": 0.01261
     },
     {
       "cve_id": "CVE-2023-53770",
@@ -28898,6 +27049,67 @@
       }
     },
     {
+      "cve_id": "CVE-2024-23897",
+      "description": "Jenkins 2.441 and earlier, LTS 2.426.2 and earlier does not disable a feature of its CLI command parser that replaces an '@' character followed by a file path in an argument with the file's contents, allowing unauthenticated attackers to read arbitrary files on the Jenkins controller file system.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "lessThan": "1.606",
+              "status": "unaffected",
+              "version": "0",
+              "versionType": "maven"
+            },
+            {
+              "lessThan": "*",
+              "status": "unaffected",
+              "version": "2.442",
+              "versionType": "maven"
+            },
+            {
+              "lessThan": "2.426.*",
+              "status": "unaffected",
+              "version": "2.426.3",
+              "versionType": "maven"
+            },
+            {
+              "lessThan": "2.440.*",
+              "status": "unaffected",
+              "version": "2.440.1",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": true,
+      "probability_score": 0.99999,
+      "kev": {
+        "cveID": "CVE-2024-23897",
+        "vendorProject": "Jenkins",
+        "product": "Jenkins Command Line Interface (CLI)",
+        "vulnerabilityName": "Jenkins Command Line Interface (CLI) Path Traversal Vulnerability",
+        "dateAdded": "2024-08-19",
+        "shortDescription": "Jenkins Command Line Interface (CLI) contains a path traversal vulnerability that allows attackers limited read access to certain files, which can lead to code execution.",
+        "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2024-09-09",
+        "knownRansomwareCampaignUse": "Known"
+      }
+    },
+    {
       "cve_id": "CVE-2024-24919",
       "description": "Potentially allowing an attacker to read certain information on Check Point Security Gateways once connected to the internet and enabled with remote Access VPN or Mobile Access Software Blades. A Security fix that mitigates this vulnerability is available.",
       "cvss_score": 8.6,
@@ -34511,6 +32723,171 @@
         "dueDate": "2025-04-14",
         "knownRansomwareCampaignUse": "Unknown"
       }
+    },
+    {
+      "cve_id": "CVE-2025-31103",
+      "description": "Untrusted data deserialization vulnerability exists in a-blog cms. Processing a specially crafted request may store arbitrary files on the server where the product is running. This can be leveraged to execute an arbitrary script on the server.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms (ver.3.1.x series)",
+          "versions": [
+            {
+              "version": "prior to Ver.3.1.37",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms (ver.3.0.x series)",
+          "versions": [
+            {
+              "version": "prior to Ver.3.0.41",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms (ver.2.11.x series)",
+          "versions": [
+            {
+              "version": "prior to Ver.2.11.70",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms (ver.2.10.x series)",
+          "versions": [
+            {
+              "version": "prior to Ver.2.10.58",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms (ver.2.9.x series)",
+          "versions": [
+            {
+              "version": "prior to Ver.2.9.46",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms (ver. 2.8.x series)",
+          "versions": [
+            {
+              "version": "prior to Ver.2.8.80",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:a-blog cms (ver. 2.8.x series)",
+        "product:a-blog cms (ver.2.10.x series)",
+        "product:a-blog cms (ver.2.11.x series)",
+        "product:a-blog cms (ver.2.9.x series)",
+        "product:a-blog cms (ver.3.0.x series)",
+        "product:a-blog cms (ver.3.1.x series)",
+        "vendor:appleple inc."
+      ],
+      "active_threat": false,
+      "probability_score": 0.00456
+    },
+    {
+      "cve_id": "CVE-2025-36560",
+      "description": "Server-side request forgery vulnerability exists in a-blog cms multiple versions. If this vulnerability is exploited, a remote unauthenticated attacker may gain access to sensitive information by sending a specially crafted request.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver. 2.8.85 and earlier (Ver. 2.8.x series)",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver. 3.1.43 and earlier (Ver. 3.1.x series)",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver. 3.0.47 and earlier (Ver. 3.0.x series)",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver. 2.11.75 and earlier (Ver. 2.11.x series)",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver. 2.10.63 and earlier (Ver. 2.10.x series)",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver. 2.9.52 and earlier (Ver. 2.9.x series)",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:a-blog cms",
+        "vendor:appleple inc."
+      ],
+      "active_threat": false,
+      "probability_score": 0.00447
     },
     {
       "cve_id": "CVE-2025-31125",
