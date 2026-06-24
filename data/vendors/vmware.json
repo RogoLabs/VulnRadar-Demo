@@ -1,8 +1,88 @@
 {
-  "generated_at": "2026-06-24T21:59:12+00:00",
+  "generated_at": "2026-06-24T22:54:20+00:00",
   "vendor": "vmware",
-  "count": 55,
+  "count": 57,
   "items": [
+    {
+      "cve_id": "CVE-2022-22962",
+      "description": "VMware Horizon Agent for Linux (prior to 22.x) contains a local privilege escalation as a user is able to change the default shared folder location due to a vulnerable symbolic link. Successful exploitation can result in linking to a root owned file.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware horizon agent for linux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware Horizon Agent for Linux prior to 22.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware horizon agent for linux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00288,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2022-22964",
+      "description": "VMware Horizon Agent for Linux (prior to 22.x) contains a local privilege escalation that allows a user to escalate to root due to a vulnerable configuration file.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware horizon agent for linux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware Horizon Agent for Linux prior to 22.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware horizon agent for linux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00231,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
     {
       "cve_id": "CVE-2023-20867",
       "description": "A fully compromised ESXi host can force VMware Tools to fail to authenticate host-to-guest operations, impacting the confidentiality and integrity of the guest virtual machine.",
@@ -42,6 +122,17 @@
         "requiredAction": "Apply updates per vendor instructions.",
         "dueDate": "2023-07-14",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 3.9,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 7,
+        "reference_count": 19
       }
     },
     {
@@ -99,7 +190,18 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.01849
+      "probability_score": 0.01849,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2023-20893",
@@ -156,7 +258,18 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.01248
+      "probability_score": 0.01248,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2023-20894",
@@ -213,7 +326,18 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.33945
+      "probability_score": 0.33945,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2023-20895",
@@ -270,7 +394,18 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.01375
+      "probability_score": 0.01375,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2023-34044",
@@ -315,7 +450,18 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00204
+      "probability_score": 0.00204,
+      "nvd": {
+        "cvss_v3_score": 6.0,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2023-34048",
@@ -379,6 +525,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-02-12",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 37,
+        "reference_count": 4
       }
     },
     {
@@ -411,18 +568,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.0083,
-      "nvd": {
-        "cvss_v3_score": 7.7,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 0,
-        "reference_count": 2
-      }
+      "probability_score": 0.0083
     },
     {
       "cve_id": "CVE-2024-22245",
@@ -452,18 +598,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.01262,
-      "nvd": {
-        "cvss_v3_score": 9.6,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-287"
-        ],
-        "cpe_count": 0,
-        "reference_count": 2
-      }
+      "probability_score": 0.01262
     },
     {
       "cve_id": "CVE-2024-22250",
@@ -493,18 +628,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00348,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-384"
-        ],
-        "cpe_count": 0,
-        "reference_count": 2
-      }
+      "probability_score": 0.00348
     },
     {
       "cve_id": "CVE-2024-22264",
@@ -542,18 +666,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00549,
-      "nvd": {
-        "cvss_v3_score": 7.2,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-269"
-        ],
-        "cpe_count": 0,
-        "reference_count": 2
-      }
+      "probability_score": 0.00549
     },
     {
       "cve_id": "CVE-2024-22280",
@@ -585,18 +698,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00472,
-      "nvd": {
-        "cvss_v3_score": 8.1,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-89"
-        ],
-        "cpe_count": 2,
-        "reference_count": 2
-      }
+      "probability_score": 0.00472
     },
     {
       "cve_id": "CVE-2024-38824",
@@ -634,18 +736,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00959,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 2,
-        "reference_count": 2
-      }
+      "probability_score": 0.00959
     },
     {
       "cve_id": "CVE-2024-38830",
@@ -677,18 +768,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00178,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-269"
-        ],
-        "cpe_count": 2,
-        "reference_count": 1
-      }
+      "probability_score": 0.00178
     },
     {
       "cve_id": "CVE-2024-38831",
@@ -720,18 +800,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00293,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-77"
-        ],
-        "cpe_count": 2,
-        "reference_count": 1
-      }
+      "probability_score": 0.00293
     },
     {
       "cve_id": "CVE-2024-38832",
@@ -763,18 +832,7 @@
         "vendor:vmware"
       ],
       "active_threat": false,
-      "probability_score": 0.00449,
-      "nvd": {
-        "cvss_v3_score": 6.4,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-79"
-        ],
-        "cpe_count": 2,
-        "reference_count": 1
-      }
+      "probability_score": 0.00449
     },
     {
       "cve_id": "CVE-2025-22218",
