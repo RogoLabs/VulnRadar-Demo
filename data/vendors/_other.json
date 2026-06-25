@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-25T01:36:07+00:00",
+  "generated_at": "2026-06-25T03:29:51+00:00",
   "vendor": "_other",
-  "count": 748,
+  "count": 749,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -22637,7 +22637,7 @@
     },
     {
       "cve_id": "CVE-2026-8858",
-      "description": "IBM i 7.6, 7.5, 7.4, and 7.3, IBM WebSphere Application Server and IBM WebSphere Application Server Liberty are vulnerable to remote code execution and denial of service in the WebSphere Web Server Plug-in component. This vulnerability can be exploited when an attacker impersonates the application server and sends crafted responses to the plug-in.",
+      "description": "IBM WebSphere Application Server and IBM WebSphere Application Server Liberty are vulnerable to remote code execution and denial of service in the WebSphere Web Server Plug-in component. This vulnerability can be exploited when an attacker impersonates the application server and sends crafted responses to the plug-in.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -22695,7 +22695,7 @@
     },
     {
       "cve_id": "CVE-2026-9072",
-      "description": "IBM i 7.6, 7.5, 7.4, and 7.3, IBM WebSphere Application Server, and IBM WebSphere Application Server Liberty - when using Intelligent Management with the WebSphere WebServer Plug-in component - are vulnerable to remote code execution and denial of service. This vulnerability can be exploited when an attacker impersonates backend servers and sends crafted responses to the plug-in.",
+      "description": "IBM WebSphere Application Server and IBM WebSphere Application Server Liberty - when using Intelligent Management with the WebSphere WebServer Plug-in component - are vulnerable to remote code execution and denial of service. This vulnerability can be exploited when an attacker impersonates backend servers and sends crafted responses to the plug-in.",
       "cvss_score": 8.1,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -37081,6 +37081,51 @@
       ],
       "active_threat": false,
       "probability_score": 0.00575
+    },
+    {
+      "cve_id": "CVE-2026-12537",
+      "description": "Improper Neutralization used in an OS Command in the container launcher in Google Gemini CLI (versions prior to 0.39.1) and run-gemini-cli GitHub Action (versions prior to 0.1.22) on headless CI platforms allows an unprivileged attacker to achieve pre-sandbox host-level code execution a maliciously crafted .gemini/.env file.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini cli",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.39.1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "run-gemini-cli github action",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.1.22",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini cli",
+        "product:run-gemini-cli github action",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-1727",

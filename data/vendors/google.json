@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-25T01:36:07+00:00",
+  "generated_at": "2026-06-25T03:29:51+00:00",
   "vendor": "google",
-  "count": 1503,
+  "count": 1505,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -46603,6 +46603,37 @@
       }
     },
     {
+      "cve_id": "CVE-2026-11998",
+      "description": "A flaw in AngularJS' Strict Contextual Escaping (SCE) logic allows bypassing certain SCE policies for resource URLs and can lead to arbitrary JavaScript execution within the context of the victim's browser session.\n\n\nSCE's purpose is to ensure that only trusted or safe values are used in certain security-sensitive contexts, such as resource URLs, including URLs that define executable JavaScript scripts, '<iframe>' documents, route templates, etc. A flaw in the logic that tries to match entire URLs against regular expression matchers can result in partial matches for certain types of regular expressions, effectively bypassing the policies and allowing the use of unsafe values as resource URLs.\n\n\nThis issue affects AngularJS versions greater than or equal to 1.2.0-rc.3.\n\n\nNote:\nThe AngularJS project was already End-of-Life when this CVE was published and will not receive any updates to address this issue. For more information see the\u00a0 End-of-Life announcement https://docs.angularjs.org/misc/version-support-status .",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "angularjs",
+          "versions": [
+            {
+              "status": "affected",
+              "version": ">=1.2.0-rc.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:angularjs",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-12007",
       "description": "Use after free in Core in Google Chrome on Windows prior to 149.0.7827.115 allowed a remote attacker to execute arbitrary code via a crafted HTML page. (Chromium security severity: Critical)",
       "cvss_score": 8.8,
@@ -48364,6 +48395,49 @@
         ],
         "cpe_count": 2,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-12681",
+      "description": "Improper Validation of Specified Index, Position, or Offset in Input vulnerability in Google go-attestation. parseEfiSignatureList() does not advance the buffer past vendor bytes before reading entries. For hashSHA256SigGUID lists, this allows attacker-controlled vendor header bytes to be appended to the trusted SHA256 hash list. A crafted TPM event log could inject arbitrary SHA256 hashes into the verifier's trusted measurement database, enabling a remote attestation verifier to accept a compromised boot state. This issue affects go-attestation: through 0.6.0.",
+      "cvss_score": 8.9,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "go-attestation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "0.6.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:go-attestation",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00191,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1285"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
       }
     },
     {
