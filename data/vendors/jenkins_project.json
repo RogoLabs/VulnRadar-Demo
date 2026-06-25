@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-25T19:54:33+00:00",
+  "generated_at": "2026-06-25T21:02:06+00:00",
   "vendor": "jenkins_project",
-  "count": 208,
+  "count": 206,
   "items": [
     {
       "cve_id": "CVE-2022-0538",
@@ -8343,9 +8343,9 @@
     {
       "cve_id": "CVE-2024-23897",
       "description": "Jenkins 2.441 and earlier, LTS 2.426.2 and earlier does not disable a feature of its CLI command parser that replaces an '@' character followed by a file path in an argument with the file's contents, allowing unauthenticated attackers to read arbitrary files on the Jenkins controller file system.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
       "affected": [
         {
           "vendor": "jenkins project",
@@ -8399,54 +8399,24 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-09-09",
         "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22",
-          "CWE-27"
-        ],
-        "cpe_count": 2,
-        "reference_count": 12
       }
     },
     {
-      "cve_id": "CVE-2024-23898",
-      "description": "Jenkins 2.217 through 2.441 (both inclusive), LTS 2.222.1 through 2.426.2 (both inclusive) does not perform origin validation of requests made through the CLI WebSocket endpoint, resulting in a cross-site WebSocket hijacking (CSWSH) vulnerability, allowing attackers to execute CLI commands on the Jenkins controller.",
+      "cve_id": "CVE-2025-24398",
+      "description": "Jenkins Bitbucket Server Integration Plugin 2.1.0 through 4.1.3 (both inclusive) allows attackers to craft URLs that would bypass the CSRF protection of any target URL in Jenkins.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "jenkins project",
-          "product": "jenkins",
+          "product": "jenkins bitbucket server integration plugin",
           "versions": [
             {
-              "lessThan": "2.217",
-              "status": "unaffected",
-              "version": "0",
-              "versionType": "maven"
-            },
-            {
-              "lessThan": "*",
-              "status": "unaffected",
-              "version": "2.442",
-              "versionType": "maven"
-            },
-            {
-              "lessThan": "2.426.*",
-              "status": "unaffected",
-              "version": "2.426.3",
-              "versionType": "maven"
-            },
-            {
-              "lessThan": "2.440.*",
-              "status": "unaffected",
-              "version": "2.440.1",
-              "versionType": "maven"
+              "version": "2.1.0",
+              "versionType": "maven",
+              "lessThanOrEqual": "4.1.3",
+              "status": "affected"
             }
           ]
         }
@@ -8457,399 +8427,43 @@
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [
-        "product:jenkins",
+        "product:jenkins bitbucket server integration plugin",
         "vendor:jenkins project"
       ],
       "active_threat": false,
-      "probability_score": 0.66921,
+      "probability_score": 0.00285,
       "nvd": {
         "cvss_v3_score": 8.8,
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-346"
-        ],
-        "cpe_count": 2,
-        "reference_count": 6
-      }
-    },
-    {
-      "cve_id": "CVE-2024-23904",
-      "description": "Jenkins Log Command Plugin 1.0.2 and earlier does not disable a feature of its command parser that replaces an '@' character followed by a file path in an argument with the file's contents, allowing unauthenticated attackers to read content from arbitrary files on the Jenkins controller file system.",
-      "cvss_score": 7.5,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins log command plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "1.0.2",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins log command plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00875,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
+          "CWE-352"
         ],
         "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2024-28157",
-      "description": "Jenkins GitBucket Plugin 0.8 and earlier does not sanitize Gitbucket URLs on build views, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers able to configure jobs.",
-      "cvss_score": 8.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins gitbucket plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "0.8",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins gitbucket plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.01077,
-      "nvd": {
-        "cvss_v3_score": 8.0,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-79"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2024-28160",
-      "description": "Jenkins iceScrum Plugin 1.1.6 and earlier does not sanitize iceScrum project URLs on build views, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers able to configure jobs.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins icescrum plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "1.1.6",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins icescrum plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.01129,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-79"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2024-2216",
-      "description": "A missing permission check in an HTTP endpoint in Jenkins docker-build-step Plugin 2.11 and earlier allows attackers with Overall/Read permission to connect to an attacker-specified TCP or Unix socket URL, and to reconfigure the plugin using the provided connection test parameters, affecting future build step executions.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins docker-build-step plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "2.11",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins docker-build-step plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00826,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-862"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2024-34144",
-      "description": "A sandbox bypass vulnerability involving crafted constructor bodies in Jenkins Script Security Plugin 1335.vf07d9ce377a_e and earlier allows attackers with permission to define and run sandboxed scripts, including Pipelines, to bypass the sandbox protection and execute arbitrary code in the context of the Jenkins controller JVM.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins script security plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "1335.vf07d9ce377a_e",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins script security plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.48081,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-693"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2024-34145",
-      "description": "A sandbox bypass vulnerability involving sandbox-defined classes that shadow specific non-sandbox-defined classes in Jenkins Script Security Plugin 1335.vf07d9ce377a_e and earlier allows attackers with permission to define and run sandboxed scripts, including Pipelines, to bypass the sandbox protection and execute arbitrary code in the context of the Jenkins controller JVM.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins script security plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "1335.vf07d9ce377a_e",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins script security plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.01002,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-290"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2024-43044",
-      "description": "Jenkins 2.470 and earlier, LTS 2.452.3 and earlier allows agent processes to read arbitrary files from the Jenkins controller file system by using the `ClassLoaderProxy#fetchJar` method in the Remoting library.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins",
-          "versions": [
-            {
-              "version": "2.452.4",
-              "versionType": "maven",
-              "lessThan": "2.452.*",
-              "status": "unaffected"
-            },
-            {
-              "version": "2.462.1",
-              "versionType": "maven",
-              "lessThan": "2.462.*",
-              "status": "unaffected"
-            },
-            {
-              "version": "2.471",
-              "versionType": "maven",
-              "lessThan": "*",
-              "status": "unaffected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.28782,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-754"
-        ],
-        "cpe_count": 2,
         "reference_count": 1
       }
     },
     {
-      "cve_id": "CVE-2024-47805",
-      "description": "Jenkins Credentials Plugin 1380.va_435002fa_924 and earlier, except 1371.1373.v4eb_fa_b_7161e9, does not redact encrypted values of credentials using the `SecretBytes` type when accessing item `config.xml` via REST API or CLI.",
-      "cvss_score": 7.5,
+      "cve_id": "CVE-2025-24399",
+      "description": "Jenkins OpenId Connect Authentication Plugin 4.452.v2849b_d3945fa_ and earlier, except 4.438.440.v3f5f201de5dc, treats usernames as case-insensitive, allowing attackers on Jenkins instances configured with a case-sensitive OpenID Connect provider to log in as any user by providing a username that differs only in letter case, potentially gaining administrator access to Jenkins.",
+      "cvss_score": 8.8,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins credentials plugin",
-          "versions": [
-            {
-              "version": "1371.1373.v4eb_fa_b_7161e9",
-              "status": "unaffected"
-            },
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "1380.va_435002fa_924",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins credentials plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00583,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-522"
-        ],
-        "cpe_count": 2,
-        "reference_count": 1
-      }
-    },
-    {
-      "cve_id": "CVE-2024-47806",
-      "description": "Jenkins OpenId Connect Authentication Plugin 4.354.v321ce67a_1de8 and earlier does not check the `aud` (Audience) claim of an ID Token, allowing attackers to subvert the authentication flow, potentially gaining administrator access to Jenkins.",
-      "cvss_score": 8.1,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "jenkins project",
           "product": "jenkins openid connect authentication plugin",
           "versions": [
             {
-              "version": "0",
+              "version": "4.453.v4d7765c854f4",
               "versionType": "maven",
-              "lessThanOrEqual": "4.354.v321ce67a_1de8",
-              "status": "affected"
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "4.438.440.v3f5f201de5dc",
+              "status": "unaffected"
             }
           ]
         }
@@ -8864,253 +8478,34 @@
         "vendor:jenkins project"
       ],
       "active_threat": false,
-      "probability_score": 0.00636,
+      "probability_score": 0.0053,
       "nvd": {
-        "cvss_v3_score": 8.1,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-287"
-        ],
-        "cpe_count": 1,
-        "reference_count": 1
-      }
-    },
-    {
-      "cve_id": "CVE-2024-47807",
-      "description": "Jenkins OpenId Connect Authentication Plugin 4.354.v321ce67a_1de8 and earlier does not check the `iss` (Issuer) claim of an ID Token, allowing attackers to subvert the authentication flow, potentially gaining administrator access to Jenkins.",
-      "cvss_score": 8.1,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins openid connect authentication plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "4.354.v321ce67a_1de8",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins openid connect authentication plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00636,
-      "nvd": {
-        "cvss_v3_score": 8.1,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-287"
-        ],
-        "cpe_count": 1,
-        "reference_count": 1
-      }
-    },
-    {
-      "cve_id": "CVE-2024-52550",
-      "description": "Jenkins Pipeline: Groovy Plugin 3990.vd281dd77a_388 and earlier, except 3975.3977.v478dd9e956c3 does not check whether the main (Jenkinsfile) script for a rebuilt build is approved, allowing attackers with Item/Build permission to rebuild a previous build whose (Jenkinsfile) script is no longer approved.",
-      "cvss_score": 8.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins pipeline: groovy plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "3975.v567e2a_1ffa_22",
-              "status": "affected"
-            },
-            {
-              "version": "3990.vd281dd77a_388",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins pipeline: groovy plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.0044,
-      "nvd": {
-        "cvss_v3_score": 8.0,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-354"
-        ],
-        "cpe_count": 2,
-        "reference_count": 1
-      }
-    },
-    {
-      "cve_id": "CVE-2024-52551",
-      "description": "Jenkins Pipeline: Declarative Plugin 2.2214.vb_b_34b_2ea_9b_83 and earlier does not check whether the main (Jenkinsfile) script used to restart a build from a specific stage is approved, allowing attackers with Item/Build permission to restart a previous build whose (Jenkinsfile) script is no longer approved.",
-      "cvss_score": 8.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins pipeline: declarative plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "2.2214.vb_b_34b_2ea_9b_83",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins pipeline: declarative plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00567,
-      "nvd": {
-        "cvss_v3_score": 8.0,
+        "cvss_v3_score": 8.8,
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-276"
         ],
-        "cpe_count": 1,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
     {
-      "cve_id": "CVE-2024-52552",
-      "description": "Jenkins Authorize Project Plugin 1.7.2 and earlier evaluates a string containing the job name with JavaScript on the Authorization view, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Item/Configure permission.",
-      "cvss_score": 8.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins authorize project plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "1.7.2",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins authorize project plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00668,
-      "nvd": {
-        "cvss_v3_score": 8.0,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-79"
-        ],
-        "cpe_count": 1,
-        "reference_count": 1
-      }
-    },
-    {
-      "cve_id": "CVE-2024-52553",
-      "description": "Jenkins OpenId Connect Authentication Plugin 4.418.vccc7061f5b_6d and earlier does not invalidate the previous session on login.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jenkins project",
-          "product": "jenkins openid connect authentication plugin",
-          "versions": [
-            {
-              "version": "0",
-              "versionType": "maven",
-              "lessThanOrEqual": "4.418.vccc7061f5b_6d",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:jenkins openid connect authentication plugin",
-        "vendor:jenkins project"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00613,
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-613"
-        ],
-        "cpe_count": 1,
-        "reference_count": 1
-      }
-    },
-    {
-      "cve_id": "CVE-2024-52554",
-      "description": "Jenkins Shared Library Version Override Plugin 17.v786074c9fce7 and earlier declares folder-scoped library overrides as trusted, so that they're not executed in the Script Security sandbox, allowing attackers with Item/Configure permission on a folder to configure a folder-scoped library override that runs without sandbox protection.",
+      "cve_id": "CVE-2025-31722",
+      "description": "In Jenkins Templating Engine Plugin 2.5.3 and earlier, libraries defined in folders are not subject to sandbox protection, allowing attackers with Item/Configure permission to execute arbitrary code in the context of the Jenkins controller JVM.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "jenkins project",
-          "product": "jenkins shared library version override plugin",
+          "product": "jenkins templating engine plugin",
           "versions": [
             {
               "version": "0",
               "versionType": "maven",
-              "lessThanOrEqual": "17.v786074c9fce7",
+              "lessThanOrEqual": "2.5.3",
               "status": "affected"
             }
           ]
@@ -9122,38 +8517,38 @@
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [
-        "product:jenkins shared library version override plugin",
+        "product:jenkins templating engine plugin",
         "vendor:jenkins project"
       ],
       "active_threat": false,
-      "probability_score": 0.00518,
+      "probability_score": 0.01126,
       "nvd": {
         "cvss_v3_score": 8.8,
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-862"
+          "CWE-94"
         ],
         "cpe_count": 1,
         "reference_count": 1
       }
     },
     {
-      "cve_id": "CVE-2024-54003",
-      "description": "Jenkins Simple Queue Plugin 1.4.4 and earlier does not escape the view name, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with View/Create permission.",
-      "cvss_score": 8.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "cve_id": "CVE-2025-32754",
+      "description": "In jenkins/ssh-agent Docker images 6.11.1 and earlier, SSH host keys are generated on image creation for images based on Debian, causing all containers based on images of the same version use the same SSH host keys, allowing attackers able to insert themselves into the network path between the SSH client (typically the Jenkins controller) and SSH build agent to impersonate the latter.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
       "affected": [
         {
           "vendor": "jenkins project",
-          "product": "jenkins simple queue plugin",
+          "product": "jenkins jenkins/ssh-agent docker images",
           "versions": [
             {
               "version": "0",
               "versionType": "maven",
-              "lessThanOrEqual": "1.4.4",
+              "lessThanOrEqual": "6.11.1",
               "status": "affected"
             }
           ]
@@ -9165,11 +8560,306 @@
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [
-        "product:jenkins simple queue plugin",
+        "product:jenkins jenkins/ssh-agent docker images",
         "vendor:jenkins project"
       ],
       "active_threat": false,
-      "probability_score": 0.77461,
+      "probability_score": 0.00411,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-338"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-32755",
+      "description": "In jenkins/ssh-slave Docker images based on Debian, SSH host keys are generated on image creation for images based on Debian, causing all containers based on images of the same version use the same SSH host keys, allowing attackers able to insert themselves into the network path between the SSH client (typically the Jenkins controller) and SSH build agent to impersonate the latter.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins jenkins/ssh-slave docker images",
+          "versions": [
+            {
+              "version": "alpine",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins jenkins/ssh-slave docker images",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00411,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-338"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-47884",
+      "description": "In Jenkins OpenID Connect Provider Plugin 96.vee8ed882ec4d and earlier the generation of build ID Tokens uses potentially overridden values of environment variables, in conjunction with certain other plugins allowing attackers able to configure jobs to craft a build ID Token that impersonates a trusted job, potentially gaining unauthorized access to external services.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins openid connect provider plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "96.vee8ed882ec4d",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins openid connect provider plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00609,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-47885",
+      "description": "Jenkins Health Advisor by CloudBees Plugin 374.v194b_d4f0c8c8 and earlier does not escape responses from the Jenkins Health Advisor server, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers able to control Jenkins Health Advisor server responses.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins health advisor by cloudbees plugin",
+          "versions": [
+            {
+              "lessThanOrEqual": "374.v194b_d4f0c8c8",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins health advisor by cloudbees plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00495,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-47889",
+      "description": "In Jenkins WSO2 Oauth Plugin 1.0 and earlier, authentication claims are accepted without validation by the \"WSO2 Oauth\" security realm, allowing unauthenticated attackers to log in to controllers using this security realm using any username and any password, including usernames that do not exist.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins wso2 oauth plugin",
+          "versions": [
+            {
+              "version": "1.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins wso2 oauth plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00616,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-53650",
+      "description": "Jenkins Credentials Binding Plugin 687.v619cb_15e923f and earlier does not properly mask (i.e., replace with asterisks) credentials present in exception error messages that are written to the build log.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins credentials binding plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "687.v619cb_15e923f",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins credentials binding plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00321,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-522"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-53652",
+      "description": "Jenkins Git Parameter Plugin 439.vb_0e46ca_14534 and earlier does not validate that the Git parameter value submitted to the build matches one of the offered choices, allowing attackers with Item/Build permission to inject arbitrary values into Git parameters.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins git parameter plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "439.vb_0e46ca_14534",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins git parameter plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00618,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-5806",
+      "description": "Jenkins Gatling Plugin 136.vb_9009b_3d33a_e serves Gatling reports in a manner that bypasses the Content-Security-Policy protection introduced in Jenkins 1.641 and 1.625, resulting in a cross-site scripting (XSS) vulnerability exploitable by users able to change report content.",
+      "cvss_score": 8.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins gatling plugin",
+          "versions": [
+            {
+              "version": "136.vb_9009b_3d33a_e",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins gatling plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00434,
       "nvd": {
         "cvss_v3_score": 8.0,
         "cvss_v3_severity": "HIGH",
@@ -9179,6 +8869,184 @@
           "CWE-79"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-64131",
+      "description": "Jenkins SAML Plugin 4.583.vc68232f7018a_ and earlier does not implement a replay cache, allowing attackers able to obtain information about the SAML authentication flow between a user's web browser and Jenkins to replay those requests, authenticating to Jenkins as that user.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins saml plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "4.583.vc68232f7018a_",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins saml plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00345,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-294"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-64134",
+      "description": "Jenkins JDepend Plugin 1.3.1 and earlier includes an outdated version of JDepend Maven Plugin that does not configure its XML parser to prevent XML external entity (XXE) attacks.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins jdepend plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "1.3.1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins jdepend plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00292,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-64140",
+      "description": "Jenkins Azure CLI Plugin 0.9 and earlier does not restrict which commands it executes on the Jenkins controller, allowing attackers with Item/Configure permission to execute arbitrary shell commands.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins azure cli plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "0.9",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins azure cli plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00509,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-67635",
+      "description": "Jenkins 2.540 and earlier, LTS 2.528.2 and earlier does not properly close HTTP-based CLI connections when the connection stream becomes corrupted, allowing unauthenticated attackers to cause a denial of service.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "lessThan": "*",
+              "status": "unaffected",
+              "version": "2.541",
+              "versionType": "maven"
+            },
+            {
+              "lessThan": "2.528.*",
+              "status": "unaffected",
+              "version": "2.528.3",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00506,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-404"
+        ],
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
