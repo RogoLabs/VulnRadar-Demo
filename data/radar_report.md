@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-26T17:55:42+00:00`
+Generated: `2026-06-26T18:59:13+00:00`
 
 ## Executive Summary
 
@@ -38,11 +38,11 @@ Top critical items:
 
 ## Summary
 
-- Total items: **9037**
-- Watchlist hits: **8650**
+- Total items: **10317**
+- Watchlist hits: **9930**
 - CISA KEVs: **719**
-- Exploit Intel (PoC): **774**
-- Exploit Intel + Watchlist (CRITICAL): **388**
+- Exploit Intel (PoC): **778**
+- Exploit Intel + Watchlist (CRITICAL): **391**
 
 ## Top Findings (max 200)
 
@@ -84,6 +84,7 @@ Top critical items:
 | [CVE-2024-13161](https://www.cve.org/CVERecord?id=CVE-2024-13161) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-31 | 0.885 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
 | [CVE-2023-27524](https://www.cve.org/CVERecord?id=CVE-2023-27524) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-01-29 | 0.974 | 8.9 | ✅ | Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY accordi… |
 | [CVE-2026-21643](https://www.cve.org/CVERecord?id=CVE-2026-21643) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-16 | 0.941 | 9.1 | ✅ | An improper neutralization of special elements used in an sql command ('sql injection') vulnerability in Fortinet FortiClientEMS 7.4.4 may allow an unauthentic… |
+| [CVE-2026-34197](https://www.cve.org/CVERecord?id=CVE-2026-34197) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-30 | 0.963 | 8.8 | ✅ | Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ.  Apache ActiveMQ… |
 | [CVE-2025-64446](https://www.cve.org/CVERecord?id=CVE-2025-64446) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-11-21 | 0.895 | 9.4 | ✅ | A relative path traversal vulnerability in Fortinet FortiWeb 8.0.0 through 8.0.1, FortiWeb 7.6.0 through 7.6.4, FortiWeb 7.4.0 through 7.4.9, FortiWeb 7.2.0 th… |
 | [CVE-2026-1340](https://www.cve.org/CVERecord?id=CVE-2026-1340) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-11 | 0.840 | 9.8 | ✅ | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
 | [CVE-2024-21893](https://www.cve.org/CVERecord?id=CVE-2024-21893) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-02 | 1.000 | 8.2 | ✅ | A server-side request forgery vulnerability in the SAML component of Ivanti Connect Secure (9.x, 22.x) and Ivanti Policy Secure (9.x, 22.x) and Ivanti Neurons … |
@@ -170,6 +171,7 @@ Top critical items:
 | [CVE-2025-14174](https://www.cve.org/CVERecord?id=CVE-2025-14174) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-02 | 0.224 | 8.8 | ✅ | Out of bounds memory access in ANGLE in Google Chrome on Mac prior to 143.0.7499.110 allowed a remote attacker to perform out of bounds memory access via a cra… |
 | [CVE-2025-31201](https://www.cve.org/CVERecord?id=CVE-2025-31201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.124 | 9.8 | ✅ | This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, visionOS 2.4.… |
 | [CVE-2023-36874](https://www.cve.org/CVERecord?id=CVE-2023-36874) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-01 | 0.323 | 7.8 | ✅ | Windows Error Reporting Service Elevation of Privilege Vulnerability |
+| [CVE-2026-2441](https://www.cve.org/CVERecord?id=CVE-2026-2441) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-10 | 0.220 | 8.8 | ✅ | Use after free in CSS in Google Chrome prior to 145.0.7632.75 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
 | [CVE-2022-22587](https://www.cve.org/CVERecord?id=CVE-2022-22587) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-02-11 | 0.116 | 9.8 | ✅ | A memory corruption issue was addressed with improved input validation. This issue is fixed in iOS 15.3 and iPadOS 15.3, macOS Big Sur 11.6.3, macOS Monterey 1… |
 | [CVE-2024-43573](https://www.cve.org/CVERecord?id=CVE-2024-43573) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.444 | 6.5 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
 | [CVE-2022-20701](https://www.cve.org/CVERecord?id=CVE-2022-20701) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.091 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
@@ -214,13 +216,13 @@ Top critical items:
 | [CVE-2022-42856](https://www.cve.org/CVERecord?id=CVE-2022-42856) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-04 | 0.085 | 8.8 | ✅ | A type confusion issue was addressed with improved state handling. This issue is fixed in Safari 16.2, tvOS 16.2, macOS Ventura 13.1, iOS 15.7.2 and iPadOS 15.… |
 | [CVE-2022-22718](https://www.cve.org/CVERecord?id=CVE-2022-22718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-10 | 0.185 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2025-43529](https://www.cve.org/CVERecord?id=CVE-2025-43529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-05 | 0.084 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 26.2, iOS 18.7.3 and iPadOS 18.7.3, iOS 26.2 and iPadOS 26.… |
-| [CVE-2026-34197](https://www.cve.org/CVERecord?id=CVE-2026-34197) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-30 | 0.963 |  | ✅ | Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ.  Apache ActiveMQ… |
 | [CVE-2025-29824](https://www.cve.org/CVERecord?id=CVE-2025-29824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-29 | 0.180 | 7.8 | ✅ | Use after free in Windows Common Log File System Driver allows an authorized attacker to elevate privileges locally. |
 | [CVE-2024-38189](https://www.cve.org/CVERecord?id=CVE-2024-38189) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.079 | 8.8 | ✅ | Microsoft Project Remote Code Execution Vulnerability |
 | [CVE-2022-3723](https://www.cve.org/CVERecord?id=CVE-2022-3723) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-11-18 | 0.068 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 107.0.5304.87 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromiu… |
 | [CVE-2023-36036](https://www.cve.org/CVERecord?id=CVE-2023-36036) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-05 | 0.165 | 7.8 | ✅ | Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability |
 | [CVE-2025-22224](https://www.cve.org/CVERecord?id=CVE-2025-22224) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-25 | 0.015 | 9.3 | ✅ | VMware ESXi, and Workstation contain a TOCTOU (Time-of-Check Time-of-Use) vulnerability that leads to an out-of-bounds write. A malicious actor with local admi… |
 | [CVE-2025-5419](https://www.cve.org/CVERecord?id=CVE-2025-5419) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-26 | 0.065 | 8.8 | ✅ | Out of bounds read and write in V8 in Google Chrome prior to 137.0.7151.68 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML … |
+| [CVE-2026-5281](https://www.cve.org/CVERecord?id=CVE-2026-5281) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-15 | 0.050 | 8.8 | ✅ | Use after free in Dawn in Google Chrome prior to 146.0.7680.178 allowed a remote attacker who had compromised the renderer process to execute arbitrary code vi… |
 | [CVE-2022-38028](https://www.cve.org/CVERecord?id=CVE-2022-38028) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-14 | 0.149 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2025-13223](https://www.cve.org/CVERecord?id=CVE-2025-13223) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-10 | 0.048 | 8.8 | ✅ | Type Confusion in V8 in Google Chrome prior to 142.0.7444.175 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2023-32049](https://www.cve.org/CVERecord?id=CVE-2023-32049) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-01 | 0.044 | 8.8 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
@@ -232,7 +234,10 @@ Top critical items:
 | [CVE-2023-38180](https://www.cve.org/CVERecord?id=CVE-2023-38180) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-30 | 0.155 | 7.5 | ✅ | .NET and Visual Studio Denial of Service Vulnerability |
 | [CVE-2022-20775](https://www.cve.org/CVERecord?id=CVE-2022-20775) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-27 | 0.125 | 7.8 | ✅ | A vulnerability in the CLI of Cisco SD-WAN Software could allow an authenticated, local attacker to gain elevated privileges.  This vulnerability is due to i… |
 | [CVE-2023-36424](https://www.cve.org/CVERecord?id=CVE-2023-36424) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.122 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
+| [CVE-2026-3910](https://www.cve.org/CVERecord?id=CVE-2026-3910) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-27 | 0.020 | 8.8 | ✅ | Inappropriate implementation in V8 in Google Chrome prior to 146.0.7680.75 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted H… |
 | [CVE-2023-36033](https://www.cve.org/CVERecord?id=CVE-2023-36033) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-05 | 0.120 | 7.8 | ✅ | Windows DWM Core Library Elevation of Privilege Vulnerability |
+| [CVE-2026-11645](https://www.cve.org/CVERecord?id=CVE-2026-11645) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-23 | 0.017 | 8.8 | ✅ | Out of bounds read and write in V8 in Google Chrome prior to 149.0.7827.103 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted … |
+| [CVE-2026-3909](https://www.cve.org/CVERecord?id=CVE-2026-3909) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-27 | 0.016 | 8.8 | ✅ | Out of bounds write in Skia in Google Chrome prior to 146.0.7680.75 allowed a remote attacker to perform out of bounds memory access via a crafted HTML page. (… |
 | [CVE-2025-31277](https://www.cve.org/CVERecord?id=CVE-2025-31277) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-03 | 0.014 | 8.8 | ✅ | The issue was addressed with improved memory handling. This issue is fixed in Safari 18.6, iOS 18.6 and iPadOS 18.6, macOS Sequoia 15.6, tvOS 18.6, visionOS 2.… |
 | [CVE-2026-32201](https://www.cve.org/CVERecord?id=CVE-2026-32201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-28 | 0.242 | 6.5 | ✅ | Improper input validation in Microsoft Office SharePoint allows an unauthorized attacker to perform spoofing over a network. |
 | [CVE-2023-23376](https://www.cve.org/CVERecord?id=CVE-2023-23376) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-03-07 | 0.109 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
@@ -243,11 +248,6 @@ Top critical items:
 | [CVE-2025-6554](https://www.cve.org/CVERecord?id=CVE-2025-6554) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-07-23 | 0.066 | 8.1 | ✅ | Type confusion in V8 in Google Chrome prior to 138.0.7204.96 allowed a remote attacker to perform arbitrary read/write via a crafted HTML page. (Chromium secur… |
 | [CVE-2023-32046](https://www.cve.org/CVERecord?id=CVE-2023-32046) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-01 | 0.091 | 7.8 | ✅ | Windows MSHTML Platform Elevation of Privilege Vulnerability |
 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-29 | 0.056 | 8.1 | ✅ | Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform sp… |
-| [CVE-2026-41091](https://www.cve.org/CVERecord?id=CVE-2026-41091) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-03 | 0.084 | 7.8 | ✅ | Improper link resolution before file access ('link following') in Microsoft Defender allows an authorized attacker to elevate privileges locally. |
-| [CVE-2026-20045](https://www.cve.org/CVERecord?id=CVE-2026-20045) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-11 | 0.043 | 8.2 | ✅ | A vulnerability in Cisco Unified Communications Manager (Unified CM), Cisco Unified Communications Manager Session Management Edition (Unified CM SME), Cisco U… |
-| [CVE-2025-41244](https://www.cve.org/CVERecord?id=CVE-2025-41244) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-11-20 | 0.079 | 7.8 | ✅ | VMware Aria Operations and VMware Tools contain a local privilege escalation vulnerability. A malicious local actor with non-administrative privileges having a… |
-| [CVE-2023-36563](https://www.cve.org/CVERecord?id=CVE-2023-36563) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-31 | 0.209 | 6.5 | ✅ | Microsoft WordPad Information Disclosure Vulnerability |
-| [CVE-2025-48595](https://www.cve.org/CVERecord?id=CVE-2025-48595) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-05 | 0.017 | 8.4 | ✅ | In multiple locations, there is a possible way to achieve code execution due to an integer overflow. This could lead to local escalation of privilege with no a… |
 
 ## Recent Changes (Last 7 Days)
 
