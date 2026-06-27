@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-27T12:45:37+00:00`
+Generated: `2026-06-27T13:43:30+00:00`
 
 ## Executive Summary
 
@@ -139,11 +139,10 @@ Top critical items:
 | [CVE-2024-43451](https://www.cve.org/CVERecord?id=CVE-2024-43451) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.818 | 6.5 | ✅ | NTLM Hash Disclosure Spoofing Vulnerability |
 | [CVE-2022-34713](https://www.cve.org/CVERecord?id=CVE-2022-34713) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-08-30 | 0.680 | 7.8 | ✅ | Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability |
 | [CVE-2023-41763](https://www.cve.org/CVERecord?id=CVE-2023-41763) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-31 | 0.904 | 5.3 | ✅ | Skype for Business Elevation of Privilege Vulnerability |
-| [CVE-2024-43461](https://www.cve.org/CVERecord?id=CVE-2024-43461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-07 | 0.522 | 8.8 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
+| [CVE-2024-43461](https://www.cve.org/CVERecord?id=CVE-2024-43461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-07 | 0.519 | 8.8 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
 | [CVE-2025-20333](https://www.cve.org/CVERecord?id=CVE-2025-20333) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-26 | 0.404 | 9.9 | ✅ | A vulnerability in the VPN web server of Cisco Secure Firewall Adaptive Security Appliance (ASA) Software and Cisco Secure Firewall Threat Defense (FTD) Softwa… |
 | [CVE-2024-43572](https://www.cve.org/CVERecord?id=CVE-2024-43572) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.610 | 7.8 | ✅ | Microsoft Management Console Remote Code Execution Vulnerability |
 | [CVE-2024-30088](https://www.cve.org/CVERecord?id=CVE-2024-30088) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-11-05 | 0.682 | 7.0 | ✅ | Windows Kernel Elevation of Privilege Vulnerability |
-| [CVE-2026-20230](https://www.cve.org/CVERecord?id=CVE-2026-20230) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-28 | 0.512 | 8.6 | ✅ | A vulnerability in Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) could… |
 | [CVE-2023-35081](https://www.cve.org/CVERecord?id=CVE-2023-35081) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-21 | 0.633 | 7.2 | ✅ | A path traversal vulnerability in Ivanti EPMM versions (11.10.x < 11.10.0.3,  11.9.x < 11.9.1.2 and 11.8.x < 11.8.1.2) allows an authenticated administrator to… |
 | [CVE-2024-9380](https://www.cve.org/CVERecord?id=CVE-2024-9380) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-30 | 0.630 | 7.2 | ✅ | An OS command injection vulnerability in the admin web console of Ivanti CSA before version 5.0.2 allows a remote authenticated attacker with admin privileges … |
 | [CVE-2024-29988](https://www.cve.org/CVERecord?id=CVE-2024-29988) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-21 | 0.452 | 8.8 | ✅ | SmartScreen Prompt Security Feature Bypass Vulnerability |
@@ -156,6 +155,7 @@ Top critical items:
 | [CVE-2025-20393](https://www.cve.org/CVERecord?id=CVE-2025-20393) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-24 | 0.291 | 10.0 | ✅ | A vulnerability in the Spam Quarantine feature of Cisco AsyncOS Software for Cisco Secure Email Gateway and Cisco Secure Email and Web Manager could allow an u… |
 | [CVE-2023-2033](https://www.cve.org/CVERecord?id=CVE-2023-2033) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-08 | 0.408 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 112.0.5615.121 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-4135](https://www.cve.org/CVERecord?id=CVE-2022-4135) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-12-19 | 0.319 | 9.6 | ✅ | Heap buffer overflow in GPU in Google Chrome prior to 107.0.5304.121 allowed a remote attacker who had compromised the renderer process to potentially perform … |
+| [CVE-2026-20230](https://www.cve.org/CVERecord?id=CVE-2026-20230) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-28 | 0.417 | 8.6 | ✅ | A vulnerability in Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) could… |
 | [CVE-2026-20131](https://www.cve.org/CVERecord?id=CVE-2026-20131) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-22 | 0.276 | 10.0 | ✅ | A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker… |
 | [CVE-2025-32756](https://www.cve.org/CVERecord?id=CVE-2025-32756) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-04 | 0.314 | 9.6 | ✅ | A stack-based buffer overflow vulnerability [CWE-121] vulnerability in Fortinet FortiCamera 2.1.0 through 2.1.3, FortiCamera 2.0 all versions, FortiCamera 1.1 … |
 | [CVE-2024-38094](https://www.cve.org/CVERecord?id=CVE-2024-38094) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-11-12 | 0.553 | 7.2 | ✅ | Microsoft SharePoint Remote Code Execution Vulnerability |
