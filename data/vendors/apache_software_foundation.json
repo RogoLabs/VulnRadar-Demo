@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-27T07:30:35+00:00",
+  "generated_at": "2026-06-27T09:25:01+00:00",
   "vendor": "apache_software_foundation",
-  "count": 738,
+  "count": 742,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -24895,6 +24895,55 @@
       }
     },
     {
+      "cve_id": "CVE-2025-55017",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache IoTDB.\n\nThis issue affects Apache IoTDB: from 2.0.0 before 2.0.6, from 1.0.0 before 1.3.6.\n\nUsers are recommended to upgrade to version 1.3.6 and 2.0.6, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "2.0.6",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.3.6",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2025-55752",
       "description": "Relative Path Traversal vulnerability in Apache Tomcat.\n\nThe fix for bug 60013 introduced a regression where the       rewritten URL was normalized before it was decoded. This introduced the       possibility that, for rewrite rules that rewrite query parameters to the       URL, an attacker could manipulate the request URI to bypass security       constraints including the protection for /WEB-INF/ and /META-INF/. If PUT requests were also enabled then malicious files could be uploaded leading to remote code execution. PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.10, from 10.1.0-M1 through 10.1.44, from 9.0.0.M11 through 9.0.108.\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: 8.5.6 though 8.5.100. Other, older, EOL versions may also be affected.\nUsers are recommended to upgrade to version 11.0.11 or later, 10.1.45 or later or 9.0.109 or later, which fix the issue.",
       "cvss_score": 7.5,
@@ -25984,6 +26033,55 @@
       }
     },
     {
+      "cve_id": "CVE-2025-64152",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache IoTDB.\n\nThis issue affects Apache IoTDB: from 1.0.0 before 1.3.6, from 2.0.0 before 2.0.7.\n\nUsers are recommended to upgrade to version 1.3.6 and 2.0.7, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "1.3.6",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "2.0.7",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2025-64401",
       "description": "Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice\u00a0allowed an attacker to craft a document that would cause external links \nto be loaded without prompt.\u00a0In the affected versions of Apache OpenOffice, documents that used \"floating frames\" linked to external files would \nload the contents of those frames without prompting the user for \npermission to do so.\n\nThis issue affects Apache OpenOffice: through 4.1.15.\n\nUsers are recommended to upgrade to version 4.1.16, which fixes the issue.\n\nThe LibreOffice suite reported this issue as\u00a0CVE-2023-2255",
       "cvss_score": 7.5,
@@ -26433,7 +26531,7 @@
         "cwe_ids": [
           "CWE-89"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -29563,10 +29661,11 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-502"
+          "CWE-502",
+          "CWE-1173"
         ],
         "cpe_count": 2,
-        "reference_count": 1
+        "reference_count": 6
       }
     },
     {
@@ -30843,7 +30942,7 @@
           "CWE-178"
         ],
         "cpe_count": 3,
-        "reference_count": 1
+        "reference_count": 6
       }
     },
     {
@@ -33997,10 +34096,11 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-178"
+          "CWE-178",
+          "CWE-791"
         ],
         "cpe_count": 2,
-        "reference_count": 1
+        "reference_count": 4
       }
     },
     {
@@ -34411,6 +34511,49 @@
         ],
         "cpe_count": 1,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-49486",
+      "description": "The Apache Airflow FTP provider's `FTPSHook.get_conn()` created an `ftplib.FTP_TLS` connection but never called `prot_p()`, so although the control channel was TLS-protected the data channel was transmitted in cleartext. Any deployment using `FTPSHook` or `FTPSFileTransmitOperator` to move files over FTPS exposed file contents and credentials-in-transit to a network attacker able to observe the data connection. Upgrade apache-airflow-providers-ftp to `3.15.1` or later, which issues `PROT P` to encrypt the data channel.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow ftp provider",
+          "versions": [
+            {
+              "lessThan": "3.15.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow ftp provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.001,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-319"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -34975,6 +35118,49 @@
         ],
         "cpe_count": 0,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-57915",
+      "description": "It is possible to bypass the Kerberos pre-authentication check in Apache Kerby by sending a PA-DATA with an unrecognized or unsupported type. Users are recommended to upgrade to version 2.1.2, which fixes this issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache kerby",
+          "versions": [
+            {
+              "lessThan": "2.1.2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache kerby",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-304"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     }
   ]

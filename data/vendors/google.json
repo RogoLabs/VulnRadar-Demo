@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-27T07:30:35+00:00",
+  "generated_at": "2026-06-27T09:25:01+00:00",
   "vendor": "google",
-  "count": 2245,
+  "count": 2247,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -82209,6 +82209,92 @@
       "probability_score": 0.0026,
       "nvd": {
         "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-13281",
+      "description": "Integer overflow in Mojo in Google Chrome prior to 149.0.7827.201 allowed a remote attacker who had compromised the renderer process to potentially perform a sandbox escape via a malicious file. (Chromium security severity: High)",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "149.0.7827.201",
+              "status": "affected",
+              "lessThan": "149.0.7827.201",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": 8.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-472"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-13283",
+      "description": "Use after free in AdFilter in Google Chrome on Android prior to 149.0.7827.201 allowed a remote attacker who convinced a user to engage in specific UI gestures to execute arbitrary code via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "149.0.7827.201",
+              "status": "affected",
+              "lessThan": "149.0.7827.201",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00222,
+      "nvd": {
+        "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,

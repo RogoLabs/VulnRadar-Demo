@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-27T07:30:35+00:00",
+  "generated_at": "2026-06-27T09:25:01+00:00",
   "vendor": "linux",
-  "count": 2916,
+  "count": 2918,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -298928,10 +298928,11 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-787"
+          "CWE-787",
+          "CWE-843"
         ],
         "cpe_count": 13,
-        "reference_count": 8
+        "reference_count": 39
       }
     },
     {
@@ -320877,7 +320878,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 7
       }
     },
@@ -320964,7 +320965,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 3
       }
     },
@@ -321074,8 +321075,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 6,
         "reference_count": 5
       }
     },
@@ -321222,7 +321225,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -321369,7 +321372,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 10,
         "reference_count": 10
       }
     },
@@ -321491,8 +321494,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 7,
         "reference_count": 7
       }
     },
@@ -321638,8 +321643,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 9,
         "reference_count": 8
       }
     },
@@ -321713,8 +321720,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -321836,8 +321845,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 5,
         "reference_count": 6
       }
     },
@@ -322096,8 +322107,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 8,
         "reference_count": 8
       }
     },
@@ -322244,7 +322257,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 8
       }
     },
@@ -322391,8 +322404,246 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45837",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Fix use-after-free in arena_vm_close on fork\n\narena_vm_open() only bumps vml->mmap_count but never registers the\nchild VMA in arena->vma_list. The vml->vma always points at the\nparent VMA, so after parent munmap the pointer dangles. If the child\nthen calls bpf_arena_free_pages(), zap_pages() reads the stale\nvml->vma triggering use-after-free.\n\nFix this by preventing the arena VMA from being inherited across\nfork with VM_DONTCOPY, and preventing VMA splits via the may_split\ncallback.\n\nAlso reject mremap with a .mremap callback returning -EINVAL. A\nsame-size mremap(MREMAP_FIXED) on the full arena VMA reaches\ncopy_vma() through the following path:\n\n  check_prep_vma()       - returns 0 early: new_len == old_len\n                           skips VM_DONTEXPAND check\n  prep_move_vma()        - vm_start == old_addr and\n                           vm_end == old_addr + old_len\n                           so may_split is never called\n  move_vma()\n    copy_vma_and_data()\n      copy_vma()\n        vm_area_dup()    - copies vm_private_data (vml pointer)\n        vm_ops->open()   - bumps vml->mmap_count\n      vm_ops->mremap()   - returns -EINVAL, rollback unmaps new VMA\n\nThe refcount ensures the rollback's arena_vm_close does not free\nthe vml shared with the original VMA.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "317460317a02a1af512697e6e964298dedd8a163",
+              "lessThan": "723b9fa930cc277c15ce6b9ec9feec828cfac9d7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "317460317a02a1af512697e6e964298dedd8a163",
+              "lessThan": "d18099f19e53250f8ad2801498b88cec29d9107a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "317460317a02a1af512697e6e964298dedd8a163",
+              "lessThan": "201128fcc7b213d27ab77bc4e89488b41796480f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "317460317a02a1af512697e6e964298dedd8a163",
+              "lessThan": "4fddde2a732de60bb97e3307d4eb69ac5f1d2b74",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.9",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.88",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.30",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.7",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00156,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-45839",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: reject negative CO-RE accessor indices in bpf_core_parse_spec()\n\nCO-RE accessor strings are colon-separated indices that describe a path\nfrom a root BTF type to a target field, e.g. \"0:1:2\" walks through\nnested struct members. bpf_core_parse_spec() parses each component with\nsscanf(\"%d\"), so negative values like -1 are silently accepted.  The\nsubsequent bounds checks (access_idx >= btf_vlen(t)) only guard the\nupper bound and always pass for negative values because C integer\npromotion converts the __u16 btf_vlen result to int, making the\ncomparison (int)(-1) >= (int)(N) false for any positive N.\n\nWhen -1 reaches btf_member_bit_offset() it gets cast to u32 0xffffffff,\nproducing an out-of-bounds read far past the members array.  A crafted\nBPF program with a negative CO-RE accessor on any struct that exists in\nvmlinux BTF (e.g. task_struct) crashes the kernel deterministically\nduring BPF_PROG_LOAD on any system with CONFIG_DEBUG_INFO_BTF=y\n(default on major distributions).  The bug is reachable with CAP_BPF:\n\n BUG: unable to handle page fault for address: ffffed11818b6626\n #PF: supervisor read access in kernel mode\n #PF: error_code(0x0000) - not-present page\n Oops: Oops: 0000 [#1] SMP KASAN NOPTI\n CPU: 0 UID: 0 PID: 85 Comm: poc Not tainted 7.0.0-rc6 #18 PREEMPT(full)\n RIP: 0010:bpf_core_parse_spec (tools/lib/bpf/relo_core.c:354)\n RAX: 00000000ffffffff\n Call Trace:\n  <TASK>\n  bpf_core_calc_relo_insn (tools/lib/bpf/relo_core.c:1321)\n  bpf_core_apply (kernel/bpf/btf.c:9507)\n  check_core_relo (kernel/bpf/verifier.c:19475)\n  bpf_check (kernel/bpf/verifier.c:26031)\n  bpf_prog_load (kernel/bpf/syscall.c:3089)\n  __sys_bpf (kernel/bpf/syscall.c:6228)\n  </TASK>\n\nCO-RE accessor indices are inherently non-negative (struct member index,\narray element index, or enumerator index), so reject them immediately\nafter parsing.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "a9e777f856cd2f1efc106afc7bf21aef868509d5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "669349b4612c26b3d7aacfa99d7174681bd19223",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "3ff85ae79e1a74baeb916b78a63d821f6d19a994",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "36a9012f76ba8d9189ae56a1f8bb7c87c07a1f3a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "76f2ebaf79a9ae6d0737b87f045fe769e425d78f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "99dbab7b5a12d8f58d5b0aa2f7a1fe656a70f4b2",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ddc7c3042614e273044f698d2beab25cc3842d45",
+              "lessThan": "1c22483a2c4bbf747787f328392ca3e68619c4dc",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.4",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.4",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.209",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.175",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.141",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00161,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-129"
+        ],
+        "cpe_count": 6,
+        "reference_count": 7
       }
     },
     {
@@ -322538,7 +322789,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
