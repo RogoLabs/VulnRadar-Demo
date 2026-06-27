@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-27T01:29:35+00:00",
+  "generated_at": "2026-06-27T03:45:39+00:00",
   "vendor": "linux",
-  "count": 2737,
+  "count": 2738,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -249763,6 +249763,83 @@
         ],
         "cpe_count": 7,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2025-71306",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nima: Fix stack-out-of-bounds in is_bprm_creds_for_exec()\n\nKASAN reported a stack-out-of-bounds access in ima_appraise_measurement\nfrom is_bprm_creds_for_exec:\n\nBUG: KASAN: stack-out-of-bounds in ima_appraise_measurement+0x12dc/0x16a0\n Read of size 1 at addr ffffc9000160f940 by task sudo/550\nThe buggy address belongs to stack of task sudo/550\nand is located at offset 24 in frame:\n  ima_appraise_measurement+0x0/0x16a0\nThis frame has 2 objects:\n  [48, 56) 'file'\n  [80, 148) 'hash'\n\nThis is caused by using container_of on the *file pointer. This offset\ncalculation is what triggers the stack-out-of-bounds error.\n\nIn order to fix this, pass in a bprm_is_check boolean which can be set\ndepending on how process_measurement is called. If the caller has a\nlinux_binprm pointer and the function is BPRM_CHECK we can determine\nis_check and set it then. Otherwise set it to false.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "95b3cdafd7cb74414070893445a9b731793f7b55",
+              "lessThan": "ab3d16da982a4ebb715d487dbf9dd66e3990d935",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "95b3cdafd7cb74414070893445a9b731793f7b55",
+              "lessThan": "377cae9851e8559e9d8b82a78c1ac0abeb18839c",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.14",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.14",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.19.4",
+              "lessThanOrEqual": "6.19.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0015,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
