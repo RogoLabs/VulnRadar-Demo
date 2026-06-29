@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-29T19:27:57+00:00",
+  "generated_at": "2026-06-29T20:12:50+00:00",
   "vendor": "_other",
-  "count": 754,
+  "count": 755,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -48799,6 +48799,52 @@
         "shortDescription": "LiteSpeed cPanel plugin contains a UNIX symbolic link (Symlink) following vulnerability that could allow a user with FTP or web shell access on a shared hosting server running CloudLinux/CageFS.",
         "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
         "dueDate": "2026-06-18",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
+      "cve_id": "CVE-2026-48558",
+      "description": "SimpleHelp versions 5.5.15 and prior and 6.0 pre-release versions contain an authentication bypass vulnerability in the OIDC authentication flow. When OIDC authentication is configured, identity tokens submitted during login are accepted without verifying their cryptographic signature. In a vulnerable configuration, a remote, unauthenticated attacker can submit a forged token containing arbitrary identity claims to obtain a fully authenticated technician session. In some configurations, this may also allow bypass of multi-factor authentication. No user interaction is required.",
+      "cvss_score": 9.5,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "simplehelp",
+          "product": "simplehelp",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.5.0",
+              "versionType": "semver",
+              "lessThan": "5.5.16"
+            },
+            {
+              "status": "affected",
+              "version": "6.0",
+              "versionType": "custom",
+              "lessThan": "6.0 RC2"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00721,
+      "kev": {
+        "cveID": "CVE-2026-48558",
+        "vendorProject": "SimpleHelp ",
+        "product": "SimpleHelp",
+        "vulnerabilityName": "SimpleHelp Authentication Bypass Vulnerability",
+        "dateAdded": "2026-06-29",
+        "shortDescription": "SimpleHelp contains an authentication bypass vulnerability in the OIDC authentication flow. When OIDC authentication is configured, identity tokens submitted during login are accepted without verifying their cryptographic signature. In a vulnerable configuration, a remote, unauthenticated attacker can submit a forged token containing arbitrary identity claims to obtain a fully authenticated technician session. In some configurations, this may also allow bypass of multi-factor authentication.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-07-02",
         "knownRansomwareCampaignUse": "Unknown"
       }
     },
