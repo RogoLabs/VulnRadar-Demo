@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-06-30T17:51:15+00:00`
+Generated: `2026-06-30T18:57:20+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **13127**
 - Watchlist hits: **12739**
 - CISA KEVs: **720**
-- Exploit Intel (PoC): **783**
-- Exploit Intel + Watchlist (CRITICAL): **406**
+- Exploit Intel (PoC): **794**
+- Exploit Intel + Watchlist (CRITICAL): **410**
 
 ## Top Findings (max 200)
 
@@ -60,7 +60,7 @@ Top critical items:
 | [CVE-2025-59287](https://www.cve.org/CVERecord?id=CVE-2025-59287) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-11-14 | 1.000 | 9.8 | ✅ | Deserialization of untrusted data in Windows Server Update Service allows an unauthorized attacker to execute code over a network. |
 | [CVE-2023-38035](https://www.cve.org/CVERecord?id=CVE-2023-38035) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-09-12 | 0.999 | 9.8 | ✅ | A security vulnerability in MICS Admin Portal in Ivanti MobileIron Sentry versions 9.18.0 and below, which may allow an attacker to bypass authentication contr… |
 | [CVE-2025-24813](https://www.cve.org/CVERecord?id=CVE-2025-24813) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-22 | 0.999 | 9.8 | ✅ | Path Equivalence: 'file.Name' (Internal Dot) leading to Remote Code Execution and/or Information disclosure and/or malicious content added to uploaded files vi… |
-| [CVE-2024-13159](https://www.cve.org/CVERecord?id=CVE-2024-13159) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2025-03-31 | 0.998 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
+| [CVE-2024-13159](https://www.cve.org/CVERecord?id=CVE-2024-13159) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-31 | 0.998 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
 | [CVE-2023-29357](https://www.cve.org/CVERecord?id=CVE-2023-29357) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-01-31 | 0.996 | 9.8 | ✅ | Microsoft SharePoint Server Elevation of Privilege Vulnerability |
 | [CVE-2024-32113](https://www.cve.org/CVERecord?id=CVE-2024-32113) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-08-28 | 0.994 | 9.8 | ✅ | Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache OFBiz.This issue affects Apache OFBiz: before 18.12.13. … |
 | [CVE-2023-34048](https://www.cve.org/CVERecord?id=CVE-2023-34048) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-12 | 0.994 | 9.8 | ✅ | vCenter Server contains an out-of-bounds write vulnerability in the implementation of the DCERPC protocol. A malicious actor with network access to vCenter Ser… |
@@ -70,7 +70,7 @@ Top critical items:
 | [CVE-2024-29824](https://www.cve.org/CVERecord?id=CVE-2024-29824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-23 | 1.000 | 9.6 | ✅ | An unspecified SQL Injection vulnerability in Core server of Ivanti EPM 2022 SU5 and prior allows an unauthenticated attacker within the same network to execut… |
 | [CVE-2023-23397](https://www.cve.org/CVERecord?id=CVE-2023-23397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-04-04 | 0.974 | 9.8 | ✅ | Microsoft Outlook Elevation of Privilege Vulnerability |
 | [CVE-2023-33246](https://www.cve.org/CVERecord?id=CVE-2023-33246) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-09-27 | 0.966 | 9.8 | ✅ | For RocketMQ versions 5.1.0 and below, under certain conditions, there is a risk of remote command execution.   Several components of RocketMQ, including NameS… |
-| [CVE-2024-55591](https://www.cve.org/CVERecord?id=CVE-2024-55591) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2025-01-21 | 0.983 | 9.6 | ✅ | An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS version 7.0.0 through 7.0.16 and FortiProxy version 7.0.0… |
+| [CVE-2024-55591](https://www.cve.org/CVERecord?id=CVE-2024-55591) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-01-21 | 0.983 | 9.6 | ✅ | An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS version 7.0.0 through 7.0.16 and FortiProxy version 7.0.0… |
 | [CVE-2022-24112](https://www.cve.org/CVERecord?id=CVE-2022-24112) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-15 | 0.962 | 9.8 | ✅ | An attacker can abuse the batch-requests plugin to send requests to bypass the IP restriction of Admin API. A default configuration of Apache APISIX (with defa… |
 | [CVE-2024-47575](https://www.cve.org/CVERecord?id=CVE-2024-47575) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-11-13 | 0.948 | 9.8 | ✅ | A missing authentication for critical function in FortiManager 7.6.0, FortiManager 7.4.0 through 7.4.4, FortiManager 7.2.0 through 7.2.7, FortiManager 7.0.0 th… |
 | [CVE-2025-25257](https://www.cve.org/CVERecord?id=CVE-2025-25257) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-08 | 0.967 | 9.6 | ✅ | An improper neutralization of special elements used in an SQL command ('SQL Injection') vulnerability [CWE-89] vulnerability in Fortinet FortiWeb 7.6.0 through… |
@@ -87,9 +87,9 @@ Top critical items:
 | [CVE-2022-41040](https://www.cve.org/CVERecord?id=CVE-2022-41040) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-10-21 | 0.999 | 8.8 | ✅ | Microsoft Exchange Server Elevation of Privilege Vulnerability |
 | [CVE-2025-49704](https://www.cve.org/CVERecord?id=CVE-2025-49704) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-07-23 | 0.999 | 8.8 | ✅ | Improper control of generation of code ('code injection') in Microsoft Office SharePoint allows an authorized attacker to execute code over a network. |
 | [CVE-2023-4863](https://www.cve.org/CVERecord?id=CVE-2023-4863) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-04 | 0.997 | 8.8 | ✅ | Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write v… |
-| [CVE-2024-13160](https://www.cve.org/CVERecord?id=CVE-2024-13160) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2025-03-31 | 0.897 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
+| [CVE-2024-13160](https://www.cve.org/CVERecord?id=CVE-2024-13160) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-31 | 0.897 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
 | [CVE-2026-20182](https://www.cve.org/CVERecord?id=CVE-2026-20182) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-17 | 0.877 | 10.0 | ✅ | May 2026: This security advisory provides the details and fix information for a vulnerability that was discovered and fixed after the  was disclosed in Februar… |
-| [CVE-2024-13161](https://www.cve.org/CVERecord?id=CVE-2024-13161) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2025-03-31 | 0.885 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
+| [CVE-2024-13161](https://www.cve.org/CVERecord?id=CVE-2024-13161) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-31 | 0.885 | 9.8 | ✅ | Absolute path traversal in Ivanti EPM before the 2024 January-2025 Security Update and 2022 SU6 January-2025 Security Update allows a remote unauthenticated at… |
 | [CVE-2023-27524](https://www.cve.org/CVERecord?id=CVE-2023-27524) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-01-29 | 0.974 | 8.9 | ✅ | Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY accordi… |
 | [CVE-2026-21643](https://www.cve.org/CVERecord?id=CVE-2026-21643) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-16 | 0.941 | 9.1 | ✅ | An improper neutralization of special elements used in an sql command ('sql injection') vulnerability in Fortinet FortiClientEMS 7.4.4 may allow an unauthentic… |
 | [CVE-2026-34197](https://www.cve.org/CVERecord?id=CVE-2026-34197) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-30 | 0.962 | 8.8 | ✅ | Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ.  Apache ActiveMQ… |
