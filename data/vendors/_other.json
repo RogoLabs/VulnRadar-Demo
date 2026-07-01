@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-01T02:05:20+00:00",
+  "generated_at": "2026-07-01T03:31:30+00:00",
   "vendor": "_other",
-  "count": 770,
+  "count": 771,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -49140,6 +49140,49 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-58302",
+      "description": "rtapi_app in linuxcnc-uspace in LinuxCNC before 2.9.9 allows privilege escalation. It is installed SUID root and loads shared library modules via dlopen() by using a user-supplied module name. Insufficient validation of the module name allows path traversal, enabling an unprivileged local user to load an arbitrary shared library. Because the process retains elevated privileges during module loading, this results in local privilege escalation to root.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linuxcnc",
+          "product": "linuxcnc",
+          "versions": [
+            {
+              "lessThan": "2.9.9",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linuxcnc",
+        "vendor:linuxcnc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00152,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
