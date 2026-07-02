@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-02T03:27:32+00:00",
+  "generated_at": "2026-07-02T07:47:34+00:00",
   "vendor": "linux",
-  "count": 3114,
+  "count": 3113,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -273349,8 +273349,8 @@
           "CWE-669",
           "CWE-1288"
         ],
-        "cpe_count": 182,
-        "reference_count": 124
+        "cpe_count": 203,
+        "reference_count": 125
       }
     },
     {
@@ -298945,7 +298945,7 @@
           "CWE-843"
         ],
         "cpe_count": 13,
-        "reference_count": 39
+        "reference_count": 40
       }
     },
     {
@@ -304203,7 +304203,7 @@
           "CWE-130"
         ],
         "cpe_count": 3,
-        "reference_count": 10
+        "reference_count": 12
       }
     },
     {
@@ -312055,7 +312055,7 @@
           "CWE-123"
         ],
         "cpe_count": 7,
-        "reference_count": 56
+        "reference_count": 57
       }
     },
     {
@@ -313406,7 +313406,7 @@
           "CWE-770"
         ],
         "cpe_count": 12,
-        "reference_count": 16
+        "reference_count": 18
       }
     },
     {
@@ -322139,7 +322139,7 @@
           "CWE-131"
         ],
         "cpe_count": 8,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -323093,7 +323093,7 @@
           "CWE-415"
         ],
         "cpe_count": 7,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -328724,7 +328724,7 @@
           "CWE-826"
         ],
         "cpe_count": 7,
-        "reference_count": 12
+        "reference_count": 13
       }
     },
     {
@@ -334543,7 +334543,7 @@
           "CWE-364"
         ],
         "cpe_count": 6,
-        "reference_count": 13
+        "reference_count": 16
       }
     },
     {
@@ -340379,7 +340379,7 @@
           "CWE-825"
         ],
         "cpe_count": 6,
-        "reference_count": 10
+        "reference_count": 11
       }
     },
     {
@@ -340913,7 +340913,7 @@
           "CWE-366"
         ],
         "cpe_count": 4,
-        "reference_count": 9
+        "reference_count": 10
       }
     },
     {
@@ -341276,7 +341276,7 @@
           "CWE-1341"
         ],
         "cpe_count": 9,
-        "reference_count": 12
+        "reference_count": 14
       }
     },
     {
@@ -343898,7 +343898,7 @@
           "CWE-367"
         ],
         "cpe_count": 10,
-        "reference_count": 17
+        "reference_count": 18
       }
     },
     {
@@ -344910,7 +344910,7 @@
           "CWE-825"
         ],
         "cpe_count": 18,
-        "reference_count": 35
+        "reference_count": 36
       }
     },
     {
@@ -347793,7 +347793,7 @@
           "CWE-123"
         ],
         "cpe_count": 11,
-        "reference_count": 45
+        "reference_count": 46
       }
     },
     {
@@ -350435,7 +350435,7 @@
           "CWE-787"
         ],
         "cpe_count": 0,
-        "reference_count": 29
+        "reference_count": 32
       }
     },
     {
@@ -350727,7 +350727,7 @@
           "CWE-269"
         ],
         "cpe_count": 14,
-        "reference_count": 39
+        "reference_count": 40
       }
     },
     {
@@ -354223,7 +354223,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 1
+        "reference_count": 4
       }
     },
     {
@@ -368019,155 +368019,6 @@
       "probability_score": 0.00146,
       "nvd": {
         "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-787"
-        ],
-        "cpe_count": 0,
-        "reference_count": 11
-      }
-    },
-    {
-      "cve_id": "CVE-2026-53196",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nUSB: serial: io_ti: fix heap overflow in get_manuf_info()\n\nget_manuf_info() reads le16_to_cpu(rom_desc->Size) bytes from the\ndevice I2C EEPROM into a buffer allocated with kmalloc_obj(), which\nis sizeof(struct edge_ti_manuf_descriptor) = 10 bytes.\n\nThe Size field comes from the device and is only validated (in\ncheck_i2c_image()) to make sure the descriptor fits within\nTI_MAX_I2C_SIZE (16384 bytes), not against the destination buffer size.\nA malicious USB device can therefore set Size to any value up to 16377,\ncausing a heap overflow of up to 16367 bytes when plugged into a host\nrunning this driver.\n\nvalid_csum() is called after read_rom() and also iterates\nbuffer[0..Size-1], compounding the out-of-bounds access.\n\nFix by rejecting descriptors with unexpected length before calling\nread_rom().\n\n[ johan: amend commit message; also check for short descriptors ]",
-      "cvss_score": 7.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "e168db91442b94e64fa82a7dd297983d48ea5cc0",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "561edb021486e6723d841926aa4b48097da06190",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "cfd634f6dfd40c49a84f9bddc2867a80e2e2623a",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "d92f17af7097d10bdeddf26f66f34b354104b277",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "b849f30d1a9e66aae6b715aaef66e427390cb081",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "f96cf7bf9fbf15d7fcf0c91fec47ba8a010369ea",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "d214d2341d4f9f447e36a7d012cdf6a6631a55f1",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "183c1076eca43bbb3e7bdf597456f91d81c73e74",
-              "status": "affected",
-              "versionType": "git"
-            }
-          ]
-        },
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "2.6.12",
-              "status": "affected"
-            },
-            {
-              "version": "0",
-              "lessThan": "2.6.12",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "5.10.259",
-              "lessThanOrEqual": "5.10.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "5.15.210",
-              "lessThanOrEqual": "5.15.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.1.176",
-              "lessThanOrEqual": "6.1.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.6.143",
-              "lessThanOrEqual": "6.6.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.12.94",
-              "lessThanOrEqual": "6.12.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.18.36",
-              "lessThanOrEqual": "6.18.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.0.13",
-              "lessThanOrEqual": "7.0.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.1",
-              "lessThanOrEqual": "*",
-              "status": "unaffected",
-              "versionType": "original_commit_for_fix"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:linux",
-        "vendor:linux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00155,
-      "nvd": {
-        "cvss_v3_score": 7.0,
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
