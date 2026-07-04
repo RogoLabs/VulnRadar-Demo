@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-04T03:42:48+00:00",
+  "generated_at": "2026-07-04T07:00:47+00:00",
   "vendor": "linux",
-  "count": 3113,
+  "count": 3112,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -290302,7 +290302,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 6,
-        "reference_count": 8
+        "reference_count": 3
       }
     },
     {
@@ -298885,7 +298885,7 @@
           "CWE-843"
         ],
         "cpe_count": 13,
-        "reference_count": 40
+        "reference_count": 41
       }
     },
     {
@@ -304143,7 +304143,7 @@
           "CWE-130"
         ],
         "cpe_count": 3,
-        "reference_count": 12
+        "reference_count": 14
       }
     },
     {
@@ -307188,7 +307188,7 @@
           "CWE-821"
         ],
         "cpe_count": 8,
-        "reference_count": 9
+        "reference_count": 11
       }
     },
     {
@@ -313346,7 +313346,7 @@
           "CWE-770"
         ],
         "cpe_count": 12,
-        "reference_count": 18
+        "reference_count": 20
       }
     },
     {
@@ -322079,7 +322079,7 @@
           "CWE-131"
         ],
         "cpe_count": 8,
-        "reference_count": 16
+        "reference_count": 18
       }
     },
     {
@@ -322375,7 +322375,7 @@
           "CWE-664"
         ],
         "cpe_count": 11,
-        "reference_count": 11
+        "reference_count": 41
       }
     },
     {
@@ -323033,7 +323033,7 @@
           "CWE-415"
         ],
         "cpe_count": 7,
-        "reference_count": 16
+        "reference_count": 17
       }
     },
     {
@@ -334483,7 +334483,7 @@
           "CWE-364"
         ],
         "cpe_count": 6,
-        "reference_count": 16
+        "reference_count": 19
       }
     },
     {
@@ -340319,7 +340319,7 @@
           "CWE-825"
         ],
         "cpe_count": 6,
-        "reference_count": 11
+        "reference_count": 12
       }
     },
     {
@@ -340853,7 +340853,7 @@
           "CWE-366"
         ],
         "cpe_count": 4,
-        "reference_count": 10
+        "reference_count": 13
       }
     },
     {
@@ -343838,7 +343838,7 @@
           "CWE-367"
         ],
         "cpe_count": 10,
-        "reference_count": 18
+        "reference_count": 19
       }
     },
     {
@@ -344850,7 +344850,7 @@
           "CWE-825"
         ],
         "cpe_count": 18,
-        "reference_count": 36
+        "reference_count": 37
       }
     },
     {
@@ -344963,7 +344963,7 @@
           "CWE-823"
         ],
         "cpe_count": 8,
-        "reference_count": 9
+        "reference_count": 11
       }
     },
     {
@@ -347733,7 +347733,7 @@
           "CWE-123"
         ],
         "cpe_count": 11,
-        "reference_count": 46
+        "reference_count": 47
       }
     },
     {
@@ -350375,7 +350375,7 @@
           "CWE-787"
         ],
         "cpe_count": 0,
-        "reference_count": 32
+        "reference_count": 35
       }
     },
     {
@@ -361219,155 +361219,6 @@
       }
     },
     {
-      "cve_id": "CVE-2026-53059",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm log: fix out-of-bounds write due to region_count overflow\n\nThe local variable region_count in create_log_context() is declared as\nunsigned int (32-bit), but dm_sector_div_up() returns sector_t (64-bit).\nWhen a device-mapper target has a sufficiently large ti->len with a small\nregion_size, the division result can exceed UINT_MAX. The truncated\nvalue is then used to calculate bitset_size, causing clean_bits,\nsync_bits, and recovering_bits to be allocated far smaller than needed\nfor the actual number of regions.\n\nSubsequent log operations (log_set_bit, log_clear_bit, log_test_bit) use\nregion indices derived from the full untruncated region space, causing\nout-of-bounds writes to kernel heap memory allocated by vmalloc.\n\nThis can be reproduced by creating a mirror target whose region_count\noverflows 32 bits:\n\n  dmsetup create bigzero --table '0 8589934594 zero'\n  dmsetup create mymirror --table '0 8589934594 mirror \\\n    core 2 2 nosync 2 /dev/mapper/bigzero 0 \\\n    /dev/mapper/bigzero 0'\n\nThe status output confirms the truncation (sync_count=1 instead of\n4294967297, because 0x100000001 was truncated to 1):\n\n  $ dmsetup status mymirror\n  0 8589934594 mirror 2 254:1 254:1 1/4294967297 ...\n\nThis leads to a kernel crash in core_in_sync:\n\n  BUG: scheduling while atomic: (udev-worker)/9150/0x00000000\n  RIP: 0010:core_in_sync+0x14/0x30 [dm_log]\n  CR2: 0000000000000008\n  Fixing recursive fault but reboot is needed!\n\nFix by widening the local region_count to sector_t and adding an\nexplicit overflow check before the value is assigned to lc->region_count.",
-      "cvss_score": 7.0,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "44ab8875ae4a2842bde2d756bed195d375e0debb",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "defe483e47173768c227532694dc78cb65db5f09",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "3ec74da927b4e171a6fc0e77b1188ba4d019af51",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "d4ac87567f86a55c3c92e9a5144dcd943a9772a1",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "12bd5b88e91a02785244ff1d20fb157e96e9cdc8",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "b455903eed4558982be0811f5b7f44f6bbc4ff57",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "4ec8323b9f0764a14d532b1ae9b87f8a9fecb867",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
-              "lessThan": "c20e36b7631d83e7535877f08af8b0af72c44b1a",
-              "status": "affected",
-              "versionType": "git"
-            }
-          ]
-        },
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "2.6.12",
-              "status": "affected"
-            },
-            {
-              "version": "0",
-              "lessThan": "2.6.12",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "5.10.258",
-              "lessThanOrEqual": "5.10.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "5.15.209",
-              "lessThanOrEqual": "5.15.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.1.175",
-              "lessThanOrEqual": "6.1.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.6.141",
-              "lessThanOrEqual": "6.6.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.12.91",
-              "lessThanOrEqual": "6.12.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.18.33",
-              "lessThanOrEqual": "6.18.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.0.10",
-              "lessThanOrEqual": "7.0.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.1",
-              "lessThanOrEqual": "*",
-              "status": "unaffected",
-              "versionType": "original_commit_for_fix"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:linux",
-        "vendor:linux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00127,
-      "nvd": {
-        "cvss_v3_score": 7.0,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-190"
-        ],
-        "cpe_count": 0,
-        "reference_count": 11
-      }
-    },
-    {
       "cve_id": "CVE-2026-53062",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm cache policy smq: fix missing locks in invalidating cache blocks\n\nIn passthrough mode, the policy invalidate_mapping operation is called\nsimultaneously from multiple workers, thus it should be protected by a\nlock. Otherwise, we might end up with data races on the allocated blocks\ncounter, or even use-after-free issues with internal data structures\nwhen doing concurrent writes.\n\nNote that the existing FIXME in smq_invalidate_mapping() doesn't affect\npassthrough mode since migration tasks don't exist there, but would need\nattention if supporting fast device shrinking via suspend/resume without\ntarget reloading.\n\nReproduce steps:\n\n1. Create a cache device consisting of 1024 cache entries\n\ndmsetup create cmeta --table \"0 8192 linear /dev/sdc 0\"\ndmsetup create cdata --table \"0 131072 linear /dev/sdc 8192\"\ndmsetup create corig --table \"0 262144 linear /dev/sdc 262144\"\ndd if=/dev/zero of=/dev/mapper/cmeta bs=4k count=1 oflag=direct\ndmsetup create cache --table \"0 262144 cache /dev/mapper/cmeta \\\n/dev/mapper/cdata /dev/mapper/corig 128 2 metadata2 writethrough smq 0\"\n\n2. Populate the cache, and record the number of cached blocks\n\nfio --name=populate --filename=/dev/mapper/cache --rw=randwrite --bs=4k \\\n--size=64m --direct=1\nnr_cached=$(dmsetup status cache | awk '{split($7, a, \"/\"); print a[1]}')\n\n3. Reload the cache into passthrough mode\n\ndmsetup suspend cache\ndmsetup reload cache --table \"0 262144 cache /dev/mapper/cmeta \\\n/dev/mapper/cdata /dev/mapper/corig 128 2 metadata2 passthrough smq 0\"\ndmsetup resume cache\n\n4. Write to the passthrough cache. By setting multiple jobs with I/O\n   size equal to the cache block size, cache blocks are invalidated\n   concurrently from different workers.\n\nfio --filename=/dev/mapper/cache --name=test --rw=randwrite --bs=64k \\\n--direct=1 --numjobs=2 --randrepeat=0 --size=64m\n\n5. Check if demoted matches cached block count. These numbers should\n   match but may differ due to the data race.\n\nnr_demoted=$(dmsetup status cache | awk '{print $12}')\necho \"$nr_cached, $nr_demoted\"",
       "cvss_score": 7.8,
@@ -368444,8 +368295,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-674"
+        ],
+        "cpe_count": 10,
         "reference_count": 7
       }
     },
@@ -368544,9 +368397,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-787",
           "CWE-120"
         ],
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 7
       }
     },
@@ -368650,8 +368504,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 9,
         "reference_count": 4
       }
     },
@@ -368802,8 +368658,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 19,
         "reference_count": 6
       }
     },
@@ -368949,8 +368807,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -369107,7 +368967,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 7
       }
     },
@@ -369242,7 +369102,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 7
       }
     },
@@ -369389,7 +369249,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -369536,7 +369396,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -369694,7 +369554,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 21,
         "reference_count": 8
       }
     },
@@ -369780,8 +369640,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 14,
         "reference_count": 3
       }
     },
@@ -369927,8 +369789,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -370075,7 +369939,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -370173,8 +370037,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 10,
         "reference_count": 4
       }
     },
@@ -370284,8 +370150,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 11,
         "reference_count": 5
       }
     },
