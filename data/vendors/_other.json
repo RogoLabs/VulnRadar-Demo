@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-07T17:27:15+00:00",
+  "generated_at": "2026-07-07T20:09:46+00:00",
   "vendor": "_other",
-  "count": 788,
+  "count": 789,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -20384,6 +20384,57 @@
         ],
         "cpe_count": 8,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-48282",
+      "description": "ColdFusion versions 2025.9, 2023.20 and earlier are affected by an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability that could lead to arbitrary code execution in the context of the current user. Exploitation of this issue does not require user interaction. Scope is changed.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "adobe",
+          "product": "coldfusion",
+          "versions": [
+            {
+              "lessThanOrEqual": "2023.20",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01021,
+      "kev": {
+        "cveID": "CVE-2026-48282",
+        "vendorProject": "Adobe",
+        "product": "ColdFusion",
+        "vulnerabilityName": "Adobe ColdFusion Path Traversal Vulnerability",
+        "dateAdded": "2026-07-07",
+        "shortDescription": "Adobe ColdFusion contains a path traversal vulnerability that could lead to arbitrary code execution in the context of the current user.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-07-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 31,
+        "reference_count": 1
       }
     },
     {
@@ -44534,7 +44585,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],
@@ -51464,7 +51515,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],
@@ -51513,7 +51564,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],
