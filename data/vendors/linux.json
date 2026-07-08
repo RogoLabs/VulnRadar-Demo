@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-08T03:26:54+00:00",
+  "generated_at": "2026-07-08T06:42:19+00:00",
   "vendor": "linux",
-  "count": 3112,
+  "count": 3118,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -272994,7 +272994,7 @@
           "CWE-416"
         ],
         "cpe_count": 12,
-        "reference_count": 19
+        "reference_count": 20
       }
     },
     {
@@ -304186,7 +304186,7 @@
           "CWE-130"
         ],
         "cpe_count": 3,
-        "reference_count": 14
+        "reference_count": 16
       }
     },
     {
@@ -307231,7 +307231,7 @@
           "CWE-821"
         ],
         "cpe_count": 8,
-        "reference_count": 11
+        "reference_count": 12
       }
     },
     {
@@ -313389,7 +313389,7 @@
           "CWE-770"
         ],
         "cpe_count": 12,
-        "reference_count": 20
+        "reference_count": 21
       }
     },
     {
@@ -323076,7 +323076,7 @@
           "CWE-415"
         ],
         "cpe_count": 7,
-        "reference_count": 17
+        "reference_count": 19
       }
     },
     {
@@ -334562,7 +334562,7 @@
           "CWE-364"
         ],
         "cpe_count": 6,
-        "reference_count": 19
+        "reference_count": 21
       }
     },
     {
@@ -340951,7 +340951,7 @@
           "CWE-366"
         ],
         "cpe_count": 4,
-        "reference_count": 13
+        "reference_count": 14
       }
     },
     {
@@ -364008,6 +364008,107 @@
       }
     },
     {
+      "cve_id": "CVE-2026-53129",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/mbcache: cancel shrink work before destroying the cache\n\nmb_cache_destroy() calls shrinker_free() and then frees all cache\nentries and the cache itself, but it does not cancel the pending\nc_shrink_work work item first.\n\nIf mb_cache_entry_create() schedules c_shrink_work via schedule_work()\nand the work item is still pending or running when mb_cache_destroy()\nruns, mb_cache_shrink_worker() will access the cache after its memory\nhas been freed, causing a use-after-free.\n\nThis is only reachable by a privileged user (root or CAP_SYS_ADMIN)\nwho can trigger the last put of a mounted ext2/ext4/ocfs2 filesystem.\n\nCancel the work item with cancel_work_sync() before calling\nshrinker_free(), ensuring the worker has finished and will not be\nrescheduled before the cache is torn down.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "c2f3140fe2eceb3a6c1615b2648b9471544881c6",
+              "lessThan": "a88d39a74a208e197c03bffaa2df34de732af19f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c2f3140fe2eceb3a6c1615b2648b9471544881c6",
+              "lessThan": "0e4eff315d799f5842b95872199b0f0fb8ef5f51",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c2f3140fe2eceb3a6c1615b2648b9471544881c6",
+              "lessThan": "b25fd3523bef88fb7ffd4c5b63bbe9c08f73bb4c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c2f3140fe2eceb3a6c1615b2648b9471544881c6",
+              "lessThan": "d227786ab1119669df4dc333a61510c52047cce4",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.6",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.6",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00117,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
+      }
+    },
+    {
       "cve_id": "CVE-2026-53130",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nfs/omfs: reject s_sys_blocksize smaller than OMFS_DIR_START\n\nomfs_fill_super() rejects oversized s_sys_blocksize values (> PAGE_SIZE),\nbut it does not reject values smaller than OMFS_DIR_START (0x1b8 = 440).\n\nLater, omfs_make_empty() uses\n\n    sbi->s_sys_blocksize - OMFS_DIR_START\n\nas the length argument to memset().  Since s_sys_blocksize is u32,\na crafted filesystem image with s_sys_blocksize < OMFS_DIR_START causes\nan unsigned underflow there, wrapping to a value near 2^32.  That drives\na ~4 GiB memset() from bh->b_data + OMFS_DIR_START and overwrites kernel\nmemory far beyond the backing block buffer.\n\nAdd the corresponding lower-bound check alongside the existing upper-bound\ncheck in omfs_fill_super(), so that malformed images are rejected during\nsuperblock validation before any filesystem data is processed.",
       "cvss_score": 7.8,
@@ -364149,8 +364250,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-191"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -364285,7 +364388,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 7
       }
     },
@@ -364394,8 +364497,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 12,
         "reference_count": 4
       }
     },
@@ -364895,7 +365000,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -365017,8 +365122,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 12,
         "reference_count": 6
       }
     },
@@ -365172,6 +365279,155 @@
       }
     },
     {
+      "cve_id": "CVE-2026-53149",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nthunderbolt: Bound root directory content to block size\n\n__tb_property_parse_dir() does not check that content_offset +\ncontent_len fits within block_len for the root directory case.\nWhen rootdir->length equals or exceeds block_len - 2, the entry\nloop reads past the allocated property block.\n\nAdd a bounds check after computing content_offset and content_len\nto reject directories whose content extends past the block.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "5c7657d38d07268124782f03519f07c22a5814fb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "b212bc161d8a9937b42153723a4a3f2f74fab528",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "1912be23daf4afc8d24ce916021ab68ca4c679db",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "4d0b1524caadb04c10a71f3f88692c63dcb39115",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "0a32040a48db8cf35de48b85d6115df5623e4964",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "60ba6217460792356a238299edd675d91d46bab4",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "cbeb68cbaa0a6f979ef428a7f2d0268c082ba166",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "cdae7c07e3e3509eaabc18c1640a55dc5b99c179",
+              "lessThan": "65423079c7420e3dbf9a7aa345c243a3f5752e5d",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.15",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.15",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.259",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.210",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.176",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.143",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.94",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.36",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.13",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00126,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 14,
+        "reference_count": 8
+      }
+    },
+    {
       "cve_id": "CVE-2026-53151",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nrxrpc: Fix the ACK parser to extract the SACK table for parsing\n\nFix modification of the received skbuff in rxrpc_input_soft_acks() and a\npotential incorrect access of the buffer in a fragmented UDP packet (the\npacket would probably have to be deliberately pre-generated as fragmented)\nwhen AF_RXRPC tries to extract the contents of the SACK table by copying\nout the contents of the SACK table into a buffer before attempting to parse\n\nAF_RXRPC assumes that it can just call skb_condense() and then validly\naccess the SACK table from skb->data and that it will be a flat buffer -\nbut skb_condense() can silently fail to do anything under some\ncircumstances.\n\nNote that whilst rxrpc_input_soft_acks() should be able to parse extended\nACKs, the rest of AF_RXRPC doesn't currently support that.\n\nFurther, there's then no need to call skb_condense() in rxrpc_input_ack(),\nso don't.",
       "cvss_score": 9.8,
@@ -365278,7 +365534,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 5
       }
     },
@@ -365369,6 +365625,107 @@
         ],
         "cpe_count": 0,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53156",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnvmem: core: fix use-after-free bugs in error paths\n\nFix several instances of error paths in which we call\n__nvmem_device_put() - which may end up freeing the underlying memory\nand other resources - and then keep on using the nvmem structure. Always\nput the reference to the nvmem device as the last step before returning\nthe error code.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "e888d445ac33a5b0288d670ecd970908b13f07cd",
+              "lessThan": "e0d38bf47a72da2f02c9fa6f752cd66d977cd7f7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "e888d445ac33a5b0288d670ecd970908b13f07cd",
+              "lessThan": "cb85ef5a227b3662b88f4d849a1aad43bfe7f5ae",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "e888d445ac33a5b0288d670ecd970908b13f07cd",
+              "lessThan": "40e2a459c0dd1333b2343831480a0ad80dc07614",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "e888d445ac33a5b0288d670ecd970908b13f07cd",
+              "lessThan": "5b6b6fc491899d583eaa75344e094796ae9b530b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.20",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.20",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.94",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.36",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.13",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00125,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 10,
+        "reference_count": 4
       }
     },
     {
@@ -365518,8 +365875,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 12,
         "reference_count": 6
       }
     },
@@ -365665,8 +366024,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -365753,7 +366114,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 3
       }
     },
@@ -365902,8 +366263,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -365978,7 +366341,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -366052,8 +366415,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -366127,8 +366492,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -366203,7 +366570,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -366319,8 +366686,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 18,
         "reference_count": 8
       }
     },
@@ -366467,9 +366836,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-191",
           "CWE-839"
         ],
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 11
       }
     },
@@ -366543,9 +366913,112 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-191"
+        ],
+        "cpe_count": 8,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53179",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nstaging: rtl8723bs: fix buffer over-read in rtw_update_protection\n\nrtw_update_protection() is called with a pointer offset into the\nies buffer but the full ie_length is passed, causing a potential\nbuffer over-read.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "d3fcee1b78a533c256077f1300dd236801397cf7",
+              "lessThan": "c35ce55b12bb8fcd365daeb516e9782048119b36",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d3fcee1b78a533c256077f1300dd236801397cf7",
+              "lessThan": "735dabdf21561a24d8bcae456c9c32f7f961a029",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d3fcee1b78a533c256077f1300dd236801397cf7",
+              "lessThan": "303f65af819f6d5aa302e82bce72b57a8575faea",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d3fcee1b78a533c256077f1300dd236801397cf7",
+              "lessThan": "514ab98364595007d4557ecc85d7e5f012c504d3",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.15",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.15",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.95",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.36",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.13",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00131,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 9,
+        "reference_count": 4
       }
     },
     {
@@ -366642,8 +367115,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 9,
         "reference_count": 4
       }
     },
@@ -366772,7 +367247,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 6
       }
     },
@@ -366895,7 +367370,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 6
       }
     },
@@ -367018,7 +367493,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 6
       }
     },
@@ -367129,9 +367604,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-416",
           "CWE-364"
         ],
-        "cpe_count": 0,
+        "cpe_count": 11,
         "reference_count": 8
       }
     },
@@ -367278,7 +367754,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -367364,8 +367840,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 9,
         "reference_count": 3
       }
     },
@@ -367452,7 +367930,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 3
       }
     },
@@ -367599,7 +368077,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -367698,7 +368176,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 4
       }
     },
@@ -367796,8 +368274,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 10,
         "reference_count": 4
       }
     },
@@ -367895,8 +368375,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 10,
         "reference_count": 4
       }
     },
@@ -368045,8 +368527,157 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 11
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53195",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nUSB: serial: io_ti: fix heap overflow in build_i2c_fw_hdr()\n\nbuild_i2c_fw_hdr() allocates a fixed-size buffer of\n(16*1024 - 512) + sizeof(struct ti_i2c_firmware_rec) bytes, then\ncopies le16_to_cpu(img_header->Length) bytes into it without\nvalidating that Length fits within the available space after the\nfirmware record header.\n\nimg_header->Length is a __le16 from the firmware file and can be\nup to 65535. check_fw_sanity() validates the total firmware size\nbut not img_header->Length specifically.\n\nFix by rejecting images where img_header->Length exceeds the\navailable destination space.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "3e187152f44d76d7633a3855ffd0099e1588b82a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "b7faf660eefa2047ebc2959ff76da2b6eae2e9e3",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "2fd64bf0ad66ab5de0c73524591d879427ba5aba",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "4cb722747ed25971f35cc47ce5c0e79d7f717713",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "130d6567eb148040eed1b73e1414ad6c27d22bd5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "294692d3296eee3391c348d7ea6401916d27806c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "5a79b634ee58786ca627268daefa7744f2af2e14",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "0fd2b00b2d3d05e3eaa13342b3dfb0fa85c226ae",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.12",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.12",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.259",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.210",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.176",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.143",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.94",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.36",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.13",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00153,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 19,
+        "reference_count": 8
       }
     },
     {
@@ -368167,8 +368798,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 11,
         "reference_count": 6
       }
     },
@@ -368315,7 +368948,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -368390,7 +369023,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -368465,7 +369098,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 2
       }
     },
@@ -373876,6 +374509,131 @@
       }
     },
     {
+      "cve_id": "CVE-2026-53303",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: protect extension_list reading with sb_lock in f2fs_sbi_show()\n\nIn f2fs_sbi_show(), the extension_list, extension_count and\nhot_ext_count are read without holding sbi->sb_lock. If a concurrent\nsysfs store modifies the extension list via f2fs_update_extension_list(),\nthe show path may read inconsistent count and array contents, potentially\nleading to out-of-bounds access or displaying stale data.\n\nFix this by holding sb_lock around the entire extension list read\nand format operation.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "b6a06cbbb5f7fd03589cff9178314af04c568826",
+              "lessThan": "d3ff0c121bbaef026df6248ab7ef6f0b068b0647",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b6a06cbbb5f7fd03589cff9178314af04c568826",
+              "lessThan": "cea15f66b7b68b2c50943a6660e0692c6635e4eb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b6a06cbbb5f7fd03589cff9178314af04c568826",
+              "lessThan": "4b3a1bf4c2ffd4c9595d900ead78c9035894a025",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b6a06cbbb5f7fd03589cff9178314af04c568826",
+              "lessThan": "d0e877810baf613b018fd9747440b9d4d9db1428",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b6a06cbbb5f7fd03589cff9178314af04c568826",
+              "lessThan": "ea3ab43a1f3cf2c7cecd75c8be1ee99a5e94a92e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b6a06cbbb5f7fd03589cff9178314af04c568826",
+              "lessThan": "5909bedbed38c558bee7cb6758ceedf9bc3a9194",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.17",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.17",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.175",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.141",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00126,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 5,
+        "reference_count": 6
+      }
+    },
+    {
       "cve_id": "CVE-2026-53309",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nocfs2/dlm: fix off-by-one in dlm_match_regions() region comparison\n\nThe local-vs-remote region comparison loop uses '<=' instead of '<',\ncausing it to read one entry past the valid range of qr_regions.  The\nother loops in the same function correctly use '<'.\n\nFix the loop condition to use '<' for consistency and correctness.",
       "cvss_score": 9.8,
@@ -374017,8 +374775,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-193"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -374093,9 +374853,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-415",
           "CWE-826"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 5
       }
     }
