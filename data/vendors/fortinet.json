@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T00:30:34+00:00",
+  "generated_at": "2026-07-09T05:03:12+00:00",
   "vendor": "fortinet",
   "count": 228,
   "items": [
@@ -8408,11 +8408,49 @@
     },
     {
       "cve_id": "CVE-2023-42789",
-      "description": "A out-of-bounds write in Fortinet FortiOS 7.4.0 through 7.4.1, 7.2.0 through 7.2.5, 7.0.0 through 7.0.12, 6.4.0 through 6.4.14, 6.2.0 through 6.2.15, FortiProxy 7.4.0, 7.2.0 through 7.2.6, 7.0.0 through 7.0.12, 2.0.0 through 2.0.13 allows attacker to execute unauthorized code or commands via specially crafted HTTP requests.",
+      "description": "A out-of-bounds write vulnerability in Fortinet FortiOS 7.4.0 through 7.4.1, FortiOS 7.2.0 through 7.2.5, FortiOS 7.0.0 through 7.0.12, FortiOS 6.4.0 through 6.4.14, FortiOS 6.2.0 through 6.2.15, FortiProxy 7.4.0, FortiProxy 7.2.0 through 7.2.6, FortiProxy 7.0.0 through 7.0.12, FortiProxy 2.0.0 through 2.0.13, FortiSASE 23.2.b allows attacker to execute unauthorized code or commands via specially crafted HTTP requests.",
       "cvss_score": 9.3,
       "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:U/RC:C",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
       "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortiproxy",
+          "versions": [
+            {
+              "version": "7.4.0",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "2.0.0",
+              "lessThanOrEqual": "2.0.13",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisase",
+          "versions": [
+            {
+              "version": "23.2.b",
+              "status": "affected"
+            }
+          ]
+        },
         {
           "vendor": "fortinet",
           "product": "fortios",
@@ -8448,52 +8486,6 @@
               "status": "affected"
             }
           ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortipam",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "1.1.0",
-              "lessThanOrEqual": "1.1.2",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "1.0.0",
-              "lessThanOrEqual": "1.0.3",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortiproxy",
-          "versions": [
-            {
-              "version": "7.4.0",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "7.2.0",
-              "lessThanOrEqual": "7.2.6",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "7.0.0",
-              "lessThanOrEqual": "7.0.12",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "2.0.0",
-              "lessThanOrEqual": "2.0.13",
-              "status": "affected"
-            }
-          ]
         }
       ],
       "watchlist_hit": true,
@@ -8503,8 +8495,8 @@
       "priority_label": "",
       "matched_terms": [
         "product:fortios",
-        "product:fortipam",
         "product:fortiproxy",
+        "product:fortisase",
         "vendor:fortinet"
       ],
       "active_threat": false,
@@ -8523,10 +8515,10 @@
     },
     {
       "cve_id": "CVE-2023-42790",
-      "description": "A stack-based buffer overflow in Fortinet FortiOS 7.4.0 through 7.4.1, 7.2.0 through 7.2.5, 7.0.0 through 7.0.12, 6.4.0 through 6.4.14, 6.2.0 through 6.2.15, FortiProxy 7.4.0, 7.2.0 through 7.2.6, 7.0.0 through 7.0.12, 2.0.0 through 2.0.13 allows attacker to execute unauthorized code or commands via specially crafted HTTP requests.",
+      "description": "A stack-based buffer overflow vulnerability in Fortinet FortiOS 7.4.0 through 7.4.1, FortiOS 7.2.0 through 7.2.5, FortiOS 7.0.0 through 7.0.12, FortiOS 6.4.0 through 6.4.14, FortiOS 6.2.0 through 6.2.15, FortiProxy 7.4.0, FortiProxy 7.2.0 through 7.2.6, FortiProxy 7.0.0 through 7.0.12, FortiProxy 2.0.0 through 2.0.13, FortiSASE 23.2.b allows attacker to execute unauthorized code or commands via specially crafted HTTP requests.",
       "cvss_score": 7.7,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:U/RC:C",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
       "affected": [
         {
           "vendor": "fortinet",
@@ -10540,10 +10532,10 @@
     },
     {
       "cve_id": "CVE-2024-23667",
-      "description": "An improper authorization in Fortinet FortiWebManager version 7.2.0 and 7.0.0 through 7.0.4 and 6.3.0 and 6.2.3 through 6.2.4 and 6.0.2 allows attacker to execute unauthorized code or commands via HTTP requests or CLI.",
+      "description": "An improper authorization in Fortinet FortiWebManager 7.2.0, FortiWebManager 7.0.0 through 7.0.4, FortiWebManager 6.3.0, FortiWebManager 6.2.3 through 6.2.4, FortiWebManager 6.0.2 allows attacker to execute unauthorized code or commands via HTTP requests or CLI.",
       "cvss_score": 7.6,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:X/RC:X",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:X",
       "affected": [
         {
           "vendor": "fortinet",
@@ -10601,10 +10593,10 @@
     },
     {
       "cve_id": "CVE-2024-23668",
-      "description": "An improper authorization in Fortinet FortiWebManager version 7.2.0 and 7.0.0 through 7.0.4 and 6.3.0 and 6.2.3 through 6.2.4 and 6.0.2 allows attacker to execute unauthorized code or commands via HTTP requests or CLI.",
+      "description": "An improper authorization in Fortinet FortiWebManager 7.2.0, FortiWebManager 7.0.0 through 7.0.4, FortiWebManager 6.3.0, FortiWebManager 6.2.3 through 6.2.4, FortiWebManager 6.0.2 allows attacker to execute unauthorized code or commands via HTTP requests or CLI.",
       "cvss_score": 8.6,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:X/RC:X",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:X",
       "affected": [
         {
           "vendor": "fortinet",
@@ -10662,10 +10654,10 @@
     },
     {
       "cve_id": "CVE-2024-23670",
-      "description": "An improper authorization in Fortinet FortiWebManager version 7.2.0 and 7.0.0 through 7.0.4 and 6.3.0 and 6.2.3 through 6.2.4 and 6.0.2 allows attacker to execute unauthorized code or commands via HTTP requests or CLI.",
+      "description": "An improper authorization in Fortinet FortiWebManager 7.2.0, FortiWebManager 7.0.0 through 7.0.4, FortiWebManager 6.3.0, FortiWebManager 6.2.3 through 6.2.4, FortiWebManager 6.0.2 allows attacker to execute unauthorized code or commands via HTTP requests or CLI.",
       "cvss_score": 7.6,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:X/RC:X",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:X",
       "affected": [
         {
           "vendor": "fortinet",
@@ -12509,8 +12501,26 @@
       "description": "A improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiManager 7.6.0 through 7.6.1, FortiManager 7.4.1 through 7.4.3, FortiManager Cloud 7.4.1 through 7.4.3, FortiOS 7.6.0, FortiOS 7.4.0 through 7.4.4, FortiOS 7.2.0 through 7.2.9, FortiOS 7.0.0 through 7.0.15, FortiOS 6.4.0 through 6.4.15, FortiProxy 7.4.0 through 7.4.5, FortiProxy 7.2.0 through 7.2.11, FortiProxy 7.0.0 through 7.0.18, FortiProxy 2.0 all versions, FortiProxy 1.2 all versions, FortiProxy 1.1 all versions, FortiProxy 1.0 all versions may allow a remote authenticated attacker with access to the security fabric interface and port to write arbitrary files or a remote unauthenticated attacker to delete an arbitrary folder",
       "cvss_score": 7.1,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P/RL:U/RC:C",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P/RL:O/RC:C",
       "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortimanager",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.6.0",
+              "lessThanOrEqual": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.1",
+              "lessThanOrEqual": "7.4.3",
+              "status": "affected"
+            }
+          ]
+        },
         {
           "vendor": "fortinet",
           "product": "fortiproxy",
@@ -12561,36 +12571,6 @@
         },
         {
           "vendor": "fortinet",
-          "product": "fortimanager cloud",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "7.4.1",
-              "lessThanOrEqual": "7.4.3",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortimanager",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "7.6.0",
-              "lessThanOrEqual": "7.6.1",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "7.4.1",
-              "lessThanOrEqual": "7.4.3",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "fortinet",
           "product": "fortios",
           "versions": [
             {
@@ -12619,6 +12599,18 @@
               "versionType": "semver",
               "version": "6.4.0",
               "lessThanOrEqual": "6.4.15",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortimanager cloud",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.4.1",
+              "lessThanOrEqual": "7.4.3",
               "status": "affected"
             }
           ]
@@ -13191,7 +13183,7 @@
       "description": "An\u00a0Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS version 7.0.0 through 7.0.16 and FortiProxy version 7.0.0 through 7.0.19 and 7.2.0 through 7.2.12 allows a remote attacker to gain super-admin privileges via crafted requests to\u00a0Node.js websocket module.",
       "cvss_score": 9.6,
       "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:W/RC:C",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
       "affected": [
         {
           "vendor": "fortinet",
@@ -13390,8 +13382,20 @@
       "description": "An\u00a0Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] affecting FortiOS 7.0.0 through 7.0.16 and FortiProxy 7.2.0 through 7.2.12, 7.0.0 through 7.0.19 may allow a remote unauthenticated attacker with prior knowledge of upstream and downstream devices serial numbers to gain super-admin privileges on the downstream device, if the Security Fabric is enabled, via crafted CSF proxy requests.",
       "cvss_score": 8.1,
       "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:X/RC:C",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
       "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortios",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.16",
+              "status": "affected"
+            }
+          ]
+        },
         {
           "vendor": "fortinet",
           "product": "fortiproxy",
@@ -13406,18 +13410,6 @@
               "versionType": "semver",
               "version": "7.0.0",
               "lessThanOrEqual": "7.0.19",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortios",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "7.0.0",
-              "lessThanOrEqual": "7.0.16",
               "status": "affected"
             }
           ]
@@ -15990,24 +15982,6 @@
       "affected": [
         {
           "vendor": "fortinet",
-          "product": "fortisandbox cloud",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "5.0.0",
-              "lessThanOrEqual": "5.0.1",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "4.4.5",
-              "lessThanOrEqual": "4.4.8",
-              "status": "affected"
-            }
-          ]
-        },
-        {
-          "vendor": "fortinet",
           "product": "fortisandbox",
           "versions": [
             {
@@ -16070,6 +16044,24 @@
               "version": "21.3.4055",
               "status": "affected"
             },
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.5",
+              "lessThanOrEqual": "4.4.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox cloud",
+          "versions": [
             {
               "versionType": "semver",
               "version": "5.0.0",
