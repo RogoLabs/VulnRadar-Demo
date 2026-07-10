@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-07-10T11:16:31+00:00`
+Generated: `2026-07-10T14:46:35+00:00`
 
 ## Executive Summary
 
@@ -242,12 +242,12 @@ Top critical items:
 | [CVE-2022-42856](https://www.cve.org/CVERecord?id=CVE-2022-42856) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-04 | 0.085 | 8.8 | ✅ | A type confusion issue was addressed with improved state handling. This issue is fixed in Safari 16.2, tvOS 16.2, macOS Ventura 13.1, iOS 15.7.2 and iPadOS 15.… |
 | [CVE-2022-22718](https://www.cve.org/CVERecord?id=CVE-2022-22718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-10 | 0.185 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2025-43529](https://www.cve.org/CVERecord?id=CVE-2025-43529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-05 | 0.084 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 26.2, iOS 18.7.3 and iPadOS 18.7.3, iOS 26.2 and iPadOS 26.… |
-| [CVE-2025-29824](https://www.cve.org/CVERecord?id=CVE-2025-29824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-29 | 0.181 | 7.8 | ✅ | Use after free in Windows Common Log File System Driver allows an authorized attacker to elevate privileges locally. |
 | [CVE-2024-38189](https://www.cve.org/CVERecord?id=CVE-2024-38189) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.079 | 8.8 | ✅ | Microsoft Project Remote Code Execution Vulnerability |
 | [CVE-2023-7024](https://www.cve.org/CVERecord?id=CVE-2023-7024) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-01-23 | 0.074 | 8.8 | ✅ | Heap buffer overflow in WebRTC in Google Chrome prior to 120.0.6099.129 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML pag… |
 | [CVE-2022-3723](https://www.cve.org/CVERecord?id=CVE-2022-3723) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-11-18 | 0.068 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 107.0.5304.87 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromiu… |
 | [CVE-2023-36036](https://www.cve.org/CVERecord?id=CVE-2023-36036) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-05 | 0.167 | 7.8 | ✅ | Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability |
 | [CVE-2025-22224](https://www.cve.org/CVERecord?id=CVE-2025-22224) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-25 | 0.015 | 9.3 | ✅ | VMware ESXi, and Workstation contain a TOCTOU (Time-of-Check Time-of-Use) vulnerability that leads to an out-of-bounds write. A malicious actor with local admi… |
+| [CVE-2025-5419](https://www.cve.org/CVERecord?id=CVE-2025-5419) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-26 | 0.065 | 8.8 | ✅ | Out of bounds read and write in V8 in Google Chrome prior to 137.0.7151.68 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML … |
 
 ## Recent Changes (Last 7 Days)
 
