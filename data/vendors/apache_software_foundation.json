@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-09T23:23:19+00:00",
+  "generated_at": "2026-07-10T04:17:31+00:00",
   "vendor": "apache_software_foundation",
-  "count": 789,
+  "count": 790,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28708,7 +28708,7 @@
           "CWE-787"
         ],
         "cpe_count": 1,
-        "reference_count": 10
+        "reference_count": 11
       }
     },
     {
@@ -29697,7 +29697,7 @@
         "cwe_ids": [
           "CWE-502"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 4
       }
     },
@@ -31016,7 +31016,7 @@
         "cwe_ids": [
           "CWE-88"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -31665,6 +31665,49 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-41042",
+      "description": "Unauthenticated callers can supply a malicious H2 JDBC URL through the testConnection API, which executes arbitrary Java code on the server via H2's INIT parameter. Vulnerability in Apache Gravitino.\n\nThis issue affects Apache Gravitino: before 1.2.1.\n\nUsers are recommended to upgrade to version 1.2.1, which fixes the issue.\n\nThis issue only happens when using H2, and H2 is mainly used for testing and local development. Also, Gravitino is typically deployed in the internal environment, so the severity is low.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache gravitino",
+          "versions": [
+            {
+              "lessThan": "1.2.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache gravitino",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00285,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -33619,7 +33662,7 @@
         "cwe_ids": [
           "CWE-502"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -34768,7 +34811,7 @@
           "CWE-20",
           "CWE-639"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -34867,7 +34910,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -34922,7 +34965,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -34971,7 +35014,7 @@
         "cwe_ids": [
           "CWE-502"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -35026,7 +35069,7 @@
         "cwe_ids": [
           "CWE-943"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -35082,7 +35125,7 @@
           "CWE-20",
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -35139,7 +35182,7 @@
           "CWE-200",
           "CWE-918"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -35409,14 +35452,14 @@
       "active_threat": false,
       "probability_score": 0.00703,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 2
       }
     },
@@ -35452,14 +35495,14 @@
       "active_threat": false,
       "probability_score": 0.00616,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 13,
         "reference_count": 2
       }
     },
@@ -35812,7 +35855,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -35953,7 +35996,7 @@
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -36404,7 +36447,7 @@
           "CWE-409"
         ],
         "cpe_count": 2,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -37183,7 +37226,7 @@
           "CWE-306",
           "CWE-636"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -37759,7 +37802,7 @@
           "CWE-200",
           "CWE-918"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -37810,7 +37853,7 @@
           "CWE-200",
           "CWE-918"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
