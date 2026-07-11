@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-11T03:39:12+00:00",
+  "generated_at": "2026-07-11T06:27:50+00:00",
   "vendor": "apache_software_foundation",
-  "count": 790,
+  "count": 791,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -23225,7 +23225,7 @@
           "CWE-763"
         ],
         "cpe_count": 1,
-        "reference_count": 9
+        "reference_count": 10
       }
     },
     {
@@ -28708,7 +28708,7 @@
           "CWE-787"
         ],
         "cpe_count": 1,
-        "reference_count": 11
+        "reference_count": 13
       }
     },
     {
@@ -28924,7 +28924,7 @@
           "CWE-1240"
         ],
         "cpe_count": 5,
-        "reference_count": 7
+        "reference_count": 17
       }
     },
     {
@@ -30367,7 +30367,7 @@
           "CWE-807"
         ],
         "cpe_count": 3,
-        "reference_count": 6
+        "reference_count": 16
       }
     },
     {
@@ -32119,7 +32119,7 @@
           "CWE-190"
         ],
         "cpe_count": 1,
-        "reference_count": 14
+        "reference_count": 15
       }
     },
     {
@@ -32164,7 +32164,7 @@
           "CWE-295"
         ],
         "cpe_count": 1,
-        "reference_count": 11
+        "reference_count": 12
       }
     },
     {
@@ -32207,7 +32207,7 @@
           "CWE-125"
         ],
         "cpe_count": 1,
-        "reference_count": 11
+        "reference_count": 12
       }
     },
     {
@@ -32250,7 +32250,7 @@
           "CWE-190"
         ],
         "cpe_count": 1,
-        "reference_count": 11
+        "reference_count": 12
       }
     },
     {
@@ -33890,7 +33890,7 @@
           "CWE-295"
         ],
         "cpe_count": 1,
-        "reference_count": 16
+        "reference_count": 17
       }
     },
     {
@@ -36354,7 +36354,7 @@
           "CWE-611"
         ],
         "cpe_count": 2,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -36447,7 +36447,7 @@
           "CWE-409"
         ],
         "cpe_count": 2,
-        "reference_count": 16
+        "reference_count": 18
       }
     },
     {
@@ -37957,8 +37957,51 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-57111",
+      "description": "Permissive Cross-Origin Resource Sharing (CORS) in the REST API (helix-rest, org.apache.helix.rest.server.filters.CORSFilter) in Apache Helix through 2.0.0 on all platforms allows a remote attacker controlling a web page visited by an authorized user to read responses from and issue cross-origin requests to administrative REST endpoints via a cross-origin request from an arbitrary origin, since the filter unconditionally returns Access-Control-Allow-Origin: * together with Access-Control-Allow-Credentials: true and reflects arbitrary Access-Control-Request-Method / Access-Control-Request-Headers values in preflight responses. Users are recommended to upgrade to version 2.0.1, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache helix rest",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.0.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache helix rest",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00269,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1385"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
