@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-11T06:27:50+00:00",
+  "generated_at": "2026-07-11T09:01:06+00:00",
   "vendor": "apache_software_foundation",
-  "count": 791,
+  "count": 798,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28625,6 +28625,50 @@
       }
     },
     {
+      "cve_id": "CVE-2026-28564",
+      "description": "Insufficient Session Expiration, Authentication Bypass by Capture-replay vulnerability in Apache IoTDB.\nREST Basic Authentication Accepts Stale Cached Credentials\n\n\nThis issue affects Apache IoTDB: from 1.0.0 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00182,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-294",
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-28779",
       "description": "Apache Airflow versions 3.1.0 through 3.1.7\u00a0session token (_token) in cookies is set to path=/ regardless of the configured [webserver] base_url or [api] base_url.\nThis allows any application co-hosted under the same domain to capture valid Airflow session tokens from HTTP request headers, allowing full session takeover without attacking Airflow itself.\n\nUsers are recommended to upgrade to Apache Airflow 3.1.8 or later, which resolves this issue.",
       "cvss_score": 7.5,
@@ -30804,6 +30848,181 @@
       }
     },
     {
+      "cve_id": "CVE-2026-40005",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache IoTDB.\nAn attacker can write arbitrary files anywhere the IoTDB process has write permissions with unsafe API.\n\n\nThis issue affects Apache IoTDB: from 1.0.0 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00157,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40006",
+      "description": "Memory Allocation with Excessive Size Value, Allocation of Resources Without Limits or Throttling, Missing Authentication for Critical Function vulnerability in Apache IoTDB.\nWhen pipe_air_gap_receiver_enabled=true, the IoTDB AirGap pipe receiver\naccepts raw TCP connections on port 9780 with no authentication. The\nreadLength method reads an attacker-controlled 32-bit integer from the\nsocket and readData passes it directly to new byte[length] with no\nupper-bound check. An unauthenticated attacker can cause the JVM to attempt\nan allocation of up to 2,147,483,647 bytes per connection, exhausting heap\nmemory and crashing or severely degrading the DataNode process.\n\n\nThis issue affects Apache IoTDB: from 1.0.0 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306",
+          "CWE-770",
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40007",
+      "description": "Uncontrolled Recursion, Uncontrolled Resource Consumption vulnerability in Apache IoTDB.\nWhen pipe_air_gap_receiver_enabled=true, the IoTDB AirGap receiver's\nreadLength method calls itself recursively each time it recognises the\nE-language prefix in socket data, with no depth limit. An unauthenticated\nattacker can send a stream of repeated E-language prefixes that drives the\nrecursion arbitrarily deep, exhausting the receiver thread's JVM stack and\nraising StackOverflowError.\n\n\nThis issue affects Apache IoTDB: from 1.0.0 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00139,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-674"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40008",
+      "description": "Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability in Apache IoTDB.\nThe pipe processor reads a fully\nqualified Java class name and\ninstantiates it using Class.forName().newInstance() without any\nvalidation or allowlisting.\n\n\nThis issue affects Apache IoTDB: from 1.0.0 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00252,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-40010",
       "description": "Missing invocation of Servlet http web request method changeSessionId after session binding can be exploited for a\u00a0session fixation attack in Apache Wicket.\n\nThis issue affects Apache Wicket: from 8.0.0 through 8.17.0, 9.0.0, from 10.0.0 through 10.8.0.\n\nUsers are recommended to upgrade to version 10.9.0, which fixes the issue.",
       "cvss_score": 9.1,
@@ -31070,6 +31289,56 @@
       }
     },
     {
+      "cve_id": "CVE-2026-40452",
+      "description": "Incorrect Authorization, Improper Access Control vulnerability in Apache IoTDB.\nAuthorization bypass in /rest/v2/fastLastQuery exposes last-value data to unauthorized authenticated users.\n\n\nThis issue affects Apache IoTDB: from 1.3.5 before 1.3.8, from 2.0.5 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "lessThan": "1.3.8",
+              "status": "affected",
+              "version": "1.3.5",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "2.0.5",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0014,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284",
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-40453",
       "description": "The fix for CVE-2025-27636 added setLowerCase(true) to HttpHeaderFilterStrategy so that case-variant header names such as 'CAmelExecCommandExecutable' are filtered out alongside 'CamelExecCommandExecutable'. The same setLowerCase(true) call was not applied to five non-HTTP HeaderFilterStrategy implementations: JmsHeaderFilterStrategy and ClassicJmsHeaderFilterStrategy in camel-jms, SjmsHeaderFilterStrategy in camel-sjms, CoAPHeaderFilterStrategy in camel-coap, and GooglePubsubHeaderFilterStrategy in camel-google-pubsub. Because those strategies use case-sensitive String.startsWith('Camel'/'camel') filtering while the Camel Exchange stores headers in a case-insensitive map, an attacker with JMS (or equivalent) producer access to the broker consumed by a Camel route can inject case-variant Camel internal headers, which are then resolved by downstream components such as camel-exec and camel-file using their canonical casing. This enables remote code execution and arbitrary file write on routes that forward JMS messages to header-driven components.\n\nThis issue affects Apache Camel: from 3.0.0 before 4.14.6, from 4.15.0 before 4.18.2, from 4.19.0 before 4.20.0.\n\nUsers are recommended to upgrade to version 4.20.0, which fixes the issue. If users are on the 4.14.x LTS releases stream, then they are suggested to upgrade to 4.14.6. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.2.",
       "cvss_score": 9.9,
@@ -31172,6 +31441,56 @@
         ],
         "cpe_count": 3,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-40454",
+      "description": "Out-of-bounds Read, Improper Input Validation vulnerability in Apache IoTDB C++ client.\nOut-of-bounds reads in IoTDB C++ client TsBlock deserializer crash client\nprocess on malformed server data.\n\n\nThis issue affects Apache IoTDB C++ client: from 1.3.5 before 1.3.8, from 2.0.5 before 2.0.10.\n\nUsers are recommended to upgrade to version 2.0.10, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb c++ client",
+          "versions": [
+            {
+              "lessThan": "1.3.8",
+              "status": "affected",
+              "version": "1.3.5",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "2.0.10",
+              "status": "affected",
+              "version": "2.0.5",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb c++ client",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00139,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -34079,7 +34398,7 @@
           "CWE-15"
         ],
         "cpe_count": 3,
-        "reference_count": 4
+        "reference_count": 5
       }
     },
     {
@@ -34269,7 +34588,7 @@
           "CWE-90"
         ],
         "cpe_count": 3,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -36354,7 +36673,7 @@
           "CWE-611"
         ],
         "cpe_count": 2,
-        "reference_count": 6
+        "reference_count": 7
       }
     },
     {
@@ -36626,7 +36945,7 @@
           "CWE-303"
         ],
         "cpe_count": 2,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -36676,7 +36995,7 @@
           "CWE-358"
         ],
         "cpe_count": 2,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -36775,7 +37094,7 @@
           "CWE-502"
         ],
         "cpe_count": 2,
-        "reference_count": 4
+        "reference_count": 5
       }
     },
     {
@@ -36825,7 +37144,7 @@
           "CWE-502"
         ],
         "cpe_count": 2,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
