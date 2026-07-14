@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-14T00:19:59+00:00",
+  "generated_at": "2026-07-14T02:57:17+00:00",
   "vendor": "_other",
-  "count": 789,
+  "count": 790,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -41979,6 +41979,64 @@
         "cpe_count": 3,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-14934",
+      "description": "A Missing Authorization vulnerability in the repository creation functionality in Google Cloud BigQuery, Dataform and Colab Enterprise, in the versions between October 2025 and May 10th, 2026, on Google Cloud Platform, allows an authenticated attacker to escalate privileges and perform cross-tenant repository takeover.\n\n\nThis vulnerability was patched on 10 May 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "bigquery",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10",
+              "lessThan": "2026-05-10",
+              "versionType": "date"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "dataform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10",
+              "lessThan": "2026-05-10",
+              "versionType": "date"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "colab enterprise",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10",
+              "lessThan": "2026-05-10",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bigquery",
+        "product:colab enterprise",
+        "product:dataform",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-1727",
