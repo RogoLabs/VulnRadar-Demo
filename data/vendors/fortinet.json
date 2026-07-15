@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-15T00:06:14+00:00",
+  "generated_at": "2026-07-15T03:06:47+00:00",
   "vendor": "fortinet",
-  "count": 228,
+  "count": 230,
   "items": [
     {
       "cve_id": "CVE-2022-22299",
@@ -14440,6 +14440,56 @@
       }
     },
     {
+      "cve_id": "CVE-2025-53379",
+      "description": "A out-of-bounds read vulnerability in Fortinet FortiAuthenticator 6.6.0 through 6.6.2, FortiAuthenticator 6.5 all versions may allow a remote unauthenticated attacker to retrieve sensitive information via a specially crafted request.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:F/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortiauthenticator",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "6.6.0",
+              "lessThanOrEqual": "6.6.2",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.5.0",
+              "lessThanOrEqual": "6.5.7",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.4.0",
+              "lessThanOrEqual": "6.4.11",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.3.0",
+              "lessThanOrEqual": "6.3.5",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortiauthenticator",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2025-53844",
       "description": "A out-of-bounds write vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS 7.2.0 through 7.2.11 allows attacker to execute unauthorized code or commands via specially crafted packets.",
       "cvss_score": 8.3,
@@ -16417,6 +16467,44 @@
         "cpe_count": 4,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-59835",
+      "description": "A exposure of resource to wrong sphere vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.2, FortiSandbox 4.4.3 through 4.4.8 may allow an unauthenticated attacker to access the VNC server of VMs performing scanning via network requests.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L/E:P/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.2",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.3",
+              "lessThanOrEqual": "4.4.8",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortisandbox",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
