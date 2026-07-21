@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-21T14:09:58+00:00",
+  "generated_at": "2026-07-21T15:54:15+00:00",
   "vendor": "_other",
-  "count": 797,
+  "count": 800,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -1323,7 +1323,7 @@
         "shortDescription": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-06-01",
-        "knownRansomwareCampaignUse": "Unknown"
+        "knownRansomwareCampaignUse": "Known"
       },
       "nvd": {
         "cvss_v3_score": 9.1,
@@ -44496,6 +44496,55 @@
       }
     },
     {
+      "cve_id": "CVE-2026-0770",
+      "description": "Langflow exec_globals Inclusion of Functionality from Untrusted Control Sphere Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the handling of the exec_globals parameter provided to the validate endpoint. The issue results from the inclusion of a resource from an untrusted control sphere. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-27325.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "langflow",
+          "product": "langflow",
+          "versions": [
+            {
+              "version": "1.4.2",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.10371,
+      "kev": {
+        "cveID": "CVE-2026-0770",
+        "vendorProject": "Langflow",
+        "product": "Langflow",
+        "vulnerabilityName": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+        "dateAdded": "2026-07-21",
+        "shortDescription": "Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations. ",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-07-24",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-829"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2025-35471",
       "description": "conda-forge openssl-feedstock before 066e83c (2024-05-20), on Microsoft Windows, configures OpenSSL to use an OPENSSLDIR file path that can be written to by non-privilged local users. By writing a specially crafted openssl.cnf file in OPENSSLDIR, a non-privileged local user can execute arbitrary code with the privileges of the user or process loading openssl-feedstock DLLs. Miniforge before 24.5.0 is also affected.",
       "cvss_score": 7.3,
@@ -52201,6 +52250,126 @@
         ],
         "cpe_count": 0,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-60137",
+      "description": "WordPress 6.8.x before 6.8.6, 6.9.x before 6.9.5, and 7.0.x before 7.0.2 does not properly sanitise the author__not_in parameter of WP_Query, which could allow SQL Injection when a plugin or theme passes untrusted input to the parameter.",
+      "cvss_score": 5.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "wordpress",
+          "product": "wordpress",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "6.8.0",
+              "lessThan": "6.8.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.9.0",
+              "lessThan": "6.9.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.0.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.04026,
+      "kev": {
+        "cveID": "CVE-2026-60137",
+        "vendorProject": "WordPress",
+        "product": "Core",
+        "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
+        "dateAdded": "2026-07-21",
+        "shortDescription": "WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-04",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-63030",
+      "description": "WordPress 6.9.x before 6.9.5 and 7.0.x before 7.0.2 is affected by a REST API batch endpoint route confusion issue which, combined with the author__not_in WP_Query SQL Injection (CVE-2026-60137), could allow an attacker to perform SQL Injection and achieve Remote Code Execution.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "wordpress",
+          "product": "wordpress",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "6.9.0",
+              "lessThan": "6.9.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.0.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.08946,
+      "kev": {
+        "cveID": "CVE-2026-63030",
+        "vendorProject": "WordPress",
+        "product": "Core",
+        "vulnerabilityName": "WordPress Core Interpretation Conflict Vulnerability",
+        "dateAdded": "2026-07-21",
+        "shortDescription": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-07-24",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-436"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
