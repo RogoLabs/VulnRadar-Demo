@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-22T06:40:38+00:00",
+  "generated_at": "2026-07-22T09:37:45+00:00",
   "vendor": "linux",
-  "count": 3414,
+  "count": 3418,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -336549,7 +336549,7 @@
           "CWE-1288"
         ],
         "cpe_count": 5,
-        "reference_count": 9
+        "reference_count": 11
       }
     },
     {
@@ -362144,7 +362144,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -362278,8 +362278,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -362413,8 +362415,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -362611,8 +362615,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 13,
         "reference_count": 8
       }
     },
@@ -362722,7 +362728,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 4
       }
     },
@@ -362808,8 +362814,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -362895,8 +362903,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -362983,8 +362993,158 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53059",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm log: fix out-of-bounds write due to region_count overflow\n\nThe local variable region_count in create_log_context() is declared as\nunsigned int (32-bit), but dm_sector_div_up() returns sector_t (64-bit).\nWhen a device-mapper target has a sufficiently large ti->len with a small\nregion_size, the division result can exceed UINT_MAX. The truncated\nvalue is then used to calculate bitset_size, causing clean_bits,\nsync_bits, and recovering_bits to be allocated far smaller than needed\nfor the actual number of regions.\n\nSubsequent log operations (log_set_bit, log_clear_bit, log_test_bit) use\nregion indices derived from the full untruncated region space, causing\nout-of-bounds writes to kernel heap memory allocated by vmalloc.\n\nThis can be reproduced by creating a mirror target whose region_count\noverflows 32 bits:\n\n  dmsetup create bigzero --table '0 8589934594 zero'\n  dmsetup create mymirror --table '0 8589934594 mirror \\\n    core 2 2 nosync 2 /dev/mapper/bigzero 0 \\\n    /dev/mapper/bigzero 0'\n\nThe status output confirms the truncation (sync_count=1 instead of\n4294967297, because 0x100000001 was truncated to 1):\n\n  $ dmsetup status mymirror\n  0 8589934594 mirror 2 254:1 254:1 1/4294967297 ...\n\nThis leads to a kernel crash in core_in_sync:\n\n  BUG: scheduling while atomic: (udev-worker)/9150/0x00000000\n  RIP: 0010:core_in_sync+0x14/0x30 [dm_log]\n  CR2: 0000000000000008\n  Fixing recursive fault but reboot is needed!\n\nFix by widening the local region_count to sector_t and adding an\nexplicit overflow check before the value is assigned to lc->region_count.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "44ab8875ae4a2842bde2d756bed195d375e0debb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "defe483e47173768c227532694dc78cb65db5f09",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "3ec74da927b4e171a6fc0e77b1188ba4d019af51",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "d4ac87567f86a55c3c92e9a5144dcd943a9772a1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "12bd5b88e91a02785244ff1d20fb157e96e9cdc8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "b455903eed4558982be0811f5b7f44f6bbc4ff57",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "4ec8323b9f0764a14d532b1ae9b87f8a9fecb867",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "c20e36b7631d83e7535877f08af8b0af72c44b1a",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.12",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.12",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.258",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.209",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.175",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.141",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00127,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787",
+          "CWE-190"
+        ],
+        "cpe_count": 12,
+        "reference_count": 11
       }
     },
     {
@@ -363129,9 +363289,100 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53067",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: endpoint: pci-ep-msi: Fix error unwind and prevent double alloc\n\npci_epf_alloc_doorbell() stores the allocated doorbell message array in\nepf->db_msg/epf->num_db before requesting MSI vectors. If MSI allocation\nfails, the array is freed but the EPF state may still point to freed\nmemory.\n\nClear epf->db_msg and epf->num_db on the MSI allocation failure path so\nthat later cleanup cannot double-free the array and callers can retry\nallocation.\n\nAlso return -EBUSY when doorbells have already been allocated to prevent\nleaking or overwriting an existing allocation.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "1c3b002c6bf684b445a7107609979bca5f21bc03",
+              "lessThan": "175717cfc06cab79f84cd037d66dda1b8564cd9e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c3b002c6bf684b445a7107609979bca5f21bc03",
+              "lessThan": "3c25587fbf8797b92090b064a6d239a873e55fb1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1c3b002c6bf684b445a7107609979bca5f21bc03",
+              "lessThan": "1cba96c0a795124c3229293ed7b5b5765e66f259",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.17",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.17",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00154,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
       }
     },
     {
@@ -363276,8 +363527,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -363411,8 +363664,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
       }
     },
@@ -363511,7 +363766,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 4
       }
     },
@@ -363658,10 +363913,11 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-667",
           "CWE-416"
         ],
-        "cpe_count": 0,
-        "reference_count": 11
+        "cpe_count": 7,
+        "reference_count": 13
       }
     },
     {
@@ -363806,8 +364062,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -363954,7 +364212,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -364086,8 +364344,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 11,
         "reference_count": 5
       }
     },
@@ -364234,7 +364494,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -364351,8 +364611,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 12,
         "reference_count": 2
       }
     },
@@ -365294,7 +365556,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 5
       }
     },
@@ -365428,9 +365690,225 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 6,
         "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53097",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: mt76: mt7996: fix use-after-free bugs in mt7996_mac_dump_work()\n\nWhen the mt7996 pci chip is detaching, the mt7996_crash_data is\nreleased in mt7996_coredump_unregister(). However, the work item\ndump_work may still be running or pending, leading to UAF bugs\nwhen the already freed crash_data is dereferenced again in\nmt7996_mac_dump_work().\n\nThe race condition can occur as follows:\n\nCPU 0 (removal path)               | CPU 1 (workqueue)\nmt7996_pci_remove()                | mt7996_sys_recovery_set()\n mt7996_unregister_device()        |  mt7996_reset()\n  mt7996_coredump_unregister()     |   queue_work()\n   vfree(dev->coredump.crash_data) | mt7996_mac_dump_work()\n                                   |  crash_data-> // UAF\n\nFix this by ensuring dump_work is properly canceled before\nthe crash_data is deallocated. Add cancel_work_sync() in\nmt7996_unregister_device() to synchronize with any pending\nor executing dump work.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "878161d5d4a469a6ef7f3fb4fe9f676bc508ee99",
+              "lessThan": "180182a3f23ff79430a32ca2c4c1885368ceab48",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "878161d5d4a469a6ef7f3fb4fe9f676bc508ee99",
+              "lessThan": "aa4a31cd89f4fde5043ac613fe0e27014a60a60b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "878161d5d4a469a6ef7f3fb4fe9f676bc508ee99",
+              "lessThan": "188e10f9ea3109d23c6b7643aa6ec2f5cb0faa6d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "878161d5d4a469a6ef7f3fb4fe9f676bc508ee99",
+              "lessThan": "c8f62f73bbced3a79894655bdb0b625462d956fc",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.4",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.4",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53098",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: mt76: mt7915: fix use-after-free bugs in mt7915_mac_dump_work()\n\nWhen the mt7915 pci chip is detaching, the mt7915_crash_data is\nreleased in mt7915_coredump_unregister(). However, the work item\ndump_work may still be running or pending, leading to UAF bugs\nwhen the already freed crash_data is dereferenced again in\nmt7915_mac_dump_work().\n\nThe race condition can occur as follows:\n\nCPU 0 (removal path)               | CPU 1 (workqueue)\nmt7915_pci_remove()                | mt7915_sys_recovery_set()\n mt7915_unregister_device()        |  mt7915_reset()\n  mt7915_coredump_unregister()     |   queue_work()\n   vfree(dev->coredump.crash_data) | mt7915_mac_dump_work()\n                                   |  crash_data-> // UAF\n\nFix this by ensuring dump_work is properly canceled before\nthe crash_data is deallocated. Add cancel_work_sync() in\nmt7915_unregister_device() to synchronize with any pending\nor executing dump work.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4dbcb9125cc3e10a6d879c10e4f5816d05a87c49",
+              "lessThan": "6d5202409467d621b6d1dfd7fc7dadb997fe66d2",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4dbcb9125cc3e10a6d879c10e4f5816d05a87c49",
+              "lessThan": "e6856af8a22a8e2cd18241a465ed00c2301b3a5e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4dbcb9125cc3e10a6d879c10e4f5816d05a87c49",
+              "lessThan": "6b7cbb13c838cf2a5f2e7be0e96fe15250087939",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4dbcb9125cc3e10a6d879c10e4f5816d05a87c49",
+              "lessThan": "21ce6d867867645fff0ef657be18f61d9f39dcd8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4dbcb9125cc3e10a6d879c10e4f5816d05a87c49",
+              "lessThan": "1146d0946b5358fad24812bd39d68f31cd40cc34",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.2",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.2",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.141",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 4,
+        "reference_count": 5
       }
     },
     {
