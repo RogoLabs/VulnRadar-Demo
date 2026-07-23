@@ -1,0 +1,3174 @@
+{
+  "generated_at": "2026-07-23T03:42:30+00:00",
+  "vendor": "isc",
+  "count": 52,
+  "items": [
+    {
+      "cve_id": "CVE-2022-0635",
+      "description": "Versions affected: BIND 9.18.0 When a vulnerable version of named receives a series of specific queries, the named process will eventually terminate due to a failed assertion check.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "Open Source Branch 9.18 9.18.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01316,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 5.0,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 17,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2022-0667",
+      "description": "When the vulnerability is triggered the BIND process will exit. BIND 9.18.0",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.18.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01316,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 5.0,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 17,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2022-1183",
+      "description": "On vulnerable configurations, the named daemon may, in some circumstances, terminate with an assertion failure. Vulnerable configurations are those that include a reference to http within the listen-on statements in their named.conf. TLS is used by both DNS over TLS (DoT) and DNS over HTTPS (DoH), but configurations using DoT alone are unaffected. Affects BIND 9.18.0 -> 9.18.2 and version 9.19.0 of the BIND 9.19 development branch.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind9",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "Open Source Branch 9.18 9.18.0 through versions before 9.18.3"
+            },
+            {
+              "status": "affected",
+              "version": "Development Branch 9.19 9.19.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.06394,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 4.3,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 12,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2022-2906",
+      "description": "An attacker can leverage this flaw to gradually erode available memory to the point where named crashes for lack of resources. Upon restart the attacker would have to begin again, but nevertheless there is the potential to deny service.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind9",
+          "versions": [
+            {
+              "version": "Open Source Branch 9.18 9.18.0 through versions before 9.18.7",
+              "status": "affected"
+            },
+            {
+              "version": "Development Branch 9.19 9.19.0 through versions before 9.19.5",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01708,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 2,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2022-38177",
+      "description": "By spoofing the target resolver with responses that have a malformed ECDSA signature, an attacker can trigger a small memory leak. It is possible to gradually erode available memory to the point where named crashes for lack of resources.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind9",
+          "versions": [
+            {
+              "version": "Open Source Branches 9.8 through 9.16 9.8.4 through versions before 9.16.33",
+              "status": "affected"
+            },
+            {
+              "version": "Supported Preview Branches 9.9-S through 9.11-S 9.9.4-S1 through versions up to and including 9.11.37-S1",
+              "status": "affected"
+            },
+            {
+              "version": "Supported Preview Branch 9.16-S 9.16.8-S1 through versions before 9.16.33-S1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02626,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 34,
+        "reference_count": 18
+      }
+    },
+    {
+      "cve_id": "CVE-2022-38178",
+      "description": "By spoofing the target resolver with responses that have a malformed EdDSA signature, an attacker can trigger a small memory leak. It is possible to gradually erode available memory to the point where named crashes for lack of resources.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind9",
+          "versions": [
+            {
+              "version": "Open Source Branch 9.9 9.9.12 through versions up to and including 9.9.13",
+              "status": "affected"
+            },
+            {
+              "version": "Open Source Branch 9.10 9.10.7 through versions up to and including 9.10.8",
+              "status": "affected"
+            },
+            {
+              "version": "Open Source Branches 9.11 through 9.16 9.11.3 through versions before 9.16.33",
+              "status": "affected"
+            },
+            {
+              "version": "Open Source Branch 9.18 9.18.0 through versions before 9.18.7",
+              "status": "affected"
+            },
+            {
+              "version": "Supported Preview Branch 9.11-S 9.11.4-S1 through versions up to and including 9.11.37-S1",
+              "status": "affected"
+            },
+            {
+              "version": "Supported Preview Branch 9.16-S 9.16.8-S1 through versions before 9.16.33-S1",
+              "status": "affected"
+            },
+            {
+              "version": "Development Branch 9.19 9.19.0 through versions before 9.19.5",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02485,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 30,
+        "reference_count": 18
+      }
+    },
+    {
+      "cve_id": "CVE-2022-3080",
+      "description": "By sending specific queries to the resolver, an attacker can cause named to crash.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind9",
+          "versions": [
+            {
+              "version": "Open Source Branch 9.16 9.16.14 through versions before 9.16.33",
+              "status": "affected"
+            },
+            {
+              "version": "Open Source Branch 9.18 9.18.0 through versions before 9.18.7",
+              "status": "affected"
+            },
+            {
+              "version": "Supported Preview Branch 9.16-S 9.16.14-S1 through versions before 9.16.33-S1",
+              "status": "affected"
+            },
+            {
+              "version": "Development Branch 9.19 9.19.0 through versions before 9.19.5",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01613,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 9,
+        "reference_count": 16
+      }
+    },
+    {
+      "cve_id": "CVE-2022-3094",
+      "description": "Sending a flood of dynamic DNS updates may cause `named` to allocate large amounts of memory. This, in turn, may cause `named` to exit due to a lack of free memory. We are not aware of any cases where this has been exploited.\n\nMemory is allocated prior to the checking of access permissions (ACLs) and is retained during the processing of a dynamic update from a client whose access credentials are accepted. Memory allocated to clients that are not permitted to send updates is released immediately upon rejection. The scope of this vulnerability is limited therefore to trusted clients who are permitted to make dynamic zone changes.\n\nIf a dynamic update is REFUSED, memory will be released again very quickly. Therefore it is only likely to be possible to degrade or stop `named` by sending a flood of unaccepted dynamic updates comparable in magnitude to a query flood intended to achieve the same detrimental outcome.\n\nBIND 9.11 and earlier branches are also affected, but through exhaustion of internal resources rather than memory constraints. This may reduce performance but should not be a significant problem for most servers. Therefore we don't intend to address this for BIND versions prior to BIND 9.16.\nThis issue affects BIND 9 versions 9.16.0 through 9.16.36, 9.18.0 through 9.18.10, 9.19.0 through 9.19.8, and 9.16.8-S1 through 9.16.36-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.16.36",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.10",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.8",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.36-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.13108,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416",
+          "CWE-400"
+        ],
+        "cpe_count": 10,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2022-3488",
+      "description": "Processing of repeated responses to the same query, where both responses contain ECS pseudo-options, but where the first is broken in some way, can cause BIND to exit with an assertion failure.\n\n'Broken' in this context is anything that would cause the resolver to reject the query response, such as a mismatch between query and answer name.\nThis issue affects BIND 9 versions 9.11.4-S1 through 9.11.37-S1 and 9.16.8-S1 through 9.16.36-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.4-S1",
+              "lessThanOrEqual": "9.11.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.36-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.19045,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2022-3736",
+      "description": "BIND 9 resolver can crash when stale cache and stale answers are enabled, option `stale-answer-client-timeout` is set to a positive integer, and the resolver receives an RRSIG query.\nThis issue affects BIND 9 versions 9.16.12 through 9.16.36, 9.18.0 through 9.18.10, 9.19.0 through 9.19.8, and 9.16.12-S1 through 9.16.36-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.12",
+              "lessThanOrEqual": "9.16.36",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.10",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.8",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.12-S1",
+              "lessThanOrEqual": "9.16.36-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.48427,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 9,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2022-3924",
+      "description": "This issue can affect BIND 9 resolvers with `stale-answer-enable yes;` that also make use of the option `stale-answer-client-timeout`, configured with a value greater than zero.\n\nIf the resolver receives many queries that require recursion, there will be a corresponding increase in the number of clients that are waiting for recursion to complete. If there are sufficient clients already waiting when a new client query is received so that it is necessary to SERVFAIL the longest waiting client (see BIND 9 ARM `recursive-clients` limit and soft quota), then it is possible for a race to occur between providing a stale answer to this older client and sending an early timeout SERVFAIL, which may cause an assertion failure.\nThis issue affects BIND 9 versions 9.16.12 through 9.16.36, 9.18.0 through 9.18.10, 9.19.0 through 9.19.8, and 9.16.12-S1 through 9.16.36-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.12",
+              "lessThanOrEqual": "9.16.36",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.10",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.8",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.12-S1",
+              "lessThanOrEqual": "9.16.36-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.15989,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 9,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2023-2828",
+      "description": "Every `named` instance configured to run as a recursive resolver maintains a cache database holding the responses to the queries it has recently sent to authoritative servers. The size limit for that cache database can be configured using the `max-cache-size` statement in the configuration file; it defaults to 90% of the total amount of memory available on the host. When the size of the cache reaches 7/8 of the configured limit, a cache-cleaning algorithm starts to remove expired and/or least-recently used RRsets from the cache, to keep memory use below the configured limit.\n\nIt has been discovered that the effectiveness of the cache-cleaning algorithm used in `named` can be severely diminished by querying the resolver for specific RRsets in a certain order, effectively allowing the configured `max-cache-size` limit to be significantly exceeded.\nThis issue affects BIND 9 versions 9.11.0 through 9.16.41, 9.18.0 through 9.18.15, 9.19.0 through 9.19.13, 9.11.3-S1 through 9.16.41-S1, and 9.18.11-S1 through 9.18.15-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.16.41",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.15",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.13",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.16.41-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.15-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.03776,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 21,
+        "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2023-2829",
+      "description": "A `named` instance configured to run as a DNSSEC-validating recursive resolver with the Aggressive Use of DNSSEC-Validated Cache (RFC 8198) option (`synth-from-dnssec`) enabled can be remotely terminated using a zone with a malformed NSEC record.\nThis issue affects BIND 9 versions 9.16.8-S1 through 9.16.41-S1 and 9.18.11-S1 through 9.18.15-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.41-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.15-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00868,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 13,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-2911",
+      "description": "If the `recursive-clients` quota is reached on a BIND 9 resolver configured with both `stale-answer-enable yes;` and `stale-answer-client-timeout 0;`, a sequence of serve-stale-related lookups could cause `named` to loop and terminate unexpectedly due to a stack overflow.\nThis issue affects BIND 9 versions 9.16.33 through 9.16.41, 9.18.7 through 9.18.15, 9.16.33-S1 through 9.16.41-S1, and 9.18.11-S1 through 9.18.15-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.33",
+              "lessThanOrEqual": "9.16.41",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.7",
+              "lessThanOrEqual": "9.18.15",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.33-S1",
+              "lessThanOrEqual": "9.16.41-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.15-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02431,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 21,
+        "reference_count": 12
+      }
+    },
+    {
+      "cve_id": "CVE-2023-3341",
+      "description": "The code that processes control channel messages sent to `named` calls certain functions recursively during packet parsing. Recursion depth is only limited by the maximum accepted packet size; depending on the environment, this may cause the packet-parsing code to run out of available stack memory, causing `named` to terminate unexpectedly. Since each incoming control channel message is fully parsed before its contents are authenticated, exploiting this flaw does not require the attacker to hold a valid RNDC key; only network access to the control channel's configured TCP port is necessary.\nThis issue affects BIND 9 versions 9.2.0 through 9.16.43, 9.18.0 through 9.18.18, 9.19.0 through 9.19.16, 9.9.3-S1 through 9.16.43-S1, and 9.18.0-S1 through 9.18.18-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.2.0",
+              "lessThanOrEqual": "9.16.43",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.18",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.16",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.9.3-S1",
+              "lessThanOrEqual": "9.16.43-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0-S1",
+              "lessThanOrEqual": "9.18.18-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02626,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787",
+          "CWE-1325"
+        ],
+        "cpe_count": 38,
+        "reference_count": 16
+      }
+    },
+    {
+      "cve_id": "CVE-2023-4236",
+      "description": "A flaw in the networking code handling DNS-over-TLS queries may cause `named` to terminate unexpectedly due to an assertion failure. This happens when internal data structures are incorrectly reused under significant DNS-over-TLS query load.\nThis issue affects BIND 9 versions 9.18.0 through 9.18.18 and 9.18.11-S1 through 9.18.18-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.18",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.18-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0215,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 18,
+        "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2023-4408",
+      "description": "The DNS message parsing code in `named` includes a section whose computational complexity is overly high. It does not cause problems for typical DNS traffic, but crafted queries and responses may cause excessive CPU load on the affected `named` instance by exploiting this flaw. This issue affects both authoritative servers and recursive resolvers.\nThis issue affects BIND 9 versions 9.0.0 through 9.16.45, 9.18.0 through 9.18.21, 9.19.0 through 9.19.19, 9.9.3-S1 through 9.11.37-S1, 9.16.8-S1 through 9.16.45-S1, and 9.18.11-S1 through 9.18.21-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.16.45",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.19",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.9.3-S1",
+              "lessThanOrEqual": "9.11.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.45-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.21-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01327,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-407"
+        ],
+        "cpe_count": 20,
+        "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2023-5517",
+      "description": "A flaw in query-handling code can cause `named` to exit prematurely with an assertion failure when:\n\n  - `nxdomain-redirect <domain>;` is configured, and\n  - the resolver receives a PTR query for an RFC 1918 address that would normally result in an authoritative NXDOMAIN response.\nThis issue affects BIND 9 versions 9.12.0 through 9.16.45, 9.18.0 through 9.18.21, 9.19.0 through 9.19.19, 9.16.8-S1 through 9.16.45-S1, and 9.18.11-S1 through 9.18.21-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.12.0",
+              "lessThanOrEqual": "9.16.45",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.19",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.45-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.21-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01231,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 19,
+        "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2023-5679",
+      "description": "A bad interaction between DNS64 and serve-stale may cause `named` to crash with an assertion failure during recursive resolution, when both of these features are enabled.\nThis issue affects BIND 9 versions 9.16.12 through 9.16.45, 9.18.0 through 9.18.21, 9.19.0 through 9.19.19, 9.16.12-S1 through 9.16.45-S1, and 9.18.11-S1 through 9.18.21-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.12",
+              "lessThanOrEqual": "9.16.45",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.19",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.12-S1",
+              "lessThanOrEqual": "9.16.45-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.21-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01231,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 17,
+        "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2023-6516",
+      "description": "To keep its cache database efficient, `named` running as a recursive resolver occasionally attempts to clean up the database. It uses several methods, including some that are asynchronous: a small chunk of memory pointing to the cache element that can be cleaned up is first allocated and then queued for later processing. It was discovered that if the resolver is continuously processing query patterns triggering this type of cache-database maintenance, `named` may not be able to handle the cleanup events in a timely manner. This in turn enables the list of queued cleanup events to grow infinitely large over time, allowing the configured `max-cache-size` limit to be significantly exceeded.\nThis issue affects BIND 9 versions 9.16.0 through 9.16.45 and 9.16.8-S1 through 9.16.45-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.16.45",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.45-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01097,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770",
+          "CWE-789"
+        ],
+        "cpe_count": 12,
+        "reference_count": 10
+      }
+    },
+    {
+      "cve_id": "CVE-2024-0760",
+      "description": "A malicious client can send many DNS messages over TCP, potentially causing the server to become unstable while the attack is in progress. The server may recover after the attack ceases. Use of ACLs will not mitigate the attack. \nThis issue affects BIND 9 versions 9.18.1 through 9.18.27, 9.19.0 through 9.19.24, and 9.18.11-S1 through 9.18.27-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.18.1",
+              "lessThanOrEqual": "9.18.27",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.27-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0468,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2024-11187",
+      "description": "It is possible to construct a zone such that some queries to it will generate responses containing numerous records in the Additional section. An attacker sending many such queries can cause either the authoritative server itself or an independent resolver to use disproportionate resources processing the queries. Zones will usually need to have been deliberately crafted to attack this exposure.\nThis issue affects BIND 9 versions 9.11.0 through 9.11.37, 9.16.0 through 9.16.50, 9.18.0 through 9.18.32, 9.20.0 through 9.20.4, 9.21.0 through 9.21.3, 9.11.3-S1 through 9.11.37-S1, 9.16.8-S1 through 9.16.50-S1, and 9.18.11-S1 through 9.18.32-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.11.37",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.32",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.4",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.3",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.11.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.32-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.15465,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-405"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2024-12705",
+      "description": "Clients using DNS-over-HTTPS (DoH) can exhaust a DNS resolver's CPU and/or memory by flooding it with crafted valid or invalid HTTP/2 traffic.\nThis issue affects BIND 9 versions 9.18.0 through 9.18.32, 9.20.0 through 9.20.4, 9.21.0 through 9.21.3, and 9.18.11-S1 through 9.18.32-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.32",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.4",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.3",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.32-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.17935,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-1737",
+      "description": "Resolver caches and authoritative zone databases that hold significant numbers of RRs for the same hostname (of any RTYPE) can suffer from degraded performance as content is being added or updated, and also when handling client queries for this name.\nThis issue affects BIND 9 versions 9.11.0 through 9.11.37, 9.16.0 through 9.16.50, 9.18.0 through 9.18.27, 9.19.0 through 9.19.24, 9.11.4-S1 through 9.11.37-S1, 9.16.8-S1 through 9.16.50-S1, and 9.18.11-S1 through 9.18.27-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.11.37",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.27",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.4-S1",
+              "lessThanOrEqual": "9.11.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.27-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02114,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2024-1975",
+      "description": "If a server hosts a zone containing a \"KEY\" Resource Record, or a resolver DNSSEC-validates a \"KEY\" Resource Record from a DNSSEC-signed domain in cache, a client can exhaust resolver CPU resources by sending a stream of SIG(0) signed requests.\nThis issue affects BIND 9 versions 9.0.0 through 9.11.37, 9.16.0 through 9.16.50, 9.18.0 through 9.18.27, 9.19.0 through 9.19.24, 9.9.3-S1 through 9.11.37-S1, 9.16.8-S1 through 9.16.49-S1, and 9.18.11-S1 through 9.18.27-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.11.37",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.27",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.9.3-S1",
+              "lessThanOrEqual": "9.11.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.49-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.27-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02114,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2024-28872",
+      "description": "The TLS certificate validation code is flawed. An attacker can obtain a TLS certificate from the Stork server and use it to connect to the Stork agent. Once this connection is established with the valid certificate, the attacker can send malicious commands to a monitored service (Kea or BIND 9), possibly resulting in confidential data loss and/or denial of service. It should be noted that this vulnerability is not related to BIND 9 or Kea directly, and only customers using the Stork management tool are potentially affected.\nThis issue affects Stork versions 0.15.0 through 1.15.0.",
+      "cvss_score": 8.9,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "stork",
+          "versions": [
+            {
+              "version": "0.15.0",
+              "lessThanOrEqual": "1.15.0",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:stork",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00291,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-295"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-4076",
+      "description": "Client queries that trigger serving stale data and that also require lookups in local authoritative zone data may result in an assertion failure.\nThis issue affects BIND 9 versions 9.16.13 through 9.16.50, 9.18.0 through 9.18.27, 9.19.0 through 9.19.24, 9.11.33-S1 through 9.11.37-S1, 9.16.13-S1 through 9.16.50-S1, and 9.18.11-S1 through 9.18.27-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.13",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.27",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.19.0",
+              "lessThanOrEqual": "9.19.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.33-S1",
+              "lessThanOrEqual": "9.11.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.13-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.27-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02111,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2025-11232",
+      "description": "To trigger the issue, three configuration parameters must have specific settings: \"hostname-char-set\" must be left at the default setting, which is \"[^A-Za-z0-9.-]\"; \"hostname-char-replacement\" must be empty (the default); and \"ddns-qualifying-suffix\" must *NOT* be empty (the default is empty). DDNS updates do not need to be enabled for this issue to manifest. A client that sends certain option content would then cause kea-dhcp4 to exit unexpectedly.\nThis issue affects Kea versions 3.0.1 through 3.0.1 and 3.1.1 through 3.1.2.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "kea",
+          "versions": [
+            {
+              "version": "3.0.1",
+              "lessThanOrEqual": "3.0.1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "3.1.1",
+              "lessThanOrEqual": "3.1.2",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "2.6.0",
+              "lessThanOrEqual": "2.6.4",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "2.7.0",
+              "lessThanOrEqual": "2.7.9",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "3.0.0",
+              "lessThanOrEqual": "3.0.0",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "3.1.0",
+              "lessThanOrEqual": "3.1.0",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:kea",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00387,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-823"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-13878",
+      "description": "Malformed BRID/HHIT records can cause `named` to terminate unexpectedly.\nThis issue affects BIND 9 versions 9.18.40 through 9.18.43, 9.20.13 through 9.20.17, 9.21.12 through 9.21.16, 9.18.40-S1 through 9.18.43-S1, and 9.20.13-S1 through 9.20.17-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.18.40",
+              "lessThanOrEqual": "9.18.43",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.13",
+              "lessThanOrEqual": "9.20.17",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.12",
+              "lessThanOrEqual": "9.21.16",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.40-S1",
+              "lessThanOrEqual": "9.18.43-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.13-S1",
+              "lessThanOrEqual": "9.20.17-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.08219,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617",
+          "CWE-1286"
+        ],
+        "cpe_count": 0,
+        "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2025-32801",
+      "description": "Kea configuration and API directives can be used to load a malicious hook library.  Many common configurations run Kea as root, leave the API entry points unsecured by default, and/or place the control sockets in insecure paths.\nThis issue affects Kea versions 2.4.0 through 2.4.1, 2.6.0 through 2.6.2, and 2.7.0 through 2.7.8.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "kea",
+          "versions": [
+            {
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "2.6.0",
+              "lessThanOrEqual": "2.6.2",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "2.7.0",
+              "lessThanOrEqual": "2.7.8",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:kea",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00233,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-40775",
+      "description": "When an incoming DNS protocol message includes a Transaction Signature (TSIG), BIND always checks it.  If the TSIG contains an invalid value in the algorithm field, BIND immediately aborts with an assertion failure.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.8 and 9.21.0 through 9.21.7.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.8",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.7",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.12342,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-232"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2025-40776",
+      "description": "A `named` caching resolver that is configured to send ECS (EDNS Client Subnet) options may be vulnerable to a cache-poisoning attack.\nThis issue affects BIND 9 versions 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.37-S1, and 9.20.9-S1 through 9.20.10-S1.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.37-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.10-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.20.10",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00196,
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-349"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-40777",
+      "description": "If a `named` caching resolver is configured with `serve-stale-enable` `yes`, and with `stale-answer-client-timeout` set to `0` (the only allowable value other than `disabled`), and if the resolver, in the process of resolving a query, encounters a CNAME chain involving a specific combination of cached or authoritative records, the daemon will abort with an assertion failure.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.10, 9.21.0 through 9.21.9, and 9.20.9-S1 through 9.20.10-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.10",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.9",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.10-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.37",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.37-S1",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0087,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-40778",
+      "description": "Under certain circumstances, BIND is too lenient when accepting records from answers, allowing an attacker to inject forged data into the cache.\nThis issue affects BIND 9 versions 9.11.0 through 9.16.50, 9.18.0 through 9.18.39, 9.20.0 through 9.20.13, 9.21.0 through 9.21.12, 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.39-S1, and 9.20.9-S1 through 9.20.13-S1.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.39",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.13",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.12",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.39-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.13-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00502,
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-349"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2025-40779",
+      "description": "If a DHCPv4 client sends a request with some specific options, and Kea fails to find an appropriate subnet for the client, the `kea-dhcp4` process will abort with an assertion failure.  This happens only if the client request is unicast directly to Kea; broadcast messages do not cause the problem.\nThis issue affects Kea versions 2.7.1 through 2.7.9, 3.0.0, and 3.1.0.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "kea",
+          "versions": [
+            {
+              "version": "2.7.1",
+              "lessThanOrEqual": "2.7.9",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "3.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "3.1.0",
+              "status": "affected"
+            },
+            {
+              "version": "2.6.0",
+              "lessThanOrEqual": "2.6.4",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:kea",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00495,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-40780",
+      "description": "In specific circumstances, due to a weakness in the Pseudo Random Number Generator (PRNG) that is used, it is possible for an attacker to predict the source port and query ID that BIND will use.\nThis issue affects BIND 9 versions 9.16.0 through 9.16.50, 9.18.0 through 9.18.39, 9.20.0 through 9.20.13, 9.21.0 through 9.21.12, 9.16.8-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.39-S1, and 9.20.9-S1 through 9.20.13-S1.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.39",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.13",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.12",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.39-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.13-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00464,
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-341"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-8677",
+      "description": "Querying for records within a specially crafted zone containing certain malformed DNSKEY records can lead to CPU exhaustion.\nThis issue affects BIND 9 versions 9.18.0 through 9.18.39, 9.20.0 through 9.20.13, 9.21.0 through 9.21.12, 9.18.11-S1 through 9.18.39-S1, and 9.20.9-S1 through 9.20.13-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.39",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.13",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.12",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.39-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.13-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.11203,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-405"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-8696",
+      "description": "If an unauthenticated user sends a large amount of data to the Stork UI, it may cause memory and disk use problems for the system running the Stork server.\nThis issue affects Stork versions 1.0.0 through 2.3.0.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "stork",
+          "versions": [
+            {
+              "version": "1.0.0",
+              "lessThanOrEqual": "2.3.0",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:stork",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0041,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-779",
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-11331",
+      "description": "An attacker who knows (or guesses) that a resolver uses RPZ with wildcard CNAME policies can craft query names long enough to trigger a NAMETOOLONG error condition during RPZ processing. This is not handled correctly and may lead to defeating the RPZ rule. It also may lead to an unexpected exit of the BIND 9 software.\nThis issue affects BIND 9 versions 9.16.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.16.8-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.16.0",
+              "lessThanOrEqual": "9.18.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.23",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.16.8-S1",
+              "lessThanOrEqual": "9.18.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-11605",
+      "description": "The issue is a resource exhaustion vulnerability associated with DNSSEC validation. BIND always validates all RRSIG records in an answer, even if they are not strictly needed. A query to an authoritative server/zone which returns many valid but superfluous RRSIG records causes the validator to waste disproportionate CPU time.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.23",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-11622",
+      "description": "A DNSSEC validating resolver that is under a random subdomain attack against a DNSSEC-signed zone can suffer from runaway memory usage. The attacker needs to be able to send queries faster than the resolver can perform validation. The increased memory usage can be orders of magnitude beyond the limit configured in the `max-cache-size` parameter.\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.18.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.23",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.18.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-11721",
+      "description": "It is possible for an attacker's zone to respond to a query with an RRSIG that has a smaller number of labels than the zone in which the RRSIG is contained. This causes `named` to produce a wildcard name for a zone that is shorter than the attacker's zone, which can result in cache poisoning. For this attack to have any effect, the resolver under attack must have set `synth-from-dnssec yes;` (which is the default).\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.18.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.23",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.18.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-12617",
+      "description": "The issue is unexpected program termination based on ordering and/or specific content in responses to queries for CNAME or DNAME, and A records. Specifically, if a client queries for a DNAME and A record below the DNAME to the resolver, and the authoritative server responds positively to the A query but delays the DNAME response and later responds negatively, `named` may quit unexpectedly. Or, if a client queries for a CNAME and A record for the same name to the resolver, and the authoritative server responds positively to the A query but delays the CNAME response and later responds with a self-referential CNAME, the same failure may occur.\nThis issue affects BIND 9 versions 9.18.0 through 9.18.50, 9.20.0 through 9.20.24, 9.18.11-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-13204",
+      "description": "If a provably insecure domain is covered by both an NSEC and NSEC3 record at the parent, and there exist an RRSIG for only one of these types, then BIND may exit unexpectedly with an assertion while validating this proof.\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.18.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.23",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.18.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-13321",
+      "description": "The BIND resolver accepts validly-signed NSEC records where the \"Next Domain Name\" field points outside the signer's zone.\nThis issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.18.50-S1, and 9.20.9-S1 through 9.20.24-S1.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.18.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.24",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.23",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.18.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.24-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-1519",
+      "description": "If a BIND resolver is performing DNSSEC validation and encounters a maliciously crafted zone, the resolver may consume excessive CPU. Authoritative-only servers are generally unaffected, although there are circumstances where authoritative servers may make recursive queries (see: https://kb.isc.org/docs/why-does-my-authoritative-server-make-recursive-queries).\nThis issue affects BIND 9 versions 9.11.0 through 9.16.50, 9.18.0 through 9.18.46, 9.20.0 through 9.20.20, 9.21.0 through 9.21.19, 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.46-S1, and 9.20.9-S1 through 9.20.20-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.46",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.20",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.19",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.46-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.20-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01545,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-606",
+          "CWE-770"
+        ],
+        "cpe_count": 4,
+        "reference_count": 29
+      }
+    },
+    {
+      "cve_id": "CVE-2026-3039",
+      "description": "BIND servers that are configured to use TKEY-based authentication via GSS-API tokens are vulnerable to excessive memory consumption when receiving and processing maliciously-constructed packets.  Typically these servers will be found in Active Directory integrated DNS deployments and/or Kerberos-secured DNS environments.\nThis issue affects BIND 9 versions 9.0.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.9.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.48",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.9.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.48-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01047,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-771",
+          "CWE-770"
+        ],
+        "cpe_count": 4,
+        "reference_count": 13
+      }
+    },
+    {
+      "cve_id": "CVE-2026-3104",
+      "description": "A specially crafted domain can be used to cause a memory leak in a BIND resolver simply by querying this domain.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.20, 9.21.0 through 9.21.19, and 9.20.9-S1 through 9.20.20-S1.\nBIND 9 versions 9.18.0 through 9.18.46 and 9.18.11-S1 through 9.18.46-S1 are NOT affected.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.20",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.19",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.20-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.46",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.46-S1",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00698,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-772",
+          "CWE-401"
+        ],
+        "cpe_count": 2,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-3593",
+      "description": "A use-after-free vulnerability exists within the DNS-over-HTTPS implementation.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, and 9.20.9-S1 through 9.20.22-S1.\nBIND 9 versions 9.18.0 through 9.18.48 and 9.18.11-S1 through 9.18.48-S1 are NOT affected.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.48",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.48-S1",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01844,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416",
+          "CWE-825"
+        ],
+        "cpe_count": 2,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-3608",
+      "description": "Sending a maliciously crafted message to the kea-ctrl-agent, kea-dhcp-ddns, kea-dhcp4, or kea-dhcp6 daemons over any configured API socket or HA listener can cause the receiving daemon to exit with a stack overflow error.\nThis issue affects Kea versions 2.6.0 through 2.6.4 and 3.0.0 through 3.0.2.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "kea",
+          "versions": [
+            {
+              "version": "2.6.0",
+              "lessThanOrEqual": "2.6.4",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "3.0.0",
+              "lessThanOrEqual": "3.0.2",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:kea",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01361,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-617"
+        ],
+        "cpe_count": 0,
+        "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2026-5946",
+      "description": "Multiple flaws have been identified in `named` related to the handling of DNS messages whose CLASS is not Internet (`IN`) \u2014 for example, `CHAOS` or `HESIOD`, or DNS messages that specify meta-classes (`ANY` or `NONE`) in the question section. Specially crafted requests reaching the affected code paths \u2014 recursion, dynamic updates (`UPDATE`), zone change notifications (`NOTIFY`), or processing of `IN`-specific record types in non-`IN` data \u2014 can cause assertion failures in `named`.\nThis issue affects BIND 9 versions 9.11.0 through 9.16.50, 9.18.0 through 9.18.48, 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, 9.11.3-S1 through 9.16.50-S1, 9.18.11-S1 through 9.18.48-S1, and 9.20.9-S1 through 9.20.22-S1.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.11.0",
+              "lessThanOrEqual": "9.16.50",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.0",
+              "lessThanOrEqual": "9.18.48",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.11.3-S1",
+              "lessThanOrEqual": "9.16.50-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.11-S1",
+              "lessThanOrEqual": "9.18.48-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0181,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-125",
+          "CWE-617",
+          "CWE-754",
+          "CWE-843",
+          "CWE-1287"
+        ],
+        "cpe_count": 4,
+        "reference_count": 13
+      }
+    },
+    {
+      "cve_id": "CVE-2026-5947",
+      "description": "Undefined behavior may result due to a race condition leading to a use-after-free violation.  If BIND receives an incoming DNS message signed with SIG(0), it begins work to validate that signature.  If, during that validation, the \"recursive-clients\" limit is reached (as would occur during a query flood), and that same DNS message is discarded per the limit, there is a brief window of time while the SIG(0) validation may attempt to read the now-discarded DNS message.\nThis issue affects BIND 9 versions 9.20.0 through 9.20.22, 9.21.0 through 9.21.21, and 9.20.9-S1 through 9.20.22-S1.\nBIND 9 versions 9.18.28 through 9.18.49 and 9.18.28-S1 through 9.18.49-S1 are NOT affected.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "isc",
+          "product": "bind 9",
+          "versions": [
+            {
+              "version": "9.20.0",
+              "lessThanOrEqual": "9.20.22",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.21.0",
+              "lessThanOrEqual": "9.21.21",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.20.9-S1",
+              "lessThanOrEqual": "9.20.22-S1",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.28",
+              "lessThanOrEqual": "9.18.49",
+              "status": "unaffected",
+              "versionType": "custom"
+            },
+            {
+              "version": "9.18.28-S1",
+              "lessThanOrEqual": "9.18.49-S1",
+              "status": "unaffected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bind 9",
+        "vendor:isc"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01387,
+      "nvd": {
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362",
+          "CWE-416",
+          "CWE-367"
+        ],
+        "cpe_count": 2,
+        "reference_count": 7
+      }
+    }
+  ]
+}
