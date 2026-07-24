@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-24T06:38:54+00:00",
+  "generated_at": "2026-07-24T09:58:38+00:00",
   "vendor": "linux",
-  "count": 3419,
+  "count": 3429,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -345110,7 +345110,7 @@
           "CWE-825"
         ],
         "cpe_count": 18,
-        "reference_count": 45
+        "reference_count": 46
       }
     },
     {
@@ -350649,7 +350649,7 @@
           "CWE-123"
         ],
         "cpe_count": 9,
-        "reference_count": 13
+        "reference_count": 14
       }
     },
     {
@@ -351534,7 +351534,7 @@
           "CWE-787"
         ],
         "cpe_count": 16,
-        "reference_count": 43
+        "reference_count": 44
       }
     },
     {
@@ -363953,7 +363953,7 @@
           "CWE-416"
         ],
         "cpe_count": 7,
-        "reference_count": 14
+        "reference_count": 15
       }
     },
     {
@@ -364751,7 +364751,7 @@
         "cwe_ids": [
           "CWE-386"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 7
       }
     },
@@ -364850,9 +364850,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-416",
           "CWE-825"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 7
       }
     },
@@ -364974,8 +364975,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 5,
         "reference_count": 6
       }
     },
@@ -365079,8 +365082,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 2,
         "reference_count": 6
       }
     },
@@ -365237,9 +365242,88 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-193"
+        ],
+        "cpe_count": 15,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53089",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf: Fix use-after-free in offloaded map/prog info fill\n\nWhen querying info for an offloaded BPF map or program,\nbpf_map_offload_info_fill_ns() and bpf_prog_offload_info_fill_ns()\nobtain the network namespace with get_net(dev_net(offmap->netdev)).\nHowever, the associated netdev's netns may be racing with teardown\nduring netns destruction. If the netns refcount has already reached 0,\nget_net() performs a refcount_t increment on 0, triggering:\n\n  refcount_t: addition on 0; use-after-free.\n\nAlthough rtnl_lock and bpf_devs_lock ensure the netdev pointer remains\nvalid, they cannot prevent the netns refcount from reaching zero.\n\nFix this by using maybe_get_net() instead of get_net(). maybe_get_net()\nuses refcount_inc_not_zero() and returns NULL if the refcount is already\nzero, which causes ns_get_path_cb() to fail and the caller to return\n-ENOENT -- the correct behavior when the netns is being destroyed.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "675fc275a3a2d905535207237402c6d8dcb5fa4b",
+              "lessThan": "a51e7fbe94a87e236631a83973d4f558310b2cd2",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "675fc275a3a2d905535207237402c6d8dcb5fa4b",
+              "lessThan": "a0c584fc18056709c8e047a82a6045d6c209f4ce",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.16",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.16",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00145,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
@@ -365315,7 +365399,7 @@
         "cwe_ids": [
           "CWE-253"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 5
       }
     },
@@ -365392,7 +365476,7 @@
         "cwe_ids": [
           "CWE-131"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 5
       }
     },
@@ -365481,7 +365565,7 @@
         "cwe_ids": [
           "CWE-393"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 6
       }
     },
@@ -365948,6 +366032,95 @@
       }
     },
     {
+      "cve_id": "CVE-2026-53109",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\npowerpc/pgtable-frag: Fix bad page state in pte_frag_destroy\n\npowerpc uses pt_frag_refcount as a reference counter for tracking it's\npte and pmd page table fragments. For PTE table, in case of Hash with\n64K pagesize, we have 16 fragments of 4K size in one 64K page.\n\nPatch series [1] \"mm: free retracted page table by RCU\"\nadded pte_free_defer() to defer the freeing of PTE tables when\nretract_page_tables() is called for madvise MADV_COLLAPSE on shmem\nrange.\n[1]: https://lore.kernel.org/all/7cd843a9-aa80-14f-5eb2-33427363c20@google.com/\n\npte_free_defer() sets the active flag on the corresponding fragment's\nfolio & calls pte_fragment_free(), which reduces the pt_frag_refcount.\nWhen pt_frag_refcount reaches 0 (no active fragment using the folio), it\nchecks if the folio active flag is set, if set, it calls call_rcu to\nfree the folio, it the active flag is unset then it calls pte_free_now().\n\nNow, this can lead to following problem in a corner case...\n\n[  265.351553][  T183] BUG: Bad page state in process a.out  pfn:20d62\n[  265.353555][  T183] page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x20d62\n[  265.355457][  T183] flags: 0x3ffff800000100(active|node=0|zone=0|lastcpupid=0x7ffff)\n[  265.358719][  T183] raw: 003ffff800000100 0000000000000000 5deadbeef0000122 0000000000000000\n[  265.360177][  T183] raw: 0000000000000000 c0000000119caf58 00000000ffffffff 0000000000000000\n[  265.361438][  T183] page dumped because: PAGE_FLAGS_CHECK_AT_FREE flag(s) set\n[  265.362572][  T183] Modules linked in:\n[  265.364622][  T183] CPU: 0 UID: 0 PID: 183 Comm: a.out Not tainted 6.18.0-rc3-00141-g1ddeaaace7ff-dirty #53 VOLUNTARY\n[  265.364785][  T183] Hardware name: IBM pSeries (emulated by qemu) POWER10 (architected) 0x801200 0xf000006 of:SLOF,git-ee03ae pSeries\n[  265.364908][  T183] Call Trace:\n[  265.364955][  T183] [c000000011e6f7c0] [c000000001cfaa18] dump_stack_lvl+0x130/0x148 (unreliable)\n[  265.365202][  T183] [c000000011e6f7f0] [c000000000794758] bad_page+0xb4/0x1c8\n[  265.365384][  T183] [c000000011e6f890] [c00000000079c020] __free_frozen_pages+0x838/0xd08\n[  265.365554][  T183] [c000000011e6f980] [c0000000000a70ac] pte_frag_destroy+0x298/0x310\n[  265.365729][  T183] [c000000011e6fa30] [c0000000000aa764] arch_exit_mmap+0x34/0x218\n[  265.365912][  T183] [c000000011e6fa80] [c000000000751698] exit_mmap+0xb8/0x820\n[  265.366080][  T183] [c000000011e6fc30] [c0000000001b1258] __mmput+0x98/0x300\n[  265.366244][  T183] [c000000011e6fc80] [c0000000001c81f8] do_exit+0x470/0x1508\n[  265.366421][  T183] [c000000011e6fd70] [c0000000001c95e4] do_group_exit+0x88/0x148\n[  265.366602][  T183] [c000000011e6fdc0] [c0000000001c96ec] pid_child_should_wake+0x0/0x178\n[  265.366780][  T183] [c000000011e6fdf0] [c00000000003a270] system_call_exception+0x1b0/0x4e0\n[  265.366958][  T183] [c000000011e6fe50] [c00000000000d05c] system_call_vectored_common+0x15c/0x2ec\n\nThe bad page state error occurs when such a folio gets freed (with\nactive flag set), from do_exit() path in parallel.\n\n... this can happen when the pte fragment was allocated from this folio,\nbut when all the fragments get freed, the pte_frag_refcount still had some\nunused fragments. Now, if this process exits, with such folio as it's cached\npte_frag in mm->context, then during pte_frag_destroy(), we simply call\npagetable_dtor() and pagetable_free(), meaning it doesn't clear the\nactive flag. This, can lead to the above bug. Since we are anyway in\ndo_exit() path, then if the refcount is 0, then I guess it should be\nok to simply clear the folio active flag before calling pagetable_dtor()\n& pagetable_free().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "32cc0b7c9d508efde8946a82eb3c4acfa8dfed15",
+              "lessThan": "c8b710655012a2993a9567873fb71a8a51f8459c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "32cc0b7c9d508efde8946a82eb3c4acfa8dfed15",
+              "lessThan": "a32db6fca3c74b4eb8bae5470f0680deb4cbac6f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "32cc0b7c9d508efde8946a82eb3c4acfa8dfed15",
+              "lessThan": "fda4d71651f71c44b35829d13f3c8bf920032f77",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.6",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.6",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00161,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-53110",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ns390/bpf: Zero-extend bpf prog return values and kfunc arguments\n\ns390x ABI requires callers to zero-extend unsigned arguments and\nsign-extend signed arguments, and callees to zero-extend unsigned\nreturn values and sign-extend signed return values.\n\ns390 BPF JIT currently implements only sign extension. Fix this\nomission and implement zero extension too.",
       "cvss_score": 7.8,
@@ -366054,8 +366227,739 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53112",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: rtlwifi: pci: fix possible use-after-free caused by unfinished irq_prepare_bcn_tasklet\n\nThe irq_prepare_bcn_tasklet is initialized in rtl_pci_init() and\nscheduled when RTL_IMR_BCNINT interrupt is triggered by hardware.\nBut it is never killed in rtl_pci_deinit(). When the rtlwifi card\nprobe fails or is being detached, the ieee80211_hw is deallocated.\nHowever, irq_prepare_bcn_tasklet may still be running or pending,\nleading to use-after-free when the freed ieee80211_hw is accessed\nin _rtl_pci_prepare_bcn_tasklet().\n\nSimilar to irq_tasklet, add tasklet_kill() in rtl_pci_deinit() to\nensure that irq_prepare_bcn_tasklet is properly terminated before\nthe ieee80211_hw is released.\n\nThe issue was identified through static analysis.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "ae10d4a1ab6bcaa1336abb171908a9a365761d3e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "fac1079e0fdec6df6d7562c21941587236dc3def",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "e40873820c9d245ce482faa7ad514ebdb3b8d23d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "008c456b76e9070979bc0e763897a5d3b0fdd4dc",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "7731b67bd59d1284d150cbe40a47e95a10613234",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "aa10a452e34810987fb9f4a047995b30003fb53f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "3c0e8a3179e6325a7dc6ce221aef0e03d854ab4b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "0c8173385e549f95cd80c3fff5aab87b4f881d8d",
+              "lessThan": "039cd522dc70151da13329a5e3ae19b1736f468a",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.38",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.38",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.258",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.209",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.175",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.141",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00164,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 7,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53115",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbus: fsl-mc: use generic driver_override infrastructure\n\nWhen a driver is probed through __driver_attach(), the bus' match()\ncallback is called without the device lock held, thus accessing the\ndriver_override field without a lock, which can cause a UAF.\n\nFix this by using the driver-core driver_override infrastructure taking\ncare of proper locking internally.\n\nNote that calling match() from __driver_attach() without the device lock\nheld is intentional. [1]",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "1f86a00c1159fd77e66b1bd6ff1a183f4d46f34d",
+              "lessThan": "4911b836f35c034c36f102db4ecbe339b38e7d1d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1f86a00c1159fd77e66b1bd6ff1a183f4d46f34d",
+              "lessThan": "8139ce66b52a4a5638bfb445b037c07d4abeb08e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1f86a00c1159fd77e66b1bd6ff1a183f4d46f34d",
+              "lessThan": "60bfb563a399c4597dc80588a1109758a8908b97",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1f86a00c1159fd77e66b1bd6ff1a183f4d46f34d",
+              "lessThan": "6c8dfb0362732bf1e4829867a2a5239fedc592d0",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.10",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.10",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00157,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53116",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ns390/ap: use generic driver_override infrastructure\n\nWhen the AP masks are updated via apmask_store() or aqmask_store(),\nap_bus_revise_bindings() is called after ap_attr_mutex has been\nreleased.\n\nThis calls __ap_revise_reserved(), which accesses the driver_override\nfield without holding any lock, racing against a concurrent\ndriver_override_store() that may free the old string, resulting in a\npotential UAF.\n\nFix this by using the driver-core driver_override infrastructure, which\nprotects all accesses with an internal spinlock.\n\nNote that unlike most other buses, the AP bus does not check\ndriver_override in its match() callback; the override is checked in\nap_device_probe() and __ap_revise_reserved() instead.\n\nAlso note that we do not enable the driver_override feature of struct\nbus_type, as AP - in contrast to most other buses - passes \"\" to\nsysfs_emit() when the driver_override pointer is NULL. Thus, printing\n\"\\n\" instead of \"(null)\\n\".\n\nAdditionally, AP has a custom counter that is modified in the\ncorresponding custom driver_override_store().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "d38a87d7c0643db61e7a3bfc3ebeea2dc2568f7e",
+              "lessThan": "8f2eca0570438b94602da1297353eb7b10dcb6cb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d38a87d7c0643db61e7a3bfc3ebeea2dc2568f7e",
+              "lessThan": "81d6f7c3a70b10ff757ee8b5f8114a190871cf1e",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.19",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.19",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00145,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53117",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ns390/cio: use generic driver_override infrastructure\n\nWhen a driver is probed through __driver_attach(), the bus' match()\ncallback is called without the device lock held, thus accessing the\ndriver_override field without a lock, which can cause a UAF.\n\nFix this by using the driver-core driver_override infrastructure taking\ncare of proper locking internally.\n\nNote that calling match() from __driver_attach() without the device lock\nheld is intentional. [1]",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "ebc3d179150347f3b6d97d8f249378bb2218f95e",
+              "lessThan": "c4295487124f461405e1ef64dfa8c4ab0cb7ebcf",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ebc3d179150347f3b6d97d8f249378bb2218f95e",
+              "lessThan": "106d594711e97762788046c5bbb94f580abc4bf4",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ebc3d179150347f3b6d97d8f249378bb2218f95e",
+              "lessThan": "2081957d8c323ffb58a10bc64837717ac5a042a1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ebc3d179150347f3b6d97d8f249378bb2218f95e",
+              "lessThan": "b660ba045b2b22cf3b4be72773de00cb48f47be5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ebc3d179150347f3b6d97d8f249378bb2218f95e",
+              "lessThan": "ac4d8bb6e2e13e8684a76ea48d13ebaaaf5c24c4",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.3",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.3",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.141",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00171,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 4,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53118",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvdpa: use generic driver_override infrastructure\n\nWhen a driver is probed through __driver_attach(), the bus' match()\ncallback is called without the device lock held, thus accessing the\ndriver_override field without a lock, which can cause a UAF.\n\nFix this by using the driver-core driver_override infrastructure taking\ncare of proper locking internally.\n\nNote that calling match() from __driver_attach() without the device lock\nheld is intentional. [1]",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "539fec78edb4e084e7c532affc56cc42d4ceea4b",
+              "lessThan": "654ef9c33e138ede6734ac286282df9faf83cd11",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "539fec78edb4e084e7c532affc56cc42d4ceea4b",
+              "lessThan": "fb5cb4913ce333cc4647722e8c2b8378e12f2464",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "539fec78edb4e084e7c532affc56cc42d4ceea4b",
+              "lessThan": "85bb534ff12aab6916058897b39c748940a7a4c6",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.17",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.17",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00155,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53119",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nplatform/wmi: use generic driver_override infrastructure\n\nWhen a driver is probed through __driver_attach(), the bus' match()\ncallback is called without the device lock held, thus accessing the\ndriver_override field without a lock, which can cause a UAF.\n\nFix this by using the driver-core driver_override infrastructure taking\ncare of proper locking internally.\n\nNote that calling match() from __driver_attach() without the device lock\nheld is intentional. [1]",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "12046f8c77e0ed6d41beabde0edbb729499c970b",
+              "lessThan": "13d201bd840d2e2a645ef899f81342cd27ced346",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "12046f8c77e0ed6d41beabde0edbb729499c970b",
+              "lessThan": "2c5507010fc3b8e2bd596c63c88f6ad39a69b1c4",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "12046f8c77e0ed6d41beabde0edbb729499c970b",
+              "lessThan": "4dc755d86deed88789540d960e421124bad4c568",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "12046f8c77e0ed6d41beabde0edbb729499c970b",
+              "lessThan": "8a700b1fc94df4d847a04f14ebc7f8532592b367",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.11",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.11",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00157,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53120",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nPCI: use generic driver_override infrastructure\n\nWhen a driver is probed through __driver_attach(), the bus' match()\ncallback is called without the device lock held, thus accessing the\ndriver_override field without a lock, which can cause a UAF.\n\nFix this by using the driver-core driver_override infrastructure taking\ncare of proper locking internally.\n\nNote that calling match() from __driver_attach() without the device lock\nheld is intentional. [1]",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "782a985d7af26db39e86070d28f987cad21313c0",
+              "lessThan": "dfe950d9464cad609f3b118c6203e2708055bc61",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "782a985d7af26db39e86070d28f987cad21313c0",
+              "lessThan": "58a42be0d70307d765594fc581f5f5e5ef059712",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "782a985d7af26db39e86070d28f987cad21313c0",
+              "lessThan": "c5b2c5755495507e14f310c2653c85de0a309b1f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "782a985d7af26db39e86070d28f987cad21313c0",
+              "lessThan": "10a4206a24013be4d558d476010cbf2eb4c9fa64",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "3.16",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "3.16",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.91",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.33",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.10",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00157,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
       }
     },
     {
@@ -378732,9 +379636,100 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-674"
+        ],
+        "cpe_count": 13,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-53330",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amd/display: Fix out-of-bounds read in dp_get_eq_aux_rd_interval()\n\n[Why & How]\nThe aux_rd_interval array in struct dc_lttpr_caps is declared with\nMAX_REPEATER_CNT - 1 (7) elements, indexed 0..6. However, the offset\nparameter passed to dp_get_eq_aux_rd_interval() can be as large as\nMAX_REPEATER_CNT (8) when a sink reports 8 LTTPR repeaters via DPCD.\nThis leads to an out-of-bounds read of aux_rd_interval[7] when offset\nis 8.\n\nFix this by growing aux_rd_interval to MAX_REPEATER_CNT elements to\naccommodate the full range of valid repeater counts defined by the DP\nspec.\n\n(cherry picked from commit a55a458a8df37a65ffda5cf721d554a8f74f6b04)",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "8e5100a575433cc185a2e224280fbd873b6692dd",
+              "lessThan": "454d3b3d499c18373f8960d31aea48338a3ca9e0",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8e5100a575433cc185a2e224280fbd873b6692dd",
+              "lessThan": "dc1490927d79fe9621e29f4a4f5d7b5ccb6aea3e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8e5100a575433cc185a2e224280fbd873b6692dd",
+              "lessThan": "e8b4d37eba05141ee01794fc6b7f2da808cee83b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.6",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.6",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.36",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.13",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00166,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 8,
+        "reference_count": 3
       }
     },
     {
@@ -378831,8 +379826,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 9,
         "reference_count": 4
       }
     },
