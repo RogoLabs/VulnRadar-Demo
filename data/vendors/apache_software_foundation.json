@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-24T00:10:01+00:00",
+  "generated_at": "2026-07-24T03:42:28+00:00",
   "vendor": "apache_software_foundation",
-  "count": 822,
+  "count": 823,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -30206,7 +30206,7 @@
           "CWE-120"
         ],
         "cpe_count": 1,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -33332,7 +33332,7 @@
           "CWE-120"
         ],
         "cpe_count": 1,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -34295,7 +34295,7 @@
           "CWE-295"
         ],
         "cpe_count": 1,
-        "reference_count": 17
+        "reference_count": 18
       }
     },
     {
@@ -34385,7 +34385,7 @@
           "CWE-125"
         ],
         "cpe_count": 1,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -39167,6 +39167,49 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-60080",
+      "description": "Use After Free vulnerability in the Rust deserialization logic of Apache Fory. This issue affects Apache Fory from 0.13.0 through 1.3.0.\n\n A crafted Fory payload could cause undefined behavior, process crash, or potential memory disclosure.\n\nUsers are recommended to upgrade to version 1.4.0, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache fory",
+          "versions": [
+            {
+              "lessThanOrEqual": "1.3.0",
+              "status": "affected",
+              "version": "0.13.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache fory",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00224,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {

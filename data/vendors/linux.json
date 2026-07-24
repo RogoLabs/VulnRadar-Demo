@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-24T00:10:01+00:00",
+  "generated_at": "2026-07-24T03:42:28+00:00",
   "vendor": "linux",
-  "count": 3418,
+  "count": 3419,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -277583,7 +277583,7 @@
           "CWE-1288"
         ],
         "cpe_count": 11,
-        "reference_count": 12
+        "reference_count": 13
       }
     },
     {
@@ -303507,7 +303507,7 @@
           "CWE-125"
         ],
         "cpe_count": 14,
-        "reference_count": 14
+        "reference_count": 15
       }
     },
     {
@@ -313501,7 +313501,7 @@
           "CWE-770"
         ],
         "cpe_count": 12,
-        "reference_count": 22
+        "reference_count": 23
       }
     },
     {
@@ -336483,7 +336483,7 @@
           "CWE-763"
         ],
         "cpe_count": 8,
-        "reference_count": 16
+        "reference_count": 18
       }
     },
     {
@@ -349789,7 +349789,7 @@
           "CWE-911"
         ],
         "cpe_count": 9,
-        "reference_count": 11
+        "reference_count": 14
       }
     },
     {
@@ -355773,7 +355773,7 @@
           "CWE-825"
         ],
         "cpe_count": 5,
-        "reference_count": 6
+        "reference_count": 7
       }
     },
     {
@@ -358032,7 +358032,7 @@
           "CWE-825"
         ],
         "cpe_count": 4,
-        "reference_count": 7
+        "reference_count": 8
       }
     },
     {
@@ -360425,7 +360425,7 @@
           "CWE-416"
         ],
         "cpe_count": 5,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -363953,7 +363953,7 @@
           "CWE-416"
         ],
         "cpe_count": 7,
-        "reference_count": 13
+        "reference_count": 14
       }
     },
     {
@@ -378837,6 +378837,107 @@
       }
     },
     {
+      "cve_id": "CVE-2026-53346",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nrust: arm64: set uwtable llvm module flag for CONFIG_UNWIND_TABLES\n\nDue to a rustc bug [1] the -Cforce-unwind-tables=y flag only emits the\nuwtable annotation for functions, but not for the module. This means\nthat compiler-generated functions such as 'asan.module_ctor' do not\nreceive the uwtable annotation.\n\nWhen CONFIG_UNWIND_PATCH_PAC_INTO_SCS is enabled, this leads to boot\nfailures because the dwarf information emitted for the kasan\nconstructors is wrong, which causes the SCS boot patching code to\npatch the constructor in an illegal manner. Specifically, the paciasp\ninstruction is patched, but the autiasp instruction is not. This\nmismatch leads to a crash when the constructor is called during boot.\n\n\t==================================================================\n\tBUG: KASAN: global-out-of-bounds in do_basic_setup+0x4c/0x90\n\tRead of size 8 at addr ffffffe3cc7eb488 by task swapper/0/1\n\nSpecifically the faulting instruction is the (*fn)() to invoke the\nconstructor in do_ctors() of the init/main.c file.\n\nOnce the fix lands in rustc, this flag can be made conditional on the\nrustc version. Note that passing the flag on a rustc with the fix\npresent has no effect.\n\n[ The fix [1] has landed for Rust 1.98.0 (expected release on\n  2026-08-20).\n\n  Thus add a version check as discussed.\n\n    - Miguel ]\n\n[ Adjusted link and comment. - Miguel ]",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "d077242d68a31075ef5f5da041bf8f6fc19aa231",
+              "lessThan": "bde772ee239720af216fb0b14753971059e132dc",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d077242d68a31075ef5f5da041bf8f6fc19aa231",
+              "lessThan": "d0f25a1755f2c15b1746379c8d9d7dfde85f58f5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d077242d68a31075ef5f5da041bf8f6fc19aa231",
+              "lessThan": "7de13410f59e59b21d3c268a6e22d40f5d9d8a54",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d077242d68a31075ef5f5da041bf8f6fc19aa231",
+              "lessThan": "ac35b5580ace12e5d0a0b5e61e36d2c4e1ffa29c",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.12",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.12",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.94",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.36",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.13",
+              "lessThanOrEqual": "7.0.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00116,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 9,
+        "reference_count": 4
+      }
+    },
+    {
       "cve_id": "CVE-2026-53354",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\narm64: errata: Mitigate TLBI errata on various Arm CPUs\n\nA number of CPUs developed by Arm suffer from errata whereby a broadcast\nTLBI;DSB sequence may complete before the global observation of writes\nwhich are translated by an affected TLB entry.\n\nThese errata ONLY affect the completion of memory accesses which have\nbeen translated by an invalidated TLB entry, and these errata DO NOT\naffect the actual invalidation of TLB entries. TLB entries are removed\ncorrectly.\n\nThis issue has been assigned CVE ID CVE-2025-10263.\n\nTo mitigate this issue, Arm recommends that software follows any\naffected TLBI;DSB sequence with an additional TLBI;DSB, which will\nensure that all memory write effects affected by the first TLBI have\nbeen globally observed. The additional TLBI can use any operation that\nis broadcast to affected CPUs, and the additional DSB can use any option\nthat is sufficient to complete the additional TLBI.\n\nThe ARM64_WORKAROUND_REPEAT_TLBI workaround is sufficient to mitigate\nthe issue. Enable this workaround for affected CPUs, and update the\nsilicon errata documentation accordingly.\n\nNote that due to the manner in which Arm develops IP and tracks errata,\nsome CPUs share a common erratum number.",
       "cvss_score": 8.8,
@@ -378991,7 +379092,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 9
       }
     },
@@ -379181,8 +379282,10 @@
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 24,
         "reference_count": 8
       }
     },
@@ -379329,7 +379432,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 14,
         "reference_count": 8
       }
     },
@@ -379475,8 +379578,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 11,
         "reference_count": 8
       }
     },
@@ -379622,8 +379727,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-667"
+        ],
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -379745,8 +379852,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 5,
         "reference_count": 7
       }
     },
@@ -379844,8 +379953,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 8,
         "reference_count": 4
       }
     },
@@ -379961,7 +380072,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 4
       }
     },
@@ -380084,7 +380195,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 6
       }
     },
@@ -380171,7 +380282,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 3
       }
     },
@@ -380282,7 +380393,7 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 5
       }
     },

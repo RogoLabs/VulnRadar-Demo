@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-24T00:10:01+00:00",
+  "generated_at": "2026-07-24T03:42:28+00:00",
   "vendor": "_other",
-  "count": 758,
+  "count": 759,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -28558,7 +28558,7 @@
           "CWE-78"
         ],
         "cpe_count": 0,
-        "reference_count": 29
+        "reference_count": 30
       }
     },
     {
@@ -34229,9 +34229,9 @@
     {
       "cve_id": "CVE-2026-16232",
       "description": "An authentication bypass vulnerability in the Check Point SmartConsole login process allows an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges. Successful exploitation allows the attacker to modify security policies and security configurations. Remote exploitation requires internet access to the Management Server IP address and a configuration that does not restrict Trusted Clients. Check Point is aware that this vulnerability is being exploited and has affected a very small number of customers.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
       "affected": [
         {
           "vendor": "checkpoint",
@@ -34296,6 +34296,17 @@
         "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
         "dueDate": "2026-07-25",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -49313,7 +49324,7 @@
     },
     {
       "cve_id": "CVE-2026-56290",
-      "description": "The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
+      "description": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension < 3.6.0 - The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/U:Red",
@@ -49362,7 +49373,7 @@
     },
     {
       "cve_id": "CVE-2026-56291",
-      "description": "The Joomla extension Balbooa Forms is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
+      "description": "Joomla Extension - balbooa.com - Unauthenticated file upload in Balbooa Forms extension < 2.4.1 - The Joomla extension Balbooa Forms is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A/AU:Y/U:Red",
@@ -49708,6 +49719,38 @@
         "cpe_count": 0,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2026-59678",
+      "description": "An Incorrect Authorization vulnerability in Linux-Gaming PortProtonQt allows any users to mount and unmount arbitrary file systems and modify the network configuration via NetworkManager.\n\n\n\n\n\n\nThis issue affects PortProtonQt before 0d0f0950ebd948cdf82e8c3e1ebd2bcb9b8bafbe.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "linux-gaming",
+          "product": "portprotonqt",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0d0f0950ebd948cdf82e8c3e1ebd2bcb9b8bafbe",
+              "versionType": "git"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:portprotonqt",
+        "vendor:linux-gaming"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00158
     },
     {
       "cve_id": "CVE-2026-60137",
