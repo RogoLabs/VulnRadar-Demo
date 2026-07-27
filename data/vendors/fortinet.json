@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-27T14:51:44+00:00",
+  "generated_at": "2026-07-27T17:07:03+00:00",
   "vendor": "fortinet",
-  "count": 230,
+  "count": 231,
   "items": [
     {
       "cve_id": "CVE-2022-22299",
@@ -15437,6 +15437,84 @@
           "CWE-565"
         ],
         "cpe_count": 5,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-68686",
+      "description": "An Exposure of Sensitive Information to an Unauthorized Actor vulnerability [CWE-200] vulnerability in Fortinet FortiOS 7.6.0 through 7.6.1, FortiOS 7.4.0 through 7.4.6, FortiOS 7.2 all versions, FortiOS 7.0 all versions, FortiOS 6.4 all versions may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.",
+      "cvss_score": 5.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N/E:P/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortios",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.6.0",
+              "lessThanOrEqual": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.13",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.19",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "6.4.0",
+              "lessThanOrEqual": "6.4.16",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
+      "matched_terms": [
+        "product:fortios",
+        "vendor:fortinet"
+      ],
+      "active_threat": true,
+      "probability_score": 0.00477,
+      "kev": {
+        "cveID": "CVE-2025-68686",
+        "vendorProject": "Fortinet",
+        "product": "FortiOS",
+        "vulnerabilityName": "Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+        "dateAdded": "2026-07-27",
+        "shortDescription": "Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.9,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
