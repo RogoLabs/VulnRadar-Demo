@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-28T00:14:05+00:00",
+  "generated_at": "2026-07-28T04:17:41+00:00",
   "vendor": "_other",
-  "count": 760,
+  "count": 761,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -45622,6 +45622,150 @@
       }
     },
     {
+      "cve_id": "CVE-2026-16812",
+      "description": "VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\n\n\n\n\nThis functionality was intended to be for internal use only and is not intended to be remotely accessible.\n\n\n\n\nHosted and Dedicated versions of VCO have already been patched in advance of this notice going out.\n\n\n\n\nThis issue was discovered externally and is known to be actively exploited.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "arista networks",
+          "product": "velocloud orchestrator on-prem",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.2.0",
+              "lessThan": "5.2.3.14",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "6.1.0",
+              "lessThan": "6.1.3.4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "6.4.0",
+              "lessThan": "6.4.2.4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.0.0.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-16812",
+        "vendorProject": "Arista",
+        "product": "VeloCloud Orchestrator",
+        "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+        "dateAdded": "2026-07-27",
+        "shortDescription": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-07-30",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
+      "cve_id": "CVE-2026-7473",
+      "description": "On affected platforms running Arista EOS where a tunnel decapsulation configuration\u2014such as VXLAN (Virtual Extensible LAN), decap-groups, or a GRE (Generic Routing Encapsulation) tunnel interface\u2014is present, the switch will incorrectly decapsulate and forward other unexpected tunneled packet with a destination IP matching its configured decapsulation IP. This occurs because the switch does not verify the tunnel protocol type, potentially leading to the unexpected processing of non-configured tunnel traffic.\n\n\n\nThis issue has been reported as being exploited in the wild.",
+      "cvss_score": 5.8,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "arista networks",
+          "product": "eos",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.36.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.35.0",
+              "lessThanOrEqual": "4.35",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.34.0",
+              "lessThanOrEqual": "4.34",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.33.0",
+              "lessThanOrEqual": "4.33",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.32.0",
+              "lessThanOrEqual": "4.32",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.31.0",
+              "lessThanOrEqual": "4.31",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "*",
+              "lessThanOrEqual": "4.30",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01108,
+      "kev": {
+        "cveID": "CVE-2026-7473",
+        "vendorProject": "Arista",
+        "product": "Extensible Operating System",
+        "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+        "dateAdded": "2026-06-09",
+        "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1023"
+        ],
+        "cpe_count": 102,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-20253",
       "description": "In Splunk Enterprise 10.2 versions below 10.2.4 and 10 versions below 10.0.7, an unauthenticated user could create or truncate arbitrary files through a PostgreSQL sidecar service endpoint. The vulnerability exists because the PostgreSQL sidecar service endpoint lacks authentication controls, allowing any network-reachable user to invoke file operations without credentials. Splunk Enterprise versions 9.4 and earlier are not affected. If you cannot immediately upgrade to a fixed version, you can mitigate this vulnerability by disabling the PostgreSQL sidecar service.",
       "cvss_score": 9.8,
@@ -50019,92 +50163,6 @@
           "CWE-436"
         ],
         "cpe_count": 2,
-        "reference_count": 3
-      }
-    },
-    {
-      "cve_id": "CVE-2026-7473",
-      "description": "On affected platforms running Arista EOS where a tunnel decapsulation configuration\u2014such as VXLAN (Virtual Extensible LAN), decap-groups, or a GRE (Generic Routing Encapsulation) tunnel interface\u2014is present, the switch will incorrectly decapsulate and forward other unexpected tunneled packet with a destination IP matching its configured decapsulation IP. This occurs because the switch does not verify the tunnel protocol type, potentially leading to the unexpected processing of non-configured tunnel traffic.\n\n\n\nThis issue has been reported as being exploited in the wild.",
-      "cvss_score": 5.8,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N",
-      "affected": [
-        {
-          "vendor": "arista networks",
-          "product": "eos",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "4.36.0",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "4.35.0",
-              "lessThanOrEqual": "4.35",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "4.34.0",
-              "lessThanOrEqual": "4.34",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "4.33.0",
-              "lessThanOrEqual": "4.33",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "4.32.0",
-              "lessThanOrEqual": "4.32",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "4.31.0",
-              "lessThanOrEqual": "4.31",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "*",
-              "lessThanOrEqual": "4.30",
-              "versionType": "custom"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.01108,
-      "kev": {
-        "cveID": "CVE-2026-7473",
-        "vendorProject": "Arista",
-        "product": "Extensible Operating System",
-        "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
-        "dateAdded": "2026-06-09",
-        "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
-        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-        "dueDate": "2026-06-23",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 5.8,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-1023"
-        ],
-        "cpe_count": 102,
         "reference_count": 3
       }
     },
