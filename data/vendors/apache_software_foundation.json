@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-29T00:11:13+00:00",
+  "generated_at": "2026-07-29T04:42:08+00:00",
   "vendor": "apache_software_foundation",
-  "count": 839,
+  "count": 840,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -32614,6 +32614,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-41608",
+      "description": "Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in Apache Thrift Python bindings.\n\nThis issue affects Apache Thrift: before 0.24.0.\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "lessThan": "0.24.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01097,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-409"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-41635",
       "description": "Apache MINA's AbstractIoBuffer.resolveClass() contains two branches, one of them (for static classes or primitive types) does not check the class at all, bypassing the classname allowlist and allowing arbitrary code to be executed.\n\n\n\n\nThe fix checks if the class is present in the accepted class filter\u00a0before calling\u00a0Class.forName().\u00a0\n\n\n\n\n\n\nAffected versions are Apache MINA 2.0.0 <= 2.0.27, 2.1.0 <= 2.1.10, and\n\n\n2.2.0 <= 2.2.5.\n\n\n\n\n\nThe problem is resolved in Apache MINA 2.0.28, 2.1.11, and 2.2.6 by \napplying the classname allowlist earlier.\n\n\n\n\n\nAffected are applications using Apache MINA that call\u00a0 IoBuffer.getObject().\n\n\n\n\n\nApplications using Apache MINA are advised to upgrade.",
       "cvss_score": 9.8,
@@ -34365,7 +34408,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01074
+      "probability_score": 0.01074,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-835"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-44185",
@@ -35012,7 +35066,7 @@
         "cwe_ids": [
           "CWE-120"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -35056,7 +35110,7 @@
           "CWE-191",
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -35099,7 +35153,7 @@
         "cwe_ids": [
           "CWE-617"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -35142,7 +35196,7 @@
         "cwe_ids": [
           "CWE-476"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -36137,7 +36191,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00418
+      "probability_score": 0.00418,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-297"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-48145",
@@ -36169,7 +36234,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00435
+      "probability_score": 0.00435,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-297"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-48203",
@@ -36473,7 +36549,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01074
+      "probability_score": 0.01074,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-409"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-48827",
@@ -36695,7 +36782,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01097
+      "probability_score": 0.01097,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-409"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-49268",
@@ -37958,7 +38056,7 @@
         "cwe_ids": [
           "CWE-653"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -38013,7 +38111,7 @@
         "cwe_ids": [
           "CWE-653"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -38678,7 +38776,19 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01097
+      "probability_score": 0.01097,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-407",
+          "CWE-770"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-55969",
@@ -38770,7 +38880,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01097
+      "probability_score": 0.01097,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-55971",
@@ -38802,7 +38923,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01042
+      "probability_score": 0.01042,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-122"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-55993",
@@ -39105,7 +39237,7 @@
           "CWE-22",
           "CWE-73"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
@@ -39154,7 +39286,7 @@
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 6,
         "reference_count": 1
       }
     },
@@ -39203,7 +39335,7 @@
         "cwe_ids": [
           "CWE-295"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 2
       }
     },
@@ -39301,7 +39433,7 @@
         "cwe_ids": [
           "CWE-89"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -39513,7 +39645,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01097
+      "probability_score": 0.01097,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-58662",
@@ -39545,7 +39688,19 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.01148
+      "probability_score": 0.01148,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125",
+          "CWE-1284"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2026-59083",
@@ -39812,7 +39967,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -39867,7 +40022,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -40008,7 +40163,7 @@
         "cwe_ids": [
           "CWE-918"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -40063,7 +40218,7 @@
         "cwe_ids": [
           "CWE-653"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -40118,7 +40273,7 @@
         "cwe_ids": [
           "CWE-502"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -40218,7 +40373,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -40261,7 +40416,7 @@
         "cwe_ids": [
           "CWE-400"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -40304,7 +40459,7 @@
         "cwe_ids": [
           "CWE-400"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -40347,7 +40502,7 @@
         "cwe_ids": [
           "CWE-400"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     }

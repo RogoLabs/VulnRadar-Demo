@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T00:11:13+00:00",
+  "generated_at": "2026-07-29T04:42:08+00:00",
   "vendor": "linux",
   "count": 3575,
   "items": [
@@ -52019,7 +52019,7 @@
     },
     {
       "cve_id": "CVE-2023-4244",
-      "description": "A use-after-free vulnerability in the Linux kernel's netfilter: nf_tables component can be exploited to achieve local privilege escalation.\n\nDue to a race condition between nf_tables netlink control plane transaction and nft_set element garbage collection, it is possible to underflow the reference counter causing a use-after-free vulnerability.\n\nWe recommend upgrading past commit 3e91b0ebd994635df2346353322ac51ce84ce6d8.",
+      "description": "A use-after-free vulnerability in the Linux kernel's netfilter: nf_tables component can be exploited to achieve local privilege escalation.\n\n\n\nDue to a race condition between nf_tables netlink control plane transaction and nft_set element garbage collection, it is possible to underflow the reference counter causing a use-after-free vulnerability.\n\n\n\nWe recommend upgrading past commit 3e91b0ebd994635df2346353322ac51ce84ce6d8.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -52031,7 +52031,37 @@
             {
               "status": "affected",
               "version": "0.0",
-              "lessThan": "6.5",
+              "lessThan": "4.19.316",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.20",
+              "lessThan": "5.4.262",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.5",
+              "lessThan": "5.10.198",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.11",
+              "lessThan": "5.15.134",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.16",
+              "lessThan": "6.1.56",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "6.2",
+              "lessThan": "6.4.11",
               "versionType": "custom"
             }
           ]
@@ -89211,8 +89241,8 @@
       "active_threat": false,
       "probability_score": 0.0011,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": null,
@@ -335293,7 +335323,7 @@
           "CWE-911"
         ],
         "cpe_count": 7,
-        "reference_count": 10
+        "reference_count": 11
       }
     },
     {
@@ -356007,7 +356037,7 @@
           "CWE-825"
         ],
         "cpe_count": 5,
-        "reference_count": 7
+        "reference_count": 8
       }
     },
     {
@@ -357916,7 +357946,7 @@
           "CWE-825"
         ],
         "cpe_count": 7,
-        "reference_count": 6
+        "reference_count": 7
       }
     },
     {
@@ -358266,7 +358296,7 @@
           "CWE-825"
         ],
         "cpe_count": 4,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -359500,7 +359530,7 @@
           "CWE-763"
         ],
         "cpe_count": 7,
-        "reference_count": 12
+        "reference_count": 13
       }
     },
     {
@@ -360605,7 +360635,7 @@
           "CWE-825"
         ],
         "cpe_count": 10,
-        "reference_count": 11
+        "reference_count": 12
       }
     },
     {
@@ -363438,7 +363468,7 @@
           "CWE-190"
         ],
         "cpe_count": 12,
-        "reference_count": 12
+        "reference_count": 15
       }
     },
     {
@@ -382700,43 +382730,43 @@
           "product": "linux",
           "versions": [
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "ccdf4510a3873b14e5e348cdb038717996f09fda",
               "status": "affected",
               "versionType": "git"
             },
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "511d2b92f8d20de04acafab676150d26fb5c67f4",
               "status": "affected",
               "versionType": "git"
             },
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "07ffe414a708ae60551401cec5d727ed156b8caf",
               "status": "affected",
               "versionType": "git"
             },
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "3d205fe80f2181f0109150ad1fa06ee5bc046935",
               "status": "affected",
               "versionType": "git"
             },
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "d72650a4f334581b23a1892b888a4cb1be142f76",
               "status": "affected",
               "versionType": "git"
             },
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "778b9dda4b24005a27bcd9c35c110bf8d7f259ca",
               "status": "affected",
               "versionType": "git"
             },
             {
-              "version": "cc816969d7b5973d2720d9afd381f06f0eac6885",
+              "version": "57f83e5dd6a33c4696699954784f8fee789b1d0c",
               "lessThan": "10fc708b4de7f86002d2d735a2dbf3b5b7f65692",
               "status": "affected",
               "versionType": "git"
@@ -382748,12 +382778,12 @@
           "product": "linux",
           "versions": [
             {
-              "version": "5.9",
+              "version": "5.19",
               "status": "affected"
             },
             {
               "version": "0",
-              "lessThan": "5.9",
+              "lessThan": "5.19",
               "status": "unaffected",
               "versionType": "semver"
             },
@@ -395441,6 +395471,12 @@
           "versions": [
             {
               "version": "a831f5bbc89a9978795504be9e1ff412043f8f77",
+              "lessThan": "b3ac54e5c905f86d22b502eacb5686a282c5659f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "a831f5bbc89a9978795504be9e1ff412043f8f77",
               "lessThan": "f8aabed3ff3e986920cf02a2a2785e08e586b234",
               "status": "affected",
               "versionType": "git"
@@ -395494,6 +395530,12 @@
             {
               "version": "0",
               "lessThan": "2.6.19",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.259",
+              "lessThanOrEqual": "5.10.*",
               "status": "unaffected",
               "versionType": "semver"
             },
