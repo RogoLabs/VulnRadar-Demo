@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-30T00:15:05+00:00",
+  "generated_at": "2026-07-30T03:22:56+00:00",
   "vendor": "apache_software_foundation",
-  "count": 843,
+  "count": 871,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -27179,6 +27179,44 @@
       }
     },
     {
+      "cve_id": "CVE-2026-22068",
+      "description": "Regular Expression without Anchors vulnerability in Apache Traffic Server.\n\nThis issue affects Apache Traffic Server: from 10.0.X through 10.1.3, from 9.0.X through 9.2.14.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.x",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.x",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00209
+    },
+    {
       "cve_id": "CVE-2026-22444",
       "description": "The \"create core\" API of Apache Solr 8.6 through 9.10.0 lacks sufficient input validation on some API parameters, which can cause Solr to check the existence of and attempt to read file-system paths that should be disallowed by Solr's  \"allowPaths\" security setting https://https://solr.apache.org/guide/solr/latest/configuration-guide/configuring-solr-xml.html#the-solr-element .\u00a0 These read-only accesses can allow users to create cores using unexpected configsets if any are accessible via the filesystem.\u00a0 On Windows systems configured to allow UNC paths this can additionally cause disclosure of NTLM \"user\" hashes.\u00a0\n\nSolr deployments are subject to this vulnerability if they meet the following criteria:\n  *  Solr is running in its \"standalone\" mode.\n  *  Solr's \"allowPath\" setting is being used to restrict file access to certain directories.\n  *  Solr's \"create core\" API is exposed and accessible to untrusted users.\u00a0 This can happen if Solr's  RuleBasedAuthorizationPlugin https://solr.apache.org/guide/solr/latest/deployment-guide/rule-based-authorization-plugin.html  is disabled, or if it is enabled but the \"core-admin-edit\" predefined permission (or an equivalent custom permission) is given to low-trust (i.e. non-admin) user roles.\n\nUsers can mitigate this by enabling Solr's RuleBasedAuthorizationPlugin (if disabled) and configuring a permission-list that prevents untrusted users from creating new Solr cores.\u00a0 Users should also upgrade to Apache Solr 9.10.1 or greater, which contain fixes for this issue.",
       "cvss_score": 7.1,
@@ -27657,6 +27695,44 @@
         "cpe_count": 2,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-24033",
+      "description": "Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') vulnerability in Apache Traffic Server.\n\nThis issue affects Apache Traffic Server: from 10.0.0 through 10.1.3, from 9.0.0 through 9.2.14.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168
     },
     {
       "cve_id": "CVE-2026-24072",
@@ -29787,6 +29863,44 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-33267",
+      "description": "Improper Input Validation vulnerability in Apache Traffic Server.\n\nThis issue affects Apache Traffic Server: from 9.2.0 through 9.2.14, from 10.1.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00245
     },
     {
       "cve_id": "CVE-2026-33453",
@@ -32839,6 +32953,44 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-41920",
+      "description": "Improper Access Control vulnerability in Apache Traffic Server.\n\nThis issue affects Apache Traffic Server: from 9.0.0 through 9.1.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.1.15 or 10.1.4, which fixes the issue.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "9.1.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00187
     },
     {
       "cve_id": "CVE-2026-42027",
@@ -39486,6 +39638,50 @@
       }
     },
     {
+      "cve_id": "CVE-2026-57834",
+      "description": "Apache Traffic Server allows request smuggling if chunked messages are malformed.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00262
+    },
+    {
       "cve_id": "CVE-2026-57915",
       "description": "It is possible to bypass the Kerberos pre-authentication check in Apache Kerby by sending a PA-DATA with an unrecognized or unsupported type. Users are recommended to upgrade to version 2.1.2, which fixes this issue.",
       "cvss_score": 7.3,
@@ -39571,6 +39767,950 @@
         "cpe_count": 1,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-58150",
+      "description": "Apache Traffic Server does not reject Transfer-Encoding in HTTP/2 requests, allowing downgrade request smuggling.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00245
+    },
+    {
+      "cve_id": "CVE-2026-58151",
+      "description": "Apache Traffic Server can be crashed or driven to resource exhaustion by abusive HTTP/2 framing and flow-control.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00324
+    },
+    {
+      "cve_id": "CVE-2026-58153",
+      "description": "Apache Traffic Server forwards HTTP/2 origin trailers to HTTP/1 clients without proper chunked framing when converting HTTP/2 to HTTP/1.\n\nThis issue affects Apache Traffic Server: from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00231
+    },
+    {
+      "cve_id": "CVE-2026-58154",
+      "description": "Apache Traffic Server can write out of bounds or overflow integers while parsing MIME and HTTP headers.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.9,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00262
+    },
+    {
+      "cve_id": "CVE-2026-58155",
+      "description": "Apache Traffic Server truncates over-long header names, allowing header aliasing, request smuggling, and policy bypass.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00261
+    },
+    {
+      "cve_id": "CVE-2026-58157",
+      "description": "Apache Traffic Server can reuse server sessions and tunnels improperly, exposing data across client connections.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0034
+    },
+    {
+      "cve_id": "CVE-2026-58159",
+      "description": "Apache Traffic Server can bypass IP access controls on UDS listeners and through ACL matching errors.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00399
+    },
+    {
+      "cve_id": "CVE-2026-58161",
+      "description": "Apache Traffic Server can crash from null dereferences and dangling references in TLS and SNI handling.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00441
+    },
+    {
+      "cve_id": "CVE-2026-58162",
+      "description": "The Apache Traffic Server certifier plugin generates certificates based on attacker-controlled client SNI.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00243
+    },
+    {
+      "cve_id": "CVE-2026-58163",
+      "description": "Apache Traffic Server mishandles on-disk cache fields and object lifetimes, corrupting state or crashing.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00368
+    },
+    {
+      "cve_id": "CVE-2026-58164",
+      "description": "Apache Traffic Server has use-after-free and time-of-check/time-of-use errors in remap configuration handling.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00441
+    },
+    {
+      "cve_id": "CVE-2026-58175",
+      "description": "Apache Traffic Server leaks memory when handling HostDB SRV records.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00441
+    },
+    {
+      "cve_id": "CVE-2026-58177",
+      "description": "The Apache Traffic Server Cripts framework has out-of-bounds writes, path traversal, and use-after-free errors.\n\nThis issue affects Apache Traffic Server: from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 10.1.4, which fix the issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00303
+    },
+    {
+      "cve_id": "CVE-2026-58178",
+      "description": "The Apache Traffic Server ESI plugin can recurse without bound and fetch attacker-controlled URLs.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00441
+    },
+    {
+      "cve_id": "CVE-2026-58179",
+      "description": "The Apache Traffic Server regex_remap plugin overflows the stack and integers from substitution input.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00416
+    },
+    {
+      "cve_id": "CVE-2026-58180",
+      "description": "The Apache Traffic Server txn_box plugin overflows the stack from attacker-controlled input.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00441
+    },
+    {
+      "cve_id": "CVE-2026-58181",
+      "description": "The Apache Traffic Server uri_signing and url_sig plugins can exhaust the stack or crash on attacker input.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00357
+    },
+    {
+      "cve_id": "CVE-2026-58182",
+      "description": "The Apache Traffic Server ts_lua plugin mishandles initialization, transform context, and per-instance state.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00282
+    },
+    {
+      "cve_id": "CVE-2026-58184",
+      "description": "The Apache Traffic Server header_rewrite plugin can crash or corrupt memory during cookie operations and CIDR condition matching.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00346
+    },
+    {
+      "cve_id": "CVE-2026-58186",
+      "description": "The Apache Traffic Server webp_transform plugin can decode unsafely and serve mislabeled, cacheable responses.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00373
+    },
+    {
+      "cve_id": "CVE-2026-58188",
+      "description": "Several Apache Traffic Server experimental plugins have memory-safety and limit-bypass errors.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00356
+    },
+    {
+      "cve_id": "CVE-2026-58189",
+      "description": "Apache Traffic Server allows redirect-limit bypass when plugins reset the retry counter, enabling SSRF amplification.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00377
     },
     {
       "cve_id": "CVE-2026-58319",
@@ -40463,6 +41603,50 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-65324",
+      "description": "Apache Traffic Server drops the per-stream buffer cap when dechunking HTTP/2 or HTTP/3 responses, letting a slow client exhaust server memory.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "lessThanOrEqual": "8.1.9",
+              "status": "affected",
+              "version": "8.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "9.2.14",
+              "status": "affected",
+              "version": "9.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThanOrEqual": "10.1.3",
+              "status": "affected",
+              "version": "10.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00324
     },
     {
       "cve_id": "CVE-2026-66142",

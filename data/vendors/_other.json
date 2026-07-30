@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-30T00:15:05+00:00",
+  "generated_at": "2026-07-30T03:22:56+00:00",
   "vendor": "_other",
-  "count": 761,
+  "count": 764,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -27856,6 +27856,82 @@
       }
     },
     {
+      "cve_id": "CVE-2026-15228",
+      "description": "Kong Kubernetes Ingress Controller (KIC) allows a user with namespace-scoped Secret creation privileges to cause a cluster-wide ingress configuration denial of service. KIC collects CA-certificate Secrets across all watched namespaces using a label selector alone, without ingress-class or namespace restrictions. The CA-certificate primary key is derived from a user-supplied field in the Secret. Duplicate CA-certificate IDs cause Kong Gateway to reject the entire configuration document and halting all ingress changes cluster-wide.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.4.0",
+              "lessThan": "3.4.18",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.5.0",
+              "lessThan": "3.5.11",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-16543",
+      "description": "Kong Operator's embedded Kong Kubernetes Ingress Controller (KIC) allows a user with namespace-scoped Secret creation privileges to cause a cluster-wide ingress configuration denial of service. The embedded KIC collects CA-certificate Secrets across all watched namespaces using a label selector alone, without ingress-class or namespace restrictions. The CA-certificate primary key is derived from a user-supplied field in the Secret. Duplicate CA-certificate IDs cause Kong Gateway to reject the entire configuration document and halting all ingress changes cluster-wide.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.2.0",
+              "lessThan": "2.2.3",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "2.1.0",
+              "lessThan": "2.1.9",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.0.11",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-1470",
       "description": "n8n contains a critical Remote Code Execution (RCE) vulnerability in its workflow Expression evaluation system. Expressions supplied by authenticated users during workflow configuration may be evaluated in an execution context that is not sufficiently isolated from the underlying runtime.\n\nAn authenticated attacker could abuse this behavior to execute arbitrary code with the privileges of the n8n process. Successful exploitation may lead to full compromise of the affected instance, including unauthorized access to sensitive data, modification of workflows, and execution of system-level operations.",
       "cvss_score": 9.9,
@@ -50176,6 +50252,36 @@
         "cpe_count": 2,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-67436",
+      "description": "Linuxfabrik monitoring-plugins provides Python monitoring plugins for Icinga, Nagios, and related monitoring systems. In 6.0.0 and earlier, the redfish-* plugins built request URLs by concatenating an operator-supplied base URL with response-supplied @odata.id links, allowing a malicious or compromised BMC to redirect authenticated Redfish requests and disclose X-Auth-Token or HTTP Basic credentials.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "linuxfabrik",
+          "product": "monitoring-plugins",
+          "versions": [
+            {
+              "version": "<= 6.0.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:monitoring-plugins",
+        "vendor:linuxfabrik"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-8398",

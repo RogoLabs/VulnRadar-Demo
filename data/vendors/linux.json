@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T00:15:05+00:00",
+  "generated_at": "2026-07-30T03:22:56+00:00",
   "vendor": "linux",
   "count": 3575,
   "items": [
@@ -59,10 +59,33 @@
           "product": "kernel",
           "versions": [
             {
-              "lessThan": "v5.17-rc3",
               "status": "affected",
-              "version": "0",
-              "versionType": "custom"
+              "version": "5.1.0",
+              "lessThan": "5.4.177",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.5.0",
+              "lessThan": "5.10.97",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.11.0",
+              "lessThan": "5.15.20",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.16.0",
+              "lessThan": "5.16.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "5.17.0",
+              "versionType": "semver"
             },
             {
               "status": "unaffected",
@@ -50874,7 +50897,7 @@
     },
     {
       "cve_id": "CVE-2023-1829",
-      "description": "A use-after-free vulnerability in the Linux Kernel traffic control index filter (tcindex) can be exploited to achieve local privilege escalation.\u00a0The tcindex_delete function which does not properly deactivate filters in case of a perfect hashes while deleting the underlying structure which can later lead to double freeing the structure.\u00a0A local attacker user can use this vulnerability to elevate its privileges to root.\nWe recommend upgrading past commit 8c710f75256bb3cf05ac7b1672c82b92c43f3d28.",
+      "description": "A use-after-free vulnerability in the Linux Kernel traffic control index filter (tcindex) can be exploited to achieve local privilege escalation.\u00a0The tcindex_delete function which does not properly deactivate filters in case of a perfect hashes while deleting the underlying structure which can later lead to double freeing the structure.\u00a0A local attacker user can use this vulnerability to elevate its privileges to root.\n\n\nWe recommend upgrading past commit   8c710f75256bb3cf05ac7b1672c82b92c43f3d28 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/ .",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -50884,10 +50907,56 @@
           "product": "linux kernel",
           "versions": [
             {
-              "lessThanOrEqual": "6.2",
               "status": "affected",
-              "version": "3.8",
-              "versionType": "custom"
+              "version": "3.8.0",
+              "lessThan": "4.14.308",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.15.0",
+              "lessThan": "4.19.276",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.20.0",
+              "lessThan": "5.4.235",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.5.0",
+              "lessThan": "5.10.173",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.11.0",
+              "lessThan": "5.15.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.16.0",
+              "lessThan": "6.1.18",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.2.0",
+              "lessThan": "6.2.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "6.3.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "8c710f75256bb3cf05ac7b1672c82b92c43f3d28",
+              "versionType": "git"
             }
           ]
         }
