@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-31T00:23:19+00:00",
+  "generated_at": "2026-07-31T04:31:33+00:00",
   "vendor": "vmware",
-  "count": 64,
+  "count": 68,
   "items": [
     {
       "cve_id": "CVE-2022-22962",
@@ -3346,6 +3346,127 @@
       }
     },
     {
+      "cve_id": "CVE-2026-41703",
+      "description": "VMware ESX,\u00a0Workstation, and Fusion\u00a0contain an out-of-bounds read vulnerability. A malicious actor with\u00a0VM deployment privileges could trigger an out-of-bounds read, potentially leading to information disclosure or more likely a Denial-of-Service (DoS) condition of the host process.\u00a0On Workstation and Fusion, the impact of this vulnerability is restricted to information disclosure.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:L",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.x",
+              "lessThan": "5.2.3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "esx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "ESXi-9.1.0.0-25370933",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "ESXi-9.0.2.0100-25595025",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "8.0",
+              "lessThan": "ESXi80U3i-25205845",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "workstation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "25H2",
+              "lessThan": "26H1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "fusion",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "25H2",
+              "lessThan": "26H1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esx",
+        "product:fusion",
+        "product:telco cloud platform",
+        "product:vsphere foundation",
+        "product:workstation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-41712",
       "description": "Spring AI's chat memory component contained a problematic default that, when not explicitly overridden, could result in unintended data exposure between users.",
       "cvss_score": 7.5,
@@ -4100,6 +4221,323 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-47876",
+      "description": "VMware ESX contains an out-of-bounds write vulnerability in the VMXNET3 virtual network adapter.\u00a0A malicious actor with local administrative privileges on a virtual machine with VMXNET3 virtual network adapter may exploit this issue to execute code on the host. Non VMXNET3 virtual adapters are not affected by this issue.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "esx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "ESXi-9.1.0.0200-25557999",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "ESXi-9.0.2.0100-25595025",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "8.0",
+              "lessThan": "ESXi80U3k-25595708",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esx",
+        "product:telco cloud platform",
+        "product:vsphere foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-59309",
+      "description": "VMware vCenter contains an authentication bypass vulnerability in the VMware Directory Service.\u00a0A malicious actor with network access to vCenter\u00a0may exploit this issue to bypass authentication and gain unauthorized access to the system.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vcenter",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "9.1.0.0300",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "9.0.2.0100",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "8.0",
+              "lessThan": "8.0 U3k",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.x"
+            },
+            {
+              "status": "affected",
+              "version": "3.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vcenter",
+        "product:vsphere foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-59310",
+      "description": "VMware vCenter contains a directory traversal vulnerability in the Syslog server.\u00a0A malicious actor with network access to vCenter\u00a0may exploit this issue to execute arbitrary code.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vcenter",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "9.1.0.0300",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "9.0.2.0100",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "8.0",
+              "lessThan": "8.0 U3k",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.x"
+            },
+            {
+              "status": "affected",
+              "version": "4.x"
+            },
+            {
+              "status": "affected",
+              "version": "3.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vcenter",
+        "product:vsphere foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
