@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-03T17:16:40+00:00",
+  "generated_at": "2026-08-03T19:49:18+00:00",
   "vendor": "_other",
-  "count": 764,
+  "count": 765,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -45151,6 +45151,51 @@
         ],
         "cpe_count": 1,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-18577",
+      "description": "An incomplete patch for CVE-2026-18556 allows for authentication bypass and account takeover in N-central Versions through 2026.3.1",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:L/SI:L/SA:L/E:A",
+      "affected": [
+        {
+          "vendor": "n-able",
+          "product": "n-central",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "2026.3",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "2026.3.1.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01477,
+      "kev": {
+        "cveID": "CVE-2026-18577",
+        "vendorProject": "N-able",
+        "product": "N-central",
+        "vulnerabilityName": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "dateAdded": "2026-08-03",
+        "shortDescription": "N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-06",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
