@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-05T15:42:24+00:00",
+  "generated_at": "2026-08-05T17:51:41+00:00",
   "vendor": "_other",
-  "count": 767,
+  "count": 768,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -31110,6 +31110,57 @@
         ],
         "cpe_count": 1,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-63077",
+      "description": "In JetBrains TeamCity before 2026.1.3, 2025.11.7 unauthenticated remote code execution was possible via the agent polling protocol",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jetbrains",
+          "product": "teamcity",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "2026.1.3, 2025.11.7",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00649,
+      "kev": {
+        "cveID": "CVE-2026-63077",
+        "vendorProject": "JetBrains",
+        "product": "TeamCity",
+        "vulnerabilityName": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+        "dateAdded": "2026-08-05",
+        "shortDescription": "JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-08",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
