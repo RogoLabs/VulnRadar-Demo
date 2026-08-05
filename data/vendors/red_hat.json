@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-05T00:14:38+00:00",
+  "generated_at": "2026-08-05T04:30:38+00:00",
   "vendor": "red_hat",
-  "count": 191,
+  "count": 190,
   "items": [
     {
       "cve_id": "CVE-2023-0118",
@@ -2592,7 +2592,7 @@
           "CWE-787"
         ],
         "cpe_count": 3,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -22093,11 +22093,6 @@
           "vendor": "red hat",
           "product": "red hat jboss enterprise application platform 8",
           "versions": null
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat jboss enterprise application platform 8",
-          "versions": null
         }
       ],
       "watchlist_hit": true,
@@ -37354,514 +37349,6 @@
       }
     },
     {
-      "cve_id": "CVE-2025-5318",
-      "description": "A flaw was found in the libssh library in versions less than 0.11.2. An out-of-bounds read can be triggered in the sftp_handle function due to an incorrect comparison check that permits the function to access memory beyond the valid handle list and to return an invalid pointer, which is used in further processing. This vulnerability allows an authenticated remote attacker to potentially read unintended memory regions, exposing sensitive information or affect service behavior.",
-      "cvss_score": 8.1,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
-      "affected": [
-        {
-          "vendor": "",
-          "product": "",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "0",
-              "lessThan": "0.11.2",
-              "versionType": "semver"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 10",
-          "versions": [
-            {
-              "version": "0:0.11.1-4.el10_0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 10",
-          "versions": [
-            {
-              "version": "0:0.11.1-4.el10_1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8",
-          "versions": [
-            {
-              "version": "0:0.9.6-15.el8_10",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8",
-          "versions": [
-            {
-              "version": "0:0.9.6-15.el8_10",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.2 advanced update support",
-          "versions": [
-            {
-              "version": "0:0.9.0-4.el8_2.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.4 advanced mission critical update support",
-          "versions": [
-            {
-              "version": "0:0.9.4-2.el8_4.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.4 extended update support long-life add-on",
-          "versions": [
-            {
-              "version": "0:0.9.4-2.el8_4.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.6 advanced mission critical update support",
-          "versions": [
-            {
-              "version": "0:0.9.6-4.el8_6.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.6 telecommunications update service",
-          "versions": [
-            {
-              "version": "0:0.9.6-4.el8_6.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.6 update services for sap solutions",
-          "versions": [
-            {
-              "version": "0:0.9.6-4.el8_6.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.8 telecommunications update service",
-          "versions": [
-            {
-              "version": "0:0.9.6-13.el8_8.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 8.8 update services for sap solutions",
-          "versions": [
-            {
-              "version": "0:0.9.6-13.el8_8.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9",
-          "versions": [
-            {
-              "version": "0:0.10.4-15.el9_6",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9",
-          "versions": [
-            {
-              "version": "0:0.10.4-15.el9_7",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9",
-          "versions": [
-            {
-              "version": "0:0.10.4-15.el9_6",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9",
-          "versions": [
-            {
-              "version": "0:0.10.4-15.el9_7",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9.0 update services for sap solutions",
-          "versions": [
-            {
-              "version": "0:0.9.6-3.el9_0.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9.2 update services for sap solutions",
-          "versions": [
-            {
-              "version": "0:0.10.4-9.el9_2.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat enterprise linux 9.4 extended update support",
-          "versions": [
-            {
-              "version": "0:0.10.4-13.el9_4.1",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.12",
-          "versions": [
-            {
-              "version": "412.86.202511191939-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.13",
-          "versions": [
-            {
-              "version": "413.92.202511261311-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.14",
-          "versions": [
-            {
-              "version": "414.92.202511122212-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.15",
-          "versions": [
-            {
-              "version": "415.92.202601271320-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.16",
-          "versions": [
-            {
-              "version": "416.94.202601071926-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.17",
-          "versions": [
-            {
-              "version": "417.94.202510282022-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.18",
-          "versions": [
-            {
-              "version": "418.94.202511041748-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.19",
-          "versions": [
-            {
-              "version": "4.19.9.6.202510281054-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift container platform 4.20",
-          "versions": [
-            {
-              "version": "4.20.9.6.202510290321-0",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat ai inference server 3.2",
-          "versions": [
-            {
-              "version": "3.2.2-1765379088",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat ai inference server 3.2",
-          "versions": [
-            {
-              "version": "3.2.2-1765379049",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat ai inference server 3.2",
-          "versions": [
-            {
-              "version": "3.2.2-1764871796",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat ai inference server 3.2",
-          "versions": [
-            {
-              "version": "1772160593",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat ai inference server 3.2",
-          "versions": [
-            {
-              "version": "1772160625",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.7.1",
-          "versions": [
-            {
-              "version": "rhosdt-3.7-1762254546",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.7.1",
-          "versions": [
-            {
-              "version": "rhosdt-3.7-1762254552",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.7.1",
-          "versions": [
-            {
-              "version": "rhosdt-3.7-1762255881",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.7.1",
-          "versions": [
-            {
-              "version": "rhosdt-3.7-1762254530",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.7.1",
-          "versions": [
-            {
-              "version": "rhosdt-3.7-1762254519",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.7.1",
-          "versions": [
-            {
-              "version": "rhosdt-3.7-1762254545",
-              "lessThan": "*",
-              "versionType": "rpm",
-              "status": "unaffected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": false,
-      "probability_score": 0.02449,
-      "nvd": {
-        "cvss_v3_score": 8.1,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-125"
-        ],
-        "cpe_count": 5,
-        "reference_count": 30
-      }
-    },
-    {
       "cve_id": "CVE-2025-5791",
       "description": "A flaw was found in the user's crate for Rust. This vulnerability allows privilege escalation via incorrect group listing when a user or process has fewer than exactly 1024 groups, leading to the erroneous inclusion of the root group in the access list.",
       "cvss_score": 7.1,
@@ -38487,7 +37974,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116455",
@@ -38499,7 +37986,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116482",
@@ -38511,7 +37998,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116441",
@@ -38523,7 +38010,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116449",
@@ -38535,7 +38022,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116439",
@@ -38547,7 +38034,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116447",
@@ -38559,7 +38046,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756128595",
@@ -38571,7 +38058,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756125872",
@@ -38583,7 +38070,7 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat openshift distributed tracing 3.5.2",
+          "product": "red hat openshift distributed tracing 3.5.1",
           "versions": [
             {
               "version": "rhosdt-3.5-1756116445",
