@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-07T00:12:03+00:00",
+  "generated_at": "2026-08-07T04:00:53+00:00",
   "vendor": "_other",
-  "count": 769,
+  "count": 770,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -9490,6 +9490,55 @@
         ],
         "cpe_count": 7,
         "reference_count": 24
+      }
+    },
+    {
+      "cve_id": "CVE-2026-54876",
+      "description": "Issue summary: A malicious TLS server can cause a memory leak in a TLS\nclient that has enabled OCSP response checking by sending an OCSP\nresponse that contains no single response entries.\n\nImpact summary: An attacker can leak an attacker-tunable amount of memory\nper TLS handshake in a victim client application. A long-running client\nthat repeatedly connects to a malicious server can have its memory\nexhausted, resulting in a Denial of Service.\n\nCWE: CWE-401: Missing Release of Memory after Effective Lifetime\n\nDescription: The affected function is called during X.509 certificate\nchain verification when OCSP response checking is enabled\nwith the X509_V_FLAG_OCSP_RESP_CHECK or X509_V_FLAG_OCSP_RESP_CHECK_ALL\nverification flags, for example when a TLS client verifies an OCSP\nresponse stapled into the TLS handshake by the server.\n\nWhen the received BasicOCSPResponse contains an empty SEQUENCE OF\nSingleResponse, which is permitted on the wire and accepted by the\nOpenSSL decoder, the OCSP_BASICRESP structure allocated by\nOCSP_response_get1_basic() was not freed because an early return\nbypassed the cleanup code at the end of the function.\n\nThe amount of memory leaked per handshake can be amplified by the\nattacker by padding the certs field of the BasicOCSPResponse with\nbogus certificates, which are parsed and stored in the leaked\nstructure before the empty response check triggers the early return.\nA long-running TLS client that repeatedly connects to a malicious\nserver can have its memory exhausted over time.\n\nOCSP response checking is not enabled by default. Only client\napplications that explicitly enable the OCSP response check\nverification flags are affected.\n\nFIPS impact: no\n\nThe FIPS modules in 4.0 and 3.6 are not affected by this issue as the\naffected code is outside the OpenSSL FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.2",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.4",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00261,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-401"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
@@ -31159,8 +31208,8 @@
         "cwe_ids": [
           "CWE-502"
         ],
-        "cpe_count": 0,
-        "reference_count": 1
+        "cpe_count": 2,
+        "reference_count": 2
       }
     },
     {
@@ -39830,7 +39879,18 @@
         "vendor:google cloud"
       ],
       "active_threat": false,
-      "probability_score": 0.00161
+      "probability_score": 0.00161,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-346"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-15810",

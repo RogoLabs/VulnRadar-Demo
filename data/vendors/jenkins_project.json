@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-07T00:12:03+00:00",
+  "generated_at": "2026-08-07T04:00:53+00:00",
   "vendor": "jenkins_project",
-  "count": 228,
+  "count": 232,
   "items": [
     {
       "cve_id": "CVE-2022-0538",
@@ -10518,6 +10518,202 @@
           "CWE-918"
         ],
         "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-70426",
+      "description": "In Remoting 3384.v60d89463d9e0 and earlier, except 3355.3357.v931d3c992987, included in Jenkins 2.575 and earlier, LTS 2.568.1 and earlier, the JEP-200 class filter is not applied to classes resolved via a fallback path in the Remoting deserialization implementation, allowing agent processes, code running on agents, and attackers with Agent/Connect permission to bypass the JEP-200 deserialization filter for classes on the Jenkins core classpath.",
+      "cvss_score": 9.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.576",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.568.2",
+              "versionType": "maven",
+              "lessThan": "2.568.*",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "jenkins project",
+          "product": "remoting",
+          "versions": [
+            {
+              "version": "3385.vf1123fb_515da_",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "3355.3357.v931d3c992987",
+              "versionType": "maven",
+              "lessThan": "3355.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00292,
+      "nvd": {
+        "cvss_v3_score": 9.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-70431",
+      "description": "Jenkins Multijob Plugin 669.v9d96a_d9c71b_0 and earlier provides Groovy scripting features that do not integrate with Script Security Plugin, allowing attackers with Item/Create or Item/Configure permission to execute arbitrary code in the context of the Jenkins controller JVM.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins multijob plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "669.v9d96a_d9c71b_0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins multijob plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00374,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-70432",
+      "description": "A cross-site request forgery (CSRF) vulnerability in Jenkins Multijob Plugin 669.v9d96a_d9c71b_0 and earlier allows attackers to execute arbitrary code in the context of the Jenkins controller JVM.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins multijob plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "669.v9d96a_d9c71b_0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins multijob plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00207,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-352"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-70448",
+      "description": "Jenkins Ivy Report Plugin 1.2 and earlier does not configure its XML parser to prevent XML external entity (XXE) attacks when processing Ivy report files.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins ivy report plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "1.2",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins ivy report plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00194,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
+        "cpe_count": 0,
         "reference_count": 1
       }
     }

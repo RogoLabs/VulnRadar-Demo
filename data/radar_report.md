@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-07T00:12:06+00:00`
+Generated: `2026-08-07T04:00:55+00:00`
 
 ## Executive Summary
 
@@ -38,8 +38,8 @@ Top critical items:
 
 ## Summary
 
-- Total items: **16736**
-- Watchlist hits: **16329**
+- Total items: **16763**
+- Watchlist hits: **16356**
 - CISA KEVs: **749**
 - Exploit Intel (PoC): **833**
 - Exploit Intel + Watchlist (CRITICAL): **426**
@@ -105,6 +105,7 @@ Top critical items:
 | [CVE-2026-35616](https://www.cve.org/CVERecord?id=CVE-2026-35616) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-09 | 0.889 | 9.1 | ✅ | A improper access control vulnerability in Fortinet FortiClientEMS 7.4.5 through 7.4.6 may allow an unauthenticated attacker to execute unauthorized code or co… |
 | [CVE-2026-24858](https://www.cve.org/CVERecord?id=CVE-2026-24858) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-30 | 0.858 | 9.4 | ✅ | An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] vulnerability in Fortinet FortiAnalyzer 7.6.0 through 7.6.5, FortiAnalyzer … |
 | [CVE-2026-1281](https://www.cve.org/CVERecord?id=CVE-2026-1281) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-01 | 0.815 | 9.8 | ✅ | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
+| [CVE-2026-34486](https://www.cve.org/CVERecord?id=CVE-2026-34486) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-07 | 0.799 | 9.8 | ✅ | Missing Encryption of Sensitive Data vulnerability in Apache Tomcat due to the fix for CVE-2026-29146 allowing the bypass of the EncryptInterceptor.  This issu… |
 | [CVE-2026-31431](https://www.cve.org/CVERecord?id=CVE-2026-31431) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-15 | 0.999 | 7.8 | ✅ | In the Linux kernel, the following vulnerability has been resolved:  crypto: algif_aead - Revert to operating out-of-place  This mostly reverts commit 72548b09… |
 | [CVE-2023-27997](https://www.cve.org/CVERecord?id=CVE-2023-27997) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-04 | 0.857 | 9.2 | ✅ | A heap-based buffer overflow vulnerability [CWE-122] in FortiOS version 7.2.4 and below, version 7.0.11 and below, version 6.4.12 and below, version 6.0.16 and… |
 | [CVE-2022-30190](https://www.cve.org/CVERecord?id=CVE-2022-30190) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-07-05 | 0.994 | 7.8 | ✅ | A remote code execution vulnerability exists when MSDT is called using the URL protocol from a calling application such as Word. An attacker who successfully e… |
@@ -135,7 +136,6 @@ Top critical items:
 | [CVE-2023-24955](https://www.cve.org/CVERecord?id=CVE-2023-24955) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-04-16 | 0.854 | 7.2 | ✅ | Microsoft SharePoint Server Remote Code Execution Vulnerability |
 | [CVE-2025-4428](https://www.cve.org/CVERecord?id=CVE-2025-4428) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.853 | 7.2 | ✅ | Remote Code Execution in API component in Ivanti Endpoint Manager Mobile 12.5.0.0 and prior on unspecified platforms allows authenticated attackers to execute … |
 | [CVE-2024-20353](https://www.cve.org/CVERecord?id=CVE-2024-20353) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-01 | 0.707 | 8.6 | ✅ | A vulnerability in the management and VPN web servers for Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software co… |
-| [CVE-2026-34486](https://www.cve.org/CVERecord?id=CVE-2026-34486) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-07 | 0.799 | 7.5 | ✅ | Missing Encryption of Sensitive Data vulnerability in Apache Tomcat due to the fix for CVE-2026-29146 allowing the bypass of the EncryptInterceptor.  This issu… |
 | [CVE-2025-59718](https://www.cve.org/CVERecord?id=CVE-2025-59718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-23 | 0.634 | 9.1 | ✅ | A improper verification of cryptographic signature vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS 7.2.0 through 7.… |
 | [CVE-2025-4427](https://www.cve.org/CVERecord?id=CVE-2025-4427) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.999 | 5.3 | ✅ | An authentication bypass in the API component of Ivanti Endpoint Manager Mobile 12.5.0.0 and prior allows attackers to access protected resources without prope… |
 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-29 | 0.703 | 8.1 | ✅ | Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform sp… |
@@ -253,54 +253,54 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
-| Jul 31 | [CVE-2026-23904](https://www.cve.org/CVERecord?id=CVE-2026-23904) | 🆕 New |
-| Jul 31 | [CVE-2026-50622](https://www.cve.org/CVERecord?id=CVE-2026-50622) | 🆕 New |
-| Jul 31 | [CVE-2026-59243](https://www.cve.org/CVERecord?id=CVE-2026-59243) | 🆕 New |
-| Jul 31 | [CVE-2025-39968](https://www.cve.org/CVERecord?id=CVE-2025-39968) | 🆕 New |
-| Jul 31 | [CVE-2025-39969](https://www.cve.org/CVERecord?id=CVE-2025-39969) | 🆕 New |
-| Jul 31 | [CVE-2025-39970](https://www.cve.org/CVERecord?id=CVE-2025-39970) | 🆕 New |
-| Jul 31 | [CVE-2025-39971](https://www.cve.org/CVERecord?id=CVE-2025-39971) | 🆕 New |
-| Jul 31 | [CVE-2025-39972](https://www.cve.org/CVERecord?id=CVE-2025-39972) | 🆕 New |
-| Jul 31 | [CVE-2025-39973](https://www.cve.org/CVERecord?id=CVE-2025-39973) | 🆕 New |
-| Jul 31 | [CVE-2025-39975](https://www.cve.org/CVERecord?id=CVE-2025-39975) | 🆕 New |
-| Jul 31 | [CVE-2025-39976](https://www.cve.org/CVERecord?id=CVE-2025-39976) | 🆕 New |
-| Jul 31 | [CVE-2025-39977](https://www.cve.org/CVERecord?id=CVE-2025-39977) | 🆕 New |
-| Jul 31 | [CVE-2025-39978](https://www.cve.org/CVERecord?id=CVE-2025-39978) | 🆕 New |
-| Jul 31 | [CVE-2025-39979](https://www.cve.org/CVERecord?id=CVE-2025-39979) | 🆕 New |
-| Jul 31 | [CVE-2025-39981](https://www.cve.org/CVERecord?id=CVE-2025-39981) | 🆕 New |
-| Jul 31 | [CVE-2025-39982](https://www.cve.org/CVERecord?id=CVE-2025-39982) | 🆕 New |
-| Jul 31 | [CVE-2025-39983](https://www.cve.org/CVERecord?id=CVE-2025-39983) | 🆕 New |
-| Jul 31 | [CVE-2025-39985](https://www.cve.org/CVERecord?id=CVE-2025-39985) | 🆕 New |
-| Jul 31 | [CVE-2025-39986](https://www.cve.org/CVERecord?id=CVE-2025-39986) | 🆕 New |
-| Jul 31 | [CVE-2025-39987](https://www.cve.org/CVERecord?id=CVE-2025-39987) | 🆕 New |
-| Jul 31 | [CVE-2025-39988](https://www.cve.org/CVERecord?id=CVE-2025-39988) | 🆕 New |
-| Jul 31 | [CVE-2025-39990](https://www.cve.org/CVERecord?id=CVE-2025-39990) | 🆕 New |
-| Jul 31 | [CVE-2025-39993](https://www.cve.org/CVERecord?id=CVE-2025-39993) | 🆕 New |
-| Jul 31 | [CVE-2025-39994](https://www.cve.org/CVERecord?id=CVE-2025-39994) | 🆕 New |
-| Jul 31 | [CVE-2025-39998](https://www.cve.org/CVERecord?id=CVE-2025-39998) | 🆕 New |
-| Jul 31 | [CVE-2025-40000](https://www.cve.org/CVERecord?id=CVE-2025-40000) | 🆕 New |
-| Jul 31 | [CVE-2025-40006](https://www.cve.org/CVERecord?id=CVE-2025-40006) | 🆕 New |
-| Jul 31 | [CVE-2025-40012](https://www.cve.org/CVERecord?id=CVE-2025-40012) | 🆕 New |
-| Jul 31 | [CVE-2025-40018](https://www.cve.org/CVERecord?id=CVE-2025-40018) | 🆕 New |
-| Jul 31 | [CVE-2025-40024](https://www.cve.org/CVERecord?id=CVE-2025-40024) | 🆕 New |
-| Jul 31 | [CVE-2025-40025](https://www.cve.org/CVERecord?id=CVE-2025-40025) | 🆕 New |
-| Jul 31 | [CVE-2025-40026](https://www.cve.org/CVERecord?id=CVE-2025-40026) | 🆕 New |
-| Jul 31 | [CVE-2025-40027](https://www.cve.org/CVERecord?id=CVE-2025-40027) | 🆕 New |
-| Jul 31 | [CVE-2025-40028](https://www.cve.org/CVERecord?id=CVE-2025-40028) | 🆕 New |
-| Jul 31 | [CVE-2025-40038](https://www.cve.org/CVERecord?id=CVE-2025-40038) | 🆕 New |
-| Jul 31 | [CVE-2025-40041](https://www.cve.org/CVERecord?id=CVE-2025-40041) | 🆕 New |
-| Jul 31 | [CVE-2025-40043](https://www.cve.org/CVERecord?id=CVE-2025-40043) | 🆕 New |
-| Jul 31 | [CVE-2025-40044](https://www.cve.org/CVERecord?id=CVE-2025-40044) | 🆕 New |
-| Jul 31 | [CVE-2025-40045](https://www.cve.org/CVERecord?id=CVE-2025-40045) | 🆕 New |
-| Jul 31 | [CVE-2025-40046](https://www.cve.org/CVERecord?id=CVE-2025-40046) | 🆕 New |
-| Jul 31 | [CVE-2025-40047](https://www.cve.org/CVERecord?id=CVE-2025-40047) | 🆕 New |
-| Jul 31 | [CVE-2025-40048](https://www.cve.org/CVERecord?id=CVE-2025-40048) | 🆕 New |
-| Jul 31 | [CVE-2025-40051](https://www.cve.org/CVERecord?id=CVE-2025-40051) | 🆕 New |
-| Jul 31 | [CVE-2025-40053](https://www.cve.org/CVERecord?id=CVE-2025-40053) | 🆕 New |
-| Jul 31 | [CVE-2025-40054](https://www.cve.org/CVERecord?id=CVE-2025-40054) | 🆕 New |
-| Jul 31 | [CVE-2025-40058](https://www.cve.org/CVERecord?id=CVE-2025-40058) | 🆕 New |
-| Jul 31 | [CVE-2025-40061](https://www.cve.org/CVERecord?id=CVE-2025-40061) | 🆕 New |
-| Jul 31 | [CVE-2025-40063](https://www.cve.org/CVERecord?id=CVE-2025-40063) | 🆕 New |
-| Jul 31 | [CVE-2025-40064](https://www.cve.org/CVERecord?id=CVE-2025-40064) | 🆕 New |
-| Jul 31 | [CVE-2025-40067](https://www.cve.org/CVERecord?id=CVE-2025-40067) | 🆕 New |
-| ... | | _and 2066 more_ |
+| Jul 31 | [CVE-2025-21629](https://www.cve.org/CVERecord?id=CVE-2025-21629) | 🆕 New |
+| Jul 31 | [CVE-2025-21637](https://www.cve.org/CVERecord?id=CVE-2025-21637) | 🆕 New |
+| Jul 31 | [CVE-2025-21638](https://www.cve.org/CVERecord?id=CVE-2025-21638) | 🆕 New |
+| Jul 31 | [CVE-2025-21640](https://www.cve.org/CVERecord?id=CVE-2025-21640) | 🆕 New |
+| Jul 31 | [CVE-2025-21646](https://www.cve.org/CVERecord?id=CVE-2025-21646) | 🆕 New |
+| Jul 31 | [CVE-2025-21655](https://www.cve.org/CVERecord?id=CVE-2025-21655) | 🆕 New |
+| Jul 31 | [CVE-2025-21659](https://www.cve.org/CVERecord?id=CVE-2025-21659) | 🆕 New |
+| Jul 31 | [CVE-2025-21661](https://www.cve.org/CVERecord?id=CVE-2025-21661) | 🆕 New |
+| Jul 31 | [CVE-2025-21663](https://www.cve.org/CVERecord?id=CVE-2025-21663) | 🆕 New |
+| Jul 31 | [CVE-2025-21664](https://www.cve.org/CVERecord?id=CVE-2025-21664) | 🆕 New |
+| Jul 31 | [CVE-2025-21669](https://www.cve.org/CVERecord?id=CVE-2025-21669) | 🆕 New |
+| Jul 31 | [CVE-2025-21673](https://www.cve.org/CVERecord?id=CVE-2025-21673) | 🆕 New |
+| Jul 31 | [CVE-2025-21676](https://www.cve.org/CVERecord?id=CVE-2025-21676) | 🆕 New |
+| Jul 31 | [CVE-2025-21677](https://www.cve.org/CVERecord?id=CVE-2025-21677) | 🆕 New |
+| Jul 31 | [CVE-2025-21678](https://www.cve.org/CVERecord?id=CVE-2025-21678) | 🆕 New |
+| Jul 31 | [CVE-2025-21682](https://www.cve.org/CVERecord?id=CVE-2025-21682) | 🆕 New |
+| Jul 31 | [CVE-2025-21697](https://www.cve.org/CVERecord?id=CVE-2025-21697) | 🆕 New |
+| Jul 31 | [CVE-2025-21699](https://www.cve.org/CVERecord?id=CVE-2025-21699) | 🆕 New |
+| Jul 31 | [CVE-2025-21701](https://www.cve.org/CVERecord?id=CVE-2025-21701) | 🆕 New |
+| Jul 31 | [CVE-2025-21707](https://www.cve.org/CVERecord?id=CVE-2025-21707) | 🆕 New |
+| Jul 31 | [CVE-2025-21709](https://www.cve.org/CVERecord?id=CVE-2025-21709) | 🆕 New |
+| Jul 31 | [CVE-2025-21710](https://www.cve.org/CVERecord?id=CVE-2025-21710) | 🆕 New |
+| Jul 31 | [CVE-2025-21712](https://www.cve.org/CVERecord?id=CVE-2025-21712) | 🆕 New |
+| Jul 31 | [CVE-2025-21720](https://www.cve.org/CVERecord?id=CVE-2025-21720) | 🆕 New |
+| Jul 31 | [CVE-2025-21725](https://www.cve.org/CVERecord?id=CVE-2025-21725) | 🆕 New |
+| Jul 31 | [CVE-2025-21730](https://www.cve.org/CVERecord?id=CVE-2025-21730) | 🆕 New |
+| Jul 31 | [CVE-2025-21738](https://www.cve.org/CVERecord?id=CVE-2025-21738) | 🆕 New |
+| Jul 31 | [CVE-2025-21748](https://www.cve.org/CVERecord?id=CVE-2025-21748) | 🆕 New |
+| Jul 31 | [CVE-2025-21758](https://www.cve.org/CVERecord?id=CVE-2025-21758) | 🆕 New |
+| Jul 31 | [CVE-2025-21765](https://www.cve.org/CVERecord?id=CVE-2025-21765) | 🆕 New |
+| Jul 31 | [CVE-2025-21766](https://www.cve.org/CVERecord?id=CVE-2025-21766) | 🆕 New |
+| Jul 31 | [CVE-2025-21778](https://www.cve.org/CVERecord?id=CVE-2025-21778) | 🆕 New |
+| Jul 31 | [CVE-2025-21788](https://www.cve.org/CVERecord?id=CVE-2025-21788) | 🆕 New |
+| Jul 31 | [CVE-2025-21792](https://www.cve.org/CVERecord?id=CVE-2025-21792) | 🆕 New |
+| Jul 31 | [CVE-2025-21795](https://www.cve.org/CVERecord?id=CVE-2025-21795) | 🆕 New |
+| Jul 31 | [CVE-2025-21801](https://www.cve.org/CVERecord?id=CVE-2025-21801) | 🆕 New |
+| Jul 31 | [CVE-2025-21804](https://www.cve.org/CVERecord?id=CVE-2025-21804) | 🆕 New |
+| Jul 31 | [CVE-2025-21805](https://www.cve.org/CVERecord?id=CVE-2025-21805) | 🆕 New |
+| Jul 31 | [CVE-2025-21808](https://www.cve.org/CVERecord?id=CVE-2025-21808) | 🆕 New |
+| Jul 31 | [CVE-2025-21809](https://www.cve.org/CVERecord?id=CVE-2025-21809) | 🆕 New |
+| Jul 31 | [CVE-2025-21810](https://www.cve.org/CVERecord?id=CVE-2025-21810) | 🆕 New |
+| Jul 31 | [CVE-2025-21823](https://www.cve.org/CVERecord?id=CVE-2025-21823) | 🆕 New |
+| Jul 31 | [CVE-2025-21825](https://www.cve.org/CVERecord?id=CVE-2025-21825) | 🆕 New |
+| Jul 31 | [CVE-2025-21826](https://www.cve.org/CVERecord?id=CVE-2025-21826) | 🆕 New |
+| Jul 31 | [CVE-2025-21827](https://www.cve.org/CVERecord?id=CVE-2025-21827) | 🆕 New |
+| Jul 31 | [CVE-2025-21828](https://www.cve.org/CVERecord?id=CVE-2025-21828) | 🆕 New |
+| Jul 31 | [CVE-2025-21829](https://www.cve.org/CVERecord?id=CVE-2025-21829) | 🆕 New |
+| Jul 31 | [CVE-2025-21830](https://www.cve.org/CVERecord?id=CVE-2025-21830) | 🆕 New |
+| Jul 31 | [CVE-2025-21832](https://www.cve.org/CVERecord?id=CVE-2025-21832) | 🆕 New |
+| Jul 31 | [CVE-2025-21836](https://www.cve.org/CVERecord?id=CVE-2025-21836) | 🆕 New |
+| ... | | _and 1767 more_ |
