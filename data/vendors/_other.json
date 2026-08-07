@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-07T16:09:03+00:00",
+  "generated_at": "2026-08-07T17:09:40+00:00",
   "vendor": "_other",
-  "count": 770,
+  "count": 771,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -33880,6 +33880,99 @@
         ],
         "cpe_count": 3,
         "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8037",
+      "description": "OS Command Injection Remote Code Execution Vulnerability in API in Progress ADC Products allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "progress software",
+          "product": "loadmaster",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V7.2.60.0",
+              "lessThan": "V7.2.63.2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V7.2.45.12",
+              "lessThan": "V7.2.54.18",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "progress software",
+          "product": "ecs connections manager",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V7.2.60.0",
+              "lessThan": "V7.2.63.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "progress software",
+          "product": "object scale connection manager",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V7.2.60.0",
+              "lessThan": "V7.2.63.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "progress software",
+          "product": "moveit waf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V7.2.60.0",
+              "lessThan": "V7.2.63.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.84793,
+      "kev": {
+        "cveID": "CVE-2026-8037",
+        "vendorProject": "Progress",
+        "product": "LoadMaster",
+        "vulnerabilityName": "Progress LoadMaster Command Injection Vulnerability",
+        "dateAdded": "2026-08-07",
+        "shortDescription": "Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
       }
     },
     {
