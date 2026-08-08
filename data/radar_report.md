@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-08T02:08:52+00:00`
+Generated: `2026-08-08T03:42:04+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,14 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Aug 08 | [CVE-2026-17600](https://www.cve.org/CVERecord?id=CVE-2026-17600) | 🆕 New |
+| Aug 08 | [CVE-2026-20337](https://www.cve.org/CVERecord?id=CVE-2026-20337) | 🆕 New |
+| Aug 08 | [CVE-2026-20338](https://www.cve.org/CVERecord?id=CVE-2026-20338) | 🆕 New |
+| Aug 08 | [CVE-2026-20339](https://www.cve.org/CVERecord?id=CVE-2026-20339) | 🆕 New |
+| Aug 08 | [CVE-2026-20345](https://www.cve.org/CVERecord?id=CVE-2026-20345) | 🆕 New |
+| Aug 08 | [CVE-2026-20346](https://www.cve.org/CVERecord?id=CVE-2026-20346) | 🆕 New |
+| Aug 08 | [CVE-2026-20347](https://www.cve.org/CVERecord?id=CVE-2026-20347) | 🆕 New |
+| Aug 08 | [CVE-2026-20348](https://www.cve.org/CVERecord?id=CVE-2026-20348) | 🆕 New |
 | Aug 07 | [CVE-2026-54876](https://www.cve.org/CVERecord?id=CVE-2026-54876) | 🆕 New |
 | Aug 07 | [CVE-2026-61484](https://www.cve.org/CVERecord?id=CVE-2026-61484) | 🆕 New |
 | Aug 07 | [CVE-2026-61485](https://www.cve.org/CVERecord?id=CVE-2026-61485) | 🆕 New |
@@ -295,12 +303,4 @@ Top critical items:
 | Aug 07 | [CVE-2026-60053](https://www.cve.org/CVERecord?id=CVE-2026-60053) | 🆕 New |
 | Aug 07 | [CVE-2026-61466](https://www.cve.org/CVERecord?id=CVE-2026-61466) | 🆕 New |
 | Aug 07 | [CVE-2026-61483](https://www.cve.org/CVERecord?id=CVE-2026-61483) | 🆕 New |
-| Aug 07 | [CVE-2026-63687](https://www.cve.org/CVERecord?id=CVE-2026-63687) | 🆕 New |
-| Aug 07 | [CVE-2026-64958](https://www.cve.org/CVERecord?id=CVE-2026-64958) | 🆕 New |
-| Aug 07 | [CVE-2026-65432](https://www.cve.org/CVERecord?id=CVE-2026-65432) | 🆕 New |
-| Aug 07 | [CVE-2026-65583](https://www.cve.org/CVERecord?id=CVE-2026-65583) | 🆕 New |
-| Aug 07 | [CVE-2026-66257](https://www.cve.org/CVERecord?id=CVE-2026-66257) | 🆕 New |
-| Aug 07 | [CVE-2026-66273](https://www.cve.org/CVERecord?id=CVE-2026-66273) | 🆕 New |
-| Aug 07 | [CVE-2026-66274](https://www.cve.org/CVERecord?id=CVE-2026-66274) | 🆕 New |
-| Aug 07 | [CVE-2026-66909](https://www.cve.org/CVERecord?id=CVE-2026-66909) | 🆕 New |
-| ... | | _and 1413 more_ |
+| ... | | _and 1303 more_ |
