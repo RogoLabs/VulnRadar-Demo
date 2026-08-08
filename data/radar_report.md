@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-07T23:43:55+00:00`
+Generated: `2026-08-08T02:08:52+00:00`
 
 ## Executive Summary
 
@@ -38,8 +38,8 @@ Top critical items:
 
 ## Summary
 
-- Total items: **16820**
-- Watchlist hits: **16412**
+- Total items: **16828**
+- Watchlist hits: **16420**
 - CISA KEVs: **750**
 - Exploit Intel (PoC): **834**
 - Exploit Intel + Watchlist (CRITICAL): **426**
@@ -211,7 +211,7 @@ Top critical items:
 | [CVE-2024-21351](https://www.cve.org/CVERecord?id=CVE-2024-21351) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-05 | 0.303 | 7.6 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 | [CVE-2022-37969](https://www.cve.org/CVERecord?id=CVE-2022-37969) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-10-05 | 0.283 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
 | [CVE-2023-29360](https://www.cve.org/CVERecord?id=CVE-2023-29360) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-21 | 0.221 | 8.4 | ✅ | Microsoft Streaming Service Elevation of Privilege Vulnerability |
-| [CVE-2024-1086](https://www.cve.org/CVERecord?id=CVE-2024-1086) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-20 | 0.281 | 7.8 | ✅ | A use-after-free vulnerability in the Linux kernel's netfilter: nf_tables component can be exploited to achieve local privilege escalation.  The nft_verdict_in… |
+| [CVE-2024-1086](https://www.cve.org/CVERecord?id=CVE-2024-1086) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-20 | 0.281 | 7.8 | ✅ | A use-after-free vulnerability in the Linux kernel's netfilter: nf_tables component can be exploited to achieve local privilege escalation.    The nft_verdict_… |
 | [CVE-2024-5274](https://www.cve.org/CVERecord?id=CVE-2024-5274) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-18 | 0.100 | 9.6 | ✅ | Type Confusion in V8 in Google Chrome prior to 125.0.6422.112 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
 | [CVE-2022-20700](https://www.cve.org/CVERecord?id=CVE-2022-20700) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.057 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
 | [CVE-2024-38193](https://www.cve.org/CVERecord?id=CVE-2024-38193) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.276 | 7.8 | ✅ | Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability |

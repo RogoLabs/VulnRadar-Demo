@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-07T23:43:52+00:00",
+  "generated_at": "2026-08-08T02:08:50+00:00",
   "vendor": "_other",
-  "count": 771,
+  "count": 772,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -46269,6 +46269,73 @@
         "cpe_count": 102,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-17600",
+      "description": "Sonatype Nexus Repository 3 did not immediately terminate a user's active login session or revoke their cached permissions when that user's account was deleted, deactivated, or had its password changed. A user whose account was already logged in at the time of one of these actions could continue using their existing session to interact with the repository as though the account were still active, until that session independently expired. Depending on the permissions previously held, this could allow continued unauthorized access to read, modify, or delete repository content after access was intended to be revoked.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "sonatype",
+          "product": "nexus repository 3",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.95.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "sonatype",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.1.0",
+              "lessThanOrEqual": "3.3",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "sonatype",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.6.0-01",
+              "lessThanOrEqual": "3.88.0-08",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "sonatype",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.89.0-09",
+              "lessThan": "3.95.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "vendor:sonatype"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-20253",

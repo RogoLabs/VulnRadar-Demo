@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T23:43:52+00:00",
+  "generated_at": "2026-08-08T02:08:50+00:00",
   "vendor": "apache_software_foundation",
   "count": 921,
   "items": [
@@ -37920,7 +37920,7 @@
     },
     {
       "cve_id": "CVE-2026-49875",
-      "description": "Apache CXF's EndpointReferenceUtils and W3CMultiSchemaFactory classes construct a SAXParserFactory without the necessary JAXP hardening configurations, enabling out-of-band (OOB) \nexternal entity resolution.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fix this issue.",
+      "description": "Apache CXF's EndpointReferenceUtils and W3CMultiSchemaFactory classes construct a SAXParserFactory without the necessary JAXP hardening configurations, enabling out-of-band (OOB) \nexternal entity resolution.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue.",
       "cvss_score": 9.8,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -37937,6 +37937,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
@@ -38234,7 +38240,7 @@
     },
     {
       "cve_id": "CVE-2026-50627",
-      "description": "The JwtAccessTokenValidator class in Apache CXF fails to validate the 'aud' (Audience) claims of incoming JWT access tokens. This allows a JWT issued for one Resource Server to be successfully replayed against a completely different Resource Server, leading to Token Confusion/Routing attacks.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "description": "The JwtAccessTokenValidator class in Apache CXF fails to validate the 'aud' (Audience) claims of incoming JWT access tokens. This allows a JWT issued for one Resource Server to be successfully replayed against a completely different Resource Server, leading to Token Confusion/Routing attacks.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
       "cvss_score": 9.1,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
@@ -38251,6 +38257,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
@@ -38284,7 +38296,7 @@
     },
     {
       "cve_id": "CVE-2026-50628",
-      "description": "A logic error in OAuthRequestFilter rejects legitimate requests originating from the bound IP address, while blindly allowing requests from any other IP address. Enabling this\n\nsecurity feature inadvertently creates an inverse security check.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "description": "A logic error in OAuthRequestFilter rejects legitimate requests originating from the bound IP address, while blindly allowing requests from any other IP address. Enabling this\n\nsecurity feature inadvertently creates an inverse security check.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
       "cvss_score": 9.8,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -38301,6 +38313,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
@@ -38334,7 +38352,7 @@
     },
     {
       "cve_id": "CVE-2026-50631",
-      "description": "A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when 'recycleRefreshTokens' is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "description": "A race condition in AbstractOAuthDataProvider allows concurrent requests using the same Refresh Token to bypass single-use semantics and generate multiple valid Access Tokens, when 'recycleRefreshTokens' is set to false. A leaked refresh token can be replayed concurrently by multiple attackers or threads.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
       "cvss_score": 7.4,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
@@ -38351,6 +38369,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
@@ -38383,7 +38407,7 @@
     },
     {
       "cve_id": "CVE-2026-50632",
-      "description": "A further incomplete fix for\u00a0a previous advisory CVE-2026-44417\u00a0(Untrusted JMS configuration can lead to RCE) for Apache CXF has been identified, which can allow code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "description": "A further incomplete fix for\u00a0a previous advisory CVE-2026-44417\u00a0(Untrusted JMS configuration can lead to RCE) for Apache CXF has been identified, which can allow code execution capabilities, if untrusted users are allowed to configure JMS for Apache CXF. Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
       "cvss_score": 8.1,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -38400,6 +38424,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
@@ -38433,7 +38463,7 @@
     },
     {
       "cve_id": "CVE-2026-50633",
-      "description": "A JNDI Injection vulnerability has been discovered in Apache CXF's JCA integration module, which can allow for code execution, if an attacker is able to manipulate the JCA deployment descriptor (ra.xml) or runtime activation parameters.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fixes this issue.",
+      "description": "A JNDI Injection vulnerability has been discovered in Apache CXF's JCA integration module, which can allow for code execution, if an attacker is able to manipulate the JCA deployment descriptor (ra.xml) or runtime activation parameters.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fixes this issue.",
       "cvss_score": 8.1,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -38450,6 +38480,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
@@ -38483,7 +38519,7 @@
     },
     {
       "cve_id": "CVE-2026-50645",
-      "description": "There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7, which fix this issue by imposing a maximum default of 500 attachments per message.",
+      "description": "There is no restriction on the amount of attachment headers that a message can contain when being deserialized by Apache CXF, which can lead to uncontrolled resource consumption or a denial of service attack.\u00a0Users are recommended to upgrade to versions 4.2.2 or 4.1.7 or 3.6.12, which fix this issue by imposing a maximum default of 500 attachments per message.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -38500,6 +38536,12 @@
             },
             {
               "lessThan": "4.1.7",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.12",
               "status": "affected",
               "version": "0",
               "versionType": "semver"
