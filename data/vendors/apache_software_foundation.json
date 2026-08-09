@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-08T23:38:57+00:00",
+  "generated_at": "2026-08-09T02:10:22+00:00",
   "vendor": "apache_software_foundation",
-  "count": 921,
+  "count": 924,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -23848,7 +23848,7 @@
         "cwe_ids": [
           "CWE-208"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -30011,7 +30011,7 @@
         "cwe_ids": [
           "CWE-674"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -30552,7 +30552,7 @@
         "cwe_ids": [
           "CWE-89"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -31010,7 +31010,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -31053,7 +31053,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -42453,7 +42453,7 @@
         "cwe_ids": [
           "CWE-613"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -42539,7 +42539,7 @@
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -43706,7 +43706,7 @@
         "cwe_ids": [
           "CWE-770"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -43749,7 +43749,7 @@
         "cwe_ids": [
           "CWE-789"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -43792,7 +43792,7 @@
         "cwe_ids": [
           "CWE-674"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -43994,7 +43994,7 @@
         "cwe_ids": [
           "CWE-770"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44037,7 +44037,7 @@
         "cwe_ids": [
           "CWE-789"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44080,7 +44080,7 @@
         "cwe_ids": [
           "CWE-674"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44123,7 +44123,7 @@
         "cwe_ids": [
           "CWE-770"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44166,7 +44166,7 @@
         "cwe_ids": [
           "CWE-789"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44209,7 +44209,7 @@
         "cwe_ids": [
           "CWE-674"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44252,7 +44252,7 @@
         "cwe_ids": [
           "CWE-770"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44295,7 +44295,7 @@
         "cwe_ids": [
           "CWE-770"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44381,7 +44381,7 @@
         "cwe_ids": [
           "CWE-770"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44533,6 +44533,137 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-409"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-71558",
+      "description": "Heap type confusion vulnerability in Apache Fory C++ deserialization.\n\nThis issue affects Apache Fory C++ versions from 0.14.0 before 1.5.0. A crafted input payload can bypass type compatibility checks during polymorphic smart-pointer deserialization, causing an object of an incompatible type to be treated as the declared base type. This may result in undefined behavior and potentially lead to denial of service or arbitrary code execution.\n\n\nUsers are recommended to upgrade to Apache Fory 1.5.0, which fixes this issue. Applications not using Apache Fory C++ polymorphic smart-pointer deserialization are not affected.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache fory",
+          "versions": [
+            {
+              "lessThan": "1.5.0",
+              "status": "affected",
+              "version": "0.14.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache fory",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00715,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502",
+          "CWE-843"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-71559",
+      "description": "Deserialization of Untrusted Data vulnerability in the Go implementation of Apache Fory allows an attacker to cause a denial of service by supplying crafted data containing malformed type metadata, which triggers an uncaught panic.\n\nThis issue affects Apache Fory: from 0.16.0 before 1.5.0.\u00a0 Users of other language implementations are not affected.\n\nUsers are recommended to upgrade to version 1.5.0, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache fory",
+          "versions": [
+            {
+              "lessThan": "1.5.0",
+              "status": "affected",
+              "version": "0.16.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache fory",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00593,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-71560",
+      "description": "Out-of-bounds Read vulnerability in Apache Fory C++ deserialization.\n\nThis issue affects Apache Fory C++ versions from 0.14.0 before 1.5.0 when deserializing structs containing tagged integer fields. A crafted input payload may trigger an out-of-bounds heap read in the tagged integer fast-path deserializer, potentially causing information disclosure or denial of service.\n\n\nUsers are recommended to upgrade to Apache Fory 1.5.0, which fixes this issue. Applications that do not use Apache Fory C++ or do not use tagged integer fields are not affected.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache fory",
+          "versions": [
+            {
+              "lessThan": "1.5.0",
+              "status": "affected",
+              "version": "0.14.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache fory",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00554,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502",
+          "CWE-125"
         ],
         "cpe_count": 1,
         "reference_count": 2
