@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-12T23:53:51+00:00",
+  "generated_at": "2026-08-13T02:33:09+00:00",
   "vendor": "fortinet",
-  "count": 231,
+  "count": 234,
   "items": [
     {
       "cve_id": "CVE-2022-22299",
@@ -16124,6 +16124,62 @@
       }
     },
     {
+      "cve_id": "CVE-2026-26035",
+      "description": "An Improper Authentication vulnerability [CWE-287] vulnerability in Fortinet FortiWeb 8.0.0 through 8.0.2, FortiWeb 7.6.0 through 7.6.6, FortiWeb 7.4.0 through 7.4.11, FortiWeb 7.2.0 through 7.2.12, FortiWeb 7.0.0 through 7.0.12 may allow a remote unauthenticated attacker to login into the Fortiweb GUI/CLI with a random username and password",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortiweb",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "8.0.0",
+              "lessThanOrEqual": "8.0.2",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.6.0",
+              "lessThanOrEqual": "7.6.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.11",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.12",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortiweb",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-26083",
       "description": "A missing authorization vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.1, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox Cloud 5.0.2 through 5.0.5, FortiSandbox PaaS 23.4 all versions, FortiSandbox PaaS 23.3 all versions, FortiSandbox PaaS 23.1 all versions, FortiSandbox PaaS 22.2 all versions, FortiSandbox PaaS 22.1 all versions, FortiSandbox PaaS 21.4 all versions, FortiSandbox PaaS 21.3 all versions, FortiSandbox PaaS 5.0.0 through 5.0.1, FortiSandbox PaaS 4.4.5 through 4.4.8 may allow an unauthenticated attacker to execute unauthorized code or commands via HTTP requests.",
       "cvss_score": 9.1,
@@ -16627,6 +16683,109 @@
         "cpe_count": 2,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-70465",
+      "description": "A buffer copy without checking size of input ('classic buffer overflow') vulnerability in Fortinet FortiClientWindows 7.4.0 through 7.4.3, FortiClientWindows 7.2.0 through 7.2.11 may allow an unauthenticated attacker in a position to alter or craft DNS responses to the targeted host to execute arbitrary code via malicious packets.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "forticlientwindows",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "7.4.0",
+              "lessThanOrEqual": "7.4.3",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.0",
+              "lessThanOrEqual": "7.2.11",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:forticlientwindows",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-70468",
+      "description": "A authentication bypass using an alternate path or channel vulnerability in Fortinet FortiManager 7.6.1, FortiManager 7.4.3 through 7.4.5, FortiManager 7.2.5 through 7.2.9, FortiManager Cloud 7.6.1, FortiManager Cloud 7.4.3 through 7.4.5, FortiManager Cloud 7.2.5 through 7.2.9 may allow attacker to improper access control via <insert attack vector here>",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortimanager",
+          "versions": [
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.3",
+              "lessThanOrEqual": "7.4.5",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.5",
+              "lessThanOrEqual": "7.2.9",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortimanager cloud",
+          "versions": [
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.4.3",
+              "lessThanOrEqual": "7.4.5",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "7.2.5",
+              "lessThanOrEqual": "7.2.9",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortimanager",
+        "product:fortimanager cloud",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
