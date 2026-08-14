@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-14T15:05:34+00:00",
+  "generated_at": "2026-08-14T16:06:41+00:00",
   "vendor": "apple",
-  "count": 1132,
+  "count": 1133,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -80855,6 +80855,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-65370",
+      "description": "ServiceTalk HTTP/1.x incorrectly handles malformed Transfer-Encoding which could result in request smuggling attacks. This vulnerability is addressed in servicetalk version 0.42.65.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "servicetalk",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "0.42.65",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:servicetalk",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00207,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-444"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-65400",
       "description": "An authentication issue was addressed with improved state management. This issue is fixed in macOS Sequoia 15.7.9, macOS Sonoma 14.8.9, macOS Tahoe 26.6.1. An attacker on the network may be able to authenticate to Screen Sharing without valid credentials.",
       "cvss_score": 7.1,
@@ -80906,7 +80949,7 @@
           "CWE-287"
         ],
         "cpe_count": 3,
-        "reference_count": 3
+        "reference_count": 5
       }
     }
   ]
