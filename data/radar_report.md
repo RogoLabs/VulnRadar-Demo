@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-14T17:08:13+00:00`
+Generated: `2026-08-14T18:12:17+00:00`
 
 ## Executive Summary
 
@@ -303,4 +303,4 @@ Top critical items:
 | Aug 14 | [CVE-2026-68106](https://www.cve.org/CVERecord?id=CVE-2026-68106) | 🆕 New |
 | Aug 14 | [CVE-2026-68107](https://www.cve.org/CVERecord?id=CVE-2026-68107) | 🆕 New |
 | Aug 14 | [CVE-2026-68108](https://www.cve.org/CVERecord?id=CVE-2026-68108) | 🆕 New |
-| ... | | _and 575 more_ |
+| ... | | _and 574 more_ |
