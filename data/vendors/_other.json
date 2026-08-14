@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-14T06:24:45+00:00",
+  "generated_at": "2026-08-14T10:14:53+00:00",
   "vendor": "_other",
-  "count": 747,
+  "count": 748,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -8484,6 +8484,61 @@
         ],
         "cpe_count": 0,
         "reference_count": 17
+      }
+    },
+    {
+      "cve_id": "CVE-2026-14456",
+      "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.0.2",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.6.4",
+              "status": "affected",
+              "version": "3.6.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.8",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 5
       }
     },
     {
@@ -19855,7 +19910,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 7,
+        "cpe_count": 12,
         "reference_count": 28
       }
     },
@@ -45460,7 +45515,19 @@
         "vendor:tenda"
       ],
       "active_threat": false,
-      "probability_score": null
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.6,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-255",
+          "CWE-259"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
     },
     {
       "cve_id": "CVE-2026-20253",
