@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-16T01:46:11+00:00`
+Generated: `2026-08-16T03:09:54+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,11 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Aug 16 | [CVE-2022-4993](https://www.cve.org/CVERecord?id=CVE-2022-4993) | 🆕 New |
+| Aug 16 | [CVE-2026-13048](https://www.cve.org/CVERecord?id=CVE-2026-13048) | 🆕 New |
+| Aug 16 | [CVE-2026-13051](https://www.cve.org/CVERecord?id=CVE-2026-13051) | 🆕 New |
+| Aug 16 | [CVE-2026-58076](https://www.cve.org/CVERecord?id=CVE-2026-58076) | 🆕 New |
+| Aug 16 | [CVE-2026-73633](https://www.cve.org/CVERecord?id=CVE-2026-73633) | 🆕 New |
 | Aug 15 | [CVE-2026-50523](https://www.cve.org/CVERecord?id=CVE-2026-50523) | 🆕 New |
 | Aug 15 | [CVE-2026-65796](https://www.cve.org/CVERecord?id=CVE-2026-65796) | 🆕 New |
 | Aug 15 | [CVE-2026-69414](https://www.cve.org/CVERecord?id=CVE-2026-69414) | 🆕 New |
@@ -298,9 +303,4 @@ Top critical items:
 | Aug 14 | [CVE-2026-68083](https://www.cve.org/CVERecord?id=CVE-2026-68083) | 🆕 New |
 | Aug 14 | [CVE-2026-68085](https://www.cve.org/CVERecord?id=CVE-2026-68085) | 🆕 New |
 | Aug 14 | [CVE-2026-68091](https://www.cve.org/CVERecord?id=CVE-2026-68091) | 🆕 New |
-| Aug 14 | [CVE-2026-68096](https://www.cve.org/CVERecord?id=CVE-2026-68096) | 🆕 New |
-| Aug 14 | [CVE-2026-68097](https://www.cve.org/CVERecord?id=CVE-2026-68097) | 🆕 New |
-| Aug 14 | [CVE-2026-68098](https://www.cve.org/CVERecord?id=CVE-2026-68098) | 🆕 New |
-| Aug 14 | [CVE-2026-68100](https://www.cve.org/CVERecord?id=CVE-2026-68100) | 🆕 New |
-| Aug 14 | [CVE-2026-68103](https://www.cve.org/CVERecord?id=CVE-2026-68103) | 🆕 New |
-| ... | | _and 570 more_ |
+| ... | | _and 529 more_ |
