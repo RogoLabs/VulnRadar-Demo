@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-15T23:29:41+00:00",
+  "generated_at": "2026-08-16T01:46:09+00:00",
   "vendor": "_other",
-  "count": 748,
+  "count": 751,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -20899,225 +20899,18 @@
       }
     },
     {
-      "cve_id": "CVE-2022-50691",
-      "description": "MiniDVBLinux 5.4 contains a remote command execution vulnerability that allows unauthenticated attackers to execute arbitrary commands as root through the 'command' GET parameter. Attackers can exploit the /tpl/commands.sh endpoint by sending malicious command values to gain root-level system access.",
-      "cvss_score": 9.3,
+      "cve_id": "CVE-2022-4993",
+      "description": "HTML::FormHandler versions through 0.40068 for Perl allow attacker selected method dispatch and resource exhaustion because _apply_actions and add_error use error message text built from request data as a Locale::Maketext bracket notation template.\n\nadd_error hands its first argument to the language handle as the Locale::Maketext message key, and the default handle's lexicon sets `_AUTO`, so a string that is not a lexicon entry is compiled as a bracket notation template instead of being looked up. In a bracket group the first token names a method called on the language handle and the remaining tokens are its arguments.\n\nThree kinds of text the library did not author reach that position. _apply_actions installs a `$SIG{__WARN__}` handler that stores the warning text in `$error_message`, and a captured warning survives a successful action, so a field carrying a numeric transform turns `Argument \"[sprintf,%50000000d,0]\" isn't numeric` into the template; a warning quotes the submitted value verbatim, so the group is well formed and dispatches. `$error_message ||= $tobj->validate($new_value)` takes a type constraint's own failure message, which renders the rejected value through a partial dumper in bracket and comma form (Devel::PartialDump when Moose can load it, Type::Tiny's own dumper always), so a field with `apply => [ Str ]` given a parameter sent more than once, which arrives as an array, gets `Reference [\"a\",\"b\"] did not pass type constraint \"Str\"` as its template, from a request that carries no bracket character of its own. A coercion or transform exception reaches it the same way. Beyond those, a validator whose message contains the field value puts that value in the template directly, and add_error replaces the message list with the contents of an arrayref first argument (`@message = @{$message[0]} if ref $message[0] eq 'ARRAY'`), so a value arriving as an array fills the argument slots from the same request as well.\n\nA malformed group such as `[0]` makes the compile croak, and HTML::FormHandler::I18N::maketext and add_error each re-raise that as a die, so process() throws. A well formed group naming sprintf reaches CORE::sprintf with an attacker chosen field width. Any caller that applies a type constraint or a transform to an untrusted field, or whose validator passes an untrusted field value to add_error, can be made to throw an unhandled exception out of process(), or to allocate an arbitrary amount of memory in one request, and an application whose language handle subclass defines side effecting public methods makes those callable with attacker chosen arguments. The dumped type constraint message is bounded to the exception, because both dumpers quote non-numeric elements so the method slot is never an attacker chosen name. The built-in messages pass fixed templates with the value in an argument slot, where it stays inert, and the built-in field types attach explicit message callbacks, so neither is affected.",
+      "cvss_score": 9.1,
       "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
       "affected": [
         {
-          "vendor": "minidvblinux",
-          "product": "minidvblinux",
+          "vendor": "",
+          "product": "",
           "versions": [
             {
-              "lessThanOrEqual": "5.4",
-              "status": "affected",
-              "version": "Unknown",
-              "versionType": "custom"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:minidvblinux",
-        "vendor:minidvblinux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.01283,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-78"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2023-53770",
-      "description": "MiniDVBLinux 5.4 contains an unauthenticated configuration download vulnerability that allows remote attackers to access sensitive system configuration files through a direct object reference. Attackers can exploit the backup download endpoint by sending a GET request with 'action=getconfig' to retrieve a complete system configuration archive containing sensitive credentials.",
-      "cvss_score": 8.7,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "minidvblinux",
-          "product": "minidvblinux(tm) distribution (mld)",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "<=5.4"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:minidvblinux(tm) distribution (mld)",
-        "vendor:minidvblinux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.0053,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-260"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2023-53771",
-      "description": "MiniDVBLinux 5.4 contains an authentication bypass vulnerability that allows remote attackers to change the root password without authentication. Attackers can send crafted POST requests to the system setup endpoint with modified SYSTEM_PASSWORD parameters to reset root credentials.",
-      "cvss_score": 9.3,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "minidvblinux",
-          "product": "minidvblinux change root password poc",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "<=5.4"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:minidvblinux change root password poc",
-        "vendor:minidvblinux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00985,
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2023-53772",
-      "description": "MiniDVBLinux 5.4 contains an arbitrary file disclosure vulnerability that allows attackers to read sensitive system files through the 'file' GET parameter. Attackers can exploit the about page by supplying file paths to disclose arbitrary file contents on the affected device.",
-      "cvss_score": 8.7,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "minidvblinux",
-          "product": "minidvblinux",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "<=5.4"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:minidvblinux",
-        "vendor:minidvblinux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00938,
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2023-53773",
-      "description": "MiniDVBLinux 5.4 contains an unauthenticated vulnerability in the tv_action.sh script that allows remote attackers to generate live stream snapshots through the Simple VDR Protocol. Attackers can request /tpl/tv_action.sh to create and retrieve a live TV screenshot stored in /var/www/images/tv.jpg without authentication.",
-      "cvss_score": 8.7,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "minidvblinux",
-          "product": "minidvblinux",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "<=5.4"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:minidvblinux",
-        "vendor:minidvblinux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00537,
-      "nvd": {
-        "cvss_v3_score": 5.3,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-306"
-        ],
-        "cpe_count": 1,
-        "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2025-25038",
-      "description": "An OS command injection vulnerability exists in MiniDVBLinux version 5.4 and earlier. The system\u2019s web-based management interface fails to properly sanitize user-supplied input before passing it to operating system commands. A remote unauthenticated attacker can exploit this vulnerability to execute arbitrary commands as the root user, potentially compromising the entire device.\u00a0Exploitation evidence was observed by the Shadowserver Foundation on 2024-04-10 UTC.",
-      "cvss_score": 9.3,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "minidvblinux",
-          "product": "minidvblinux",
-          "versions": [
-            {
-              "lessThanOrEqual": "5.4",
+              "lessThanOrEqual": "0.40068",
               "status": "affected",
               "version": "0",
               "versionType": "custom"
@@ -21130,125 +20923,20 @@
       "in_patchthis": false,
       "is_critical": false,
       "priority_label": "",
-      "matched_terms": [
-        "product:minidvblinux",
-        "vendor:minidvblinux"
-      ],
+      "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.05324,
+      "probability_score": 0.00442,
       "nvd": {
-        "cvss_v3_score": 9.8,
+        "cvss_v3_score": 9.1,
         "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-78"
+          "CWE-470",
+          "CWE-1336"
         ],
-        "cpe_count": 1,
-        "reference_count": 7
-      }
-    },
-    {
-      "cve_id": "CVE-2023-0669",
-      "description": "Fortra (formerly, HelpSystems) GoAnywhere MFT suffers from a pre-authentication command injection vulnerability in the License Response Servlet due to deserializing an arbitrary attacker-controlled object. This issue was patched in version 7.1.2.",
-      "cvss_score": 7.2,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "fortra",
-          "product": "goanywhere mft",
-          "versions": [
-            {
-              "lessThanOrEqual": "7.1.1",
-              "status": "affected",
-              "version": "0",
-              "versionType": "semver"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.99999,
-      "kev": {
-        "cveID": "CVE-2023-0669",
-        "vendorProject": "Fortra",
-        "product": "GoAnywhere MFT",
-        "vulnerabilityName": "Fortra GoAnywhere MFT Remote Code Execution Vulnerability",
-        "dateAdded": "2023-02-10",
-        "shortDescription": "Fortra (formerly, HelpSystems) GoAnywhere MFT contains a pre-authentication remote code execution vulnerability in the License Response Servlet due to deserializing an attacker-controlled object.",
-        "requiredAction": "Apply updates per vendor instructions.",
-        "dueDate": "2023-03-03",
-        "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.2,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-502"
-        ],
-        "cpe_count": 1,
-        "reference_count": 17
-      }
-    },
-    {
-      "cve_id": "CVE-2025-10035",
-      "description": "A deserialization vulnerability in the License Servlet of Fortra's GoAnywhere MFT allows an actor with a validly forged license response signature to deserialize an arbitrary actor-controlled object, possibly leading to command injection.",
-      "cvss_score": 10.0,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "fortra",
-          "product": "goanywhere mft",
-          "versions": [
-            {
-              "lessThanOrEqual": "7.8.3",
-              "status": "affected",
-              "version": "0",
-              "versionType": "semver"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.99614,
-      "kev": {
-        "cveID": "CVE-2025-10035",
-        "vendorProject": "Fortra",
-        "product": "GoAnywhere MFT",
-        "vulnerabilityName": "Fortra GoAnywhere MFT Deserialization of Untrusted Data Vulnerability",
-        "dateAdded": "2025-09-29",
-        "shortDescription": "Fortra GoAnywhere MFT contains a deserialization of untrusted data vulnerability allows an actor with a validly forged license response signature to deserialize an arbitrary actor-controlled object, possibly leading to command injection.",
-        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-        "dueDate": "2025-10-20",
-        "knownRansomwareCampaignUse": "Known"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-77",
-          "CWE-502"
-        ],
-        "cpe_count": 2,
-        "reference_count": 2
+        "cpe_count": 0,
+        "reference_count": 5
       }
     },
     {
@@ -26727,6 +26415,88 @@
       }
     },
     {
+      "cve_id": "CVE-2026-13048",
+      "description": "Data::MuForm::Localizer versions through 0.05 for Perl execute Perl from a message catalog header, reached at an arbitrary path because load_lexicon interpolates the language attribute into the catalog filename.\n\nload_lexicon builds the catalog path by appending `Messages/$lang.po` to the directory holding Localizer.pm, where $lang is the language attribute, with no check that it names a bare locale tag. A value holding `../` segments walks out of the message directory, so any readable path with a `.po` suffix is loaded. While parsing the catalog, extract_header_msgstr takes the `Plural-Forms:` header, prefixes `$` to the bare words nplurals, plural and n, and passes the rest verbatim into a string that is evaluated: the nplurals form evaluates the header expression immediately, and the plural_code form compiles it into a subroutine whose body runs when a plural message is localized. A header of `nplurals=2; plural=(system('...'),0);` therefore runs that command as the catalog loads. The evaluation inherits strict, so an expression that assigns to an undeclared variable fails to compile, while one built from calls alone does not.\n\nAn application that sets the language attribute from request data, an Accept-Language header or a locale parameter, and an attacker who can place a file with a `.po` suffix and chosen contents at a readable path, together give code execution as the application user. The message expansion path is not affected: expand_named substitutes only the placeholder names the caller supplies, and _mangle_value returns the value unchanged.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThanOrEqual": "0.05",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00475,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22",
+          "CWE-95"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-13051",
+      "description": "Form::Processor::Field::HtmlArea versions from 0.06 through 1.162360 for Perl allow attacker selected method dispatch and resource exhaustion via an HTML::Tidy diagnostic that validate passes to add_error as a Locale::Maketext template.\n\nvalidate runs HTML::Tidy over the submitted markup and passes each resulting message to add_error as its first argument, which add_error hands to the language handle as the Locale::Maketext message key. The default handle's lexicon sets `_AUTO`, so a message that is not a lexicon entry is compiled as a bracket notation template instead of being looked up. Tidy diagnostics quote the offending attribute name or value, so a bracket group in the submitted markup reaches the template position, where the first token of the group names a method called on the language handle and the remaining tokens are its arguments. A group such as `[0]` makes the compile croak, and neither the field nor the handle catches it, so the exception leaves validate. `[sprintf,%2000000000d,7]` reaches CORE::sprintf with an attacker chosen field width.\n\nOne submission of crafted markup to an HtmlArea field throws an unhandled exception out of form validation or allocates an arbitrary amount of memory, and an application whose language handle subclass defines side effecting public methods makes those callable with attacker chosen arguments. The other field types pass fixed templates with the submitted value in an argument slot, where it stays inert, and are unaffected.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThanOrEqual": "1.162360",
+              "status": "affected",
+              "version": "0.06",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00451,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470",
+          "CWE-1336"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
       "cve_id": "CVE-2026-15228",
       "description": "Kong Kubernetes Ingress Controller (KIC) allows a user with namespace-scoped Secret creation privileges to cause a cluster-wide ingress configuration denial of service. KIC collects CA-certificate Secrets across all watched namespaces using a label selector alone, without ingress-class or namespace restrictions. The CA-certificate primary key is derived from a user-supplied field in the Secret. Duplicate CA-certificate IDs cause Kong Gateway to reject the entire configuration document and halting all ingress changes cluster-wide.",
       "cvss_score": 7.1,
@@ -27710,6 +27480,359 @@
         ],
         "cpe_count": 0,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2022-50691",
+      "description": "MiniDVBLinux 5.4 contains a remote command execution vulnerability that allows unauthenticated attackers to execute arbitrary commands as root through the 'command' GET parameter. Attackers can exploit the /tpl/commands.sh endpoint by sending malicious command values to gain root-level system access.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "minidvblinux",
+          "product": "minidvblinux",
+          "versions": [
+            {
+              "lessThanOrEqual": "5.4",
+              "status": "affected",
+              "version": "Unknown",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:minidvblinux",
+        "vendor:minidvblinux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01283,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-53770",
+      "description": "MiniDVBLinux 5.4 contains an unauthenticated configuration download vulnerability that allows remote attackers to access sensitive system configuration files through a direct object reference. Attackers can exploit the backup download endpoint by sending a GET request with 'action=getconfig' to retrieve a complete system configuration archive containing sensitive credentials.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "minidvblinux",
+          "product": "minidvblinux(tm) distribution (mld)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<=5.4"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:minidvblinux(tm) distribution (mld)",
+        "vendor:minidvblinux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0053,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-260"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-53771",
+      "description": "MiniDVBLinux 5.4 contains an authentication bypass vulnerability that allows remote attackers to change the root password without authentication. Attackers can send crafted POST requests to the system setup endpoint with modified SYSTEM_PASSWORD parameters to reset root credentials.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "minidvblinux",
+          "product": "minidvblinux change root password poc",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<=5.4"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:minidvblinux change root password poc",
+        "vendor:minidvblinux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00985,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-53772",
+      "description": "MiniDVBLinux 5.4 contains an arbitrary file disclosure vulnerability that allows attackers to read sensitive system files through the 'file' GET parameter. Attackers can exploit the about page by supplying file paths to disclose arbitrary file contents on the affected device.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "minidvblinux",
+          "product": "minidvblinux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<=5.4"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:minidvblinux",
+        "vendor:minidvblinux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00938,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2023-53773",
+      "description": "MiniDVBLinux 5.4 contains an unauthenticated vulnerability in the tv_action.sh script that allows remote attackers to generate live stream snapshots through the Simple VDR Protocol. Attackers can request /tpl/tv_action.sh to create and retrieve a live TV screenshot stored in /var/www/images/tv.jpg without authentication.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "minidvblinux",
+          "product": "minidvblinux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<=5.4"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:minidvblinux",
+        "vendor:minidvblinux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00537,
+      "nvd": {
+        "cvss_v3_score": 5.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2025-25038",
+      "description": "An OS command injection vulnerability exists in MiniDVBLinux version 5.4 and earlier. The system\u2019s web-based management interface fails to properly sanitize user-supplied input before passing it to operating system commands. A remote unauthenticated attacker can exploit this vulnerability to execute arbitrary commands as the root user, potentially compromising the entire device.\u00a0Exploitation evidence was observed by the Shadowserver Foundation on 2024-04-10 UTC.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "minidvblinux",
+          "product": "minidvblinux",
+          "versions": [
+            {
+              "lessThanOrEqual": "5.4",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:minidvblinux",
+        "vendor:minidvblinux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.05324,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2023-0669",
+      "description": "Fortra (formerly, HelpSystems) GoAnywhere MFT suffers from a pre-authentication command injection vulnerability in the License Response Servlet due to deserializing an arbitrary attacker-controlled object. This issue was patched in version 7.1.2.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "fortra",
+          "product": "goanywhere mft",
+          "versions": [
+            {
+              "lessThanOrEqual": "7.1.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.99999,
+      "kev": {
+        "cveID": "CVE-2023-0669",
+        "vendorProject": "Fortra",
+        "product": "GoAnywhere MFT",
+        "vulnerabilityName": "Fortra GoAnywhere MFT Remote Code Execution Vulnerability",
+        "dateAdded": "2023-02-10",
+        "shortDescription": "Fortra (formerly, HelpSystems) GoAnywhere MFT contains a pre-authentication remote code execution vulnerability in the License Response Servlet due to deserializing an attacker-controlled object.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "dueDate": "2023-03-03",
+        "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 17
+      }
+    },
+    {
+      "cve_id": "CVE-2025-10035",
+      "description": "A deserialization vulnerability in the License Servlet of Fortra's GoAnywhere MFT allows an actor with a validly forged license response signature to deserialize an arbitrary actor-controlled object, possibly leading to command injection.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "fortra",
+          "product": "goanywhere mft",
+          "versions": [
+            {
+              "lessThanOrEqual": "7.8.3",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.99614,
+      "kev": {
+        "cveID": "CVE-2025-10035",
+        "vendorProject": "Fortra",
+        "product": "GoAnywhere MFT",
+        "vulnerabilityName": "Fortra GoAnywhere MFT Deserialization of Untrusted Data Vulnerability",
+        "dateAdded": "2025-09-29",
+        "shortDescription": "Fortra GoAnywhere MFT contains a deserialization of untrusted data vulnerability allows an actor with a validly forged license response signature to deserialize an arbitrary actor-controlled object, possibly leading to command injection.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2025-10-20",
+        "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77",
+          "CWE-502"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
       }
     },
     {
