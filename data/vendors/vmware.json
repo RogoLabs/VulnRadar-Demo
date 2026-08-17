@@ -1,8 +1,88 @@
 {
-  "generated_at": "2026-08-17T08:28:45+00:00",
+  "generated_at": "2026-08-17T09:28:27+00:00",
   "vendor": "vmware",
-  "count": 66,
+  "count": 68,
   "items": [
+    {
+      "cve_id": "CVE-2022-22962",
+      "description": "VMware Horizon Agent for Linux (prior to 22.x) contains a local privilege escalation as a user is able to change the default shared folder location due to a vulnerable symbolic link. Successful exploitation can result in linking to a root owned file.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware horizon agent for linux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware Horizon Agent for Linux prior to 22.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware horizon agent for linux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00295,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2022-22964",
+      "description": "VMware Horizon Agent for Linux (prior to 22.x) contains a local privilege escalation that allows a user to escalate to root due to a vulnerable configuration file.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware horizon agent for linux",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "VMware Horizon Agent for Linux prior to 22.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vmware horizon agent for linux",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00236,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
     {
       "cve_id": "CVE-2023-20867",
       "description": "A fully compromised ESXi host can force VMware Tools to fail to authenticate host-to-guest operations, impacting the confidentiality and integrity of the guest virtual machine.",
