@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-18T17:38:37+00:00`
+Generated: `2026-08-18T18:51:34+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **17992**
 - Watchlist hits: **17582**
 - CISA KEVs: **758**
-- Exploit Intel (PoC): **838**
-- Exploit Intel + Watchlist (CRITICAL): **428**
+- Exploit Intel (PoC): **842**
+- Exploit Intel + Watchlist (CRITICAL): **432**
 
 ## Top Findings (max 200)
 
@@ -137,7 +137,7 @@ Top critical items:
 | [CVE-2023-24955](https://www.cve.org/CVERecord?id=CVE-2023-24955) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-04-16 | 0.854 | 7.2 | ✅ | Microsoft SharePoint Server Remote Code Execution Vulnerability |
 | [CVE-2024-20353](https://www.cve.org/CVERecord?id=CVE-2024-20353) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-01 | 0.707 | 8.6 | ✅ | A vulnerability in the management and VPN web servers for Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software co… |
 | [CVE-2025-59718](https://www.cve.org/CVERecord?id=CVE-2025-59718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-23 | 0.634 | 9.1 | ✅ | A improper verification of cryptographic signature vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS 7.2.0 through 7.… |
-| [CVE-2026-33824](https://www.cve.org/CVERecord?id=CVE-2026-33824) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-08-21 | 0.558 | 9.8 | ✅ | Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network. |
+| [CVE-2026-33824](https://www.cve.org/CVERecord?id=CVE-2026-33824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.558 | 9.8 | ✅ | Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network. |
 | [CVE-2025-4427](https://www.cve.org/CVERecord?id=CVE-2025-4427) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.999 | 5.3 | ✅ | An authentication bypass in the API component of Ivanti Endpoint Manager Mobile 12.5.0.0 and prior allows attackers to access protected resources without prope… |
 | [CVE-2025-20362](https://www.cve.org/CVERecord?id=CVE-2025-20362) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-26 | 0.869 | 6.5 | ✅ | Update: On November 5, 2025, Cisco became aware of a new attack variant against devices running Cisco Secure ASA Software or Cisco Secure FTD Software releases… |
 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-29 | 0.703 | 8.1 | ✅ | Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform sp… |
@@ -237,10 +237,10 @@ Top critical items:
 | [CVE-2022-3075](https://www.cve.org/CVERecord?id=CVE-2022-3075) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-29 | 0.057 | 9.6 | ✅ | Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially… |
 | [CVE-2025-26633](https://www.cve.org/CVERecord?id=CVE-2025-26633) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-01 | 0.304 | 7.0 | ✅ | Improper neutralization in Microsoft Management Console allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-32373](https://www.cve.org/CVERecord?id=CVE-2023-32373) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.122 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.6 and iPadOS … |
-| [CVE-2026-59310](https://www.cve.org/CVERecord?id=CVE-2026-59310) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-08-21 | 0.011 | 9.8 | ✅ | VMware vCenter contains a directory traversal vulnerability in the Syslog server. A malicious actor with network access to vCenter may exploit this issue to ex… |
+| [CVE-2026-59310](https://www.cve.org/CVERecord?id=CVE-2026-59310) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.011 | 9.8 | ✅ | VMware vCenter contains a directory traversal vulnerability in the Syslog server. A malicious actor with network access to vCenter may exploit this issue to ex… |
 | [CVE-2024-4761](https://www.cve.org/CVERecord?id=CVE-2024-4761) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-06 | 0.110 | 8.8 | ✅ | Out of bounds write in V8 in Google Chrome prior to 124.0.6367.207 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. … |
 | [CVE-2024-23222](https://www.cve.org/CVERecord?id=CVE-2024-23222) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-13 | 0.106 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in Safari 17.3, iOS 15.8.7 and iPadOS 15.8.7, iOS 16.7.5 and iPadOS 16.7.5, iOS … |
-| [CVE-2026-65400](https://www.cve.org/CVERecord?id=CVE-2026-65400) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-08-21 | 0.005 | 9.8 | ✅ | An authentication issue was addressed with improved state management. This issue is fixed in macOS Sequoia 15.7.9, macOS Sonoma 14.8.9, macOS Tahoe 26.6.1. An … |
+| [CVE-2026-65400](https://www.cve.org/CVERecord?id=CVE-2026-65400) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.005 | 9.8 | ✅ | An authentication issue was addressed with improved state management. This issue is fixed in macOS Sequoia 15.7.9, macOS Sonoma 14.8.9, macOS Tahoe 26.6.1. An … |
 | [CVE-2026-22719](https://www.cve.org/CVERecord?id=CVE-2026-22719) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-24 | 0.174 | 8.1 | ✅ | VMware Aria Operations contains a command injection vulnerability. A malicious unauthenticated actor may exploit this issue to execute arbitrary commands which… |
 | [CVE-2022-32893](https://www.cve.org/CVERecord?id=CVE-2022-32893) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-08 | 0.099 | 8.8 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.6.1 and iPadOS 15.6.1, macOS Monterey 12.5.1, Safari 15… |
 | [CVE-2026-45659](https://www.cve.org/CVERecord?id=CVE-2026-45659) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-07-04 | 0.099 | 8.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network. |
