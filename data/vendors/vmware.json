@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T16:44:39+00:00",
+  "generated_at": "2026-08-18T17:38:34+00:00",
   "vendor": "vmware",
   "count": 68,
   "items": [
@@ -4559,8 +4559,8 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:cloud foundation",
         "product:telco cloud infrastructure",
@@ -4569,8 +4569,19 @@
         "product:vsphere foundation",
         "vendor:vmware"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.0114,
+      "kev": {
+        "cveID": "CVE-2026-59310",
+        "vendorProject": "Broadcom",
+        "product": "VMware vCenter",
+        "vulnerabilityName": "Broadcom VMware vCenter Path Traversal Vulnerability",
+        "dateAdded": "2026-08-18",
+        "shortDescription": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-21",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 9.8,
         "cvss_v3_severity": "CRITICAL",
