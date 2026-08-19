@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-18T23:32:30+00:00",
+  "generated_at": "2026-08-19T01:42:09+00:00",
   "vendor": "_other",
-  "count": 782,
+  "count": 784,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -49575,6 +49575,120 @@
       }
     },
     {
+      "cve_id": "CVE-2026-52817",
+      "description": "Linuxfabrik Monitoring Plugins provides monitoring plugins for Icinga, Nagios, and related systems. Prior to version 5.1.0, the shipped assets/sudoers/Debian.sudoers policy allowed the nagios or icinga account to execute /usr/bin/apt-get as root without restricting its arguments. An attacker who already controls that monitoring account can supply the APT::Update::Pre-Invoke option to execute an arbitrary command while apt-get runs with root privileges, resulting in a root shell and complete compromise of the host. The vulnerable rule supports the check-plugins/deb-updates/deb-updates plugin, but it authorized arbitrary apt-get argument sequences rather than only the required apt-get update --quiet 2 command. This issue is fixed in version 5.1.0.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:P",
+      "affected": [
+        {
+          "vendor": "linuxfabrik",
+          "product": "monitoring-plugins",
+          "versions": [
+            {
+              "version": "< 5.1.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:monitoring-plugins",
+        "vendor:linuxfabrik"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-55426",
+      "description": "linuxfabrik-lib provides Python modules for database access, caching, shell execution, and API integrations, and Linuxfabrik Monitoring Plugins uses those modules to run external monitoring commands. From the earliest affected releases until linuxfabrik-lib 5.0.0 and Linuxfabrik Monitoring Plugins 6.0.0, check plugins embedded user-controlled values in command strings passed to lib.shell.shell_exec(), which split strings at pipe characters and executed the resulting commands. In check-plugins/restic-check/restic-check, the --repo parameter could inject a pipe-delimited command into a constructed restic invocation, and sudo-authorized execution allowed a compromised nagios or icinga account to run that command as root. The shared library also accepted command strings and a shell parameter, while numerous plugins constructed external commands from attacker-influenced arguments. The fixes require argv lists, always use shell=False, remove pipe splitting, and reject option-like positional values through lib.shell.safe_cli_value(). These issues are fixed in linuxfabrik-lib 5.0.0 and Linuxfabrik Monitoring Plugins 6.0.0.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linuxfabrik",
+          "product": "monitoring-plugins",
+          "versions": [
+            {
+              "version": "< 6.0.0",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "linuxfabrik",
+          "product": "lib",
+          "versions": [
+            {
+              "version": "< 5.0.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:lib",
+        "product:monitoring-plugins",
+        "vendor:linuxfabrik"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-67436",
+      "description": "Linuxfabrik monitoring-plugins provides Python monitoring plugins for Icinga, Nagios, and related monitoring systems. In 6.0.0 and earlier, the redfish-* plugins built request URLs by concatenating an operator-supplied base URL with response-supplied @odata.id links, allowing a malicious or compromised BMC to redirect authenticated Redfish requests and disclose X-Auth-Token or HTTP Basic credentials.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "linuxfabrik",
+          "product": "monitoring-plugins",
+          "versions": [
+            {
+              "version": "<= 6.0.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:monitoring-plugins",
+        "vendor:linuxfabrik"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00249,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-200",
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-56290",
       "description": "Joomla Extension - joomlack.fr - Unauthenticated file upload in Page Builder CK extension < 3.6.0 - The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
       "cvss_score": 10.0,
@@ -49918,49 +50032,6 @@
         ],
         "cpe_count": 2,
         "reference_count": 3
-      }
-    },
-    {
-      "cve_id": "CVE-2026-67436",
-      "description": "Linuxfabrik monitoring-plugins provides Python monitoring plugins for Icinga, Nagios, and related monitoring systems. In 6.0.0 and earlier, the redfish-* plugins built request URLs by concatenating an operator-supplied base URL with response-supplied @odata.id links, allowing a malicious or compromised BMC to redirect authenticated Redfish requests and disclose X-Auth-Token or HTTP Basic credentials.",
-      "cvss_score": 8.3,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "linuxfabrik",
-          "product": "monitoring-plugins",
-          "versions": [
-            {
-              "version": "<= 6.0.0",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:monitoring-plugins",
-        "vendor:linuxfabrik"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00249,
-      "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-20",
-          "CWE-200",
-          "CWE-918"
-        ],
-        "cpe_count": 0,
-        "reference_count": 2
       }
     },
     {
