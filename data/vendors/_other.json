@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-19T16:50:54+00:00",
+  "generated_at": "2026-08-19T17:47:16+00:00",
   "vendor": "_other",
-  "count": 788,
+  "count": 789,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -50240,6 +50240,55 @@
         ],
         "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-64849",
+      "description": "MLflow is an open source AI engineering platform for agents, large language models, and machine learning models. Prior to 3.15.0, the unauthenticated POST /api/2.0/mlflow/webhooks/{id}/test endpoint calls _validate_webhook_url() in mlflow/utils/validation.py only for the original URL while mlflow/webhooks/delivery.py follows redirects and re-resolves the hostname without pinning the validated address, allowing attackers to reach internal or cloud metadata services and receive response_status and response_body. This issue is fixed in version 3.15.0.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "mlflow",
+          "product": "mlflow",
+          "versions": [
+            {
+              "version": "< 3.15.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01109,
+      "kev": {
+        "cveID": "CVE-2026-64849",
+        "vendorProject": "MLflow",
+        "product": "MLflow",
+        "vulnerabilityName": "MLflow Server-Side Request Forgery Vulnerability",
+        "dateAdded": "2026-08-19",
+        "shortDescription": "MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-02",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.3,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 5
       }
     },
     {
