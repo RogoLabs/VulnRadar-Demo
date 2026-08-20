@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-20T17:39:35+00:00",
+  "generated_at": "2026-08-20T18:54:31+00:00",
   "vendor": "_other",
-  "count": 789,
+  "count": 791,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -47963,6 +47963,122 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-72529",
+      "description": "A remote unauthorized attacker with network access via port 4307/TCP to the TrueConf server versions 5.3.X to 5.3.9, 5.4.X to 5.4.9, 5.5.X to 5.5.5, and earlier could execute an arbitrary script by calling an undocumented function.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "trueconf",
+          "product": "trueconf server",
+          "versions": [
+            {
+              "version": "*",
+              "status": "affected",
+              "lessThan": "5.3",
+              "versionType": "custom"
+            },
+            {
+              "version": "5.3",
+              "status": "affected",
+              "lessThan": "5.3.9",
+              "versionType": "custom"
+            },
+            {
+              "version": "5.4",
+              "status": "affected",
+              "lessThan": "5.4.9",
+              "versionType": "custom"
+            },
+            {
+              "version": "5.5",
+              "status": "affected",
+              "lessThan": "5.5.5",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00284,
+      "kev": {
+        "cveID": "CVE-2026-72529",
+        "vendorProject": "TrueConf",
+        "product": "Server",
+        "vulnerabilityName": "TrueConf Server Missing Authentication for Critical Function Vulnerability",
+        "dateAdded": "2026-08-20",
+        "shortDescription": "TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
+      "cve_id": "CVE-2026-72530",
+      "description": "A remote unauthorized attacker with network access via port 4307/TCP to the TrueConf server versions 5.3.X to 5.3.9, 5.4.X to 5.4.9, 5.5.X to 5.5.5, and earlier could use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system.",
+      "cvss_score": 9.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "trueconf",
+          "product": "trueconf server",
+          "versions": [
+            {
+              "version": "*",
+              "status": "affected",
+              "lessThan": "5.3",
+              "versionType": "custom"
+            },
+            {
+              "version": "5.3",
+              "status": "affected",
+              "lessThan": "5.3.9",
+              "versionType": "custom"
+            },
+            {
+              "version": "5.4",
+              "status": "affected",
+              "lessThan": "5.4.9",
+              "versionType": "custom"
+            },
+            {
+              "version": "5.5",
+              "status": "affected",
+              "lessThan": "5.5.5",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.0034,
+      "kev": {
+        "cveID": "CVE-2026-72530",
+        "vendorProject": "TrueConf",
+        "product": "Server",
+        "vulnerabilityName": "TrueConf Server Code Injection Vulnerability",
+        "dateAdded": "2026-08-20",
+        "shortDescription": "TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-03",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
