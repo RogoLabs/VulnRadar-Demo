@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-20T23:36:53+00:00",
+  "generated_at": "2026-08-21T01:58:02+00:00",
   "vendor": "apache_software_foundation",
-  "count": 946,
+  "count": 947,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -31144,6 +31144,48 @@
       }
     },
     {
+      "cve_id": "CVE-2026-34884",
+      "description": "SSRF via set_skywalking_url Tool and GraphQL expression injection vulnerability in Apache SkyWalking MCP.\n\n\n\n\n\nThis issue affects Apache SkyWalking MCP: 0.1.0.\n\nUsers are recommended to upgrade to version 0.2.0, which fixes this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache skywalking mcp",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache skywalking mcp",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00503,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-35152",
       "description": "A SQL Injection vulnerability exists in Apache Fineract's Report Execution API (runreports endpoint) in versions up to and including 1.14.0. Report parameter values are incorporated into the generated SQL query without sufficient validation, allowing an authenticated user with permission to run reports to inject arbitrary SQL via crafted parameter values. This can be leveraged to perform unauthorized access to data beyond what the report was designed to expose. Users are recommended to upgrade to a version containing the fix.",
       "cvss_score": 8.8,
@@ -38332,7 +38374,7 @@
           "CWE-409"
         ],
         "cpe_count": 2,
-        "reference_count": 21
+        "reference_count": 22
       }
     },
     {
