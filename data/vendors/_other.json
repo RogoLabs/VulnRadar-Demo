@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-22T04:14:30+00:00",
+  "generated_at": "2026-08-22T04:56:46+00:00",
   "vendor": "_other",
-  "count": 769,
+  "count": 794,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -256,6 +256,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable. Additionally, management interface for affected devices should not be exposed to untrusted networks, including the internet.",
         "dueDate": "2024-12-09",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 117,
+        "reference_count": 4
       }
     },
     {
@@ -426,6 +437,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-01-20",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-754"
+        ],
+        "cpe_count": 84,
+        "reference_count": 2
       }
     },
     {
@@ -532,6 +554,18 @@
         "requiredAction": "Apply mitigations per vendor instructions as they become available. Otherwise, users with vulnerable versions of affected devices should enable Threat Prevention IDs available from the vendor. See the vendor bulletin for more details and a patch release schedule.",
         "dueDate": "2024-04-19",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-77"
+        ],
+        "cpe_count": 52,
+        "reference_count": 9
       }
     },
     {
@@ -578,6 +612,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-28",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
       }
     },
     {
@@ -624,6 +669,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
@@ -670,6 +726,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -784,6 +851,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable. Additionally, the management interfaces for affected devices should not be exposed to untrusted networks, including the internet.",
         "dueDate": "2024-12-09",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 13,
+        "reference_count": 5
       }
     },
     {
@@ -5006,9 +5084,9 @@
     {
       "cve_id": "CVE-2024-27443",
       "description": "An issue was discovered in Zimbra Collaboration (ZCS) 9.0 and 10.0. A Cross-Site Scripting (XSS) vulnerability exists in the CalendarInvite feature of the Zimbra webmail classic user interface, because of improper input validation in the handling of the calendar header. An attacker can exploit this via an email message containing a crafted calendar header with an embedded XSS payload. When a victim views this message in the Zimbra webmail classic interface, the payload is executed in the context of the victim's session, potentially leading to execution of arbitrary JavaScript code.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 6.1,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
       "affected": [
         {
           "vendor": "n/a",
@@ -5039,6 +5117,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-06-09",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 38,
+        "reference_count": 4
       }
     },
     {
@@ -5105,6 +5194,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-02-13",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 44,
+        "reference_count": 3
       }
     },
     {
@@ -5163,14 +5263,26 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-20",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287",
+          "CWE-305"
+        ],
+        "cpe_count": 13,
+        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2024-37383",
       "description": "Roundcube Webmail before 1.5.7 and 1.6.x before 1.6.7 allows XSS via SVG animate attributes.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 6.1,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
       "affected": [
         {
           "vendor": "n/a",
@@ -5201,6 +5313,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-14",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 3,
+        "reference_count": 9
       }
     },
     {
@@ -5261,6 +5384,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-11",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-122",
+          "CWE-787"
+        ],
+        "cpe_count": 49,
+        "reference_count": 2
       }
     },
     {
@@ -5321,6 +5456,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-11",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-250",
+          "CWE-273"
+        ],
+        "cpe_count": 49,
+        "reference_count": 2
       }
     },
     {
@@ -5359,14 +5506,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-13",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-203"
+        ],
+        "cpe_count": 2,
+        "reference_count": 9
       }
     },
     {
       "cve_id": "CVE-2024-41710",
       "description": "A vulnerability in the Mitel 6800 Series, 6900 Series, and 6900w Series SIP Phones, including the 6970 Conference Unit, through R6.4.0.HF1 (R6.4.0.136) could allow an authenticated attacker with administrative privilege to conduct an argument injection attack, due to insufficient parameter sanitization during the boot process. A successful exploit could allow an attacker to execute arbitrary commands within the context of the system.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "n/a",
@@ -5397,14 +5555,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-88"
+        ],
+        "cpe_count": 30,
+        "reference_count": 4
       }
     },
     {
       "cve_id": "CVE-2024-41713",
       "description": "A vulnerability in the NuPoint Unified Messaging (NPM) component of Mitel MiCollab through 9.8 SP1 FP2 (9.8.1.201) could allow an unauthenticated attacker to conduct a path traversal attack, due to insufficient input validation. A successful exploit could allow unauthorized access, enabling the attacker to view, corrupt, or delete users' data and system configurations.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
       "affected": [
         {
           "vendor": "n/a",
@@ -5435,14 +5604,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-01-28",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
       "cve_id": "CVE-2024-42009",
       "description": "A Cross-Site Scripting vulnerability in Roundcube through 1.5.7 and 1.6.x through 1.6.7 allows a remote attacker to steal and send emails of a victim via a crafted e-mail message that abuses a Desanitization issue in message_body() in program/actions/mail/show.php.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
       "affected": [
         {
           "vendor": "n/a",
@@ -5473,6 +5653,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-06-30",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.3,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 2,
+        "reference_count": 6
       }
     },
     {
@@ -5511,14 +5702,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-10-24",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 92,
+        "reference_count": 8
       }
     },
     {
       "cve_id": "CVE-2024-50623",
       "description": "In Cleo Harmony before 5.8.0.21, VLTrader before 5.8.0.21, and LexiCom before 5.8.0.21, there is an unrestricted file upload and download that could lead to remote code execution.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "n/a",
@@ -5549,6 +5751,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-01-03",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
       }
     },
     {
@@ -5587,6 +5800,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-25",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 8
       }
     },
     {
@@ -5625,14 +5849,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-28",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 1,
+        "reference_count": 8
       }
     },
     {
       "cve_id": "CVE-2024-55550",
       "description": "Mitel MiCollab through 9.8 SP2 could allow an authenticated attacker with administrative privilege to conduct a local file read, due to insufficient input sanitization. A successful exploit could allow the authenticated admin attacker to access resources that are constrained to the admin access level, and the disclosure is limited to non-sensitive system information. This vulnerability does not allow file modification or privilege escalation.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 2.7,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
       "affected": [
         {
           "vendor": "n/a",
@@ -5663,14 +5898,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-01-28",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 2.7,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2024-55956",
       "description": "In Cleo Harmony before 5.8.0.24, VLTrader before 5.8.0.24, and LexiCom before 5.8.0.24, an unauthenticated user can import and execute arbitrary Bash or PowerShell commands on the host system by leveraging the default settings of the Autorun directory.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "n/a",
@@ -5701,14 +5947,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-01-07",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
       }
     },
     {
       "cve_id": "CVE-2024-57726",
       "description": "SimpleHelp remote support software v5.5.7 and before has a vulnerability that allows low-privileges technicians to create API keys with excessive permissions. These API keys can be used to escalate privileges to the server admin role.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "n/a",
@@ -5739,14 +5996,25 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-05-08",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.9,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 1,
+        "reference_count": 5
       }
     },
     {
       "cve_id": "CVE-2024-57727",
       "description": "SimpleHelp remote support software v5.5.7 and before is vulnerable to multiple path traversal vulnerabilities that enable unauthenticated remote attackers to download arbitrary files from the SimpleHelp host via crafted HTTP requests. These files include server configuration files containing various secrets and hashed user passwords.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
       "affected": [
         {
           "vendor": "n/a",
@@ -5777,14 +6045,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-06",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
       "cve_id": "CVE-2024-57728",
       "description": "SimpleHelp remote support software v5.5.7 and before allows admin users to upload arbitrary files anywhere on the file system by uploading a crafted zip file (i.e. zip slip). This can be exploited to execute arbitrary code on the host in the context of the SimpleHelp server user.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "n/a",
@@ -5815,6 +6094,18 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-05-08",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59",
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 5
       }
     },
     {
@@ -7619,6 +7910,207 @@
         ],
         "cpe_count": 13,
         "reference_count": 17
+      }
+    },
+    {
+      "cve_id": "CVE-2024-4741",
+      "description": "Issue summary: Calling the OpenSSL API function SSL_free_buffers may cause\nmemory to be accessed that was previously freed in some situations\n\nImpact summary: A use after free can have a range of potential consequences such\nas the corruption of valid data, crashes or execution of arbitrary code.\nHowever, only applications that directly call the SSL_free_buffers function are\naffected by this issue. Applications that do not call this function are not\nvulnerable. Our investigations indicate that this function is rarely used by\napplications.\n\nThe SSL_free_buffers function is used to free the internal OpenSSL buffer used\nwhen processing an incoming record from the network. The call is only expected\nto succeed if the buffer is not currently in use. However, two scenarios have\nbeen identified where the buffer is freed even when still in use.\n\nThe first scenario occurs where a record header has been received from the\nnetwork and processed by OpenSSL, but the full record body has not yet arrived.\nIn this case calling SSL_free_buffers will succeed even though a record has only\nbeen partially processed and the buffer is still in use.\n\nThe second scenario occurs where a full record containing application data has\nbeen received and processed by OpenSSL but the application has only read part of\nthis data. Again a call to SSL_free_buffers will succeed even though the buffer\nis still in use.\n\nWhile these scenarios could occur accidentally during normal operation a\nmalicious attacker could attempt to engineer a stituation where this occurs.\nWe are not aware of this issue being actively exploited.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "3.3.1",
+              "status": "affected",
+              "version": "3.3.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.2.2",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.1.6",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.14",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1y",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02925,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2024-5535",
+      "description": "Issue summary: Calling the OpenSSL API function SSL_select_next_proto with an\nempty supported client protocols buffer may cause a crash or memory contents to\nbe sent to the peer.\n\nImpact summary: A buffer overread can have a range of potential consequences\nsuch as unexpected application beahviour or a crash. In particular this issue\ncould result in up to 255 bytes of arbitrary private data from memory being sent\nto the peer leading to a loss of confidentiality. However, only applications\nthat directly call the SSL_select_next_proto function with a 0 length list of\nsupported client protocols are affected by this issue. This would normally never\nbe a valid scenario and is typically not under attacker control but may occur by\naccident in the case of a configuration or programming error in the calling\napplication.\n\nThe OpenSSL API function SSL_select_next_proto is typically used by TLS\napplications that support ALPN (Application Layer Protocol Negotiation) or NPN\n(Next Protocol Negotiation). NPN is older, was never standardised and\nis deprecated in favour of ALPN. We believe that ALPN is significantly more\nwidely deployed than NPN. The SSL_select_next_proto function accepts a list of\nprotocols from the server and a list of protocols from the client and returns\nthe first protocol that appears in the server list that also appears in the\nclient list. In the case of no overlap between the two lists it returns the\nfirst item in the client list. In either case it will signal whether an overlap\nbetween the two lists was found. In the case where SSL_select_next_proto is\ncalled with a zero length client list it fails to notice this condition and\nreturns the memory immediately following the client list pointer (and reports\nthat there was no overlap in the lists).\n\nThis function is typically called from a server side application callback for\nALPN or a client side application callback for NPN. In the case of ALPN the list\nof protocols supplied by the client is guaranteed by libssl to never be zero in\nlength. The list of server protocols comes from the application and should never\nnormally be expected to be of zero length. In this case if the\nSSL_select_next_proto function has been called as expected (with the list\nsupplied by the client passed in the client/client_len parameters), then the\napplication will not be vulnerable to this issue. If the application has\naccidentally been configured with a zero length server list, and has\naccidentally passed that zero length server list in the client/client_len\nparameters, and has additionally failed to correctly handle a \"no overlap\"\nresponse (which would normally result in a handshake failure in ALPN) then it\nwill be vulnerable to this problem.\n\nIn the case of NPN, the protocol permits the client to opportunistically select\na protocol when there is no overlap. OpenSSL returns the first client protocol\nin the no overlap case in support of this. The list of client protocols comes\nfrom the application and should never normally be expected to be of zero length.\nHowever if the SSL_select_next_proto function is accidentally called with a\nclient_len of 0 then an invalid memory pointer will be returned instead. If the\napplication uses this output as the opportunistic protocol then the loss of\nconfidentiality will occur.\n\nThis issue has been assessed as Low severity because applications are most\nlikely to be vulnerable if they are using NPN instead of ALPN - but NPN is not\nwidely used. It also requires an application configuration or programming error.\nFinally, this issue would not typically be under attacker control making active\nexploitation unlikely.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.\n\nDue to the low severity of this issue we are not issuing new releases of\nOpenSSL at this time. The fix will be included in the next releases when they\nbecome available.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "3.3.2",
+              "status": "affected",
+              "version": "3.3.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.2.3",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.1.7",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.15",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1za",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "1.0.2zk",
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.05582,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 28
+      }
+    },
+    {
+      "cve_id": "CVE-2024-6119",
+      "description": "Issue summary: Applications performing certificate name checks (e.g., TLS\nclients checking server certificates) may attempt to read an invalid memory\naddress resulting in abnormal termination of the application process.\n\nImpact summary: Abnormal termination of an application can a cause a denial of\nservice.\n\nApplications performing certificate name checks (e.g., TLS clients checking\nserver certificates) may attempt to read an invalid memory address when\ncomparing the expected name with an `otherName` subject alternative name of an\nX.509 certificate. This may result in an exception that terminates the\napplication program.\n\nNote that basic certificate chain validation (signatures, dates, ...) is not\naffected, the denial of service can occur only when the application also\nspecifies an expected DNS name, Email address or IP address.\n\nTLS servers rarely solicit client certificates, and even when they do, they\ngenerally don't perform a name check against a reference identifier (expected\nidentity), but rather extract the presented identity after checking the\ncertificate chain.  So TLS servers are generally not affected and the severity\nof the issue is Moderate.\n\nThe FIPS modules in 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "3.3.2",
+              "status": "affected",
+              "version": "3.3.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.2.3",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.1.7",
+              "status": "affected",
+              "version": "3.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.15",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.66582,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 34,
+        "reference_count": 11
       }
     },
     {
@@ -9836,6 +10328,259 @@
       }
     },
     {
+      "cve_id": "CVE-2024-23180",
+      "description": "Improper input validation vulnerability in a-blog cms Ver.3.1.x series versions prior to Ver.3.1.7, Ver.3.0.x series versions prior to Ver.3.0.29, Ver.2.11.x series versions prior to Ver.2.11.58, Ver.2.10.x series versions prior to Ver.2.10.50, and Ver.2.9.0 and earlier allows a remote authenticated attacker to execute arbitrary code by uploading a specially crafted SVG file.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.3.1.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.3.1.7",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.3.0.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.3.0.29",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.2.11.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.2.11.58",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.2.10.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.2.10.50",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver.2.9.0 and earlier ",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:a-blog cms",
+        "product:a-blog cms ver.2.10.x series",
+        "product:a-blog cms ver.2.11.x series",
+        "product:a-blog cms ver.3.0.x series",
+        "product:a-blog cms ver.3.1.x series",
+        "vendor:appleple inc."
+      ],
+      "active_threat": false,
+      "probability_score": 0.00918,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 5,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23182",
+      "description": "Relative path traversal vulnerability in a-blog cms Ver.3.1.x series versions prior to Ver.3.1.7, Ver.3.0.x series versions prior to Ver.3.0.29, Ver.2.11.x series versions prior to Ver.2.11.58, Ver.2.10.x series versions prior to Ver.2.10.50, and Ver.2.9.0 and earlier allows a remote authenticated attacker to delete arbitrary files on the server.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.3.1.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.3.1.7",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.3.0.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.3.0.29",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.2.11.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.2.11.58",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.2.10.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.2.10.50",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver.2.9.0 and earlier ",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:a-blog cms",
+        "product:a-blog cms ver.2.10.x series",
+        "product:a-blog cms ver.2.11.x series",
+        "product:a-blog cms ver.3.0.x series",
+        "product:a-blog cms ver.3.1.x series",
+        "vendor:appleple inc."
+      ],
+      "active_threat": false,
+      "probability_score": 0.00749,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 5,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23348",
+      "description": "Improper input validation vulnerability in a-blog cms Ver.3.1.x series versions prior to Ver.3.1.7, Ver.3.0.x series versions prior to Ver.3.0.29, Ver.2.11.x series versions prior to Ver.2.11.58, Ver.2.10.x series versions prior to Ver.2.10.50, and Ver.2.9.0 and earlier allows a remote authenticated attacker to execute arbitrary JavaScript code by uploading a specially crafted SVG file.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.3.1.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.3.1.7",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.3.0.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.3.0.29",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.2.11.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.2.11.58",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms ver.2.10.x series",
+          "versions": [
+            {
+              "version": "prior to Ver.2.10.50",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "appleple inc.",
+          "product": "a-blog cms",
+          "versions": [
+            {
+              "version": "Ver.2.9.0 and earlier ",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:a-blog cms",
+        "product:a-blog cms ver.2.10.x series",
+        "product:a-blog cms ver.2.11.x series",
+        "product:a-blog cms ver.3.0.x series",
+        "product:a-blog cms ver.3.1.x series",
+        "vendor:appleple inc."
+      ],
+      "active_threat": false,
+      "probability_score": 0.0069,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 5,
+        "reference_count": 4
+      }
+    },
+    {
       "cve_id": "CVE-2025-31103",
       "description": "Untrusted data deserialization vulnerability exists in a-blog cms. Processing a specially crafted request may store arbitrary files on the server where the product is running. This can be leveraged to execute an arbitrary script on the server.",
       "cvss_score": 7.5,
@@ -10218,6 +10963,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-17",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
       }
     },
     {
@@ -10260,6 +11016,15 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-06-04",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 3
       }
     },
     {
@@ -10298,6 +11063,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-12",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
@@ -13745,6 +14521,17 @@
         "requiredAction": "Apply remediations or mitigations per vendor instructions or discontinue use of the product if remediation or mitigations are unavailable.",
         "dueDate": "2024-10-29",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 128,
+        "reference_count": 2
       }
     },
     {
@@ -16746,6 +17533,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-01-06",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 20,
+        "reference_count": 3
       }
     },
     {
@@ -16786,6 +17584,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-07",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
+        "cpe_count": 59,
+        "reference_count": 5
       }
     },
     {
@@ -18266,9 +19075,9 @@
     {
       "cve_id": "CVE-2024-9680",
       "description": "An attacker was able to achieve code execution in the content process by exploiting a use-after-free in Animation timelines. We have had reports of this vulnerability being exploited in the wild. This vulnerability affects Firefox < 131.0.2, Firefox ESR < 128.3.1, Firefox ESR < 115.16.1, Thunderbird < 131.0.1, Thunderbird < 128.3.1, and Thunderbird < 115.16.0.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "mozilla",
@@ -18361,6 +19170,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-05",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 7,
+        "reference_count": 8
       }
     },
     {
@@ -18821,6 +19641,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-09-15",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 18,
+        "reference_count": 2
       }
     },
     {
@@ -19693,6 +20524,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-24",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 21,
+        "reference_count": 2
       }
     },
     {
@@ -19731,6 +20573,17 @@
         "requiredAction": "The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization if a current mitigation is unavailable.",
         "dueDate": "2025-03-04",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 28,
+        "reference_count": 2
       }
     },
     {
@@ -19769,6 +20622,17 @@
         "requiredAction": "The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization if a current mitigation is unavailable.",
         "dueDate": "2025-03-04",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 28,
+        "reference_count": 2
       }
     },
     {
@@ -21341,6 +22205,47 @@
       }
     },
     {
+      "cve_id": "CVE-2024-0241",
+      "description": "encoded_id-rails versions before 1.0.0.beta2 are affected by an uncontrolled resource consumption vulnerability. A remote and unauthenticated attacker might cause a denial of service condition by sending an HTTP request with an extremely long \"id\" parameter.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.0.0.beta2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.01112,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-770"
+        ],
+        "cpe_count": 3,
+        "reference_count": 8
+      }
+    },
+    {
       "cve_id": "CVE-2024-11858",
       "description": "A flaw was found in Radare2, which contains a command injection vulnerability caused by insufficient input validation when handling Pebble Application files. Maliciously crafted inputs can inject shell commands during command parsing, leading to unintended behavior during file processing\u200b",
       "cvss_score": 8.6,
@@ -21367,7 +22272,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00784
+      "probability_score": 0.00784,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-12905",
@@ -21426,7 +22342,19 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.02205
+      "probability_score": 0.02205,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22",
+          "CWE-59"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-1061",
@@ -21455,7 +22383,489 @@
       "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.11215
+      "probability_score": 0.11215,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-21907",
+      "description": "Newtonsoft.Json before version 13.0.1 is affected by a mishandling of exceptional conditions vulnerability. Crafted data that is passed to the JsonConvert.DeserializeObject method may trigger a StackOverflow exception resulting in denial of service. Depending on the usage of the library, an unauthenticated and remote attacker may be able to cause the denial of service condition.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "13.0.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver 2.0.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.32908,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-755"
+        ],
+        "cpe_count": 1,
+        "reference_count": 16
+      }
+    },
+    {
+      "cve_id": "CVE-2024-21909",
+      "description": "PeterO.Cbor versions 4.0.0 through 4.5.0 are vulnerable to a denial of \nservice vulnerability. An attacker may trigger the denial of service \ncondition by providing crafted data to the DecodeFromBytes or other \ndecoding mechanisms in PeterO.Cbor. Depending on the usage of the \nlibrary, an unauthenticated and remote attacker may be able to cause the\n denial of service condition.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "4.5.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver 2.0.0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.01061,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-407"
+        ],
+        "cpe_count": 1,
+        "reference_count": 10
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22050",
+      "description": "Path traversal in the static file service in Iodine less than 0.7.33 allows an unauthenticated, remote attacker to read files outside the public folder via malicious URLs.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "0.7.33",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00914,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2024-22051",
+      "description": "CommonMarker versions prior to 0.23.4 are at risk of an integer overflow vulnerability. This vulnerability can result in possibly unauthenticated remote attackers to cause heap memory corruption, potentially leading to an information leak or remote code execution, via parsing tables with marker rows that contain more than UINT16_MAX columns.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "0.23.4",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.0145,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 3,
+        "reference_count": 10
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23679",
+      "description": "Enonic XP versions less than 7.7.4 are vulnerable to a session fixation issue. An remote and unauthenticated attacker can use prior sessions due to the lack of invalidating session attributes.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "7.7.4",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00836,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-384"
+        ],
+        "cpe_count": 7,
+        "reference_count": 14
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23681",
+      "description": "Artemis Java Test Sandbox versions before 1.11.2 are vulnerable to a sandbox escape when an attacker loads untrusted libraries using System.load or System.loadLibrary. An attacker can abuse this issue to execute arbitrary Java when a victim executes the supposedly sandboxed code.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.11.2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00344,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23682",
+      "description": "Artemis Java Test Sandbox versions before 1.8.0 are vulnerable to a sandbox escape when an attacker includes class files in a package that Ares trusts. An attacker can abuse this issue to execute arbitrary Java when a victim executes the supposedly sandboxed code.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.8.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.0035,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-501",
+          "CWE-653"
+        ],
+        "cpe_count": 1,
+        "reference_count": 10
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23683",
+      "description": "Artemis Java Test Sandbox versions less than 1.7.6 are vulnerable to a sandbox escape when an attacker crafts a special subclass of InvocationTargetException. An attacker can abuse this issue to execute arbitrary Java when a victim executes the supposedly sandboxed code.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.7.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00355,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-653"
+        ],
+        "cpe_count": 1,
+        "reference_count": 12
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23684",
+      "description": "Inefficient algorithmic complexity in DecodeFromBytes function in com.upokecenter.cbor Java implementation of Concise Binary Object Representation (CBOR) versions 4.0.0 to 4.5.1 allows an attacker to cause a denial of service by passing a maliciously crafted input. Depending on an application's use of this library, this may be a remote attacker.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "4.5.1",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00912,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-407"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23687",
+      "description": "Hard-coded credentials in FOLIO mod-data-export-spring versions before 1.5.4 and from 2.0.0 to 2.0.2 allows unauthenticated users to access critical APIs, modify user data, modify configurations including single-sign-on, and manipulate fees/fines.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.5.4",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            },
+            {
+              "lessThan": "2.0.2",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00646,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 2,
+        "reference_count": 10
+      }
+    },
+    {
+      "cve_id": "CVE-2024-23689",
+      "description": "Exposure of sensitive information in exceptions in ClichHouse's clickhouse-r2dbc, com.clickhouse:clickhouse-jdbc, and com.clickhouse:clickhouse-client versions less than 0.4.6 allows unauthorized users to gain access to client certificate passwords via client exception logs. This occurs when 'sslkey' is specified and an exception, such as a ClickHouseException or SQLException, is thrown during database operations; the certificate password is then included in the logged exception message.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "0.4.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "0.4.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "0.4.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.0067,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-209"
+        ],
+        "cpe_count": 1,
+        "reference_count": 12
+      }
     },
     {
       "cve_id": "CVE-2024-25131",
@@ -21484,7 +22894,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00769
+      "probability_score": 0.00769,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-25133",
@@ -21513,7 +22934,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00492
+      "probability_score": 0.00492,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-25978",
@@ -21554,7 +22986,19 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00944
+      "probability_score": 0.00944,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400",
+          "CWE-770"
+        ],
+        "cpe_count": 4,
+        "reference_count": 8
+      }
     },
     {
       "cve_id": "CVE-2024-27132",
@@ -21583,7 +23027,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00878
+      "probability_score": 0.00878,
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-27133",
@@ -21612,7 +23067,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00656
+      "probability_score": 0.00656,
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-27134",
@@ -21641,7 +23107,19 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00121
+      "probability_score": 0.00121,
+      "nvd": {
+        "cvss_v3_score": 7.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-276",
+          "CWE-367"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-2243",
@@ -21676,7 +23154,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.01053
+      "probability_score": 0.01053,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 1,
+        "reference_count": 7
+      }
     },
     {
       "cve_id": "CVE-2024-32953",
@@ -21713,7 +23202,242 @@
         "product:newsletters"
       ],
       "active_threat": false,
-      "probability_score": 0.0068
+      "probability_score": 0.0068,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-33999",
+      "description": "The referrer URL used by MFA required additional sanitizing, rather than being used directly.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.3",
+              "lessThanOrEqual": "4.3.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00541,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-34001",
+      "description": "Actions in the admin preset tool did not include the necessary token to prevent a CSRF risk.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0",
+              "lessThanOrEqual": "4.3.3",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.2",
+              "lessThanOrEqual": "4.2.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1",
+              "lessThanOrEqual": "4.1.9",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.0036,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-352"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-34007",
+      "description": "The logout option within MFA did not include the necessary token to avoid the risk of users inadvertently being logged out via CSRF.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.3",
+              "lessThanOrEqual": "4.3.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00353,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-352"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-34008",
+      "description": "Actions in the admin management of analytics models did not include the necessary token to prevent a CSRF risk.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0",
+              "lessThanOrEqual": "4.3.3",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.2",
+              "lessThanOrEqual": "4.2.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1",
+              "lessThanOrEqual": "4.1.9",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00358,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-352"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2024-34009",
+      "description": "Insufficient checks whether ReCAPTCHA was enabled made it possible to bypass the checks on the login page. This did not affect other pages where ReCAPTCHA is utilized.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.3",
+              "lessThanOrEqual": "4.3.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00419,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-34391",
@@ -21742,7 +23466,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.01103
+      "probability_score": 0.01103,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-34392",
@@ -21771,7 +23506,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.01136
+      "probability_score": 0.01136,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-34393",
@@ -21800,7 +23546,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00968
+      "probability_score": 0.00968,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-34394",
@@ -21829,7 +23586,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00997
+      "probability_score": 0.00997,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-34416",
@@ -21860,7 +23628,18 @@
         "product:pk favicon manager"
       ],
       "active_threat": false,
-      "probability_score": 0.00822
+      "probability_score": 0.00822,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43425",
@@ -21907,7 +23686,18 @@
       "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.83122
+      "probability_score": 0.83122,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43426",
@@ -21954,7 +23744,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00605
+      "probability_score": 0.00605,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1287"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43428",
@@ -22001,7 +23802,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00159
+      "probability_score": 0.00159,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43431",
@@ -22048,7 +23860,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00469
+      "probability_score": 0.00469,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43434",
@@ -22095,7 +23918,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00631
+      "probability_score": 0.00631,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43436",
@@ -22142,7 +23976,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00664
+      "probability_score": 0.00664,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43438",
@@ -22189,7 +24034,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00526
+      "probability_score": 0.00526,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-639"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-43440",
@@ -22236,7 +24092,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00647
+      "probability_score": 0.00647,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-45187",
@@ -22264,7 +24131,77 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00495
+      "probability_score": 0.00495,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613",
+          "CWE-266"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2024-45690",
+      "description": "A flaw was found in Moodle. Additional checks were required to ensure users can only delete their OAuth2-linked accounts.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.1.13",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.2",
+              "lessThan": "4.2.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.3",
+              "lessThan": "4.3.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.4",
+              "lessThan": "4.4.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00353,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-276"
+        ],
+        "cpe_count": 4,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-47092",
@@ -22293,7 +24230,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00364
+      "probability_score": 0.00364,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-47515",
@@ -22320,7 +24268,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00564
+      "probability_score": 0.00564,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-61"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-47516",
@@ -22347,7 +24306,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00904
+      "probability_score": 0.00904,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-88"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-4340",
@@ -22376,7 +24346,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.03237
+      "probability_score": 0.03237,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-674"
+        ],
+        "cpe_count": 0,
+        "reference_count": 7
+      }
     },
     {
       "cve_id": "CVE-2024-4981",
@@ -22405,7 +24386,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00397
+      "probability_score": 0.00397,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-552"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-4982",
@@ -22434,7 +24426,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00721
+      "probability_score": 0.00721,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-5565",
@@ -22462,7 +24465,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.14956
+      "probability_score": 0.14956,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-6507",
@@ -22491,7 +24505,19 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.01144
+      "probability_score": 0.01144,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78",
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-6960",
@@ -22519,7 +24545,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00682
+      "probability_score": 0.00682,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-7297",
@@ -22548,7 +24585,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.21346
+      "probability_score": 0.21346,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-913"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-7340",
@@ -22577,7 +24625,19 @@
       "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.04974
+      "probability_score": 0.04974,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22",
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-9029",
@@ -22599,7 +24659,18 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00514
+      "probability_score": 0.00514,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-126"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2025-10854",
@@ -26161,6 +28232,60 @@
       }
     },
     {
+      "cve_id": "CVE-2024-24786",
+      "description": "The protojson.Unmarshal function can enter an infinite loop when unmarshaling certain forms of invalid JSON. This condition can occur when unmarshaling into a message which contains a google.protobuf.Any value, or when the UnmarshalOptions.DiscardUnknown option is set.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google.golang.org/protobuf",
+          "product": "google.golang.org/protobuf/encoding/protojson",
+          "versions": [
+            {
+              "version": "0",
+              "lessThan": "1.33.0",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "google.golang.org/protobuf",
+          "product": "google.golang.org/protobuf/internal/encoding/json",
+          "versions": [
+            {
+              "version": "0",
+              "lessThan": "1.33.0",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:google.golang.org/protobuf/encoding/protojson",
+        "product:google.golang.org/protobuf/internal/encoding/json",
+        "vendor:google.golang.org/protobuf"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01262,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 10
+      }
+    },
+    {
       "cve_id": "CVE-2023-27350",
       "description": "This vulnerability allows remote attackers to bypass authentication on affected installations of PaperCut NG 22.0.5 (Build 63914). Authentication is not required to exploit this vulnerability. The specific flaw exists within the SetupCompleted class. The issue results from improper access control. An attacker can leverage this vulnerability to bypass authentication and execute arbitrary code in the context of SYSTEM. Was ZDI-CAN-18987.",
       "cvss_score": 9.8,
@@ -27518,6 +29643,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-19",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1287"
+        ],
+        "cpe_count": 90,
+        "reference_count": 7
       }
     },
     {
@@ -27630,6 +29766,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-19",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-184",
+          "CWE-697"
+        ],
+        "cpe_count": 99,
+        "reference_count": 7
       }
     },
     {
@@ -27727,6 +29875,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-07-04",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-290"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -27767,6 +29926,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-24",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 5
       }
     },
     {
@@ -27807,6 +29977,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-10-07",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -28100,6 +30281,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-03-28",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-288"
+        ],
+        "cpe_count": 1,
+        "reference_count": 5
       }
     },
     {
@@ -28140,6 +30332,18 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-05-04",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-23",
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
       }
     },
     {
@@ -28245,9 +30449,9 @@
     {
       "cve_id": "CVE-2024-40766",
       "description": "An improper access control vulnerability has been identified in the SonicWall SonicOS management access, potentially leading to unauthorized resource access and in specific conditions, causing the firewall to crash. This issue affects SonicWall Firewall Gen 5 and Gen 6 devices, as well as Gen 7 devices running SonicOS 7.0.1-5035 and older versions.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "sonicwall",
@@ -28286,14 +30490,25 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-09-30",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 55,
+        "reference_count": 2
       }
     },
     {
       "cve_id": "CVE-2024-53704",
       "description": "An Improper Authentication vulnerability in the SSLVPN authentication mechanism allows a remote attacker to bypass authentication.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "sonicwall",
@@ -28332,6 +30547,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-11",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 26,
+        "reference_count": 2
       }
     },
     {
@@ -28950,9 +31176,9 @@
     {
       "cve_id": "CVE-2024-4610",
       "description": "Use After Free vulnerability in Arm Ltd Bifrost GPU Kernel Driver, Arm Ltd Valhall GPU Kernel Driver allows a local non-privileged user to make improper GPU memory processing operations to gain access to already freed memory.This issue affects Bifrost GPU Kernel Driver: from r34p0 through r40p0; Valhall GPU Kernel Driver: from r34p0 through r40p0.",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "arm ltd",
@@ -29009,6 +31235,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-07-03",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
       }
     },
     {
@@ -29880,7 +32117,19 @@
         "vendor:apachefriends"
       ],
       "active_threat": false,
-      "probability_score": 0.00465
+      "probability_score": 0.00465,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-119",
+          "CWE-120"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-0769",
@@ -29918,6 +32167,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-07-16",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": 5.0,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 10
       }
     },
     {
@@ -29986,6 +32246,17 @@
         "requiredAction": "This vulnerability affects legacy D-Link products. All associated hardware revisions have reached their end-of-life (EOL) or end-of-service (EOS) life cycle and should be retired and replaced per vendor instructions.",
         "dueDate": "2024-05-02",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": 10.0,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 43,
+        "reference_count": 9
       }
     },
     {
@@ -30054,6 +32325,17 @@
         "requiredAction": "This vulnerability affects legacy D-Link products. All associated hardware revisions have reached their end-of-life (EOL) or end-of-service (EOS) life cycle and should be retired and replaced per vendor instructions.",
         "dueDate": "2024-05-02",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": 7.5,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 43,
+        "reference_count": 12
       }
     },
     {
@@ -30132,6 +32414,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-05-28",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 10,
+        "reference_count": 4
       }
     },
     {
@@ -30360,6 +32653,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-05-28",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 41,
+        "reference_count": 6
       }
     },
     {
@@ -30405,6 +32709,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-06-09",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
       }
     },
     {
@@ -30445,6 +32760,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-24",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
       }
     },
     {
@@ -30497,6 +32823,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-27",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 2,
+        "reference_count": 5
       }
     },
     {
@@ -30537,6 +32874,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-02-03",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
       }
     },
     {
@@ -30642,6 +32990,18 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-06-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": 7.5,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77",
+          "CWE-78"
+        ],
+        "cpe_count": 4,
+        "reference_count": 8
       }
     },
     {
@@ -30694,6 +33054,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-12-09",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 3,
+        "reference_count": 9
       }
     },
     {
@@ -30833,6 +33204,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-05-12",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
       }
     },
     {
@@ -30879,6 +33261,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-02-29",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-288"
+        ],
+        "cpe_count": 1,
+        "reference_count": 21
       }
     },
     {
@@ -31166,7 +33559,18 @@
         "vendor:ivanti"
       ],
       "active_threat": false,
-      "probability_score": 0.94721
+      "probability_score": 0.94721,
+      "nvd": {
+        "cvss_v3_score": 8.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
+        "cpe_count": 8,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-22263",
@@ -31196,7 +33600,18 @@
         "vendor:spring by vmware tanzu"
       ],
       "active_threat": false,
-      "probability_score": 0.17537
+      "probability_score": 0.17537,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-22271",
@@ -31226,7 +33641,18 @@
         "vendor:spring by vmware tanzu"
       ],
       "active_threat": false,
-      "probability_score": 0.0036
+      "probability_score": 0.0036,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-23692",
@@ -31266,6 +33692,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-07-30",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1336",
+          "CWE-94"
+        ],
+        "cpe_count": 1,
+        "reference_count": 10
       }
     },
     {
@@ -31304,6 +33742,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-06-20",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 20,
+        "reference_count": 4
       }
     },
     {
@@ -31490,7 +33939,18 @@
         "vendor:the r project"
       ],
       "active_threat": false,
-      "probability_score": 0.23618
+      "probability_score": 0.23618,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 12
+      }
     },
     {
       "cve_id": "CVE-2024-28986",
@@ -31530,6 +33990,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-09-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
       }
     },
     {
@@ -31568,6 +34039,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
       }
     },
     {
@@ -31606,6 +34088,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-07",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 3,
+        "reference_count": 3
       }
     },
     {
@@ -31852,6 +34345,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-08-05",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-95",
+          "CWE-94"
+        ],
+        "cpe_count": 11,
+        "reference_count": 12
       }
     },
     {
@@ -31969,6 +34474,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-09-13",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 5,
+        "reference_count": 2
       }
     },
     {
@@ -32060,6 +34576,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-07",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -32090,7 +34617,18 @@
         "vendor:apache"
       ],
       "active_threat": false,
-      "probability_score": 0.0108
+      "probability_score": 0.0108,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
     },
     {
       "cve_id": "CVE-2024-42362",
@@ -32120,7 +34658,18 @@
         "vendor:apache"
       ],
       "active_threat": false,
-      "probability_score": 0.0133
+      "probability_score": 0.0133,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
+      }
     },
     {
       "cve_id": "CVE-2024-42420",
@@ -32180,7 +34729,18 @@
         "vendor:sharp corporation"
       ],
       "active_threat": false,
-      "probability_score": 0.00753
+      "probability_score": 0.00753,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 640,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-43424",
@@ -32240,7 +34800,18 @@
         "vendor:sharp corporation"
       ],
       "active_threat": false,
-      "probability_score": 0.00753
+      "probability_score": 0.00753,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 640,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-47005",
@@ -32300,7 +34871,18 @@
         "vendor:sharp corporation"
       ],
       "active_threat": false,
-      "probability_score": 0.0046
+      "probability_score": 0.0046,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-749"
+        ],
+        "cpe_count": 640,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-47406",
@@ -32360,7 +34942,19 @@
         "vendor:sharp corporation"
       ],
       "active_threat": false,
-      "probability_score": 0.00611
+      "probability_score": 0.00611,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-288",
+          "CWE-306"
+        ],
+        "cpe_count": 640,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-47549",
@@ -32420,7 +35014,19 @@
         "vendor:sharp corporation"
       ],
       "active_threat": false,
-      "probability_score": 0.0034
+      "probability_score": 0.0034,
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-644",
+          "CWE-116"
+        ],
+        "cpe_count": 640,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-47801",
@@ -32480,7 +35086,18 @@
         "vendor:sharp corporation"
       ],
       "active_threat": false,
-      "probability_score": 0.0034
+      "probability_score": 0.0034,
+      "nvd": {
+        "cvss_v3_score": 6.1,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 640,
+        "reference_count": 3
+      }
     },
     {
       "cve_id": "CVE-2024-48248",
@@ -32520,6 +35137,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-04-09",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-36"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
       }
     },
     {
@@ -32566,6 +35194,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-05-01",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1336",
+          "CWE-94"
+        ],
+        "cpe_count": 2,
+        "reference_count": 15
       }
     },
     {
@@ -32732,6 +35372,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-07-03",
         "knownRansomwareCampaignUse": "Known"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 6,
+        "reference_count": 42
       }
     },
     {
@@ -32770,6 +35421,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-06-19",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-506"
+        ],
+        "cpe_count": 1,
+        "reference_count": 7
       }
     },
     {
@@ -32816,6 +35478,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-02-06",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 2,
+        "reference_count": 4
       }
     },
     {
@@ -32854,7 +35527,18 @@
         "vendor:rti"
       ],
       "active_threat": false,
-      "probability_score": 0.00397
+      "probability_score": 0.00397,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-52058",
@@ -32892,7 +35576,18 @@
         "vendor:rti"
       ],
       "active_threat": false,
-      "probability_score": 0.00637
+      "probability_score": 0.00637,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-52060",
@@ -32942,7 +35637,18 @@
         "vendor:rti"
       ],
       "active_threat": false,
-      "probability_score": 0.00315
+      "probability_score": 0.00315,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 4,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-52061",
@@ -32998,7 +35704,19 @@
         "vendor:rti"
       ],
       "active_threat": false,
-      "probability_score": 0.00449
+      "probability_score": 0.00449,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120",
+          "CWE-787"
+        ],
+        "cpe_count": 5,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-52063",
@@ -33048,7 +35766,19 @@
         "vendor:rti"
       ],
       "active_threat": false,
-      "probability_score": 0.0033
+      "probability_score": 0.0033,
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120",
+          "CWE-787"
+        ],
+        "cpe_count": 4,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-52066",
@@ -33098,7 +35828,19 @@
         "vendor:rti"
       ],
       "active_threat": false,
-      "probability_score": 0.00289
+      "probability_score": 0.00289,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120",
+          "CWE-787"
+        ],
+        "cpe_count": 4,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2025-10450",
@@ -33810,6 +36552,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-07-16",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-290"
+        ],
+        "cpe_count": 20,
+        "reference_count": 9
       }
     },
     {
@@ -33856,6 +36609,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-06-23",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 3,
+        "reference_count": 4
       }
     },
     {
@@ -34006,6 +36770,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-03-31",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
       }
     },
     {
@@ -34097,6 +36872,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-05-23",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-424"
+        ],
+        "cpe_count": 1,
+        "reference_count": 7
       }
     },
     {
@@ -34127,7 +36913,18 @@
         "vendor:apache friends"
       ],
       "active_threat": false,
-      "probability_score": 0.00443
+      "probability_score": 0.00443,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2024-7262",
@@ -34167,6 +36964,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-09-24",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
       }
     },
     {
@@ -34207,6 +37015,18 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-05-08",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22",
+          "CWE-434"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -34298,6 +37118,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2026-03-10",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-434"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -34356,6 +37187,17 @@
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-09-15",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 17,
+        "reference_count": 2
       }
     },
     {
@@ -34408,6 +37250,18 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-25",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306",
+          "CWE-287"
+        ],
+        "cpe_count": 4,
+        "reference_count": 5
       }
     },
     {
@@ -34460,6 +37314,17 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-25",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 4,
+        "reference_count": 5
       }
     },
     {
@@ -34504,7 +37369,18 @@
         "vendor:linux and microsoft windows"
       ],
       "active_threat": false,
-      "probability_score": 0.00431
+      "probability_score": 0.00431,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 5,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2024-9537",
@@ -34586,6 +37462,15 @@
         "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2024-11-11",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 10
       }
     },
     {
@@ -34616,7 +37501,18 @@
         "vendor:linux workbooth"
       ],
       "active_threat": false,
-      "probability_score": 0.00145
+      "probability_score": 0.00145,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2025-0411",
