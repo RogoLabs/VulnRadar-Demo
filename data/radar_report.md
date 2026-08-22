@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-08-22T01:38:59+00:00`
+Generated: `2026-08-22T03:39:06+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,21 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Aug 22 | [CVE-2026-60074](https://www.cve.org/CVERecord?id=CVE-2026-60074) | 🆕 New |
+| Aug 22 | [CVE-2026-60075](https://www.cve.org/CVERecord?id=CVE-2026-60075) | 🆕 New |
+| Aug 22 | [CVE-2026-62316](https://www.cve.org/CVERecord?id=CVE-2026-62316) | 🆕 New |
+| Aug 22 | [CVE-2026-69502](https://www.cve.org/CVERecord?id=CVE-2026-69502) | 🆕 New |
+| Aug 22 | [CVE-2026-1584](https://www.cve.org/CVERecord?id=CVE-2026-1584) | 🆕 New |
+| Aug 22 | [CVE-2026-42009](https://www.cve.org/CVERecord?id=CVE-2026-42009) | 🆕 New |
+| Aug 22 | [CVE-2026-42010](https://www.cve.org/CVERecord?id=CVE-2026-42010) | 🆕 New |
+| Aug 22 | [CVE-2026-42011](https://www.cve.org/CVERecord?id=CVE-2026-42011) | 🆕 New |
+| Aug 22 | [CVE-2026-42012](https://www.cve.org/CVERecord?id=CVE-2026-42012) | 🆕 New |
+| Aug 22 | [CVE-2026-42013](https://www.cve.org/CVERecord?id=CVE-2026-42013) | 🆕 New |
+| Aug 22 | [CVE-2026-59087](https://www.cve.org/CVERecord?id=CVE-2026-59087) | 🆕 New |
+| Aug 22 | [CVE-2026-59090](https://www.cve.org/CVERecord?id=CVE-2026-59090) | 🆕 New |
+| Aug 22 | [CVE-2026-59091](https://www.cve.org/CVERecord?id=CVE-2026-59091) | 🆕 New |
+| Aug 22 | [CVE-2026-5260](https://www.cve.org/CVERecord?id=CVE-2026-5260) | 🆕 New |
+| Aug 22 | [CVE-2026-9064](https://www.cve.org/CVERecord?id=CVE-2026-9064) | 🆕 New |
 | Aug 21 | [CVE-2026-34884](https://www.cve.org/CVERecord?id=CVE-2026-34884) | 🆕 New |
 | Aug 21 | [CVE-2026-76034](https://www.cve.org/CVERecord?id=CVE-2026-76034) | 🆕 New |
 | Aug 21 | [CVE-2026-76035](https://www.cve.org/CVERecord?id=CVE-2026-76035) | 🆕 New |
@@ -288,19 +303,4 @@ Top critical items:
 | Aug 20 | [CVE-2026-20030](https://www.cve.org/CVERecord?id=CVE-2026-20030) | 🆕 New |
 | Aug 20 | [CVE-2026-20231](https://www.cve.org/CVERecord?id=CVE-2026-20231) | 🆕 New |
 | Aug 20 | [CVE-2026-20315](https://www.cve.org/CVERecord?id=CVE-2026-20315) | 🆕 New |
-| Aug 20 | [CVE-2026-20317](https://www.cve.org/CVERecord?id=CVE-2026-20317) | 🆕 New |
-| Aug 20 | [CVE-2026-20318](https://www.cve.org/CVERecord?id=CVE-2026-20318) | 🆕 New |
-| Aug 20 | [CVE-2026-20319](https://www.cve.org/CVERecord?id=CVE-2026-20319) | 🆕 New |
-| Aug 20 | [CVE-2026-20320](https://www.cve.org/CVERecord?id=CVE-2026-20320) | 🆕 New |
-| Aug 20 | [CVE-2026-20357](https://www.cve.org/CVERecord?id=CVE-2026-20357) | 🆕 New |
-| Aug 20 | [CVE-2026-20358](https://www.cve.org/CVERecord?id=CVE-2026-20358) | 🆕 New |
-| Aug 20 | [CVE-2026-20359](https://www.cve.org/CVERecord?id=CVE-2026-20359) | 🆕 New |
-| Aug 20 | [CVE-2026-62727](https://www.cve.org/CVERecord?id=CVE-2026-62727) | 🆕 New |
-| Aug 20 | [CVE-2026-72529](https://www.cve.org/CVERecord?id=CVE-2026-72529) | 🔴 In CISA KEV |
-| Aug 20 | [CVE-2026-72530](https://www.cve.org/CVERecord?id=CVE-2026-72530) | 🔴 In CISA KEV |
-| Aug 19 | [CVE-2026-52817](https://www.cve.org/CVERecord?id=CVE-2026-52817) | 🆕 New |
-| Aug 19 | [CVE-2026-55426](https://www.cve.org/CVERecord?id=CVE-2026-55426) | 🆕 New |
-| Aug 19 | [CVE-2026-24301](https://www.cve.org/CVERecord?id=CVE-2026-24301) | 🆕 New |
-| Aug 19 | [CVE-2026-19349](https://www.cve.org/CVERecord?id=CVE-2026-19349) | 🆕 New |
-| Aug 19 | [CVE-2026-72887](https://www.cve.org/CVERecord?id=CVE-2026-72887) | 🆕 New |
-| ... | | _and 561 more_ |
+| ... | | _and 572 more_ |
