@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T23:35:51+00:00",
+  "generated_at": "2026-08-22T01:38:56+00:00",
   "vendor": "apple",
   "count": 1136,
   "items": [
@@ -64058,7 +64058,7 @@
     },
     {
       "cve_id": "CVE-2025-46281",
-      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Tahoe 26.2. An app may be able to break out of its sandbox.",
+      "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Sequoia 15.7.4, macOS Sonoma 14.8.4, macOS Tahoe 26.2. An app may be able to break out of its sandbox.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
@@ -64067,6 +64067,18 @@
           "vendor": "apple",
           "product": "macos",
           "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8.4",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.4",
+              "versionType": "custom"
+            },
             {
               "version": "0",
               "status": "affected",
@@ -64364,7 +64376,7 @@
     },
     {
       "cve_id": "CVE-2025-46291",
-      "description": "A logic issue was addressed with improved validation. This issue is fixed in macOS Tahoe 26.2. An app may bypass Gatekeeper checks.",
+      "description": "A logic issue was addressed with improved validation. This issue is fixed in macOS Sequoia 15.7.4, macOS Tahoe 26.2. An app may bypass Gatekeeper checks.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -64373,6 +64385,12 @@
           "vendor": "apple",
           "product": "macos",
           "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.4",
+              "versionType": "custom"
+            },
             {
               "version": "0",
               "status": "affected",
@@ -64840,7 +64858,7 @@
     },
     {
       "cve_id": "CVE-2026-20615",
-      "description": "A path handling issue was addressed with improved validation. This issue is fixed in iOS 26.3 and iPadOS 26.3, macOS Sonoma 14.8.4, macOS Tahoe 26.3, visionOS 26.3. An app may be able to gain root privileges.",
+      "description": "A path handling issue was addressed with improved validation. This issue is fixed in iOS 26.3 and iPadOS 26.3, macOS Sequoia 15.7.4, macOS Sonoma 14.8.4, macOS Tahoe 26.3, visionOS 26.3. An app may be able to gain root privileges.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -64865,6 +64883,12 @@
               "version": "0",
               "status": "affected",
               "lessThan": "14.8.4",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.4",
               "versionType": "custom"
             },
             {
@@ -64990,7 +65014,7 @@
     },
     {
       "cve_id": "CVE-2026-20617",
-      "description": "A race condition was addressed with improved state handling. This issue is fixed in iOS 26.3 and iPadOS 26.3, macOS Sonoma 14.8.4, macOS Tahoe 26.3, tvOS 26.3, visionOS 26.3, watchOS 26.3. An app may be able to gain root privileges.",
+      "description": "A race condition was addressed with improved state handling. This issue is fixed in iOS 26.3 and iPadOS 26.3, macOS Sequoia 15.7.4, macOS Sonoma 14.8.4, macOS Tahoe 26.3, tvOS 26.3, visionOS 26.3, watchOS 26.3. An app may be able to gain root privileges.",
       "cvss_score": 7.0,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -65015,6 +65039,12 @@
               "version": "0",
               "status": "affected",
               "lessThan": "14.8.4",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.4",
               "versionType": "custom"
             },
             {
@@ -65146,7 +65176,7 @@
     },
     {
       "cve_id": "CVE-2026-20622",
-      "description": "A privacy issue was addressed with improved handling of temporary files. This issue is fixed in macOS Sequoia 15.7.4, macOS Tahoe 26.3. An app may be able to capture a user's screen.",
+      "description": "A privacy issue was addressed with improved handling of temporary files. This issue is fixed in macOS Sequoia 15.7.4, macOS Sonoma 14.8.4, macOS Tahoe 26.3. An app may be able to capture a user's screen.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
@@ -65155,6 +65185,12 @@
           "vendor": "apple",
           "product": "macos",
           "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8.4",
+              "versionType": "custom"
+            },
             {
               "version": "0",
               "status": "affected",
@@ -66080,7 +66116,7 @@
     },
     {
       "cve_id": "CVE-2026-20677",
-      "description": "A race condition was addressed with improved handling of symbolic links. This issue is fixed in iOS 18.7.5 and iPadOS 18.7.5, iOS 26.3 and iPadOS 26.3, macOS Sonoma 14.8.4, macOS Tahoe 26.3, visionOS 26.3. A shortcut may be able to bypass sandbox restrictions.",
+      "description": "A race condition was addressed with improved handling of symbolic links. This issue is fixed in iOS 18.7.5 and iPadOS 18.7.5, iOS 26.3 and iPadOS 26.3, macOS Sequoia 15.7.4, macOS Sonoma 14.8.4, macOS Tahoe 26.3, visionOS 26.3. A shortcut may be able to bypass sandbox restrictions.",
       "cvss_score": 9.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
@@ -66111,6 +66147,12 @@
               "version": "0",
               "status": "affected",
               "lessThan": "14.8.4",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.4",
               "versionType": "custom"
             },
             {
@@ -68157,11 +68199,23 @@
     },
     {
       "cve_id": "CVE-2026-28896",
-      "description": "The issue was addressed with improved memory handling. This issue is fixed in macOS Sequoia 15.7.8, macOS Sonoma 14.8.8. An attacker may be able to cause unexpected system termination or read kernel memory.",
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 26.4 and iPadOS 26.4, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.4, tvOS 26.4, visionOS 26.4, watchOS 26.4. An attacker may be able to cause unexpected system termination or read kernel memory.",
       "cvss_score": 7.7,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
       "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
+              "versionType": "custom"
+            }
+          ]
+        },
         {
           "vendor": "apple",
           "product": "macos",
@@ -68177,6 +68231,48 @@
               "status": "affected",
               "lessThan": "15.7.8",
               "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
+              "versionType": "custom"
             }
           ]
         }
@@ -68187,7 +68283,11 @@
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [
+        "product:ios and ipados",
         "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
         "vendor:apple"
       ],
       "active_threat": false,
@@ -69142,7 +69242,7 @@
     },
     {
       "cve_id": "CVE-2026-28926",
-      "description": "A race condition was addressed with improved state handling. This issue is fixed in macOS Sequoia 15.7.8, macOS Sonoma 14.8.8. An app may be able to elevate privileges.",
+      "description": "A race condition was addressed with improved state handling. This issue is fixed in macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.4. An app may be able to elevate privileges.",
       "cvss_score": 7.0,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
@@ -69161,6 +69261,12 @@
               "version": "0",
               "status": "affected",
               "lessThan": "15.7.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.4",
               "versionType": "custom"
             }
           ]
@@ -71837,7 +71943,7 @@
     },
     {
       "cve_id": "CVE-2026-28995",
-      "description": "A logic issue was addressed with improved restrictions. This issue is fixed in iOS 18.7.9 and iPadOS 18.7.9, iOS 26.5 and iPadOS 26.5, macOS Tahoe 26.5, tvOS 26.5, visionOS 26.5, watchOS 26.5. A malicious app may be able to break out of its sandbox.",
+      "description": "A logic issue was addressed with improved restrictions. This issue is fixed in iOS 18.7.9 and iPadOS 18.7.9, iOS 26.5 and iPadOS 26.5, macOS Sequoia 15.7.4, macOS Sonoma 14.8.4, macOS Tahoe 26.5, tvOS 26.5, visionOS 26.5, watchOS 26.5. A malicious app may be able to break out of its sandbox.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
@@ -71864,6 +71970,18 @@
           "vendor": "apple",
           "product": "macos",
           "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8.4",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.4",
+              "versionType": "custom"
+            },
             {
               "version": "0",
               "status": "affected",
