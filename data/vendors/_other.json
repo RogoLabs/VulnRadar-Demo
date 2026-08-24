@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-24T17:43:13+00:00",
+  "generated_at": "2026-08-24T18:57:32+00:00",
   "vendor": "_other",
-  "count": 795,
+  "count": 796,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -11235,6 +11235,66 @@
           "CWE-918"
         ],
         "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-21962",
+      "description": "Vulnerability in the Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in product of Oracle Fusion Middleware (component: Weblogic Server Proxy Plug-in for Apache HTTP Server, Weblogic Server Proxy Plug-in for IIS).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in.  While the vulnerability is in Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in accessible data as well as  unauthorized access to critical data or complete access to all Oracle HTTP Server, Oracle Weblogic Server Proxy Plug-in accessible data. Note: Affected version for Weblogic Server Proxy Plug-in for IIS is 12.2.1.4.0 only. CVSS 3.1 Base Score 10.0 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N).",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "oracle corporation",
+          "product": "oracle http server, oracle weblogic server proxy plug-in",
+          "versions": [
+            {
+              "version": "12.2.1.4.0",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "14.1.1.0.0",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "14.1.2.0.0",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.4323,
+      "kev": {
+        "cveID": "CVE-2026-21962",
+        "vendorProject": "Oracle",
+        "product": "HTTP Server and Oracle Weblogic Server Proxy Plug-in",
+        "vulnerabilityName": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
+        "dateAdded": "2026-08-24",
+        "shortDescription": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in contain an improper access control vulnerability that can result in unauthorized creation, deletion or modification access to critical data as well as unauthorized access to critical data or complete access to all Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in accessible data.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-08-27",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 6,
         "reference_count": 4
       }
     },
