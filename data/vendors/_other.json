@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-26T16:28:12+00:00",
+  "generated_at": "2026-08-26T19:13:43+00:00",
   "vendor": "_other",
-  "count": 796,
+  "count": 798,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -1695,6 +1695,55 @@
         ],
         "cpe_count": 59,
         "reference_count": 21
+      }
+    },
+    {
+      "cve_id": "CVE-2022-0995",
+      "description": "An out-of-bounds (OOB) memory write flaw was found in the Linux kernel\u2019s watch_queue event notification subsystem. This flaw can overwrite parts of the kernel state, potentially allowing a local user to gain privileged access or cause a denial of service on the system.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "n/a",
+          "product": "kernel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "kernel 5.17 rc8"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.06344,
+      "kev": {
+        "cveID": "CVE-2022-0995",
+        "vendorProject": "Linux",
+        "product": "Kernel",
+        "vulnerabilityName": "Linux Kernel Out-of-Bounds Write Vulnerability",
+        "dateAdded": "2026-08-26",
+        "shortDescription": "Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-09",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": 7.2,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 33,
+        "reference_count": 10
       }
     },
     {
@@ -43896,6 +43945,93 @@
         ],
         "cpe_count": 6,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-8452",
+      "description": "Memory overflow vulnerability\u00a0NetScaler ADC and NetScaler Gateway\u00a0leading to unpredictable or erroneous behavior and Denial of Service if the appliance is configured as a\u00a0Gateway (SSL VPN, ICA Proxy, CVPN, RDP Proxy) or AAA virtual server",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:H/SC:L/SI:L/SA:L",
+      "affected": [
+        {
+          "vendor": "netscaler",
+          "product": "adc",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "14.1",
+              "lessThan": "72.61",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "13.1",
+              "lessThan": "63.18",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "14.1 FIPS",
+              "lessThan": "72.61",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "13.1 FIPS and NDcPP",
+              "lessThan": "37.272",
+              "versionType": "patch"
+            }
+          ]
+        },
+        {
+          "vendor": "netscaler",
+          "product": "gateway",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "14.1",
+              "lessThan": "72.61",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "13.1",
+              "lessThan": "63.18",
+              "versionType": "patch"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01041,
+      "kev": {
+        "cveID": "CVE-2026-8452",
+        "vendorProject": "Citrix",
+        "product": "NetScaler ADC and NetScaler Gateway",
+        "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+        "dateAdded": "2026-08-26",
+        "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service. ",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-08-29",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-119"
+        ],
+        "cpe_count": 7,
+        "reference_count": 1
       }
     },
     {
