@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T23:35:03+00:00",
+  "generated_at": "2026-08-26T01:48:51+00:00",
   "vendor": "apple",
   "count": 1136,
   "items": [
@@ -68823,7 +68823,7 @@
     },
     {
       "cve_id": "CVE-2026-28912",
-      "description": "A logic issue was addressed with improved restrictions. This issue is fixed in macOS Sequoia 15.7.8, macOS Tahoe 26.6. A user may be able to elevate privileges.",
+      "description": "A logic issue was addressed with improved restrictions. This issue is fixed in macOS Sequoia 15.7.8, macOS Sonoma 14.8.7, macOS Tahoe 26.6. A user may be able to elevate privileges.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
@@ -68832,6 +68832,12 @@
           "vendor": "apple",
           "product": "macos",
           "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8.7",
+              "versionType": "custom"
+            },
             {
               "version": "0",
               "status": "affected",
@@ -72444,7 +72450,7 @@
     },
     {
       "cve_id": "CVE-2026-39877",
-      "description": "A memory corruption issue was addressed with improved memory handling. This issue is fixed in iOS 18.7.10 and iPadOS 18.7.10, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8. An app may be able to disclose kernel memory.",
+      "description": "A memory corruption issue was addressed with improved memory handling. This issue is fixed in iOS 18.7.10 and iPadOS 18.7.10, iOS 26.5 and iPadOS 26.5, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.5, tvOS 26.5, visionOS 26.5, watchOS 26.5. An app may be able to disclose kernel memory.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
@@ -72457,6 +72463,12 @@
               "version": "0",
               "status": "affected",
               "lessThan": "18.7.10",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.5",
               "versionType": "custom"
             }
           ]
@@ -72476,6 +72488,48 @@
               "status": "affected",
               "lessThan": "15.7.8",
               "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.5",
+              "versionType": "custom"
             }
           ]
         }
@@ -72488,6 +72542,9 @@
       "matched_terms": [
         "product:ios and ipados",
         "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
         "vendor:apple"
       ],
       "active_threat": false,
