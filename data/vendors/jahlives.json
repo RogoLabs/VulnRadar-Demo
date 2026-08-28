@@ -1,0 +1,2983 @@
+{
+  "generated_at": "2026-08-28T17:23:44+00:00",
+  "vendor": "jahlives",
+  "count": 62,
+  "items": [
+    {
+      "cve_id": "CVE-2026-74870",
+      "description": "openssl_encrypt (pip) versions <= 1.4.7 contain an information exposure vulnerability where the 'hsm fido2-test' and 'hsm onlykey-test' diagnostic commands unconditionally print the full derived hardware pepper as hex to stdout/stderr (crypt_cli.py, handle_hsm_command). The printed value can persist in terminal scrollback, session recordings, or CI logs. Impact is limited because the pepper is derived from a random per-invocation test salt and is salt-bound, so the leaked value cannot be used to decrypt real files. A related plugin issue logged raw prf_data outside the secret-redaction path. Fixed in 1.4.8 (and 1.5.0) by removing the hex dumps and routing plugin debug output through the redaction layer.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.8"
+            },
+            {
+              "version": "1.4.8",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00188,
+      "nvd": {
+        "cvss_v3_score": 3.3,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74872",
+      "description": "openssl_encrypt versions before 1.4.0 contain an arbitrary code execution vulnerability in the Whirlpool hash implementation that uses broad glob patterns to load .so modules without integrity verification. Attackers can place malicious .so files matching the whirlpool*py313*.so pattern in site-packages directories to achieve native code execution when the module is loaded.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0046,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-426"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74873",
+      "description": "openssl_encrypt versions before 1.4.0 expose passwords passed via the --password CLI argument in process listings accessible to all system users. Attackers can read process arguments through ps aux or /proc/[pid]/cmdline to retrieve plaintext passwords and keystore passwords.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00227,
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-214"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74874",
+      "description": "openssl_encrypt versions before 1.4.0 use Python's non-cryptographic random module for steganographic pixel selection in the generate_pseudorandom_sequence function. Attackers who know the password can recover the Mersenne Twister state from approximately 624 outputs and predict pixel locations containing hidden data for extraction.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00255,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-338"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74875",
+      "description": "openssl_encrypt versions before 1.4.0 silently skip JSON schema validation when the jsonschema library is not installed, allowing malformed metadata to be accepted. Attackers can remove the jsonschema package or supply unknown metadata format versions to bypass all schema checks and process malicious data.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00188,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74876",
+      "description": "openssl_encrypt versions before 1.4.0 contain a vulnerability in PublicKeyBundle.from_dict() that creates key bundles from untrusted data without verifying signatures. Attackers can call from_dict() followed by to_identity() without signature verification to encrypt data using attacker-controlled public keys, leaking secrets.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00201,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74877",
+      "description": "openssl_encrypt versions before 1.4.0 contain a missing ownership verification vulnerability in the revoke_key method that allows authenticated clients to revoke any other client's key. Attackers can revoke arbitrary keys by providing a valid ML-DSA signature, bypassing the intended ownership restriction.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00261,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-639"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74878",
+      "description": "openssl_encrypt versions before 1.4.0 use an in-memory rate limiter for TOTP brute-force protection that is not shared across workers and is lost on server restart. Attackers can distribute authentication attempts across multiple server instances or retry immediately after a restart to bypass rate limiting protections.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00372,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74879",
+      "description": "openssl_encrypt versions before 1.4.0 contain an information disclosure vulnerability in the /ready endpoint that returns full database exception strings to unauthenticated callers. Attackers can trigger database errors to extract sensitive information including hostnames, IP addresses, connection parameters, and potentially credentials from exception messages.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00259,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-209"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74880",
+      "description": "openssl_encrypt versions before 1.4.0 accept refresh tokens as URL query parameters in keyserver and telemetry server routes. Attackers can extract tokens from server logs, proxy logs, browser history, and HTTP Referer headers to gain unauthorized access.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00307,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-598"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74881",
+      "description": "openssl_encrypt versions before 1.4.0 configure CORS with allow_origins set to wildcard and allow_credentials enabled to true. Attackers can create malicious websites that make authenticated cross-origin requests to the API on behalf of any user who visits them.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0028,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-942"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74882",
+      "description": "openssl_encrypt versions before 1.4.0 contain an insecure default configuration that trusts the entire RFC 1918 private address space in IntegrityProxyConfig trusted_proxies. Attackers on private networks can forge client certificate headers to bypass mTLS authentication when ProxyAuth validation is relaxed or modified.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00129,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74883",
+      "description": "openssl_encrypt versions before 1.4.0 contain a sandbox bypass vulnerability where the plugin sandbox fails to restrict alternative file access methods like pathlib.Path and io.open. Attackers can import pathlib or io modules to read and write arbitrary files, completely bypassing the restricted_open file access controls.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00256,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74884",
+      "description": "openssl_encrypt versions before 1.4.0 contain a path traversal vulnerability in the _is_safe_path method where the plugin_id parameter is not sanitized before constructing the plugin config directory path. Attackers can declare a malicious plugin_id containing path traversal sequences like '../' to access arbitrary directories outside the intended plugin directory.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00266,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-73"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74885",
+      "description": "openssl_encrypt versions before 1.4.0 contain a logging bug in restore_hidden_modules() that logs module counts after clearing, always showing zero restored modules and corrupting audit trails. Additionally, a race condition exists between module hiding and import hook installation where another thread could re-import blocked modules in multi-threaded environments.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00122,
+      "nvd": {
+        "cvss_v3_score": 3.6,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-117"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74886",
+      "description": "openssl_encrypt versions before 1.4.0 contain a plugin sandbox bypass vulnerability where the PluginImportGuard blocks a different set of modules than the AST analyzer's DANGEROUS_MODULES set. Attackers can bypass AST analysis through string obfuscation or encoding to import unblocked dangerous modules like sys, shutil, multiprocessing, importlib, and pickle for arbitrary code execution.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00396,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-184"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74887",
+      "description": "openssl_encrypt before 1.4.0 imports Python's non-cryptographic 'random' module (Mersenne Twister PRNG) at line 15 of openssl_encrypt/modules/pqc.py. No direct calls to random.* were present in the code, so no cryptographic operation is currently affected; however, the import creates a hazard that future code could inadvertently use random.randint() instead of a cryptographically secure alternative (secrets/os.urandom), producing predictable values since the Mersenne Twister state can be recovered from approximately 624 outputs. Fixed by removing the import in 1.4.0.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00207,
+      "nvd": {
+        "cvss_v3_score": 0.0,
+        "cvss_v3_severity": "NONE",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-338"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74888",
+      "description": "openssl_encrypt versions before 1.4.0 use a non-standard PBKDF2 key derivation construction with iterations=1 per call in an outer loop, creating a KDF whose security properties have not been formally analyzed. Attackers can exploit this weakened key derivation to more efficiently crack passwords protecting legacy encrypted files compared to standard PBKDF2 implementations.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00167,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-327"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74889",
+      "description": "openssl_encrypt versions before 1.4.0 use HKDF with no salt and static info parameter in key normalization functions, reducing entropy extraction and determinism. Attackers can exploit predictable key derivation with identical inputs to weaken cryptographic security against multi-target attacks.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00201,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-326"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74890",
+      "description": "openssl_encrypt versions before 1.4.0 contain an authentication bypass vulnerability in CamelliaCipher that disables HMAC tag generation and verification when the PYTEST_CURRENT_TEST environment variable is set. Attackers with code execution can set this environment variable to produce unauthenticated ciphertext and bypass integrity protection on encrypted data.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00165,
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74891",
+      "description": "openssl_encrypt versions before 1.4.0 contain hardcoded database credentials in standalone server configuration files. Attackers on the same network can access PostgreSQL databases using well-known default credentials to retrieve sensitive data.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00284,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74892",
+      "description": "openssl_encrypt versions before 1.4.0 contain a hardcoded default secret key in the standalone telemetry server configuration that is used for API key hashing. Attackers who know this default value can predict or forge API key hashes to compromise telemetry API authentication.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00306,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74893",
+      "description": "openssl_encrypt versions before 1.4.0 contain hardcoded default JWT signing secrets in config.py that pass validation checks. Attackers with access to source code can forge valid JWT tokens for any client_id to gain authenticated access to keyserver and telemetry APIs.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00264,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-798"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74894",
+      "description": "openssl_encrypt before 1.4.0 contains an authentication bypass vulnerability in the verify_api_token function that accepts any non-empty Bearer token string without validation. Attackers can upload arbitrary public keys, enumerate all keys, and revoke keys belonging to any user by providing any Bearer token in the Authorization header.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00393,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74895",
+      "description": "openssl_encrypt versions before 1.4.0 fail to apply sandbox restrictions in the default process isolation mode for plugin execution. Attackers can execute malicious plugins with unrestricted access to the filesystem, network, subprocess execution, and all Python modules.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00409,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74896",
+      "description": "openssl_encrypt versions before 1.4.0 contain a sandbox escape vulnerability in the DangerousPatternVisitor AST analyzer that fails to detect dunder attribute traversal techniques. Attackers can use __class__, __bases__, __subclasses__(), and __globals__ chains to access restricted functions and execute arbitrary system commands from plugin code.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00337,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74899",
+      "description": "openssl_encrypt versions before 1.4.0 contain a sandbox escape vulnerability in IsolatedPluginExecutor that exposes Python type objects in restricted exec() builtins. Attackers can traverse the Python class hierarchy via __class__.__mro__.__subclasses__() to access system functions and execute arbitrary OS commands.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00388,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-95"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74900",
+      "description": "openssl_encrypt versions before 1.4.0 contain a critical vulnerability in pqc.py where KEM decapsulation failures silently fall back to simulation mode, generating a deterministic shared secret from only 16 bytes of the private key and publicly available encapsulated key data. Attackers who obtain 16 bytes of the private key can compute the shared secret and decrypt all ciphertext, as the fallback triggers on any KEM failure without raising an error.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00337,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-391"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-74901",
+      "description": "openssl_encrypt versions before 1.4.0 contain an authentication bypass vulnerability in pqc.py where AES-GCM decryption failures trigger fallback to unauthenticated AES-CTR mode. Attackers can modify ciphertext in transit to bypass integrity verification and perform bit-flipping attacks without detection.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.0"
+            },
+            {
+              "version": "1.4.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0024,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81680",
+      "description": "openssl_encrypt versions before 1.4.9 fail to authenticate recovery-slot presence in envelope-format encrypted files, allowing attackers to remove recovery slots without re-encrypting the payload. Attackers can modify the file header to delete recovery-slot fields and bypass authentication, silently removing recovery paths the owner deliberately added.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00155,
+      "nvd": {
+        "cvss_v3_score": 4.0,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81681",
+      "description": "openssl_encrypt (pip package openssl-encrypt) versions <= 1.4.8 advertise a portable USB workspace as an 'Encrypted USB Workspace' with AES-256-GCM encryption and write a marker declaring the workspace encrypted, but the workspace directory is actually stored in cleartext and the derived encryption key is never applied to it. A user who trusts the branding and places files in the workspace leaves them unencrypted on the removable media, so an attacker with physical access to the media can read the sensitive files. Fixed in 1.4.9, which seals the workspace into an authenticated AES-256-GCM vault.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00131,
+      "nvd": {
+        "cvss_v3_score": 4.6,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-311"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81682",
+      "description": "openssl_encrypt versions before 1.4.9 contain an insecure file permissions vulnerability in the desktop GUI that writes decrypted plaintext with world-readable default permissions. Attackers can read decrypted output files created by the GUI as unprivileged local users on multi-user systems.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00116,
+      "nvd": {
+        "cvss_v3_score": 6.2,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-276"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81683",
+      "description": "openssl_encrypt (pip package openssl-encrypt) versions 1.4.8 and earlier store an mTLS client private key in cleartext within a world-readable (0644) SharedPreferences file via the desktop GUI's Settings screen 'combined certificate and private key' PEM field. A local attacker with file system access can read the exposed private key. Version 1.4.9 writes the PEM to a dedicated 0600 file, keeps only its path in SharedPreferences, and migrates/scrubs existing cleartext values.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00057,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-312"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81685",
+      "description": "openssl_encrypt versions before 1.4.9 fail to sanitize recovery-slot metadata in the desktop GUI, allowing attackers to inject control characters and line separators into the irreversible-removal confirmation dialog. Attackers can craft encrypted files with malicious slot identifiers containing bidi overrides or line-separator characters to forge warning text and deceive users during file removal operations.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": 3.3,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-116"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81687",
+      "description": "openssl_encrypt versions before 1.4.9 fail to enforce a time ceiling on key derivation function iteration counts specified in file metadata. Attackers can craft files with extremely high KDF iteration counts to consume CPU resources for unbounded periods before password verification occurs.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00208,
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81688",
+      "description": "openssl_encrypt versions before 1.4.9 store an unkeyed SHA-256 hash of the plaintext in the cleartext file header metadata. Attackers can read this hash without the password to confirm guessed plaintexts offline or fingerprint identical plaintexts across separately-encrypted files.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00198,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-311"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81689",
+      "description": "openssl_encrypt versions before 1.4.9 derive the remote-pepper wrap key using unsalted HKDF-SHA256 or bare SHA-256 of the password, allowing identical keys across all users and files. Attackers with access to wrapped pepper blobs can precompute a single dictionary table and perform fleet-wide offline password guessing at hardware speed to recover user passwords.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00198,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-916"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81690",
+      "description": "openssl-encrypt (pip package) before 1.4.9 contains a symlink-following flaw in its verify-usb v2 added-file allowlist scan. The scan enumerated the drive with rglob(), which in CPython does not descend into symlinked directories and treats the symlink as an ordinary directory, while O_NOFOLLOW on the hash side binds only the final path component. An evil-maid attacker with physical access to the removable drive could replace a tool-tree directory with a symlink to a copy containing byte-identical files plus a planted __pycache__/*.pyc file (which CPython loads in preference to recompiling the clean .py). The planted file is never enumerated, added_files stays 0, and verify-usb reports PASSED, resulting in code execution when the victim runs the portable install. Fixed in 1.4.9 (affects both 1.4.x and 1.5.x lines).",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00487,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81691",
+      "description": "openssl_encrypt versions before 1.4.9 fail to validate server URLs in login and register_with_email functions, accepting unencrypted http:// URLs and unconfigured hosts. Attackers on the network path can intercept cleartext credentials including client_id, passwords, and JWTs to achieve full keyserver account takeover.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00198,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-319"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81692",
+      "description": "openssl_encrypt (pip: openssl-encrypt) versions 1.4.8 and earlier fail to validate the 36-bit STREAMINFO total_samples field of FLAC files before using it to size an allocation (np.random.randint(size=(total_samples, channels))). A ~50-byte crafted FLAC file declaring ~100 million samples causes a multi-gigabyte memory allocation, leading to out-of-memory denial of service during 'decrypt --stego-extract'. The issue is fixed in 1.4.9; both the 1.4.x and 1.5.x lines are affected.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00343,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81693",
+      "description": "openssl_encrypt before 1.4.9 fails to validate the total field from QR JSON payloads before materializing ranges. Attackers can supply crafted QR images with extremely large total values to trigger unbounded memory allocation and cause denial of service through out-of-memory conditions.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00343,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81694",
+      "description": "openssl-encrypt (pip package, versions <= 1.4.8) fails to sanitize filenames read from untrusted drive data (outside the AES-GCM authenticated manifest) before printing them in the verify-usb command's output. An attacker can plant filenames containing terminal cursor-movement and erase-line control bytes that repaint a forged PASSED verdict on screen, masking actual tamper detection. Fixed in 1.4.9 by routing drive-derived names through sanitize_for_display().",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": 3.3,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-117"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81695",
+      "description": "openssl_encrypt versions before 1.4.9 fail to escape attacker-controlled key_id values printed to stderr during decrypt auto-detection. Attackers can craft encrypted files with malicious key_id containing escape sequences to repaint terminal output and forge authenticity verification blocks.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": 3.3,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-117"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81696",
+      "description": "openssl_encrypt versions before 1.4.9 fail to sanitize terminal control characters in file metadata printed by the info command. Attackers can craft malicious files containing escape sequences to repaint terminal output and forge verification information displayed to users.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": 3.3,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-117"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81697",
+      "description": "openssl_encrypt (pip package openssl-encrypt) versions <= 1.4.8 contain a CWD-relative configuration file resolution flaw in crypt_settings.py, where CONFIG_FILE (originally the absolute per-user path ~/.crypt_settings.json) is reassigned at line 84 to the bare relative name 'crypt_settings.json'. As a result, the legacy Tk GUI's SettingsTab reads and writes KDF settings from crypt_settings.json in the process launch (current working) directory instead of the user's home directory. An attacker who plants a malicious crypt_settings.json (e.g. sha256:1 with all memory-hard KDFs disabled) can silently downgrade encryption performed in that GUI session to roughly one hash round, bypassing the weak-KDF preflight and enabling offline brute-force attacks against the resulting ciphertext. Fixed in 1.4.9.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00149,
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-426"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81698",
+      "description": "openssl_encrypt versions before 1.4.9 contain a shell injection vulnerability in the info command's reconstructed CLI block that interpolates untrusted metadata fields without quoting. Attackers can craft metadata values like pepper_name containing shell commands that execute when users copy the printed CLI block into a shell.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00284,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81699",
+      "description": "openssl_encrypt versions before 1.4.9 fail to properly validate key derivation function costs in crafted files, allowing attackers to trigger unbounded memory and CPU exhaustion during pre-authentication processing. Attackers can supply malicious files with excessive KDF parameters to exhaust system resources and crash or wedge the process before password verification occurs.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00353,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81700",
+      "description": "openssl_encrypt versions before 1.4.9 contain a signature verification vulnerability in gpg_runner.verify_detached that accepts revoked and expired keys by only checking VALIDSIG status without inspecting REVKEYSIG, EXPKEYSIG, or gpg exit codes. Attackers holding compromised-then-revoked signing keys or expired project keys can bypass signature verification to execute malicious plugins in the host process.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00254,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81701",
+      "description": "openssl_encrypt versions before 1.4.9 use a denylist to identify trusted built-in plugins, allowing unsigned plugins in top-level plugins/ directories and unknown subdirectories to bypass signature verification. Attackers can place malicious unsigned plugins following documented installation paths to achieve arbitrary code execution in the CLI process with access to passwords and cryptographic keys.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00308,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81702",
+      "description": "openssl_encrypt before 1.4.9 fails to re-derive and validate fingerprints when loading identities from identity.json, allowing attackers to substitute public keys in identity stores. Attackers can replace legitimate public keys with their own while maintaining the claimed fingerprint, enabling silent key substitution where encryption uses attacker keys and signature verification appears valid.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00139,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81703",
+      "description": "openssl_encrypt versions before 1.4.9 fail to validate encryption status of embedded post-quantum private keys in file metadata. Attackers can craft files with unencrypted embedded PQC keys that decrypt under any password, bypassing authentication and producing attacker-chosen plaintext with false integrity verification.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00166,
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81704",
+      "description": "openssl_encrypt versions before 1.4.9 contain a weak key derivation vulnerability in the D-Bus CryptoService.EncryptFile handler that uses unstretched SHA-256 instead of Argon2id. Attackers can perform offline password guessing against encrypted files roughly six to seven orders of magnitude faster than documented protection by exploiting the missing key stretching and hash rounds.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00198,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-916"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81705",
+      "description": "openssl-encrypt before 1.4.9 fails to redact the file password in its --debug argv dump when the password is supplied via bundled short-option spellings (e.g. -apHunter2) or abbreviated long-option spellings (e.g. --passw). The sanitizer only recognized exact option names, --option=value forms, and tokens starting with -p, so these spellings bypass the redaction chokepoint and the cleartext password is written to stderr. Anyone with access to that output (terminal scrollback, merged 2>&1 output, CI job logs, or the GUI's persistent debug log) can recover the password.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00334,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81706",
+      "description": "openssl_encrypt before 1.4.9 fails to prevent namespace collisions between own identities and contacts in IdentityStore, allowing attackers to create shadowed contact entries invisible until the corresponding own identity is deleted. When the own identity is deleted, the shadowed contact becomes visible and resolves to the attacker's keys, enabling silent key substitution for encrypted files.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00132,
+      "nvd": {
+        "cvss_v3_score": 6.8,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81707",
+      "description": "openssl_encrypt before 1.4.9 fails to sanitize the email field of imported identity documents, allowing attackers to inject ANSI escape sequences that forge the fingerprint verification line displayed to users. Attackers can deliver a crafted identity bundle through normal contact-exchange flows or keyserver responses to manipulate terminal output and display a fraudulent fingerprint, bypassing the out-of-band verification mechanism that protects against key substitution attacks.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00411,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81714",
+      "description": "openssl_encrypt (pip: openssl-encrypt) versions <= 1.4.8 use suffix-tolerant fingerprint matching in enroll_trust_key when binding a plugin-signing trust anchor. An operator who confirms a short (forgeable, ~32-bit) GPG key id could unknowingly enroll an attacker's colliding key as a trusted anchor, which then vouches for malicious plugins under the ENFORCE signature policy. Version 1.4.9 fixes this by requiring the confirmed value to exactly match the full primary-key fingerprint (case-insensitive, whitespace-stripped).",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00139,
+      "nvd": {
+        "cvss_v3_score": 7.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81715",
+      "description": "openssl_encrypt (pip package openssl-encrypt) versions <= 1.4.8 do not redact the keyserver bearer token passed as the positional argument to 'keyserver set-token' in the --debug argv dump, because sanitize_argv_for_debug fails to sanitize it. As a result the token is printed in cleartext to stderr under --debug (even without --unsafe-show-secrets), persisting the credential in logs and terminal history. Fixed in 1.4.9.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00188,
+      "nvd": {
+        "cvss_v3_score": 3.3,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81716",
+      "description": "openssl_encrypt (pip: openssl-encrypt) versions before 1.4.9 contain a path traversal flaw in PluginSandbox._is_safe_path, which authorized file access using a bare string-prefix match. A sandboxed plugin without the READ_FILES permission could read or write another plugin's directory that merely shares a name prefix (e.g., .../plugins/foobar matching allowed .../plugins/foo), breaking per-plugin isolation within the same user. Fixed by matching each allowed directory exactly or with a trailing path separator.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00192,
+      "nvd": {
+        "cvss_v3_score": 5.2,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81717",
+      "description": "openssl_encrypt (pip package openssl-encrypt) before 1.4.9 contains two weaknesses in the portable USB drive feature, whose threat model treats the removable drive as untrusted (attacker with physical write access). USBDriveCreator._verify_integrity_file only validates files listed in the manifest, so files added to the drive \u2014 including a root-level autorun payload \u2014 are not detected and integrity verification still passes. Additionally, a globally constant, source-embedded KDF salt (_LEGACY_FIXED_SALT) is used to derive the drive encryption key for any drive lacking a per-drive salt file, defeating precomputation resistance and enabling an offline rainbow-table attack.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00091,
+      "nvd": {
+        "cvss_v3_score": 3.5,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81718",
+      "description": "openssl_encrypt versions before 1.4.9 use under-parameterized PBKDF2-HMAC-SHA256 with only 100,000 iterations to protect PQC keyfile private keys and 10,000 iterations for dual-encryption file-password verification. Attackers who obtain keyfiles or encrypted files can brute-force wrapping passwords offline using GPU or ASIC acceleration.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00131,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-326"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81719",
+      "description": "openssl_encrypt before 1.4.9 executes untrusted third-party plugins with insufficient controls: the plugin signature policy defaulted to WARN, so an unsigned/unverifiable non-built-in plugin was compiled and executed in the host process at import time, before the runtime sandbox is installed. The only default gate was an incomplete, bypassable AST denylist. If a user is induced to load an attacker's plugin, this results in arbitrary code execution with the privileges of the user running openssl_encrypt. Fixed in 1.4.9 by defaulting the signature policy to ENFORCE for non-built-in plugins.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00316,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81721",
+      "description": "openssl_encrypt before 1.4.9 fails to validate KDF cost parameters in encrypted file metadata and keystore headers, allowing attackers to trigger unbounded memory allocation. Attackers can craft malicious encrypted files declaring arbitrarily large Argon2, scrypt, or balloon KDF parameters to exhaust system memory and crash the process without authentication.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "jahlives",
+          "product": "openssl_encrypt",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "1.4.9"
+            },
+            {
+              "version": "1.4.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl_encrypt",
+        "vendor:jahlives"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00393,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    }
+  ]
+}
