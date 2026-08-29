@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-28T17:23:44+00:00",
+  "generated_at": "2026-08-29T01:42:46+00:00",
   "vendor": "jahlives",
-  "count": 62,
+  "count": 61,
   "items": [
     {
       "cve_id": "CVE-2026-74870",
@@ -766,54 +766,6 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-184"
-        ],
-        "cpe_count": 0,
-        "reference_count": 2
-      }
-    },
-    {
-      "cve_id": "CVE-2026-74887",
-      "description": "openssl_encrypt before 1.4.0 imports Python's non-cryptographic 'random' module (Mersenne Twister PRNG) at line 15 of openssl_encrypt/modules/pqc.py. No direct calls to random.* were present in the code, so no cryptographic operation is currently affected; however, the import creates a hazard that future code could inadvertently use random.randint() instead of a cryptographically secure alternative (secrets/os.urandom), producing predictable values since the Mersenne Twister state can be recovered from approximately 624 outputs. Fixed by removing the import in 1.4.0.",
-      "cvss_score": 9.3,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "jahlives",
-          "product": "openssl_encrypt",
-          "versions": [
-            {
-              "version": "0",
-              "status": "affected",
-              "versionType": "semver",
-              "lessThan": "1.4.0"
-            },
-            {
-              "version": "1.4.0",
-              "status": "unaffected",
-              "versionType": "semver"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:openssl_encrypt",
-        "vendor:jahlives"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00207,
-      "nvd": {
-        "cvss_v3_score": 0.0,
-        "cvss_v3_severity": "NONE",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-338"
         ],
         "cpe_count": 0,
         "reference_count": 2
