@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-31T08:33:46+00:00",
+  "generated_at": "2026-08-31T17:04:01+00:00",
   "vendor": "_other",
-  "count": 738,
+  "count": 740,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -245,7 +245,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.99717,
+      "probability_score": 0.99718,
       "kev": {
         "cveID": "CVE-2024-0012",
         "vendorProject": "Palo Alto Networks",
@@ -840,7 +840,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.94687,
+      "probability_score": 0.94701,
       "kev": {
         "cveID": "CVE-2024-9474",
         "vendorProject": "Palo Alto Networks",
@@ -5740,7 +5740,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.81537,
+      "probability_score": 0.82882,
       "kev": {
         "cveID": "CVE-2024-42009",
         "vendorProject": "Roundcube",
@@ -7007,7 +7007,7 @@
         "vendor:google llc"
       ],
       "active_threat": false,
-      "probability_score": 0.01213,
+      "probability_score": 0.01223,
       "nvd": {
         "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
@@ -20821,7 +20821,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.0036,
+      "probability_score": 0.00398,
       "nvd": {
         "cvss_v3_score": 8.4,
         "cvss_v3_severity": "HIGH",
@@ -20913,7 +20913,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00358,
+      "probability_score": 0.00395,
       "nvd": {
         "cvss_v3_score": 8.8,
         "cvss_v3_severity": "HIGH",
@@ -22152,7 +22152,7 @@
       "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.04974,
+      "probability_score": 0.05015,
       "nvd": {
         "cvss_v3_score": 8.8,
         "cvss_v3_severity": "HIGH",
@@ -22330,7 +22330,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00256,
+      "probability_score": 0.00258,
       "nvd": {
         "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
@@ -26289,6 +26289,108 @@
         ],
         "cpe_count": 6,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-81578",
+      "description": "An improper access control vulnerability exists in the web management interface of PaperCut MF and PaperCut NG. Under specific\u00a0conditions, unauthenticated remote requests targeting administrative functions can trigger backend actions prior to the  completion of access validation checks. This allows an unauthenticated remote attacker to modify certain system configurations.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "papercut",
+          "product": "papercut mf/ng",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "24.1.10, 25.0.13, 26.0.5",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00393,
+      "kev": {
+        "cveID": "CVE-2026-81578",
+        "vendorProject": "PaperCut",
+        "product": "NG/MF",
+        "vulnerabilityName": "PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+        "dateAdded": "2026-08-31",
+        "shortDescription": "PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-14",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-305"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82078",
+      "description": "An unsafe dynamic class loading vulnerability exists in the database connection utilities of PaperCut MF and PaperCut NG. The application instantiates database driver classes based on configurable driver names without validating against an allowlist of approved drivers. If an attacker can manipulate system configuration parameters, this enables the execution of arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "papercut",
+          "product": "papercut mf/ng",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "24.1.10, 25.0.13, 26.0.5",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00462,
+      "kev": {
+        "cveID": "CVE-2026-82078",
+        "vendorProject": "PaperCut",
+        "product": "NG/MF",
+        "vulnerabilityName": "PaperCut NG/MF Unsafe Reflection Vulnerability",
+        "dateAdded": "2026-08-31",
+        "shortDescription": "PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-14",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -30769,7 +30871,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.88586,
+      "probability_score": 0.89396,
       "kev": {
         "cveID": "CVE-2026-1731",
         "vendorProject": "BeyondTrust",
@@ -36569,7 +36671,7 @@
         "vendor:google cloud"
       ],
       "active_threat": false,
-      "probability_score": 0.00411,
+      "probability_score": 0.0042,
       "nvd": {
         "cvss_v3_score": null,
         "cvss_v3_severity": null,
@@ -38878,7 +38980,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.92384,
+      "probability_score": 0.92488,
       "kev": {
         "cveID": "CVE-2025-2747",
         "vendorProject": "Kentico",
@@ -39535,7 +39637,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.83844,
+      "probability_score": 0.83629,
       "kev": {
         "cveID": "CVE-2025-34291",
         "vendorProject": "Langflow",
@@ -39964,7 +40066,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.03215,
+      "probability_score": 0.03189,
       "kev": {
         "cveID": "CVE-2025-42599",
         "vendorProject": "Qualitia",
@@ -42113,7 +42215,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.03462,
+      "probability_score": 0.03415,
       "kev": {
         "cveID": "CVE-2025-66644",
         "vendorProject": "Array Networks ",
@@ -48898,7 +49000,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.79215,
+      "probability_score": 0.82323,
       "kev": {
         "cveID": "CVE-2026-72898",
         "vendorProject": "Metabase",
