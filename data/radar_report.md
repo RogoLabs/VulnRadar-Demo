@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-01T07:53:41+00:00`
+Generated: `2026-09-01T13:43:36+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,12 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Sep 01 | [CVE-2026-14380](https://www.cve.org/CVERecord?id=CVE-2026-14380) | 🆕 New |
+| Sep 01 | [CVE-2026-19873](https://www.cve.org/CVERecord?id=CVE-2026-19873) | 🆕 New |
+| Sep 01 | [CVE-2026-19410](https://www.cve.org/CVERecord?id=CVE-2026-19410) | 🆕 New |
+| Sep 01 | [CVE-2026-79011](https://www.cve.org/CVERecord?id=CVE-2026-79011) | 🆕 New |
+| Sep 01 | [CVE-2026-63073](https://www.cve.org/CVERecord?id=CVE-2026-63073) | 🆕 New |
+| Sep 01 | [CVE-2026-15143](https://www.cve.org/CVERecord?id=CVE-2026-15143) | 🆕 New |
 | Aug 31 | [CVE-2026-81578](https://www.cve.org/CVERecord?id=CVE-2026-81578) | 🔴 In CISA KEV |
 | Aug 31 | [CVE-2026-82078](https://www.cve.org/CVERecord?id=CVE-2026-82078) | 🔴 In CISA KEV |
 | Aug 30 | [CVE-2026-64773](https://www.cve.org/CVERecord?id=CVE-2026-64773) | 🆕 New |
@@ -297,10 +303,4 @@ Top critical items:
 | Aug 30 | [CVE-2026-80661](https://www.cve.org/CVERecord?id=CVE-2026-80661) | 🆕 New |
 | Aug 30 | [CVE-2026-80662](https://www.cve.org/CVERecord?id=CVE-2026-80662) | 🆕 New |
 | Aug 30 | [CVE-2026-80663](https://www.cve.org/CVERecord?id=CVE-2026-80663) | 🆕 New |
-| Aug 30 | [CVE-2026-80664](https://www.cve.org/CVERecord?id=CVE-2026-80664) | 🆕 New |
-| Aug 30 | [CVE-2026-80665](https://www.cve.org/CVERecord?id=CVE-2026-80665) | 🆕 New |
-| Aug 30 | [CVE-2026-80668](https://www.cve.org/CVERecord?id=CVE-2026-80668) | 🆕 New |
-| Aug 30 | [CVE-2026-80670](https://www.cve.org/CVERecord?id=CVE-2026-80670) | 🆕 New |
-| Aug 30 | [CVE-2026-80671](https://www.cve.org/CVERecord?id=CVE-2026-80671) | 🆕 New |
-| Aug 30 | [CVE-2026-80672](https://www.cve.org/CVERecord?id=CVE-2026-80672) | 🆕 New |
-| ... | | _and 429 more_ |
+| ... | | _and 435 more_ |
