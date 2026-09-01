@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-01T13:43:36+00:00`
+Generated: `2026-09-01T18:09:35+00:00`
 
 ## Executive Summary
 
@@ -82,7 +82,7 @@ Top critical items:
 | [CVE-2023-48788](https://www.cve.org/CVERecord?id=CVE-2023-48788) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-04-15 | 0.984 | 9.3 | ✅ | A improper neutralization of special elements used in an sql command ('sql injection') in Fortinet FortiClientEMS version 7.2.0 through 7.2.2, FortiClientEMS 7… |
 | [CVE-2024-21887](https://www.cve.org/CVERecord?id=CVE-2024-21887) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-01-22 | 1.000 | 9.1 | ✅ | A command injection vulnerability in web components of Ivanti Connect Secure (9.x, 22.x) and Ivanti Policy Secure (9.x, 22.x)  allows an authenticated administ… |
 | [CVE-2024-38475](https://www.cve.org/CVERecord?id=CVE-2024-38475) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-22 | 1.000 | 9.1 | ✅ | Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are permitted t… |
-| [CVE-2022-24706](https://www.cve.org/CVERecord?id=CVE-2022-24706) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-15 | 0.924 | 9.8 | ✅ | In Apache CouchDB prior to 3.2.2, an attacker can access an improperly secured default installation without authenticating and gain admin privileges. The Couch… |
+| [CVE-2022-24706](https://www.cve.org/CVERecord?id=CVE-2022-24706) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-15 | 0.925 | 9.8 | ✅ | In Apache CouchDB prior to 3.2.2, an attacker can access an improperly secured default installation without authenticating and gain admin privileges. The Couch… |
 | [CVE-2024-20439](https://www.cve.org/CVERecord?id=CVE-2024-20439) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-21 | 0.921 | 9.8 | ✅ | A vulnerability in Cisco Smart Licensing Utility (CSLU) could allow an unauthenticated, remote attacker to log into an affected system by using a static admini… |
 | [CVE-2025-22457](https://www.cve.org/CVERecord?id=CVE-2025-22457) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-11 | 1.000 | 9.0 | ✅ | A stack-based buffer overflow in Ivanti Connect Secure before version 22.7R2.6, Ivanti Policy Secure before version 22.7R1.4, and Ivanti ZTA Gateways before ve… |
 | [CVE-2025-0282](https://www.cve.org/CVERecord?id=CVE-2025-0282) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-01-15 | 1.000 | 9.0 | ✅ | A stack-based buffer overflow in Ivanti Connect Secure before version 22.7R2.5, Ivanti Policy Secure before version 22.7R1.2, and Ivanti Neurons for ZTA gatewa… |
@@ -183,7 +183,7 @@ Top critical items:
 | [CVE-2023-29336](https://www.cve.org/CVERecord?id=CVE-2023-29336) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-30 | 0.409 | 7.8 | ✅ | Win32k Elevation of Privilege Vulnerability |
 | [CVE-2025-31200](https://www.cve.org/CVERecord?id=CVE-2025-31200) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.197 | 9.8 | ✅ | A memory corruption issue was addressed with improved bounds checking. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, … |
 | [CVE-2025-24085](https://www.cve.org/CVERecord?id=CVE-2025-24085) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-19 | 0.176 | 10.0 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.3 and iPadOS 18.3, iPadOS 17.7.6, macOS Sequoia 15.3, macOS… |
-| [CVE-2023-41993](https://www.cve.org/CVERecord?id=CVE-2023-41993) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-16 | 0.290 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. Processing web content may lead to arbitrary code execution. Apple is awa… |
+| [CVE-2023-41993](https://www.cve.org/CVERecord?id=CVE-2023-41993) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-16 | 0.292 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. Processing web content may lead to arbitrary code execution. Apple is awa… |
 | [CVE-2024-7971](https://www.cve.org/CVERecord?id=CVE-2024-7971) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-16 | 0.207 | 9.6 | ✅ | Type confusion in V8 in Google Chrome prior to 128.0.6613.84 allowed a remote attacker to exploit heap corruption via a crafted HTML page. (Chromium security s… |
 | [CVE-2025-20352](https://www.cve.org/CVERecord?id=CVE-2025-20352) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-10-20 | 0.394 | 7.7 | ✅ | A vulnerability in the Simple Network Management Protocol (SNMP) subsystem of Cisco IOS Software and Cisco IOS XE Software could allow the following:   An a… |
 | [CVE-2024-38178](https://www.cve.org/CVERecord?id=CVE-2024-38178) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.414 | 7.5 | ✅ | Scripting Engine Memory Corruption Vulnerability |
