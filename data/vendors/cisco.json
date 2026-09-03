@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-02T23:24:00+00:00",
+  "generated_at": "2026-09-03T04:00:17+00:00",
   "vendor": "cisco",
-  "count": 471,
+  "count": 480,
   "items": [
     {
       "cve_id": "CVE-2022-20622",
@@ -275507,6 +275507,212 @@
       }
     },
     {
+      "cve_id": "CVE-2026-20212",
+      "description": "A vulnerability in the Silicon One integration for Cisco Nexus 9000 Series Switches could allow an unauthenticated, remote attacker to execute code with&nbsp;root privileges.\r\n\r\nThis vulnerability exists because TCP ports 43210 and 43211 are accessible in the default Layer 3 (L3) virtual routing and forwarding (VRF). A successful exploit could allow the attacker to connect to an affected device and send crafted input that could be executed as code with&nbsp;root privileges. The exploitation of this vulnerability could also cause the S1HAL process to crash, which could cause the device to reload.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco nx-os software",
+          "versions": [
+            {
+              "version": "10.3(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(2)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(99w)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3w)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(99x)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3o)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(4)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3p)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(4a)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(2)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3q)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(5)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(3)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3x)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(4g)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(3r)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(6)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(4)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(4h)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(2)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(7)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(5)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(3)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(4g)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(4)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(3t)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(8)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(6)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(3s)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(3e)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(3o)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(1s)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(2)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(3p)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(9)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(2s)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(3)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(7)",
+              "status": "affected"
+            },
+            {
+              "version": "10.5(5)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(2n)",
+              "status": "affected"
+            },
+            {
+              "version": "10.6(3s)",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco nx-os software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-20213",
       "description": "A vulnerability in the PE file format parser of ClamAV could allow an unauthenticated, remote attacker to cause a DoS condition, or possibly other expanded impacts, resulting from memory corruption on an affected device.\r\n\r\nThis vulnerability is due to improper boundary checks for content in PE files during scanning, which may result in an out-of-bounds buffer write. An attacker could exploit this vulnerability by submitting a crafted file that contains PE content to be scanned by ClamAV on an affected device. A successful exploit could allow the attacker to cause the ClamAV scanning process to terminate, resulting in a DoS condition on the affected software.",
       "cvss_score": 7.5,
@@ -294894,6 +295100,3762 @@
         "cpe_count": 267,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-20274",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20274 are related to improper resource control issues that are grouped under the Common Weakness Enumeration (CWE) CWE-664.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20275",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20275 are related to incorrect calculation issues that are grouped under the Common Weakness Enumeration (CWE) CWE-682.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20276",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20276 are related to insufficient control flow management issues that are grouped under the Common Weakness Enumeration (CWE) CWE-691.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20277",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20277 are related to protection mechanism failure issues that are grouped under the Common Weakness Enumeration (CWE) CWE-693.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20278",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20278 are related to improper neutralization issues that are grouped under the Common Weakness Enumeration (CWE) CWE-707.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20279",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20279 are related to improper access control issues that are grouped under the Common Weakness Enumeration (CWE) CWE-284.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20280",
+      "description": "As part of Cisco's ongoing commitment to proactive security and product quality, the&nbsp;Cisco IOS XR Software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening releases that address multiple internally discovered vulnerabilities.\r\n\r\nThe vulnerabilities tracked by CVE-2026-20280 are related to improper checking or handling of exceptional condition issues that are grouped under the Common Weakness Enumeration (CWE) CWE-703.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco ios xr software",
+          "versions": [
+            {
+              "version": "6.5.29",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.26",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.25",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.28",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.90",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.90",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.11",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.14",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.25",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.1.3",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.31",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.16",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.32",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.27",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.12",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.4",
+              "status": "affected"
+            },
+            {
+              "version": "7.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.7.35",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.2",
+              "status": "affected"
+            },
+            {
+              "version": "6.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.4",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.33",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.22",
+              "status": "affected"
+            },
+            {
+              "version": "7.7.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.5",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.9.21",
+              "status": "affected"
+            },
+            {
+              "version": "7.10.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "7.6.3",
+              "status": "affected"
+            },
+            {
+              "version": "7.3.6",
+              "status": "affected"
+            },
+            {
+              "version": "7.5.52",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "7.8.23",
+              "status": "affected"
+            },
+            {
+              "version": "7.11.21",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.35",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.20",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.351",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "24.3.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.1",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.352",
+              "status": "affected"
+            },
+            {
+              "version": "24.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "24.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "7.2.0",
+              "status": "affected"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected"
+            },
+            {
+              "version": "25.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "6.5.353",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.1.30",
+              "status": "affected"
+            },
+            {
+              "version": "25.3.15",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.100",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.1",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "26.1.2",
+              "status": "affected"
+            },
+            {
+              "version": "25.4.201",
+              "status": "affected"
+            },
+            {
+              "version": "26.2.101",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco ios xr software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-20281",
+      "description": "A vulnerability in Cisco Desk Phone 9800 Series, Cisco IP Phone 7800 and 8800 Series, and Cisco Video Phone 8875 that are running Cisco Session Initiation Protocol (SIP) Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.\r\n\r\nThis vulnerability is due to improper memory management when an affected device processes HTTP packets. An attacker could exploit this vulnerability by sending a continuous stream of crafted HTTP packets to the device. A successful exploit could allow the attacker to cause the affected device to continuously consume memory, resulting in a DoS condition.&nbsp;A manual reboot of the device is required to recover from this condition.\r\nNote: For this vulnerability to be exploitable, the phone must be registered to Cisco Unified Communications Manager (Unified CM) and have Web Access enabled. Web Access is disabled by default.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "cisco",
+          "product": "cisco session initiation protocol (sip) software",
+          "versions": [
+            {
+              "version": "12.1(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.5(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(2)",
+              "status": "affected"
+            },
+            {
+              "version": "10.2(2)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR4",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(1)SR2 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "11.7(1)",
+              "status": "affected"
+            },
+            {
+              "version": "12.1(1)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(0.7) MPP",
+              "status": "affected"
+            },
+            {
+              "version": "9.3(4) 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "10.2(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "9.3(4)SR3 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "10.2(1)",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "11-0-1MSR1-1",
+              "status": "affected"
+            },
+            {
+              "version": "10.4(1) 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.5(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "10.1(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "12.0(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "12.6(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1.11) 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "12.0(1)",
+              "status": "affected"
+            },
+            {
+              "version": "12.0(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "9.3(3)",
+              "status": "affected"
+            },
+            {
+              "version": "12.5(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR4b",
+              "status": "affected"
+            },
+            {
+              "version": "9.3(4)SR1 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR5",
+              "status": "affected"
+            },
+            {
+              "version": "10.1(1.9)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1.9) 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "9.3(4)SR2 3rd Party",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "10.1(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "12.0(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "12.6(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "12.7(1)",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR6",
+              "status": "affected"
+            },
+            {
+              "version": "12.8(1)",
+              "status": "affected"
+            },
+            {
+              "version": "12.7(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(2)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(4)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(2)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(4)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(5)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)SR4",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(2)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(4)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(5)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(5)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)SR6",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(5)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(4)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(3)SR5",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)",
+              "status": "affected"
+            },
+            {
+              "version": "12.8(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "12.8(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "14.0(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.0(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "10.3(1)SR7",
+              "status": "affected"
+            },
+            {
+              "version": "14.0(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "14.1(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.0(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "14.1(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "14.1(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)SR4",
+              "status": "affected"
+            },
+            {
+              "version": "14.2(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.2(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)SR5",
+              "status": "affected"
+            },
+            {
+              "version": "14.1(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "14.2(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "3.1(1)",
+              "status": "affected"
+            },
+            {
+              "version": "3.0(1)",
+              "status": "affected"
+            },
+            {
+              "version": "2.3(1)",
+              "status": "affected"
+            },
+            {
+              "version": "2.3(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "2.2(1)",
+              "status": "affected"
+            },
+            {
+              "version": "2.1(1)",
+              "status": "affected"
+            },
+            {
+              "version": "2.0(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.2(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "3.1(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "14.3(1)",
+              "status": "affected"
+            },
+            {
+              "version": "3.2(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.3(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "14.2(1)SR4",
+              "status": "affected"
+            },
+            {
+              "version": "3.3(1)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)SR6",
+              "status": "affected"
+            },
+            {
+              "version": "14.3(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "3.4(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.3(1)SR3",
+              "status": "affected"
+            },
+            {
+              "version": "3.5(1)",
+              "status": "affected"
+            },
+            {
+              "version": "11.0(6)SR7",
+              "status": "affected"
+            },
+            {
+              "version": "3.5(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "14.4(1)",
+              "status": "affected"
+            },
+            {
+              "version": "3.6(1)",
+              "status": "affected"
+            },
+            {
+              "version": "4.0(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.4(1)SR1",
+              "status": "affected"
+            },
+            {
+              "version": "4.1(1)",
+              "status": "affected"
+            },
+            {
+              "version": "14.4(1)SR2",
+              "status": "affected"
+            },
+            {
+              "version": "4.1(1)SR1",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cisco session initiation protocol (sip) software",
+        "vendor:cisco"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-20301",

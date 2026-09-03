@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T23:24:00+00:00",
+  "generated_at": "2026-09-03T04:00:17+00:00",
   "vendor": "_other",
   "count": 750,
   "items": [
@@ -24959,7 +24959,7 @@
     },
     {
       "cve_id": "CVE-2026-60074",
-      "description": "Date::Manip versions through 6.99 for Perl return corrupted dates via non-ASCII decimal digits that pass the numeric range tests in check.\n\nThe parse regexes capture year, month and day with the `\\d` shorthand, which on a character string matches the whole Unicode decimal digit property `\\p{Nd}` and not just `[0-9]`. Date::Manip::Base::check then validates the captured fields with numeric comparisons alone (`$y<1 || $y>9999`, `$m<1 || $m>12`, `$d<1 || $d>$days`), and _parse_check stores the numified fields (`$y+0`). Perl truncates a string at the first character that is not an ASCII digit, so a field whose leading characters are ASCII digits numifies to an in-range prefix and satisfies every test: a year field of three ASCII digits followed by U+0664 ARABIC-INDIC DIGIT FOUR numifies to 202, giving the year 0202, and one non-ASCII digit in the month or day field shifts those fields the same way. The hour, minute and second fields match explicit ASCII character classes (`0?[0-9]`, `[0-5][0-9]`) and do not shift, though a non-ASCII digit in a fractional hour or minute field truncates the fraction.\n\nAny caller that passes an untrusted character string to ParseDate() or Date::Manip::Date->parse() can get back a date that differs from the string it parsed, with no parse error. Where the parsed date gates logic such as an expiry check or a retention window, the shift goes unnoticed.",
+      "description": "Date::Manip versions through 7.00 for Perl return corrupted dates via non-ASCII decimal digits that pass the numeric range tests in check.\n\nThe parse regexes capture year, month and day with the `\\d` shorthand, which on a character string matches the whole Unicode decimal digit property `\\p{Nd}` and not just `[0-9]`. Date::Manip::Base::check then validates the captured fields with numeric comparisons alone (`$y<1 || $y>9999`, `$m<1 || $m>12`, `$d<1 || $d>$days`), and _parse_check stores the numified fields (`$y+0`). Perl truncates a string at the first character that is not an ASCII digit, so a field whose leading characters are ASCII digits numifies to an in-range prefix and satisfies every test: a year field of three ASCII digits followed by U+0664 ARABIC-INDIC DIGIT FOUR numifies to 202, giving the year 0202, and one non-ASCII digit in the month or day field shifts those fields the same way. The hour, minute and second fields match explicit ASCII character classes (`0?[0-9]`, `[0-5][0-9]`) and do not shift, though a non-ASCII digit in a fractional hour or minute field truncates the fraction.\n\nAny caller that passes an untrusted character string to ParseDate() or Date::Manip::Date->parse() can get back a date that differs from the string it parsed, with no parse error. Where the parsed date gates logic such as an expiry check or a retention window, the shift goes unnoticed.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -24969,7 +24969,7 @@
           "product": "",
           "versions": [
             {
-              "lessThanOrEqual": "6.99",
+              "lessThanOrEqual": "7.00",
               "status": "affected",
               "version": "0",
               "versionType": "custom"
@@ -24999,7 +24999,7 @@
     },
     {
       "cve_id": "CVE-2026-60075",
-      "description": "Date::Manip versions through 6.99 for Perl allow CPU exhaustion via quadratic backtracking in the unanchored time substitution in _parse_time.\n\n_parse_time removes a time from anywhere in the string with the unanchored substitution `s/$timerx/ /`, where $timerx is an auto-generated alternation of time patterns reached through a leading `(?:$atrx|^|\\s+)`. The engine therefore retries the match at every position of an interior whitespace run: at each start position the leading `\\s+` consumes the rest of the run greedily, the time alternation fails because the run holds no digits, and the engine backtracks a space at a time across the run before advancing the start position, which is quadratic in the length of the run. No time need be present in the string for this to happen, only a long run of whitespace, and the parse time rises about fourfold for each doubling of the run: a few kilobytes of whitespace costs seconds of CPU per parse and tens of kilobytes costs minutes.\n\nAny caller that passes an untrusted string of unbounded length to ParseDate(), Date::Manip::Date->parse() or ->parse_time() can be made to spend unbounded CPU in a single parse, a denial of service.",
+      "description": "Date::Manip versions through 7.00 for Perl allow CPU exhaustion via quadratic backtracking in the unanchored time substitution in _parse_time.\n\n_parse_time removes a time from anywhere in the string with the unanchored substitution `s/$timerx/ /`, where $timerx is an auto-generated alternation of time patterns reached through a leading `(?:$atrx|^|\\s+)`. The engine therefore retries the match at every position of an interior whitespace run: at each start position the leading `\\s+` consumes the rest of the run greedily, the time alternation fails because the run holds no digits, and the engine backtracks a space at a time across the run before advancing the start position, which is quadratic in the length of the run. No time need be present in the string for this to happen, only a long run of whitespace, and the parse time rises about fourfold for each doubling of the run: a few kilobytes of whitespace costs seconds of CPU per parse and tens of kilobytes costs minutes.\n\nAny caller that passes an untrusted string of unbounded length to ParseDate(), Date::Manip::Date->parse() or ->parse_time() can be made to spend unbounded CPU in a single parse, a denial of service.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -25009,7 +25009,7 @@
           "product": "",
           "versions": [
             {
-              "lessThanOrEqual": "6.99",
+              "lessThanOrEqual": "7.00",
               "status": "affected",
               "version": "0",
               "versionType": "custom"
@@ -29439,18 +29439,445 @@
     },
     {
       "cve_id": "CVE-2023-50224",
-      "description": "TP-Link TL-WR841N dropbearpwd Improper Authentication Information Disclosure Vulnerability. This vulnerability allows network-adjacent attackers to disclose sensitive information on affected installations of TP-Link TL-WR841N routers. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the httpd service, which listens on TCP port 80 by default. The issue results from improper authentication. An attacker can leverage this vulnerability to disclose stored credentials, leading to further compromise.\n. Was ZDI-CAN-19899.",
+      "description": "TP-Link TL-WR841N dropbearpwd Improper Authentication Information Disclosure Vulnerability. This vulnerability allows network-adjacent attackers to disclose sensitive information on affected installations of TP-Link TL-WR841N routers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the httpd service, which listens on TCP port 80 by default. The issue results from improper authentication. An attacker can leverage this vulnerability to disclose stored credentials, leading to further compromise. Was ZDI-CAN-19899.",
       "cvss_score": 6.5,
       "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
       "affected": [
         {
           "vendor": "tp-link",
           "product": "tl-wr841n",
           "versions": [
             {
+              "status": "affected",
               "version": "3.16.9 build 200409",
-              "status": "affected"
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V8",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V9",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V10",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V11",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V11_211209",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V12",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V12_230317",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr841nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V8",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V9",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V10",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V11",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V11_211209",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V12",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V12_230317",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-mr6400",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V1",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "archer c5",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "archer c7",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V2_241108",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wdr3600",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wdr4300",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wdr3500",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr740n",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V5",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V6",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V7",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr741nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V5",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V6",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr749n",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "BR 6.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "BR 7.0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-mr3420",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr1043nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr1045nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "RU V2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr840n",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr842n",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr842nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr845n",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V1",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr941nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V5",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V6",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V6_220610",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wr945n",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wa801nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "tp-link",
+          "product": "tl-wa901nd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "V3",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V4",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V4_201030",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "V5",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "V5_201030",
+              "versionType": "custom"
             }
           ]
         }
