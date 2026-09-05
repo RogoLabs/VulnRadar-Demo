@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-05T00:51:32+00:00",
+  "generated_at": "2026-09-05T05:32:16+00:00",
   "vendor": "_other",
-  "count": 752,
+  "count": 755,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -6711,55 +6711,6 @@
         ],
         "cpe_count": 94,
         "reference_count": 4
-      }
-    },
-    {
-      "cve_id": "CVE-2025-67038",
-      "description": "An issue was discovered in Lantronix EDS5000 2.1.0.0R3. The HTTP RPC module executes a shell command to write logs when user's authantication fails. The username is directly concatenated with the command without any sanitization. This allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "n/a",
-          "product": "n/a",
-          "versions": [
-            {
-              "version": "n/a",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.15667,
-      "kev": {
-        "cveID": "CVE-2025-67038",
-        "vendorProject": "Lantronix",
-        "product": "EDS5000",
-        "vulnerabilityName": "Lantronix EDS5000 Code Injection Vulnerability",
-        "dateAdded": "2026-06-23",
-        "shortDescription": "Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
-        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-        "dueDate": "2026-06-26",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-94"
-        ],
-        "cpe_count": 6,
-        "reference_count": 2
       }
     },
     {
@@ -38489,6 +38440,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-4644",
+      "description": "A Missing Authorization vulnerability in HTTP Connector in Google Cloud Integration Connectors versions prior to 2025-12-11 on Google Cloud Platform allows an authenticated user to escalate privileges and take over a Google Cloud Project using unauthorized service account attachment.\n\n\n\nThis vulnerability was patched on 11 December 2025, and no customer action is needed.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "integration connectors",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2025-12-11",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:integration connectors",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-4764",
       "description": "A Missing Authorization vulnerability in the playbook import functionality in Dialogflow CX on Google Cloud Platform allows an authenticated user with specific roles to escalate privileges and potentially take over a GCP project using a maliciously crafted playbook import.\n\n\nThis vulnerability was patched on 15 March 2026, and no customer action is needed.",
       "cvss_score": 9.4,
@@ -38579,6 +38562,38 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-79707",
+      "description": "A Path Traversal vulnerability in the builder endpoint in Google Cloud Agent Development Kit (ADK) versions 1.9.0 through 1.21.0 on Python allows an unauthenticated remote attacker to read arbitrary files using a crafted file_path query parameter.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "agent development kit (adk)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.9.0",
+              "lessThan": "1.22.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:agent development kit (adk)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-7428",
@@ -42937,6 +42952,125 @@
         ],
         "cpe_count": 15,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2025-67038",
+      "description": "An issue was discovered in Lantronix EDS5000 2.1.0.0R3. The HTTP RPC module executes a shell command to write logs when user's authentication fails. The username is directly concatenated with the command without any sanitization. This allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "lantronix",
+          "product": "eds5000 series",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "2.1.0.0R3",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "2.2.0.0R1"
+            }
+          ]
+        },
+        {
+          "vendor": "lantronix",
+          "product": "g520 series",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.6.0.4R6",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "2.6.0.4R6"
+            }
+          ]
+        },
+        {
+          "vendor": "lantronix",
+          "product": "x300 series",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.6.0.4R6",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "2.6.0.4R6"
+            }
+          ]
+        },
+        {
+          "vendor": "lantronix",
+          "product": "e210 series",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.21.0.0R1",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "3.21.0.0R1"
+            }
+          ]
+        },
+        {
+          "vendor": "lantronix",
+          "product": "e220 series",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.21.0.0R1",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "3.21.0.0R1"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.15667,
+      "kev": {
+        "cveID": "CVE-2025-67038",
+        "vendorProject": "Lantronix",
+        "product": "EDS5000",
+        "vulnerabilityName": "Lantronix EDS5000 Code Injection Vulnerability",
+        "dateAdded": "2026-06-23",
+        "shortDescription": "Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-06-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 6,
+        "reference_count": 2
       }
     },
     {
@@ -50009,6 +50143,38 @@
         "cpe_count": 0,
         "reference_count": 9
       }
+    },
+    {
+      "cve_id": "CVE-2026-85656",
+      "description": "An OS command injection issue in the log4j-cve-2021-44228-hotpatch package in Amazon Linux before 1.3-9 might allow a local user to execute arbitrary commands with root privileges via a Java process whose executable path contains embedded newline characters.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "amazon",
+          "product": "log4j-cve-2021-44228-hotpatch",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.3-9.amzn2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:log4j-cve-2021-44228-hotpatch",
+        "vendor:amazon"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-8398",
