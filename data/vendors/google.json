@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-06T00:49:54+00:00",
+  "generated_at": "2026-09-06T05:47:22+00:00",
   "vendor": "google",
-  "count": 2829,
+  "count": 2830,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -117403,6 +117403,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-85043",
+      "description": "Incomplete cleanup in Network in Google Chrome prior to 152.0.7977.82 allowed a remote attacker to bypass system access restrictions via crafted network traffic. (Chromium security severity: High)",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "152.0.7977.82",
+              "status": "affected",
+              "lessThan": "152.0.7977.82",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00322,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-459"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-85045",
       "description": "Race condition in V8 in Google Chrome prior to 152.0.7977.82 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
       "cvss_score": 7.5,
@@ -117495,8 +117538,8 @@
         "cwe_ids": [
           "CWE-843"
         ],
-        "cpe_count": 0,
-        "reference_count": 2
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
