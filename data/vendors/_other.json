@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-08T18:37:13+00:00",
+  "generated_at": "2026-09-08T21:51:45+00:00",
   "vendor": "_other",
-  "count": 756,
+  "count": 758,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -15319,6 +15319,96 @@
           "CWE-79"
         ],
         "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-75650",
+      "description": "Adobe Commerce is affected by an Improper Neutralization of Special Elements Used in a Template Engine vulnerability that could result in arbitrary code execution in the context of the current user. An attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "adobe",
+          "product": "adobe commerce",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.9-2026-aug, 2.4.8-2026-aug, 2.4.7-2026-aug, 2.4.6-2026-aug, 2.4.5-2026-aug, 2.4.4-2026-aug",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "Hotfix for CVE-2026-7565",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "adobe",
+          "product": "adobe commerce b2b",
+          "versions": [
+            {
+              "lessThanOrEqual": "1.5.3-2026-aug, 1.5.2-2026-aug, 1.4.2-2026-aug, 1.3.4-2026-aug, 1.3.3-2026-aug",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "Hotfix for CVE-2026-7565",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "adobe",
+          "product": "magento open source",
+          "versions": [
+            {
+              "lessThanOrEqual": "2.4.9-2026-aug, 2.4.8-2026-aug, 2.4.7-2026-aug, 2.4.6-2026-aug",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "Hotfix for CVE-2026-7565",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00676,
+      "kev": {
+        "cveID": "CVE-2026-75650",
+        "vendorProject": "Adobe",
+        "product": "Commerce and Magento",
+        "vulnerabilityName": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
+        "dateAdded": "2026-09-08",
+        "shortDescription": "Adobe Commerce and Magento Open Source contain an improper neutralization of special elements used in a template engine vulnerability that could allow an attacker to execute arbitrary code.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-11",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1336"
+        ],
+        "cpe_count": 0,
         "reference_count": 1
       }
     },
@@ -39127,7 +39217,7 @@
         "shortDescription": "WatchGuard Fireware OS iked process contains an out of bounds write vulnerability in the OS iked process. This vulnerability may allow a remote unauthenticated attacker to execute arbitrary code and affects both the mobile user VPN with IKEv2 and the branch office VPN using IKEv2 when configured with a dynamic gateway peer.",
         "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
         "dueDate": "2025-12-26",
-        "knownRansomwareCampaignUse": "Unknown"
+        "knownRansomwareCampaignUse": "Known"
       },
       "nvd": {
         "cvss_v3_score": 9.8,
@@ -43980,6 +44070,57 @@
         ],
         "cpe_count": 2,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86218",
+      "description": "N-central is vulnerable to a pre-auth remote code execution This issue affects N-central: before 2026.3.1.14.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "n-able",
+          "product": "n-central",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026.3.1.14",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00411,
+      "kev": {
+        "cveID": "CVE-2026-86218",
+        "vendorProject": "N-able",
+        "product": "N-central",
+        "vulnerabilityName": "N-able N-central Static Code Injection Vulnerability",
+        "dateAdded": "2026-09-08",
+        "shortDescription": "N-able N-central contains a static code injection vulnerability that could allow for pre-authentication remote code execution.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-11",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-96"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
