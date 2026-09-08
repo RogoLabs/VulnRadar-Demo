@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-08T01:15:25+00:00",
+  "generated_at": "2026-09-08T05:59:21+00:00",
   "vendor": "_other",
-  "count": 755,
+  "count": 756,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -24905,6 +24905,46 @@
           "CWE-22"
         ],
         "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-56015",
+      "description": "Net::IP::LPM versions before 1.11 for Perl allow a heap out-of-bounds read via an unbounded prefix length.\n\nadd() passes the prefix string to the trie builder addPrefixToTrie() without checking it against the address width.\n\naddPrefixToTrie() then walks the prefix buffer by prefix_length bits, reading prefix[byte] for byte up to prefix_len/8, where prefix is the 4-byte (IPv4) or 16-byte (IPv6) packed address. A prefix length greater than 32 for IPv4 or 128 for IPv6, for example add(\"1.2.3.4/255\", $v) or add(\"2001:db8::/255\", $v), reads past the end of the packed address.\n\nThe out-of-bounds read happens during trie construction and is bounded: the prefix length is stored as an unsigned char, so the bit walk reads at most 32 bytes from the start of the packed address, a short distance past the end of the 4-byte or 16-byte buffer. It is detectable under AddressSanitizer, valgrind, or a hardened allocator, where it can abort the process. Lookups and dump() format only the valid address width, so the out-of-bounds bytes are not exposed through the module's API.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.11",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00632,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
         "reference_count": 3
       }
     },
