@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-09T17:58:03+00:00",
+  "generated_at": "2026-09-09T20:55:22+00:00",
   "vendor": "_other",
-  "count": 761,
+  "count": 762,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -42794,6 +42794,81 @@
         ],
         "cpe_count": 8,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-19490",
+      "description": "Vulnerability in NetScaler ADC and NetScaler Gateway.\n\nThis issue affects ADC: from 14.1 through 73.32 and from 13.1 through 63.21; Gateway: from 14.1 through 73.32 and from 13.1 through 63.21.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
+      "affected": [
+        {
+          "vendor": "netscaler",
+          "product": "adc",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "14.1",
+              "lessThanOrEqual": "73.32",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "13.1",
+              "lessThanOrEqual": "63.21",
+              "versionType": "patch"
+            }
+          ]
+        },
+        {
+          "vendor": "netscaler",
+          "product": "gateway",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "14.1",
+              "lessThanOrEqual": "73.32",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "13.1",
+              "lessThanOrEqual": "63.21",
+              "versionType": "patch"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.03372,
+      "kev": {
+        "cveID": "CVE-2026-19490",
+        "vendorProject": "Citrix",
+        "product": "NetScaler",
+        "vulnerabilityName": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "dateAdded": "2026-09-09",
+        "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-12",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-288"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {

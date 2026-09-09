@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T17:58:03+00:00",
+  "generated_at": "2026-09-09T20:55:22+00:00",
   "vendor": "cisco",
   "count": 481,
   "items": [
@@ -251919,8 +251919,19 @@
         "product:cisco secure firewall management center (fmc)",
         "vendor:cisco"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.35946,
+      "kev": {
+        "cveID": "CVE-2026-20079",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
+        "vulnerabilityName": "Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "dateAdded": "2026-09-09",
+        "shortDescription": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-12",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 10.0,
         "cvss_v3_severity": "CRITICAL",

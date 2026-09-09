@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T17:58:03+00:00",
+  "generated_at": "2026-09-09T20:55:22+00:00",
   "vendor": "fortinet",
   "count": 235,
   "items": [
@@ -13441,16 +13441,27 @@
       ],
       "watchlist_hit": true,
       "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [
         "product:fortios",
         "product:fortiswitchmanager",
         "vendor:fortinet"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.00759,
+      "kev": {
+        "cveID": "CVE-2025-25249",
+        "vendorProject": "Fortinet",
+        "product": "Multiple Products",
+        "vulnerabilityName": "Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
+        "dateAdded": "2026-09-09",
+        "shortDescription": "Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-12",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 9.8,
         "cvss_v3_severity": "CRITICAL",
