@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-08T21:51:48+00:00`
+Generated: `2026-09-09T00:05:45+00:00`
 
 ## Executive Summary
 
@@ -254,6 +254,8 @@ Top critical items:
 | Date | CVE | Status |
 |------|-----|--------|
 | Sep 08 | [CVE-2026-56015](https://www.cve.org/CVERecord?id=CVE-2026-56015) | 🆕 New |
+| Sep 08 | [CVE-2026-75650](https://www.cve.org/CVERecord?id=CVE-2026-75650) | 🔴 In CISA KEV |
+| Sep 08 | [CVE-2026-86218](https://www.cve.org/CVERecord?id=CVE-2026-86218) | 🔴 In CISA KEV |
 | Sep 06 | [CVE-2026-81270](https://www.cve.org/CVERecord?id=CVE-2026-81270) | 🆕 New |
 | Sep 06 | [CVE-2026-85043](https://www.cve.org/CVERecord?id=CVE-2026-85043) | 🆕 New |
 | Sep 06 | [CVE-2026-64329](https://www.cve.org/CVERecord?id=CVE-2026-64329) | 🆕 New |
@@ -301,6 +303,4 @@ Top critical items:
 | Sep 04 | [CVE-2026-85050](https://www.cve.org/CVERecord?id=CVE-2026-85050) | 🆕 New |
 | Sep 04 | [CVE-2026-85051](https://www.cve.org/CVERecord?id=CVE-2026-85051) | 🆕 New |
 | Sep 04 | [CVE-2026-85053](https://www.cve.org/CVERecord?id=CVE-2026-85053) | 🆕 New |
-| Sep 04 | [CVE-2026-84645](https://www.cve.org/CVERecord?id=CVE-2026-84645) | 🆕 New |
-| Sep 04 | [CVE-2026-84647](https://www.cve.org/CVERecord?id=CVE-2026-84647) | 🆕 New |
-| ... | | _and 69 more_ |
+| ... | | _and 71 more_ |
