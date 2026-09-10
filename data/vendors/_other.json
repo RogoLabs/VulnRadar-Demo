@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-10T17:44:03+00:00",
+  "generated_at": "2026-09-10T20:49:53+00:00",
   "vendor": "_other",
-  "count": 767,
+  "count": 769,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -50615,6 +50615,132 @@
         ],
         "cpe_count": 6,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-67277",
+      "description": "RouterOS accepts a \"related\" btest connection before the corresponding primary session has completed authentication. An unauthenticated client can use this state to start an IPv4 UDP test. With \"random-data=false\", the sender transmits an uninitialized tail from a kernel packet buffer. A separate unchecked, inverted packet-size interval causes unsigned integer underflow, anomalously large fragmented output, and can restart the RouterOS kernel.\n\n\n\nThis issue was fixed in versions:\u00a06.49.21 (Long-term),\u00a07.23.4 (Long-term)\u00a0and\u00a07.24.2 (Stable)",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "mikrotik",
+          "product": "routeros",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.24",
+              "lessThan": "7.24.2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.23.4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.49.21",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00435,
+      "kev": {
+        "cveID": "CVE-2026-67277",
+        "vendorProject": "MikroTik",
+        "product": "RouterOS",
+        "vulnerabilityName": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
+        "dateAdded": "2026-09-10",
+        "shortDescription": "MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-13",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 0,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86060",
+      "description": "RouterOS contains an argument-handling flaw in the SSH login\npath involving usernames that begin with a prohibited character, allowing for the trusted RouterOS policy mask\u00a0to be changed, leading to privilege escalation. Exploitation requires an unauthenticated SSH session to reach the RouterOS login helper.This issue was fixed in versions:\u00a06.49.21 (Long-term),\u00a07.23.4 (Long-term)\u00a0and\u00a07.24.2 (Stable)",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "mikrotik",
+          "product": "routeros",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.24",
+              "lessThan": "7.24.2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.23.4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.49.21",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00401,
+      "kev": {
+        "cveID": "CVE-2026-86060",
+        "vendorProject": "MikroTik",
+        "product": "RouterOS",
+        "vulnerabilityName": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+        "dateAdded": "2026-09-10",
+        "shortDescription": "MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-13",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-88"
+        ],
+        "cpe_count": 0,
+        "reference_count": 7
       }
     },
     {
