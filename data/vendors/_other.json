@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-11T15:03:20+00:00",
+  "generated_at": "2026-09-11T18:27:04+00:00",
   "vendor": "_other",
-  "count": 770,
+  "count": 773,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -32329,6 +32329,56 @@
       }
     },
     {
+      "cve_id": "CVE-2026-84869",
+      "description": "A condition in the ScreenConnect client may allow files to be transferred and executed through an active remote session without authorization or Host confirmation in certain circumstances. ScreenConnect servers are not impacted.",
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "connectwise",
+          "product": "screenconnect",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "All versions prior to 26.6.5"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00382,
+      "kev": {
+        "cveID": "CVE-2026-84869",
+        "vendorProject": "ConnectWise",
+        "product": "ScreenConnect",
+        "vulnerabilityName": "ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+        "dateAdded": "2026-09-11",
+        "shortDescription": "ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-14",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.9,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269",
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2024-22024",
       "description": "An XML external entity or XXE vulnerability in the SAML component of Ivanti Connect Secure (9.x, 22.x), Ivanti Policy Secure (9.x, 22.x) and ZTA gateways which allows an attacker to access certain restricted resources without authentication.",
       "cvss_score": 8.3,
@@ -48368,6 +48418,270 @@
       }
     },
     {
+      "cve_id": "CVE-2026-42016",
+      "description": "JFrog Artifactory (Self Hosted) versions before 7.133.11 are vulnerable to a privilege escalation attack due to a validation check of the token signature/issuer and not the token\u2019s scope.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "jfrog",
+          "product": "artifactory",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "7.133.11",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00266,
+      "kev": {
+        "cveID": "CVE-2026-42016",
+        "vendorProject": "JFrog",
+        "product": "Artifactory",
+        "vulnerabilityName": "JFrog Artifactory Incorrect Authorization Vulnerability",
+        "dateAdded": "2026-09-11",
+        "shortDescription": "JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token\u2019s scope.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-25",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42018",
+      "description": "JFrog Artifactory could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "jfrog",
+          "product": "artifactory",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "7.111.20",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.117.0",
+              "lessThan": "7.117.27",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.125.0",
+              "lessThan": "7.125.19",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.133.0",
+              "lessThan": "7.133.28",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.146.0",
+              "lessThan": "7.146.8",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00349,
+      "kev": {
+        "cveID": "CVE-2026-42018",
+        "vendorProject": "JFrog",
+        "product": "Artifactory",
+        "vulnerabilityName": "JFrog Artifactory Improper Authentication Vulnerability",
+        "dateAdded": "2026-09-11",
+        "shortDescription": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-25",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-66384",
+      "description": "An authenticated user may write data outside the intended Docker cache path under specific remote-repository conditions.",
+      "cvss_score": 5.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "jfrog",
+          "product": "artifactory",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "7.146.35",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.161.0",
+              "lessThan": "7.161.16",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00579,
+      "kev": {
+        "cveID": "CVE-2026-66384",
+        "vendorProject": "JFrog",
+        "product": "Artifactory",
+        "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+        "dateAdded": "2026-08-27",
+        "shortDescription": "JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82329",
+      "description": "JFrog Artifactory contains an authentication weakness that, under default configuration, may allow an unauthenticated attacker with network access to obtain administrative privileges.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jfrog",
+          "product": "artifactory",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "7.111.21",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.117.0",
+              "lessThan": "7.117.28",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.125.0",
+              "lessThan": "7.125.20",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.133.0",
+              "lessThan": "7.133.29",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.146.0",
+              "lessThan": "7.146.38",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "7.161.0",
+              "lessThan": "7.161.20",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.07666,
+      "kev": {
+        "cveID": "CVE-2026-82329",
+        "vendorProject": "JFrog",
+        "product": "Artifactory",
+        "vulnerabilityName": "JFrog Artifactory Improper Authentication Vulnerability",
+        "dateAdded": "2026-09-02",
+        "shortDescription": "JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges. ",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-05",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 6,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-42208",
       "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. From version 1.81.16 to before version 1.83.7, a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. An unauthenticated attacker could send a specially crafted Authorization header to any LLM API route (for example POST /chat/completions) and reach this query through the proxy's error-handling path. An attacker could read data from the proxy's database and may be able to modify it, leading to unauthorised access to the proxy and the credentials it manages. This issue has been patched in version 1.83.7.",
       "cvss_score": 9.3,
@@ -50545,144 +50859,6 @@
         ],
         "cpe_count": 1,
         "reference_count": 6
-      }
-    },
-    {
-      "cve_id": "CVE-2026-66384",
-      "description": "An authenticated user may write data outside the intended Docker cache path under specific remote-repository conditions.",
-      "cvss_score": 5.3,
-      "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
-      "affected": [
-        {
-          "vendor": "jfrog",
-          "product": "artifactory",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "0",
-              "lessThan": "7.146.35",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "7.161.0",
-              "lessThan": "7.161.16",
-              "versionType": "custom"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.00579,
-      "kev": {
-        "cveID": "CVE-2026-66384",
-        "vendorProject": "JFrog",
-        "product": "Artifactory",
-        "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
-        "dateAdded": "2026-08-27",
-        "shortDescription": "JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
-        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-        "dueDate": "2026-09-10",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 5.3,
-        "cvss_v3_severity": "MEDIUM",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-22"
-        ],
-        "cpe_count": 2,
-        "reference_count": 5
-      }
-    },
-    {
-      "cve_id": "CVE-2026-82329",
-      "description": "JFrog Artifactory contains an authentication weakness that, under default configuration, may allow an unauthenticated attacker with network access to obtain administrative privileges.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "jfrog",
-          "product": "artifactory",
-          "versions": [
-            {
-              "status": "affected",
-              "version": "0",
-              "lessThan": "7.111.21",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "7.117.0",
-              "lessThan": "7.117.28",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "7.125.0",
-              "lessThan": "7.125.20",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "7.133.0",
-              "lessThan": "7.133.29",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "7.146.0",
-              "lessThan": "7.146.38",
-              "versionType": "custom"
-            },
-            {
-              "status": "affected",
-              "version": "7.161.0",
-              "lessThan": "7.161.20",
-              "versionType": "custom"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.07666,
-      "kev": {
-        "cveID": "CVE-2026-82329",
-        "vendorProject": "JFrog",
-        "product": "Artifactory",
-        "vulnerabilityName": "JFrog Artifactory Improper Authentication Vulnerability",
-        "dateAdded": "2026-09-02",
-        "shortDescription": "JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges. ",
-        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-        "dueDate": "2026-09-05",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-287"
-        ],
-        "cpe_count": 6,
-        "reference_count": 3
       }
     },
     {
