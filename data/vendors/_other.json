@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-11T01:06:27+00:00",
+  "generated_at": "2026-09-11T05:57:57+00:00",
   "vendor": "_other",
-  "count": 769,
+  "count": 770,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -38150,6 +38150,51 @@
       }
     },
     {
+      "cve_id": "CVE-2026-13745",
+      "description": "A vulnerability in the Gemini CLI and associated GitHub Action allowed an unprivileged attacker\u00a0to achieve an arbitrary code execution in Gemini CLI via untrusted local .env files overriding GEMINI_CLI_HOME.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini cli",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.39.1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "run-gemini-cli github action",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.1.22",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini cli",
+        "product:run-gemini-cli github action",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00299
+    },
+    {
       "cve_id": "CVE-2026-14934",
       "description": "A Missing Authorization vulnerability in the repository creation functionality in Google Cloud BigQuery, Dataform and Colab Enterprise, in the versions between October 2025 and May 10th, 2026, on Google Cloud Platform, allows an authenticated attacker to escalate privileges and perform cross-tenant repository takeover.\n\n\nThis vulnerability was patched on 10 May 2026, and no customer action is needed.",
       "cvss_score": 9.4,
@@ -39051,7 +39096,18 @@
         "vendor:google cloud"
       ],
       "active_threat": false,
-      "probability_score": 0.00437
+      "probability_score": 0.00437,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-184"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-79707",
@@ -43060,7 +43116,7 @@
           "CWE-288"
         ],
         "cpe_count": 0,
-        "reference_count": 1
+        "reference_count": 2
       }
     },
     {

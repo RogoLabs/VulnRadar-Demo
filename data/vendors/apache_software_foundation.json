@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-11T01:06:27+00:00",
+  "generated_at": "2026-09-11T05:57:57+00:00",
   "vendor": "apache_software_foundation",
-  "count": 993,
+  "count": 994,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -33703,7 +33703,7 @@
           "CWE-502"
         ],
         "cpe_count": 3,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -37825,7 +37825,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -44916,6 +44916,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-65181",
+      "description": "Insufficient authorization of Data Source tables in Impala 2.7-4.5 allows a client with privileges to upload a file to remote storage and create a table to execute arbitrary Java code.\nUsers are recommended to upgrade to version 4.5.2, which fixes this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache impala",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.7.0",
+              "lessThanOrEqual": "4.5.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache impala",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00425,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-913"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-65182",
       "description": "Improper Access Control, Incorrect Authorization vulnerability in Apache Tomcat leads to security constraint bypass if a constraint for a longer path is specified before a more restrictive constraint for a shorter sub-path.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120, from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109.\n\n\n\nUsers are recommended to upgrade to version 11.0.25, 10.1.58, 9.0.121, which fixes the issue.",
       "cvss_score": 9.1,
@@ -47914,7 +47957,7 @@
         "cwe_ids": [
           "CWE-23"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
