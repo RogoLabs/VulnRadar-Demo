@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-14T22:37:50+00:00",
+  "generated_at": "2026-09-15T01:46:50+00:00",
   "vendor": "_other",
-  "count": 775,
+  "count": 777,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -45852,6 +45852,154 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-19624",
+      "description": "A flaw was found in NetworkManager-l2tp. The plugin writes attacker-controlled VPN connection properties (vpn.data and vpn.secrets values) unescaped into a generated ipsec.conf file that pluto loads as root. A local unprivileged user can create and activate their own L2TP VPN profile containing a newline-injected leftupdown directive; pluto executes that command as root when the IKE security association is established, resulting in local privilege escalation. This is the same bug class as CVE-2018-10900 (NetworkManager-vpnc).",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "version": "1.0.0",
+              "lessThan": "1.0.16",
+              "versionType": "semver",
+              "status": "affected"
+            },
+            {
+              "version": "1.2.0",
+              "lessThan": "1.2.22",
+              "versionType": "semver",
+              "status": "affected"
+            },
+            {
+              "version": "1.8.0",
+              "lessThan": "1.8.10",
+              "versionType": "semver",
+              "status": "affected"
+            },
+            {
+              "version": "1.20.0",
+              "lessThan": "1.20.24",
+              "versionType": "semver",
+              "status": "affected"
+            },
+            {
+              "version": "1.52.0",
+              "lessThan": "1.52.4",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fedora",
+          "product": "fedora",
+          "versions": [
+            {
+              "version": "1.52.0",
+              "lessThan": "1.52.4",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fedora",
+          "product": "extra packages for enterprise linux (epel)",
+          "versions": [
+            {
+              "version": "1.20.0",
+              "lessThan": "1.20.24",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-19816",
+      "description": "A flaw was found in PackageKit. PackageKit skips the polkit authorization check for transactions carrying the SIMULATE (dry-run) flag. In the dnf5 backend, the RepoRemove handler ignores that contract and always executes the real transaction because its guard is written as (role == REPO_REMOVE || !SIMULATE), which is always true for RepoRemove. An unprivileged local user can therefore perform a genuine package uninstall while claiming to simulate. This vulnerability only affects systems using PackageKit with the dnf5 backend.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "version": "1.3.4",
+              "lessThan": "1.4.0",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fedora",
+          "product": "fedora",
+          "versions": [
+            {
+              "version": "1.3.4",
+              "lessThan": "1.4.0",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 9",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 10",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 6",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 7",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 7",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8",
+          "versions": null
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-19750",
