@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-16T00:09:47+00:00",
+  "generated_at": "2026-09-16T05:13:31+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1012,
+  "count": 1041,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28979,7 +28979,7 @@
           "CWE-787"
         ],
         "cpe_count": 1,
-        "reference_count": 16
+        "reference_count": 17
       }
     },
     {
@@ -30783,7 +30783,7 @@
           "CWE-120"
         ],
         "cpe_count": 1,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -34274,7 +34274,7 @@
           "CWE-120"
         ],
         "cpe_count": 1,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -35450,7 +35450,7 @@
           "CWE-125"
         ],
         "cpe_count": 1,
-        "reference_count": 15
+        "reference_count": 16
       }
     },
     {
@@ -46701,6 +46701,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-67211",
+      "description": "OOM Denial of Service via Unbounded Map Pre-Sizing in Apache OpenNLP SymSpellModelSerializer\n\nVersions Affected: \n\n- 3.0.0-M4\n- 3.0.0-M5\n\n(The opennlp-spellcheck extension was introduced in 3.0.0-M4. Releases 1.x and 2.x do not contain the affected code.)\n\nDescription:\n\nThe SymSpellModelSerializer.create() method reads two 32-bit signed integer count fields (unigramCount and bigramCount) from a binary SymSpell model stream and passes each value directly to LinkedHashMap.newLinkedHashMap() after validating only that it is non-negative. No upper bound is applied, so the count is fully attacker-controlled when the model file originates from an untrusted source.\n\nA crafted .bin model file in which either count field is set to Integer.MAX_VALUE (or any value large enough to exhaust the available heap) causes the map to be pre-sized to a capacity of 2^30 entries. The oversized backing array is allocated on the first put() into that map, requesting 4\u20138 GB depending on whether compressed oops are in effect, and the load fails with an OutOfMemoryError. Because the count fields sit immediately after a fixed-size header (magic, format version, three UTF strings, the configuration fields, and the edit-distance identifier) the attacker pays no meaningful size cost to weaponize a payload: a file of well under 100 bytes plus a single real entry is sufficient to crash a JVM that loads it.\n\nAny code path that deserializes a SymSpell model is affected, including SymSpellModels.deserialize(InputStream), SymSpellModels.fromBytes(byte[]), classpath model loading via SymSpellModelResolver.resolveByLanguage(String), the CorrectTextTool command-line tool, and model-archive loading through the registered ArtifactSerializer. The opennlp-spellcheck extension ships in the official OpenNLP binary distribution.\n\nThe practical impact is denial of service against processes that load SymSpell model files from untrusted or semi-trusted origins.\n\nMitigation:\n\n- 3.x users should upgrade to 3.0.0-M6.\n\nNote: The fix applies an upper bound to both count fields, checked before the map is pre-sized; counts that are negative or exceed the bound cause an IOException to be thrown and the read to fail fast with no large allocation. The bound is the existing AbstractModelReader.MAX_ENTRIES limit introduced earlie, which the current change promotes to public visibility so that serializers implementing their own binary format can share it. The default bound is 10,000,000, which is well above the entry counts of legitimate SymSpell dictionaries but far below any value that would threaten heap exhaustion. Deployments that legitimately need to load larger dictionaries can raise the limit at JVM startup by setting the OPENNLP_MAX_ENTRIES system property to the desired positive integer (e.g. -DOPENNLP_MAX_ENTRIES=50000000); invalid or non-positive values fall back to the default. Note that this property is shared with the model-reader limit and raising it relaxes both.\n\nUsers who cannot upgrade immediately should treat all SymSpell .bin model files as untrusted input unless their provenance is verified, and should avoid loading models supplied by end users or fetched from third-party repositories without integrity checks.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache opennlp",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M4",
+              "lessThan": "3.0.0-M6",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache opennlp",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00322,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-67260",
       "description": "Apache Airflow 3.3.0 moved human-in-the-loop tasks from the triggerer to a new `awaiting_input` task state swept by the scheduler. That sweep deserializes the task instance's `next_kwargs` without an allow-list, so a Dag author \u2014 who controls that value through the task execution API \u2014 can cause an arbitrary module import and object instantiation inside the scheduler process, or terminate the scheduler job. No non-default configuration is required: the sweep runs unconditionally every 15 seconds, and the default `allowed_deserialization_classes` setting does not cover this code path. Versions before 3.3.0 are not affected, because human-in-the-loop tasks deferred onto the triggerer instead. This is a different code path from CVE-2026-58076, which covers the same unguarded exception-node deserialization reached elsewhere \u2014 deployments that applied that fix must upgrade for this issue as well. Users are advised to upgrade to apache-airflow 3.3.1 or later.",
       "cvss_score": 7.3,
@@ -48082,6 +48125,226 @@
       }
     },
     {
+      "cve_id": "CVE-2026-72524",
+      "description": "Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access or modify data they are not authorized to.\n\n\n\nThis issue affects Apache Doris: from 3.1.0 through 3.1.*, from 4.0.0 through 4.0.7, and from 4.1.0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to a fixed release (4.0.8 or 4.1.4), which fixes the issue.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache doris",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.1.0",
+              "lessThanOrEqual": "3.1.*",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache doris",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00353,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73178",
+      "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Syncope.\n\nAn administrator with adequate entitlements can get access via REST to the list of existing Access Tokens, including their signed JWT body.\nThese values can be then used to perform further REST requests, impersonating users with higher administration entitlements.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00413,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73195",
+      "description": "Improper Encoding or Escaping of Output vulnerability in Apache Syncope.\n\n\n\nAuthenticated users can store a spreadsheet formula payload in one of their own plain attributes. When such users are included in a CSV export and the generated CSV file is opened by a spreadsheet application, the formula may be executed.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00336,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-116"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73236",
+      "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\nDelegated administration security checks are based on Realm hierarchy and enforced via prefix matches.\nDue to incorrect implementation, two sibling Realms whose names\u00a0begin with the same string cannot be correctly distinguished, resulting in incorrect authorization.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00336,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-73240",
       "description": "Specifically crafted inputs may lead to git argument injection in Apache Allura.\n\nThis issue affects Apache Allura: before 1.19.1.\n\nUsers are recommended to upgrade to version 1.19.1, which fixes the issue.",
       "cvss_score": 9.8,
@@ -48164,6 +48427,171 @@
           "CWE-20"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73370",
+      "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\nDelegated administration security checks performed by Reconciliation service's pull and push, being incomplete, could accept calls by administrator not provided with adequate entitlements.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73470",
+      "description": "Improper Privilege Management vulnerability in Apache Syncope.\n\n\n\n\n\nDelegations can be created or updated with Roles not owned by the delegating User, or not for the same Realm subtree under the delegation management was granted for.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73579",
+      "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\nAny search requests are transformed into SQL, Neo4J or Elasticsearch / Opensearch queries, depending on the actual deployment configuration.\nAn important component of such transformation is the Realms filter, which ensures that the search results are matching the requester's permissions.\nFor non-recursive search requests it is possible that such Realms filter is rendered as empty, thus voiding any restriction on requester privileges.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -48336,6 +48764,61 @@
         ],
         "cpe_count": 4,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73668",
+      "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\n\n\nAn administrator with adequate entitlements in a given Realm may be able to read via REST the full Connector configuration, confidential properties included, scoped in another Realm and thus be able to effectively duplicate such Connector instance into the Realm they have administration rights for.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -48554,6 +49037,61 @@
       }
     },
     {
+      "cve_id": "CVE-2026-75030",
+      "description": "Missing Authorization vulnerability in Apache Syncope.\n\n\n\nAn administrator with task execution entitlements might be able to mass (de)provision group members, regardless of their group-related administration capabilities.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00579,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-75156",
       "description": "Apache Airflow FAB provider versions 3.7.3 through 3.8.0 do not validate the issuer or audience of Azure AD `id_token`s during OAuth login. Deployments are affected only when the FAB auth manager is configured with Azure AD as an OAuth provider. Because the signing keys are fetched from Microsoft's **multi-tenant** JWKS endpoint, an `id_token` minted in *any* Azure tenant \u2014 including one the attacker creates \u2014 passes signature verification, and the username and role assignments are then read from that attacker-controlled token. Anyone able to register an Azure tenant can therefore authenticate to the Airflow UI with no prior access to the deployment.\n\nThe fix for **CVE-2026-59243** was incomplete, and this advisory closes the remaining gap: that fix made the provider verify the `id_token` signature, but did not add issuer or audience checks. Operators who already applied the CVE-2026-59243 fix are **still affected and must upgrade again** \u2014 3.7.3 is the release that shipped that fix, so every version containing it falls inside this affected range. Upgrade to apache-airflow-providers-fab `3.8.1` or later.",
       "cvss_score": 9.1,
@@ -48594,6 +49132,116 @@
         ],
         "cpe_count": 0,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-77051",
+      "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Syncope.\n\n\n\n\n\nAn administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized entityKey and opEvent parameters.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00561,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-77181",
+      "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\nAn administrator with ClientApp's update entitlement is unable to perform the related operation, while\u00a0ClientApp's create entitlement is checked both for create and update operations on ClientApp.\n\n\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -48695,6 +49343,116 @@
       }
     },
     {
+      "cve_id": "CVE-2026-78330",
+      "description": "Incorrect privilege assignment vulnerability in Apache Syncope.\n\nWhen the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can obtain admin privileges after completing a successful authentication and obtaining a valid low-privileges JWT.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00599,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-266"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-78336",
+      "description": "Insertion of sensitive information into sent data vulnerability in Apache Syncope.\n\n\n\nAny authenticated user can query for the list of available OIDC providers configured for SSO with Console and Enduser. The returned payload contains all configuration settings, including client secrets, regardless of the entitlements owned by the caller.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00413,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-201"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-80181",
       "description": "Apache Allura's\u00a0webhooks\u00a0are vulnerable to Server-Side Request Forgery (SSRF).\n\n\n\n\nThis issue affects Apache Allura: through 1.20.0.\n\n\n\nUsers are recommended to upgrade to version 1.21.0, which fixes the issue.",
       "cvss_score": 9.1,
@@ -48782,7 +49540,7 @@
         "cwe_ids": [
           "CWE-95"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -48831,7 +49589,7 @@
         "cwe_ids": [
           "CWE-94"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -48880,7 +49638,7 @@
         "cwe_ids": [
           "CWE-639"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -48922,6 +49680,319 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-200"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82232",
+      "description": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Syncope.\n\n\n\nAn administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized sort clauses for Task search.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00561,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82427",
+      "description": "Description\n\nA topology's `topology.blobstore.map` lets the submitter choose a local name for each blob that the\nsupervisor localises. That name was used to build a path under the topology's working directory without\nnormalisation, in both `AsyncLocalizer` and `Container.createBlobstoreLinks`, and the symlink helper\nforce-deletes whatever already exists at the target before creating the link.\n\nA submitter could therefore use `../` segments to direct that delete-and-symlink operation at an arbitrary\npath, as the supervisor user, on every node the topology is scheduled onto. The consequences include\nrecursive deletion of supervisor-owned content and planting a symlink that causes a subsequent worker\nlaunch to execute attacker-chosen code as another tenant's operating-system user, which defeats the\nisolation that `supervisor.run.worker.as.user` is intended to provide.\n\nMitigation\n\nUpgrade to 3.1.0, where the resolved target must lie inside the expected root at both call sites.\n\nUsers who cannot upgrade immediately should restrict topology submission to trusted principals, and may\nreject submissions whose `topology.blobstore.map` entries contain path separators or `..` segments before\nthey reach Nimbus.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm nimbus",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm nimbus",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00174,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82428",
+      "description": "Description\n\nDependency artifacts uploaded with `storm jar --artifacts` were stored under a blob key derived only from\nthe Maven coordinate, for example `dep---.jar`. The key was therefore identical\nfor every user of the cluster and predictable in advance. When the blob already existed, the uploader\ncaught `KeyAlreadyExistsException` and silently reused it, with no check that the existing blob's content\nor owner matched the artifact the submitter had resolved.\n\nA user who uploaded a blob under such a key first therefore controlled the bytes that every later submitter\nof the same coordinate would receive on the worker classpath, resulting in code execution inside another\ntenant's topology.\n\nThis affects deployments where more than one principal may create blobs and where the `--artifacts`\ndependency feature is used.\n\nMitigation\n\nUpgrade to 3.1.0, where each uploaded artifact receives a key carrying a freshly generated UUID and a\npre-existing blob is no longer silently reused.\n\nNote that the corrected key generation is on the SUBMITTING CLIENT, so upgrading the cluster alone does not\nclose this; every client that runs `storm jar --artifacts` must also be upgraded. Operators should audit\nexisting `dep-` blobs for unexpected owners before upgrading. Users who cannot upgrade immediately should\navoid the `--artifacts` mechanism in multi-tenant clusters and distribute dependencies inside the topology\njar instead.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm client",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm client",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00693,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82429",
+      "description": "Description\n\nThe setuid-root `worker-launcher` binary adjusts ownership and permissions of worker directories by walking\nthe tree with FTS and calling `lchown` and `chmod` on each entry's full pathname while running with an\neffective uid of 0. Both syscalls re-resolve the path at the time of the call, after FTS has classified the\nentry, and the trees being walked are owned and writable by the untrusted topology user.\n\nA tenant running code on a supervisor node could therefore replace an intermediate directory component with\na symbolic link between classification and the privileged operation, redirecting the root-owned `lchown` or\n`chmod` at an arbitrary file on the host. The operation is repeatable at will, since crashing a worker\nforces a relaunch and blob updates re-run the walk, so a failed attempt costs the attacker nothing.\n\nThis crosses the boundary that `supervisor.run.worker.as.user` and container isolation are intended to\nenforce. It is the same defect class as the Hadoop container-executor issues from which this code derives.\n\nMitigation\n\nUpgrade to 3.1.0, where the privileged walk operates on file descriptors it has already stat'd rather than\non pathnames re-resolved at call time.\n\nUsers who cannot upgrade immediately should not run untrusted topology code on supervisors configured with\n`supervisor.run.worker.as.user`, since the launcher is the boundary being crossed. Note that the launcher\nmust be rebuilt and reinstalled after upgrading; replacing the Java artifacts alone is not sufficient.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm worker launcher",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm worker launcher",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00131,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-367"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82430",
+      "description": "Description\n\nWhen launching a Docker or OCI worker, the setuid-root `worker-launcher` first changes ownership of the\nentire worker directory to the untrusted topology user, and only afterwards reads and acts on the command\nfile that the supervisor wrote into that same directory. The file is opened without `O_NOFOLLOW` and without\nre-verifying its owner, so between the ownership change and the read the tenant can replace its contents.\n\nFor the Docker path the parsed command is executed with real uid 0, and the command sanitiser is not a\nprivilege boundary: it admits `-v` with an arbitrary source, `--device`, `--cap-add`, `--security-opt`,\n`--user` and `--net`, and copies positional arguments through verbatim. A rewritten file therefore yields an\nattacker-authored, root-equivalent container invocation with the host filesystem available.\n\nFor the OCI path the same rewrite window applies, and mount validation is structural only, with no\nsource or destination allow-list, so arbitrary host paths can be bind-mounted read-write into the\ncontainer. The `username` field of the command file is likewise attacker-settable and is checked only\nagainst non-root and minimum-uid rules, permitting execution as another tenant's uid.\n\nMitigation\n\nUpgrade to 3.1.0, where the command file is validated before the ownership change and re-verified on open,\nand where mount sources and destinations are constrained by configuration.\n\nUsers who cannot upgrade immediately should disable Docker and OCI worker isolation, or restrict topology\nsubmission on affected supervisors to trusted principals. Note that the launcher must be rebuilt and\nreinstalled after upgrading.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm worker launcher",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm worker launcher",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0014,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-367"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82431",
+      "description": "Description\n\n`SimpleACLAuthorizer` evaluated the user-level command set by returning early when `nimbus.users` was empty,\nbefore `nimbus.groups` was considered. An operator who restricted cluster access by group alone, leaving\n`nimbus.users` unset, therefore received no restriction at all: every authenticated principal was permitted\nevery user-level operation, including `submitTopology`, `beginFileUpload` and `getNimbusConf`.\n\n`docs/SECURITY.md` presents `nimbus.groups` as a supported way to lock down a cluster, so a deployment\nfollowing the documentation could believe it was restricted while it was not. The failure is silent; nothing\nin the logs or the configuration indicates that the group list is being ignored.\n\nBoth lists left empty continues to mean that no restriction is configured, which is the shipped default and\nis unchanged.\n\nMitigation\n\nUpgrade to 3.1.0, where `nimbus.groups` is evaluated whether or not `nimbus.users` is set.\n\nUsers who cannot upgrade immediately should additionally populate `nimbus.users` with the intended\nprincipals, since a non-empty user list causes the group list to be evaluated on affected versions.\nOperators should review Nimbus access logs for operations by principals outside the intended groups.\n\nNote that after upgrading, a cluster configured with `nimbus.groups` alone becomes restrictive for the first\ntime. This includes `NimbusClient`, which calls `getLeader` on every connection, so clients outside the\nconfigured groups will begin to be refused.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm client",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm client",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82432",
+      "description": "Description\n\nNimbus validated `topology.blobstore.map` against the calling subject at submission time only. The rebalance\noperation accepts configuration overrides and stripped a small set of keys from them, but never re-ran that\nvalidation, so a caller authorised to rebalance a topology could introduce a blobstore map entry naming a\nblob whose ACL does not grant them access. Supervisors localise whatever key the map names, placing the\nblob's contents into the topology's working directory.\n\nThe same advisory covers `listBlobs`, which performed no authorization check and passed no subject, unlike\nthe neighbouring `getBlobMeta` and `beginBlobDownload` operations. It therefore returned every key in the\nblobstore to any caller able to reach the Nimbus Thrift port, which provides the key names that make the\nabove practical. On its own the disclosure is metadata only.\n\nMitigation\n\nUpgrade to 3.1.0, where rebalance configuration overrides are validated exactly as submission-time\nconfiguration is, against the rebalancing caller, and where `listBlobs` applies the configured\nauthorization.\n\nUsers who cannot upgrade immediately should restrict rebalance rights to trusted principals, keeping in mind\nthat membership of a topology's `topology.users` or `topology.groups` confers them.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm nimbus",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm nimbus",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00345,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -48970,7 +50041,193 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.0048
+      "probability_score": 0.0048,
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-522",
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82435",
+      "description": "Description\n\nThe worker's Netty message decoder is installed ahead of the SASL authentication handlers in the pipeline\nand acts on frames before any authentication has taken place. It allocated buffers sized from a\nlength field carried in the frame, so a single frame from an unauthenticated peer able to reach a worker\nslot port could drive a large allocation.\n\n`storm.messaging.netty.authentication` defaults to false, and the decoder runs before the handler that\nenforces it in any case, so no credentials are required. The attacker needs only TCP reachability to a\nworker port.\n\nThe effect of a single frame at the default 768 MB worker heap has not been measured to distinguish\nsustained worker loss from transient garbage-collection pressure. The severity assigned to this advisory\nreflects the more conservative reading; consumers who require a precise figure should test against their own\nworker heap configuration.\n\nMitigation\n\nUpgrade to 3.1.0, where frames are decoded only after the handshake completes.\n\nUsers who cannot upgrade immediately should ensure that worker slot ports are reachable only from within the\ncluster, as the security model already recommends, and should enable\n`storm.messaging.netty.authentication` where the deployment permits it.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm worker",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm worker",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00607,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82438",
+      "description": "Description\n\nThree separate mechanisms allowed a web page on an unrelated origin to read responses that Storm's HTTP\ncomponents served to an authenticated user.\n\nThe Logviewer reflected the request's `Origin` header back in `Access-Control-Allow-Origin` while also\nsending `Access-Control-Allow-Credentials: true`. The published security model documents a permissive\n`Access-Control-Allow-Origin: *` posture as accepted, which is safe precisely because browsers refuse to\nhonour `*` together with credentials; reflecting the concrete origin removes that protection.\n\nThe shared CORS filter used by the UI, the Logviewer and DRPC was configured with a response header name\nwhere an initialisation parameter name was expected. The container ignored the setting and applied its own\ndefaults, which allow credentials.\n\nFinally, the UI and Logviewer wrapped API responses in a caller-supplied JSONP callback for every GET\nrequest. A script element on any origin can load such a response, which bypasses the same-origin policy\nentirely rather than negotiating it, and there was no way to turn the behaviour off.\n\nIn each case the effect is that a page visited by an authenticated operator can read cluster, topology and\nlog data on their behalf.\n\nMitigation\n\nUpgrade to 3.1.0, where the Logviewer no longer reflects the request origin in a credentialed response, the\nCORS filter is configured explicitly, and JSONP wrapping is governed by `ui.enable.jsonp`, which defaults to\nfalse.\n\nNote that disabling JSONP is a behaviour change for tooling that passes a `callback` query parameter; such\ntooling should be moved to ordinary JSON requests.\n\nUsers who cannot upgrade immediately should place the UI, Logviewer and DRPC HTTP endpoints behind a reverse\nproxy that strips `Access-Control-Allow-Origin` and `Access-Control-Allow-Credentials` from responses and\nrejects requests carrying a `callback` parameter.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm webapp",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm webapp",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00196,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-346",
+          "CWE-942"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82439",
+      "description": "Description\n\nThe DRPC server kept a map from function name to request queue and created an entry the first time a\nfunction name was seen. No code path ever removed an entry: request cleanup removed the request from its\nqueue, and the shutdown path drained queues, but the queue object and its map entry remained for the life of\nthe process.\n\nFunction names come from the client and are not constrained to functions any topology has registered, so the\nnumber of retained entries is bounded only by the number of distinct names an attacker chooses to send, and\neach retained entry holds the name itself. `drpc.authorizer` is unset by default, so no credentials are\nrequired to reach the endpoint.\n\nThe retained state is permanent rather than a transient load spike, so the effect accumulates until the DRPC\nserver exhausts its heap.\n\nMitigation\n\nUpgrade to 3.1.0, where a function's queue is removed once nothing is waiting in it.\n\nUsers who cannot upgrade immediately should configure `drpc.authorizer` so that only trusted principals can\nreach the DRPC endpoints, and should ensure the DRPC ports are not reachable from untrusted networks.\n\nCredit\n\nThe ASF -- found using Claude agents to study the security of open-source projects, validated and reported by Apache Storm.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm drpc",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm drpc",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00516,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82441",
+      "description": "Description\n\nA submitted topology carries two lists of blobstore keys, `dependency_jars` and `dependency_artifacts`,\nwhich the client fills in after uploading the corresponding blobs. Nimbus performed no validation of their\ncontents on the submission path, yet acts on them in two places.\n\nDuring cleanup of a finished topology, Nimbus deletes the keys named in those lists, and the deletion is\nperformed as the Nimbus subject, for which the blobstore short-circuits its ACL check. A submitter who\nlisted a key belonging to another topology, such as its `-stormjar.jar`, could therefore cause\nthat blob to be deleted when their own topology was cleaned up.\n\nSeparately, on acquiring leadership a Nimbus compares the dependency keys of all active topologies against\nthe blobstore contents and surrenders leadership if any is missing. A single key that does not exist, on a\nsingle active topology, therefore causes every Nimbus to acquire leadership, surrender it and requeue\nindefinitely, leaving the cluster without a leader and unable to schedule, clean up or accept submissions.\n\nMitigation\n\nUpgrade to 3.1.0, where a submission is refused unless every entry in both lists is a dependency blob key\nand exists in the blobstore.\n\nNote that this validates new submissions only; a topology stored by an affected version with an invalid list\nis unaffected by the upgrade. An operator whose cluster is failing to retain a leader should inspect the\nNimbus log for the dependency keys reported as missing and remove or resubmit the topology naming them.\n\nUsers who cannot upgrade immediately should restrict topology submission to trusted principals.\n\nCredit\n\nThis issue was discovered by rzo1 while investigating an unrelated blobstore defect.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache storm nimbus",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache storm nimbus",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0042,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-639"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-82617",
@@ -49089,6 +50346,226 @@
           "CWE-23"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86460",
+      "description": "Cypher injection vulnerability in the Neo4j persistence layer when processing some FIQL search\u00a0conditions.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00557,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-87779",
+      "description": "Insertion of sensitive information into log file vulnerability in Apache Syncope.\n\n\n\nWhen AES key of non-standard length (not 16/24/32 bytes) is configured, Syncope will pad the provided value with random characters. The resulting key value is logged.\n\n\n\nThis issue affects Apache Syncope: from 3.0.15 through 3.0.16, from 4.0.3 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.15",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.3",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00413,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-87785",
+      "description": "Authentication bypass by spoofing vulnerability in Apache Syncope.\n\n\n\nWhen the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can spoof another user's privileges after completing a successful authentication and obtaining a valid JWT.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00512,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-290"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-87802",
+      "description": "Improper verification of cryptographic signature vulnerability in Apache Syncope.\n\n\n\nWhen SRA is configured for OAuth 2.0 without JWKS set URI assigned, an attacker can forge arbitrary JWTs to impersonate any user identity and permissions, gaining full access to services proxied by SRA.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.7",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00257,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-347"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     }

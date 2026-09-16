@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-16T00:09:47+00:00",
+  "generated_at": "2026-09-16T05:13:31+00:00",
   "vendor": "google",
-  "count": 2984,
+  "count": 2986,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -102757,14 +102757,14 @@
       "active_threat": false,
       "probability_score": 0.00134,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -105179,14 +105179,14 @@
       "active_threat": false,
       "probability_score": 0.0012,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -123978,6 +123978,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-87595",
+      "description": "Server-side request forgery in Mobile in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "153.0.8010.36",
+              "status": "affected",
+              "lessThan": "153.0.8010.36",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00312,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-87601",
       "description": "Race condition in V8 in Google Chrome prior to 153.0.8010.36 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Low)",
       "cvss_score": 7.5,
@@ -124146,6 +124189,49 @@
           "CWE-416"
         ],
         "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-87608",
+      "description": "Improper certificate validation in FedCM in Google Chrome prior to 153.0.8010.36 allowed a remote attacker leveraging social engineering to bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "153.0.8010.36",
+              "status": "affected",
+              "lessThan": "153.0.8010.36",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00206,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-295"
+        ],
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
