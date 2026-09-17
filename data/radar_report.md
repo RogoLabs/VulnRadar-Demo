@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-17T11:26:51+00:00`
+Generated: `2026-09-17T16:43:30+00:00`
 
 ## Executive Summary
 
@@ -29,8 +29,8 @@ Top critical items:
 | [CVE-2024-38856](https://www.cve.org/CVERecord?id=CVE-2024-38856) | 0.994 | 9.8 | 2024-09-17 | Incorrect Authorization vulnerability in Apache OFBiz.  This issue affects Apache OFBiz: through 18.12.14.  Users are r… |
 | [CVE-2025-20281](https://www.cve.org/CVERecord?id=CVE-2025-20281) | 0.972 | 10.0 | 2025-08-18 | A vulnerability in a specific API of Cisco ISE and Cisco ISE-PIC could allow an unauthenticated, remote attacker to exe… |
 | [CVE-2024-27348](https://www.cve.org/CVERecord?id=CVE-2024-27348) | 0.992 | 9.8 | 2024-10-09 | RCE-Remote Command Execution vulnerability in Apache HugeGraph-Server.This issue affects Apache HugeGraph-Server: from … |
-| [CVE-2026-1340](https://www.cve.org/CVERecord?id=CVE-2026-1340) | 0.986 | 9.8 | 2026-04-11 | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
-| [CVE-2026-1281](https://www.cve.org/CVERecord?id=CVE-2026-1281) | 0.985 | 9.8 | 2026-02-01 | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
+| [CVE-2026-1340](https://www.cve.org/CVERecord?id=CVE-2026-1340) | 0.987 | 9.8 | 2026-04-11 | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
+| [CVE-2026-1281](https://www.cve.org/CVERecord?id=CVE-2026-1281) | 0.986 | 9.8 | 2026-02-01 | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
 | [CVE-2024-29824](https://www.cve.org/CVERecord?id=CVE-2024-29824) | 1.000 | 9.6 | 2024-10-23 | An unspecified SQL Injection vulnerability in Core server of Ivanti EPM 2022 SU5 and prior allows an unauthenticated at… |
 | [CVE-2025-25257](https://www.cve.org/CVERecord?id=CVE-2025-25257) | 0.998 | 9.6 | 2025-08-08 | An improper neutralization of special elements used in an SQL command ('SQL Injection') vulnerability [CWE-89] vulnerab… |
 | [CVE-2023-23397](https://www.cve.org/CVERecord?id=CVE-2023-23397) | 0.974 | 9.8 | 2023-04-04 | Microsoft Outlook Elevation of Privilege Vulnerability |
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **20232**
 - Watchlist hits: **19794**
 - CISA KEVs: **796**
-- Exploit Intel (PoC): **880**
-- Exploit Intel + Watchlist (CRITICAL): **442**
+- Exploit Intel (PoC): **881**
+- Exploit Intel + Watchlist (CRITICAL): **443**
 
 ## Top Findings (max 200)
 
@@ -67,8 +67,8 @@ Top critical items:
 | [CVE-2024-38856](https://www.cve.org/CVERecord?id=CVE-2024-38856) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-17 | 0.994 | 9.8 | ✅ | Incorrect Authorization vulnerability in Apache OFBiz.  This issue affects Apache OFBiz: through 18.12.14.  Users are recommended to upgrade to version 18.12.1… |
 | [CVE-2025-20281](https://www.cve.org/CVERecord?id=CVE-2025-20281) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-18 | 0.972 | 10.0 | ✅ | A vulnerability in a specific API of Cisco ISE and Cisco ISE-PIC could allow an unauthenticated, remote attacker to execute arbitrary code on the underlying op… |
 | [CVE-2024-27348](https://www.cve.org/CVERecord?id=CVE-2024-27348) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-09 | 0.992 | 9.8 | ✅ | RCE-Remote Command Execution vulnerability in Apache HugeGraph-Server.This issue affects Apache HugeGraph-Server: from 1.0.0 before 1.3.0 in Java8 & Java11  Us… |
-| [CVE-2026-1340](https://www.cve.org/CVERecord?id=CVE-2026-1340) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-11 | 0.986 | 9.8 | ✅ | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
-| [CVE-2026-1281](https://www.cve.org/CVERecord?id=CVE-2026-1281) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-01 | 0.985 | 9.8 | ✅ | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
+| [CVE-2026-1340](https://www.cve.org/CVERecord?id=CVE-2026-1340) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-11 | 0.987 | 9.8 | ✅ | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
+| [CVE-2026-1281](https://www.cve.org/CVERecord?id=CVE-2026-1281) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-01 | 0.986 | 9.8 | ✅ | A code injection in Ivanti Endpoint Manager Mobile allowing attackers to achieve unauthenticated remote code execution. |
 | [CVE-2024-29824](https://www.cve.org/CVERecord?id=CVE-2024-29824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-23 | 1.000 | 9.6 | ✅ | An unspecified SQL Injection vulnerability in Core server of Ivanti EPM 2022 SU5 and prior allows an unauthenticated attacker within the same network to execut… |
 | [CVE-2025-25257](https://www.cve.org/CVERecord?id=CVE-2025-25257) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-08 | 0.998 | 9.6 | ✅ | An improper neutralization of special elements used in an SQL command ('SQL Injection') vulnerability [CWE-89] vulnerability in Fortinet FortiWeb 7.6.0 through… |
 | [CVE-2023-23397](https://www.cve.org/CVERecord?id=CVE-2023-23397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-04-04 | 0.974 | 9.8 | ✅ | Microsoft Outlook Elevation of Privilege Vulnerability |
@@ -142,7 +142,7 @@ Top critical items:
 | [CVE-2023-24955](https://www.cve.org/CVERecord?id=CVE-2023-24955) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-04-16 | 0.854 | 7.2 | ✅ | Microsoft SharePoint Server Remote Code Execution Vulnerability |
 | [CVE-2024-20353](https://www.cve.org/CVERecord?id=CVE-2024-20353) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-01 | 0.707 | 8.6 | ✅ | A vulnerability in the management and VPN web servers for Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software co… |
 | [CVE-2025-4427](https://www.cve.org/CVERecord?id=CVE-2025-4427) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.999 | 5.3 | ✅ | An authentication bypass in the API component of Ivanti Endpoint Manager Mobile 12.5.0.0 and prior allows attackers to access protected resources without prope… |
-| [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-29 | 0.712 | 8.1 | ✅ | Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform sp… |
+| [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-29 | 0.718 | 8.1 | ✅ | Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform sp… |
 | [CVE-2025-20362](https://www.cve.org/CVERecord?id=CVE-2025-20362) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-26 | 0.871 | 6.5 | ✅ | Update: On November 5, 2025, Cisco became aware of a new attack variant against devices running Cisco Secure ASA Software or Cisco Secure FTD Software releases… |
 | [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.726 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-21529](https://www.cve.org/CVERecord?id=CVE-2023-21529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.621 | 8.8 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
@@ -242,10 +242,10 @@ Top critical items:
 | [CVE-2022-3075](https://www.cve.org/CVERecord?id=CVE-2022-3075) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-29 | 0.058 | 9.6 | ✅ | Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially… |
 | [CVE-2023-2136](https://www.cve.org/CVERecord?id=CVE-2023-2136) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-12 | 0.057 | 9.6 | ✅ | Integer overflow in Skia in Google Chrome prior to 112.0.5615.137 allowed a remote attacker who had compromised the renderer process to potentially perform a s… |
 | [CVE-2022-1364](https://www.cve.org/CVERecord?id=CVE-2022-1364) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-06 | 0.137 | 8.8 | ✅ | Type confusion in V8 Turbofan in Google Chrome prior to 100.0.4896.127 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
+| [CVE-2026-76460](https://www.cve.org/CVERecord?id=CVE-2026-76460) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-19 | 0.009 | 10.0 | ✅ | A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to bypass authentication.  This vulnerabili… |
 | [CVE-2025-26633](https://www.cve.org/CVERecord?id=CVE-2025-26633) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-01 | 0.304 | 7.0 | ✅ | Improper neutralization in Microsoft Management Console allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-32373](https://www.cve.org/CVERecord?id=CVE-2023-32373) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.122 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.6 and iPadOS … |
 | [CVE-2026-76461](https://www.cve.org/CVERecord?id=CVE-2026-76461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-17 | 0.020 | 9.8 | ✅ | A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to execute arbitr… |
-| [CVE-2026-76460](https://www.cve.org/CVERecord?id=CVE-2026-76460) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-09-19 |  | 10.0 | ✅ | A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to bypass authentication.  This vulnerabili… |
 | [CVE-2024-4761](https://www.cve.org/CVERecord?id=CVE-2024-4761) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-06 | 0.110 | 8.8 | ✅ | Out of bounds write in V8 in Google Chrome prior to 124.0.6367.207 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. … |
 | [CVE-2024-23222](https://www.cve.org/CVERecord?id=CVE-2024-23222) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-13 | 0.106 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in Safari 17.3, iOS 15.8.7 and iPadOS 15.8.7, iOS 16.7.5 and iPadOS 16.7.5, iOS … |
 
