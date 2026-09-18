@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-18T01:17:19+00:00",
+  "generated_at": "2026-09-18T07:21:02+00:00",
   "vendor": "_other",
-  "count": 778,
+  "count": 782,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -29561,6 +29561,70 @@
       }
     },
     {
+      "cve_id": "CVE-2026-87886",
+      "description": "Local privilege escalation due to insecure file permissions. The following products are affected: Acronis Backup plugin for cPanel & WHM (Linux) before build 1.9.3.1021, Acronis Backup extension for Plesk (Linux) before build 1.8.11.638, Acronis Backup plugin for DirectAdmin (Linux) before build 1.2.3.238.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "acronis",
+          "product": "acronis backup plugin for cpanel & whm",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "1.9.3.1021",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "acronis",
+          "product": "acronis backup extension for plesk",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "1.8.11.638",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "acronis",
+          "product": "acronis backup plugin for directadmin",
+          "versions": [
+            {
+              "version": "unspecified",
+              "status": "affected",
+              "lessThan": "1.2.3.238",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-87886",
+        "vendorProject": "Acronis",
+        "product": "Backup",
+        "vulnerabilityName": "Acronis Backup Incorrect Default Permissions Vulnerability",
+        "dateAdded": "2026-09-16",
+        "shortDescription": "Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-19",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
       "cve_id": "CVE-2023-45727",
       "description": "Proself Enterprise/Standard Edition Ver5.62 and earlier, Proself Gateway Edition Ver1.65 and earlier, and Proself Mail Sanitize Edition Ver1.08 and earlier allow a remote unauthenticated attacker to conduct XML External Entity (XXE) attacks. By processing a specially crafted request containing malformed XML data, arbitrary files on the server containing account information may be read by the attacker.",
       "cvss_score": 7.5,
@@ -50102,6 +50166,86 @@
       }
     },
     {
+      "cve_id": "CVE-2026-47252",
+      "description": "Anyquery is an SQL query engine built on top of SQLite. Prior to 0.4.5, authenticated users with INSERT or UPDATE access to affected macOS virtual tables can execute operating-system commands because the Chrome plugin and equivalent Brave, Edge, and Safari variants interpolate a SQL-controlled URL into AppleScript or JXA source passed to osascript. In plugins/chrome/tabs.go, tabsTable.Insert() passes the URL through fmt.Sprintf(newTabScript, url), and tabsTable.Update() uses fmt.Sprintf(setURLScript, pk, url). A URL containing quote and newline characters can break out of the intended string or property record and append script statements, resulting in arbitrary command execution with the privileges of the anyquery process on the macOS host. This issue is fixed in version 0.4.5.",
+      "cvss_score": 9.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "julien040",
+          "product": "anyquery",
+          "versions": [
+            {
+              "version": "< 0.4.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "anyquery",
+          "product": "github.com/julien040/anyquery/plugins/brave",
+          "versions": [
+            {
+              "version": "< 0.2.0",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "anyquery",
+          "product": "github.com/julien040/anyquery/plugins/chrome",
+          "versions": [
+            {
+              "version": "< 0.2.0",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "anyquery",
+          "product": "github.com/julien040/anyquery/plugins/edge",
+          "versions": [
+            {
+              "version": "< 0.2.0",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "anyquery",
+          "product": "github.com/julien040/anyquery/plugins/reminders",
+          "versions": [
+            {
+              "version": "< 0.2.0",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "anyquery",
+          "product": "github.com/julien040/anyquery/plugins/safari",
+          "versions": [
+            {
+              "version": "< 0.2.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:github.com/julien040/anyquery/plugins/chrome",
+        "vendor:anyquery"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-48027",
       "description": "Nx Console is the user interface for Nx & Lerna. On 19 May 2026, a malicious version of Nx Console, 18.95.0, was published at 12:30 PM UTC and removed soon after at 12:48 PM UTC, leaving it available for ~18 minutes in Visual Studio Marketplace. For OpenVSX, the problem was detected later, and the compromised version was available from 12:33 UTC to 13:09 UTC (~36 minutes). Version 18.100.0 of Nx Console is not compromised and users may remediate by upgrading to that version.",
       "cvss_score": 9.3,
@@ -51483,6 +51627,83 @@
         "cpe_count": 0,
         "reference_count": 9
       }
+    },
+    {
+      "cve_id": "CVE-2026-78425",
+      "description": "Authorised users of outside applications behind the same corporate identity provider (IdP), for example, a wiki, a ticketing system, an expenses tool, or anything they legitimately hold an account on can log into their system via SAML SSO. The IdP issues an assertion to them. If that assertion is presented to NeuVector, NeuVector accepts it because the only thing distinguishing \"an assertion for NeuVector\" from \"an assertion for the wiki\" is the element, and the `NotInAudience` warning that reports the mismatch is never read.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:N/SC:L/SI:L/SA:N",
+      "affected": [
+        {
+          "vendor": "go",
+          "product": "github.com/neuvector/neuvector",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "v5.6.1",
+              "changes": [
+                {
+                  "at": "5.6.2",
+                  "status": "unaffected"
+                },
+                {
+                  "at": "5.5.4",
+                  "status": "unaffected"
+                },
+                {
+                  "at": "5.4.11",
+                  "status": "unaffected"
+                }
+              ],
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:github.com/neuvector/neuvector",
+        "vendor:go"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00349
+    },
+    {
+      "cve_id": "CVE-2026-78428",
+      "description": "For users authenticated through SAML or OpenID Connect (OIDC), this vulnerability can result in one user receiving another user's authenticated session when multiple SSO login attempts occur concurrently",
+      "cvss_score": 8.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "go",
+          "product": "neuvector",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<5.6.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:neuvector",
+        "vendor:go"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00338
     },
     {
       "cve_id": "CVE-2026-85656",
