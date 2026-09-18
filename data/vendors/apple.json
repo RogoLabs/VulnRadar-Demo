@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-17T22:55:42+00:00",
+  "generated_at": "2026-09-18T01:17:19+00:00",
   "vendor": "apple",
-  "count": 1179,
+  "count": 1213,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -66203,6 +66203,87 @@
       }
     },
     {
+      "cve_id": "CVE-2026-20683",
+      "description": "An authentication issue was addressed with improved state management. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, visionOS 27. An app may be able to use the Sign In With Apple authentication flow to access the user's Apple Account.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:visionos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0018,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 5
+      }
+    },
+    {
       "cve_id": "CVE-2026-20687",
       "description": "A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.7.7 and iPadOS 18.7.7, iOS 26.4 and iPadOS 26.4, macOS Sequoia 15.7.5, macOS Tahoe 26.4, tvOS 26.4, watchOS 26.4. An app may be able to cause unexpected system termination or write kernel memory.",
       "cvss_score": 7.1,
@@ -69577,6 +69658,107 @@
       }
     },
     {
+      "cve_id": "CVE-2026-28935",
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 26.6.1 and iPadOS 26.6.1, macOS Sequoia 15.8, macOS Tahoe 26.6.2, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6.1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00379,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-119"
+        ],
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
       "cve_id": "CVE-2026-28936",
       "description": "The issue was addressed with improved checks. This issue is fixed in iOS 18.7.9 and iPadOS 18.7.9, iOS 26.5 and iPadOS 26.5, macOS Sequoia 15.7.8, macOS Sonoma 14.8.7, macOS Sonoma 14.8.8, macOS Tahoe 26.5, visionOS 26.5. Processing a maliciously crafted file may lead to unexpected app termination.",
       "cvss_score": 7.5,
@@ -69667,6 +69849,49 @@
         ],
         "cpe_count": 7,
         "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-28938",
+      "description": "A privacy issue was addressed by moving sensitive data. This issue is fixed in iOS 26.6 and iPadOS 26.6. An app may be able to fingerprint the user.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00285,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-359"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -73930,8 +74155,64 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43688",
+      "description": "A memory corruption issue was addressed with improved input validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27. Processing a maliciously crafted file may lead to unexpected app termination.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00149,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1021"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -74401,6 +74682,106 @@
           "CWE-284"
         ],
         "cpe_count": 4,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43702",
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in iOS 26.6 and iPadOS 26.6, iOS 26.7 and iPadOS 26.7, macOS Sequoia 15.8, macOS Tahoe 26.6, macOS Tahoe 26.7, tvOS 26.6, watchOS 26.6. Processing a maliciously crafted video file may lead to unexpected app termination or corrupt process memory.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00133,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-119"
+        ],
+        "cpe_count": 0,
         "reference_count": 7
       }
     },
@@ -76897,6 +77278,116 @@
       }
     },
     {
+      "cve_id": "CVE-2026-43789",
+      "description": "An access issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access user-sensitive data.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00419,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43790",
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. A remote attacker may be able to cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00687,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-43793",
       "description": "An issue existed in the handling of environment variables. This issue was addressed with improved validation. This issue is fixed in macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6. An app may be able to cause unexpected system termination.",
       "cvss_score": 9.8,
@@ -78048,6 +78539,61 @@
         ],
         "cpe_count": 5,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-43815",
+      "description": "A buffer overflow was addressed with improved bounds checking. This issue is fixed in macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6. Connecting to a malicious afpfs server may lead to kernel memory corruption.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.8.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.7.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.6",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00439,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 3,
+        "reference_count": 3
       }
     },
     {
@@ -81181,7 +81727,7 @@
         "cwe_ids": [
           "CWE-200"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -82594,6 +83140,116 @@
       }
     },
     {
+      "cve_id": "CVE-2026-64790",
+      "description": "A path handling issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to gain elevated privileges.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00186,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-65342",
+      "description": "A permissions issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00419,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-65343",
       "description": "A use after free issue was addressed with improved memory management. This issue is fixed in iOS 26.6.1 and iPadOS 26.6.1, macOS Tahoe 26.6.2, tvOS 27, visionOS 27, watchOS 27. A remote attacker may be able to cause unexpected system termination.",
       "cvss_score": 7.5,
@@ -82686,6 +83342,106 @@
         ],
         "cpe_count": 3,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-65344",
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27. Processing a maliciously crafted video file may lead to unexpected app termination.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00133,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 7
       }
     },
     {
@@ -82998,6 +83754,116 @@
       }
     },
     {
+      "cve_id": "CVE-2026-65378",
+      "description": "An authorization issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to access sensitive user data.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00419,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-65381",
+      "description": "A validation issue existed in the entitlement verification. This issue was addressed with improved validation of the process entitlement. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. A malicious app may be able to break out of its sandbox.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00518,
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-65390",
       "description": "An integer overflow was addressed with improved input validation. This issue is fixed in Safari 26.6.1, iOS 26.6.1 and iPadOS 26.6.1, macOS Tahoe 26.6.2, tvOS 27, visionOS 27, watchOS 27. Processing maliciously crafted web content may lead to memory corruption.",
       "cvss_score": 8.8,
@@ -83101,7 +83967,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 6
       }
     },
@@ -83209,8 +84075,103 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-65398",
+      "description": "An out-of-bounds access issue was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00131,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 6,
+        "reference_count": 5
       }
     },
     {
@@ -83289,6 +84250,114 @@
         ],
         "cpe_count": 3,
         "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2026-65410",
+      "description": "The issue was addressed with improved checks. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00388,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-248",
+          "CWE-400"
+        ],
+        "cpe_count": 6,
+        "reference_count": 7
       }
     },
     {
@@ -83500,6 +84569,106 @@
       }
     },
     {
+      "cve_id": "CVE-2026-84497",
+      "description": "A buffer overflow was addressed with improved size validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27. Opening a maliciously crafted file may lead to unexpected process termination.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00182,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 6,
+        "reference_count": 7
+      }
+    },
+    {
       "cve_id": "CVE-2026-84505",
       "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to gain root privileges.",
       "cvss_score": 7.8,
@@ -83610,6 +84779,168 @@
       }
     },
     {
+      "cve_id": "CVE-2026-84511",
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted asset catalog may lead to unexpected process termination.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00162,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 7,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84512",
+      "description": "A buffer overflow was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Mounting a maliciously crafted disk image may cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00457,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-84515",
       "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Connecting to a malicious SMB server may lead to kernel memory corruption.",
       "cvss_score": 7.8,
@@ -83660,7 +84991,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -83715,8 +85046,51 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84520",
+      "description": "A buffer overflow was addressed with improved size validation. This issue is fixed in macOS Golden Gate 27. A local attacker may be able to cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00325,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
       }
     },
     {
@@ -83770,7 +85144,7 @@
         "cwe_ids": [
           "CWE-284"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -83825,7 +85199,285 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84544",
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Connecting to a malicious NFS server may cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00431,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84546",
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted 3D model may lead to memory corruption.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00144,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 7,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84548",
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Processing a maliciously crafted document may lead to an out-of-bounds read.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00136,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84549",
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Connecting to a malicious NFS server may cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00567,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -83885,6 +85537,119 @@
       }
     },
     {
+      "cve_id": "CVE-2026-84561",
+      "description": "A double free issue was addressed with improved memory management. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to cause unexpected system termination or corrupt kernel memory.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00652,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-415"
+        ],
+        "cpe_count": 7,
+        "reference_count": 8
+      }
+    },
+    {
       "cve_id": "CVE-2026-84563",
       "description": "A logic issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to cause unexpected system termination.",
       "cvss_score": 7.5,
@@ -83935,7 +85700,62 @@
         "cwe_ids": [
           "CWE-843"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84565",
+      "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Processing a maliciously crafted disk image may lead to unexpected app termination.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00136,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -84102,6 +85922,110 @@
       }
     },
     {
+      "cve_id": "CVE-2026-84577",
+      "description": "An access issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Golden Gate 27, macOS Tahoe 26.7. An app may be able to bypass sandbox restrictions.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00134,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84580",
+      "description": "The issue was addressed with improved checks. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. An app may be able to break out of its sandbox.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00147,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-84581",
       "description": "A buffer overflow was addressed with improved bounds checking. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7. Mounting a maliciously crafted disk image may cause unexpected system termination or corrupt kernel memory.",
       "cvss_score": 8.4,
@@ -84152,8 +86076,100 @@
         "cwe_ids": [
           "CWE-120"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84584",
+      "description": "This issue was addressed with improved handling of symlinks. This issue is fixed in macOS Golden Gate 27. An app may be able to break out of its sandbox.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00144,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84598",
+      "description": "A path traversal issue was addressed with improved path validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27. An attacker with physical access to a trust-paired device may be able to read and write arbitrary files.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00376,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
       }
     },
     {
@@ -84341,6 +86357,113 @@
       }
     },
     {
+      "cve_id": "CVE-2026-84609",
+      "description": "A permissions issue was addressed with improved path validation. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An app may be able to modify protected system files.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00612,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-120"
+        ],
+        "cpe_count": 0,
+        "reference_count": 7
+      }
+    },
+    {
       "cve_id": "CVE-2026-84611",
       "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted 3D model may lead to memory corruption.",
       "cvss_score": 7.3,
@@ -84449,8 +86572,285 @@
         "cwe_ids": [
           "CWE-787"
         ],
+        "cpe_count": 7,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84620",
+      "description": "An integer overflow was addressed with improved input validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. Processing a maliciously crafted 3D model may lead to memory corruption.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00149,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
         "cpe_count": 0,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84625",
+      "description": "A permissions issue was addressed with additional sandbox restrictions. This issue is fixed in iOS 27 and iPadOS 27, macOS Golden Gate 27, visionOS 27, watchOS 27. An app may be able to fingerprint the user.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00351,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84629",
+      "description": "This issue was addressed with additional entitlement checks. This issue is fixed in iOS 27 and iPadOS 27, tvOS 27, visionOS 27, watchOS 27. An app may be able to fingerprint the user.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00391,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 5,
+        "reference_count": 4
       }
     },
     {
@@ -84605,7 +87005,120 @@
         "cwe_ids": [
           "CWE-120"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86881",
+      "description": "A certificate validation issue was addressed with improved certificate validation. This issue is fixed in iOS 26.7 and iPadOS 26.7, iOS 27 and iPadOS 27, macOS Golden Gate 27, macOS Sequoia 15.8, macOS Tahoe 26.7, tvOS 27, visionOS 27, watchOS 27. An attacker with a compromised intermediate certificate authority may be able to issue certificates with arbitrary extended key usages.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "visionos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:tvos",
+        "product:visionos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00309,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-295"
+        ],
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -84648,7 +87161,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
