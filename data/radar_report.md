@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-18T12:56:47+00:00`
+Generated: `2026-09-18T17:06:01+00:00`
 
 ## Executive Summary
 
@@ -40,9 +40,9 @@ Top critical items:
 
 - Total items: **20333**
 - Watchlist hits: **19894**
-- CISA KEVs: **797**
-- Exploit Intel (PoC): **881**
-- Exploit Intel + Watchlist (CRITICAL): **443**
+- CISA KEVs: **799**
+- Exploit Intel (PoC): **884**
+- Exploit Intel + Watchlist (CRITICAL): **445**
 
 ## Top Findings (max 200)
 
@@ -147,9 +147,9 @@ Top critical items:
 | [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.726 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-21529](https://www.cve.org/CVERecord?id=CVE-2023-21529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.621 | 8.8 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
 | [CVE-2024-43451](https://www.cve.org/CVERecord?id=CVE-2024-43451) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.841 | 6.5 | ✅ | NTLM Hash Disclosure Spoofing Vulnerability |
+| [CVE-2026-59310](https://www.cve.org/CVERecord?id=CVE-2026-59310) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.497 | 9.8 | ✅ | VMware vCenter contains a directory traversal vulnerability in the Syslog server. A malicious actor with network access to vCenter may exploit this issue to ex… |
 | [CVE-2022-34713](https://www.cve.org/CVERecord?id=CVE-2022-34713) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-08-30 | 0.678 | 7.8 | ✅ | Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability |
 | [CVE-2024-43572](https://www.cve.org/CVERecord?id=CVE-2024-43572) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.667 | 7.8 | ✅ | Microsoft Management Console Remote Code Execution Vulnerability |
-| [CVE-2026-59310](https://www.cve.org/CVERecord?id=CVE-2026-59310) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.459 | 9.8 | ✅ | VMware vCenter contains a directory traversal vulnerability in the Syslog server. A malicious actor with network access to vCenter may exploit this issue to ex… |
 | [CVE-2023-41763](https://www.cve.org/CVERecord?id=CVE-2023-41763) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-31 | 0.904 | 5.3 | ✅ | Skype for Business Elevation of Privilege Vulnerability |
 | [CVE-2024-43461](https://www.cve.org/CVERecord?id=CVE-2024-43461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-07 | 0.545 | 8.8 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
 | [CVE-2026-55040](https://www.cve.org/CVERecord?id=CVE-2026-55040) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.506 | 9.1 | ✅ | Weak authentication in Microsoft Office SharePoint allows an unauthorized attacker to bypass a security feature over a network. |
@@ -242,7 +242,7 @@ Top critical items:
 | [CVE-2022-3075](https://www.cve.org/CVERecord?id=CVE-2022-3075) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-29 | 0.058 | 9.6 | ✅ | Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially… |
 | [CVE-2023-2136](https://www.cve.org/CVERecord?id=CVE-2023-2136) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-12 | 0.057 | 9.6 | ✅ | Integer overflow in Skia in Google Chrome prior to 112.0.5615.137 allowed a remote attacker who had compromised the renderer process to potentially perform a s… |
 | [CVE-2022-1364](https://www.cve.org/CVERecord?id=CVE-2022-1364) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-06 | 0.137 | 8.8 | ✅ | Type confusion in V8 Turbofan in Google Chrome prior to 100.0.4896.127 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
-| [CVE-2026-76460](https://www.cve.org/CVERecord?id=CVE-2026-76460) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-19 | 0.009 | 10.0 | ✅ | A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to bypass authentication.  This vulnerabili… |
+| [CVE-2026-76460](https://www.cve.org/CVERecord?id=CVE-2026-76460) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-19 | 0.008 | 10.0 | ✅ | A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to bypass authentication.  This vulnerabili… |
 | [CVE-2025-26633](https://www.cve.org/CVERecord?id=CVE-2025-26633) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-04-01 | 0.304 | 7.0 | ✅ | Improper neutralization in Microsoft Management Console allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-32373](https://www.cve.org/CVERecord?id=CVE-2023-32373) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.122 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.6 and iPadOS … |
 | [CVE-2026-76461](https://www.cve.org/CVERecord?id=CVE-2026-76461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-17 | 0.020 | 9.8 | ✅ | A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to execute arbitr… |
