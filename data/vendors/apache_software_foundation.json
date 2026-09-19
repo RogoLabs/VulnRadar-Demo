@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-19T01:10:15+00:00",
+  "generated_at": "2026-09-19T05:57:20+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1042,
+  "count": 1055,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -43706,6 +43706,55 @@
       }
     },
     {
+      "cve_id": "CVE-2026-59739",
+      "description": "Information disclosure via SetWatches reconnect replay in Apache ZooKeeper due to missing ACL check.\u00a0An attacker can discover ACL-restricted paths by registering exists-watches on non-existent paths, then reconnecting after the paths are created with restricted ACLs. Issue is caused by incomplete fix for\u00a0CVE-2024-23944 (ZOOKEEPER-4799).\u00a0The fix added ACL checking to WatchManager.triggerWatch(). However, DataTree.setWatches() \u2014 the SetWatches/SetWatches2 reconnect replay handler \u2014 still calls watcher.process(event) with null ACL, bypassing the check entirely. It's important to note that only the path is exposed by this vulnerability, not the data of znode, but since znode path can contain sensitive information like user name or login ID, this issue is potentially critical.\n\nUsers are recommended to upgrade to version 3.9.6, 3.8.7 which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache zookeeper",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.9.0",
+              "lessThanOrEqual": "3.9.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.8.0",
+              "lessThanOrEqual": "3.8.6",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache zookeeper",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00437,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-59780",
       "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's LDAP authentication plugin while listing LDAP providers.\n\n\n\n\n\n\n\n\n\n\n\nLDAP configurations can be listed by any authenticated user with access to the listLdapConfigurations API. By default, this API is available to all default roles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis issue affects Apache CloudStack: from 4.2.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.\n\nUsers are recommended to upgrade to version 4.20.3.1 or 4.22.1.1 or later, which fixes the issue.",
       "cvss_score": 7.5,
@@ -43887,6 +43936,55 @@
           "CWE-20"
         ],
         "cpe_count": 6,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59969",
+      "description": "Apache ZooKeeper quorum TLS fails to enforce peer hostname verification in FIPS-mode deployments. When sslQuorum=true, zookeeper.fips-mode=true, ssl.quorum.hostnameVerification=true, and ssl.quorum.clientHostnameVerification=true\u00a0are enabled, the Java SSLSocket\u00a0quorum path accepts a CA-trusted peer certificate whose SAN does not match the connected host. A malicious or misissued peer certificate can therefore join quorum traffic, participate in leader election, and enter replication flows.\n\n\n\nUsers are recommended to upgrade to version 3.8.7 or 3.9.6, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache zookeeper",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.9.0",
+              "lessThanOrEqual": "3.9.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.8.0",
+              "lessThanOrEqual": "3.8.6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache zookeeper",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00255,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-297"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -47523,6 +47621,84 @@
       }
     },
     {
+      "cve_id": "CVE-2026-68536",
+      "description": "Server-Side Request Forgery / Local File Inclusion in Apache MyFace Core.\n\nOlder unsupported versions may also be affected.\u00a0\n\nUsers are recommended to upgrade to versions 2.3.12, 2.3-next-M9, 3.0.4, 4.0.4, or 4.1.4, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache myfaces",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.2.0-beta",
+              "lessThanOrEqual": "2.2.15",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "2.3.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "2.3-next-M1",
+              "lessThan": "2.3-next-M9",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "2.3.1",
+              "lessThan": "2.3.12",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.4",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.4",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0",
+              "lessThan": "4.1.4",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache myfaces",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00474,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-68569",
       "description": "Improper Authentication vulnerability in Apache Tomcat meant that in some circumstances (e.g. CLIENT-CERT, SPNEGO) that a user would be authenticated even if the user did not exist in the DataSourceRealm.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.0.M1 through 9.0.120.\n\n\n\n\n\n\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other unsupported versions may also be affected.\n\n\n\n\n\n\n\nUsers are recommended to upgrade to version 11.0.25, 10.1.58 or 9.0.121, which fix the issue.",
       "cvss_score": 8.1,
@@ -47838,6 +48014,48 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-70469",
+      "description": "Apache NiFi 2.11.0 disabled support for gzip-encoded HTTP requests for the application REST API and rejected requests that included the standard Content-Encoding header indicating gzip encoding. The framework enforcement filter did not check multiple instances of the Content-Encoding header and did not reject non-standard identifiers for gzip encoding, allowing a malicious client to send crafted requests that could consume excessive amounts of memory. Upgrading to Apache NiFi 2.12.0 is the recommended mitigation, which disables decompression of gzip-encoded HTTP requests regardless of header number or encoding identifiers.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache nifi",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.11.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache nifi",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00368,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-409"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -49135,6 +49353,170 @@
       }
     },
     {
+      "cve_id": "CVE-2026-76186",
+      "description": "Apache Airflow Keycloak provider: from Airflow 3.3 the Keycloak auth manager takes a user's identity from the signed Airflow session token but takes the Keycloak access and refresh tokens used for every authorization decision from separate, unauthenticated cookies, and never checks that the two describe the same subject. A user who holds any valid Airflow login of their own, together with another subject's Keycloak access or refresh token obtained out of band, can pair the two: Airflow then authorizes requests with the foreign token's privileges while the session identity, audit log and cache keys continue to name the attacker's own account. The refresh path re-issues an Airflow session token for the original identity carrying the foreign tokens, so the mismatched pairing survives across sessions.\n\nAffects deployments running Airflow 3.3 or later with the Keycloak auth manager. Earlier versions carried the Keycloak tokens inside the signed session token, so the binding existed and was lost when they moved into separate cookies.\n\nUsers of apache-airflow-providers-keycloak are recommended to upgrade to version 0.10.0 or later, which binds the cookie-supplied tokens to the session identity.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow keycloak provider",
+          "versions": [
+            {
+              "lessThan": "0.10.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow keycloak provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00508,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-565"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-76187",
+      "description": "Apache Airflow Keycloak provider: the unauthenticated token endpoint accepts a client-credentials grant for any confidential client registered in the Keycloak realm, not only the client configured for Airflow. No allowlist restricts which client ids may authenticate, so the credentials of an unrelated application that happens to share the realm are valid Airflow login credentials, and Airflow mints a signed session token for that application's service account. The endpoint also answers unauthenticated credential guesses against Keycloak under Airflow's identity.\n\nAffects deployments using the Keycloak auth manager whose realm is shared with other confidential clients. The attacker needs valid credentials for any one of those clients, not for Airflow. Resource authorization is still evaluated per subject, so the access gained is whatever that service account holds, plus any endpoint gated only on being authenticated.\n\nUsers of apache-airflow-providers-keycloak are recommended to upgrade to version 0.10.0 or later, which accepts only the configured client on that grant.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow keycloak provider",
+          "versions": [
+            {
+              "lessThan": "0.10.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow keycloak provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00604,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-76646",
+      "description": "A remote attacker could cause excessive resource consumption by supplying specially crafted request parameters, potentially resulting in a denial of service condition.\n\n\nOlder unsupported versions may also be affected.\n\nUsers are recommended to upgrade to versions 2.3.12, 2.3-next-M9, 3.0.4, 4.0.4, or 4.1.4, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache myfaces",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.2.0-beta",
+              "lessThanOrEqual": "2.2.15",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "2.3.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "2.3-next-M1",
+              "lessThanOrEqual": "2.3-next-M8",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "2.3.1",
+              "lessThanOrEqual": "2.3.11",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThanOrEqual": "3.0.3",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThanOrEqual": "4.0.3",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache myfaces",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00506,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-77051",
       "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Apache Syncope.\n\n\n\n\n\nAn administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized entityKey and opEvent parameters.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
       "cvss_score": 9.8,
@@ -49453,6 +49835,55 @@
       }
     },
     {
+      "cve_id": "CVE-2026-79993",
+      "description": "The `deleteContainer` opcode (0x14/20) is processed without verifying the caller's ACL permissions, allowing any authenticated client to delete specific znodes in the data tree regardless of the ACL restrictions on the znode or its parent. This opcode is considered internal-only and the official client doesn't have API for it, but a\u00a0client that can open a plain TCP session on the ZooKeeper client port (2181 by default)\u00a0- with NO authentication and NO ACL permissions - can delete any\u00a0empty persistent znode (including regular persistent nodes, container\u00a0nodes, and TTL nodes) by issuing the raw protocol OpCode deleteContainer (20).\u00a0The deleteContainer request path completely skips both the session check and\u00a0the DELETE ACL check that are enforced by the regular delete (OpCode 2) path.\u00a0This is an authorization bypass / ACL enforcement bug.\n\nThis issue affects Apache ZooKeeper: from 3.9.0 through 3.9.5, from 3.8.0 through 3.8.6.\n\nUsers are recommended to upgrade to version 3.9.6 or 3.8.7, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache zookeeper",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.9.0",
+              "lessThanOrEqual": "3.9.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.8.0",
+              "lessThanOrEqual": "3.8.6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache zookeeper",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00498,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-80181",
       "description": "Apache Allura's\u00a0webhooks\u00a0are vulnerable to Server-Side Request Forgery (SSRF).\n\n\n\n\nThis issue affects Apache Allura: through 1.20.0.\n\n\n\nUsers are recommended to upgrade to version 1.21.0, which fixes the issue.",
       "cvss_score": 9.1,
@@ -49738,6 +50169,92 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82310",
+      "description": "Apache Airflow FAB provider: deactivating a user account does not stop tokens issued to that account before deactivation. Password authentication correctly rejects the disabled account, but the Core API continues to accept an existing, unexpired token naming it, and lets that token mint a replacement \u2014 so the account keeps its role-scoped access indefinitely after an administrator has disabled it. The user replays their own legitimate credential; no signature forgery or privilege escalation is involved, and the access stays within the roles the account already held.\n\nAffects deployments using Airflow 3 with the FAB auth manager and Core API token authentication, where an administrator deactivates an account whose row remains in the database and whose previously issued token has not expired. The trigger is administrative deactivation as a containment action, which silently fails to contain.\n\nUsers of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which rejects tokens naming a deactivated account.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow fab provider",
+          "versions": [
+            {
+              "lessThan": "3.9.0",
+              "status": "affected",
+              "version": "2.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow fab provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00707,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82311",
+      "description": "Apache Airflow FAB provider: resetting a user's password does not delete that user's existing database-backed sessions, despite documented behaviour that it does. The cleanup compares the string identifier Flask-Login stores in the session against the user's integer database identifier, so the comparison never matches and no session is removed. An attacker who already holds a copy of the victim's session cookie keeps access as that user after the password change, so the reset does not evict them.\n\nAffects deployments using the FAB auth manager with `[fab] session_backend=database`. The trigger is an administrator (or the user) running the supported password-reset command as a containment action after a session cookie has been compromised; the secure-cookie backend is out of scope, as it documents that it cannot centrally delete sessions.\n\napache-airflow-providers-fab 3.9.0 also fixes CVE-2026-86462, a second, independent route to the same outcome via the Admin user-edit endpoint; a single upgrade closes both.\n\nUsers of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which compares the identifiers consistently.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow fab provider",
+          "versions": [
+            {
+              "lessThan": "3.9.0",
+              "status": "affected",
+              "version": "2.4.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow fab provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00604,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
@@ -50402,6 +50919,135 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86462",
+      "description": "Apache Airflow FAB provider: changing a user's password through the Admin user-edit PATCH endpoint does not invalidate that user's existing database-backed sessions. An attacker who already holds a copy of the victim's session cookie keeps full access as that user after the password change, so the password reset does not evict them. Affects deployments using the FAB auth manager with database-backed sessions; an administrator (or the user themselves) performing a routine password change is the trigger, and no attacker interaction with the endpoint is needed.\n\nThis is a second, independent route to the outcome addressed by CVE-2026-82311, which corrected an identifier comparison in the session-invalidation helper. That fix does not repair this endpoint, because the PATCH path never calls the helper at all. Deployments that applied the CVE-2026-82311 fix must also upgrade for this one.\n\nUsers of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow fab provider",
+          "versions": [
+            {
+              "lessThan": "3.9.0",
+              "status": "affected",
+              "version": "3.2.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow fab provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00481,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86466",
+      "description": "Apache Airflow FAB provider: the Authentik OAuth path in the FAB auth manager does not validate the issuer or audience claims of the id_token it accepts. An attacker holding a token that the same Authentik identity provider minted for a different client application can present it to Airflow and be authenticated as the user it names, because the audience claim is never checked. Affects deployments using the FAB auth manager with Authentik OAuth where the same Authentik instance also serves other applications; the attacker needs a valid token for any of those other applications, not for Airflow.\n\nCVE-2026-75156 corrected the same missing validation on the Azure AD path in this file; the Authentik path was left unchanged and is fixed here. Deployments that applied the CVE-2026-75156 fix and use Authentik must also upgrade for this one.\n\nUsers of apache-airflow-providers-fab are recommended to upgrade to version 3.9.0 or later, which fixes the issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow fab provider",
+          "versions": [
+            {
+              "lessThan": "3.9.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow fab provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00238,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-346"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86792",
+      "description": "Apache Airflow Apache Kafka provider versions 1.15.0 before 2.0.0 resolve dotted-path strings found in a Kafka connection's `extra` field into Python callables via `import_string`, with no allowlist, and hand them to the confluent-kafka client which invokes them. Deployments that have enabled the Kafka event producer \u2014 `dag_run_events_enabled` or `task_instance_events_enabled`, both disabled by default \u2014 build that client inside the scheduler process, so a user whose only privilege is editing Airflow connections gains arbitrary code execution in the control plane; the Airflow security model limits connection-configuration users to code execution on workers, not the scheduler. Deployments using Google Managed Kafka are not affected, because that code path overwrites any user-supplied `oauth_cb`; plain brokers and Amazon MSK are exposed. Users are recommended to upgrade to apache-airflow-providers-apache-kafka 2.0.0 or later, which adds an allowlist configuration option for connection-string callbacks.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow apache kafka provider",
+          "versions": [
+            {
+              "lessThan": "2.0.0",
+              "status": "affected",
+              "version": "1.15.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow apache kafka provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00753,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
