@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-21T00:07:36+00:00",
+  "generated_at": "2026-09-21T04:33:53+00:00",
   "vendor": "_other",
-  "count": 783,
+  "count": 785,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -24153,6 +24153,47 @@
       }
     },
     {
+      "cve_id": "CVE-2026-13577",
+      "description": "Dancer2 versions before 2.2.0 for Perl generate insecure session ids when required CSPRNG modules are unavailable.\n\nDancer2::Core::Role::SessionFactory::generate_id silently falls back to a built-in rand-derived session id unless both Math::Random::ISAAC::XS and Crypt::URandom are available.\n\nThe fallback session id is generated from a SHA-1 hash of a call to the built-in rand function, the absolute path of the Dancer2::Core::Role::SessionFactory module, an internal counter, the process id, the module instance memory address, and a shuffled string of characters (using the List::Util::shuffle function, which also uses the built-in rand function).\n\nThese are all low-entropy and easily guessed sources.\n\nThe built-in rand() function is seeded with 32-bits and considered unsuitable for security applications.\n\nPredictable session ids could allow an attacker to gain access to systems.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "2.2.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00452,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-338",
+          "CWE-340"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-14380",
       "description": "DBI versions before 1.650 for Perl are vulnerable to code injection via caller-influenced Profile.\n\nWhen a string is assigned to a DBI handle's Profile attribute, DBI splits it into path, package and arguments, and interpolates the package part in a string eval with no validation of the package name.\n\nAny caller-influenced value that reaches the Profile attribute is therefore arbitrary Perl code execution, including calls to run system commands.\n\nThe Profile attribute can be set from three different sources that can carry untrusted data: the DBI_PROFILE environment variable, a direct attribute assignment, and a DSN driver-attribute clause dbi:Driver(Profile=>SPEC):db.\n\nAn attacker controlling any of those inputs runs arbitrary Perl in the host process. The strongest remote position is a network-exposed DBI::Gofer / DBI::ProxyServer whose per-request DSN reaches the Profile attribute, letting a client execute code on the broker host.",
       "cvss_score": 8.8,
@@ -25584,6 +25625,46 @@
         ],
         "cpe_count": 0,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-78030",
+      "description": "DBI versions before 1.653 for Perl load arbitrary modules via unvalidated dbm_type and dbm_mldbm attributes in DBD::DBM.\n\nDBD::DBM passes the dbm_type and dbm_mldbm connect attributes to require without checking that the value names a module. require treats a path-shaped string as a literal filename and does not consult @INC, so the attribute chooses the file that Perl loads and runs.\n\nThe MLDBM::Serializer:: prefix that DBD::DBM prepends to dbm_mldbm is not a boundary: only the :: separators are rewritten to /, so a value containing / traverses out of the serializer directory. The value is also assigned to $MLDBM::Serializer, which MLDBM requires the same way when it ties the table.\n\nA caller that lets an untrusted party influence either attribute, for example through a DSN fragment or a parameter that selects a storage backend, runs the file-scope code of whatever module the value names.\n\nFor example,\n\n    my $dsn = \"dbi:DBM:f_dir=/var/db;dbm_type=../../Untrusted.pm\"\n    my $dbh = DBI->connect( $dsn );\n\nNote that DBD::Gofer forwards connect attributes to the server side, and DBI::ProxyServer checks only that a DSN starts with a driver prefix.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.653",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00725,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
