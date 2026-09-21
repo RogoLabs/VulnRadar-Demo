@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-21T17:04:47+00:00",
+  "generated_at": "2026-09-21T21:10:08+00:00",
   "vendor": "_other",
-  "count": 785,
+  "count": 786,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -18201,6 +18201,145 @@
         ],
         "cpe_count": 28,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-7273",
+      "description": "A stack-based buffer overflow vulnerability in the CGI program of Zyxel GS1900-48HPv2 firmware versions through\u00a02.90(ABTQ.1)C0 could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-48hpv2 firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(ABTQ.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-8 firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAHH.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-8hp firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAHI.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-10hp firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAZI.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-16 firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAHJ.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-24 firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAHL.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-24e firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAHK.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-24ep firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(ABTO.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-24hpv2 firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(ABTP.1)C0"
+            }
+          ]
+        },
+        {
+          "vendor": "zyxel",
+          "product": "gs1900-48 firmware",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "<= 2.90(AAHN.1)C0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00315,
+      "kev": {
+        "cveID": "CVE-2026-7273",
+        "vendorProject": "Zyxel",
+        "product": "GS1900 Series Switches",
+        "vulnerabilityName": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+        "dateAdded": "2026-09-21",
+        "shortDescription": "Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-24",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-121"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
