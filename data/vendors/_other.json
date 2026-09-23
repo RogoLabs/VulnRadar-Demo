@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-23T00:40:47+00:00",
+  "generated_at": "2026-09-23T05:48:45+00:00",
   "vendor": "_other",
-  "count": 788,
+  "count": 797,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -7641,6 +7641,58 @@
         ],
         "cpe_count": 4,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-94127",
+      "description": "When a BIG-IP APM access policy and an OAuth profile is configured on a virtual server, specific malicious traffic can lead to Remote Code Execution (RCE).\n\nImpact:\nThis vulnerability allows an unauthenticated attacker to perform remote code execution. The BIG-IP system in Appliance mode is also vulnerable. This is a data plane issue; there is no control plane exposure.\n\n \n\n\nNote: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "f5",
+          "product": "big-ip",
+          "versions": [
+            {
+              "lessThan": "Hotfix-BIGIP-21.1.0.2.0.30.22-ENG",
+              "status": "affected",
+              "version": "21.1.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "Hotfix-BIGIP-17.5.1.9.0.160.12-ENG",
+              "status": "affected",
+              "version": "17.5.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "Hotfix-BIGIP-17.1.3.5.0.41.14-ENG",
+              "status": "affected",
+              "version": "17.1.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-94127",
+        "vendorProject": "F5",
+        "product": "BIG-IP APM",
+        "vulnerabilityName": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+        "dateAdded": "2026-09-22",
+        "shortDescription": "F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-25",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
@@ -33497,6 +33549,84 @@
       }
     },
     {
+      "cve_id": "CVE-2026-93616",
+      "description": "A directory traversal and file upload vulnerability allows an unauthenticated attacker to upload and execute arbitrary scripts on Check Point Management Server.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "checkpoint",
+          "product": "quantum security management",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "R82.20 with no Jumbo Hotfix"
+            },
+            {
+              "status": "affected",
+              "version": "R82.10 with Jumbo Hotfix Take 44 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R82 with Jumbo Hotfix Take 126 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81.20 with Jumbo Hotfix Take 166 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81.10 (EOS) with Jumbo Hotfix Take 190 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81 (EOS)"
+            },
+            {
+              "status": "affected",
+              "version": "R80.40 (EOS)"
+            },
+            {
+              "status": "affected",
+              "version": "R80.30 (EOS)"
+            },
+            {
+              "status": "affected",
+              "version": "R80.20 (EOS)"
+            },
+            {
+              "status": "affected",
+              "version": "R80.10 (EOS)"
+            },
+            {
+              "status": "affected",
+              "version": "R80 (EOS)"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-93616",
+        "vendorProject": "Check Point",
+        "product": "Multiple Products",
+        "vulnerabilityName": "Check Point Multiple Products Path Traversal Vulnerability",
+        "dateAdded": "2026-09-22",
+        "shortDescription": "Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-25",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
       "cve_id": "CVE-2024-27322",
       "description": "Deserialization of untrusted data can occur in the R statistical programming language, on any version starting at 1.4.0 up to and not including 4.4.0, enabling a maliciously crafted RDS (R Data Serialization) formatted file or R package to run arbitrary code on an end user\u2019s system when interacted with.",
       "cvss_score": 8.8,
@@ -35431,7 +35561,7 @@
     },
     {
       "cve_id": "CVE-2025-10450",
-      "description": "Exposure of Private Personal Information to an Unauthorized Actor vulnerability in RTI Connext Professional (Core Libraries) allows Sniffing Network Traffic.This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.2.0 before 7.3.1.",
+      "description": "Exposure of Private Personal Information to an Unauthorized Actor vulnerability in RTI Connext Professional (Core Libraries) allows Sniffing Network Traffic. This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.2.0 before 7.3.1.",
       "cvss_score": 8.3,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:L/VA:L/SC:N/SI:N/SA:N",
@@ -35480,7 +35610,7 @@
     },
     {
       "cve_id": "CVE-2025-14543",
-      "description": "Improper Restriction of XML External Entity Reference vulnerability in RTI Connext Professional (Core Libraries) allows Serialized Data External Linking.This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.1, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 4.3x before 5.2.*.",
+      "description": "Improper Restriction of XML External Entity Reference vulnerability in RTI Connext Professional (Core Libraries) allows Serialized Data External Linking. This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.1, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.2.0 before 5.2.*, from 4.3x before 5.1.*.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -35522,6 +35652,12 @@
             {
               "lessThan": "5.2.*",
               "status": "affected",
+              "version": "5.2.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.1.*",
+              "status": "affected",
               "version": "4.3x",
               "versionType": "custom"
             }
@@ -35553,7 +35689,7 @@
     },
     {
       "cve_id": "CVE-2025-1254",
-      "description": "Out-of-bounds Read, Out-of-bounds Write vulnerability in RTI Connext Professional (Recording Service) allows Overflow Buffers, Overread Buffers.This issue affects Connext Professional: from 7.4.0 before 7.5.0, from 7.0.0 before 7.3.0.7, from 6.1.0 before 6.1.2.23, from 6.0.0 before 6.0.1.42.",
+      "description": "Out-of-bounds Read, Out-of-bounds Write vulnerability in RTI Connext Professional (Recording Service) allows Overflow Buffers, Overread Buffers. This issue affects Connext Professional: from 7.4.0 before 7.5.0, from 7.0.0 before 7.3.0.7, from 6.1.0 before 6.1.2.23, from 6.0.0 before 6.0.1.42.",
       "cvss_score": 7.7,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
@@ -35615,7 +35751,7 @@
     },
     {
       "cve_id": "CVE-2025-1255",
-      "description": "Untrusted Pointer Dereference vulnerability in RTI Connext Professional (Core Libraries) allows Pointer Manipulation.This issue affects Connext Professional: from 7.4.0 before 7.6.0, from 7.2.0 before 7.3.0.9.",
+      "description": "Untrusted Pointer Dereference vulnerability in RTI Connext Professional (Core Libraries) allows Pointer Manipulation. This issue affects Connext Professional: from 7.4.0 before 7.6.0, from 7.2.0 before 7.3.0.9.",
       "cvss_score": 8.3,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -35664,7 +35800,7 @@
     },
     {
       "cve_id": "CVE-2025-4993",
-      "description": "Untrusted Pointer Dereference vulnerability in RTI Connext Professional (Core Libraries) allows Pointer Manipulation.This issue affects Connext Professional: from 7.4.0 before 7.6.0, from 7.0.0 before 7.3.0.10, from 6.1.0 before 6.1.2.27, from 6.0.0 before 6.0.1.43, from 5.3.0 before 5.3.*, from 4.4a before 5.2.*.",
+      "description": "Untrusted Pointer Dereference vulnerability in RTI Connext Professional (Core Libraries) allows Pointer Manipulation. This issue affects Connext Professional: from 7.4.0 before 7.6.0, from 7.0.0 before 7.3.0.10, from 6.1.0 before 6.1.2.27, from 6.0.0 before 6.0.1.43, from 5.3.0 before 5.3.*, from 5.2.0 before 5.2.*, from 4.4a before 5.1.*.",
       "cvss_score": 8.3,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -35706,6 +35842,12 @@
             {
               "lessThan": "5.2.*",
               "status": "affected",
+              "version": "5.2.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.1.*",
+              "status": "affected",
               "version": "4.4a",
               "versionType": "custom"
             }
@@ -35736,8 +35878,220 @@
       }
     },
     {
+      "cve_id": "CVE-2026-18457",
+      "description": "Heap-based Buffer Overflow vulnerability in RTI Connext Professional (Core Libraries) allows Overflow Buffers. This issue affects Connext Professional: from 7.4.0 before 7.7.0.1, from 7.0.0 before 7.3.1.6, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.2.3 before 5.2.*.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "rti",
+          "product": "connext professional",
+          "versions": [
+            {
+              "lessThan": "7.7.0.1",
+              "status": "affected",
+              "version": "7.4.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.3.1.6",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.1.*",
+              "status": "affected",
+              "version": "6.1.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.0.*",
+              "status": "affected",
+              "version": "6.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.3.*",
+              "status": "affected",
+              "version": "5.3.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.2.*",
+              "status": "affected",
+              "version": "5.2.3",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:connext professional",
+        "vendor:rti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-18459",
+      "description": "Incorrect Calculation vulnerability in RTI Connext Professional (Core Libraries) allows Abuse Existing Functionality. This issue affects Connext Professional: from 7.4.0 before 7.7.0.1, from 7.0.0 before 7.3.1.6, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.2.0 before 5.2.*, from 4.1x before 5.1.*.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "rti",
+          "product": "connext professional",
+          "versions": [
+            {
+              "lessThan": "7.7.0.1",
+              "status": "affected",
+              "version": "7.4.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.3.1.6",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.1.*",
+              "status": "affected",
+              "version": "6.1.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.0.*",
+              "status": "affected",
+              "version": "6.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.3.*",
+              "status": "affected",
+              "version": "5.3.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.2.*",
+              "status": "affected",
+              "version": "5.2.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.1.*",
+              "status": "affected",
+              "version": "4.1x",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:connext professional",
+        "vendor:rti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-18461",
+      "description": "Use of Externally-Controlled Format String vulnerability in RTI Connext Professional (Core Libraries) allows Format String Injection. This issue affects Connext Professional: from 7.5.0 before 7.7.0.1, from 7.3.0.10 before 7.3.1.6.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "rti",
+          "product": "connext professional",
+          "versions": [
+            {
+              "lessThan": "7.7.0.1",
+              "status": "affected",
+              "version": "7.5.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.3.1.6",
+              "status": "affected",
+              "version": "7.3.0.10",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:connext professional",
+        "vendor:rti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-18462",
+      "description": "Integer Overflow or Wraparound, Improper Access Control vulnerability in RTI Connext Professional (Core Libraries) allows Shared Resource Manipulation. This issue affects Connext Professional: from 7.4.0 before 7.7.0.1, from 7.0.0 before 7.3.1.6, from 6.1.0 before 6.1.*.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "rti",
+          "product": "connext professional",
+          "versions": [
+            {
+              "lessThan": "7.7.0.1",
+              "status": "affected",
+              "version": "7.4.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.3.1.6",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.1.*",
+              "status": "affected",
+              "version": "6.1.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:connext professional",
+        "vendor:rti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-2467",
-      "description": "Heap-based Buffer Overflow vulnerability in RTI Connext Professional (Core Libraries) allows Overflow Variables and Tags.This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.3, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.0.0 before 5.2.*.",
+      "description": "Heap-based Buffer Overflow vulnerability in RTI Connext Professional (Core Libraries) allows Overflow Variables and Tags. This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.3, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.2.0 before 5.2.*, from 5.0.0 before 5.1.*.",
       "cvss_score": 9.2,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:H/SC:N/SI:L/SA:H",
@@ -35779,6 +36133,12 @@
             {
               "lessThan": "5.2.*",
               "status": "affected",
+              "version": "5.2.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.1.*",
+              "status": "affected",
               "version": "5.0.0",
               "versionType": "custom"
             }
@@ -35810,7 +36170,7 @@
     },
     {
       "cve_id": "CVE-2026-30802",
-      "description": "Out-of-bounds Read vulnerability in RTI Connext Micro (Core Libraries) allows Overread Buffers.This issue affects Connext Micro: from 4.0.0 before 4.3.0, from 2.4.5 before 2.4.*.",
+      "description": "Out-of-bounds Read vulnerability in RTI Connext Micro (Core Libraries) allows Overread Buffers. This issue affects Connext Micro: from 4.0.0 before 4.3.0, from 2.4.5 before 2.4.*.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -35859,7 +36219,7 @@
     },
     {
       "cve_id": "CVE-2026-30803",
-      "description": "Integer Underflow (Wrap or Wraparound) vulnerability in RTI Connext Micro (Core Libraries) allows Overread Buffers.This issue affects Connext Micro: from 4.0.0 before 4.3.0.",
+      "description": "Integer Underflow (Wrap or Wraparound) vulnerability in RTI Connext Micro (Core Libraries) allows Overread Buffers. This issue affects Connext Micro: from 4.0.0 before 4.3.0.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -35902,7 +36262,7 @@
     },
     {
       "cve_id": "CVE-2026-3894",
-      "description": "Out-of-bounds Read vulnerability in RTI Connext Professional (Core Libraries) allows Overread Buffers.This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.3, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.0.0 before 5.2.*.",
+      "description": "Out-of-bounds Read vulnerability in RTI Connext Professional (Core Libraries) allows Overread Buffers. This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.3, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.2.0 before 5.2.*, from 5.0.0 before 5.1.*.",
       "cvss_score": 9.2,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:H/SC:N/SI:L/SA:H",
@@ -35944,6 +36304,12 @@
             {
               "lessThan": "5.2.*",
               "status": "affected",
+              "version": "5.2.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.1.*",
+              "status": "affected",
               "version": "5.0.0",
               "versionType": "custom"
             }
@@ -35975,7 +36341,7 @@
     },
     {
       "cve_id": "CVE-2026-4374",
-      "description": "Improper Restriction of XML External Entity Reference vulnerability in RTI Connext Professional (Cloud Discovery Service, Recording Service, Routing Service, Queueing Service, Observability Collector) allows Serialized Data External Linking, Data Serialization External Entities Blowup.<p>This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.1.0 before 7.3.1.1, from 6.1.0 before 6.1.2.34, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*.</p>",
+      "description": "Improper Restriction of XML External Entity Reference vulnerability in RTI Connext Professional (Recording Service,Routing Service,Queueing Service,Cloud Discovery Service,Observability Collector) allows Serialized Data External Linking, Data Serialization External Entities Blowup. This issue affects Connext Professional: from 7.4.0 before 7.7.0, from 7.0.0 before 7.3.1.1, from 6.1.0 before 6.1.2.34, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -35993,7 +36359,7 @@
             {
               "lessThan": "7.3.1.1",
               "status": "affected",
-              "version": "7.1.0",
+              "version": "7.0.0",
               "versionType": "custom"
             },
             {
@@ -36042,7 +36408,7 @@
     },
     {
       "cve_id": "CVE-2026-7300",
-      "description": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in RTI Connext Professional (Web Integration Service) allows Filter Failure through Buffer Overflow.This issue affects Connext Professional: from 7.4.0 before 7.*, from 7.0.0 before 7.3.1.3, from 6.1.2 before 6.1.*.",
+      "description": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in RTI Connext Professional (Web Integration Service) allows Filter Failure through Buffer Overflow. This issue affects Connext Professional: from 7.4.0 before 7.7.0.1, from 7.0.0 before 7.3.1.3, from 6.1.2 before 6.1.*.",
       "cvss_score": 8.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N",
@@ -36052,7 +36418,7 @@
           "product": "connext professional",
           "versions": [
             {
-              "lessThan": "7.*",
+              "lessThan": "7.7.0.1",
               "status": "affected",
               "version": "7.4.0",
               "versionType": "custom"
@@ -36094,6 +36460,106 @@
         "cpe_count": 1,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-7866",
+      "description": "Stack-based Buffer Overflow vulnerability in RTI Connext Professional (Core Libraries) allows Overflow Buffers. This issue affects Connext Professional: from 7.4.0 before 7.7.0.1, from 7.0.0 before 7.3.1.6, from 6.1.0 before 6.1.*, from 6.0.0 before 6.0.*, from 5.3.0 before 5.3.*, from 5.2.0 before 5.2.*, from 4.3x before 5.1.*.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "rti",
+          "product": "connext professional",
+          "versions": [
+            {
+              "lessThan": "7.7.0.1",
+              "status": "affected",
+              "version": "7.4.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "7.3.1.6",
+              "status": "affected",
+              "version": "7.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.1.*",
+              "status": "affected",
+              "version": "6.1.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.0.*",
+              "status": "affected",
+              "version": "6.0.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.3.*",
+              "status": "affected",
+              "version": "5.3.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.2.*",
+              "status": "affected",
+              "version": "5.2.0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "5.1.*",
+              "status": "affected",
+              "version": "4.3x",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:connext professional",
+        "vendor:rti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-8849",
+      "description": "Use After Free vulnerability in RTI Connext Professional (Security Plugins) allows File Manipulation. This issue affects Connext Professional: from 7.6.0 before 7.7.0.1.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "rti",
+          "product": "connext professional",
+          "versions": [
+            {
+              "lessThan": "7.7.0.1",
+              "status": "affected",
+              "version": "7.6.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:connext professional",
+        "vendor:rti"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2024-54085",
@@ -46003,6 +46469,64 @@
         ],
         "cpe_count": 102,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-93952",
+      "description": "VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\n\nHosted, including Dedicated, versions of VCO were impacted and have already been patched.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "arista networks",
+          "product": "velocloud orchestrator (vco) on-prem",
+          "versions": [
+            {
+              "version": "5.2.0",
+              "lessThanOrEqual": "5.2.3.15",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "6.1.0",
+              "lessThanOrEqual": "6.1.3.7",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "6.4.0",
+              "lessThanOrEqual": "6.4.2.7",
+              "status": "affected",
+              "versionType": "custom"
+            },
+            {
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.0.2",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00424,
+      "kev": {
+        "cveID": "CVE-2026-93952",
+        "vendorProject": "Arista",
+        "product": "VeloCloud Orchestrator",
+        "vulnerabilityName": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+        "dateAdded": "2026-09-22",
+        "shortDescription": "Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-25",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
