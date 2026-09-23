@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-22T22:01:38+00:00",
+  "generated_at": "2026-09-23T00:40:47+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1058,
+  "count": 1063,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -37063,7 +37063,19 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00308
+      "probability_score": 0.00308,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-409",
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-47323",
@@ -48098,7 +48110,7 @@
         "cwe_ids": [
           "CWE-409"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -51052,6 +51064,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-86473",
+      "description": "Apache Airflow: the Core API logout endpoint revokes only a session token presented as the _token cookie. When a client logs out presenting its credential as an Authorization bearer header instead, the endpoint returns its normal logout response but revokes nothing, so the token remains valid until it expires. An attacker who already holds a copy of that token keeps the victim's access after the victim has logged out and believes the session ended; the default token lifetime is 24 hours and is configurable.\n\nAffects API clients that authenticate with a bearer token rather than the browser session cookie. The attacker must already possess a copy of a valid token; obtaining one is outside the scope of this issue, and no privileges beyond the victim's own are gained.\n\nUsers of apache-airflow are recommended to upgrade to apache-airflow version 3.3.2 or later, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.3.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00396,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-86792",
       "description": "Apache Airflow Apache Kafka provider versions 1.15.0 before 2.0.0 resolve dotted-path strings found in a Kafka connection's `extra` field into Python callables via `import_string`, with no allowlist, and hand them to the confluent-kafka client which invokes them. Deployments that have enabled the Kafka event producer \u2014 `dag_run_events_enabled` or `task_instance_events_enabled`, both disabled by default \u2014 build that client inside the scheduler process, so a user whose only privilege is editing Airflow connections gains arbitrary code execution in the control plane; the Airflow security model limits connection-configuration users to code execution on workers, not the scheduler. Deployments using Google Managed Kafka are not affected, because that code path overwrites any user-supplied `oauth_cb`; plain brokers and Amazon MSK are exposed. Users are recommended to upgrade to apache-airflow-providers-apache-kafka 2.0.0 or later, which adds an allowlist configuration option for connection-string callbacks.",
       "cvss_score": 8.8,
@@ -51291,12 +51346,184 @@
       "active_threat": false,
       "probability_score": 0.00667,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-22"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-91863",
+      "description": "A specially crafted WS-Policy document with deeply nested policy elements can bypass Neethi's nesting-depth limit and exhaust the thread stack, crashing the parser (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache neethi",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.2.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache neethi",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00533,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-674"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-91864",
+      "description": "A specially crafted WS-Policy document can pack unlimited content inside a policy assertion, which Neethi copies into memory without counting it against its size limits, exhausting the heap (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache neethi",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.2.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache neethi",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00514,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-91865",
+      "description": "A small WS-Policy document using repeated policy references can force Neethi to re-expand the same references exponentially during normalization, consuming huge amounts of CPU and memory (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache neethi",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.2.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache neethi",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00514,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-91866",
+      "description": "A specially crafted pair of WS-Policy documents can force Neethi's policy-intersection to do exponential amounts of work, pinning the CPU for a long time (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache neethi",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.2.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache neethi",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00417,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -51382,7 +51609,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00393
+      "probability_score": 0.00393,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     }
   ]
 }
