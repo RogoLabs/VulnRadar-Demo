@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-23T11:19:09+00:00`
+Generated: `2026-09-23T16:38:28+00:00`
 
 ## Executive Summary
 
@@ -41,7 +41,7 @@ Top critical items:
 - Total items: **20564**
 - Watchlist hits: **20120**
 - CISA KEVs: **805**
-- Exploit Intel (PoC): **888**
+- Exploit Intel (PoC): **890**
 - Exploit Intel + Watchlist (CRITICAL): **446**
 
 ## Top Findings (max 200)
@@ -145,7 +145,7 @@ Top critical items:
 | [CVE-2025-4427](https://www.cve.org/CVERecord?id=CVE-2025-4427) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.999 | 5.3 | ✅ | An authentication bypass in the API component of Ivanti Endpoint Manager Mobile 12.5.0.0 and prior allows attackers to access protected resources without prope… |
 | [CVE-2026-42897](https://www.cve.org/CVERecord?id=CVE-2026-42897) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-29 | 0.718 | 8.1 | ✅ | Improper neutralization of input during web page generation ('cross-site scripting') in Microsoft Exchange Server allows an unauthorized attacker to perform sp… |
 | [CVE-2025-20362](https://www.cve.org/CVERecord?id=CVE-2025-20362) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-26 | 0.871 | 6.5 | ✅ | Update: On November 5, 2025, Cisco became aware of a new attack variant against devices running Cisco Secure ASA Software or Cisco Secure FTD Software releases… |
-| [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.726 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
+| [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.729 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-21529](https://www.cve.org/CVERecord?id=CVE-2023-21529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.621 | 8.8 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
 | [CVE-2024-43451](https://www.cve.org/CVERecord?id=CVE-2024-43451) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.841 | 6.5 | ✅ | NTLM Hash Disclosure Spoofing Vulnerability |
 | [CVE-2026-59310](https://www.cve.org/CVERecord?id=CVE-2026-59310) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.504 | 9.8 | ✅ | VMware vCenter contains a directory traversal vulnerability in the Syslog server. A malicious actor with network access to vCenter may exploit this issue to ex… |
@@ -181,12 +181,12 @@ Top critical items:
 | [CVE-2025-43300](https://www.cve.org/CVERecord?id=CVE-2025-43300) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-11 | 0.220 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.8.5 and iPadOS 15.8.5, iOS 16.7.12 and iPadOS 16.7.12, … |
 | [CVE-2023-36874](https://www.cve.org/CVERecord?id=CVE-2023-36874) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-01 | 0.434 | 7.8 | ✅ | Windows Error Reporting Service Elevation of Privilege Vulnerability |
 | [CVE-2023-3079](https://www.cve.org/CVERecord?id=CVE-2023-3079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-28 | 0.321 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 114.0.5735.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
-| [CVE-2022-21999](https://www.cve.org/CVERecord?id=CVE-2022-21999) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-04-15 | 0.417 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2023-20118](https://www.cve.org/CVERecord?id=CVE-2023-20118) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-24 | 0.541 | 6.5 | ✅ | A vulnerability in the web-based management interface of Cisco Small Business Routers RV016, RV042, RV042G, RV082, RV320, and RV325 Routers could allow an auth… |
+| [CVE-2022-21999](https://www.cve.org/CVERecord?id=CVE-2022-21999) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-04-15 | 0.410 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2023-29336](https://www.cve.org/CVERecord?id=CVE-2023-29336) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-30 | 0.409 | 7.8 | ✅ | Win32k Elevation of Privilege Vulnerability |
 | [CVE-2025-24085](https://www.cve.org/CVERecord?id=CVE-2025-24085) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-19 | 0.175 | 10.0 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.3 and iPadOS 18.3, iPadOS 17.7.6, macOS Sequoia 15.3, macOS… |
+| [CVE-2025-31200](https://www.cve.org/CVERecord?id=CVE-2025-31200) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.188 | 9.8 | ✅ | A memory corruption issue was addressed with improved bounds checking. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, … |
 | [CVE-2024-7971](https://www.cve.org/CVERecord?id=CVE-2024-7971) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-16 | 0.207 | 9.6 | ✅ | Type confusion in V8 in Google Chrome prior to 128.0.6613.84 allowed a remote attacker to exploit heap corruption via a crafted HTML page. (Chromium security s… |
-| [CVE-2025-31200](https://www.cve.org/CVERecord?id=CVE-2025-31200) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.186 | 9.8 | ✅ | A memory corruption issue was addressed with improved bounds checking. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, … |
 | [CVE-2025-20352](https://www.cve.org/CVERecord?id=CVE-2025-20352) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-10-20 | 0.394 | 7.7 | ✅ | A vulnerability in the Simple Network Management Protocol (SNMP) subsystem of Cisco IOS Software and Cisco IOS XE Software could allow the following:   An a… |
 | [CVE-2024-38178](https://www.cve.org/CVERecord?id=CVE-2024-38178) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.414 | 7.5 | ✅ | Scripting Engine Memory Corruption Vulnerability |
 | [CVE-2023-28205](https://www.cve.org/CVERecord?id=CVE-2023-28205) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-01 | 0.271 | 8.8 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in Safari 16.4.1, iOS 15.7.5 and iPadOS 15.7.5, iOS 16.4.1 and iPadOS… |
@@ -195,10 +195,10 @@ Top critical items:
 | [CVE-2022-3038](https://www.cve.org/CVERecord?id=CVE-2022-3038) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-04-20 | 0.247 | 8.8 | ✅ | Use after free in Network Service in Google Chrome prior to 105.0.5195.52 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
 | [CVE-2022-41128](https://www.cve.org/CVERecord?id=CVE-2022-41128) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-12-09 | 0.246 | 8.8 | ✅ | Windows Scripting Languages Remote Code Execution Vulnerability |
 | [CVE-2023-6345](https://www.cve.org/CVERecord?id=CVE-2023-6345) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-21 | 0.165 | 9.6 | ✅ | Integer overflow in Skia in Google Chrome prior to 119.0.6045.199 allowed a remote attacker who had compromised the renderer process to potentially perform a s… |
-| [CVE-2023-41993](https://www.cve.org/CVERecord?id=CVE-2023-41993) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-16 | 0.245 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. Processing web content may lead to arbitrary code execution. Apple is awa… |
+| [CVE-2023-41993](https://www.cve.org/CVERecord?id=CVE-2023-41993) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-16 | 0.243 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. Processing web content may lead to arbitrary code execution. Apple is awa… |
 | [CVE-2022-1096](https://www.cve.org/CVERecord?id=CVE-2022-1096) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-04-18 | 0.242 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 99.0.4844.84 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
+| [CVE-2025-31201](https://www.cve.org/CVERecord?id=CVE-2025-31201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.140 | 9.8 | ✅ | This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, visionOS 2.4.… |
 | [CVE-2023-32439](https://www.cve.org/CVERecord?id=CVE-2023-32439) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.240 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in iOS 16.5.1 and iPadOS 16.5.1, iOS 15.7.7 and iPadOS 15.7.7, macOS Ventura 13.… |
-| [CVE-2025-31201](https://www.cve.org/CVERecord?id=CVE-2025-31201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.139 | 9.8 | ✅ | This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, visionOS 2.4.… |
 | [CVE-2024-4947](https://www.cve.org/CVERecord?id=CVE-2024-4947) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-10 | 0.152 | 9.6 | ✅ | Type Confusion in V8 in Google Chrome prior to 125.0.6422.60 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Chr… |
 | [CVE-2024-43573](https://www.cve.org/CVERecord?id=CVE-2024-43573) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.461 | 6.5 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
 | [CVE-2023-32435](https://www.cve.org/CVERecord?id=CVE-2023-32435) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.230 | 8.8 | ✅ | A memory corruption issue was addressed with improved state management. This issue is fixed in macOS Ventura 13.3, Safari 16.4, iOS 16.4 and iPadOS 16.4, iOS 1… |
