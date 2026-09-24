@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-24T01:24:29+00:00",
+  "generated_at": "2026-09-24T07:34:44+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1065,
+  "count": 1066,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -29713,6 +29713,62 @@
         "cpe_count": 1,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-31377",
+      "description": "An Improper Authentication vulnerability in the Apache Doris Frontend (FE) meta service allows an unauthenticated remote attacker to access internal metadata service endpoints.\n\n\n\nThe affected endpoints relied on client-supplied node information for authentication without providing sufficient authentication of the requesting party. Under certain network configurations, a remote attacker may be able to bypass the intended access control and access internal FE metadata interfaces, potentially exposing sensitive cluster information.\n\n\n\nThis issue affects Apache Doris: from 2.0.0 through 2.0.*, from 2.1.0 through 2.1.*, from 3.0.0 through 3.0.*, from 3.1.0 through 3.1.*, from 4.0.0 before 4.0.8, and from 4.1.0 before 4.1.4. Versions 1.2.x and earlier are not affected by this header-trust vulnerability.\n\n\n\n\nUsers are recommended to upgrade to a fixed release (4.0.8 or 4.1.4), which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache doris",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.0",
+              "lessThan": "4.0.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0",
+              "lessThan": "4.1.4",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "0",
+              "lessThan": "2.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.0.8",
+              "lessThan": "4.1.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.1.4",
+              "lessThan": "*",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache doris",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00647
     },
     {
       "cve_id": "CVE-2026-31908",
