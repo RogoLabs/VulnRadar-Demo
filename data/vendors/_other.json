@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-24T22:16:24+00:00",
+  "generated_at": "2026-09-25T01:27:05+00:00",
   "vendor": "_other",
-  "count": 810,
+  "count": 812,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -7702,7 +7702,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 2
       }
     },
@@ -26835,7 +26835,7 @@
           "CWE-506"
         ],
         "cpe_count": 0,
-        "reference_count": 3
+        "reference_count": 4
       }
     },
     {
@@ -34110,7 +34110,7 @@
         "cwe_ids": [
           "CWE-295"
         ],
-        "cpe_count": 0,
+        "cpe_count": 180,
         "reference_count": 3
       }
     },
@@ -34199,7 +34199,7 @@
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 242,
         "reference_count": 3
       }
     },
@@ -39878,11 +39878,11 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-20",
-          "CWE-78"
+          "CWE-15",
+          "CWE-829"
         ],
         "cpe_count": 0,
-        "reference_count": 2
+        "reference_count": 3
       }
     },
     {
@@ -47167,7 +47167,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 2
       }
     },
@@ -53515,6 +53515,92 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-89281",
+      "description": "The Apache Lounge Windows distribution of Apache HTTP Server build contains a hardcoded configuration path vulnerability within openssl.cnf path that can allow local code execution.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache http server project",
+          "product": "apache lounge windows",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "Apache 2.4.68-260920 Win64",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache lounge windows",
+        "vendor:apache http server project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00125,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-732"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-89282",
+      "description": "The Apache Lounge Windows distribution of Apache HTTP Server build contains an insecure installation directory permissions vulnerability through its default install directory on C:\\, which inherits write access for Authenticated Users.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache http server project",
+          "product": "apache lounge windows",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "Apache 2.4.68-260920 Win64",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache lounge windows",
+        "vendor:apache http server project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00268,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-732"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
       }
     },
     {

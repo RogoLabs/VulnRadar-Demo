@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-24T22:16:24+00:00",
+  "generated_at": "2026-09-25T01:27:05+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1066,
+  "count": 1081,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -29768,7 +29768,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00538
+      "probability_score": 0.00538,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-31908",
@@ -49551,6 +49562,146 @@
       }
     },
     {
+      "cve_id": "CVE-2026-75973",
+      "description": "Improper Authentication vulnerability in Apache Tomcat. When Jakarta Authentication was configured with SimpleAuthConfigProvider as the default provider and multiple web application used that provider, the realm for the first web application to authenticate a request would be used for all web applications.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.0.M4 through 9.0.121.\n\n\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: from 8.5.0 through 8.5.100. Other unsupported versions may also be affected.\n\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60, 9.0.122, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.0.M4",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.0",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "0",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00238,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-76183",
+      "description": "Authentication Bypass by Alternate Name vulnerability in Apache Tomcat allowed the security constraints for any WebSocket endpoint to be bypassed.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.0.M1 through 9.0.121.\n\n\n\nThe following versions were EOS at the time the CVE was created but are \nknown to be affected: from 8.5.0 through 8.5.100, from 7.0.43 through 7.0.109. Other unsupported versions may also be affected.\n\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.0",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.43",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "7.0.43",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0039,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-289"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-76186",
       "description": "Apache Airflow Keycloak provider: from Airflow 3.3 the Keycloak auth manager takes a user's identity from the signed Airflow session token but takes the Keycloak access and refresh tokens used for every authorization decision from separate, unauthenticated cookies, and never checks that the two describe the same subject. A user who holds any valid Airflow login of their own, together with another subject's Keycloak access or refresh token obtained out of band, can pair the two: Airflow then authorizes requests with the foreign token's privileges while the session identity, audit log and cache keys continue to name the attacker's own account. The refresh path re-issues an Airflow session token for the original identity carrying the foreign tokens, so the mismatched pairing survives across sessions.\n\nAffects deployments running Airflow 3.3 or later with the Keycloak auth manager. Earlier versions carried the Keycloak tokens inside the signed session token, so the binding existed and was lost when they moved into separate cookies.\n\nUsers of apache-airflow-providers-keycloak are recommended to upgrade to version 0.10.0 or later, which binds the cookie-supplied tokens to the session identity.",
       "cvss_score": 9.1,
@@ -49825,6 +49976,140 @@
       }
     },
     {
+      "cve_id": "CVE-2026-77762",
+      "description": "Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Tomcat allows an attacker to inject trailer fields into another HTTP/2 request.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.39 through 9.0.121.\n\n\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: from 8.5.59 through 8.5.100. Other unsupported versions may also be affected.\n\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60, 9.0.122, which fix\u00a0the issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.39",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.56.59",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "0",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00361,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-77791",
+      "description": "Uncontrolled Resource Consumption vulnerability in Apache Tomcat during sending of WebSocket close message enabled a DoS attack.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M5 through 11.0.25, from 10.1.8 through 10.1.59, from 9.0.74 through 9.0.121.\n\n\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: from 8.5.88 through 8.5.100. Other unsupported versions may also be affected.\n\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M5",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.8",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.74",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.88",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "0",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00531,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-78254",
       "description": "The ftp and scp tasks of Apache Ant can download files from a remote server. A malicious server can provide relative paths that allow it to write outside of the dedicated target directory for the download, making it possible to overwrite files of the attacker's choice using the permissions of the user running Ant in versions prior to Ant 1.10.18. \n\n\n\n\nIn order to exploit this vulnerability, the server would either have to be malicious\u00a0or be subject to a machine-in-the-middle attack. Additionally\u00a0in the case of scp or the ftp task using ftps the server must pass the server identity checks performed by the tasks.\n\n\n\n\nFor ftp tasks not using ftps a malicious server could act as a machine-in-the-middle to provide malicious files.\n\n\n\n\nStarting with Ant 1.10.18 both tasks will prevent writing outside of the destination directory by default. An option is available to disable this behavior in the unlikely case that the  old behavior is required by existing build files.\n\n\n\n\nMitigations:\n\n\n\n\nUsers of scp and ftp (when using ftps) in any version of Ant should not bypass server identity checks. Users of ftp not using ftps should switch to ftps where possible.\n\n\n\n\nAll users are recommended to upgrade to Apache Ant 1.10.18, which fixes this issue.",
       "cvss_score": 7.4,
@@ -50027,6 +50312,208 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-201"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-78383",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Tomcat allows an unauthenticated AJP request to pin an AJP processing thread leading to denial of service.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.0.M1 through 9.0.121.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100, from 7.0.0 through 7.0.109. Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.0",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00376,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-78437",
+      "description": "Incomplete cleanup vulnerability in Apache Tomcat allows a malformed request to potentially (depends on timing) cause one request from another user to fail.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.19 through 11.0.25, from 10.1.53 through 10.1.59, from 9.0.116 through 9.0.121.\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.19",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.53",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.116",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "0",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0026,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-459"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-79677",
+      "description": "Missing release of resource after effective lifetime, Comparison using wrong factors vulnerability in Apache Tomcat allows a denial of service as a result of lost time outs for asynchronous WebSocket writes.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.0.M1 through 9.0.121.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected: from 8.5.0 through 8.5.100, from 7.0.43 through 7.0.109.\u00a0Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.0",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.43",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "0",
+              "lessThan": "7.0.43",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00322,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-772",
+          "CWE-1025"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -50453,6 +50940,54 @@
         ],
         "cpe_count": 1,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82331",
+      "description": "Improper link resolution before file access ('link following') vulnerability in the `tar` source plugin of Apache BuildStream running on Python < 3.12 allows malicious source tarballs to write files on the host, with the privileges of the user running BuildStream, via symlinks as part of source fetching.\nThe impact of this issue is mitigated by:\n\n* BuildStream projects should only use trusted sources in their elements as otherwise the build output can also not be trusted\n* Tracking a source tarball pins its SHA256 hash, which prevents MITM attacks of users that are fetching an already tracked project\n* When running on Python >= 3.12, BuildStream >= 2.3.0 already makes use of the Python `tarfile` filter functionality, which blocks the symlink escape\n\nUsers are recommended to upgrade to version 2.8.1, which fixes this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache buildstream",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "2.8.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "2.8.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache buildstream",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00424,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -51065,6 +51600,263 @@
       }
     },
     {
+      "cve_id": "CVE-2026-86243",
+      "description": "Buffer over-read vulnerability in Apache Tomcat Native during the TLS handshake permits a malicious user to trigger a DoS via a JVM crash.\n\n\n\nThis issue affects Apache Tomcat Native: from 2.0.0 through 2.0.15, from 1.3.0 through 1.3.8. Earlier, unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 1.3.9 or 2.0.16, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat native",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.0",
+              "lessThanOrEqual": "2.0.15",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "1.3.0",
+              "lessThanOrEqual": "1.3.8",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat native",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00398,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-126"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86246",
+      "description": "Initialization of a resource with an insecure default vulnerability in Apache Tomcat Native enabled insecure options\u00a0by default  including ALLOW_CLIENT_RENEGOTIATION, NO_EXTENDED_MASTER_SECRET, IGNORE_UNEXPECTED_EOF and ALLOW_NO_DHE_KEX.\n\n\n\nThis issue affects Apache Tomcat Native: from 2.0.0 through 2.0.15, from 1.3.0 through 1.3.8. Earlier unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 2.0.16 or 1.3.9, which fix the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat native",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.0",
+              "lessThanOrEqual": "2.0.15",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "1.3.0",
+              "lessThanOrEqual": "1.3.8",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat native",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0028,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1188"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86247",
+      "description": "Race condition within a thread vulnerability in Apache Tomcat Native allowed client certificate verification requirements to be down-graded for some configurations.\n\n\n\nThis issue affects Apache Tomcat Native: from 2.0.0 through 2.0.15, from 1.3.0 through 1.3.8. Unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 2.0.16 or 1.3.9, which fixes the issue.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat native",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.0",
+              "lessThanOrEqual": "2.0.15",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "1.3.0",
+              "lessThanOrEqual": "1.3.8",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat native",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00179,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-366"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86248",
+      "description": "CLIENT_CERT authentication does not fail as expected for some scenarios when soft fail is disabled vulnerability in Apache Tomcat.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M14 through 11.0.25, from 10.1.22 through 10.1.59, from 9.0.92 through 9.0.121.\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M14",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.22",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.92",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00386,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86350",
+      "description": "Inconsistent interpretation of HTTP/2 requests ('HTTP Request/Response smuggling') vulnerability in Apache Tomcat caused by a\u00a0regression in fix for CVE-2026-41293 can trigger request header mix-up.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.22 through 11.0.25, from 10.1.55 through 10.1.59, from 9.0.118 through 9.0.121.\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.0.122, which fix the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.22",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.55",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.118",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00313,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-444"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-86460",
       "description": "Cypher injection vulnerability in the Neo4j persistence layer when processing some FIQL search\u00a0conditions.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
       "cvss_score": 9.8,
@@ -51289,6 +52081,73 @@
         ],
         "cpe_count": 1,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-87022",
+      "description": "Improper handling of length parameter inconsistency vulnerability in Apache Tomcat allows WebSocket message smuggling when per-message-deflate is used.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.0.M1 through 9.0.121.\n\n\n\nThe following versions were EOS at the time the CVE was created but are known to be affected:\u00a0from 8.5.0 through 8.5.100, from 7.0.56 through 7.0.109.\u00a0Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60 or 9.1.22, which fix the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache tomcat",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0-M1",
+              "lessThanOrEqual": "11.0.25",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.1.0-M1",
+              "lessThanOrEqual": "10.1.59",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.0.M1",
+              "lessThanOrEqual": "9.0.121",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.0",
+              "lessThanOrEqual": "8.5.100",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.56",
+              "lessThanOrEqual": "7.0.109",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache tomcat",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00422,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-130"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -51710,6 +52569,49 @@
         "cwe_ids": [
           "CWE-401",
           "CWE-772"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-94243",
+      "description": "A vulnerability in Apache Sling Security Bundle: the ReferrerFilter accepts weaker-than-orgin evidence.\n\n\n\nThis issue affects Apache Sling Security Bundle: before 1.3.2.\n\n\n\nUsers are recommended to upgrade to version 1.3.2, which fixes the issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache sling security bundle",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.3.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache sling security bundle",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00131,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-346"
         ],
         "cpe_count": 0,
         "reference_count": 2
