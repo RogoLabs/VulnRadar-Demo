@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-27T08:01:04+00:00`
+Generated: `2026-09-27T13:52:05+00:00`
 
 ## Executive Summary
 
@@ -135,8 +135,8 @@ Top critical items:
 | [CVE-2024-20353](https://www.cve.org/CVERecord?id=CVE-2024-20353) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-01 | 0.707 | 8.6 | ✅ | A vulnerability in the management and VPN web servers for Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software co… |
 | [CVE-2025-4427](https://www.cve.org/CVERecord?id=CVE-2025-4427) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.999 | 5.3 | ✅ | An authentication bypass in the API component of Ivanti Endpoint Manager Mobile 12.5.0.0 and prior allows attackers to access protected resources without prope… |
 | [CVE-2025-20362](https://www.cve.org/CVERecord?id=CVE-2025-20362) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-26 | 0.871 | 6.5 | ✅ | Update: On November 5, 2025, Cisco became aware of a new attack variant against devices running Cisco Secure ASA Software or Cisco Secure FTD Software releases… |
-| [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.729 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2024-43451](https://www.cve.org/CVERecord?id=CVE-2024-43451) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.841 | 6.5 | ✅ | NTLM Hash Disclosure Spoofing Vulnerability |
+| [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.708 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
 | [CVE-2023-21529](https://www.cve.org/CVERecord?id=CVE-2023-21529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.593 | 8.8 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
 | [CVE-2022-34713](https://www.cve.org/CVERecord?id=CVE-2022-34713) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-08-30 | 0.678 | 7.8 | ✅ | Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability |
 | [CVE-2024-43572](https://www.cve.org/CVERecord?id=CVE-2024-43572) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.667 | 7.8 | ✅ | Microsoft Management Console Remote Code Execution Vulnerability |
@@ -253,6 +253,14 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Sep 27 | [CVE-2026-85491](https://www.cve.org/CVERecord?id=CVE-2026-85491) | 🆕 New |
+| Sep 27 | [CVE-2026-92288](https://www.cve.org/CVERecord?id=CVE-2026-92288) | 🆕 New |
+| Sep 27 | [CVE-2026-92289](https://www.cve.org/CVERecord?id=CVE-2026-92289) | 🆕 New |
+| Sep 27 | [CVE-2026-97230](https://www.cve.org/CVERecord?id=CVE-2026-97230) | 🆕 New |
+| Sep 27 | [CVE-2026-92550](https://www.cve.org/CVERecord?id=CVE-2026-92550) | 🆕 New |
+| Sep 27 | [CVE-2026-92560](https://www.cve.org/CVERecord?id=CVE-2026-92560) | 🆕 New |
+| Sep 27 | [CVE-2026-92608](https://www.cve.org/CVERecord?id=CVE-2026-92608) | 🆕 New |
+| Sep 27 | [CVE-2026-92609](https://www.cve.org/CVERecord?id=CVE-2026-92609) | 🆕 New |
 | Sep 26 | [CVE-2026-57590](https://www.cve.org/CVERecord?id=CVE-2026-57590) | 🆕 New |
 | Sep 26 | [CVE-2026-93207](https://www.cve.org/CVERecord?id=CVE-2026-93207) | 🆕 New |
 | Sep 26 | [CVE-2026-93221](https://www.cve.org/CVERecord?id=CVE-2026-93221) | 🆕 New |
@@ -295,12 +303,4 @@ Top critical items:
 | Sep 26 | [CVE-2026-97421](https://www.cve.org/CVERecord?id=CVE-2026-97421) | 🆕 New |
 | Sep 26 | [CVE-2026-97428](https://www.cve.org/CVERecord?id=CVE-2026-97428) | 🆕 New |
 | Sep 26 | [CVE-2026-97429](https://www.cve.org/CVERecord?id=CVE-2026-97429) | 🆕 New |
-| Sep 26 | [CVE-2026-97433](https://www.cve.org/CVERecord?id=CVE-2026-97433) | 🆕 New |
-| Sep 26 | [CVE-2026-97437](https://www.cve.org/CVERecord?id=CVE-2026-97437) | 🆕 New |
-| Sep 26 | [CVE-2026-97438](https://www.cve.org/CVERecord?id=CVE-2026-97438) | 🆕 New |
-| Sep 26 | [CVE-2026-97442](https://www.cve.org/CVERecord?id=CVE-2026-97442) | 🆕 New |
-| Sep 26 | [CVE-2026-97444](https://www.cve.org/CVERecord?id=CVE-2026-97444) | 🆕 New |
-| Sep 26 | [CVE-2026-97445](https://www.cve.org/CVERecord?id=CVE-2026-97445) | 🆕 New |
-| Sep 26 | [CVE-2026-97448](https://www.cve.org/CVERecord?id=CVE-2026-97448) | 🆕 New |
-| Sep 26 | [CVE-2026-97450](https://www.cve.org/CVERecord?id=CVE-2026-97450) | 🆕 New |
-| ... | | _and 142 more_ |
+| ... | | _and 150 more_ |
