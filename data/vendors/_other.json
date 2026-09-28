@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-28T00:34:51+00:00",
+  "generated_at": "2026-09-28T06:39:46+00:00",
   "vendor": "_other",
-  "count": 818,
+  "count": 820,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -53795,6 +53795,158 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-88771",
+      "description": "Improper input validation vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to\u00a0an unauthenticated attacker to execute arbitrary commands.",
+      "cvss_score": 9.5,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "citrix netscaler",
+          "product": "adc",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "14.1-73.37",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "13.1-64.23",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "14.1-73.37 FIPS",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "13.1.37.279 FIPS and NDcPP",
+              "versionType": "patch"
+            }
+          ]
+        },
+        {
+          "vendor": "citrix netscaler",
+          "product": "gateway",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "14.1-73.37",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "13.1-64.23",
+              "versionType": "patch"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-88771",
+        "vendorProject": "Citrix",
+        "product": "NetScaler",
+        "vulnerabilityName": "Citrix NetScaler Improper Input Validation Vulnerability",
+        "dateAdded": "2026-09-27",
+        "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-30",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
+      "cve_id": "CVE-2026-88772",
+      "description": "Vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23\u00a0leading to Remote Code Execution or Denial of Service",
+      "cvss_score": 9.5,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "citrix netscaler",
+          "product": "adc",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "14.1-73.37",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "13.1-64.23",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "14.1-73.37 FIPS",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "13.1.37.279 FIPS and NDcPP",
+              "versionType": "patch"
+            }
+          ]
+        },
+        {
+          "vendor": "citrix netscaler",
+          "product": "gateway",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "14.1-73.37",
+              "versionType": "patch"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "13.1-64.23",
+              "versionType": "patch"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-88772",
+        "vendorProject": "Citrix",
+        "product": "NetScaler",
+        "vulnerabilityName": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+        "dateAdded": "2026-09-27",
+        "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-30",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
