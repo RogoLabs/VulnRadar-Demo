@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-28T06:39:49+00:00`
+Generated: `2026-09-28T15:20:17+00:00`
 
 ## Executive Summary
 
@@ -151,6 +151,7 @@ Top critical items:
 | [CVE-2026-85046](https://www.cve.org/CVERecord?id=CVE-2026-85046) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-18 | 0.489 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 152.0.7977.82 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (C… |
 | [CVE-2023-35081](https://www.cve.org/CVERecord?id=CVE-2023-35081) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-21 | 0.636 | 7.2 | ✅ | A path traversal vulnerability in Ivanti EPMM versions (11.10.x < 11.10.0.3,  11.9.x < 11.9.1.2 and 11.8.x < 11.8.1.2) allows an authenticated administrator to… |
 | [CVE-2024-29988](https://www.cve.org/CVERecord?id=CVE-2024-29988) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-05-21 | 0.449 | 8.8 | ✅ | SmartScreen Prompt Security Feature Bypass Vulnerability |
+| [CVE-2025-43300](https://www.cve.org/CVERecord?id=CVE-2025-43300) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-11 | 0.325 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.8.5 and iPadOS 15.8.5, iOS 16.7.12 and iPadOS 16.7.12, … |
 | [CVE-2025-20393](https://www.cve.org/CVERecord?id=CVE-2025-20393) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-24 | 0.324 | 10.0 | ✅ | A vulnerability in the Spam Quarantine feature of Cisco AsyncOS Software for Cisco Secure Email Gateway and Cisco Secure Email and Web Manager could allow an u… |
 | [CVE-2022-21971](https://www.cve.org/CVERecord?id=CVE-2022-21971) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-08 | 0.539 | 7.8 | ✅ | Windows Runtime Remote Code Execution Vulnerability |
 | [CVE-2024-9380](https://www.cve.org/CVERecord?id=CVE-2024-9380) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-30 | 0.597 | 7.2 | ✅ | An OS command injection vulnerability in the admin web console of Ivanti CSA before version 5.0.2 allows a remote authenticated attacker with admin privileges … |
@@ -170,8 +171,7 @@ Top critical items:
 | [CVE-2024-38094](https://www.cve.org/CVERecord?id=CVE-2024-38094) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-11-12 | 0.509 | 7.2 | ✅ | Microsoft SharePoint Remote Code Execution Vulnerability |
 | [CVE-2025-58034](https://www.cve.org/CVERecord?id=CVE-2025-58034) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-11-25 | 0.556 | 6.7 | ✅ | An Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability [CWE-78] vulnerability in Fortinet FortiWeb 8.0.0 t… |
 | [CVE-2023-24880](https://www.cve.org/CVERecord?id=CVE-2023-24880) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-04-04 | 0.780 | 4.4 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
-| [CVE-2025-43300](https://www.cve.org/CVERecord?id=CVE-2025-43300) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-09-11 | 0.220 | 10.0 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.8.5 and iPadOS 15.8.5, iOS 16.7.12 and iPadOS 16.7.12, … |
-| [CVE-2023-36874](https://www.cve.org/CVERecord?id=CVE-2023-36874) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-01 | 0.434 | 7.8 | ✅ | Windows Error Reporting Service Elevation of Privilege Vulnerability |
+| [CVE-2023-36874](https://www.cve.org/CVERecord?id=CVE-2023-36874) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-01 | 0.426 | 7.8 | ✅ | Windows Error Reporting Service Elevation of Privilege Vulnerability |
 | [CVE-2023-3079](https://www.cve.org/CVERecord?id=CVE-2023-3079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-28 | 0.321 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 114.0.5735.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2023-20118](https://www.cve.org/CVERecord?id=CVE-2023-20118) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-24 | 0.541 | 6.5 | ✅ | A vulnerability in the web-based management interface of Cisco Small Business Routers RV016, RV042, RV042G, RV082, RV320, and RV325 Routers could allow an auth… |
 | [CVE-2022-21999](https://www.cve.org/CVERecord?id=CVE-2022-21999) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-04-15 | 0.410 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
@@ -253,6 +253,8 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Sep 28 | [CVE-2026-88771](https://www.cve.org/CVERecord?id=CVE-2026-88771) | 🔴 In CISA KEV |
+| Sep 28 | [CVE-2026-88772](https://www.cve.org/CVERecord?id=CVE-2026-88772) | 🔴 In CISA KEV |
 | Sep 27 | [CVE-2026-85491](https://www.cve.org/CVERecord?id=CVE-2026-85491) | 🆕 New |
 | Sep 27 | [CVE-2026-92288](https://www.cve.org/CVERecord?id=CVE-2026-92288) | 🆕 New |
 | Sep 27 | [CVE-2026-92289](https://www.cve.org/CVERecord?id=CVE-2026-92289) | 🆕 New |
@@ -301,6 +303,4 @@ Top critical items:
 | Sep 26 | [CVE-2026-97415](https://www.cve.org/CVERecord?id=CVE-2026-97415) | 🆕 New |
 | Sep 26 | [CVE-2026-97417](https://www.cve.org/CVERecord?id=CVE-2026-97417) | 🆕 New |
 | Sep 26 | [CVE-2026-97421](https://www.cve.org/CVERecord?id=CVE-2026-97421) | 🆕 New |
-| Sep 26 | [CVE-2026-97428](https://www.cve.org/CVERecord?id=CVE-2026-97428) | 🆕 New |
-| Sep 26 | [CVE-2026-97429](https://www.cve.org/CVERecord?id=CVE-2026-97429) | 🆕 New |
-| ... | | _and 148 more_ |
+| ... | | _and 150 more_ |
