@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-29T08:20:25+00:00",
+  "generated_at": "2026-09-29T15:44:30+00:00",
   "vendor": "apple",
-  "count": 1226,
+  "count": 1227,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -21930,7 +21930,7 @@
         "vendor:apple"
       ],
       "active_threat": false,
-      "probability_score": 0.00825,
+      "probability_score": 0.00832,
       "nvd": {
         "cvss_v3_score": 8.6,
         "cvss_v3_severity": "HIGH",
@@ -25963,7 +25963,7 @@
         "vendor:apple"
       ],
       "active_threat": false,
-      "probability_score": 0.01567,
+      "probability_score": 0.0158,
       "nvd": {
         "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
@@ -58559,7 +58559,7 @@
         "vendor:apple"
       ],
       "active_threat": false,
-      "probability_score": 0.00735,
+      "probability_score": 0.00741,
       "nvd": {
         "cvss_v3_score": 9.8,
         "cvss_v3_severity": "CRITICAL",
@@ -59760,7 +59760,7 @@
         "vendor:apple"
       ],
       "active_threat": false,
-      "probability_score": 0.00366,
+      "probability_score": 0.00369,
       "nvd": {
         "cvss_v3_score": 8.1,
         "cvss_v3_severity": "HIGH",
@@ -88223,6 +88223,68 @@
         ],
         "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86950",
+      "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.1 and iPadOS 26.7.1, macOS Sequoia 15.8.1, macOS Tahoe 26.7.1. Processing a maliciously crafted file may lead to arbitrary code execution. Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 27.",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7.1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8.1",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": true,
+      "probability_score": 0.00812,
+      "kev": {
+        "cveID": "CVE-2026-86950",
+        "vendorProject": "Apple",
+        "product": "Multiple Products",
+        "vulnerabilityName": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
+        "dateAdded": "2026-09-29",
+        "shortDescription": "Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-02",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     }
   ]

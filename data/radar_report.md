@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-29T08:20:28+00:00`
+Generated: `2026-09-29T15:44:32+00:00`
 
 ## Executive Summary
 
@@ -38,9 +38,9 @@ Top critical items:
 
 ## Summary
 
-- Total items: **20753**
-- Watchlist hits: **20303**
-- CISA KEVs: **812**
+- Total items: **20754**
+- Watchlist hits: **20304**
+- CISA KEVs: **813**
 - Exploit Intel (PoC): **897**
 - Exploit Intel + Watchlist (CRITICAL): **447**
 
@@ -112,8 +112,8 @@ Top critical items:
 | [CVE-2025-33053](https://www.cve.org/CVERecord?id=CVE-2025-33053) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-07-01 | 0.870 | 8.8 | ✅ | External control of file name or path in Internet Shortcut Files allows an unauthorized attacker to execute code over a network. |
 | [CVE-2024-45195](https://www.cve.org/CVERecord?id=CVE-2024-45195) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-25 | 1.000 | 7.5 | ✅ | Direct Request ('Forced Browsing') vulnerability in Apache OFBiz.  This issue affects Apache OFBiz: before 18.12.16.  Users are recommended to upgrade to versi… |
 | [CVE-2026-20230](https://www.cve.org/CVERecord?id=CVE-2026-20230) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-28 | 0.882 | 8.6 | ✅ | A vulnerability in Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) could… |
+| [CVE-2026-1603](https://www.cve.org/CVERecord?id=CVE-2026-1603) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-23 | 0.879 | 8.6 | ✅ | An authentication bypass in Ivanti Endpoint Manager before version 2024 SU5 allows a remote unauthenticated attacker to leak specific stored credential data. |
 | [CVE-2023-36884](https://www.cve.org/CVERecord?id=CVE-2023-36884) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-29 | 0.989 | 7.5 | ✅ | Windows Search Remote Code Execution Vulnerability |
-| [CVE-2026-1603](https://www.cve.org/CVERecord?id=CVE-2026-1603) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-23 | 0.876 | 8.6 | ✅ | An authentication bypass in Ivanti Endpoint Manager before version 2024 SU5 allows a remote unauthenticated attacker to leak specific stored credential data. |
 | [CVE-2024-29059](https://www.cve.org/CVERecord?id=CVE-2024-29059) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-25 | 0.986 | 7.5 | ✅ | .NET Framework Information Disclosure Vulnerability |
 | [CVE-2022-20699](https://www.cve.org/CVERecord?id=CVE-2022-20699) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.725 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
 | [CVE-2022-26923](https://www.cve.org/CVERecord?id=CVE-2022-26923) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-08 | 0.835 | 8.8 | ✅ | Active Directory Domain Services Elevation of Privilege Vulnerability |
@@ -225,7 +225,7 @@ Top critical items:
 | [CVE-2024-5274](https://www.cve.org/CVERecord?id=CVE-2024-5274) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-18 | 0.075 | 9.6 | ✅ | Type Confusion in V8 in Google Chrome prior to 125.0.6422.112 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
 | [CVE-2025-10585](https://www.cve.org/CVERecord?id=CVE-2025-10585) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-10-14 | 0.054 | 9.8 | ✅ | Type confusion in V8 in Google Chrome prior to 140.0.7339.185 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2026-20245](https://www.cve.org/CVERecord?id=CVE-2026-20245) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-06-23 | 0.253 | 7.8 | ✅ | A vulnerability in the CLI of Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, and Cisco Catal… |
-| [CVE-2024-35250](https://www.cve.org/CVERecord?id=CVE-2024-35250) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-01-06 | 0.250 | 7.8 | ✅ | Windows Kernel-Mode Driver Elevation of Privilege Vulnerability |
+| [CVE-2024-35250](https://www.cve.org/CVERecord?id=CVE-2024-35250) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-01-06 | 0.252 | 7.8 | ✅ | Windows Kernel-Mode Driver Elevation of Privilege Vulnerability |
 | [CVE-2023-32409](https://www.cve.org/CVERecord?id=CVE-2023-32409) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.165 | 8.6 | ✅ | The issue was addressed with improved bounds checks. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.8 and iPadOS 15.7.8, Safari 16… |
 | [CVE-2024-49039](https://www.cve.org/CVERecord?id=CVE-2024-49039) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.142 | 8.8 | ✅ | Windows Task Scheduler Elevation of Privilege Vulnerability |
 | [CVE-2025-30397](https://www.cve.org/CVERecord?id=CVE-2025-30397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-03 | 0.268 | 7.5 | ✅ | Access of resource using incompatible type ('type confusion') in Microsoft Scripting Engine allows an unauthorized attacker to execute code over a network. |
