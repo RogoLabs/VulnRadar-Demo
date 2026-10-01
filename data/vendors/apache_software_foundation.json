@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-30T23:07:31+00:00",
+  "generated_at": "2026-10-01T02:07:11+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1102,
+  "count": 1111,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -27308,6 +27308,222 @@
       }
     },
     {
+      "cve_id": "CVE-2026-102508",
+      "description": "Improper Verification of Cryptographic Signature and Improper Certificate Validation in the OPC UA driver of Apache PLC4X (PLC4J) allows an attacker in a network position between client and server to impersonate the OPC UA server and to read, forge or modify secure-channel traffic, including user credential ssent by the client.\n\nThe defect manifests differently depending on the version:\n- In 0.9.0 through 0.11.0 a failed message-signature check is only logged and never enforced, and there is no mechanism to verify the server certificate: it is taken from the unauthenticated GetEndpoints discovery response and used to encrypt the user's password.\n- In 0.12.0 through 0.13.1 the signature check is inverted (valid signatures are rejected, invalid ones accepted), and server certificates are accepted without a trust anchor by default.\n- In all affected versions the default security policy is None. Starting with 0.12.0 the driver additionally continues silently at a weaker security policy than the one configured, and starting with 0.13.0 endpoint selection prefers the weakest matching endpoint.\n\nUsers checking only for one of these mechanisms may wrongly conclude they are unaffected.\n\nThis issue affects Apache PLC4X: from 0.9.0 before 1.0.0.\n\nUsers are recommended to upgrade to version 1.0.0, which fixes the issue. Version 1.0.0 verifies message signatures correctly, refuses to connect unless the server certificate can be verified against a configured trust store or pinned certificate, defaults to Basic256Sha256 with SignAndEncrypt, and fails the\nconnection if the negotiated security policy is weaker than the configured one.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.9.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache plc4x",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00124
+    },
+    {
+      "cve_id": "CVE-2026-102509",
+      "description": "Memory Allocation with Excessive Size Value, Allocation of Resources Without Limits, and Uncontrolled Recursion in the Java implementation of Apache PLC4X (PLC4J) allow a malicious or impersonated device to exhaust the memory or stack of the client application, causing a denial of service.\n\nIn the OPC UA driver these defects are reachable before authentication: the offending data is parsed while the secure channel and session are being established, before the server's identity has been bound to it. Configuring a trusted server therefore does not prevent exploitation by an attacker who can \nimpersonate it.\n\nThe individual defects are:\n- Length-prefixed byte strings are allocated at the size claimed on the wire before the length is checked against the data actually received (0.10.0 through 0.13.1).\n- Array fields in generated protocol parsers pre-allocate a list with the element count claimed on the wire, allowing a single count field to trigger a multi-gigabyte allocation. This parser is shared by all PLC4J drivers; the OPC UA driver is the verified pre-authentication path (0.10.0 through 0.13.1).\n- The OPC UA driver accumulates message chunks without enforcing the negotiated maximum chunk count and message size (0.12.0 through 0.13.1).\n- The OPC UA driver pre-allocates collections using element counts received from the server (0.10.0 through 0.13.1).\n- Recursive protocol types are parsed without a nesting-depth limit. The same defect in the Go implementation is covered by  CVE-2026-102510 https://cveprocess.apache.org/cve5/CVE-2026-102510 .\n\nThis issue affects Apache PLC4X: from 0.10.0 before 1.0.0.\n\nUsers are recommended to upgrade to version 1.0.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.10.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.10.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache plc4x",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00401
+    },
+    {
+      "cve_id": "CVE-2026-102510",
+      "description": "Integer Overflow, Improper Validation of Array Index, Uncontrolled Recursion and Memory Allocation with Excessive Size Value in the Go implementation of Apache PLC4X (PLC4Go) allow a malicious device, or an attacker able to inject network traffic, to crash or exhaust the memory of the client application,\ncausing a denial of service.\n\nThe individual defects are:\n- Generated parsers pre-allocate arrays with the element count claimed on the wire (0.13.0 through 0.13.1).\n- Transport read helpers allocate buffers of the size claimed on the wire without an upper bound.\n- ADS and KNXnet/IP response handling indexes into received data without checking its length, causing a panic.\n- ADS and EIP frame-length handling accepts, or arithmetically wraps to, a length of zero, breaking message framing.\n- Recursive protocol types are parsed without a nesting-depth limit. The same defect in the Java implementation is covered by  CVE-2026-102509 https://cveprocess.apache.org/cve5/CVE-2026-102509 .\n\nAdditionally, length and position arithmetic in generated serializers was performed in 16-bit integers. If an application forwards attacker-influenced payloads larger than 8 KB, the length field wraps, and the remainder of the payload may be interpreted by the receiving device (for example, an ADS PLC) as \nadditional, independent protocol messages.\n\nThis issue affects Apache PLC4X: from 0.11.0 before 1.0.0. PLC4Go is consumed as the Go module github.com/apache/plc4x/plc4go; versions refer to the corresponding Apache PLC4X releases.\n\nUsers are recommended to upgrade to version 1.0.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.11.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache plc4x",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00328
+    },
+    {
+      "cve_id": "CVE-2026-102511",
+      "description": "Improper Verification of Source of a Communication Channel in the ADS discovery of the Go implementation of Apache PLC4X (PLC4Go) allows an attacker able to send UDP datagrams to the discovering host to redirect subsequent connections to an arbitrary, attacker-chosen address. The discovery result's connection \naddress was derived from the AmsNetId claimed in the response body rather than from the datagram's actual source address. One spoofed discovery response can therefore insert an inventory entry pointing at any host, including hosts outside the local network, and an application that connects to discovered devices\nwill open its ADS session, including any configured route credentials, to that host.\n\nAdditionally, discovery listeners in both implementations can be disabled by a single malformed datagram:\n- In PLC4Go ADS discovery, a short version block causes a panic that ends the listener for the rest of the discovery call, so legitimate devices answering afterwards are not reported.\n- In PLC4J, the ADS and EtherNet/IP discoverers stop on an unhandled exception from a malformed response.\n- The PLC4J Modbus discoverer can be made to spin indefinitely, consuming a CPU core, by a scanned host that sends a partial response.\n\nExploitation requires the application to invoke the discovery API, which is opt-in, and for the connection redirect, to act on the discovered items.\n\nThis issue affects Apache PLC4X: PLC4Go from 0.11.0 before 1.0.0; PLC4J ADS and Modbus drivers from 0.10.0 before 1.0.0; PLC4J EtherNet/IP driver from 0.11.0 before 1.0.0. PLC4Go is consumed as the Go module github.com/apache/plc4x/plc4go; versions refer to the corresponding Apache PLC4X releases.\n\nUsers are recommended to upgrade to version 1.0.0, which fixes the issue. Version 1.0.0 derives the connection address from the datagram's source address and logs a warning when the claimed AmsNetId disagrees with it.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.11.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.10.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.10.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache plc4x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.11.0",
+              "lessThan": "1.0.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "1.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache plc4x",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00164
+    },
+    {
       "cve_id": "CVE-2026-22022",
       "description": "Deployments of Apache Solr 5.3.0 through 9.10.0 that rely on Solr's \"Rule Based Authorization Plugin\" are vulnerable to allowing unauthorized access to certain Solr APIs, due to insufficiently strict input validation in those components.\u00a0 Only deployments that meet all of the following criteria are impacted by this vulnerability:\n\n  *  Use of Solr's \"RuleBasedAuthorizationPlugin\"\n  *  A RuleBasedAuthorizationPlugin config (see security.json) that specifies multiple \"roles\"\n  *  A RuleBasedAuthorizationPlugin permission list (see security.json) that uses one or more of the following pre-defined permission rules: \"config-read\", \"config-edit\", \"schema-read\", \"metrics-read\", or \"security-read\".\n  *  A RuleBasedAuthorizationPlugin permission list that doesn't define the \"all\" pre-defined permission\n  *  A networking setup that allows clients to make unfiltered network requests to Solr. (i.e. user-submitted HTTP/HTTPS requests reach Solr as-is, unmodified or restricted by any intervening proxy or gateway)\n\nUsers can mitigate this vulnerability by ensuring that their RuleBasedAuthorizationPlugin configuration specifies the \"all\" pre-defined permission and associates the permission with an \"admin\" or other privileged role.\u00a0 Users can also upgrade to a Solr version outside of the impacted range, such as the recently released Solr 9.10.1.",
       "cvss_score": 8.2,
@@ -49842,7 +50058,7 @@
               "versionType": "semver"
             },
             {
-              "status": "affected",
+              "status": "unaffected",
               "version": "0",
               "lessThan": "7.0.43",
               "versionType": "semver"
@@ -50148,6 +50364,44 @@
       }
     },
     {
+      "cve_id": "CVE-2026-77185",
+      "description": "Authentication bypass in sshd-core in Apache MINA SSHD versions 2.0.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 for a certain (presumed rare) way to implement an SSH server.\n\n\n\n\nApache MINA SSHD is a Java library for client- and server-side SSH. In the server part of the library, a mechanism to perform \"asynchronous authentication\" exists. A server implemented with Apache MINA SSHD must contain explicit code to make use of this feature. The implementation of this feature was flawed and could potentially lead to skipping checking the signature in public-key or hostbased authentication, or returning a wrong result.\n\n\n\n\nUsers are recommended to upgrade to\u00a0Apache MINA SSHD 2.20.0 or 3.0.0-M6, which fix the logic error and which additionally forbid the use of this \"asynchronous authentication\" mechanism with the public-key or hostbased authentication schemes: if used, the SSH session will be closed and the server will log an entry indicating that asynchronous authentication may be used only with password or keyboard-interactive authentication.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina sshd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.0",
+              "lessThan": "2.20.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0-M1",
+              "lessThan": "3.0.0-M6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina sshd",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00466
+    },
+    {
       "cve_id": "CVE-2026-77762",
       "description": "Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') vulnerability in Apache Tomcat allows an attacker to inject trailer fields into another HTTP/2 request.\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from 9.0.39 through 9.0.121.\n\n\n\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: from 8.5.59 through 8.5.100. Other unsupported versions may also be affected.\n\n\n\n\nUsers are recommended to upgrade to version 11.0.26, 10.1.60, 9.0.122, which fix\u00a0the issue.",
       "cvss_score": 8.1,
@@ -50178,7 +50432,7 @@
             },
             {
               "status": "affected",
-              "version": "8.56.59",
+              "version": "8.5.59",
               "lessThanOrEqual": "8.5.100",
               "versionType": "semver"
             },
@@ -53466,6 +53720,158 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-93994",
+      "description": "Apache MINA SSHD is a Java library for client-side and server-side SSH. SSH servers can be configured to require multi-authentication schemes, for instance two different public keys, not just one. In OpenSSH, this would be done by setting in sshd_config AuthenticationMethods \"publickey,publickey\". Apache MINA SSHD provides an equivalent configuration mechanism.\n\n\n\n\nIn Apache MINA SSHD versions up to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 the server code in component sshd-core does not enforce that the two public keys presented are different. A user can thus successfully authenticate with only one of the two key pairs required by presenting this single key twice. This is a partial authentication bypass.\n\n\n\n\n\n\nUsers are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina sshd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.20.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0-M1",
+              "lessThan": "3.0.0-M6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina sshd",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00457
+    },
+    {
+      "cve_id": "CVE-2026-94002",
+      "description": "Possible memory exhaustion in SFTP clients (DefaultSftpClient) in component sshd-sftp in Apache MINA SSHD versions 0.9.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5.\n\n\n\n\nApache \nMINA SSHD is a Java library for client-side and server-side SSH. The sshd-sftp component provides support for SFTP.\n\n\n\n\nThe SFTP client implementation, when receiving a reply, did not check that this reply corresponded to a request sent earlier. Unsolicited replies would be stored but never consumed. A malicious server could keep sending unsolicited replies until available memory in the client was exhausted.\n\n\n\n\nUsers are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina sshd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.9.0",
+              "lessThan": "2.20.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0-M1",
+              "lessThan": "3.0.0-M6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina sshd",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00385
+    },
+    {
+      "cve_id": "CVE-2026-94052",
+      "description": "A missing check in LdapPasswordAuthenticator in component sshd-ldap in Apache MINA SSHD versions 1.2.0 to 2.19.0 or 3.0.0-M1 to 3.0.0-M5 bypassed authentication checks.\n\n\n\n\nApache MINA SSHD is a\u00a0Java library for client-side and server-side SSH. The optional sshd-ldap component provides support for integrating password and publickey authentication on the server side with an LDAP server.\n\n\n\n\nsshd-ldap is an optional component. SSH servers implemented with Apache MINA SSHD are affected only if they use sshd-ldap and do configure an LdapPasswordAuthenticator to be used for password authentication. Normal password authentication via the built-in mechanisms in sshd-core is _not_ affected by this vulnerability, which concerns only LdapPasswordAuthenticator.\n\n\n\n\nUsers are recommended to upgrade affected applications to version 2.20.0 or 3.0.0-M6, which fix this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina sshd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.2.0",
+              "lessThan": "2.20.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0-M1",
+              "lessThan": "3.0.0-M6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina sshd",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00529
+    },
+    {
+      "cve_id": "CVE-2026-94053",
+      "description": "Authentication bypass via LDAP injection in component sshd-ldap in Apache MINA SSHD versions 1.2.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5.\n\n\n\n\nApache MINA SSHD is a\u00a0Java library for client-side and server-side SSH. \nThe optional sshd-ldap component provides support for integrating \npassword and publickey authentication on the server side with an LDAP \nserver.\n\n\n\n\nsshd-ldap is an optional component. SSH servers implemented with Apache \nMINA SSHD are affected only if they use sshd-ldap and do configure it to be used for password of public key authentication.\n\nOther Apache MINA SSHD servers are not affected.\n\n\n\n\nLack of escaping LDAP filter metacharacters enabled successful authentication with username \"*\" and password \"*\".\n\n\n\n\nUsers are recommended to upgrade affected applications to version 2.20.0 or 3.0.0-M6, which fix this issue by properly escaping filter parameters according to RFC 4515.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina sshd",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.2.0",
+              "lessThan": "2.20.0",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0-M1",
+              "lessThan": "3.0.0-M6",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina sshd",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00529
     },
     {
       "cve_id": "CVE-2026-94243",

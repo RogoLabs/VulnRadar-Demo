@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-09-30T23:07:34+00:00`
+Generated: `2026-10-01T02:07:14+00:00`
 
 ## Executive Summary
 
@@ -38,9 +38,9 @@ Top critical items:
 
 ## Summary
 
-- Total items: **20830**
-- Watchlist hits: **20380**
-- CISA KEVs: **813**
+- Total items: **20839**
+- Watchlist hits: **20389**
+- CISA KEVs: **814**
 - Exploit Intel (PoC): **899**
 - Exploit Intel + Watchlist (CRITICAL): **449**
 
@@ -244,10 +244,10 @@ Top critical items:
 | [CVE-2026-22719](https://www.cve.org/CVERecord?id=CVE-2026-22719) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-24 | 0.177 | 8.1 | ✅ | VMware Aria Operations contains a command injection vulnerability. A malicious unauthenticated actor may exploit this issue to execute arbitrary commands which… |
 | [CVE-2024-23222](https://www.cve.org/CVERecord?id=CVE-2024-23222) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-13 | 0.106 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in Safari 17.3, iOS 15.8.7 and iPadOS 15.8.7, iOS 16.7.5 and iPadOS 16.7.5, iOS … |
 | [CVE-2024-44308](https://www.cve.org/CVERecord?id=CVE-2024-44308) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-12 | 0.101 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in Safari 18.1.1, iOS 17.7.2 and iPadOS 17.7.2, iOS 18.1.1 and iPadOS 18.1.1, macOS Sequoia 1… |
+| [CVE-2026-76504](https://www.cve.org/CVERecord?id=CVE-2026-76504) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-10-03 |  | 9.8 | ✅ | A vulnerability in the API session-based authentication management of Cisco Catalyst SD-WAN Manager could allow an unauthenticated, remote attacker to access a… |
 | [CVE-2022-32893](https://www.cve.org/CVERecord?id=CVE-2022-32893) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-08 | 0.099 | 8.8 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 15.6.1 and iPadOS 15.6.1, macOS Monterey 12.5.1, Safari 15… |
 | [CVE-2025-6558](https://www.cve.org/CVERecord?id=CVE-2025-6558) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-12 | 0.096 | 8.8 | ✅ | Insufficient validation of untrusted input in ANGLE and GPU in Google Chrome prior to 138.0.7204.157 allowed a remote attacker to potentially perform a sandbox… |
 | [CVE-2023-23529](https://www.cve.org/CVERecord?id=CVE-2023-23529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-03-07 | 0.095 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in iOS 15.7.4 and iPadOS 15.7.4, iOS 16.3.1 and iPadOS 16.3.1, macOS Ventura 13.… |
-| [CVE-2023-42917](https://www.cve.org/CVERecord?id=CVE-2023-42917) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-25 | 0.093 | 8.8 | ✅ | A memory corruption vulnerability was addressed with improved locking. This issue is fixed in iOS 17.1.2 and iPadOS 17.1.2, macOS Sonoma 14.1.2, Safari 17.1.2.… |
 
 ## Recent Changes (Last 7 Days)
 
@@ -303,4 +303,4 @@ Top critical items:
 | Sep 30 | [CVE-2026-95331](https://www.cve.org/CVERecord?id=CVE-2026-95331) | 🆕 New |
 | Sep 30 | [CVE-2026-95333](https://www.cve.org/CVERecord?id=CVE-2026-95333) | 🆕 New |
 | Sep 30 | [CVE-2026-95334](https://www.cve.org/CVERecord?id=CVE-2026-95334) | 🆕 New |
-| ... | | _and 218 more_ |
+| ... | | _and 205 more_ |
