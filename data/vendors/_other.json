@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-02T01:35:26+00:00",
+  "generated_at": "2026-10-02T08:31:01+00:00",
   "vendor": "_other",
-  "count": 823,
+  "count": 827,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -24353,6 +24353,87 @@
       }
     },
     {
+      "cve_id": "CVE-2026-102504",
+      "description": "Imager versions before 1.037 for Perl exit the process reading a raw image with an out-of-range raw_datachannels value in i_readraw_wiol.\n\nNothing range-checks raw_datachannels. The line buffer is sized as the image width times the channel count with no overflow check, so a negative or very large count requests an excessive allocation. When it fails, Imager's allocator calls exit(3).\n\nPassing an untrusted raw_datachannels value to Imager->read() triggers an uncatchable exit.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.037",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190",
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-103431",
+      "description": "colmux in collectl before 4.3.20.2 does not sanitize ANSI/VT100 terminal escape sequences in data received from remote collectl instances before displaying it, allowing a local user on a monitored host to inject escape sequences into the terminal of an operator running colmux, via a crafted process name (argv[0]).",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.3.20.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.7,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-150"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-13048",
       "description": "Data::MuForm::Localizer versions through 0.05 for Perl execute Perl from a message catalog header, reached at an arbitrary path because load_lexicon interpolates the language attribute into the catalog filename.\n\nload_lexicon builds the catalog path by appending `Messages/$lang.po` to the directory holding Localizer.pm, where $lang is the language attribute, with no check that it names a bare locale tag. A value holding `../` segments walks out of the message directory, so any readable path with a `.po` suffix is loaded. While parsing the catalog, extract_header_msgstr takes the `Plural-Forms:` header, prefixes `$` to the bare words nplurals, plural and n, and passes the rest verbatim into a string that is evaluated: the nplurals form evaluates the header expression immediately, and the plural_code form compiles it into a subroutine whose body runs when a plural message is localized. A header of `nplurals=2; plural=(system('...'),0);` therefore runs that command as the catalog loads. The evaluation inherits strict, so an expression that assigns to an undeclared variable fails to compile, while one built from calls alone does not.\n\nAn application that sets the language attribute from request data, an Accept-Language header or a locale parameter, and an attacker who can place a file with a `.po` suffix and chosen contents at a readable path, together give code execution as the application user. The message expansion path is not affected: expand_named substitutes only the placeholder names the caller supplies, and _mangle_value returns the value unchanged.",
       "cvss_score": 8.2,
@@ -26348,6 +26429,47 @@
       }
     },
     {
+      "cve_id": "CVE-2026-85644",
+      "description": "XS::Parse::Infix versions from 0.40 through 0.49 for Perl treat a number as an array reference.\n\nThe wrapper function XS::Parse::Infix generates for a list-associative infix operator checks whether arguments are array references, but it tests using SvRV() rather than SvROK(). SvRV() reads a union slot that only holds a referent once SvROK(sv) is true, so the guard never validates that it is a reference. For an IV or NV that slot holds the number itself, SvRV() returns the caller's value and SvTYPE() dereferences it at offset 12. This will generally result in a segmentation fault.\n\nAn application that hands the wrapper a list built from decoded input (for example, from JSON) lets whoever supplies a number in that list choose the address that the interpreter dereferences.\n\nAn ordinary string's byte 12 is rarely SVt_PVAV so the guard croaks by luck, but an attacker-crafted string carrying 0x0b there passes, and the buffer is then used as an AV head, with AvARRAY taken from bytes 16-23 and its entries pushed onto the Perl stack as live SVs.\n\nA simple proof-of-concept uses the zip operator:\n\n    use Syntax::Operator::Zip 'zip';\n\n    my @args = ([1], 2);\n    zip(@args);",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThanOrEqual": "0.49",
+              "status": "affected",
+              "version": "0.40",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00393,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125",
+          "CWE-843"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-86219",
       "description": "Authen::SASL::Perl::DIGEST_MD5 versions before 2.2100 for Perl accept replayed authentication responses via unverified nonce in server_step.\n\nserver_start generates a fresh nonce and sends it in the challenge, and nothing later compares that value against the nonce the client returns. server_step derives the expected digest from the client's own parameters, so a response verifies whenever its digest matches the nonce it carries. The count table it also checks is keyed on the client-supplied nonce and starts empty in each new server object, so a captured first response, carrying `nc=00000001`, passes that too. RFC 2831 defines the nonce in the response as the value the server sent in the preceding challenge.\n\nAn attacker who observes one successful `qop=auth` exchange can replay the captured response against a later session for the same service, host, realm and user, and authenticate as that user without knowing the password.",
       "cvss_score": 9.8,
@@ -26666,6 +26788,46 @@
         ],
         "cpe_count": 0,
         "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-88816",
+      "description": "DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in FetchHashKeyName.\n\nfetchrow_hashref uses the string pointer of the FetchHashKeyName attribute as the key name without stringifying it first. When FetchHashKeyName has been set to an integer (IV) or floating-point (NV) value, that pointer is invalid, so reading the key name triggers a segmentation fault.\n\nThis can be triggered with the following code:\n\n   my $dbh = DBI->connect( \"dbi:ExampleP:\", \"\", \"\",\n       { RaiseError => 0, PrintError => 0 } );\n   $dbh->{FetchHashKeyName} = 42;\n\n   my $sth = $dbh->prepare(\"select mode, size, name from .\");\n   $sth->execute;\n   $sth->fetchrow_hashref;",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "1.654",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00622,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 0,
+        "reference_count": 5
       }
     },
     {
@@ -29021,7 +29183,7 @@
         "cwe_ids": [
           "CWE-653"
         ],
-        "cpe_count": 82,
+        "cpe_count": 79,
         "reference_count": 3
       }
     },

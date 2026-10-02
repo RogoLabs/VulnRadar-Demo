@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-02T01:35:26+00:00",
+  "generated_at": "2026-10-02T08:31:01+00:00",
   "vendor": "red_hat",
-  "count": 214,
+  "count": 216,
   "items": [
     {
       "cve_id": "CVE-2023-0118",
@@ -662,6 +662,186 @@
         ],
         "cpe_count": 1,
         "reference_count": 12
+      }
+    },
+    {
+      "cve_id": "CVE-2023-1989",
+      "description": "A use-after-free flaw was found in btsdio_remove in drivers\\bluetooth\\btsdio.c in the Linux Kernel. A call to btsdio_remove with an unfinished job may cause a race problem which leads to a UAF on hdev devices.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.6.24",
+              "lessThan": "4.14.326",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.15",
+              "lessThan": "4.19.295",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.20",
+              "lessThan": "5.4.257",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.5",
+              "lessThan": "5.10.195",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.11",
+              "lessThan": "5.15.131",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.16",
+              "lessThan": "6.1.52",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.2",
+              "lessThan": "6.3",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8",
+          "versions": [
+            {
+              "version": "0:4.18.0-513.5.1.rt7.307.el8_9",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8",
+          "versions": [
+            {
+              "version": "0:4.18.0-513.5.1.el8_9",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8.6 extended update support",
+          "versions": [
+            {
+              "version": "0:4.18.0-372.91.1.el8_6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8.8 extended update support",
+          "versions": [
+            {
+              "version": "0:4.18.0-477.64.1.el8_8",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 9",
+          "versions": [
+            {
+              "version": "0:5.14.0-362.8.1.el9_3",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 9",
+          "versions": [
+            {
+              "version": "0:5.14.0-362.8.1.el9_3",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat virtualization 4 for red hat enterprise linux 8",
+          "versions": [
+            {
+              "version": "0:4.18.0-372.91.1.el8_6",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 6",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 7",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 7",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 9",
+          "versions": null
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00387,
+      "nvd": {
+        "cvss_v3_score": 7.0,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 14,
+        "reference_count": 14
       }
     },
     {
@@ -2611,6 +2791,78 @@
         },
         {
           "vendor": "red hat",
+          "product": "red hat openshift ai 3.2",
+          "versions": [
+            {
+              "version": "1790703497",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai 3.2",
+          "versions": [
+            {
+              "version": "1790703506",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai 3.2",
+          "versions": [
+            {
+              "version": "1790703590",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai 3.2",
+          "versions": [
+            {
+              "version": "1790703568",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai 3.2",
+          "versions": [
+            {
+              "version": "1790703586",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai 3.2",
+          "versions": [
+            {
+              "version": "1790703494",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
           "product": "red hat enterprise linux 6",
           "versions": null
         },
@@ -2652,7 +2904,7 @@
           "CWE-787"
         ],
         "cpe_count": 3,
-        "reference_count": 16
+        "reference_count": 28
       }
     },
     {
@@ -57684,7 +57936,7 @@
           "CWE-191"
         ],
         "cpe_count": 7,
-        "reference_count": 58
+        "reference_count": 59
       }
     },
     {
@@ -58451,7 +58703,7 @@
           "CWE-475"
         ],
         "cpe_count": 44,
-        "reference_count": 65
+        "reference_count": 66
       }
     },
     {
@@ -59062,7 +59314,7 @@
           "CWE-626"
         ],
         "cpe_count": 8,
-        "reference_count": 62
+        "reference_count": 63
       }
     },
     {
@@ -59571,7 +59823,7 @@
           "CWE-295"
         ],
         "cpe_count": 0,
-        "reference_count": 24
+        "reference_count": 25
       }
     },
     {
@@ -60025,7 +60277,7 @@
           "CWE-295"
         ],
         "cpe_count": 0,
-        "reference_count": 19
+        "reference_count": 20
       }
     },
     {
@@ -60534,7 +60786,7 @@
           "CWE-295"
         ],
         "cpe_count": 0,
-        "reference_count": 24
+        "reference_count": 25
       }
     },
     {
@@ -60669,7 +60921,7 @@
           "CWE-191"
         ],
         "cpe_count": 4,
-        "reference_count": 5
+        "reference_count": 6
       }
     },
     {
@@ -61241,7 +61493,7 @@
           "CWE-126"
         ],
         "cpe_count": 0,
-        "reference_count": 24
+        "reference_count": 25
       }
     },
     {
@@ -62752,6 +63004,128 @@
         ],
         "cpe_count": 0,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-92574",
+      "description": "A vulnerability in CRI-O checkpoint restore allows a user who can create a pod from a malicious checkpointed container to bypass the destination Kubernetes security context. The restored process may retain credentials, Linux capabilities, no_new_privs, and seccomp state from the checkpoint instead of enforcing the destination configuration. This can allow execution with elevated privileges across the container security boundary.\nAffected upstream supported versions are CRI-O 1.34 and later. Downstream Red Hat products are affected from OCP 4.17 onward. Fixes have been applied to supported branches but are not yet released.\nExploitation requires permission to create a pod from a malicious checkpoint image and checkpoint restore functionality to be available.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.34.0",
+              "lessThan": "1.34.14",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "1.35.0",
+              "lessThan": "1.35.9",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "1.36.0",
+              "lessThan": "1.36.6",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "confidential compute attestation",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 8",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 9",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift container platform 4",
+          "versions": null
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00654,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-250"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {

