@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-03T00:26:15+00:00",
+  "generated_at": "2026-10-03T06:22:33+00:00",
   "vendor": "_other",
-  "count": 829,
+  "count": 830,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -48336,6 +48336,57 @@
       }
     },
     {
+      "cve_id": "CVE-2026-94422",
+      "description": "An incorrect implementation of message filtering in xdg-dbus-proxy versions before 0.1.9 allows an attacker to bypass the intended message filtering on the D-Bus session bus by setting a reply serial number on non-reply messages. A malicious or compromised Flatpak app could use this to achieve arbitrary code execution outside its sandbox. xdg-dbus-proxy was designed to be part of the sandbox boundary for Flatpak, but it is released as a separate project and is sometimes used by other app frameworks such as Firejail.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "version": "0",
+              "lessThan": "0.1.9",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fedora",
+          "product": "fedora",
+          "versions": [
+            {
+              "version": "0",
+              "lessThan": "0.1.9",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 9",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat enterprise linux 10",
+          "versions": null
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-19750",
       "description": "A flaw has been found in Tenda CH, CP and TX3 V21.x/V22.x/V25.x/V26.x/V27.x. Affected by this issue is some unknown functionality of the component SSH. Executing a manipulation can lead to use of hard-coded password. It is possible to launch the attack remotely. The attack requires a high level of complexity. The exploitation is known to be difficult. The exploit has been published and may be used.",
       "cvss_score": 9.2,
@@ -53758,7 +53809,7 @@
     },
     {
       "cve_id": "CVE-2026-64849",
-      "description": "MLflow is an open source AI engineering platform for agents, large language models, and machine learning models. Prior to 3.15.0, the unauthenticated POST /api/2.0/mlflow/webhooks/{id}/test endpoint calls _validate_webhook_url() in mlflow/utils/validation.py only for the original URL while mlflow/webhooks/delivery.py follows redirects and re-resolves the hostname without pinning the validated address, allowing attackers to reach internal or cloud metadata services and receive response_status and response_body. This issue is fixed in version 3.15.0.",
+      "description": "MLflow is an open source AI engineering platform for agents, large language models, and machine learning models. Starting in 3.3.0 and prior to 3.15.0, the unauthenticated POST /api/2.0/mlflow/webhooks/{id}/test endpoint calls _validate_webhook_url() in mlflow/utils/validation.py only for the original URL while mlflow/webhooks/delivery.py follows redirects and re-resolves the hostname without pinning the validated address, allowing attackers to reach internal or cloud metadata services and receive response_status and response_body. This issue is fixed in version 3.15.0.",
       "cvss_score": 9.3,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N",
@@ -53768,7 +53819,7 @@
           "product": "mlflow",
           "versions": [
             {
-              "version": "< 3.15.0",
+              "version": ">= 3.3.0, < 3.15.0",
               "status": "affected"
             }
           ]

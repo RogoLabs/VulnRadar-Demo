@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-03T00:26:15+00:00",
+  "generated_at": "2026-10-03T06:22:33+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1140,
+  "count": 1192,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -27578,6 +27578,44 @@
       }
     },
     {
+      "cve_id": "CVE-2026-102795",
+      "description": "Improper Access Control vulnerability in Apache Traffic Server.\n\n\n\nThis issue affects Apache Traffic Server: from 9.0.0 through 9.2.14, from 10.0.0 through 10.1.3.\n\n\n\nUsers are recommended to upgrade to version 9.2.15 or 10.1.4, which fixes the issue.\n\n\n\nThis CVE supersedes CVE-2026-41920, whose record listed the affected 9.x versions as 9.0.0 through 9.1.14 and the fixed version as 9.1.15. All 9.2.x releases before 9.2.15 are affected.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache traffic server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.2.14",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.0.0",
+              "lessThanOrEqual": "10.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache traffic server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-22022",
       "description": "Deployments of Apache Solr 5.3.0 through 9.10.0 that rely on Solr's \"Rule Based Authorization Plugin\" are vulnerable to allowing unauthorized access to certain Solr APIs, due to insufficiently strict input validation in those components.\u00a0 Only deployments that meet all of the following criteria are impacted by this vulnerability:\n\n  *  Use of Solr's \"RuleBasedAuthorizationPlugin\"\n  *  A RuleBasedAuthorizationPlugin config (see security.json) that specifies multiple \"roles\"\n  *  A RuleBasedAuthorizationPlugin permission list (see security.json) that uses one or more of the following pre-defined permission rules: \"config-read\", \"config-edit\", \"schema-read\", \"metrics-read\", or \"security-read\".\n  *  A RuleBasedAuthorizationPlugin permission list that doesn't define the \"all\" pre-defined permission\n  *  A networking setup that allows clients to make unfiltered network requests to Solr. (i.e. user-submitted HTTP/HTTPS requests reach Solr as-is, unmodified or restricted by any intervening proxy or gateway)\n\nUsers can mitigate this vulnerability by ensuring that their RuleBasedAuthorizationPlugin configuration specifies the \"all\" pre-defined permission and associates the permission with an \"admin\" or other privileged role.\u00a0 Users can also upgrade to a Solr version outside of the impacted range, such as the recently released Solr 9.10.1.",
       "cvss_score": 8.2,
@@ -45113,6 +45151,70 @@
       }
     },
     {
+      "cve_id": "CVE-2026-61373",
+      "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Java TSaslNonblockingServer.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-61374",
+      "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Java bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-61397",
       "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack's OAuth2 authentication plugin and Google OAuth integration.\n\nThis issue affects Apache CloudStack: from 4.19.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0.\n\nUsers are recommended to upgrade to version 4.20.3.1 or 4.22.1.1, which fixes the issue.",
       "cvss_score": 7.5,
@@ -46396,6 +46498,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-63772",
+      "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift go bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-64606",
       "description": "Deserialization of untrusted data vulnerability that may allow class-registration checks to be bypassed during Java lambda deserialization. Only lambda capture class is affected\n\n\nThis issue affects Apache Fory: from before 1.4.0.\n\nUsers are recommended to upgrade to version 1.4.0, which fixes the issue.",
       "cvss_score": 9.8,
@@ -47236,6 +47370,130 @@
       }
     },
     {
+      "cve_id": "CVE-2026-66055",
+      "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift C++, Java, Go, netstd, Python and Delphi bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-66081",
+      "description": "Access of Uninitialized Pointer vulnerability in Apache Thrift c_glib bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-66142",
       "description": "Apache Neethi is vulnerable to uncontrolled recursion when parsing policies that lack policy Ids or with deeply nested structures, which may lead to a denial of service attack when parsing policies due to runtime memory exhaustion. Users are recommended to upgrade to version 3.2.3, which fixes this issue.",
       "cvss_score": 7.5,
@@ -47713,6 +47971,162 @@
         "cpe_count": 2,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-66837",
+      "description": "Stack-based Buffer Overflow, Integer Overflow or Wraparound vulnerability in Apache Thrift php bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-66858",
+      "description": "The protocol skip routine in several Apache Thrift bindings did not apply the binding's recursion limit, so a message that nests unknown fields deeply enough can exhaust the stack. Affected: the Python C++ accelerator (the pure-Python protocols are not affected), the PHP library and its thrift_protocol extension, and the Perl, Lua, Smalltalk and OCaml libraries.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-66859",
+      "description": "NULL Pointer Dereference, Use of Uninitialized Variable vulnerability in Apache Thrift c_glib bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-66906",
@@ -53036,6 +53450,178 @@
       }
     },
     {
+      "cve_id": "CVE-2026-82458",
+      "description": "Memory allocation with excessive size value, Allocation of resources without limits or throttling vulnerability in Apache Thrift Go,\u00a0netstd, OCaml, Erlang, JavaME,\u00a0Rust, C++, Java,\u00a0Kotlin and\u00a0D language bindings.\n\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-82459",
+      "description": "Integer underflow (wrap or wraparound), Out-of-bounds write vulnerability in Apache Thrift C++ 32 bit THeaderTransport.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-82617",
       "description": "The two built-in name-finder patterns exposed by\nopennlp.tools.namefind.RegexNameFinderFactory - DEFAULT_REGEX_NAME_FINDER.EMAIL\nand DEFAULT_REGEX_NAME_FINDER.URL\u00a0- contain ambiguous nested quantifiers. An\napplication that obtains these finders through\nRegexNameFinderFactory.getDefaultRegexNameFinders(...) and then applies them to\nuntrusted text through RegexNameFinder.find(String[]) or RegexNameFinder.find(String)\ncan be driven into super-linear backtracking or into unbounded matcher recursion by a\nsmall crafted input.\n\n\n\n\n\nFor the EMAIL pattern, a long run of local-part characters that is never followed by an\n@ forces the matcher to re-scan to end-of-input from every starting offset. Cost grows\nquadratically with input length: an input of approximately 32 KB consumes several seconds\nof CPU in a single find() call and returns no match, and each doubling of the input\nmultiplies the cost roughly four-fold.\n\n\n\n\n\nFor the URL pattern, the query-string sub-expression nests a capturing repetition inside\nan outer repetition. The JDK matcher recurses once per query token, so an input of\napproximately 4 KB containing many &-separated tokens exhausts the thread stack and\ncauses java.lang.StackOverflowError to propagate out of find(), terminating the\ncalling thread. On a thread created with a smaller stack (for example -Xss512k, typical\nof server worker pools) approximately 1 KB is sufficient.\n\n\n\n\n\nIn both cases an attacker who can supply text for analysis can convert a single request\ninto seconds to minutes of pinned CPU, or into an abrupt thread death, denying service to\nthe embedding application. No authentication, special configuration, or model file is\nrequired beyond the application having selected one of the two built-in finders.\n\n\n\n\n\nThis issue affects Apache OpenNLP: from 2.0.0 through 2.5.11; from 3.0.0-M1 through\n3.0.0-M5.\n\n\n\n\n\n\n\n\n\nUsers are recommended to upgrade to version 2.5.12, or to 3.0.0-M6 for users tracking the\n3.0.0 milestone line, which fix the issue.",
       "cvss_score": 10.0,
@@ -53134,6 +53720,114 @@
       }
     },
     {
+      "cve_id": "CVE-2026-83632",
+      "description": "Allocation of resources without limits or throttling, Integer overflow or wraparound, Heap-based buffer overflow vulnerability in Apache Thrift.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-83663",
+      "description": "Uncontrolled Recursion vulnerability in Apache Thrift go bindings.\n\n\n\nBoth Go transports satisfy a read out of a buffered frame and, when that frame\u00a0yields no payload bytes, read the next frame and call `Read` again instead of\u00a0looping. A peer produces such a frame for 4 bytes in `TFramedTransport` (a\u00a0declared size of zero) or 18 bytes in `THeaderTransport` (a header block that\u00a0fills the frame), so nothing bounds the depth. The Go stack limit is reached as\u00a0a `fatal error`, which `recover()` cannot catch, so the whole process dies.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-83745",
+      "description": "Memory allocation with excessive size value, Improper handling of length parameter inconsistency vulnerability in Apache Thrift\u00a0\nnodejs and D lang bindings.\n\nBoth bindings' WebSocket server transports read the payload length out of the\u00a0frame header and allocate that many bytes immediately, without checking that the\u00a0bytes have arrived. A single ~14-byte frame therefore commits as much memory as it cares to declare -- measured at 513 MiB against the Node.js server and 2 GiB against the D transport -- and in the Node.js case the connection is left open afterwards, so the frame can simply be sent again.\n\n\n\n\nThis issue affects Apache Thrift before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-84939",
       "description": "Path traversal vulnerability in Apache FreeMarker template loading mechanism, if the attacker can specify an arbitrary malformed locale identifier to FreeMarker, and the localized lookup configuration setting is enabled (it's by default enabled).\n\nThis issue affects Apache FreeMarker from 2.2.0 through 2.3.34.\n\nUsers are recommended to upgrade to version 2.3.35. Disabling localized lookup in previous versions also mitigates this.\n\nNote that even in versions affected by this vulnerability, the files that can be loaded remain restricted by the TemplateLoader that FreeMarker is configured to use. In particular, FileTemplateLoader prevents attempts to traverse outside the baseDir specified in its constructor. Other TemplateLoader implementations may allow access outside their designated base directory, but they are still constrained by the underlying storage mechanism\u2014for example, a loader wrapping a Java class loader can only access resources that the class loader can load, while one wrapping a web application context can only access resources available through that context.",
       "cvss_score": 9.1,
@@ -53197,6 +53891,210 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-85476",
+      "description": "Loop with unreachable exit condition ('infinite loop') vulnerability in Apache Thrift c_glib bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-85493",
+      "description": "Uncontrolled Recursion vulnerability in Apache Thrift Dart and Java ME bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-85494",
+      "description": "Improper handling of length parameter inconsistency, Uncaught exception, Inefficient Algorithmic Complexity, Memory allocation with excessive size value, Initialization of a resource with an insecure default vulnerability in Apache Thrift Python, Ruby, Erlang, Lua, Dart, JavaME, Perl, PHP and D language bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-85532",
@@ -53695,6 +54593,70 @@
       }
     },
     {
+      "cve_id": "CVE-2026-86535",
+      "description": "Loop with unreachable exit condition ('infinite loop'), Improperly controlled modification of object prototype attributes ('prototype pollution') vulnerability in Apache Thrift NodeJS bindings with TJSONProtocol.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-86537",
+      "description": "Uncaught exception, Loop with unreachable exit condition ('infinite loop'), Integer underflow (wrap or wraparound) vulnerability in Apache Thrift D language bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-86792",
       "description": "Apache Airflow Apache Kafka provider versions 1.15.0 before 2.0.0 resolve dotted-path strings found in a Kafka connection's `extra` field into Python callables via `import_string`, with no allowlist, and hand them to the confluent-kafka client which invokes them. Deployments that have enabled the Kafka event producer \u2014 `dag_run_events_enabled` or `task_instance_events_enabled`, both disabled by default \u2014 build that client inside the scheduler process, so a user whose only privilege is editing Airflow connections gains arbitrary code execution in the control plane; the Airflow security model limits connection-configuration users to code execution on workers, not the scheduler. Deployments using Google Managed Kafka are not affected, because that code path overwrites any user-supplied `oauth_cb`; plain brokers and Amazon MSK are exposed. Users are recommended to upgrade to apache-airflow-providers-apache-kafka 2.0.0 or later, which adds an allowlist configuration option for connection-string callbacks.",
       "cvss_score": 8.8,
@@ -53803,6 +54765,38 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-87117",
+      "description": "NULL pointer dereference vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-87779",
@@ -54237,6 +55231,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-90440",
+      "description": "Uncaught exception, improper handling of exceptional conditions, improper resource shutdown vulnerability in Apache Thrift D thrift.server.nonblocking.TNonblockingServer.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-90979",
       "description": "LDAPCache\u00a0and\u00a0LDAPBackingEngine\u00a0build LDAP search filters for user lookup and role lookup by textually substituting the placeholders\u00a0%u,\u00a0%dn, and\u00a0%fqdn\u00a0(drawn from the login name, the resolved user DN, and its fully qualified namespace form) into administrator-configured filter templates (userFilter,\u00a0roleFilter). Before the fix, the only sanitization applied to the substituted value was double backslashed:\n\nfilter = filter.replaceAll(Pattern.quote(\"%u\"), Matcher.quoteReplacement(user));\n\nfilter = filter.replace(\"\\\\\", \"\\\\\\\\\");\n\n\n\n\nThis does not escape the other characters RFC 4515 requires escaping in an LDAP search filter:\u00a0*,\u00a0(,\u00a0), and\u00a0NUL. A login name containing any of these can change the structure of the resulting filter rather than being matched as a literal value (e.g. a crafted username can turn an equality match into a wildcard match, or close/reopen filter clauses), widening what the search returns and potentially causing a login or role lookup to match an LDAP entry other than the intended one, over-granting roles, and depending on deployment-specific filter templates, potentially affecting which account a login resolved to.\n\n\n\n\nIt's not exploitable through every entry points:\u00a0LDAPLoginModule\u00a0and\u00a0LDAPPubkeyLoginModule\u00a0both called\u00a0Util.doRFC2254Encoding()\u00a0(correct RFC 4515 escaping) on the login name before handing it to\u00a0LDAPCache, which masked the missing escaping in\u00a0LDAPCache\u00a0for those two call paths. Using\u00a0LDAPCache\u00a0directly (bypassing the login modules) does not reproduce through the normal\u00a0LDAPLoginModule/LDAPPubkeyLoginModule\u00a0authentication flow for this reason. It does reproduce through two other call paths that reach\u00a0LDAPCache/LDAPBackingEngine\u00a0without any prior escaping:\n\n  *  GSSAPILdapLoginModule\u00a0passes the\u00a0NameCallback\u00a0name straight through, unescaped.\n  *  LDAPBackingEngine\u00a0(listRoles) passes\u00a0principal.getName()\u00a0straight through, unescaped.",
       "cvss_score": 7.3,
@@ -54407,6 +55433,70 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-91135",
+      "description": "Heap-based buffer overflow vulnerability in Apache Thrift C++ THeaderTransport.\n\n\n\nWhen an application enables the ZLIB transform for the frames it sends, THeaderTransport::transform() copies the compressed frame into the write buffer without making sure it fits. Data that does not compress, such as content a remote peer supplied, grows under compression, so the copy writes past the end of the heap buffer by an amount that grows with the size of the frame, and for large frames it also reads past the end of the transform buffer.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-91137",
+      "description": "Improper validation of specified quantity in input, Allocation of resources without limits or throttling, Excessive Iteration vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-91863",
@@ -54981,6 +56071,70 @@
       }
     },
     {
+      "cve_id": "CVE-2026-93925",
+      "description": "Stack-based buffer overflow, Incorrect bitwise shift of integer vulnerability in Apache Thrift C++ THeaderProtocol.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-93926",
+      "description": "Missing release of memory after effective lifetime, Missing release of resource after effective lifetime vulnerability in Apache Thrift THeaderTransport.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-93994",
       "description": "Apache MINA SSHD is a Java library for client-side and server-side SSH. SSH servers can be configured to require multi-authentication schemes, for instance two different public keys, not just one. In OpenSSH, this would be done by setting in sshd_config AuthenticationMethods \"publickey,publickey\". Apache MINA SSHD provides an equivalent configuration mechanism.\n\n\n\n\nIn Apache MINA SSHD versions up to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 the server code in component sshd-core does not enforce that the two public keys presented are different. A user can thus successfully authenticate with only one of the two key pairs required by presenting this single key twice. This is a partial authentication bypass.\n\n\n\n\n\n\nUsers are recommended to upgrade to version 2.20.0 or 3.0.0-M6, which fix this issue.",
       "cvss_score": 8.1,
@@ -55313,6 +56467,614 @@
       }
     },
     {
+      "cve_id": "CVE-2026-94633",
+      "description": "Memory allocation with excessive size value, Improper handling of length parameter inconsistency vulnerability in Apache Thrift Dart bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94634",
+      "description": "Allocation of resources without limits or throttling, Initialization of a resource with an insecure default vulnerability in Apache Thrift Python bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94635",
+      "description": "Allocation of resources without limits or throttling, Improper handling of length parameter inconsistency vulnerability in Apache Thrift Lua bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00426
+    },
+    {
+      "cve_id": "CVE-2026-94636",
+      "description": "Improper handling of highly compressed data (data amplification), Function call with incorrectly specified arguments, Improper validation of specified quantity in input vulnerability in Apache Thrift py bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94637",
+      "description": "Improper handling of highly compressed data (data amplification) vulnerability in Apache Thrift Go bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94639",
+      "description": "improper handling of exceptional conditions, Allocation of resources without limits or throttling, Uncaught exception vulnerability in Apache Thrift Java bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00426
+    },
+    {
+      "cve_id": "CVE-2026-94642",
+      "description": "Uncaught exception vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94644",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94645",
+      "description": "Improper validation of specified quantity in input, Allocation of resources without limits or throttling vulnerability in Apache Thrift nodejs bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94646",
+      "description": "Uncaught exception, Improper validation of specified quantity in input, Improperly controlled modification of object prototype attributes ('prototype pollution') vulnerability in Apache Thrift nodejs bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94648",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Thrift dart bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94650",
+      "description": "Uncontrolled Recursion vulnerability in Apache Thrift c_glib bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94651",
+      "description": "improper handling of exceptional conditions, Missing release of resource after effective lifetime vulnerability in Apache Thrift java bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94653",
+      "description": "Inefficient Algorithmic Complexity vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94654",
+      "description": "Loop with unreachable exit condition ('infinite loop') vulnerability in Apache Thrift python bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94655",
+      "description": "Allocation of resources without limits or throttling, Inefficient Algorithmic Complexity vulnerability in Apache Thrift Lua bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94656",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Thrift ruby bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94657",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache Thrift JavaME bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-94658",
+      "description": "Inefficient Algorithmic Complexity vulnerability in Apache Thrift Lua bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-95616",
       "description": "An integer overflow in WSS4J's DER bounds check lets an oversized allocation pass validation. An unauthenticated attacker can send a SOAP message carrying an X.509 certificate whose SubjectKeyIdentifier extension declares a length of 0x7FFFFFFF; WSS4J decodes this while resolving the signature's key reference, before the message is authenticated, so an eleven-byte extension triggers a 2 GB allocation. Repeated requests exhaust server memory.\nUsers are recommended to upgrade to versions 4.0.2 or 3.0.6 or 2.4.4, which fix this issue.",
       "cvss_score": 7.5,
@@ -55366,6 +57128,262 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-96277",
+      "description": "Uncaught exception, Improper Handling of Exceptional Conditions vulnerability in Apache Thrift Ruby bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96286",
+      "description": "Uncaught exception vulnerability in Apache Thrift Perl bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96287",
+      "description": "Inefficient Algorithmic Complexity vulnerability in Apache Thrift Perl bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96288",
+      "description": "Uncontrolled Recursion, Allocation of resources without limits or throttling vulnerability in Apache Thrift Erlang bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96289",
+      "description": "Uncontrolled Recursion vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96292",
+      "description": "Inefficient regular expression complexity, Inefficient Algorithmic Complexity vulnerability in Apache Thrift Lua bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96294",
+      "description": "Uncaught exception, Improper Handling of Exceptional Conditions vulnerability in Apache Thrift NodeJS bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-96990",
+      "description": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Erlang bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.25.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-97395",
