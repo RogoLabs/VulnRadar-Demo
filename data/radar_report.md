@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-05T08:59:54+00:00`
+Generated: `2026-10-05T18:31:13+00:00`
 
 ## Executive Summary
 
@@ -124,6 +124,7 @@ Top critical items:
 | [CVE-2022-41080](https://www.cve.org/CVERecord?id=CVE-2022-41080) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-31 | 0.773 | 8.8 | ✅ | Microsoft Exchange Server Elevation of Privilege Vulnerability |
 | [CVE-2025-49706](https://www.cve.org/CVERecord?id=CVE-2025-49706) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-07-23 | 0.991 | 6.5 | ✅ | Improper authentication in Microsoft Office SharePoint allows an unauthorized attacker to perform spoofing over a network. |
 | [CVE-2023-20273](https://www.cve.org/CVERecord?id=CVE-2023-20273) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-27 | 0.896 | 7.2 | ✅ | A vulnerability in the web UI feature of Cisco IOS XE Software could allow an authenticated, remote attacker to inject commands with the privileges of root. Th… |
+| [CVE-2026-55040](https://www.cve.org/CVERecord?id=CVE-2026-55040) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.695 | 9.1 | ✅ | Weak authentication in Microsoft Office SharePoint allows an unauthorized attacker to bypass a security feature over a network. |
 | [CVE-2024-8190](https://www.cve.org/CVERecord?id=CVE-2024-8190) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-04 | 0.885 | 7.2 | ✅ | An OS command injection vulnerability in Ivanti Cloud Services Appliance versions 4.6 Patch 518 and before allows a remote authenticated attacker to obtain rem… |
 | [CVE-2024-23113](https://www.cve.org/CVERecord?id=CVE-2024-23113) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-30 | 0.617 | 9.8 | ✅ | A use of externally-controlled format string in Fortinet FortiOS versions 7.4.0 through 7.4.2, 7.2.0 through 7.2.6, 7.0.0 through 7.0.13, FortiProxy versions 7… |
 | [CVE-2025-59718](https://www.cve.org/CVERecord?id=CVE-2025-59718) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-12-23 | 0.683 | 9.1 | ✅ | A improper verification of cryptographic signature vulnerability in Fortinet FortiOS 7.6.0 through 7.6.3, FortiOS 7.4.0 through 7.4.8, FortiOS 7.2.0 through 7.… |
@@ -205,7 +206,6 @@ Top critical items:
 | [CVE-2023-28206](https://www.cve.org/CVERecord?id=CVE-2023-28206) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-01 | 0.232 | 8.6 | ✅ | An out-of-bounds write issue was addressed with improved input validation. This issue is fixed in macOS Monterey 12.6.5, iOS 16.4.1 and iPadOS 16.4.1, macOS Ve… |
 | [CVE-2022-20703](https://www.cve.org/CVERecord?id=CVE-2022-20703) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.092 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
 | [CVE-2024-9379](https://www.cve.org/CVERecord?id=CVE-2024-9379) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-30 | 0.438 | 6.5 | ✅ | SQL injection in the admin web console of Ivanti CSA before version 5.0.2 allows a remote authenticated attacker with admin privileges to run arbitrary SQL sta… |
-| [CVE-2026-55040](https://www.cve.org/CVERecord?id=CVE-2026-55040) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.175 | 9.1 | ✅ | Weak authentication in Microsoft Office SharePoint allows an unauthorized attacker to bypass a security feature over a network. |
 | [CVE-2026-32201](https://www.cve.org/CVERecord?id=CVE-2026-32201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-28 | 0.434 | 6.5 | ✅ | Improper input validation in Microsoft Office SharePoint allows an unauthorized attacker to perform spoofing over a network. |
 | [CVE-2023-37450](https://www.cve.org/CVERecord?id=CVE-2023-37450) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-08-03 | 0.190 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in iOS 16.6 and iPadOS 16.6, Safari 16.5.2, tvOS 16.6, macOS Ventura 13.5, watchOS 9.6. Proce… |
 | [CVE-2024-38193](https://www.cve.org/CVERecord?id=CVE-2024-38193) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.287 | 7.8 | ✅ | Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability |
@@ -303,4 +303,4 @@ Top critical items:
 | Sep 30 | [CVE-2026-95331](https://www.cve.org/CVERecord?id=CVE-2026-95331) | 🆕 New |
 | Sep 30 | [CVE-2026-95333](https://www.cve.org/CVERecord?id=CVE-2026-95333) | 🆕 New |
 | Sep 30 | [CVE-2026-95334](https://www.cve.org/CVERecord?id=CVE-2026-95334) | 🆕 New |
-| ... | | _and 160 more_ |
+| ... | | _and 162 more_ |
