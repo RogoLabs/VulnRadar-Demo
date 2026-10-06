@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-06T00:58:17+00:00",
+  "generated_at": "2026-10-06T07:32:10+00:00",
   "vendor": "red_hat",
-  "count": 216,
+  "count": 217,
   "items": [
     {
       "cve_id": "CVE-2023-0118",
@@ -56251,6 +56251,23 @@
         },
         {
           "vendor": "red hat",
+          "product": "red hat single sign-on 7.6.13",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "rhel-8 based middleware containers",
+          "versions": [
+            {
+              "version": "7.6-85",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
           "product": "red hat build of apache camel - hawtio 4",
           "versions": null
         },
@@ -56312,11 +56329,6 @@
         {
           "vendor": "red hat",
           "product": "red hat process automation 7",
-          "versions": null
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat single sign-on 7",
           "versions": null
         }
       ],
@@ -57055,6 +57067,23 @@
         },
         {
           "vendor": "red hat",
+          "product": "red hat single sign-on 7.6.13",
+          "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "rhel-8 based middleware containers",
+          "versions": [
+            {
+              "version": "7.6-85",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
           "product": "red hat amq broker 7",
           "versions": null
         },
@@ -57121,11 +57150,6 @@
         {
           "vendor": "red hat",
           "product": "red hat satellite 6",
-          "versions": null
-        },
-        {
-          "vendor": "red hat",
-          "product": "red hat single sign-on 7",
           "versions": null
         }
       ],
@@ -57281,6 +57305,81 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-15218",
+      "description": "A flaw was found in the maas-api and maas-controller ServiceAccounts within Red Hat OpenShift AI. These ServiceAccounts are granted cluster-wide permissions that exceed their operational requirements. An attacker who compromises the identity of these ServiceAccounts, either through a remote code execution vulnerability or by creating a malicious pod in the same namespace, could exploit these excessive permissions. This could lead to full cluster administrator privileges through the creation of new ClusterRoleBindings or the disclosure of sensitive information by accessing all secrets across the cluster.",
+      "cvss_score": 7.9,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "changes": [
+                {
+                  "at": "d7099eabc2c52bb5328cb7a9dd137cc2ea90dd53",
+                  "status": "unaffected"
+                }
+              ],
+              "version": "0",
+              "lessThan": "*",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "*",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai 3.4",
+          "versions": [
+            {
+              "version": "1787153683",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
+        },
+        {
+          "vendor": "red hat",
+          "product": "red hat openshift ai (rhoai)",
+          "versions": null
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00698,
+      "nvd": {
+        "cvss_v3_score": 7.9,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-266"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
       }
     },
     {
@@ -62389,8 +62488,20 @@
         },
         {
           "vendor": "red hat",
-          "product": "red hat single sign-on 7",
+          "product": "red hat single sign-on 7.6.13",
           "versions": null
+        },
+        {
+          "vendor": "red hat",
+          "product": "rhel-8 based middleware containers",
+          "versions": [
+            {
+              "version": "7.6-85",
+              "lessThan": "*",
+              "versionType": "rpm",
+              "status": "unaffected"
+            }
+          ]
         }
       ],
       "watchlist_hit": true,
