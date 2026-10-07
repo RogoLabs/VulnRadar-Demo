@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-07T00:40:46+00:00`
+Generated: `2026-10-07T07:24:55+00:00`
 
 ## Executive Summary
 
@@ -38,8 +38,8 @@ Top critical items:
 
 ## Summary
 
-- Total items: **20952**
-- Watchlist hits: **20499**
+- Total items: **20979**
+- Watchlist hits: **20526**
 - CISA KEVs: **818**
 - Exploit Intel (PoC): **904**
 - Exploit Intel + Watchlist (CRITICAL): **451**
@@ -253,10 +253,6 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
-| Sep 30 | [CVE-2026-102422](https://www.cve.org/CVERecord?id=CVE-2026-102422) | 🆕 New |
-| Sep 30 | [CVE-2026-102878](https://www.cve.org/CVERecord?id=CVE-2026-102878) | 🆕 New |
-| Sep 30 | [CVE-2026-102242](https://www.cve.org/CVERecord?id=CVE-2026-102242) | 🆕 New |
-| Sep 30 | [CVE-2026-84414](https://www.cve.org/CVERecord?id=CVE-2026-84414) | 🆕 New |
 | Sep 30 | [CVE-2026-102495](https://www.cve.org/CVERecord?id=CVE-2026-102495) | 🆕 New |
 | Sep 30 | [CVE-2026-102496](https://www.cve.org/CVERecord?id=CVE-2026-102496) | 🆕 New |
 | Sep 30 | [CVE-2026-102497](https://www.cve.org/CVERecord?id=CVE-2026-102497) | 🆕 New |
@@ -303,4 +299,8 @@ Top critical items:
 | Sep 30 | [CVE-2026-95331](https://www.cve.org/CVERecord?id=CVE-2026-95331) | 🆕 New |
 | Sep 30 | [CVE-2026-95333](https://www.cve.org/CVERecord?id=CVE-2026-95333) | 🆕 New |
 | Sep 30 | [CVE-2026-95334](https://www.cve.org/CVERecord?id=CVE-2026-95334) | 🆕 New |
-| ... | | _and 149 more_ |
+| Sep 30 | [CVE-2026-95335](https://www.cve.org/CVERecord?id=CVE-2026-95335) | 🆕 New |
+| Sep 30 | [CVE-2026-95338](https://www.cve.org/CVERecord?id=CVE-2026-95338) | 🆕 New |
+| Sep 30 | [CVE-2026-95339](https://www.cve.org/CVERecord?id=CVE-2026-95339) | 🆕 New |
+| Sep 30 | [CVE-2026-95341](https://www.cve.org/CVERecord?id=CVE-2026-95341) | 🆕 New |
+| ... | | _and 145 more_ |
