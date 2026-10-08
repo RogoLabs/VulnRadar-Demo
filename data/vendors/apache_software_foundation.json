@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-08T01:08:15+00:00",
+  "generated_at": "2026-10-08T07:19:19+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1200,
+  "count": 1201,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -56493,6 +56493,50 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-92414",
+      "description": ": Session Fixation / Session Reuse across Users vulnerability in Apache Jackrabbit.\n\n\n\nJackrabbit WebDAV server attaches a cached authenticated session on any Lock-Token/TransactionId/SubscriptionId/If-header field token match with\n\nno credential check.\n\n\n\nThis issue affects Apache Jackrabbit: from 2.23.0 through 2.23.5, from 2.22.0 through 2.22.4, from 2.20.0 through 2.20.17.\n\n\n\n\n\n\n\n\n\n\n\n\nUsers are recommended to upgrade to versions 2.23.6, 2.22.5, or 2.20.18 which fix the issue.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache jackrabbit",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.23.0",
+              "lessThanOrEqual": "2.23.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "2.22.0",
+              "lessThanOrEqual": "2.22.4",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "2.20.0",
+              "lessThanOrEqual": "2.20.17",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache jackrabbit",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-92550",
