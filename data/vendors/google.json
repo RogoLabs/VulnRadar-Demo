@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-08T21:18:04+00:00",
+  "generated_at": "2026-10-09T02:01:44+00:00",
   "vendor": "google",
-  "count": 3261,
+  "count": 3268,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -68708,6 +68708,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-106205",
+      "description": "Missing authorization in Passwords in Google Chrome on on Android prior to 155.0.8059.39 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00271,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-106207",
       "description": "Race condition in V8 in Google Chrome prior to 155.0.8059.39 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: Medium)",
       "cvss_score": 8.8,
@@ -68875,7 +68918,50 @@
         "cwe_ids": [
           "CWE-200"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-106221",
+      "description": "Confused deputy in WebAPKs in Google Chrome on on Android prior to 155.0.8059.39 allowed a remote attacker leveraging social engineering to bypass web origin policy via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00303,
+      "nvd": {
+        "cvss_v3_score": 8.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-441"
+        ],
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -68918,7 +69004,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -68961,7 +69047,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69004,7 +69090,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69047,7 +69133,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69090,7 +69176,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69133,7 +69219,50 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-106237",
+      "description": "Information leak in Permissions in Google Chrome prior to 155.0.8059.39 allowed a remote attacker to bypass site isolation via a crafted HTML page. (Chromium security severity: Low)",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00246,
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-200"
+        ],
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69176,7 +69305,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69219,7 +69348,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -69262,7 +69391,7 @@
         "cwe_ids": [
           "CWE-843"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69305,7 +69434,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -69348,7 +69477,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69391,7 +69520,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69434,7 +69563,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -69477,7 +69606,7 @@
         "cwe_ids": [
           "CWE-697"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69520,7 +69649,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69563,7 +69692,7 @@
         "cwe_ids": [
           "CWE-200"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -69606,7 +69735,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69649,7 +69778,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69691,6 +69820,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-416"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-106271",
+      "description": "Missing authorization in Workers in Google Chrome prior to 155.0.8059.39 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted PDF file. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00215,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -69778,7 +69950,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69821,7 +69993,7 @@
         "cwe_ids": [
           "CWE-706"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -69864,7 +70036,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69907,7 +70079,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69950,7 +70122,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -69993,7 +70165,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70036,7 +70208,7 @@
         "cwe_ids": [
           "CWE-843"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70078,6 +70250,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-416"
+        ],
+        "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-106301",
+      "description": "Confused deputy in Contextual Tasks in Google Chrome prior to 155.0.8059.39 allowed a remote attacker who had compromised the renderer process to bypass system access restrictions into a privileged page via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00224,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-441"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -70122,7 +70337,7 @@
         "cwe_ids": [
           "CWE-706"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -70165,7 +70380,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -70208,7 +70423,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70251,7 +70466,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70294,7 +70509,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70337,7 +70552,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -70380,7 +70595,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70466,7 +70681,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70858,6 +71073,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-106367",
+      "description": "Missing authorization in Mobile in Google Chrome on on Android prior to 155.0.8059.39 allowed a local attacker leveraging social engineering to potentially execute arbitrary code outside the sandbox via a co-installed app. (Chromium security severity: Medium)",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00079,
+      "nvd": {
+        "cvss_v3_score": 8.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-106371",
       "description": "Incorrect authorization in Transactions Platform in Google Chrome on on Android prior to 155.0.8059.39 allowed a remote attacker to obtain sensitive information via a crafted HTML page. (Chromium security severity: Low)",
       "cvss_score": 8.8,
@@ -70896,7 +71154,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -70939,7 +71197,7 @@
         "cwe_ids": [
           "CWE-863"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -70982,7 +71240,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -71025,7 +71283,7 @@
         "cwe_ids": [
           "CWE-843"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71068,7 +71326,7 @@
         "cwe_ids": [
           "CWE-459"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71111,7 +71369,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71154,7 +71412,7 @@
         "cwe_ids": [
           "CWE-250"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -71197,7 +71455,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71240,7 +71498,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71326,7 +71584,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71368,6 +71626,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-787"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-106403",
+      "description": "Incorrect authorization in Accessibility in Google Chrome prior to 155.0.8059.39 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "155.0.8059.39",
+              "status": "affected",
+              "lessThan": "155.0.8059.39",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00224,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -71412,7 +71713,7 @@
         "cwe_ids": [
           "CWE-706"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -71455,7 +71756,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71498,7 +71799,7 @@
         "cwe_ids": [
           "CWE-367"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -71541,7 +71842,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -71584,7 +71885,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71627,7 +71928,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -71670,7 +71971,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71713,7 +72014,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -71756,7 +72057,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -107091,7 +107392,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -107421,7 +107722,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -107470,7 +107771,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -107625,7 +107926,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -107678,7 +107979,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -110183,7 +110484,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -110354,7 +110655,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -110460,7 +110761,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -110721,7 +111022,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -111076,7 +111377,7 @@
         "cwe_ids": [
           "CWE-824"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -111133,7 +111434,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -112656,7 +112957,7 @@
         "cwe_ids": [
           "CWE-400"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -112705,7 +113006,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -112762,7 +113063,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 1
       }
     },
@@ -112905,7 +113206,7 @@
         "cwe_ids": [
           "CWE-457"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -112995,7 +113296,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -114937,7 +115238,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 1
       }
     },
@@ -115133,7 +115434,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -115243,7 +115544,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 1
       }
     },
@@ -115382,7 +115683,7 @@
         "cwe_ids": [
           "CWE-843"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 1
       }
     },
@@ -115423,7 +115724,7 @@
         "cwe_ids": [
           "CWE-248"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -115480,7 +115781,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 1
       }
     },
@@ -115582,7 +115883,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },

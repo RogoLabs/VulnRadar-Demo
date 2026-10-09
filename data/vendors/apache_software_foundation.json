@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-08T21:18:04+00:00",
+  "generated_at": "2026-10-09T02:01:44+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1201,
+  "count": 1204,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -27713,6 +27713,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-103877",
+      "description": "Deserialization of Untrusted Data vulnerability in Apache Directory LDAP API.\n\n\n\nA rogue/compromised LDAP server (or pre-TLS MITM) can answer a client's loadSchema() subschema search with a schema object that contains a serialized Java class, allowing some potential RCE.\u00a0\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache directory ldap api",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.1.0",
+              "lessThan": "2.1.9",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache directory ldap api",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00572,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-103878",
       "description": "Cleartext transmission of sensitive information\u00a0vulnerability in Apache Directory LDAP API.\n\n\n\nA StartTLS extended operation started after a Search request has been sent can lead to receive data in plain text before the TLS Handshake has been completed.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue.",
       "cvss_score": 7.5,
@@ -27794,6 +27837,47 @@
         "cwe_ids": [
           "CWE-405"
         ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-103885",
+      "description": "Asymmetric Resource Consumption\u00a0vulnerability in Apache Directory LDAP API.\n\n\n\nA LDAP server using the LDAP API (like Apache DS)\u00a0may consume 100% of a CPU core indefinitely\u00a0when processing some badly crafted Telephone Numbers.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache directory ldap api",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.1.0",
+              "lessThan": "2.1.9",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache directory ldap api",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00488,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
         "cpe_count": 0,
         "reference_count": 2
       }
@@ -44929,7 +45013,7 @@
           "CWE-426"
         ],
         "cpe_count": 0,
-        "reference_count": 4
+        "reference_count": 5
       }
     },
     {
@@ -54690,8 +54774,8 @@
       "active_threat": false,
       "probability_score": 0.00467,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
@@ -56045,7 +56129,7 @@
         "cwe_ids": [
           "CWE-22"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -56088,7 +56172,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -56446,7 +56530,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -56536,7 +56620,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.0062
+      "probability_score": 0.0062,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-384"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-92550",
@@ -57775,8 +57870,8 @@
       "active_threat": false,
       "probability_score": 0.00467,
       "nvd": {
-        "cvss_v3_score": null,
-        "cvss_v3_severity": null,
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
@@ -58487,6 +58582,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-97720",
+      "description": "Incorrect implementation of JWT/OAuth authentication in Impala executors in Apache Impala versions up to and including 4.5.2 which allows attacked to access resources served by the executor's webserver when that webserver is configured to accept JWT/OAuth tokens.\u00a0 Bearer token (JWT) signatures are not validated resulting in the webserver accepting any valid JWT.\nUsers are recommended to either disable JWT/OAuth auth for Impala executors or upgrade to version 4.5.3, which fixes this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache impala",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.1.0",
+              "lessThanOrEqual": "4.5.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache impala",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00323,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-303"
         ],
         "cpe_count": 0,
         "reference_count": 2
