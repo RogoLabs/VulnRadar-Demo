@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-12T05:42:44+00:00`
+Generated: `2026-10-12T15:06:24+00:00`
 
 ## Executive Summary
 
@@ -140,7 +140,7 @@ Top critical items:
 | [CVE-2023-21529](https://www.cve.org/CVERecord?id=CVE-2023-21529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.593 | 8.8 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
 | [CVE-2022-34713](https://www.cve.org/CVERecord?id=CVE-2022-34713) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-08-30 | 0.678 | 7.8 | ✅ | Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability |
 | [CVE-2024-43572](https://www.cve.org/CVERecord?id=CVE-2024-43572) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.667 | 7.8 | ✅ | Microsoft Management Console Remote Code Execution Vulnerability |
-| [CVE-2023-41763](https://www.cve.org/CVERecord?id=CVE-2023-41763) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-31 | 0.909 | 5.3 | ✅ | Skype for Business Elevation of Privilege Vulnerability |
+| [CVE-2023-41763](https://www.cve.org/CVERecord?id=CVE-2023-41763) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-31 | 0.905 | 5.3 | ✅ | Skype for Business Elevation of Privilege Vulnerability |
 | [CVE-2026-20131](https://www.cve.org/CVERecord?id=CVE-2026-20131) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-22 | 0.432 | 10.0 | ✅ | A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker… |
 | [CVE-2026-2441](https://www.cve.org/CVERecord?id=CVE-2026-2441) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-10 | 0.550 | 8.8 | ✅ | Use after free in CSS in Google Chrome prior to 145.0.7632.75 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Ch… |
 | [CVE-2024-43461](https://www.cve.org/CVERecord?id=CVE-2024-43461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-07 | 0.545 | 8.8 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
@@ -230,9 +230,9 @@ Top critical items:
 | [CVE-2023-32409](https://www.cve.org/CVERecord?id=CVE-2023-32409) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.165 | 8.6 | ✅ | The issue was addressed with improved bounds checks. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.8 and iPadOS 15.7.8, Safari 16… |
 | [CVE-2024-49039](https://www.cve.org/CVERecord?id=CVE-2024-49039) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.142 | 8.8 | ✅ | Windows Task Scheduler Elevation of Privilege Vulnerability |
 | [CVE-2025-30397](https://www.cve.org/CVERecord?id=CVE-2025-30397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-03 | 0.270 | 7.5 | ✅ | Access of resource using incompatible type ('type confusion') in Microsoft Scripting Engine allows an unauthorized attacker to execute code over a network. |
+| [CVE-2022-1364](https://www.cve.org/CVERecord?id=CVE-2022-1364) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-06 | 0.139 | 8.8 | ✅ | Type confusion in V8 Turbofan in Google Chrome prior to 100.0.4896.127 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
 | [CVE-2022-3075](https://www.cve.org/CVERecord?id=CVE-2022-3075) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-29 | 0.058 | 9.6 | ✅ | Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially… |
 | [CVE-2023-2136](https://www.cve.org/CVERecord?id=CVE-2023-2136) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-12 | 0.057 | 9.6 | ✅ | Integer overflow in Skia in Google Chrome prior to 112.0.5615.137 allowed a remote attacker who had compromised the renderer process to potentially perform a s… |
-| [CVE-2022-1364](https://www.cve.org/CVERecord?id=CVE-2022-1364) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-06 | 0.137 | 8.8 | ✅ | Type confusion in V8 Turbofan in Google Chrome prior to 100.0.4896.127 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
 | [CVE-2026-50522](https://www.cve.org/CVERecord?id=CVE-2026-50522) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-07-25 | 0.030 | 9.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an unauthorized attacker to execute code over a network. |
 | [CVE-2025-39682](https://www.cve.org/CVERecord?id=CVE-2025-39682) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-21 | 0.029 | 9.8 | ✅ | In the Linux kernel, the following vulnerability has been resolved:  tls: fix handling of zero-length records on the rx_list  Each recvmsg() call must process … |
 | [CVE-2026-59310](https://www.cve.org/CVERecord?id=CVE-2026-59310) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.026 | 9.8 | ✅ | VMware vCenter contains a directory traversal vulnerability in the Syslog server. A malicious actor with network access to vCenter may exploit this issue to ex… |
@@ -303,4 +303,4 @@ Top critical items:
 | Oct 08 | [CVE-2026-76464](https://www.cve.org/CVERecord?id=CVE-2026-76464) | 🆕 New |
 | Oct 08 | [CVE-2026-76465](https://www.cve.org/CVERecord?id=CVE-2026-76465) | 🆕 New |
 | Oct 08 | [CVE-2026-76467](https://www.cve.org/CVERecord?id=CVE-2026-76467) | 🆕 New |
-| ... | | _and 199 more_ |
+| ... | | _and 197 more_ |
