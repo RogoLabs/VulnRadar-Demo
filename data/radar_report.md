@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-13T11:51:08+00:00`
+Generated: `2026-10-13T19:17:48+00:00`
 
 ## Executive Summary
 
@@ -164,10 +164,10 @@ Top critical items:
 | [CVE-2023-21674](https://www.cve.org/CVERecord?id=CVE-2023-21674) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-31 | 0.410 | 8.8 | ✅ | Windows Advanced Local Procedure Call (ALPC) Elevation of Privilege Vulnerability |
 | [CVE-2023-2033](https://www.cve.org/CVERecord?id=CVE-2023-2033) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-08 | 0.408 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 112.0.5615.121 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-4135](https://www.cve.org/CVERecord?id=CVE-2022-4135) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-12-19 | 0.319 | 9.6 | ✅ | Heap buffer overflow in GPU in Google Chrome prior to 107.0.5304.121 allowed a remote attacker who had compromised the renderer process to potentially perform … |
+| [CVE-2026-76461](https://www.cve.org/CVERecord?id=CVE-2026-76461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-17 | 0.295 | 9.8 | ✅ | A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to execute arbitr… |
 | [CVE-2026-20963](https://www.cve.org/CVERecord?id=CVE-2026-20963) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-21 | 0.292 | 9.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an unauthorized attacker to execute code over a network. |
 | [CVE-2023-28252](https://www.cve.org/CVERecord?id=CVE-2023-28252) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-02 | 0.490 | 7.8 | ✅ | Windows Common Log File System Driver Elevation of Privilege Vulnerability |
 | [CVE-2025-32756](https://www.cve.org/CVERecord?id=CVE-2025-32756) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-04 | 0.307 | 9.6 | ✅ | A stack-based buffer overflow vulnerability [CWE-121] vulnerability in Fortinet FortiCamera 2.1.0 through 2.1.3, FortiCamera 2.0 all versions, FortiCamera 1.1 … |
-| [CVE-2026-76461](https://www.cve.org/CVERecord?id=CVE-2026-76461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-17 | 0.283 | 9.8 | ✅ | A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to execute arbitr… |
 | [CVE-2023-3079](https://www.cve.org/CVERecord?id=CVE-2023-3079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-28 | 0.379 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 114.0.5735.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2025-24054](https://www.cve.org/CVERecord?id=CVE-2025-24054) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.589 | 6.5 | ✅ | External control of file name or path in Windows NTLM allows an unauthorized attacker to perform spoofing over a network. |
 | [CVE-2024-38094](https://www.cve.org/CVERecord?id=CVE-2024-38094) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-11-12 | 0.509 | 7.2 | ✅ | Microsoft SharePoint Remote Code Execution Vulnerability |
