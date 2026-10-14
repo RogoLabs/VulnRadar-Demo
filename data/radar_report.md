@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-14T15:07:11+00:00`
+Generated: `2026-10-14T19:22:40+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **22257**
 - Watchlist hits: **21803**
 - CISA KEVs: **821**
-- Exploit Intel (PoC): **906**
-- Exploit Intel + Watchlist (CRITICAL): **452**
+- Exploit Intel (PoC): **908**
+- Exploit Intel + Watchlist (CRITICAL): **454**
 
 ## Top Findings (max 200)
 
@@ -192,7 +192,7 @@ Top critical items:
 | [CVE-2026-21510](https://www.cve.org/CVERecord?id=CVE-2026-21510) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-03 | 0.245 | 8.8 | ✅ | Protection mechanism failure in Windows Shell allows an unauthorized attacker to bypass a security feature over a network. |
 | [CVE-2023-6345](https://www.cve.org/CVERecord?id=CVE-2023-6345) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-12-21 | 0.165 | 9.6 | ✅ | Integer overflow in Skia in Google Chrome prior to 119.0.6045.199 allowed a remote attacker who had compromised the renderer process to potentially perform a s… |
 | [CVE-2023-41993](https://www.cve.org/CVERecord?id=CVE-2023-41993) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-16 | 0.243 | 8.8 | ✅ | The issue was addressed with improved checks. This issue is fixed in macOS Sonoma 14. Processing web content may lead to arbitrary code execution. Apple is awa… |
-| [CVE-2026-104935](https://www.cve.org/CVERecord?id=CVE-2026-104935) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-10-16 | 0.260 | 8.6 | ✅ | Authentication bypass by spoofing in ICS before version 25.1.3.0 allows a remote unauthenticated attacker to execute arbitrary commands. This does not impact I… |
+| [CVE-2026-104935](https://www.cve.org/CVERecord?id=CVE-2026-104935) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-16 | 0.260 | 8.6 | ✅ | Authentication bypass by spoofing in ICS before version 25.1.3.0 allows a remote unauthenticated attacker to execute arbitrary commands. This does not impact I… |
 | [CVE-2025-31201](https://www.cve.org/CVERecord?id=CVE-2025-31201) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.140 | 9.8 | ✅ | This issue was addressed by removing the vulnerable code. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, visionOS 2.4.… |
 | [CVE-2023-32439](https://www.cve.org/CVERecord?id=CVE-2023-32439) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.240 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in iOS 16.5.1 and iPadOS 16.5.1, iOS 15.7.7 and iPadOS 15.7.7, macOS Ventura 13.… |
 | [CVE-2022-4262](https://www.cve.org/CVERecord?id=CVE-2022-4262) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-12-26 | 0.235 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 108.0.5359.94 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromiu… |
