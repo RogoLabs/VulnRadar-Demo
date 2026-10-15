@@ -1,0 +1,2547 @@
+{
+  "generated_at": "2026-10-15T07:30:51+00:00",
+  "vendor": "google_cloud",
+  "count": 50,
+  "items": [
+    {
+      "cve_id": "CVE-2025-0982",
+      "description": "Sandbox escape in the JavaScript Task feature of Google Cloud Application Integration allows an actor to execute arbitrary unsandboxed code via crafted JavaScript code executed by the Rhino engine. Effective January 24, 2025, Application Integration will no longer support Rhino as the JavaScript execution engine. No further fix actions are needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00257,
+      "nvd": {
+        "cvss_v3_score": 10.0,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-829"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12155",
+      "description": "A Command Injection vulnerability, resulting from improper file path sanitization (Directory Traversal) in Looker allows an attacker with Developer permission to execute arbitrary shell commands when a user is deleted on the host system.\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted\u00a0instances. No user action is required for these.\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :\n  *  24.12.100+\n  *  24.18.192+\n  *  25.0.69+\n  *  25.6.57+\n  *  25.8.39+\n  *  25.10.22+",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/S:P/AU:Y/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.100",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "24.18.192",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.0.69",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.6.57",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.8.39",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.10.22",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.100",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "24.18.192",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.0.69",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.6.57",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.8.39",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.10.22",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01262,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12397",
+      "description": "A SQL injection vulnerability was found in Looker Studio.\n\nA Looker Studio user with report view access could inject malicious SQL that would execute with the report owner's permissions. The vulnerability affected to reports with BigQuery as the data source.\n\nThis vulnerability was patched on 21 July 2025, and no customer action is needed.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker studio",
+          "versions": [
+            {
+              "lessThan": "2025-07-21",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker studio",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00332,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12405",
+      "description": "An improper privilege management vulnerability was found in Looker Studio.\u00a0It impacted all JDBC-based connectors.\n\nA Looker Studio user with report view access could make a copy of the report and execute arbitrary SQL that would run on the data source database due to the stored credentials attached to the report.\n\nThis vulnerability was patched on 21 July 2025, and no customer action is needed.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker studio",
+          "versions": [
+            {
+              "lessThan": "2025-07-21",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker studio",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00274,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12409",
+      "description": "A SQL injection vulnerability was discovered in Looker Studio that allowed for data exfiltration from BigQuery data sources.\n \nBy creating a malicious report with native functions enabled, and having the victim access the report, an attacker could execute injected SQL queries with the victim's permissions in BigQuery.\n\nThis vulnerability was patched on 07 July 2025, and no customer action is needed.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker studio",
+          "versions": [
+            {
+              "lessThan": "2025-07-07",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker studio",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00269,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12414",
+      "description": "An attacker could take over a Looker account in a Looker instance configured with OIDC authentication, due to email address string normalization.Looker-hosted and Self-hosted were found to be vulnerable.\n\nThis issue has already been mitigated for Looker-hosted.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page   https://download.looker.com/ :\n  *  24.12.100+\n  *  24.18.193+\n  *  25.0.69+\n  *  25.6.57+\n  *  25.8.39+\n  *  25.10.22+\n  *  25.12.0+",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.100",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "24.18.193",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.69",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.57",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.8.39",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.10.22",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.100",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "24.18.193",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.69",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.57",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.8.39",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.10.22",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00455,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-290"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12472",
+      "description": "An attacker with a Looker Developer role could manipulate a LookML project to exploit a race condition during Git directory deletion, leading to arbitrary command execution on the Looker instance.\n\n\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances.\u00a0No user action is required for these.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :\n  *  24.12.103+\n  *  24.18.195+\n  *  25.0.72+\n  *  25.6.60+\n  *  25.8.42+\n  *  25.10.22+",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:H/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.103",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "24.18.195",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.0.72",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.6.60",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.8.42",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.10.22",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.103",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "24.18.195",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.0.72",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.6.60",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.8.42",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            },
+            {
+              "lessThan": "25.10.22",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00253,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12739",
+      "description": "An attacker with viewer permissions in Looker could craft a malicious URL that, when opened by a Looker admin, would execute an attacker-supplied script. Exploitation required at least one Looker extension installed on the instance.\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances.\u00a0No user action is required for these.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :  *  24.18.201+\n  *  25.0.79+\n  *  25.6.66+\n  *  25.12.7+\n  *  25.16.0+\n  *  25.18.0+\n  *  25.20.0+",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.18.201",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.79",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.66",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.7",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.16.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.18.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.20.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.18.201",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.79",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.66",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.7",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.16.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.18.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.20.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00307,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-79"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12740",
+      "description": "A Looker user with a Developer role could create a database connection using IBM DB2 driver and, by manipulating LookML, cause Looker to execute a malicious command, due to inadequate filtering of the driver's parameters.\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances.\u00a0No user action is required for these.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :\n  *  25.0.93+\n  *  25.6.84+\n\n  *  25.12.42+\n  *  25.14.50+\n  *  25.16.44+",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "25.0.93",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.84",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.42",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.14.50",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.16.44",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "25.0.93",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.84",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.42",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.14.50",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.16.44",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00245,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12741",
+      "description": "A Looker user with Developer role could create a database connection using Denodo driver and, by manipulating LookML, cause Looker to execute a malicious command.\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances.\u00a0No user action is required for these.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :\n  *  24.12.108+\n  *  24.18.200+\n  *  25.0.78+\n  *  25.6.65+\n  *  25.8.47+\n  *  25.12.10+\n  *  25.14+",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.108",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "24.18.200",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.78",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.65",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.8.47",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.10",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.14",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.108",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "24.18.200",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.78",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.65",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.8.47",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.10",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.14",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00245,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12742",
+      "description": "A Looker user with a Developer role could cause Looker to execute a malicious command, due to insecure processing of Teradata driver parameters.\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances.\u00a0No user action is required for these.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect from this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :\n  *  24.12.108+\n  *  24.18.200+\n  *  25.0.78+\n  *  25.6.65+\n  *  25.8.47+\n  *  25.12.10+\n  *  25.14+",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.108",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "24.18.200",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.78",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.65",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.8.47",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.10",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.14",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "lessThan": "24.12.108",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "24.18.200",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.0.78",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.6.65",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.8.47",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.12.10",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "25.14",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00236,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-12952",
+      "description": "A privilege escalation vulnerability exists in Google Cloud's Dialogflow CX.\n\nDialogflow agent developers with Webhook editor permission are able to configure Webhooks using Dialogflow service agent access token authentication. \nThis allows the attacker to escalate their privileges from agent-level to project-level, granting them unauthorized access to manage resources in services associated with the project, leading to\u00a0unexpected costs and resource depletion for the producer project.\n\nA fix was applied\u00a0on the server side\u00a0to protect from this vulnerability in February 2025. No\u00a0customer action is required.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "dialogflow cx",
+          "versions": [
+            {
+              "lessThan": "2025-02",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:dialogflow cx",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00374,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-13292",
+      "description": "A vulnerability in Apigee-X allowed an attacker to gain unauthorized read and write access to Apigee Analytics (AX) data and access logs belonging to other Apigee customer organizations.\n\nApigee-X was found to be vulnerable.\n\nThis vulnerability was patched in version\u00a01-16-0-apigee-3.\u00a0No user action is required for this.",
+      "cvss_score": 7.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:H/VI:H/VA:L/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "apigee-x",
+          "versions": [
+            {
+              "lessThan": "1-16-0-apigee-3",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apigee-x",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00275,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2025-13426",
+      "description": "A vulnerability exists in Google  Apigee's JavaCallout policy https://docs.apigee.com/api-platform/reference/policies/java-callout-policy  that allows for remote code execution.\n\nIt is possible for a user to write a JavaCallout that injected a malicious object into the MessageContext to execute arbitrary Java code and system commands at runtime,\u00a0leading to unauthorized access to data, lateral movement within the network, and access to backend systems.\n\nThe Apigee hybrid versions below have all been updated to protect from this vulnerability:\n  *  Hybrid_1.11.2+\n  *  Hybrid_1.12.4+\n  *  Hybrid_1.13.3+\n  *  Hybrid_1.14.1+\n  *  OPDK_5202+\n  *  OPDK_5300+",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "apigee hybrid javacallout policy",
+          "versions": [
+            {
+              "lessThan": "Hybrid_1.11.2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "Hybrid_1.12.4",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "Hybrid_1.13.3",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "Hybrid_1.14.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "OPDK_5202",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "OPDK_5300",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apigee hybrid javacallout policy",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0042,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-913"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-13428",
+      "description": "A vulnerability exists in the SecOps SOAR server. The custom integrations feature allowed an authenticated user with an \"IDE role\" to achieve Remote Code Execution (RCE) in the server. The flaw stemmed from weak validation of uploaded Python package code. An attacker could upload a package containing a malicious setup.py file, which would execute on the server during the installation process, leading to potential server compromise.\n\nNo customer action is required. \n\n\nAll customers have been automatically upgraded to the fixed version: 6.3.64 or higher.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "google cloud secops soar",
+          "versions": [
+            {
+              "lessThanOrEqual": "6.3.64",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:google cloud secops soar",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00328,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-4600",
+      "description": "A request smuggling vulnerability existed in the Google Cloud Classic Application Load Balancer due to improper handling of chunked-encoded HTTP requests. This allowed attackers to craft requests that could be misinterpreted by backend servers. The issue was fixed by disallowing stray data after a chunk, and is no longer exploitable. No action is required as Classic Application Load Balancer service after 2025-04-26 is not vulnerable.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:L/SI:L/SA:L",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "classic application load balancer",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:classic application load balancer",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00197,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-444"
+        ],
+        "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-9118",
+      "description": "A path traversal vulnerability in the NPM package installation process of Google Cloud Dataform allows a remote attacker to read and write files in other customers' repositories via a maliciously crafted package.json file.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "dataform",
+          "versions": [
+            {
+              "lessThan": "08/21/2025",
+              "status": "affected",
+              "version": "08/7/2025",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:dataform",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0068,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-9571",
+      "description": "A remote code execution (RCE) vulnerability exists in Google Cloud Data Fusion.\nA user with permissions to upload artifacts to a Data Fusion instance can execute arbitrary code within the core AppFabric component. \nThis could allow the attacker to gain control over the Data Fusion instance, potentially leading to unauthorized access to sensitive data, modification of data pipelines, and exploration of the underlying infrastructure.\n\nThe following CDAP versions include the necessary update to protect against this vulnerability:  *   6.10.6+\n  *  6.11.1+\n\n\n\n\u00a0Users must immediately\u00a0upgrade to them, or greater ones, available at:  https://github.com/cdapio/cdap-build/releases .",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Red",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "cloud data fusion",
+          "versions": [
+            {
+              "lessThan": "6.10.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.11.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud data fusion",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00439,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2025-9918",
+      "description": "A Path Traversal vulnerability in the archive extraction component in Google SecOps SOAR Server (versions 6.3.54.0, 6.3.53.2, and all prior versions) allows an authenticated attacker with permissions to import Use Cases to achieve Remote Code Execution (RCE) via uploading a malicious ZIP archive containing path traversal sequences.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "google secops soar",
+          "versions": [
+            {
+              "lessThan": "6.3.54.0",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            },
+            {
+              "lessThan": "6.3.53.2",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:google secops soar",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0063,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-12537",
+      "description": "Improper Neutralization used in an OS Command in the container launcher in Google Gemini CLI (versions prior to 0.39.1) and run-gemini-cli GitHub Action (versions prior to 0.1.22) on headless CI platforms allows an unprivileged attacker to achieve pre-sandbox host-level code execution a maliciously crafted .gemini/.env file.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini cli",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.39.1",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "run-gemini-cli github action",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.1.22",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini cli",
+        "product:run-gemini-cli github action",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00212
+    },
+    {
+      "cve_id": "CVE-2026-12710",
+      "description": "A Missing Authorization vulnerability in the QueryEngineTask of Google Cloud Application Integration (versions from 2025-04-28 to 2026-04-04) allows an external attacker to access sensitive internal data.\n\n\n\n\nThe issue was patched on April 4, 2026; no customer action is required.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-04-28",
+              "lessThan": "2026-04-04",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00406
+    },
+    {
+      "cve_id": "CVE-2026-12715",
+      "description": "Missing Authorization in Google Cloud Firebase Studio versions prior to 2026-04-15 on Google Cloud Platform allows an attacker to download other users' deployed source code and access sensitive data via unauthorized GCS URL signing requests.\n\n\nThis vulnerability was patched on 15 April 2026, and no customer action is needed.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "firebase studio",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-04-15",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:firebase studio",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00351
+    },
+    {
+      "cve_id": "CVE-2026-12717",
+      "description": "An Improper Input Validation vulnerability in CData JDBC driver integration in Google Cloud BigQuery Data Transfer Service versions prior to 2026-05-01 on Google Cloud Platform allows an authenticated attacker to achieve remote code execution in the connector container and escalate privileges in the tenant project using crafted JDBC connection string parameters.\n\n\nThis vulnerability was patched on 1 May 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "bigquery data transfer service",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-05-01",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bigquery data transfer service",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00452
+    },
+    {
+      "cve_id": "CVE-2026-13745",
+      "description": "A vulnerability in the Gemini CLI prior to version 0.39.1 allows attackers to achieve arbitrary code execution by tricking a victim into starting the CLI within an untrusted directory. The vulnerability is triggered via untrusted .env files overriding GEMINI_CLI_HOME to load malicious configuration files and bypass folder trust prompts.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini cli",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.39.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini cli",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00375
+    },
+    {
+      "cve_id": "CVE-2026-14934",
+      "description": "A Missing Authorization vulnerability in the repository creation functionality in Google Cloud BigQuery, Dataform and Colab Enterprise, in the versions between October 2025 and May 10th, 2026, on Google Cloud Platform, allows an authenticated attacker to escalate privileges and perform cross-tenant repository takeover.\n\n\nThis vulnerability was patched on 10 May 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "bigquery",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10",
+              "lessThan": "2026-05-10",
+              "versionType": "date"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "dataform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10",
+              "lessThan": "2026-05-10",
+              "versionType": "date"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "colab enterprise",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10",
+              "lessThan": "2026-05-10",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bigquery",
+        "product:colab enterprise",
+        "product:dataform",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00351
+    },
+    {
+      "cve_id": "CVE-2026-15587",
+      "description": "Improper Privilege Management in Google SecOps (Chronicle SOAR) versions prior to 6.3.85 on Google Cloud Platform allows an authenticated attacker to escalate privileges to system-level administrative access using a crafted internal authentication header.\n\n\n\n\nThis vulnerability was patched with version 6.3.85, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "google secops (chronicle soar)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "6.3.85",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:google secops (chronicle soar)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00229
+    },
+    {
+      "cve_id": "CVE-2026-15623",
+      "description": "A SQL Injection vulnerability in a legacy dashboard widget API in Google Cloud Google SecOps (Chronicle SOAR) versions prior to 6.3.85 on Google Cloud Platform allows an authenticated attacker to execute blind SQL queries using a crafted request parameter.\n\n\nThis vulnerability was patched in version 6.3.85, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "google secops (chronicle soar)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "6.3.85",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:google secops (chronicle soar)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00344
+    },
+    {
+      "cve_id": "CVE-2026-15810",
+      "description": "A Cross-Site Scripting (XSS) vulnerability in Google Cloud Looker versions prior to 25.6.103, 25.12.65, 25.18.68, 26.0.66, 26.2.47, 26.4.36, 26.6.28, and 26.8.7 on Looker-hosted and Self-hosted allows an attacker to execute arbitrary JavaScript leading to administrative account takeover using a maliciously crafted URL.\n\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances. No user action is required for these.\n\n\nSelf-hosted instances must be upgraded to the patched versions: 25.6.103+, 25.12.65+, 25.18.68+, 26.0.66+, 26.2.47+, 26.4.36+, 26.6.28+, or 26.8.7+.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "25.6.103",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "25.12.65",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "25.18.68",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.0.66",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.2.47",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.4.36",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.6.28",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.8.7",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "google cloud",
+          "product": "looker",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "25.6.103",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "25.12.65",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "25.18.68",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.0.66",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.2.47",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.4.36",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.6.28",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "26.8.7",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:looker",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00453
+    },
+    {
+      "cve_id": "CVE-2026-19407",
+      "description": "Bucket Squatting in Google Cloud Gemini Enterprise Agent Platform SDK for Python versions prior to 1.166.1 allows an attacker to achieve Remote Code Execution (RCE) and tenant-project token theft.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini enterprise agent platform sdk for python",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.16.0",
+              "lessThan": "1.165.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini enterprise agent platform sdk for python",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00521
+    },
+    {
+      "cve_id": "CVE-2026-19410",
+      "description": "An Incorrect Authorization vulnerability in GitHub Trigger Comment Control in Google Cloud Build prior to 2026-06-24 on Google Cloud Platform allows a remote attacker to execute unreviewed code in the build environment using webhook suppression.\n\n\nThis vulnerability was patched on 24 June 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "google cloud build",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-06-24",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:google cloud build",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00143
+    },
+    {
+      "cve_id": "CVE-2026-19485",
+      "description": "A Predictable Resource Name vulnerability in BigQuery Import Staging in Google Cloud Vertex AI Search for Commerce versions prior to 2026-04-27 on Google Cloud Platform allows an attacker knowing the victim's project number to obtain read/write access to staged data and error logs using predictable bucket names.\n\n\n\nThis vulnerability was patched and no customer action is needed.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "vertex ai search for commerce",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-04-27",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vertex ai search for commerce",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00226
+    },
+    {
+      "cve_id": "CVE-2026-19486",
+      "description": "A Server-Side Request Forgery (SSRF) vulnerability in Google Cloud Gemini Enterprise Agent Platform App Builder versions prior to 2026-06-01 on Google Cloud Platform allows an unauthenticated attacker to leak the Compute Engine default service account access token.\n\n\n\nThis vulnerability was patched on 01 June 2026. Users will need to redeploy their previously deployed apps.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini enterprise agent platform app builder",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2025-10-11",
+              "lessThan": "2026-06-01",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini enterprise agent platform app builder",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0027
+    },
+    {
+      "cve_id": "CVE-2026-19759",
+      "description": "An Incorrect Authorization vulnerability\u00a0in the task configuration in Google Cloud Application Integration versions prior to 2026-06-17 on Google Cloud Platform allows an authenticated Google Cloud user to execute arbitrary internal RPCs from inside Google's production network under a privileged identity using an internal-only task type.\n\n\nThis vulnerability was patched on 17 June 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-06-17",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00235
+    },
+    {
+      "cve_id": "CVE-2026-1727",
+      "description": "The Agentspace service was affected by a vulnerability that exposed sensitive information due to the use of predictable Google Cloud Storage bucket names. These names were utilized for error logs and temporary staging during data imports from GCS and Cloud SQL. This predictability allowed an attacker to engage in \"bucket squatting\" by establishing these buckets before a victim's initial use.\n\nAll versions after December 12th, 2025 have been updated to protect from this vulnerability. No user action is required for this.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:L/SI:L/SA:L/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gemini enterprise (formerly agentspace)",
+          "versions": [
+            {
+              "lessThan": "12/12/2025",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gemini enterprise (formerly agentspace)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00293
+    },
+    {
+      "cve_id": "CVE-2026-2031",
+      "description": "An Improper Access Control\u00a0vulnerability in\u00a0several internal API endpoints for Google Cloud Application Integration prior to 2026-01-23 allows\u00a0a remote, unauthenticated attacker\u00a0to\u00a0disclose sensitive internal information and execute arbitrary code\u00a0using\u00a0specially crafted HTTP requests to inadvertently exposed internal API endpoints.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "internal integration platform apis",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-01-23",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:internal integration platform apis",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00531
+    },
+    {
+      "cve_id": "CVE-2026-2244",
+      "description": "A vulnerability in Google Cloud Vertex AI Workbench from\u00a07/21/2025 to 01/30/2026 allows an attacker to exfiltrate valid Google Cloud access tokens of other users via abuse of a built-in startup script.\n\nAll instances after January 30th, 2026 have been patched to protect from this vulnerability.\u00a0No user action is required for this.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "vertex ai workbench",
+          "versions": [
+            {
+              "lessThan": "01/30/2026",
+              "status": "affected",
+              "version": "7/21/2025",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vertex ai workbench",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00235
+    },
+    {
+      "cve_id": "CVE-2026-2264",
+      "description": "A vulnerability in the Google Cloud Apigee\u00a0SetIntegrationRequest\u00a0policy allowed remote attackers to perform Server-Side Request Forgery (SSRF) and exfiltrate service account access tokens.\n\nFor successful exploitation, an administrator must initially establish an insecure configuration of the API proxy.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "apigee-x",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.14.4",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.15.2",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.16.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apigee-x",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0036
+    },
+    {
+      "cve_id": "CVE-2026-2472",
+      "description": "Stored Cross-Site Scripting (XSS) in the _genai/_evals_visualization component of Google Cloud Vertex AI SDK (google-cloud-aiplatform) versions from 1.98.0 up to (but not including) 1.131.0 allows an unauthenticated remote attacker to execute arbitrary JavaScript in a victim's Jupyter or Colab environment via injecting script escape sequences into model evaluation results or dataset JSON data.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "vertex ai sdk for python",
+          "versions": [
+            {
+              "lessThan": "1.131.0",
+              "status": "affected",
+              "version": "1.98.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vertex ai sdk for python",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00554
+    },
+    {
+      "cve_id": "CVE-2026-2473",
+      "description": "Predictable bucket naming in Vertex AI Experiments in Google Cloud Vertex AI from version 1.21.0 up to\u00a0(but not including) 1.133.0 on Google Cloud Platform allows an unauthenticated remote attacker to achieve cross-tenant remote code execution, model theft, and poisoning via pre-creating predictably named Cloud Storage buckets (Bucket Squatting).\n\nThis vulnerability was patched and no customer action is needed.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "vertex ai experiments",
+          "versions": [
+            {
+              "lessThan": "1.133.0",
+              "status": "affected",
+              "version": "1.21.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vertex ai experiments",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00465
+    },
+    {
+      "cve_id": "CVE-2026-3136",
+      "description": "An improper authorization\u00a0vulnerability in GitHub Trigger Comment Control\u00a0in Google\u00a0Cloud Build\u00a0prior to 2026-1-26\u00a0allows a remote attacker\u00a0to execute arbitrary code in the build environment.\n\nThis vulnerability was patched on 26 January 2026, and no customer action is needed.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "cloud build",
+          "versions": [
+            {
+              "lessThan": "1/26/2026",
+              "status": "affected",
+              "version": "0",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud build",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00413
+    },
+    {
+      "cve_id": "CVE-2026-3259",
+      "description": "A Generation of Error Message Containing Sensitive Information vulnerability in the Materialized View Refresh mechanism in Google BigQuery on Google Cloud Platform allows an authenticated user to potentially disclose sensitive data using a crafted materialized view that triggers a runtime error during the refresh process.\n\nThis vulnerability was patched on 29 January 2026, and no customer action is needed.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "bigquery",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "01/29/2026",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:bigquery",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00382
+    },
+    {
+      "cve_id": "CVE-2026-4644",
+      "description": "A Missing Authorization vulnerability in HTTP Connector in Google Cloud Integration Connectors versions prior to 2025-12-11 on Google Cloud Platform allows an authenticated user to escalate privileges and take over a Google Cloud Project using unauthorized service account attachment.\n\n\n\nThis vulnerability was patched on 11 December 2025, and no customer action is needed.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "integration connectors",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2025-12-11",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:integration connectors",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00351
+    },
+    {
+      "cve_id": "CVE-2026-4764",
+      "description": "A Missing Authorization vulnerability in the playbook import functionality in Dialogflow CX on Google Cloud Platform allows an authenticated user with specific roles to escalate privileges and potentially take over a GCP project using a maliciously crafted playbook import.\n\n\nThis vulnerability was patched on 15 March 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "dialogflow cx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-03-15",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:dialogflow cx",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00351
+    },
+    {
+      "cve_id": "CVE-2026-4810",
+      "description": "A Code Injection and Missing Authentication vulnerability in Google Agent Development Kit (ADK) versions 1.7.0 (and 2.0.0a1) through 1.28.1 (and 2.0.0a2) on Python (OSS), Cloud Run, and GKE allows an unauthenticated remote attacker to execute arbitrary code on the server hosting the ADK instance.\n\nThis vulnerability was patched in versions 1.28.1 and 2.0.0a2.\n\n\nCustomers need to redeploy the upgraded ADK to their production environments. In addition, if they are running ADK Web locally, they also need to upgrade their local instance.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "agent development kit (adk)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.7.0",
+              "lessThan": "1.28.1",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "2.0.0a1",
+              "lessThan": "2.0.0a2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:agent development kit (adk)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.02211
+    },
+    {
+      "cve_id": "CVE-2026-79696",
+      "description": "A Code Injection vulnerability in adk web in Google Cloud Agent Development Kit (ADK) for Python versions 2.0.0 through 2.6.0 on Python (OSS), Cloud Run, and GKE environments where pytest is installed allows an unauthenticated remote attacker to execute arbitrary code using a crafted test session replay.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "agent development kit (adk) for python",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.0",
+              "lessThan": "2.7.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:agent development kit (adk) for python",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0074
+    },
+    {
+      "cve_id": "CVE-2026-79707",
+      "description": "A Path Traversal vulnerability in the builder endpoint in Google Cloud Agent Development Kit (ADK) versions 1.9.0 through 1.21.0 on Python allows an unauthenticated remote attacker to read arbitrary files using a crafted file_path query parameter.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "agent development kit (adk)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.9.0",
+              "lessThan": "1.22.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:agent development kit (adk)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00667
+    },
+    {
+      "cve_id": "CVE-2026-7428",
+      "description": "Prior to 2025-11-03,\u00a0well-intended users of Terraform or REST API for Google Cloud AlloyDB for PostgreSQL could have created clusters\u00a0with an insecure default password which could have been exploited by a\u00a0remote\u00a0attacker\u00a0to\u00a0gain full administrative access to the database.\n\n\n\n\nExploitation required network access to the AlloyDB cluster and was limited to Terraform or the REST API, as other clients blocked it.",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "alloydb for postgresql",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2025-11-03",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:alloydb for postgresql",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00406
+    },
+    {
+      "cve_id": "CVE-2026-81375",
+      "description": "A Confused Deputy vulnerability in the EmailTask component in Google Cloud Application Integration versions prior to 2026-06-30 on Google Cloud Platform allows an authenticated attacker to read and exfiltrate arbitrary Google-internal files via a crafted attachment file path.\n\n\nThis vulnerability was patched on 30 June 2026, and no customer action is needed.",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-06-30",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00316
+    },
+    {
+      "cve_id": "CVE-2026-81867",
+      "description": "A Deserialization of Untrusted Data vulnerability in the JavaScript Task in Google Cloud Application Integration versions prior to 2026-06-28 on Google Cloud Platform allows an authenticated user with standard permissions to run arbitrary code on the shared production servers using a specially crafted script bypassing param guards.\n\n\nThis vulnerability was patched on 28 June 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-06-28",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00355
+    },
+    {
+      "cve_id": "CVE-2026-85298",
+      "description": "An Incorrect Authorization vulnerability in the AuthConfig validation and integration execution runtime in Google Cloud Application Integration versions prior to 2026-08-27 allows an authenticated user to escalate privileges and impersonate a service account in the project.\n\n\nThis vulnerability was patched on 27 August 2026, and no customer action is needed.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-08-27",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    }
+  ]
+}
