@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-16T11:15:49+00:00`
+Generated: `2026-10-16T15:29:21+00:00`
 
 ## Executive Summary
 
@@ -242,12 +242,12 @@ Top critical items:
 | [CVE-2023-32373](https://www.cve.org/CVERecord?id=CVE-2023-32373) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-06-12 | 0.122 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in watchOS 9.5, tvOS 16.5, macOS Ventura 13.4, iOS 15.7.6 and iPadOS … |
 | [CVE-2026-35616](https://www.cve.org/CVERecord?id=CVE-2026-35616) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-09 | 0.091 | 9.1 | ✅ | A improper access control vulnerability in Fortinet FortiClientEMS 7.4.5 through 7.4.6 may allow an unauthenticated attacker to execute unauthorized code or co… |
 | [CVE-2026-76504](https://www.cve.org/CVERecord?id=CVE-2026-76504) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-03 | 0.018 | 9.8 | ✅ | A vulnerability in the API session-based authentication management of Cisco Catalyst SD-WAN Manager could allow an unauthenticated, remote attacker to access a… |
-| [CVE-2026-76519](https://www.cve.org/CVERecord?id=CVE-2026-76519) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-17 | 0.017 | 9.8 | ✅ | A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to write arbitra… |
 | [CVE-2026-65400](https://www.cve.org/CVERecord?id=CVE-2026-65400) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.017 | 9.8 | ✅ | An authentication issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.7.9, macOS Sonoma 14.8.9, m… |
 | [CVE-2026-33824](https://www.cve.org/CVERecord?id=CVE-2026-33824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.016 | 9.8 | ✅ | Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network. |
+| [CVE-2026-76519](https://www.cve.org/CVERecord?id=CVE-2026-76519) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-17 | 0.016 | 9.8 | ✅ | A vulnerability in the Advanced Malware Protection (AMP) feature of Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to write arbitra… |
 | [CVE-2026-22719](https://www.cve.org/CVERecord?id=CVE-2026-22719) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-24 | 0.181 | 8.1 | ✅ | VMware Aria Operations contains a command injection vulnerability. A malicious unauthenticated actor may exploit this issue to execute arbitrary commands which… |
 | [CVE-2024-4761](https://www.cve.org/CVERecord?id=CVE-2024-4761) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-06 | 0.110 | 8.8 | ✅ | Out of bounds write in V8 in Google Chrome prior to 124.0.6367.207 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. … |
-| [CVE-2024-23222](https://www.cve.org/CVERecord?id=CVE-2024-23222) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-13 | 0.106 | 8.8 | ✅ | A type confusion issue was addressed with improved checks. This issue is fixed in Safari 17.3, iOS 15.8.7 and iPadOS 15.8.7, iOS 16.7.5 and iPadOS 16.7.5, iOS … |
+| [CVE-2025-6558](https://www.cve.org/CVERecord?id=CVE-2025-6558) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-08-12 | 0.109 | 8.8 | ✅ | Insufficient validation of untrusted input in ANGLE and GPU in Google Chrome prior to 138.0.7204.157 allowed a remote attacker to potentially perform a sandbox… |
 
 ## Recent Changes (Last 7 Days)
 
