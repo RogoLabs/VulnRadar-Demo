@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-16T00:32:03+00:00",
+  "generated_at": "2026-10-16T05:50:33+00:00",
   "vendor": "_other",
-  "count": 793,
+  "count": 796,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -18009,7 +18009,7 @@
           "CWE-415"
         ],
         "cpe_count": 12,
-        "reference_count": 6
+        "reference_count": 7
       }
     },
     {
@@ -18098,8 +18098,8 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 12,
-        "reference_count": 28
+        "cpe_count": 21,
+        "reference_count": 30
       }
     },
     {
@@ -34025,7 +34025,7 @@
             },
             {
               "status": "affected",
-              "version": "V7.2.45.12",
+              "version": "V7.2.54.12",
               "lessThan": "V7.2.54.18",
               "versionType": "custom"
             }
@@ -46058,6 +46058,207 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-18660",
+      "description": "In Eclipse Jetty, across various versions of `jetty-server`, and `jetty-proxy`, the host whitelist/blacklist is case-sensitive, and would allow hosts through that only differ by case.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "12.1.0",
+              "lessThanOrEqual": "12.1.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "12.0.0",
+              "lessThanOrEqual": "12.0.38",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0",
+              "lessThanOrEqual": "11.0.32",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.0.0",
+              "lessThanOrEqual": "10.0.32",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.0",
+              "lessThanOrEqual": "9.4.64",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "vendor:eclipse foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00421
+    },
+    {
+      "cve_id": "CVE-2026-18661",
+      "description": "In Eclipse Jetty, across various versions of `jetty-annotations`, and `jetty-eeN-annotations`, the Jakarta Spec authoritative url-pattern rules for mixed `@ServletSecurity` annotation, and `web.xml` defined `security-constraint` on the same `url-pattern` were not being applied if the `web.xml` had more than 1 `url-pattern` for a servlet, and had a `security-constraint` applying to only some of those `url-pattern` definitions.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "12.1.0",
+              "lessThanOrEqual": "12.1.11",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "12.1.0",
+              "lessThanOrEqual": "12.1.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "12.0.0",
+              "lessThanOrEqual": "12.0.38",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "12.1.0",
+              "lessThanOrEqual": "12.1.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "12.0.0",
+              "lessThanOrEqual": "12.0.38",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "12.1.0",
+              "lessThanOrEqual": "12.1.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "12.0.0",
+              "lessThanOrEqual": "12.0.38",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "11.0.0",
+              "lessThanOrEqual": "11.0.32",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.0.0",
+              "lessThanOrEqual": "10.0.32",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "9.4.0",
+              "lessThanOrEqual": "9.4.64",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "vendor:eclipse foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00335
+    },
+    {
+      "cve_id": "CVE-2026-19863",
+      "description": "An unauthenticated client may access certain protected resources when using EthereumAuthenticator if the request path contains the configured login path.\n\n\n\nThis is caused by the authenticator using an unanchored substring match when identifying the login page. If the login path appears later within a protected request path, the request may be treated as the login page and its authentication or role requirement replaced with ALLOWED.\n\n\n\nExploitation requires the protected resource path to contain the configured login path as a later segment. Explicitly FORBIDDEN routes are not affected.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "eclipse foundation",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "12.1.0",
+              "lessThanOrEqual": "12.1.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "vendor:eclipse foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0054
     },
     {
       "cve_id": "CVE-2026-19624",
