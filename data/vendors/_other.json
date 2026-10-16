@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-16T15:29:18+00:00",
+  "generated_at": "2026-10-16T19:36:11+00:00",
   "vendor": "_other",
-  "count": 796,
+  "count": 797,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -33824,6 +33824,46 @@
         ],
         "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-102764",
+      "description": "The vulnerability exists within internal components of BeyondTrust\u2019s Remote Support product. The components did not adequately validate the origin of the messages it received. Under the right conditions, this could allow an attacker to perform file operations on the appliance.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "beyondtrust",
+          "product": "remote support",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "26.2.3",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00601,
+      "kev": {
+        "cveID": "CVE-2026-102764",
+        "vendorProject": "BeyondTrust",
+        "product": "Remote Support",
+        "vulnerabilityName": "BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
+        "dateAdded": "2026-10-16",
+        "shortDescription": "BeyondTrust Remote Support contains an authentication bypass by spoofing vulnerability that could allow a remote attacker to perform file operations on the appliance.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-19",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {
