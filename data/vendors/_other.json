@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T01:26:14+00:00",
+  "generated_at": "2026-10-17T06:52:34+00:00",
   "vendor": "_other",
   "count": 797,
   "items": [
@@ -6996,6 +6996,44 @@
         ],
         "cpe_count": 2,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-21589",
+      "description": "",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.12711,
+      "kev": {
+        "cveID": "CVE-2026-21589",
+        "vendorProject": "Atlassian",
+        "product": "Multiple Products",
+        "vulnerabilityName": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+        "dateAdded": "2026-10-15",
+        "shortDescription": "Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-18",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-552"
+        ],
+        "cpe_count": 20,
+        "reference_count": 10
       }
     },
     {
@@ -16829,201 +16867,6 @@
         ],
         "cpe_count": 3,
         "reference_count": 8
-      }
-    },
-    {
-      "cve_id": "CVE-2026-21589",
-      "description": "This is a vulnerability in Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center. Crowd Data Center, Crucible and Fisheye. This Arbitrary File Access vulnerability allows an unauthenticated attacker to access specific files within the web application root directory in affected versions. Exploitation requires prior knowledge of the target file's exact name and path; this vulnerability does not allow attackers to enumerate or list directory contents. In some configurations, there may be some sensitive files that make this highly severe. This vulnerability allows an unauthenticated remote attacker to access specific files within the web application root directory in affected versions. The vulnerability must be addressed for affected versions of: -- Bitbucket Data Center, introduced in version >= 4.6.0, fix versions: 9.4.26, 10.2.8, 10.5.1 -- Confluence Data Center, introduced in version >= 5.10.0, fix versions 9.2.26, 10.2.19 -- Crowd Data Center, introduced in version >= 2.11.0, fix versions 6.3.7, 7.0.3, 7.1.7, 7.2.4 -- Jira Software Data Center, introduced in version >= 7.1.0, fix versions 9.12.40, 10.3.26, 11.3.12 -- Jira Service Management Data Center, introduced in version >= 3.1.0, fix versions 5.12.40, 10.3.26, 11.3.12 -- Bamboo Data Center >= 7.0.1, fix versions 10.2.24, 12.1.12 -- Crucible, fix versions 4.9.15 -- Fisheye, fix version 4.9.15 -- Exploitation requires prior knowledge of the target file's exact name and path. The vulnerability does not include the capability to enumerate or list directory contents.",
-      "cvss_score": 9.3,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
-      "affected": [
-        {
-          "vendor": "atlassian",
-          "product": "bamboo data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 10.2.24 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 12.1.12 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "bitbucket data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 10.2.8 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 10.5.1 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 9.4.26 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "confluence data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 10.2.19 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 9.2.26 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "crowd data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 7.2.4 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 7.1.7 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 7.0.3 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 6.3.7 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "crucible data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 4.9.15 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "fisheye data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 4.9.15 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "jira service management data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 11.3.12 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 10.3.26 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 5.12.40 and later",
-              "status": "unaffected"
-            }
-          ]
-        },
-        {
-          "vendor": "atlassian",
-          "product": "jira software data center",
-          "versions": [
-            {
-              "version": "All other versions",
-              "status": "affected"
-            },
-            {
-              "version": "Patch version 11.3.12 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 10.3.26 and later",
-              "status": "unaffected"
-            },
-            {
-              "version": "Patch version 9.12.40 and later",
-              "status": "unaffected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.12711,
-      "kev": {
-        "cveID": "CVE-2026-21589",
-        "vendorProject": "Atlassian",
-        "product": "Multiple Products",
-        "vulnerabilityName": "Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
-        "dateAdded": "2026-10-15",
-        "shortDescription": "Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions.",
-        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-        "dueDate": "2026-10-18",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 7.5,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-552"
-        ],
-        "cpe_count": 20,
-        "reference_count": 10
       }
     },
     {
