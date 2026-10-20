@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-19T23:40:08+00:00",
+  "generated_at": "2026-10-20T04:32:33+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1221,
+  "count": 1236,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -52888,6 +52888,297 @@
       }
     },
     {
+      "cve_id": "CVE-2026-78162",
+      "description": "Deserialization of Untrusted Data vulnerability in Apache Camel.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe camel-hazelcast component applies a default Hazelcast JavaSerializationFilterConfig to the instances it creates from its own configuration, a protection introduced by CVE-2026-43865. That change did not reach two of the configuration paths Camel builds itself, so those paths continued to create Hazelcast instances whose Java deserialization is unrestricted. ReplicatedHazelcastAggregationRepository extends HazelcastAggregationRepository but overrides doStart() without calling super.doStart(), keeping its own copy of the bootstrap block, and therefore never received the filter: a route using it without supplying a hazelcastInstance starts a Hazelcast member that deserializes values read from the backing ReplicatedMap with no class restriction. HazelcastDefaultComponent#getOrCreateHzClientInstance() builds its own ClientConfig when hazelcastMode=client is selected and neither a referenced ClientConfig nor hazelcastConfigUri is supplied, and likewise applied no filter, so client-mode endpoints behaved differently from node-mode endpoints for an otherwise identical configuration. In both cases an attacker able to publish into the Hazelcast cluster that the affected instance is attached to can cause a serialized Java object of their choosing to be deserialized inside Hazelcast's own serialization layer, before Camel processes the exchange, resulting in remote code execution. Hazelcast clusters have neither authentication nor TLS enabled by default. Selecting client mode is a topology choice rather than a security option, so neither path required the deployment to opt in to unsafe behaviour.\n\n\n\nUsers are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, supply an explicit Hazelcast configuration carrying a JavaSerializationFilterConfig, or inject a pre-built HazelcastInstance, since a user-supplied configuration is never overwritten by Camel. Alternatively set the JVM-wide filter -Djdk.serialFilter=!java.net.;java.;javax.;org.apache.camel.;!* and enable Hazelcast cluster authentication and TLS to restrict who can reach the cluster.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-78164",
+      "description": "Improper Neutralization of Special Elements Used in a Template Engine and Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Camel HTTP, Netty HTTP, Undertow and Vert.x HTTP components.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe Camel HTTP producer families let an inbound message override the endpoint URI through the CamelHttpUri and CamelRestHttpUri headers, and then passed that message-supplied string through CamelContext.resolvePropertyPlaceholders() before using it. Property-placeholder resolution is a configuration-resolution facility, not a URI-parsing step: it reaches operating-system environment variables, JVM system properties, every PropertiesFunction registered on the classpath - including the secret functions - and, through camel-bean, the invocation of a no-argument method on any bean in the registry. Applying it to Exchange content therefore turned a URI string into a configuration- and bean-evaluation context. A route author opted into none of this: a plain static to(\"http://backend/api\") was sufficient. Seven call sites were affected: HttpHelper.createURL and HttpHelper.createMethod in camel-http-common, HttpMethodHelper.createMethod in camel-http, VertxHttpHelper.resolveHttpURI in camel-vertx-http, UndertowHelper.createURL and UndertowHelper.createMethod in camel-undertow, and NettyHttpHelper.createURL in camel-netty-http. The bridgeEndpoint option did not bound the exposure: it suppresses the CamelHttpUri override in the createURL family but not in the createMethod family, so a route using the documented bridging configuration still resolved placeholders taken from the header, and CamelRestHttpUri was consumed before any bridgeEndpoint check in all four components. Only camel-http offered an opt-out, skipControlHeaders, which defaults to false. Reaching the headers did not always require header injection, because several Camel HTTP consumers populate CamelHttpUri from the request line themselves as a documented reverse-proxy feature. An unresolvable placeholder additionally produced a RuntimeExchangeException whose message echoed the URI, which distinguishes a set from an unset configuration key even where no outbound request is made. The behaviour predates the 4.x line. This advisory continues the alignment CAMEL-24282 applied to the toD and enrich dynamic-URI EIPs in 4.22.0, extending the same build-time-resolution contract to the HTTP producer components.\n\n\n\nUsers should upgrade to version 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x releases stream should upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, strip the override headers at the trust boundary before the producer with removeHeader(\"CamelHttpUri\") and removeHeader(\"CamelRestHttpUri\"), or set skipControlHeaders=true on camel-http endpoints, which is the only component offering that option. Note that bridgeEndpoint=true is not a workaround: it suppresses the header override when the outbound URL is built but not when the header is re-parsed for the query string. Percent-encoding the placeholder delimiters is likewise not a mitigation for camel-netty-http, whose binding decodes the request path before the value reaches the header, so proxy or WAF rules written against the raw delimiters do not help there. As defence in depth, ensure consumers exposed to untrusted senders apply a strict inbound HeaderFilterStrategy over the Camel namespace, and resolve secrets through a vault rather than through environment variables or system properties that a placeholder can name.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.15.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.15.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.15.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.15.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "semver"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-78165",
+      "description": "Deserialization of Untrusted Data vulnerability in Apache Camel Spring Redis component.\n\n\n\nThis issue affects Apache Camel: from 2.11.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nRedisConfiguration.getSerializer lazily built a bare JdkSerializationRedisSerializer whenever no serializer option was configured, and that instance was used for every read the component performs. Spring's implementation delegates through DeserializingConverter to DefaultDeserializer, which reads the bytes with a ConfigurableObjectInputStream and installs no java.io.ObjectInputFilter on the stream, so an arbitrary serialized class graph was materialised and its readObject method executed. RedisConsumer.setBody applied that serializer to the raw bytes of every message published to the subscribed channels, before the Exchange was constructed and therefore before any route logic could inspect the message, so an actor able to issue PUBLISH on a subscribed channel reached the deserialization sink directly. The same default serializer backed the RedisTemplate built by RedisConfiguration.createDefaultTemplate, so the producer read commands GET, HGET, HGETALL and HVALS deserialized whatever was stored in the Redis keyspace, and SpringRedisIdempotentRepository shared that template. Configuring a custom redisTemplate did not close the consumer path, because RedisConsumer.setBody reads getSerializer directly rather than the serializer attached to the template, so a deployment that had wired a String serializer into its own template remained exposed on the consumer side unless it also set the serializer option. The component never constructed a java.io.ObjectInputStream itself, which is why earlier passes over the Camel codebase for unfiltered Java deserialization did not reach it. The behaviour dates back to the introduction of the component, first released in 2.11.0, and was unchanged until this fix.\n\n\n\nUsers are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, set the JVM-wide jdk.serialFilter system property, which the affected code path honours because it reads through a java.io.ObjectInputStream, for example -Djdk.serialFilter=!java.net.**;java.**;javax.**;org.apache.camel.**;!* ; or set the serializer endpoint option to a serializer that does not use Java serialization, such as StringRedisSerializer, noting that this must be set as the serializer option and not only on a custom redisTemplate. As defence in depth, require authentication on the Redis instance and restrict which clients may publish to the subscribed channels, and do not expose a Redis instance consumed by Camel to untrusted networks.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.11.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-78254",
       "description": "The ftp and scp tasks of Apache Ant can download files from a remote server. A malicious server can provide relative paths that allow it to write outside of the dedicated target directory for the download, making it possible to overwrite files of the attacker's choice using the permissions of the user running Ant in versions prior to Ant 1.10.18. \n\n\n\n\nIn order to exploit this vulnerability, the server would either have to be malicious\u00a0or be subject to a machine-in-the-middle attack. Additionally\u00a0in the case of scp or the ftp task using ftps the server must pass the server identity checks performed by the tasks.\n\n\n\n\nFor ftp tasks not using ftps a malicious server could act as a machine-in-the-middle to provide malicious files.\n\n\n\n\nStarting with Ant 1.10.18 both tasks will prevent writing outside of the destination directory by default. An option is available to disable this behavior in the unlikely case that the  old behavior is required by existing build files.\n\n\n\n\nMitigations:\n\n\n\n\nUsers of scp and ftp (when using ftps) in any version of Ant should not bypass server identity checks. Users of ftp not using ftps should switch to ftps where possible.\n\n\n\n\nAll users are recommended to upgrade to Apache Ant 1.10.18, which fixes this issue.",
       "cvss_score": 7.4,
@@ -53353,6 +53644,218 @@
       }
     },
     {
+      "cve_id": "CVE-2026-79983",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel FTP component.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the ftp, ftps and sftp schemes, all of which are affected. The reporter demonstrated the issue end to end against an ftp endpoint, driving a Camel route with a malicious server whose LIST response named a file outside the polled directory.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-79984",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel Mina SFTP component.\n\n\n\nThis issue affects Apache Camel: from 4.18.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the mina-sftp scheme, an alternative SFTP implementation whose consumer derives from the same RemoteFileConsumer base class and therefore inherited the same unconstrained resolution.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.18.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-79985",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel SMB component.\n\n\n\nThis issue affects Apache Camel: from 4.2.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the smb scheme. Its consumer walks the share listing on its own rather than through RemoteFileConsumer, skipping only the exact \".\" and \"..\" entries, so a name carrying traversal segments in any other form was concatenated unchecked. Reaching it requires a server that emits a listing name which is not a single path segment, which a conforming SMB2 implementation does not do; the exposure was corrected on the same basis as the other remote-file consumers rather than from a demonstrated proof of concept against this scheme.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.2.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-79986",
+      "description": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Camel Azure Files component.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe Camel remote-file consumers poll a directory on a remote server and build the absolute remote path of each file by concatenating the configured directory with the file name reported in the server's directory listing. That concatenation (FtpUtils.absoluteFilePath and GenericFileConsumer) applied no lexical normalization and no check that the result stayed inside the directory being polled, and the resulting path became the operand for every subsequent remote operation on the file: retrieval (FtpOperations.retrieveFile / SftpOperations, reached from GenericFileConsumer where the retrieve name is taken verbatim from GenericFile.getAbsoluteFilePath), deletion when delete=true (GenericFileDeleteProcessStrategy), and renaming when move, preMove, moveFailed or readLock=rename is configured (GenericFileProcessStrategySupport and GenericFileRenameExclusiveReadLockStrategy). Neither isValidFile nor isMatched performed any containment check. A listing entry that is not a single path segment therefore resolved to a path outside the configured polling directory, causing Camel to read, delete or rename files outside it using the endpoint's own credentials. A listing name is not route-controlled data. It is supplied by the remote server, and the FTP control channel carries no integrity protection at all, so an on-path attacker can rewrite a LIST response without holding any credentials; a compromised, malicious or multi-tenant server, or a server backed by a virtual filesystem, can emit such a name directly. Retrieval is reachable in a default consumer configuration, since the remote consumers download every listed file; deletion and renaming additionally require one of the disposition options above, all of which are common. Escape from the directory Camel was configured to poll is unconditional, while escape from the server's own account boundary additionally depends on whether that server confines the account. The jailStartingDirectory option, which is documented as restricting Camel to the starting directory and is enabled by default, governed producer writes and, since the localWorkDirectory containment work, consumer downloads to the local work directory - but it did not constrain this remote operand, so its name and description claimed a boundary that was not enforced here. The same entry point had already been recognised on the local side: the localWorkDirectory download path was constrained so that a remote file name containing parent-directory segments could not resolve outside the local work directory. The remote operand was the remaining half of that surface. This artifact provides the azure-files scheme. Its consumer derives from the same RemoteFileConsumer base class and composed the remote path through a plain concatenation helper, so it inherited the same unconstrained resolution. Reaching it requires a listing name that is not a single path segment, which the Azure Files REST service does not normally return; the exposure was corrected on the same basis as the other remote-file consumers rather than from a demonstrated proof of concept against this scheme.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.22.x releases stream should upgrade to 4.22.1. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. The 4.14.x stream reached end of life and does not receive this fix; users on it should move to a supported releases stream.",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-79993",
       "description": "The `deleteContainer` opcode (0x14/20) is processed without verifying the caller's ACL permissions, allowing any authenticated client to delete specific znodes in the data tree regardless of the ACL restrictions on the znode or its parent. This opcode is considered internal-only and the official client doesn't have API for it, but a\u00a0client that can open a plain TCP session on the ZooKeeper client port (2181 by default)\u00a0- with NO authentication and NO ACL permissions - can delete any\u00a0empty persistent znode (including regular persistent nodes, container\u00a0nodes, and TTL nodes) by issuing the raw protocol OpCode deleteContainer (20).\u00a0The deleteContainer request path completely skips both the session check and\u00a0the DELETE ACL check that are enforced by the regular delete (OpCode 2) path.\u00a0This is an authorization bypass / ACL enforcement bug.\n\nThis issue affects Apache ZooKeeper: from 3.9.0 through 3.9.5, from 3.8.0 through 3.8.6.\n\nUsers are recommended to upgrade to version 3.9.6 or 3.8.7, which fixes the issue.",
       "cvss_score": 7.5,
@@ -53443,6 +53946,165 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-80312",
+      "description": "Improper Authentication vulnerability in Apache Camel OAuth component.\n\n\n\nThis issue affects Apache Camel: from 4.11.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe camel-oauth processors that guard a route did not stop the exchange when authentication could not be completed. Where a failure to establish an authenticated session should have terminated routing and returned an error to the caller, the processors fell through and returned control to the route, so the request continued to the protected endpoint as though authentication had succeeded. The effect is a fail-open authentication guard: an unauthenticated caller reached whatever the route did next. The condition is reached on the ordinary request path of a route configured to require OAuth, and needs no special configuration or prior access on the caller's part.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The processors now stop the exchange and set the appropriate error status whenever an authenticated session cannot be established, so a failed authentication no longer reaches the protected part of the route. For deployments that cannot upgrade immediately, place an explicit authorization check after the OAuth processor rather than relying on it to halt the exchange, and verify that the route stops on failure.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.11.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-80343",
+      "description": "Improper Handling of Case Sensitivity vulnerability in Apache Camel Netty HTTP component.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe camel-netty-http security constraint compared the request path against the configured context path using a case-sensitive match, while the routing that dispatches the request to the endpoint did not apply the same rule. The two comparisons therefore disagreed for any path whose case differed from the configured value. An external caller could alter the case of a character in a path segment so that the security constraint no longer recognised the path as protected, while the request still dispatched to the same endpoint. The result is that the constraint is skipped and the protected route is reached without satisfying it. No credential, prior access or special configuration is required beyond being able to send a request to the consumer.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The constraint now matches the request path with the same case rules the dispatch uses, so the two can no longer disagree. For deployments that cannot upgrade immediately, place the authorization decision in front of the Camel consumer, for example in a reverse proxy that normalises the request path before forwarding.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-80344",
+      "description": "Server-Side Request Forgery (SSRF) vulnerability in Apache Camel AS2 component.\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\nIn the AS2 protocol the sender of a message may request that the Message Disposition Notification be returned asynchronously to an address the sender supplies. camel-as2 took that address from the inbound message and used it as the destination for the outgoing receipt without constraining it to anything the deployment had configured. A remote partner therefore chose the host the Camel instance would connect to when delivering the MDN. That gives server-side request forgery from the position of the AS2 receiver, including reaching hosts that are only routable from inside the deployment's network, and where the outbound connection carries credentials configured for MDN delivery those credentials are presented to the attacker-chosen destination.\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The asynchronous MDN destination is now constrained rather than taken verbatim from the inbound message. For deployments that cannot upgrade immediately, restrict outbound connectivity from the AS2 receiver to the partner endpoints it legitimately delivers receipts to, and do not attach credentials to MDN delivery that are valid for any host other than those partners.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-80351",
@@ -55027,6 +55689,44 @@
       }
     },
     {
+      "cve_id": "CVE-2026-83531",
+      "description": "Improper Control of Generation of Code ('Code Injection'), Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') vulnerability in Apache Camel.\n\n\n\nThis issue affects Apache Camel: from 4.4.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe dynamic-router-control endpoint, introduced in 4.4.0, lets routing participants manage Dynamic Router subscriptions by sending control messages. When it handled a subscribe or update request, DynamicRouterControlProducer took the subscription predicate and the name of the language used to compile it from the incoming message, either from the predicate and expressionLanguage fields of a DynamicRouterControlMessage body or from the CamelDynamicRouterPredicate and CamelDynamicRouterExpressionLanguage headers. DynamicRouterControlService then resolved that language from the CamelContext and compiled the expression into a Predicate, with no allow-list and no opt-in. The compiled predicate was added to the channel's rule base and evaluated against every exchange routed through the corresponding dynamic-router endpoint for as long as the subscription existed. A route that forwards messages from an external transport to the control endpoint, as shown in the component documentation for routing participants in other JVMs or applications, therefore let any actor able to send a message on that transport supply an expression of their choosing, which was evaluated with the privileges of the Camel process. Any expression language available on the classpath could be selected, including the simple language, which is always present and was the default on the header path, so removing optional expression languages from the classpath did not prevent the issue. Exploitation requires the ability to send a message on a transport whose route forwards it to a dynamic-router-control endpoint; no other authentication or user interaction is needed. Releases before 4.4.0 are not affected, because their control channel took predicate expressions only from the endpoint URI configured by the route author.\n\n\n\nUsers are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. After upgrading, a control message that carries a predicate expression or an expression language is rejected unless the new allowPredicateFromMessage option is enabled on the dynamic-router-control endpoint; enable it only when every sender of control messages is trusted. For deployments that cannot upgrade immediately, do not forward messages from untrusted or shared transports to a dynamic-router-control endpoint. Where control messages must cross such a transport, authenticate the sender and make sure the predicate and expression language of each subscription are set by the route rather than taken from the incoming message, for example by removing the CamelDynamicRouterPredicate and CamelDynamicRouterExpressionLanguage headers and clearing the predicate and expressionLanguage fields of a DynamicRouterControlMessage before it reaches the endpoint. Removing optional expression languages from the classpath is not a sufficient workaround. As defence in depth, restrict who can send to the transports that feed the control endpoint, and on 4.23.0 and 4.22.1 set the allowedSchemes option of the dynamic-router endpoint to limit which endpoints a subscription's destinationUri may name.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.4.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-83632",
       "description": "Allocation of resources without limits or throttling, Integer overflow or wraparound, Heap-based buffer overflow vulnerability in Apache Thrift.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue.",
       "cvss_score": 9.2,
@@ -55234,6 +55934,112 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-85250",
+      "description": "Improper Restriction of XML External Entity Reference vulnerability in Apache Camel XPath component.\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\nWith documentType set to InputSource, XPathBuilder handed the payload straight to javax.xml.xpath, which builds a DocumentBuilder of its own using the JDK defaults. The hardening applied to Camel's default document type was therefore bypassed: a DOCTYPE declaration that is refused on the default type was accepted here, and the external entity it declared was resolved and expanded into the evaluated document. An external sender whose XML reaches such an expression could read files readable by the Camel process and cause the process to issue requests to hosts it names. The two document types disagreeing on parser configuration is what made this reachable, since a deployment choosing InputSource for streaming reasons had no indication it was also choosing a weaker parser.\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. The InputSource document type now goes through the same hardened parser as the default type, so a DOCTYPE is refused. Note that it also shares that type's documented escape hatch: the same DocumentBuilderFactory system properties that relax the default type relax this one, so a deployment that has set them remains unprotected by design. For deployments that cannot upgrade immediately, do not use documentType=InputSource on expressions evaluated over untrusted XML; the default document type already refuses a DOCTYPE.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-85251",
+      "description": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Camel HTTP component.\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\nTwo paths handed credentials to a redirect target, which is a host chosen by the remote server rather than by the route, once followRedirects=true. OAuth2ClientConfigurer registers its interceptor with addRequestInterceptorFirst, and HttpClient runs protocol-level request interceptors inside ProtocolExec, which sits below RedirectExec in the exec chain; the interceptor therefore ran again for every redirect hop and re-attached Authorization: Bearer  to whatever host the Location header named. Separately, credentials were registered against an AuthScope matching any host, so basic and digest credentials were presented to a redirect target as well. A remote endpoint - or anyone who can influence its responses - could therefore collect the bearer token or the configured credentials simply by answering with a redirect to a host it controls.\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. Credentials are now sent only to the authority the endpoint was configured with, and are not re-attached when a redirect crosses to another host. For deployments that cannot upgrade immediately, set followRedirects=false on endpoints that carry credentials, and handle any redirect explicitly in the route so that the destination is chosen by the route rather than by the remote server.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.22.1",
+              "versionType": "maven"
+            },
+            {
+              "status": "unaffected",
+              "version": "4.23.0",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-85476",
@@ -56591,6 +57397,82 @@
         "cpe_count": 0,
         "reference_count": 5
       }
+    },
+    {
+      "cve_id": "CVE-2026-88900",
+      "description": "Deserialization of Untrusted Data vulnerability in Apache Camel Camel-Jgroups component.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nJGroupsEndpoint.createExchange(Message), which CamelJGroupsReceiver calls for every message the jgroups consumer receives before the exchange is routed, set the exchange body from org.jgroups.Message.getObject(). For an ObjectMessage, which is the message type the Camel jgroups producer sends, JGroups Java-deserializes the payload through an ObjectInputStream on its own receive thread as the message arrives, and getObject() returns the resulting object. No java.io.ObjectInputFilter was applied on that path unless the deployment had set a JVM-wide serialization filter: camel-jgroups installed none, and the JGroups versions shipped with the affected releases apply none of their own, so any serializable class on the application classpath could be instantiated and its deserialization callbacks run. Unless a channel or the channelProperties option is configured, the consumer creates its channel with new JChannel(), the stock JGroups protocol stack, which multicasts over UDP without the AUTH protocol and without encryption, so any host able to reach the cluster's multicast group or bind port can join the cluster and send messages to the consumer without credentials. Such a host could send a crafted serialized object that leads to remote code execution in the Camel process when a usable deserialization gadget chain is present on the classpath, and no non-default option was required on the consumer. Because JGroups materializes the object before Camel's receiver runs, a check performed by Camel can only inspect the deserialized result and cannot stop code that runs during deserialization, so closing the issue also requires a control that applies before the payload is read, as described in the mitigation. Exploitation requires network access to the cluster's multicast group or bind port, which with the default UDP multicast transport means a host on an adjacent network, and a usable gadget chain on the classpath, which is why the severity is assessed as high rather than critical.\n\n\n\nUsers are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier, and the 4.15.x to 4.17.x and 4.19.x to 4.21.x release lines, reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-88901",
+      "description": "Improper Restriction of XML External Entity Reference vulnerability in Apache Camel.\n\n\n\nThis issue affects Apache Camel: from 4.7.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nImproper Restriction of XML External Entity Reference in the Smooks component (camel-smooks) in Apache Camel allows an attacker who supplies the XML message body to read local files or issue requests to internal network locations via an external entity declaration in that body. This issue affects Apache Camel: from 4.7.0 before 4.18.5, from 4.19.0 before 4.22.1. The Smooks data format (.unmarshal().smooks(...)) and the Smooks component (smooks:) parse the incoming XML body with the reader Smooks resolves by default, which is the Woodstox SAX parser. That reader resolves external general and parameter entities and loads external DTDs, and camel-smooks applied none of the parser hardening that the other Camel XML components apply. A DOCTYPE with an external subset, or an external general entity, declared in the XML document is therefore resolved and expanded while the body is unmarshalled, and the resolved content is bound into the unmarshalled result and returned on InOut routes. An external sender whose XML reaches a camel-smooks data format or endpoint could therefore read files readable by the Camel process and cause the process to issue requests to hosts the document names. No non-default option is required, since resolving external entities was the default behaviour. Configurations that declare their own reader - EDI, CSV, JSON, or a custom reader - do not use the XML reader and are not affected. Users are recommended to upgrade to version 4.18.5, 4.22.1 or 4.23.0, which fixes the issue.\n\n\n\nUpgrade to Apache Camel 4.23.0, which fixes the issue. Users on the 4.18.x LTS releases stream should upgrade to 4.18.5. Users on the 4.22.x LTS releases stream should upgrade to 4.22.1. camel-smooks now parses the XML body with a javax.xml.parsers.DocumentBuilder that does not resolve external general or parameter entities and does not load external DTDs, and hands Smooks the resulting document, matching the secure XML processing configuration used by org.apache.camel.converter.jaxp.XmlConverter and the other Camel XML components. This hardening is applied only when the Smooks configuration parses XML with its default reader, so EDI, CSV, JSON and custom-reader configurations, and the marshalling direction, are unchanged. A new allowExternalEntities option, disabled by default, restores the previous behaviour for trusted legacy configurations that rely on external entity resolution. The camel-4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, do not apply camel-smooks to XML received from untrusted senders.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache camel",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.7.0",
+              "lessThan": "4.18.5",
+              "versionType": "maven"
+            },
+            {
+              "status": "affected",
+              "version": "4.19.0",
+              "lessThan": "4.22.1",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache camel",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-88920",
