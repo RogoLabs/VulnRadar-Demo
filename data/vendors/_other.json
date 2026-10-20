@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-20T19:14:11+00:00",
+  "generated_at": "2026-10-20T22:23:13+00:00",
   "vendor": "_other",
-  "count": 797,
+  "count": 803,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -45046,6 +45046,166 @@
       }
     },
     {
+      "cve_id": "CVE-2026-106931",
+      "description": "SiteGuard Server Edition contains an OS command injection vulnerability, which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "eg secure solutions inc.",
+          "product": "siteguard server edition for apache httpd",
+          "versions": [
+            {
+              "version": "Ver2.20",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "Ver8.00 Update 5"
+            }
+          ]
+        },
+        {
+          "vendor": "eg secure solutions inc.",
+          "product": "siteguard server edition for nginx",
+          "versions": [
+            {
+              "version": "Ver2.20",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "Ver8.00 Update 5"
+            }
+          ]
+        },
+        {
+          "vendor": "eg secure solutions inc.",
+          "product": "siteguard server edition for iis",
+          "versions": [
+            {
+              "version": "Ver2.20",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "Ver8.00 Update 5",
+              "changes": [
+                {
+                  "at": "Ver3.10",
+                  "status": "unaffected"
+                },
+                {
+                  "at": "Ver4.00 Update 5",
+                  "status": "affected"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "vendor": "eg secure solutions inc.",
+          "product": "siteguard server edition for apache httpd on freebsd",
+          "versions": [
+            {
+              "version": "Ver2.20",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "Ver7.00 Update 6"
+            }
+          ]
+        },
+        {
+          "vendor": "eg secure solutions inc.",
+          "product": "siteguard server edition for nginx on freebsd",
+          "versions": [
+            {
+              "version": "Ver2.20",
+              "status": "affected",
+              "versionType": "semver",
+              "lessThan": "Ver7.00 Update 6"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00662,
+      "kev": {
+        "cveID": "CVE-2026-106931",
+        "vendorProject": "EG Secure Solutions",
+        "product": "SiteGuard Server Edition",
+        "vulnerabilityName": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+        "dateAdded": "2026-10-20",
+        "shortDescription": "EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-78"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-110936",
+      "description": "A vulnerability has been identified in Siemens Software Center (All versions < V4.0.9.8). The affected application loads dynamic-link libraries (DLLs) from an uncontrolled search path. This could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
+      "cvss_score": 6.7,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "siemens",
+          "product": "siemens software center",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "V4.0.9.8",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00135,
+      "kev": {
+        "cveID": "CVE-2026-110936",
+        "vendorProject": "Siemens",
+        "product": "Software Center",
+        "vulnerabilityName": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+        "dateAdded": "2026-10-20",
+        "shortDescription": "Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-03",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.7,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-427"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-12249",
       "description": "An issue was discovered in Canonical ADSys upstream versions through v0.16.2. During Active Directory Certificate Services (AD CS) certificate auto-enrollment via the vendored Samba client script (internal/policies/certificate/python/vendor_samba/gp/gp_cert_auto_enroll_ext.py), ADSys utilizes a plaintext HTTP connection (http://) instead of a secure HTTPS connection (https://) to request the CA certificate from the Active Directory Certificate Services server (GetCACert). An unauthenticated network attacker positioned between the managed Ubuntu host and the configured AD CS CA hostname can conduct a Man-in-the-Middle (MITM) attack. By intercepting the plaintext HTTP request, the attacker can supply an arbitrary, attacker-controlled Root CA certificate. Because the system automatically accepts this certificate and registers it into the local system trust store via update-ca-certificates, this results in system-wide trust store poisoning. Consequently, TLS clients utilizing the operating system trust store on the affected machine will accept rogue certificates for arbitrary domains, enabling persistent decryption and interception of subsequent TLS connections. This issue is resolved in version v0.16.3.",
       "cvss_score": 8.3,
@@ -53220,6 +53380,226 @@
         ],
         "cpe_count": 1,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96652",
+      "description": "Plex Media Server before 1.43.3.10861 allows SSRF via '/player/timeline'. An attacker using any X-Plex-Token value can include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "plex",
+          "product": "media server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "1.43.3.10861",
+              "versionType": "custom"
+            },
+            {
+              "version": "1.43.3.10861",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00222,
+      "kev": {
+        "cveID": "CVE-2026-96652",
+        "vendorProject": "Plex",
+        "product": "Media Server",
+        "vulnerabilityName": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+        "dateAdded": "2026-10-20",
+        "shortDescription": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656. ",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-03",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 4.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96654",
+      "description": "Plex Media Server before 1.43.3.10861 does not correctly neutralize URL values included in 'searchOne,' allowing an attacker to call other plugins' functions and supply their own parameters.",
+      "cvss_score": 6.9,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "plex",
+          "product": "media server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "1.43.3.10861",
+              "versionType": "custom"
+            },
+            {
+              "version": "1.43.3.10861",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00227,
+      "kev": {
+        "cveID": "CVE-2026-96654",
+        "vendorProject": "Plex",
+        "product": "Media Server",
+        "vulnerabilityName": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+        "dateAdded": "2026-10-20",
+        "shortDescription": "Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 6.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-84"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96655",
+      "description": "Plex Media Server before 1.43.3.10861 allows an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter.",
+      "cvss_score": 4.3,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "plex",
+          "product": "media server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "1.43.3.10861",
+              "versionType": "custom"
+            },
+            {
+              "version": "1.43.3.10861",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00222,
+      "kev": {
+        "cveID": "CVE-2026-96655",
+        "vendorProject": "Plex",
+        "product": "Media Server",
+        "vulnerabilityName": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+        "dateAdded": "2026-10-20",
+        "shortDescription": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-03",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 4.3,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96656",
+      "description": "Plex Media Server before 1.43.3.10861 allows an admin user to write arbitrary files that may be executed on load. The preference TranscoderH264Options is appended verbatim to x264's option string on every transcode. At startup, all .so files are run without signature, execute bit, or symbol checks.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "plex",
+          "product": "media server",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "1.43.3.10861",
+              "versionType": "custom"
+            },
+            {
+              "version": "1.43.3.10861",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00396,
+      "kev": {
+        "cveID": "CVE-2026-96656",
+        "vendorProject": "Plex",
+        "product": "Media Server",
+        "vulnerabilityName": "Plex Media Server External Control of File Name or Path Vulnerability",
+        "dateAdded": "2026-10-20",
+        "shortDescription": "Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-73"
+        ],
+        "cpe_count": 1,
+        "reference_count": 4
       }
     },
     {
