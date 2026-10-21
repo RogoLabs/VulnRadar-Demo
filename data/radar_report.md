@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-20T22:23:16+00:00`
+Generated: `2026-10-21T01:31:40+00:00`
 
 ## Executive Summary
 
@@ -270,6 +270,12 @@ Top critical items:
 | Oct 20 | [CVE-2026-88901](https://www.cve.org/CVERecord?id=CVE-2026-88901) | 🆕 New |
 | Oct 20 | [CVE-2026-102503](https://www.cve.org/CVERecord?id=CVE-2026-102503) | 🆕 New |
 | Oct 20 | [CVE-2026-103091](https://www.cve.org/CVERecord?id=CVE-2026-103091) | 🆕 New |
+| Oct 20 | [CVE-2026-106931](https://www.cve.org/CVERecord?id=CVE-2026-106931) | 🔴 In CISA KEV |
+| Oct 20 | [CVE-2026-110936](https://www.cve.org/CVERecord?id=CVE-2026-110936) | 🔴 In CISA KEV |
+| Oct 20 | [CVE-2026-96652](https://www.cve.org/CVERecord?id=CVE-2026-96652) | 🔴 In CISA KEV |
+| Oct 20 | [CVE-2026-96654](https://www.cve.org/CVERecord?id=CVE-2026-96654) | 🔴 In CISA KEV |
+| Oct 20 | [CVE-2026-96655](https://www.cve.org/CVERecord?id=CVE-2026-96655) | 🔴 In CISA KEV |
+| Oct 20 | [CVE-2026-96656](https://www.cve.org/CVERecord?id=CVE-2026-96656) | 🔴 In CISA KEV |
 | Oct 17 | [CVE-2026-100227](https://www.cve.org/CVERecord?id=CVE-2026-100227) | 🆕 New |
 | Oct 17 | [CVE-2026-107937](https://www.cve.org/CVERecord?id=CVE-2026-107937) | 🆕 New |
 | Oct 17 | [CVE-2026-107938](https://www.cve.org/CVERecord?id=CVE-2026-107938) | 🆕 New |
@@ -297,10 +303,4 @@ Top critical items:
 | Oct 16 | [CVE-2026-108427](https://www.cve.org/CVERecord?id=CVE-2026-108427) | 🆕 New |
 | Oct 16 | [CVE-2026-108428](https://www.cve.org/CVERecord?id=CVE-2026-108428) | 🆕 New |
 | Oct 16 | [CVE-2026-108429](https://www.cve.org/CVERecord?id=CVE-2026-108429) | 🆕 New |
-| Oct 16 | [CVE-2026-108430](https://www.cve.org/CVERecord?id=CVE-2026-108430) | 🆕 New |
-| Oct 16 | [CVE-2026-108431](https://www.cve.org/CVERecord?id=CVE-2026-108431) | 🆕 New |
-| Oct 16 | [CVE-2026-108432](https://www.cve.org/CVERecord?id=CVE-2026-108432) | 🆕 New |
-| Oct 16 | [CVE-2026-108433](https://www.cve.org/CVERecord?id=CVE-2026-108433) | 🆕 New |
-| Oct 16 | [CVE-2026-108437](https://www.cve.org/CVERecord?id=CVE-2026-108437) | 🆕 New |
-| Oct 16 | [CVE-2026-108439](https://www.cve.org/CVERecord?id=CVE-2026-108439) | 🆕 New |
-| ... | | _and 1115 more_ |
+| ... | | _and 1121 more_ |
