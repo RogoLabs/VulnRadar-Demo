@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-23T01:36:02+00:00",
+  "generated_at": "2026-10-23T07:30:11+00:00",
   "vendor": "apache_software_foundation",
-  "count": 261,
+  "count": 262,
   "items": [
     {
       "cve_id": "CVE-2022-24112",
@@ -3733,6 +3733,62 @@
       ],
       "active_threat": false,
       "probability_score": 0.00237
+    },
+    {
+      "cve_id": "CVE-2026-113582",
+      "description": "UNSUPPORTED WHEN ASSIGNED Improper restriction of XML external entity references in Apache Abdera allows an attacker to access sensitive data or make server-side requests when an application parses attacker-controlled XML with Abdera.\n\n\n\nThis issue affects Apache Abdera: all versions.\n\n\n\nApache Abdera is retired and no longer supported, so we do not plan to release a version that fixes this issue. Users are recommended to migrate to a maintained alternative. Applications that cannot migrate should ensure that untrusted XML cannot reach the affected Abdera parser or JDBC adapter parsing paths. Actively maintained downstream products may still be impacted if they include an affected Abdera artifact.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache abdera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "*",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache abdera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "*",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache abdera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "cb5a3646fc8b2a620dba5bdde3a6b7a3753b1be2",
+              "lessThanOrEqual": "*",
+              "versionType": "git"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache abdera",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-22068",

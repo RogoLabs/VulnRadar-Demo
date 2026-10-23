@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-23T01:36:03+00:00`
+Generated: `2026-10-23T07:30:14+00:00`
 
 ## Executive Summary
 
@@ -38,8 +38,8 @@ Top critical items:
 
 ## Summary
 
-- Total items: **15567**
-- Watchlist hits: **15102**
+- Total items: **15574**
+- Watchlist hits: **15109**
 - CISA KEVs: **834**
 - Exploit Intel (PoC): **885**
 - Exploit Intel + Watchlist (CRITICAL): **420**
@@ -93,7 +93,7 @@ Top critical items:
 | [CVE-2024-21412](https://www.cve.org/CVERecord?id=CVE-2024-21412) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-05 | 0.994 | 8.1 | ✅ | Internet Shortcut Files Security Feature Bypass Vulnerability |
 | [CVE-2022-41082](https://www.cve.org/CVERecord?id=CVE-2022-41082) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-10-21 | 1.000 | 8.0 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
 | [CVE-2026-24858](https://www.cve.org/CVERecord?id=CVE-2026-24858) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-30 | 0.858 | 9.4 | ✅ | An Authentication Bypass Using an Alternate Path or Channel vulnerability [CWE-288] vulnerability in Fortinet FortiAnalyzer 7.6.0 through 7.6.5, FortiAnalyzer … |
-| [CVE-2024-21762](https://www.cve.org/CVERecord?id=CVE-2024-21762) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-16 | 0.834 | 9.6 | ✅ | A out-of-bounds write in Fortinet FortiOS versions 7.4.0 through 7.4.2, 7.2.0 through 7.2.6, 7.0.0 through 7.0.13, 6.4.0 through 6.4.14, 6.2.0 through 6.2.15, … |
+| [CVE-2024-21762](https://www.cve.org/CVERecord?id=CVE-2024-21762) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-16 | 0.834 | 9.6 | ✅ | A out-of-bounds write vulnerability in Fortinet FortiOS 7.4.0 through 7.4.2, FortiOS 7.2.0 through 7.2.6, FortiOS 7.0.0 through 7.0.13, FortiOS 6.4.0 through 6… |
 | [CVE-2024-43468](https://www.cve.org/CVERecord?id=CVE-2024-43468) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-05 | 0.810 | 9.8 | ✅ | Microsoft Configuration Manager Remote Code Execution Vulnerability |
 | [CVE-2023-27997](https://www.cve.org/CVERecord?id=CVE-2023-27997) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-04 | 0.857 | 9.2 | ✅ | A heap-based buffer overflow vulnerability [CWE-122] in FortiOS version 7.2.4 and below, version 7.0.11 and below, version 6.4.12 and below, version 6.0.16 and… |
 | [CVE-2022-30190](https://www.cve.org/CVERecord?id=CVE-2022-30190) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-07-05 | 0.992 | 7.8 | ✅ | A remote code execution vulnerability exists when MSDT is called using the URL protocol from a calling application such as Word. An attacker who successfully e… |
@@ -303,4 +303,4 @@ Top critical items:
 | Oct 21 | [CVE-2026-90797](https://www.cve.org/CVERecord?id=CVE-2026-90797) | 🆕 New |
 | Oct 21 | [CVE-2026-90800](https://www.cve.org/CVERecord?id=CVE-2026-90800) | 🆕 New |
 | Oct 21 | [CVE-2026-105772](https://www.cve.org/CVERecord?id=CVE-2026-105772) | 🆕 New |
-| ... | | _and 74 more_ |
+| ... | | _and 45 more_ |
