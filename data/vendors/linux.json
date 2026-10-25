@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-24T23:10:04+00:00",
+  "generated_at": "2026-10-25T01:08:21+00:00",
   "vendor": "linux",
-  "count": 7313,
+  "count": 7314,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -614914,7 +614914,7 @@
         "cwe_ids": [
           "CWE-170"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 8
       }
     },
@@ -748671,7 +748671,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 3
+        "reference_count": 4
       }
     },
     {
@@ -869350,6 +869350,95 @@
         ],
         "cpe_count": 5,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-98093",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nASoC: fsl_micfil: balance mclk enable/disable\n\nhw_params() enables mclk unconditionally and hw_free() disables it\nunconditionally, but the PCM core does not guarantee 1:1 pairing:\nhw_free() can run without hw_params(), and hw_params() can be called\nmultiple times from the SETUP state. This triggers an \"already\ndisabled\" WARN() in the first case and leaks an enable reference in\nthe second, leaving the clock ungateable.\n\nGuard both sides with the existing mclk_flag, as fsl_sai.c does with\nmclk_streams.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "b47024dc624bcffb89d238f4a5b490363cea2a1e",
+              "lessThan": "470db2026a435b79f7ecb4d65523ea16a99d55d8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b47024dc624bcffb89d238f4a5b490363cea2a1e",
+              "lessThan": "fa1bbe3534499dd89d3b0b941d6dd4ddb70c31b5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b47024dc624bcffb89d238f4a5b490363cea2a1e",
+              "lessThan": "d3dbccfe6afa7b9a6a7ed65cfaa76a47fa050a56",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.13",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.13",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.53",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.7",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00127,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-404"
+        ],
+        "cpe_count": 4,
+        "reference_count": 3
       }
     },
     {
