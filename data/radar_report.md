@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-26T11:43:32+00:00`
+Generated: `2026-10-26T17:40:57+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **22886**
 - Watchlist hits: **22419**
 - CISA KEVs: **836**
-- Exploit Intel (PoC): **923**
-- Exploit Intel + Watchlist (CRITICAL): **456**
+- Exploit Intel (PoC): **924**
+- Exploit Intel + Watchlist (CRITICAL): **457**
 
 ## Top Findings (max 200)
 
@@ -210,7 +210,7 @@ Top critical items:
 | [CVE-2024-4947](https://www.cve.org/CVERecord?id=CVE-2024-4947) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-06-10 | 0.152 | 9.6 | ✅ | Type Confusion in V8 in Google Chrome prior to 125.0.6422.60 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Chr… |
 | [CVE-2024-43573](https://www.cve.org/CVERecord?id=CVE-2024-43573) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.461 | 6.5 | ✅ | Windows MSHTML Platform Spoofing Vulnerability |
 | [CVE-2023-32435](https://www.cve.org/CVERecord?id=CVE-2023-32435) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.230 | 8.8 | ✅ | A memory corruption issue was addressed with improved state management. This issue is fixed in macOS Ventura 13.3, Safari 16.4, iOS 16.4 and iPadOS 16.4, iOS 1… |
-| [CVE-2024-21410](https://www.cve.org/CVERecord?id=CVE-2024-21410) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-07 | 0.126 | 9.8 | ✅ | Microsoft Exchange Server Elevation of Privilege Vulnerability |
+| [CVE-2024-21410](https://www.cve.org/CVERecord?id=CVE-2024-21410) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-07 | 0.127 | 9.8 | ✅ | Microsoft Exchange Server Elevation of Privilege Vulnerability |
 | [CVE-2022-0609](https://www.cve.org/CVERecord?id=CVE-2022-0609) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-01 | 0.224 | 8.8 | ✅ | Use after free in Animation in Google Chrome prior to 98.0.4758.102 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
 | [CVE-2022-20701](https://www.cve.org/CVERecord?id=CVE-2022-20701) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.097 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
 | [CVE-2022-22587](https://www.cve.org/CVERecord?id=CVE-2022-22587) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-02-11 | 0.116 | 9.8 | ✅ | A memory corruption issue was addressed with improved input validation. This issue is fixed in iOS 15.3 and iPadOS 15.3, macOS Big Sur 11.6.3, macOS Monterey 1… |
