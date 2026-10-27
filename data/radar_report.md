@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-26T22:40:51+00:00`
+Generated: `2026-10-27T02:19:29+00:00`
 
 ## Executive Summary
 
@@ -38,10 +38,10 @@ Top critical items:
 
 ## Summary
 
-- Total items: **22886**
-- Watchlist hits: **22419**
-- CISA KEVs: **836**
-- Exploit Intel (PoC): **924**
+- Total items: **22900**
+- Watchlist hits: **22431**
+- CISA KEVs: **838**
+- Exploit Intel (PoC): **926**
 - Exploit Intel + Watchlist (CRITICAL): **457**
 
 ## Top Findings (max 200)
@@ -195,7 +195,7 @@ Top critical items:
 | [CVE-2024-38178](https://www.cve.org/CVERecord?id=CVE-2024-38178) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.414 | 7.5 | ✅ | Scripting Engine Memory Corruption Vulnerability |
 | [CVE-2023-28205](https://www.cve.org/CVERecord?id=CVE-2023-28205) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-01 | 0.271 | 8.8 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in Safari 16.4.1, iOS 15.7.5 and iPadOS 15.7.5, iOS 16.4.1 and iPadOS… |
 | [CVE-2022-20708](https://www.cve.org/CVERecord?id=CVE-2022-20708) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.149 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
-| [CVE-2026-86950](https://www.cve.org/CVERecord?id=CVE-2026-86950) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-13 | 0.262 | 8.8 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.1 and iPadOS 26.7.1, macOS Sequoia 15.8.1, macOS Taho… |
+| [CVE-2026-86950](https://www.cve.org/CVERecord?id=CVE-2026-86950) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-13 | 0.262 | 8.8 | ✅ | An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 18.7.11 and iPadOS 18.7.11, iOS 26.7.1 and iPadOS 26.7.1, … |
 | [CVE-2026-32202](https://www.cve.org/CVERecord?id=CVE-2026-32202) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-05-12 | 0.709 | 4.3 | ✅ | Protection mechanism failure in Windows Shell allows an unauthorized attacker to perform spoofing over a network. |
 | [CVE-2026-58644](https://www.cve.org/CVERecord?id=CVE-2026-58644) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-07-19 | 0.159 | 9.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an unauthorized attacker to execute code over a network. |
 | [CVE-2025-43529](https://www.cve.org/CVERecord?id=CVE-2025-43529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-01-05 | 0.257 | 8.8 | ✅ | A use-after-free issue was addressed with improved memory management. This issue is fixed in Safari 26.2, iOS 18.7.3 and iPadOS 18.7.3, iOS 26.2 and iPadOS 26.… |

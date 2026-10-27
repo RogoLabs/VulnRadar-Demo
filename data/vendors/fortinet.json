@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-26T22:40:49+00:00",
+  "generated_at": "2026-10-27T02:19:26+00:00",
   "vendor": "fortinet",
-  "count": 241,
+  "count": 242,
   "items": [
     {
       "cve_id": "CVE-2022-22299",
@@ -16012,6 +16012,75 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-107656",
+      "description": "An authentication bypass using an alternate path or channel vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.6, FortiSandbox 4.4.0 through 4.4.9, FortiSandbox 4.2 all versions, FortiSandbox PaaS 5.0.0 through 5.0.6, FortiSandbox PaaS 4.4 all versions, FortiSandbox PaaS 4.2 all versions may allow attacker to execute unauthorized code or commands via crafted HTTP requests",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.0",
+              "lessThanOrEqual": "4.4.9",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.2.1",
+              "lessThanOrEqual": "4.2.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox paas",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.6",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.0",
+              "lessThanOrEqual": "4.4.9",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.2.1",
+              "lessThanOrEqual": "4.2.8",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:fortisandbox",
+        "product:fortisandbox paas",
+        "vendor:fortinet"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-21643",

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-26T22:40:49+00:00",
+  "generated_at": "2026-10-27T02:19:26+00:00",
   "vendor": "_other",
-  "count": 816,
+  "count": 824,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -25306,6 +25306,228 @@
       }
     },
     {
+      "cve_id": "CVE-2026-115188",
+      "description": "An unrestricted file upload vulnerability exists in the campaign import feature of Mautic 7. When processing an uploaded campaign archive, the application copies the bundled asset files into a publicly accessible media directory without restricting their file names or types. An authenticated user with permission to create campaign imports can exploit this through the user interface or the API (/api/campaigns/import) to place arbitrary files, including server-side scripts, in the web root. Administrator privileges are not required. On web servers that honor per-directory configuration, such as the default Apache setup of the official Mautic Docker image, this leads to remote code execution with the privileges of the web server user, including access to the Mautic configuration, application secrets, and contact data.",
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.2.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-115189",
+      "description": "A server-side template injection vulnerability exists in the Twig theme rendering sandbox of Mautic. The sandbox introduced to restrict user-uploaded theme templates (the fix for GHSA-9fx4-7cmj-47vg) does not fully enforce its restrictions, allowing a crafted theme template to escape the sandbox. An authenticated user with the core:themes:create permission can upload a malicious theme whose template is later rendered, resulting in execution of arbitrary code on the server with the privileges of the web server process. This allows the attacker to execute operating system commands, read server-side files including configuration files and database credentials, write files, and reach internal services. In default installations the core:themes:create permission is granted to the Administrator role, and in multi-operator setups it may be delegated to other roles. This is an incomplete fix for GHSA-9fx4-7cmj-47vg.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.3.0",
+              "lessThan": "5.2.12",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.0.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.2.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-115190",
+      "description": "An insecure deserialization (PHP object injection) vulnerability exists in Mautic's handling of segment filters and custom field properties. Several code paths that read these stored values from the database deserialize them without restricting which PHP classes may be instantiated, instead of using Mautic's safe deserialization helper. An attacker who is able to store a crafted serialized value in these segment filter or custom field properties can cause arbitrary PHP objects to be instantiated when Mautic later processes the data, for example during segment evaluation, contact export, or custom field API requests. Combined with gadget chains available in Mautic's dependencies, this could allow an attacker to execute arbitrary code on the server, read, modify, or delete data stored in the Mautic instance, including contact data, and affect its availability. Exploitation requires high privileges or an existing ability to write to the affected stored data.",
+      "cvss_score": 8.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.15.2",
+              "lessThan": "5.2.12",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.0.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.2.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-115191",
+      "description": "A SQL injection vulnerability exists in a contact lookup AJAX endpoint of the Mautic administration interface (/s/ajax). A request parameter that selects the contact field to search by is not properly validated before it is used in a database query. Any authenticated Mautic user can exploit this, regardless of the role or permissions assigned to the account. Using blind (boolean-based or time-based) techniques, the attacker can run arbitrary SQL queries against the Mautic database and read any data the Mautic database user can access, including Mautic user accounts with email addresses and password hashes, contact data, and campaign and email content.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.1.0",
+              "lessThan": "5.2.12",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.0.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.2.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-115192",
+      "description": "An SQL Injection vulnerability exists in the dashboard widget data API endpoint (/api/data/{type}). Chart filter parameters supplied by the client are not properly validated before they are used in the database queries that build dashboard chart data. An authenticated user with API access can exploit this to inject SQL into these reporting queries. Using blind SQL injection techniques, the attacker can read arbitrary data from the Mautic database, including contact and other marketing data and user account data with password hashes. The injected SQL can also be used to slow down database queries, which can have a limited impact on availability. Data modification is not possible through this vulnerability. Exploitation requires the Mautic API to be enabled.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.8.1",
+              "lessThan": "5.2.12",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "6.0.0",
+              "lessThan": "6.0.10",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.2.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-115193",
+      "description": "A stored Cross-Site Scripting (XSS) vulnerability exists in the contact detail view of Mautic 7. Values of HTML-type custom contact fields are rendered without output sanitization. A user or integration able to write a value to such a field (for example, through contact editing, the contact API, or a form submission mapped to the field) can store a script payload in it. When another user, including an administrator, opens the affected contact's detail page, the injected script executes within the context of their active browser session. This could allow an attacker to perform administrative actions on behalf of the victim, such as creating new administrator accounts, altering system configuration, or accessing contact and campaign data.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.0.0",
+              "lessThan": "7.2.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-13048",
       "description": "Data::MuForm::Localizer versions through 0.05 for Perl execute Perl from a message catalog header, reached at an arbitrary path because load_lexicon interpolates the language attribute into the catalog filename.\n\nload_lexicon builds the catalog path by appending `Messages/$lang.po` to the directory holding Localizer.pm, where $lang is the language attribute, with no check that it names a bare locale tag. A value holding `../` segments walks out of the message directory, so any readable path with a `.po` suffix is loaded. While parsing the catalog, extract_header_msgstr takes the `Plural-Forms:` header, prefixes `$` to the bare words nplurals, plural and n, and passes the rest verbatim into a string that is evaluated: the nplurals form evaluates the header expression immediately, and the plural_code form compiles it into a subroutine whose body runs when a plural message is localized. A header of `nplurals=2; plural=(system('...'),0);` therefore runs that command as the catalog loads. The evaluation inherits strict, so an expression that assigns to an undeclared variable fails to compile, while one built from calls alone does not.\n\nAn application that sets the language attribute from request data, an Accept-Language header or a locale parameter, and an attacker who can place a file with a `.po` suffix and chosen contents at a readable path, together give code execution as the application user. The message expansion path is not affected: expand_named substitutes only the placeholder names the caller supplies, and _mangle_value returns the value unchanged.",
       "cvss_score": 8.2,
@@ -37015,6 +37237,150 @@
       }
     },
     {
+      "cve_id": "CVE-2026-109618",
+      "description": "PHP uses longjmp() for out-of-memory (OOM) errors to exit the current context and abort handling of the request. Some contexts may not properly account for this scenario and leave request memory in an uninitialized state before performing an allocation. The subsequent request cleanup procedure may read or branch on this memory. Multiple OOM strategies can consistently trigger this condition and lead to remote code execution (RCE).",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "php group",
+          "product": "php",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "8.2.*",
+              "lessThan": "8.2.35",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.3.*",
+              "lessThan": "8.3.36",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.4.*",
+              "lessThan": "8.4.27",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.*",
+              "lessThan": "8.5.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.99981,
+      "kev": {
+        "cveID": "CVE-2026-109618",
+        "vendorProject": "PHP Group",
+        "product": "PHP",
+        "vulnerabilityName": "PHP Memory Corruption Vulnerability",
+        "dateAdded": "2026-10-26",
+        "shortDescription": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-29",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416",
+          "CWE-755",
+          "CWE-824",
+          "CWE-1325"
+        ],
+        "cpe_count": 306,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-109619",
+      "description": "PHP has various global state that temporarily points into request memory. In some scenarios, global state may not be correctly reset, or may be repopulated after being reset. The global state may then refer to request memory even after it has been freed. Subsequent requests may read or branch on this stale state before it is fully initialized. Multiple strategies can trigger this condition and produce remote code execution (RCE).",
+      "cvss_score": 9.2,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "php group",
+          "product": "php",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "8.2.*",
+              "lessThan": "8.2.35",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.3.*",
+              "lessThan": "8.3.36",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.4.*",
+              "lessThan": "8.4.27",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "8.5.*",
+              "lessThan": "8.5.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.99997,
+      "kev": {
+        "cveID": "CVE-2026-109619",
+        "vendorProject": "PHP Group",
+        "product": "PHP",
+        "vulnerabilityName": "PHP Stale Internal Request-State Vulnerability",
+        "dateAdded": "2026-10-26",
+        "shortDescription": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-29",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416",
+          "CWE-755",
+          "CWE-824",
+          "CWE-1325"
+        ],
+        "cpe_count": 306,
+        "reference_count": 14
+      }
+    },
+    {
       "cve_id": "CVE-2024-4978",
       "description": "Justice AV Solutions Viewer Setup 8.3.7.250-1 contains a malicious binary when executed and is signed with an unexpected authenticode signature. A remote, privileged threat actor may exploit this vulnerability to execute of unauthorized PowerShell commands.",
       "cvss_score": 8.4,
@@ -45324,29 +45690,481 @@
     },
     {
       "cve_id": "CVE-2026-105133",
-      "description": "A vulnerability was detected in Ahsay AhsayCBS up to 10.3.2. This affects the function checkSysPwd of the file com/ahsay/obs/api/ApiStructsAction.java of the component API. Performing a manipulation of the argument random results in improper authentication. It is possible to initiate the attack remotely. The exploit is now public and may be used. Upgrading to version 10.3.4 is able to mitigate this issue. It is recommended to upgrade the affected component.",
+      "description": "A vulnerability was detected in Ahsay AhsayCBS up to 9.15.2.69/10.3.4.44. This affects the function checkSysPwd of the file com/ahsay/obs/api/ApiStructsAction.java of the component API. Performing a manipulation of the argument random results in improper authentication. It is possible to initiate the attack remotely. The exploit is now public and may be used. Upgrading to version 9.15.2.70 and 10.3.4.45 is able to mitigate this issue. It is recommended to upgrade the affected component. The initial patch did not fix the security vulnerability properly. An update of the CVE entry to reflect this became necessary.",
       "cvss_score": 6.9,
       "cvss_severity": "MEDIUM",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:A",
       "affected": [
         {
           "vendor": "ahsay",
           "product": "ahsaycbs",
           "versions": [
             {
-              "version": "10.3.0",
+              "version": "9.15.2.0",
               "status": "affected"
             },
             {
-              "version": "10.3.1",
+              "version": "9.15.2.1",
               "status": "affected"
             },
             {
-              "version": "10.3.2",
+              "version": "9.15.2.2",
               "status": "affected"
             },
             {
-              "version": "10.3.4",
+              "version": "9.15.2.3",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.4",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.5",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.6",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.7",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.8",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.9",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.10",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.13",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.14",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.16",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.17",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.18",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.19",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.22",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.23",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.24",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.25",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.26",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.27",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.28",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.29",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.31",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.32",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.33",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.34",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.35",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.36",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.37",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.38",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.39",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.40",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.41",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.42",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.43",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.44",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.45",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.46",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.47",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.48",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.49",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.50",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.51",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.52",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.53",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.54",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.55",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.56",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.57",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.58",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.59",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.60",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.61",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.62",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.63",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.64",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.65",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.66",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.67",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.68",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.69",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.0",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.3",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.4",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.5",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.6",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.7",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.8",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.9",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.11",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.12",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.13",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.14",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.17",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.18",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.19",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.20",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.21",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.22",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.23",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.24",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.25",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.26",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.27",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.28",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.29",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.31",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.32",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.33",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.34",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.35",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.36",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.37",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.38",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.39",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.40",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.41",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.42",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.43",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.44",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.70",
+              "status": "unaffected"
+            },
+            {
+              "version": "10.3.4.45",
               "status": "unaffected"
             }
           ]
@@ -45385,29 +46203,481 @@
     },
     {
       "cve_id": "CVE-2026-105134",
-      "description": "A flaw has been found in Ahsay AhsayCBS up to 10.3.2. This vulnerability affects unknown code of the file /rps/api/json/UpdateReceivers.do of the component Replication Receiver. Executing a manipulation of the argument random can lead to os command injection. It is possible to launch the attack remotely. The exploit has been published and may be used. Upgrading to version 10.3.4 is able to resolve this issue. Upgrading the affected component is advised.",
+      "description": "A flaw has been found in Ahsay AhsayCBS up to 9.15.2.69/10.3.4.44. This vulnerability affects unknown code of the file /rps/api/json/UpdateReceivers.do of the component Replication Receiver. Executing a manipulation of the argument random can lead to os command injection. It is possible to launch the attack remotely. The exploit has been published and may be used. Upgrading to version 9.15.2.70 and 10.3.4.45 is able to resolve this issue. Upgrading the affected component is advised. The initial patch did not fix the security vulnerability properly. An update of the CVE entry to reflect this became necessary.",
       "cvss_score": 10.0,
       "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:P",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A",
       "affected": [
         {
           "vendor": "ahsay",
           "product": "ahsaycbs",
           "versions": [
             {
-              "version": "10.3.0",
+              "version": "9.15.2.0",
               "status": "affected"
             },
             {
-              "version": "10.3.1",
+              "version": "9.15.2.1",
               "status": "affected"
             },
             {
-              "version": "10.3.2",
+              "version": "9.15.2.2",
               "status": "affected"
             },
             {
-              "version": "10.3.4",
+              "version": "9.15.2.3",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.4",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.5",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.6",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.7",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.8",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.9",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.10",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.11",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.12",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.13",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.14",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.15",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.16",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.17",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.18",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.19",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.20",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.21",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.22",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.23",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.24",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.25",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.26",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.27",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.28",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.29",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.30",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.31",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.32",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.33",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.34",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.35",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.36",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.37",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.38",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.39",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.40",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.41",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.42",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.43",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.44",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.45",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.46",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.47",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.48",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.49",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.50",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.51",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.52",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.53",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.54",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.55",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.56",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.57",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.58",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.59",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.60",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.61",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.62",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.63",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.64",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.65",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.66",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.67",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.68",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.69",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.0",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.1",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.2",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.3",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.4",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.5",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.6",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.7",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.8",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.9",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.10",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.11",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.12",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.13",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.14",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.15",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.16",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.17",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.18",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.19",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.20",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.21",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.22",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.23",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.24",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.25",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.26",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.27",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.28",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.29",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.30",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.31",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.32",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.33",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.34",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.35",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.36",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.37",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.38",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.39",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.40",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.41",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.42",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.43",
+              "status": "affected"
+            },
+            {
+              "version": "10.3.4.44",
+              "status": "affected"
+            },
+            {
+              "version": "9.15.2.70",
+              "status": "unaffected"
+            },
+            {
+              "version": "10.3.4.45",
               "status": "unaffected"
             }
           ]

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-26T22:40:49+00:00",
+  "generated_at": "2026-10-27T02:19:26+00:00",
   "vendor": "google_cloud",
-  "count": 51,
+  "count": 53,
   "items": [
     {
       "cve_id": "CVE-2025-0982",
@@ -2888,6 +2888,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-85297",
+      "description": "Bucket Squatting in Google Cloud Run MCP versions prior to 1.11.0 on Google Cloud Platform allows an attacker to intercept and access proprietary source code, execute arbitrary code and exfiltrate data.\n\n\n\nUsers must upgrade to Cloud Run MCP version 1.11.0\u00a0or later.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "cloud run mcp",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "1.11.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud run mcp",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-85298",
       "description": "An Incorrect Authorization vulnerability in the AuthConfig validation and integration execution runtime in Google Cloud Application Integration versions prior to 2026-08-27 allows an authenticated user to escalate privileges and impersonate a service account in the project.\n\n\nThis vulnerability was patched on 27 August 2026, and no customer action is needed.",
       "cvss_score": 7.3,
@@ -2929,6 +2961,38 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-93328",
+      "description": "Path Traversal and Missing Authorization in cloud-storage source in Google Cloud MCP Toolbox for Databases (googleapis/mcp-toolbox) versions 1.2.0 through 1.4.0 allows an unauthenticated remote attacker to exfiltrate host files to external Google Cloud Storage buckets and overwrite arbitrary local files via crafted tool invocation parameters.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "mcp toolbox for databases (googleapis/mcp-toolbox)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.2.0",
+              "lessThan": "1.5.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:mcp toolbox for databases (googleapis/mcp-toolbox)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
     }
   ]
 }
