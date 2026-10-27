@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-10-27T20:08:05+00:00`
+Generated: `2026-10-27T23:47:21+00:00`
 
 ## Executive Summary
 
@@ -41,8 +41,8 @@ Top critical items:
 - Total items: **22901**
 - Watchlist hits: **22431**
 - CISA KEVs: **840**
-- Exploit Intel (PoC): **926**
-- Exploit Intel + Watchlist (CRITICAL): **457**
+- Exploit Intel (PoC): **928**
+- Exploit Intel + Watchlist (CRITICAL): **458**
 
 ## Top Findings (max 200)
 
@@ -149,7 +149,7 @@ Top critical items:
 | [CVE-2024-43451](https://www.cve.org/CVERecord?id=CVE-2024-43451) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.843 | 6.5 | ✅ | NTLM Hash Disclosure Spoofing Vulnerability |
 | [CVE-2026-21510](https://www.cve.org/CVERecord?id=CVE-2026-21510) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-03 | 0.612 | 8.8 | ✅ | Protection mechanism failure in Windows Shell allows an unauthorized attacker to bypass a security feature over a network. |
 | [CVE-2026-21509](https://www.cve.org/CVERecord?id=CVE-2026-21509) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-02-16 | 0.708 | 7.8 | ✅ | Reliance on untrusted inputs in a security decision in Microsoft Office allows an unauthorized attacker to bypass a security feature locally. |
-| [CVE-2026-111497](https://www.cve.org/CVERecord?id=CVE-2026-111497) | CRITICAL (CISA KEV + Watchlist) | CRITICAL |  | ✅ | 2026-11-10 | 0.555 | 9.2 | ✅ | A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthent… |
+| [CVE-2026-111497](https://www.cve.org/CVERecord?id=CVE-2026-111497) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-11-10 | 0.555 | 9.2 | ✅ | A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthent… |
 | [CVE-2023-21529](https://www.cve.org/CVERecord?id=CVE-2023-21529) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-27 | 0.593 | 8.8 | ✅ | Microsoft Exchange Server Remote Code Execution Vulnerability |
 | [CVE-2022-34713](https://www.cve.org/CVERecord?id=CVE-2022-34713) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-08-30 | 0.678 | 7.8 | ✅ | Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability |
 | [CVE-2024-43572](https://www.cve.org/CVERecord?id=CVE-2024-43572) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-29 | 0.667 | 7.8 | ✅ | Microsoft Management Console Remote Code Execution Vulnerability |
@@ -267,6 +267,7 @@ Top critical items:
 | Oct 27 | [CVE-2026-107656](https://www.cve.org/CVERecord?id=CVE-2026-107656) | 🆕 New |
 | Oct 27 | [CVE-2026-85297](https://www.cve.org/CVERecord?id=CVE-2026-85297) | 🆕 New |
 | Oct 27 | [CVE-2026-93328](https://www.cve.org/CVERecord?id=CVE-2026-93328) | 🆕 New |
+| Oct 27 | [CVE-2026-48356](https://www.cve.org/CVERecord?id=CVE-2026-48356) | 🔴 In CISA KEV |
 | Oct 25 | [CVE-2026-98093](https://www.cve.org/CVERecord?id=CVE-2026-98093) | 🆕 New |
 | Oct 25 | [CVE-2023-7356](https://www.cve.org/CVERecord?id=CVE-2023-7356) | 🆕 New |
 | Oct 25 | [CVE-2026-98374](https://www.cve.org/CVERecord?id=CVE-2026-98374) | 🆕 New |
@@ -302,5 +303,4 @@ Top critical items:
 | Oct 25 | [CVE-2026-98499](https://www.cve.org/CVERecord?id=CVE-2026-98499) | 🆕 New |
 | Oct 25 | [CVE-2026-98501](https://www.cve.org/CVERecord?id=CVE-2026-98501) | 🆕 New |
 | Oct 25 | [CVE-2026-98507](https://www.cve.org/CVERecord?id=CVE-2026-98507) | 🆕 New |
-| Oct 25 | [CVE-2026-98510](https://www.cve.org/CVERecord?id=CVE-2026-98510) | 🆕 New |
-| ... | | _and 488 more_ |
+| ... | | _and 483 more_ |
