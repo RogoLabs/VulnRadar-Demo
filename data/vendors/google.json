@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T14:23:41+00:00",
+  "generated_at": "2026-10-27T20:08:02+00:00",
   "vendor": "google",
   "count": 3626,
   "items": [
@@ -79476,14 +79476,25 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:brotli",
         "vendor:google"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.55483,
+      "kev": {
+        "cveID": "CVE-2026-111497",
+        "vendorProject": "Google",
+        "product": "Brotli",
+        "vulnerabilityName": "Google Brotli Unchecked Return Value Vulnerability",
+        "dateAdded": "2026-10-27",
+        "shortDescription": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-10",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": null,
         "cvss_v3_severity": null,
