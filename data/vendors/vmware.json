@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-28T18:20:34+00:00",
+  "generated_at": "2026-10-28T23:11:55+00:00",
   "vendor": "vmware",
-  "count": 70,
+  "count": 71,
   "items": [
     {
       "cve_id": "CVE-2022-22962",
@@ -3472,6 +3472,123 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-41709",
+      "description": "VMware ESX contains an insufficient logging vulnerability.\u00a0A malicious administrator could exploit this issue to perform certain operations without them being logged.",
+      "cvss_score": 2.7,
+      "cvss_severity": "LOW",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "cloud foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.x",
+              "lessThan": "5.2.4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "vsphere foundation",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "esx",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "ESXi-9.1.0.0-25370933",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "ESXi-9.0.2.0100-25595025",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "8.0",
+              "lessThan": "ESXi80U3j-25429389",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.1.x"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.x"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
+      "matched_terms": [
+        "product:cloud foundation",
+        "product:esx",
+        "product:telco cloud platform",
+        "product:vsphere foundation",
+        "vendor:vmware"
+      ],
+      "active_threat": true,
+      "probability_score": 0.00297,
+      "kev": {
+        "cveID": "CVE-2026-41709",
+        "vendorProject": "Broadcom",
+        "product": "VMware ESX",
+        "vulnerabilityName": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
+        "dateAdded": "2026-10-28",
+        "shortDescription": "Broadcom VMWare ESX contains an insufficient logging vulnerability that could allow a malicious actor with admin access to perform certain operations without being logged.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-11",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 2.7,
+        "cvss_v3_severity": "LOW",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-778"
         ],
         "cpe_count": 0,
         "reference_count": 1

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T18:20:34+00:00",
+  "generated_at": "2026-10-28T23:11:55+00:00",
   "vendor": "linux",
   "count": 7415,
   "items": [
@@ -570947,8 +570947,19 @@
         "product:linux",
         "vendor:linux"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.10192,
+      "kev": {
+        "cveID": "CVE-2026-46300",
+        "vendorProject": "Linux",
+        "product": "Kernel",
+        "vulnerabilityName": "Linux Kernel Missing Initialization of a Variable Vulnerability",
+        "dateAdded": "2026-10-28",
+        "shortDescription": "Linux Kernel contains a missing initialization of a variable vulnerability that could allow for unintended modification of page-cache-backed data via failure to preserve the shared-fragment marker during socket buffer coalescing, causing ESP input processing to decrypt shared fragments in place. This vulnerability can be chained with CVE-2026-109618 and CVE-2026-109619 to implant PHP webshells and run commands as root.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-10-31",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 7.8,
         "cvss_v3_severity": "HIGH",
