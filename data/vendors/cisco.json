@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T17:00:19+00:00",
+  "generated_at": "2026-10-29T21:55:43+00:00",
   "vendor": "cisco",
   "count": 589,
   "items": [
@@ -343280,15 +343280,26 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:cisco secure firewall adaptive security appliance (asa) software",
         "product:cisco secure firewall threat defense (ftd) software",
         "vendor:cisco"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.00574,
+      "kev": {
+        "cveID": "CVE-2026-76418",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+        "vulnerabilityName": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+        "dateAdded": "2026-10-29",
+        "shortDescription": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-01",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 8.6,
         "cvss_v3_severity": "HIGH",
