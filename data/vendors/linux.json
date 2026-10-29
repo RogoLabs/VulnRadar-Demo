@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-29T02:27:19+00:00",
+  "generated_at": "2026-10-29T10:12:14+00:00",
   "vendor": "linux",
-  "count": 7415,
+  "count": 7419,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -570971,7 +570971,7 @@
           "CWE-123"
         ],
         "cpe_count": 11,
-        "reference_count": 50
+        "reference_count": 51
       }
     },
     {
@@ -619004,7 +619004,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -619153,7 +619153,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 17,
         "reference_count": 8
       }
     },
@@ -619302,7 +619302,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -619451,7 +619451,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -619540,7 +619540,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 3
       }
     },
@@ -619839,7 +619839,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -620138,7 +620138,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 12,
         "reference_count": 8
       }
     },
@@ -620386,7 +620386,7 @@
         "cwe_ids": [
           "CWE-367"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 4
       }
     },
@@ -620487,7 +620487,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 4
       }
     },
@@ -620588,7 +620588,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 4
       }
     },
@@ -620699,9 +620699,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-191",
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 5
       }
     },
@@ -621301,9 +621302,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-362",
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 10,
         "reference_count": 6
       }
     },
@@ -621440,7 +621442,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 16,
         "reference_count": 7
       }
     },
@@ -621715,7 +621717,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 9,
         "reference_count": 5
       }
     },
@@ -752667,7 +752669,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 9
+        "reference_count": 10
       }
     },
     {
@@ -869690,8 +869692,10 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 8,
         "reference_count": 8
       }
     },
@@ -869843,6 +869847,220 @@
       }
     },
     {
+      "cve_id": "CVE-2026-98110",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btintel: bound firmware ID by TLV length\n\nThe firmware ID is treated as a NUL-terminated string even though the\nTLV length is its only boundary. If the value does not contain a NUL\nterminator, snprintf() can read beyond the received response.\n\nLimit the conversion to the advertised TLV value length.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "164c62f958f8c7f0bde1e9a5a8677971c6f28205",
+              "lessThan": "aef56a2bd5aa22808ce508605d7497d2b5e8eb5f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "164c62f958f8c7f0bde1e9a5a8677971c6f28205",
+              "lessThan": "058f56de5f48ba4b3be01526006ac83ce9e79f39",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "164c62f958f8c7f0bde1e9a5a8677971c6f28205",
+              "lessThan": "a07b3024a927892dd46e7dfbed438e8834e24098",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "164c62f958f8c7f0bde1e9a5a8677971c6f28205",
+              "lessThan": "ac8aa9e0ec93a12a60230066f199f49c3b9aac3d",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.11",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.11",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.111",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.53",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.7",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 4,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-98111",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btintel: validate version TLV value lengths\n\nbtintel_parse_version_tlv() verifies that a complete TLV is present in\nthe response, but it does not ensure that the value is long enough for\nthe specific TLV type. A short value can therefore cause an\nout-of-bounds read through get_unaligned_le16(), get_unaligned_le32(),\nor memcpy().\n\nReject values shorter than the minimum required by each known TLV type.\nAlso reject responses that do not contain the Command Complete Status\nfield.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "57375beef71af9f245e88357fa71d9600650cb7d",
+              "lessThan": "e9cf7f175c00d36b060828f4eac8d2e246ee079b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "57375beef71af9f245e88357fa71d9600650cb7d",
+              "lessThan": "83499ac3ca62e43ed40f7574b13ed398a6891511",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "57375beef71af9f245e88357fa71d9600650cb7d",
+              "lessThan": "76948d207d0978a613ce06a05cba07284a5578a7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "57375beef71af9f245e88357fa71d9600650cb7d",
+              "lessThan": "5ec43df2830b73e004147303bf7914ca884d6770",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "57375beef71af9f245e88357fa71d9600650cb7d",
+              "lessThan": "a086c0892969bf8a0151b0f12bd14a68827c88b2",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.10",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.10",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.158",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.111",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.53",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.7",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 5,
+        "reference_count": 5
+      }
+    },
+    {
       "cve_id": "CVE-2026-98112",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nksmbd: fix listener task lifetime on netdev events\n\nThe listener thread exits when its listening socket is shutdown. The\nnetdevice notifier shuts down the socket before calling kthread_stop(), so\nthe task_struct can be freed before kthread_stop() gets its reference.\n\nCreate the listener in a stopped state and hold an extra task_struct\nreference until kthread_stop_put() completes. Also stop and release\nlisteners before freeing their interface records during TCP teardown.",
       "cvss_score": 7.8,
@@ -869912,8 +870130,11 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-362",
+          "CWE-416"
+        ],
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -870218,9 +870439,177 @@
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 10,
         "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-98117",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncachefiles: Fix potential UAF/KASAN warning\n\nCurrently, trace_cachefiles_coherency() is being passed a pointer to a\n__be64 lain over the coherency data in struct cachefiles_xattr so that it\ncan display the first 8 bytes.  However, the data is of variable length and\ncould even be 0 bytes.  This could lead to a UAF or KASAN warning.\n\nFix this by making sure the buffer has room for at least 8 bytes and that\nthose 8 bytes are pre-cleared.\n\nFurther, those bytes are not 8-byte aligned, so fix the tracepoint to\nextract the data as four 2-byte words (they are 2-byte aligned) and\nreassemble the __be64.  The compiler will convert this into a single 8-byte\nload where the CPU supports it.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "229105e5cfd9832a9ef1368c96e0098ec3a5fbf0",
+              "lessThan": "68d459e6e609c31f96a203dd6eec60c634f155e1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "229105e5cfd9832a9ef1368c96e0098ec3a5fbf0",
+              "lessThan": "93488ea378b4427598cace558236c110515d743b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "229105e5cfd9832a9ef1368c96e0098ec3a5fbf0",
+              "lessThan": "a67632c8c2688d6e0091529bcefe54bc5ee80e9b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.14",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.14",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.53",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.7",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00167,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 4,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-98118",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfs: Fix readahead synchronisation issues by loading all folios upfront\n\nThere are some synchronisation issues that derive from the app thread\nadding more folios to the rolling buffer whilst the collector thread is\nlooking at them or trying to clear them, such as determining the setting of\nfront_folio_order when the next folio hasn't been added yet,\n\nThe reason for the rolling buffer approach is that loading the buffer\nupfront and then dropping all the refs just acquired is quite a slow\noperation, and loading progressively allows some of the cost to be deferred\nuntil after at least some of the I/O is started.\n\nInstead, a better way is to load all the folios into the rolling buffer\nupfront - and then drop the refs later, once the I/O is in progress.  (Even\nbetter would be for the refs not to be there at all.)\n\nFix this by changing the rolling buffer loader to load all the folios\nselected by the VM for readahead upfront into the folio queue.  The folio\nqueue is allocated a batch worth at a time as we don't know how many folios\nare involved (the readahead_control struct, alas, has a page count, not a\nfolio count).\n\nThe folio refs acquired from readahead are then dropped in bulk once the\nfirst subrequest is dispatched as it's quite a slow operation.  The\ncollector waits for NETFS_RREQ_NEED_PUT_RA_REFS to be cleared so that it\ndoesn't unlock folios before the xarray has been scanned for them.\n\nThis simplifies the buffer handling later and isn't noticeably slower as\nthe xarray doesn't need to be modified and the folios are all already\npre-locked.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "ee4cdf7ba857a894ad1650d6ab77669cbbfa329e",
+              "lessThan": "8c9b33945712074a85d3bdacbca036ba6b3d92c6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "ee4cdf7ba857a894ad1650d6ab77669cbbfa329e",
+              "lessThan": "fed0b33e6c584986ba70018ec9f9787a98216e64",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.12",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.12",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.7",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00156,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 3,
+        "reference_count": 2
       }
     },
     {
