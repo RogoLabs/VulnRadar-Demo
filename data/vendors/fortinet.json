@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T23:11:55+00:00",
+  "generated_at": "2026-10-29T02:27:19+00:00",
   "vendor": "fortinet",
   "count": 242,
   "items": [
@@ -15868,7 +15868,7 @@
     },
     {
       "cve_id": "CVE-2026-104286",
-      "description": "An improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 through 7.6.6, FortiMail 7.4.0 through 7.4.8, FortiMail 7.2.0 through 7.2.9 may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+      "description": "An improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 through 7.6.6, FortiMail 7.4.0 through 7.4.8, FortiMail 7.2.0 through 7.2.9, FortiMail 7.0 all versions may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
       "cvss_score": 9.8,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
@@ -15878,19 +15878,21 @@
           "product": "fortimail",
           "versions": [
             {
+              "versionType": "semver",
               "version": "8.0.0",
+              "lessThanOrEqual": "8.0.1",
               "status": "affected"
             },
             {
               "versionType": "semver",
               "version": "7.6.0",
-              "lessThanOrEqual": "7.6.5",
+              "lessThanOrEqual": "7.6.6",
               "status": "affected"
             },
             {
               "versionType": "semver",
               "version": "7.4.0",
-              "lessThanOrEqual": "7.4.6",
+              "lessThanOrEqual": "7.4.8",
               "status": "affected"
             },
             {
