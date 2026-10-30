@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-29T21:55:43+00:00",
+  "generated_at": "2026-10-30T02:15:12+00:00",
   "vendor": "_other",
-  "count": 826,
+  "count": 827,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -33847,7 +33847,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],
@@ -47492,6 +47492,62 @@
         "cpe_count": 4,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-119025",
+      "description": "open 7.2.0 before 11.0.0 contains an OS command injection vulnerability that allows attackers to execute PowerShell code by supplying crafted URLs on Windows and WSL. Attackers can embed $(...) subexpressions in URLs, such as OAuth authorization_endpoint values from malicious MCP servers, which execute when index.js passes them unescaped to powershell -EncodedCommand.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "sindresorhus",
+          "product": "open",
+          "versions": [
+            {
+              "version": "7.2.0",
+              "lessThan": "11.0.0",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "modelcontextprotocol",
+          "product": "inspector",
+          "versions": [
+            {
+              "version": "2.0.0",
+              "lessThan": "2.12.0",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "anomalyco",
+          "product": "opencode",
+          "versions": [
+            {
+              "version": "1.0.137",
+              "lessThan": "1.18.33",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:open",
+        "vendor:sindresorhus"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-12249",
