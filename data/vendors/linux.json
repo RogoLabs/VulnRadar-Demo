@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-31T22:30:41+00:00",
+  "generated_at": "2026-11-01T02:09:34+00:00",
   "vendor": "linux",
-  "count": 7434,
+  "count": 7465,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -898977,6 +898977,3736 @@
         "cwe_ids": null,
         "cpe_count": 0,
         "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99094",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nBluetooth: btintel_pcie: fix TX descriptor bounds check\n\nbtintel_pcie_prepare_tx() uses tfd_index to access the TFD and data\nbuffer arrays before the index is advanced modulo txq->count. An index\nequal to txq->count is one past the end of both arrays, so reject it in\nthe bounds check.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6e65a09f927566f257322358d429b267548473eb",
+              "lessThan": "08704ec6d4bf69725e7815b09a9b5c7af83e255b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6e65a09f927566f257322358d429b267548473eb",
+              "lessThan": "39ab048cce70d50af48015f5f294c4cf80d6ba89",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6e65a09f927566f257322358d429b267548473eb",
+              "lessThan": "2669567615215d52fb306053cbcc1f53dc386158",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6e65a09f927566f257322358d429b267548473eb",
+              "lessThan": "baa53af641c9e3644e717b8dfd1b95a55a0c111b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.10",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.10",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.113",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.57",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.11",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00164,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99099",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nx86/CPU/AMD: Fix AMD TLBI Erratum #1718\n\nThe processor may fail to invalidate a TLB entry while executing an\nINVLPGB/TLBSYNC instruction pair.\n\nDetect the erratum and apply a software workaround when a microcode fix\nis not present.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "82378c6c2f435dba66145609de16bf44a9de6303",
+              "lessThan": "e3e6779f77ab6f0a1aa80e24868d2d89f31053fe",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "82378c6c2f435dba66145609de16bf44a9de6303",
+              "lessThan": "098d80b04d0fe02889c332d061db968f070b83a6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "82378c6c2f435dba66145609de16bf44a9de6303",
+              "lessThan": "87db7795cbaaf636ae22ae031f4906db7bb77803",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.15",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.15",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.57",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.11",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00162,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99107",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nntfs: fix incorrect MFT record pointer passed to ntfs_attr_record_resize\n\nntfs_new_attr_flags() passes the wrong MFT record to ntfs_attr_record_resize().\nWhen the attribute is in an extent record, ctx->mrec points to the extent\nbut the function receives the base record pointer m, causing incorrect\nsize calculations in memmove.\n\nFix by passing ctx->mrec (the actual MFT record containing the attribute)\ninstead of m (the base MFT record) to ntfs_attr_record_resize().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "fc053f05ca282a5e760b41f6560ac835c4e28037",
+              "lessThan": "0a9122cada749447dfb6d67aa3fed4ee1982231c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "fc053f05ca282a5e760b41f6560ac835c4e28037",
+              "lessThan": "8d139e3635c86e2c97c78d55538ce0b00b6d9986",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "7.1",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "7.1",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00156,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99109",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmb: client: reject SetEA requests that do not fit the request buffer\n\nCIFSSMBSetEA() copies the caller's extended attribute value into the\nSMB request buffer without checking that it fits.  The requirement is\nstated in the source but was never implemented:\n\n\t/*BB add length check to see if it would fit in\n\t     negotiated SMB buffer size BB */\n\t/* if (ea_value_len > buffer_size - 512 (enough for header)) */\n\tif (ea_value_len)\n\t\tmemcpy(parm_data->list.name + name_len + 1,\n\t\t       ea_value, ea_value_len);\n\nThe only bound applied on the way in is in cifs_xattr_set():\n\n\t#define MAX_EA_VALUE_SIZE CIFSMaxBufSize\n\t...\n\tif (size > MAX_EA_VALUE_SIZE)\n\nCIFSMaxBufSize is the full payload capacity of the buffer, so a value\nof exactly that size leaves no room for the SMB header, the TRANS2\nparameter block, the fealist header and the EA name that are written\nahead of it in the same object.\n\nSendReceive() already enforces the correct limit on this very length:\n\n\tif (in_len > CIFSMaxBufSize + MAX_CIFS_HDR_SIZE)\n\nbut it is called after the copy has taken place.  An unprivileged\nsetxattr(2) on an SMB1 mount with a 250-byte name and a 16384-byte\nvalue writes 16384 bytes starting 345 bytes into a 16588-byte\ncifs_request object, ending 141 bytes past it:\n\n  BUG: KASAN: slab-out-of-bounds in CIFSSMBSetEA+0xabc/0xde0\n  Write of size 16384 at addr ffff888003aa0159 by task init/68\n   __asan_memcpy+0x3c/0x60\n   CIFSSMBSetEA+0xabc/0xde0\n   cifs_xattr_set+0xd3a/0xff0\n   __vfs_setxattr+0x13e/0x1a0\n  The buggy address is located 345 bytes inside of\n   allocated 16588-byte region\n\nApply SendReceive()'s limit to the assembled request before the copy\nrather than after it, and widen the byte counters so the sum cannot\nwrap before it is tested.\n\nbyte_count is also tested against U16_MAX, because it is stored in the\n16-bit pSMB->ByteCount.  That becomes reachable when CIFSMaxBufSize is\nraised at module load, where it may be set as high as 1024*127: with a\n5-byte EA name and a 65521-byte value, count is exactly U16_MAX while\nbyte_count is 65556, and cpu_to_le16() would truncate it to 20 and\ntransmit a frame whose ByteCount does not match its length.  Testing\nbyte_count covers count as well, since byte_count is the larger of the\ntwo and count's only 16-bit consumer is written after this point.\n\ncheck_add_overflow() is evaluated first so that total_len is assigned\nbefore it is reported.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "9efbd764ab80fa86d2258550877a74d78a25e855",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "1da177e4c3f41524e886b7f1b8a0c1fc7321cac2",
+              "lessThan": "4aa2c106aef4bf3dfd97c30842db0767b26e8428",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.12",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.12",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00163,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99110",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nsmb: client: fix heap overflow in cifs_do_set_acl()\n\ncifs_set_acl() validates ACL size using posix_acl_xattr_size():\n\n        4 + (count * 8)  // 4-byte header + 8 bytes per ACE\n\ncifs_do_set_acl() then calls posix_acl_to_cifs() to write the CIFS\nwire format into the same buffer:\n\n        6 + (count * 10)  // 6-byte header + 10 bytes per ACE\n\nAn ACL that passes the xattr-based check in cifs_set_acl() can\noverflow the heap when posix_acl_to_cifs() writes the larger CIFS\nformat.\n\nValidate the CIFS format size against the remaining buffer space and\nUSHRT_MAX before converting--data_count is __u16, so sizes above\nUSHRT_MAX truncate the on-wire packet length, causing the server to\napply a partial ACL.  Replace MaxDataCount = 1000 with\nmin(CIFSMaxBufSize, USHRT_MAX).",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "dc1af4c4b4721abfa07b351063825acc7e69cc66",
+              "lessThan": "68652afb9b9adf70125971abee9b95341e042249",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "dc1af4c4b4721abfa07b351063825acc7e69cc66",
+              "lessThan": "9312a00215602ba028495ef3fa00fb84af0478e0",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "dc1af4c4b4721abfa07b351063825acc7e69cc66",
+              "lessThan": "d96f3365ce61c5f39602955af43c8174548dee98",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "dc1af4c4b4721abfa07b351063825acc7e69cc66",
+              "lessThan": "596b4062e6c75bdd85a7f2b7f2087a872dc420ac",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "dc1af4c4b4721abfa07b351063825acc7e69cc66",
+              "lessThan": "1dac61e2c29d1a71784604b48cf3b1234a65ec29",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.2",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.2",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00186,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99112",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: cls_flower: validate mask pointer after nla_next()\n\nfl_set_enc_opt() iterates the key's nested tunnel-option attributes\nwith nla_for_each_attr() while advancing a single mask pointer via\nnla_next() at the bottom of each loop, so the mask cursor is driven\nby the number of key attributes rather than by the mask's own\nattributes.  The nla_ok() added by commit c96adff956191 (\"cls_flower:\ncall nla_ok() before nla_next()\") only validates the mask pointer\nthat was just consumed; the pointer produced by nla_next() is used by\nthe next iteration (fl_set_geneve_opt() and siblings) without any\nvalidation.\n\nThe mask's nested attributes are validated with NL_VALIDATE_LIBERAL,\nwhich merely warns on trailing bytes that do not form a complete\nattribute.  A mask carrying one valid attribute plus 1-3 residue\nbytes (or a non-aligned attribute length making msk_depth negative)\ntherefore reaches the next iteration with msk_depth != 0, so neither\nthe !msk_depth check in fl_set_enc_opt() nor the !depth check in the\nper-type helpers fires.  nla_type() then reads past the mask payload\nand nla_parse_nested_deprecated() iterates with an nla_len taken\nfrom those bytes, reading well beyond the mask attribute (KASAN:\nslab-out-of-bounds read in __nla_validate_parse from fl_change()).\n\nValidate the advanced mask pointer as well: when the mask is not\nlegitimately exhausted (msk_depth != 0) and the new pointer fails\nnla_ok(), reject the filter with -EINVAL.  An exactly exhausted mask\nstill skips the check, preserving exact-match behaviour for the\nremaining key attributes.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "238b5ebdb6a6e4bc90810b9f8ec0063b3dfda41a",
+              "lessThan": "a9283d006eef7e3b56f0f279a49bb63f6e5e61df",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "497944d534ffb1be300365523030c7c6517cbbb6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "a55d84907337580d91c0d54779d9d4b934633158",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "cff9bf34afde46c238189cc6f7690b7e35225df1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "35354bf67aa0f7bace66ffb614906124ed50d59d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "45e60747a9db2307929260d9aa9c1c6cbb70ee77",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "bb187146c7e5c666874784e4f3fc1bc5126e6e92",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c96adff95619178e2118925578343ad54857c80c",
+              "lessThan": "fee10655709c5c597e8e9f722f3035d9ea31ff3a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5.10.11",
+              "lessThan": "5.10.273",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.11",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.11",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00185,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99116",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: psp: do not inherit the Rx association on clone\n\nsk->psp_assoc sits past sk_dontcopy_end, so sock_copy() copies it into\nevery socket accepted from a listener without taking a reference, while\ninet_sock_destruct() puts for every inet socket. psp_twsk_init() does\nrefcount_inc() for the timewait socket, so a child closing through\nTIME_WAIT cancels its own put and leaves the association with one\nreference and N timewait sockets holding the same pointer. Closing the\nlistener frees it, and the timewait timers then put freed memory.\n\nRejecting the association on a listening socket is not sufficient: a socket\ncan acquire one while established and then be turned back into a listener,\nbecause tcp_disconnect() leaves sk->psp_assoc in place.\n\n  BUG: KASAN: slab-use-after-free in psp_twsk_assoc_free+0x6f/0xf0\n  Write of size 4 at addr ffff888110f9255c by task swapper/7/0\n   psp_twsk_assoc_free+0x6f/0xf0\n   inet_twsk_put+0xda/0x1b0\n   call_timer_fn+0x53/0x2e0\n   __run_timers+0x764/0xa80\n  Freed by task 99:\n   kfree+0x1a7/0x500\n   process_one_work+0x7ec/0x1100\n\nAn association carries a per-connection SPI and key, so a child must not\ninherit the parent's. Clear it on clone.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6b46ca260e2290e3453d1355ab5b6d283d73d780",
+              "lessThan": "a9f14ea73e82db743f0acf4219f499d594589288",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6b46ca260e2290e3453d1355ab5b6d283d73d780",
+              "lessThan": "c962695467d3ab9738a6508279827ec33a7d2bdf",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6b46ca260e2290e3453d1355ab5b6d283d73d780",
+              "lessThan": "1d2929d0850fff683b8aff051275945e65f082c8",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.18",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.18",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00174,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99117",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: bridge: mcast: don't truncate the port group walk on teardown\n\n__br_multicast_disable_port_ctx() and br_multicast_del_port() walk\nport->mglist with hlist_for_each_entry_safe(). However,\nbr_multicast_find_del_pg() can also delete other entries from the same\nlist through br_multicast_fwd_src_remove() or __fwd_del_star_excl().\n\nIf such an entry is the iterator's saved next node, hlist_del_init()\nclears its ->next and terminates the walk early. The reproducer triggers\nthis in both teardown walks, leaving port groups in the bridge mdb with\na dangling ->key.port after del_nbp() frees the port:\n\n  BUG: KASAN: slab-use-after-free in __mdb_fill_info+0x1191/0x1320\n   __mdb_fill_info+0x1191/0x1320\n   br_mdb_dump+0x594/0xe40\n   rtnl_mdb_dump+0x1cf/0x5d0\n\nUse hlist_del_init_rcu() to unlink the group while preserving ->next.\nbr_multicast_del_pg() and the teardown walks run under\nbr->multicast_lock. The GC worker must acquire the same lock before\ndetaching the group for destruction, so the node remains alive while\nthe walk uses the preserved pointer.\n\nPreserving ->next means a walk can now reach a group that an earlier\niteration already deleted as a side effect. That group is off mp->ports,\nso br_multicast_find_del_pg() would fall through its port scan and hit\nthe trailing WARN_ON(1). Skip such groups at the top of that helper: a\nport group is put on port->mglist when it is created and only unlinked\nwhen it is deleted, so hlist_unhashed() identifies exactly this case.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "be331b23c650de9518f8266b901d8abb9b36af77",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "ab836d56ff43f2e7927e88c83cd02c47a98a672e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "025c25ad73323c7dc5af4ee97fe0a2c0b3c177c8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "b0db9f4ff402becff710ab27dbd9f6fe4850b47e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "e69d4927dacd6ddaff09777a89efc0d3143d3b0d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "8243d587a081e790ad96e80d48eef44d9f7ef005",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "b45e8c24608c992d1e2cea047eb5bcbfa537f86b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b08123684bd55fa6d6ee4b52d4ae3040fadb5aa2",
+              "lessThan": "5a3f7a683aee56e1f15c9d53041f3236767eaae7",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.10",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.10",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99122",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvsock/vmci: validate packet source for connected sockets\n\nvmci_transport_recv_stream_cb() looks up sockets first by the full source\nand destination tuple, then by destination only in the bound table. The\nfallback can select a non-listening socket without checking whether the\npacket came from its stored peer.\n\nThis was reproduced with two VMCI contexts. A RST from the context not\nstored in a TCP_SYN_SENT socket reset that socket after it was selected by\nthe destination-only lookup.\n\nVMCI can process notification packets in bottom-half context when the\nsocket is not owned by user context, or defer packets to a workqueue. Use\nvsock_check_source() after taking the socket lock in the bottom-half path,\nand recheck after lock_sock() in the workqueue path. Listening sockets\ncontinue to accept packets from any source.\n\nReply with a RST addressed from the received packet before dropping a\nsource that fails validation. This preserves the existing reset behavior\nfor bound non-listening and concurrently closed sockets without directing\nthe reset to a connected socket's stored peer.",
+      "cvss_score": 7.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "c027f8b429dbb2157fc1b503df196e272d947c89",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "90c423b62ec9be08177f74b07a47937ca8d2035b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "ad9a7da3fa39c2d616ec0dd3cf6e30531d032fe7",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "3.9",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "3.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00167,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99123",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvsock/virtio: validate packet source for connected sockets\n\nvirtio_transport_recv_pkt() looks up sockets first by the full source and\ndestination tuple, then by destination only in the bound table. The\nfallback is needed for listening and connecting sockets, but sockets remain\nin the bound table after connect(), so it can also return a non-listening\nsocket.\n\nThe fallback does not validate the source address. In TCP_SYN_SENT, a\nRESPONSE from an unrelated source can transition the victim socket to\nTCP_ESTABLISHED while its stored remote address remains unchanged.\nSubsequent RW packets from that source are delivered through the same\ndestination-only fallback.\n\nThis was reproduced with capability-empty processes under different UIDs.\nThe attacker discovered the target tuple through unprivileged AF_VSOCK\nsock_diag and caused the victim socket to read 16 attacker-chosen bytes;\nthe intended peer-side socket read 0 of those 16 bytes.\n\nAdd vsock_check_source() to validate the transport, source port and source\nCID against the peer stored in a non-listening socket. The local transport\nis the CID exception because its packets are generated internally with\nVMADDR_CID_LOCAL as their source, including connections using CID aliases.\n\nUse the helper after lock_sock() in the virtio receive path.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "bda841af86cdfe7fcf4a2f4db22e27f1b852b1ff",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "c0a3a786a5e8b5007d6a3c34721ab052399ab2ad",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "f77fb90edca5385d0eecbfd6d2c8ef60afff24a9",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "ec231dd3b14e541ba1c4f842a7d152fb61037333",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "6cd829de69efd9ed3a53aa2421004a0396eb2bd7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "e9bf92de436ba55f33eaa55d7008e68551123cfd",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "06a8fc78367d070720af960dcecec917d3ae5f3b",
+              "lessThan": "dee44f41f206becb41c492899c1996cfd7f82a1b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.8",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.8",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00173,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99131",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfs: fix capability check in xfs\n\nAn user reported a bug where he managed to evade group's quota\nby changing a file's gid to a different group id the same user\nbelonged to, even though quotas were enforced on both gids and the\nfile's size was big enough to exceed the quota's hardlimit.\n\nCommit eba0549bc7d1 replaced a capable() call by a\nhas_capability_noaudit() to prevent unnecessary selinux audit messages.\nTurns out that both calls have slightly different semantics even though\ntheir documentation seems similar. Where in a nutshell:\n\ncapable() - Tests the task's effective credentials\nhas_ns_capability_noaudit() - Tests the task's real credentials\n\nThis most of the time has no practical difference but in some cases like\nchanging attrs (specifically group id in this case) through a NFS client\nthis will allow the quota code to use XFS_QMOPT_FORCE_RES, effectively\nbypassing quota accounting checks.\n\nUsing instead ns_capable_noaudit() should fix this issue and prevent\nselinux audit messages.\n\nThis also fix the remaining calls to has_capability_noaudit()",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "eba0549bc7d100691c13384b774346b8aa9cf9a9",
+              "lessThan": "29f994db0447104a7a52fb6495193c80007cb66a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "eba0549bc7d100691c13384b774346b8aa9cf9a9",
+              "lessThan": "e84bfb08016496ec5ce09a5ef9c813f23c060781",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "eba0549bc7d100691c13384b774346b8aa9cf9a9",
+              "lessThan": "87881f816ab721d8a727cba20c36b9c71b489c8e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "eba0549bc7d100691c13384b774346b8aa9cf9a9",
+              "lessThan": "19a1a22029ad3ae3604c763af6bd1195cb73648f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "eba0549bc7d100691c13384b774346b8aa9cf9a9",
+              "lessThan": "7809ac0161c7c5f52ed348fb1ec683b2b454a83e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "eba0549bc7d100691c13384b774346b8aa9cf9a9",
+              "lessThan": "e2f62a9744ebad3bcb6347a648e615026e9efeff",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.18",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.18",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0019,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99136",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm-crypt: fix a tiny race condition in crypt_dec_pending\n\ncrypt_dec_pending reads io->error before calling atomic_dec_and_test.\nAnother context, for example crypt_endio called from an interrupt, may\nset io->error and drop its reference between the read and the\ndecrement. crypt_dec_pending then drops the last reference and completes\nthe bio with the stale status - so a read that failed and was never\ndecrypted, or a write that failed, is reported as successful.\n\nThe read was placed before the decrement by commit b35f8caa0890 (\"dm\ncrypt: wait for endio to complete before destruction\"), because that\ncommit freed dm_crypt_io before calling bio_endio. This is no longer the\ncase, dm_crypt_io lives in the per-bio data now.\n\nRead io->error after atomic_dec_and_test instead. atomic_dec_and_test is\nfully ordered, so no additional barrier is needed.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "445a6883f46d3ab1ff545199a8cc1d5834936d3f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "6f82e86471c92fd874f2630c9a6af887f4ed1a77",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "6ac8546df1f8a2b1ca7f6d67c269057a99fbbf8c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "056bf8322e39a48026df352d6227ec03dd8cd032",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "d9d7069bb79139271b54dc477f07e242c445de6b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "ac5d887ab93592fc5e3605fe30c1d8d232d609b3",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "4f16bb982b27b9f5a15301f622c318001fe521f8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b35f8caa0890169000fec22902290d9a15274cbd",
+              "lessThan": "148845aa1921d95ef5dc851c76e6a284f6657df6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "9c8f3fcd3ffd3283cc0971c8919058356f20a963",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "2.6.28.9",
+              "lessThan": "2.6.29",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.29",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.29",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00177,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99142",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Check operator stack capacity before pushing\n\npredicate_parse() uses the first operator stack entry before processing\nany opening parentheses. A push then increments top before writing.\nThe existing check still permits that write when top already points to\nthe last allocated entry, which can access beyond the operator stack.\n\nReject the push when top reaches the last allocated entry.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "c43c41ec62ca54ae145aa4912c6692a26d625734",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "d6f0006f194db49c54117ae22146421da5a2ca59",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "a866a8a753922cdf7710b8eb3f686dc0efc06505",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "75e894f92417390f0ef44fd350f2d3634c784876",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "c47a7b11bcb3d45e29723afcf6336866476b1d08",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.6",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.6",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00176,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99143",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Keep the predicate limit separate from program capacity\n\npredicate_parse() adds two to nr_preds to reserve the terminal TRUE\nand FALSE entries. It also uses that increased value as the limit for\nparsed predicates. If the initial count is smaller than the number\nactually parsed, the program can fill the allocation and subsequent\naccesses can go past its end.\n\nKeep nr_preds as the predicate limit and use a separate value for the\nallocation size. This leaves space for both terminal entries and a\nzeroed entry when parsing stops at the limit.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "f4fcbae8b27350565026807e77c96541d9e7a349",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "37049f8c56d377e46a8ef1ff93178a39a68a9c9c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "2058a1fe791bb30fd6e4875a7ada3237076c8541",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "68ecc9510bb82dd78585c02bd5357f34ee16b153",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "39f7c41c908bc82947ce47cdd021520ff486c53f",
+              "lessThan": "803aa6fc2dbea25ab9d3ed19eca1c96d0ab17445",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.6",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.6",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99148",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: keep the eviction fence until the last handle is closed\n\namdgpu_gem_object_close() detaches the user queue eviction fence from\nthe BO before it checks bo_va->ref_count, so closing any handle of a BO\nremoves the fence, even when the file still has another handle to the\nBO and the bo_va with its GPU mappings stays. The BO can then be evicted\nwithout suspending the user queues of the file, which keep accessing it\nthrough mappings that are only marked for update.\n\nSeen on navi31 with a SDMA user queue: a BO opened twice in the same\nfile (GEM_FLINK + GEM_OPEN) loses its eviction fence when the second\nhandle is closed (traced attach/detach of the fence):\n\n  attach bo=ffff8c78a6c84c00\n  GEM_CLOSE handle=7\n  detach bo=ffff8c78a6c84c00\n\nwhile handle 6 and the mapping are still in use.\n\nOnly detach the fence when the last reference to the bo_va goes away,\nmatching amdgpu_gem_object_open(), which attaches it only when the\nbo_va is created. With this the fence stays until the file is closed.\n\n(cherry picked from commit 8387982f03d4026b7dc11b0b5e3118298eee4d6a)",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "31f7efcdca4d1caaa3a0babc33377e27e6f9b593",
+              "lessThan": "dce8f7f03a47b1744dccf506268f9229b67fab47",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31f7efcdca4d1caaa3a0babc33377e27e6f9b593",
+              "lessThan": "6467c4cc83b94850bfea614e9f98276edf9a7c3f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "31f7efcdca4d1caaa3a0babc33377e27e6f9b593",
+              "lessThan": "3c44cbcec5eb370713bbd2c315ed7c34d8ccec2b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.16",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.16",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00167,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99152",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: libiscsi: Validate the task named by a management response\n\n__iscsi_complete_pdu() fetches the task for five response types from one\nplace and checks only that the index resolved:\n\n      case ISCSI_OP_LOGOUT_RSP:\n      case ISCSI_OP_LOGIN_RSP:\n      case ISCSI_OP_TEXT_RSP:\n      case ISCSI_OP_SCSI_TMFUNC_RSP:\n      case ISCSI_OP_NOOP_IN:\n              task = iscsi_itt_to_task(conn, hdr->itt);\n              if (!task)\n                      return ISCSI_ERR_BAD_ITT;\n\niscsi_itt_to_task() bounds the index against cmds_max and looks at\nnothing else, so a target can name any slot in the pool, including one\nthat has never been used. task->conn is then NULL, and both\niscsi_nop_out_rsp() and iscsi_complete_task() dereference it. One\nunsolicited NOP-In is enough; a Text Response carrying the same ITT\ncrashes in iscsi_complete_task() instead.\n\nRequire the task to be in flight and not a SCSI command, the way\niscsi_itt_to_ctask() does for the command opcodes.\n\n[    6.298634] Oops: general protection fault, probably for non-canonical address 0xdffffc000000000c: 0000 [#1] SMP KASAN NOPTI\n[    6.298642] KASAN: null-ptr-deref in range [0x0000000000000060-0x0000000000000067]\n[    6.298652] CPU: 1 UID: 0 PID: 111 Comm: iscsistart Not tainted 7.2.0-rc5-ISCSI1-gf5098b6bae76 #1 PREEMPT(lazy)\n[    6.298654] Hardware name: QEMU Ubuntu 24.04 PC v2 (i440FX + PIIX, arch_caps fix, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014\n[    6.298656] RIP: 0010:iscsi_nop_out_rsp.constprop.0+0x46/0x160\n[    6.298691] Code: c1 ea 03 48 83 ec 08 80 3c 02 00 0f 85 f5 00 00 00 48 b8 00 00 00 00 00 fc ff df 48 8b 6b 58 48 8d 7d 60 48 89 fa 48 c1 ea 03 <80> 3c 02 00 0f 85 c0 00 00 00 48 8b 45 60 48 39 c3 74 50 48 b8 00\n[    6.298698] RSP: 0018:ffff88806c907be8 EFLAGS: 00010206\n[    6.298701] RAX: dffffc0000000000 RBX: ffff888006116800 RCX: 0000000000000020\n[    6.298702] RDX: 000000000000000c RSI: ffff88800525d578 RDI: 0000000000000060\n[    6.298703] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000\n[    6.298706] R10: 0000000000000020 R11: 0000000000000000 R12: 0000000000000000\n[    6.298706] R13: 000000000000002e R14: ffff8880056eb440 R15: ffff888006116800\n[    6.298707] FS:  00007fc02d1c2740(0000) GS:ffff8880b29bc000(0000) knlGS:0000000000000000\n[    6.298710] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[    6.298711] CR2: 000055fe3b56ddf8 CR3: 00000000053b9004 CR4: 0000000000770ef0\n[    6.298712] PKRU: 55555554\n[    6.298713] Call Trace:\n[    6.298714]  <IRQ>\n[    6.298714]  __iscsi_complete_pdu+0x13a8/0x22a0\n[    6.298758]  iscsi_complete_pdu+0x54/0xa0\n[    6.298759]  iscsi_tcp_hdr_recv_done+0x870/0x2c80\n[    6.298778]  iscsi_tcp_recv_skb+0x31e/0xec0\n[    6.298800]  iscsi_sw_tcp_recv+0x12f/0x390\n[    6.298804]  __tcp_read_sock+0x1ab/0x810\n[    6.298812]  iscsi_sw_tcp_data_ready+0x18b/0x510\n[    6.298814]  tcp_rcv_established+0x1f56/0x3a00\n[    6.298842]  tcp_v4_do_rcv+0x449/0x960\n[    6.298847]  tcp_v4_rcv+0x2245/0x3bc0",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "bf4035656852a386fecb5d6217710a1bde536e76",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "5b56229cc152095fbe4e4ff537cb206c4aa41610",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "7a7a473aec51195778a54fdd71f20fda3047b8ef",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "77134cf996bab55683f0ceafb9e300d97ac046f8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "e96ae694c5038aae84142b64e41b56324b7af9a7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "55a65ef61e2775aeb18fda63bd1959fa8b41f936",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "f721487523d45941aed4b0ac8d829b0461a7d860",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "7996a778ff8c717cb1a7a294475c59cc8f1e9fb8",
+              "lessThan": "11bffcd9cb346732eab2914ef44fe777a3f0b585",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.18",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.18",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00191,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99153",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: libiscsi: Validate the ITT reflected in a Reject PDU\n\nA Reject PDU carries a copy of the header it rejects, and\niscsi_handle_reject() takes the ITT out of that copy to find the task to\nclean up:\n\n      memcpy(&rejected_pdu, data, sizeof(struct iscsi_hdr));\n      ...\n      task = iscsi_itt_to_task(conn, rejected_pdu.itt);\n\nThat value is whatever the target put there. iscsi_itt_to_task() bounds\nthe index against cmds_max and checks nothing else, so any task in the\npool can be named, and iscsi_nop_out_rsp() then completes it.\n\nAn index that has never been used gives a NULL task->conn: the pool is\nzeroed at session setup and conn is assigned only when a task is\nallocated. If the task was used and returned, iscsi_complete_task() hits\nits WARN_ON_ONCE(task->state == ISCSI_TASK_FREE) and the refcount\nunderflows. An in-flight SCSI command is completed as successful - a 1\nMiB read returned 1048576 with none of its buffer written and no\nwarning.\n\nValidate the reflected ITT the way iscsi_itt_to_ctask() validates a\ncommand ITT, and require the task to be in flight and not a SCSI\ncommand.\n\n[    6.248477] Oops: general protection fault, probably for non-canonical address 0xdffffc000000000c: 0000 [#1] SMP KASAN NOPTI\n[    6.249357] KASAN: null-ptr-deref in range [0x0000000000000060-0x0000000000000067]\n[    6.249951] CPU: 1 UID: 0 PID: 0 Comm: swapper/1 Not tainted 7.2.0-rc5-ISCSI1-gf5098b6bae76 #1 PREEMPT(lazy)\n[    6.250718] Hardware name: QEMU Ubuntu 24.04 PC v2 (i440FX + PIIX, arch_caps fix, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014\n[    6.251616] RIP: 0010:iscsi_nop_out_rsp.constprop.0+0x46/0x160\n[    6.252043] Code: c1 ea 03 48 83 ec 08 80 3c 02 00 0f 85 f5 00 00 00 48 b8 00 00 00 00 00 fc ff df 48 8b 6b 58 48 8d 7d 60 48 89 fa 48 c1 ea 03 <80> 3c 02 00 0f 85 c0 00 00 00 48 8b 45 60 48 39 c3 74 50 48 b8 00\n[    6.252813] RSP: 0018:ffff88806c907b80 EFLAGS: 00010206\n[    6.253042] RAX: dffffc0000000000 RBX: ffff88800607e000 RCX: ffffffff8d571a25\n[    6.253345] RDX: 000000000000000c RSI: ffff88806c907c38 RDI: 0000000000000060\n[    6.253642] RBP: 0000000000000000 R08: 0000000000000000 R09: fffffbfff235a504\n[    6.253947] R10: 0000000000000003 R11: 7463656e6e6f6320 R12: 0000000000000000\n[    6.254251] R13: 0000000000000000 R14: ffff88806c907c38 R15: 0000000000000000\n[    6.254549] FS:  0000000000000000(0000) GS:ffff8880d95bc000(0000) knlGS:0000000000000000\n[    6.254887] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n[    6.255140] CR2: 00007fc393e8ffc0 CR3: 0000000005252006 CR4: 0000000000770ef0\n[    6.255439] PKRU: 55555554\n[    6.255564] Call Trace:\n[    6.255674]  <IRQ>\n[    6.255768]  __iscsi_complete_pdu+0x18bf/0x22a0\n[    6.256733]  iscsi_complete_pdu+0x54/0xa0\n[    6.256905]  iscsi_tcp_data_recv_done+0xf4/0x250\n[    6.257103]  iscsi_tcp_recv_skb+0x31e/0xec0\n[    6.257680]  iscsi_sw_tcp_recv+0x12f/0x390\n[    6.258061]  __tcp_read_sock+0x1ab/0x810\n[    6.258853]  iscsi_sw_tcp_data_ready+0x18b/0x510\n[    6.259808]  tcp_data_queue+0x1f13/0x4cd0\n[    6.260567]  tcp_rcv_established+0x8a5/0x3a00\n[    6.261931]  tcp_v4_do_rcv+0x449/0x960\n[    6.262269]  tcp_v4_rcv+0x2245/0x3bc0",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "3637a4ad1d07477f1c60609876da6b60154d224b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "21ef746340ce246344f34278e205b8960c1d8874",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "d20583a9dbe0d32a9af8384c857c95c0fc115103",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "ebb8c5ef2aabf66895253600e8390e8fc7094807",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "576125e7382a7826bd6c3c1ca4d9c582ed5be21d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "7215a69b6456fda79c0935c2959045dff3fcaac8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "d79343ae3223b3f7f74b55e79f8a1371fa3f4b1a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8afa1439fcff58da8f28c1d083046f229f6ab3de",
+              "lessThan": "c5958c770b2a0ee492414e26b07da9164a0d1f5d",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.32",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.32",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00191,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99154",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: libiscsi: Reject a negative task index from parse_pdu_itt\n\nA transport that implements parse_pdu_itt hands libiscsi an index taken\nfrom the PDU, and both lookups bound it from above only:\n\n      if (i >= session->cmds_max)\n\ni and cmds_max are both int, so a negative index passes and\nsession->cmds[i] is read from before the array.\n\nbe2iscsi produces one. beiscsi_parse_pdu() assigns the raw tag,\n\n      *index = (int)itt;\n\nand beiscsi_complete_pdu() forwards an unsolicited NOP-In from the\nhardware async ring without replacing its ITT, so the value is the\ntarget's. It also reports the session's own age rather than the one in\nthe tag, which leaves the age comparison in iscsi_verify_itt() with\nnothing to reject.\n\nBound the index from below in both lookups.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "24bd9ba431b2daa263f3551bc2f09f6b4487f5ae",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "f8fabe1fe044f86abc42194b8f86dfd70212115f",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "e896a97f336c5edfc13066b57ed431cb3f64e68c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "6200fb2de579f268742a77b0f3d823cb0a8b1947",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "0eb06ebbbecb122f0df9a1f7f623f5255be741ed",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "6cadfa6f1f5896632d4223d3b7addb2a29fea74e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "35b60549a956237488c89a2d85352e026e7d55b7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "bfead3b2cb4607c71831423c3ee97d22cd0c9dcb",
+              "lessThan": "8ee2a09a1dbb257c9e828ad2497f8e4832dfb142",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.33",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.33",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00183,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99156",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: st: Fix use-after-free race between st_remove() and st_open()\n\nst_remove() drops the probe reference on the scsi_tape with kref_put()\nand only afterwards removes its index from st_index_idr. If that was the\nlast reference, scsi_tape_release() frees the structure while it is\nstill published in the idr.\n\nscsi_tape_get(), called from st_open(), looks up the tape in\nst_index_idr and takes a reference under st_ref_mutex and\nst_index_lock. remove_cdevs() does not wait for opens that are already\npast chrdev_open(), so an open that is blocked on st_ref_mutex while\nst_remove() holds it can take the mutex as soon as st_remove() drops it,\nfind the freed tpnt in the idr and call kref_get() on it:\n\n  BUG: KASAN: slab-use-after-free in st_open\n  Write of size 4 ...\n   st_open (drivers/scsi/st.c:254 drivers/scsi/st.c:1291)\n   chrdev_open\n  ...\n  Freed by task ...:\n   kfree\n   st_remove (drivers/scsi/st.c:4512)\n\nRemove the index from the idr before dropping the reference, all under\nst_ref_mutex. A concurrent scsi_tape_get() now either runs first and\nholds a valid reference that keeps the tape alive, or runs afterwards\nand finds nothing, so st_open() fails with -ENXIO.\n\nThis restores the ordering st_remove() had before the conversion to\nst_index_idr, where the tape was unpublished from scsi_tapes[] before\nthe final kref_put().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "7d7f9d2ee4b0841f3eba9fa3627044ad329428de",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "d9517fc39ec3ee13eadefdc17f45300f7d23ed8c",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "e7a5da4a4820210aa7d7cd8e6eb25aabe9e5b5a7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "00ff1128123d4bdfacd28d68fb4b6e6f657a3648",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "5ef230f734e0d23db007c8405f38b7e226740084",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "a1647b653549ff29f0422a63eabf329b842f3822",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "18a0e3733ce38718688e813e5e2d1106bd4830e5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6c648d95a6af4a79241a916871df17c84c68ea20",
+              "lessThan": "71caf7f84bd62a4bf91cc95abd2de690afb8d15f",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "3.7",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "3.7",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00183,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99163",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing/histograms: Reject non-stacktrace fields for synthetic stacktrace fields\n\nIn check_synth_field(), when a synthetic event field is a stacktrace\n(field->is_stack) and the histogram field is not a \"long[\" stacktrace\narray, validation falls through to the generic size and signedness\ncomparison.\n\nBecause parse_synth_field() sets a stacktrace field's type to\n\"__data_loc unsigned long[]\", its size is sizeof(u64) and\nsynth_field_signed() marks it as signed.  Consequently, any 8-byte\nsigned scalar histogram field passes the fallback check, and its scalar\nvalue is subsequently dereferenced as a kernel stacktrace pointer in\nget_field_size() and trace_stack().\n\nFurthermore, checking strstr(hist_field->type, \"long[\") is insufficient\nbecause tracepoint fields defined with __bitmask() or __rel_bitmask()\nalso have type \"__data_loc unsigned long[]\" or \"__rel_loc unsigned\nlong[]\", whilst create_hist_field() treats them as 4-byte scalar values\nwithout HIST_FIELD_FL_STACKTRACE.\n\nPropagate HIST_FIELD_FL_STACKTRACE to variable references and field\nvariables (whilst excluding variable aliases from per-element\nstacktrace capture), and reject any mismatch between\nHIST_FIELD_FL_STACKTRACE and field->is_stack in check_synth_field().",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "b9453380c1c542fd095a4dbe9251eeba4022bbce",
+              "lessThan": "eba0a6365a0f38f7598a02fc7f9ee341c7efe7f5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5f52389bdd9eafb63b3a2f804e02aeb17b6a5f55",
+              "lessThan": "326c45c9e201e3ff4c9e9e0e14c2c91364d6c8be",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "f3baa42afeea0d5f04ad31525e861199d02210cc",
+              "lessThan": "6c4e4946febb585d2fc93a02a0cd12cec715bb32",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "00cf3d672a9dd409418647e9f98784c339c3ff63",
+              "lessThan": "7e0d05a6234a984ac23b8a563fb7f66f2572b668",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "00cf3d672a9dd409418647e9f98784c339c3ff63",
+              "lessThan": "648687f2b448d8527cd7b112fe5d4bd0fec85a87",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "00cf3d672a9dd409418647e9f98784c339c3ff63",
+              "lessThan": "1f36e4ddd05d540f363dbaa4c23042549f15b3ef",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "00cf3d672a9dd409418647e9f98784c339c3ff63",
+              "lessThan": "deb336ae7c7b341591a6862cf6fcfeca97c77dfd",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "00cf3d672a9dd409418647e9f98784c339c3ff63",
+              "lessThan": "a244c241593b5b38a08f0df2cb43c26574efbdcb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5.10.237",
+              "lessThan": "5.10.273",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.124",
+              "lessThan": "5.15.224",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.43",
+              "lessThan": "6.1.191",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.3",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.3",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00183,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99164",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nspi: imx: fix slab corruption from undersized DMA bounce buffers\n\nSince commit faa8e404ad8e (\"spi: imx: support dynamic burst length for\nECSPI DMA mode\"), the driver allocates its private DMA TX/RX buffers\nwith kzalloc(dma_len), where dma_len is only rounded up to 4 bytes, but\nmaps, syncs and unmaps them with DMA_CACHE_ALIGNED_LEN(dma_len), i.e.\nrounded up to the cache line size. As a result, the DMA API operates on\nmemory beyond the end of the allocation.\n\nThis was observed on a custom i.MX8MP platform with an mcp251xfd CAN\ncontroller under heavy RPMSG load, as a series of refcount_t warnings\ntriggered from rpmsg_recv_done() in virtio_rpmsg_bus:\n\n  refcount_t: addition on 0; use-after-free.\n  refcount_t: underflow; use-after-free.\n  refcount_t: saturated; leaking memory.\n\nLeading finally to an \"Unable to handle kernel paging request\" oops.\nReproducing this problem took between 30 minutes and roughly 30 hours\nunder the same workload.\n\nHardware watchpoints on the refcount of a struct rpmsg_endpoint showed\nit was overwritten from 2 to 1 by __pi_memcpy_generic() in the\nirq/155-spi2.0 thread. Additionally it was found that a \"normal\"\nrpmsg_recv_done() took 11\u00b5s +/-2\u00b5s from its kref_get to kref_put. In\nthe error case the same sequence took about 215\u00b5s +/-10\u00b5s. Based on\nthis, an LLM was used to identify the size mismatch fixed here.\n\nAllocate the buffers with DMA_CACHE_ALIGNED_LEN(dma_len) so they cover\nthe full mapped length, and use the same length for\ndma_sync_single_for_cpu() to stay consistent with map and unmap.\n\nWith this patch applied, the same workload ran for more than 200 hours\nwithout the problem reproducing.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "faa8e404ad8e686cb98c51dc507fdcacfb8020ce",
+              "lessThan": "2777f6637da02da84c9c1ff92f413ce0f0995084",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "faa8e404ad8e686cb98c51dc507fdcacfb8020ce",
+              "lessThan": "59eb22641f0c526dd064390b11cff99ae87c2858",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "7.0",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "7.0",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00163,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99167",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: fix use-after-free in __tcf_action_put()\n\n__tcf_action_put() decrements the reference count before decrementing the\nbinding count. Another thread can free the action between these operations,\ncausing the binding-count update to access freed memory. KASAN reports it\nas:\n\n  BUG: KASAN: slab-use-after-free in __tcf_action_put+0x327/0x340\n  Write of size 4 at addr ff11000000d46420 by task tc-put-pause/64\n\nHold the action IDR mutex across both counter updates and IDR removal,\nkeeping cleanup outside the lock.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "4d83a3fc03bc595dd39b79ad61288738fbb1f2ba",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "fd01abed2568209f7daaf60e5ee68ae4a4744f48",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "fcc7d734ceccfab8ec3398c5b34f8e775d459507",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "fde33eb9955d819af282d5f5e84684eaec248291",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "969ad6f2b266f383b44194d50d15631969b26222",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "2465d27ef90de9105c2bffb6c35f8ce08918e642",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "2e012e431aa271ef3c84206f48854f539c03bff0",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "16af6067392c40e454e49eec834843ab03643d96",
+              "lessThan": "7b16eb911091aae237a8673da94e4dfb9cd21d54",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "4.19",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "4.19",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00183,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99170",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnamespace: a mount that copy_tree() leaves out can't take over a lock\n\nSince commit c62a4766937e (\"move_mount: transfer MNT_LOCKED\") a mount\ncan be moved beneath a locked mount. The lock moves from the old cover\nto the new mount which takes over the job of hiding what's under it and\nthe old cover can be unmounted. That works as long as the new mount\nstays. But the caller picks the new mount and copy_tree() leaves a\nmount of a mount namespace file out of every copy made without\nCL_COPY_MNT_NS_FILE, together with everything mounted on it, and never\nlooks at MNT_LOCKED. unshare(CLONE_NEWNS) and mount propagation make\nsuch copies.\n\nSo a task that is root in its own user namespace gets rid of a locked\ncover on a file without a race and without touching the filesystem\nbelow it. It makes a child with a mount namespace of its own, binds the\nchild's /proc/<pid>/ns/mnt beneath the cover with MOVE_MOUNT_BENEATH,\nwhich hands the lock to that bind, and calls unshare(CLONE_NEWNS). The\nnew mount namespace has nothing on the file. That's the usual way to\nmask a single file, a bind of /dev/null or of an empty file. With a\nbind of an ordinary file the file stays covered.\n\ncopy_tree() already refuses to leave out a locked unbindable mount with\n-EPERM since commit df7342b24018 (\"mount: Don't allow copying\nMNT_UNBINDABLE|MNT_LOCKED mounts\"). Do the same for a locked mount of a\nmount namespace file. That also covers a tree copied with\nCL_COPY_MNT_NS_FILE and attached into a mount namespace of another user\nnamespace where lock_mnt_tree() locks it. Note that unshare(CLONE_NEWNS)\nand clone(CLONE_NEWNS) fail with EPERM from such a mount namespace from\nthen on. The mount can't be left out and it can't be unmounted.\n\nAnd refuse to move a mount of a mount namespace file beneath a locked\nmount in the first place. Otherwise the task ends up with a mount it\ncan't unmount and an unshare() that fails for good.\n\nChris also found a second mount that goes away by itself, a clone of an\nautomounted mount that shrink_submounts() took along with its parent.\nCommit f78ddcc87224 (\"namespace: never expire a locked mount\") took\ncare of that one.\n\nChris's reproducer is appended. Mode nsfile reads SECRET after the\nunshare() on 7.3-rc7, with this patch the move_mount() fails with\nEINVAL and the file stays covered. nsfile-control uses an ordinary file\nand reads MASK both ways.\n\n  // SPDX-License-Identifier: GPL-2.0\n  /*\n   * Get rid of a locked cover with MOVE_MOUNT_BENEATH.\n   *\n   * The \"admin\" (root) makes a tmpfs W:\n   *     W/D         file, holds SECRET, covered by a bind of a file with MASK\n   *     W/Dd/inner  file, holds SECRET, Dd is covered by a bind of a directory\n   *                 whose \"inner\" holds MASK\n   *     W/own       directory of uid 1000 with the file \"mine\" and the\n   *                 directory \"minedir\", whose \"inner\" holds MINE\n   *     W/dbg       debugfs, mode 755. dbg/tracing is an automount point\n   * The \"attacker\" is uid 1000. It enters a new user namespace with a new mount\n   * namespace, so W and both covers are locked there.\n   *\n   * usage: prog MODE\n   *   plain      put a bind of own/mine beneath the cover of D, unmount the cover\n   *   nsfile     put a bind of the mount namespace file of a child beneath the\n   *              cover of D, then unshare(CLONE_NEWNS)\n   *   nsfile-control    the same with a bind of own/mine\n   *   shrink     put a bind of the automounted tracefs beneath the cover of Dd,\n   *              unmount the cover, put a tmpfs beneath W, call umount(W), which fails\n   *   shrink-control    the same with a bind of own/minedir\n   * The environment variable AUTOMOUNT_DIR names another automount point for \"shrink\".\n   */\n  #define _GNU_SOURCE\n  #include <errno.h>\n  #include <fcntl.h>\n  #include <grp.h>\n  #include <sched.h>\n  #include <signal.h>\n  #include <stdio.h>\n  #include <stdlib.h>\n  #include <string.h>\n  #include <unistd.h>\n \n---truncated---",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "c62a4766937edec2962d52e583276b459b739f2d",
+              "lessThan": "bd71d33923b9d6216bcee44331dd37142b0a8441",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "c62a4766937edec2962d52e583276b459b739f2d",
+              "lessThan": "69fbe94f80bc423613fa18dae6656757423732a2",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "7.1",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "7.1",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00163,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99173",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\neventfs: Free the eventfs_inode after an rcu grace period too\n\ntracefs_d_revalidate() reads ->is_freed of the eventfs_inode that\ndentry->d_fsdata points to, and ->d_revalidate() is called in rcu\npathwalk mode with nothing but rcu_read_lock() held. The dentry itself\nstays around for such a walker, but tracefs_d_release() drops its\nreference to the eventfs_inode when the dentry is killed, and\nrelease_ei() then frees it after a grace period of eventfs_srcu. An\nSRCU grace period doesn't wait for rcu_read_lock() sections, so the\nwalker can read an eventfs_inode that is already gone.\n\nWith a pathwalk held up in tracefs_d_revalidate() while the dentry goes\naway:\n\n  BUG: KASAN: slab-use-after-free in tracefs_d_revalidate+0x76/0x90\n  Read of size 1 at addr ff1100010152d8d0 by task walker/97\n  Call Trace:\n   <TASK>\n   tracefs_d_revalidate+0x76/0x90\n   lookup_fast+0x320/0x640\n   path_lookupat+0x160/0xb00\n   filename_lookup+0x1f1/0x5b0\n   vfs_statx+0xd7/0x3b0\n   vfs_fstatat+0x4d/0x90\n   __do_sys_newfstatat+0xa0/0x100\n   do_syscall_64+0x10e/0x5e0\n   entry_SYSCALL_64_after_hwframe+0x77/0x7f\n  [...]\n  Allocated by task 1:\n   __kmalloc_cache_noprof+0x249/0x560\n   eventfs_create_dir+0x7a/0x590\n   event_create_dir+0x2fb/0xcf0\n   trace_add_event_call+0xbf/0x150\n  [...]\n  Freed by task 11:\n   kfree+0x1db/0x5b0\n   srcu_invoke_callbacks+0x3a3/0x620\n   process_one_work+0x937/0x1810\n   worker_thread+0x4f1/0xd60\n\nBefore commit 8e556432477e (\"eventfs: Use SRCU for freeing\neventfs_inodes\") release_ei() used call_rcu(), which covered the walker,\nwhile eventfs_iterate() needs the SRCU grace period. Wait for both and\nchain call_rcu() from the SRCU callback.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2ef3d120d19faba3dec35b10a025b00db0284373",
+              "lessThan": "5819018dc29fb2ac2fd4865d507f9893c89c0624",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8e556432477e97ad6179c61b61a32bf5f1af2355",
+              "lessThan": "dd2c767814a876be0f16f0b7f98a403dc176f51e",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8e556432477e97ad6179c61b61a32bf5f1af2355",
+              "lessThan": "4586ef24ce390e8becb9f3e5852d5d3978b01c33",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8e556432477e97ad6179c61b61a32bf5f1af2355",
+              "lessThan": "45fcfd5d9c10e0aa977ed5b9bd445707e01bb107",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "8e556432477e97ad6179c61b61a32bf5f1af2355",
+              "lessThan": "2cd88c498ecff8e22bf4c397b8eb226db70ac343",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "384f383c5aa7bfd619d9f56a513a36e533428186",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "6.6.46",
+              "lessThan": "6.6.161",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.10.5",
+              "lessThan": "6.11",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.11",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.11",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00168,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99177",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nKVM: SEV: Fix page dirtying in sev_gmem_post_populate()\n\nset_page_dirty() requires that the caller holds some kind of lock to\nensure that the page's mapping does not concurrently go away.\nThat is not the case for a random page we got from get_user_pages_fast(),\nso use set_page_dirty_lock().\n\n[sean: tag for stable]",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "97cd21d57e9bd2da79845178d9250cfd19289cd4",
+              "lessThan": "184382f9852d433af21de96c334ecf43b8414ed8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "97cd21d57e9bd2da79845178d9250cfd19289cd4",
+              "lessThan": "97818b2fa7082e940ddd36dab12a68615300e798",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "7.2",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "7.2",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00156,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99180",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nunicode: free the map after a grace period\n\ngeneric_ci_d_hash() and generic_ci_d_compare() read sb->s_encoding and\ndereference the unicode map while a pathwalk in rcu mode holds nothing\nbut rcu_read_lock(). The filesystems that use them, ext4, f2fs and\ntmpfs, drop the map with utf8_unload() from ->put_super(), which runs\nwhen the last reference to the mount goes away. A lookup that is still\ninside such a filesystem at that point reads a freed map.\n\nWith a pathwalk held up in utf8_casefold_hash() while the last reference\nto a casefolded tmpfs goes away:\n\n  BUG: KASAN: slab-use-after-free in utf8nlookup+0x74c/0x950\n  Read of size 8 at addr ff110001030fe658 by task walker/98\n  Call Trace:\n   <TASK>\n   utf8nlookup+0x74c/0x950\n   utf8byte+0x160/0x1560\n   utf8_casefold_hash+0x167/0x230\n   generic_ci_d_hash+0xdd/0x1c0\n   link_path_walk+0x11ad/0x1d30\n   path_lookupat+0x63/0xb00\n   filename_lookup+0x1f1/0x5b0\n   vfs_statx+0xd7/0x3b0\n  [...]\n  Allocated by task 94:\n   __kmalloc_cache_noprof+0x249/0x560\n   utf8_load+0x4e/0x570\n   shmem_parse_opt_casefold.isra.0+0x92/0x270\n  [...]\n  Freed by task 97:\n   kfree+0x1db/0x5b0\n   shmem_put_super+0x72/0x170\n   generic_shutdown_super+0x14c/0x530\n   kill_anon_super+0x3a/0x60\n   deactivate_locked_super+0x9c/0xf0\n   cleanup_mnt+0x9f/0x130\n\nSo far that has been hard to hit. umount(2) waits for a grace period\nin namespace_unlock() before it drops the mount, so only a mount whose\nlast reference goes away elsewhere, like the close of a file or a chdir\nout of a lazily unmounted directory, can race a walker. So it is\nreachable.\n\nDelay the free until a grace period has passed. The map and the data\ntable it holds a reference to then outlive any pathwalk that found the\nsuperblock before the mount went away. The reference on the data table\nmodule is dropped from the rcu callback as well. utf8-core is built in\nwhenever CONFIG_UNICODE is set, so there is no module exit that would\nhave to wait for the callbacks.\n\nOverlayfs points the s_encoding of an overlay at the map of its first\nlayer without taking a reference of its own. That stays correct. The\nlayer is held by the overlay, so its map is dropped only after the\noverlay is gone.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "092e14e1479a39157ca01668d43e4649793f39ed",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "6472455f2b015cad43adb790cb63fe1d3cff2f57",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "f96c2731a105d6663c606388f5dc21781e00ade5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "5d7687b0b71601cc32f1bfd62f56cf5eea3e5a07",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "69a0d6b31d05e856c7335509222f25321e3c69ca",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "2b54d3c971a1e5df3c9b0bcc10311ae6c29e79d8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "6560c3d9a6925e3747d9ad8463e16010c31ba715",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "b886ee3e778ec2ad43e276fd378ab492cf6819b7",
+              "lessThan": "a96c5299bd7305eb984377681eb3222a57376405",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.2",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.2",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00183,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99185",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nfirewire: core: fix race condition in split transaction handling\n\nFor a split transaction, either fw_core_handle_response() or\nsplit_transaction_timeout_callback() may manipulate the same transaction\nentry in the pending transaction list. The return value of timer_delete()\nis used to determine which function handles the entry. If the transaction\nis a split transaction and timer_delete() returns zero, the timeout\ncallback may already be running. In this case, the response handler must\nleave the entry in the list for the timeout callback to remove.\n\nA previous code refactoring broke this behavior, introducing a race\ncondition in which both functions could process the same transaction.\nThis could lead to a use-after-free on the transaction initiator side.\n\nFix the regression by ensuring that the response handler does not process\nthe transaction when timer_delete() returns zero. The timeout callback is\nresponsible for removing the entry from the pending transaction list.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "fa2dc27100768a8a994c377051fa17a47cc66c76",
+              "lessThan": "a8caee0e623ca5d56e829032f9ec073c09e4d224",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "fa2dc27100768a8a994c377051fa17a47cc66c76",
+              "lessThan": "7f9f2d6abc40f79e802b4063859eda343043b85c",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "6.19",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "6.19",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00156,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99203",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\npipe: preserve existing fasync readers on writer setup failure\n\nF_SETFL and FIOASYNC decide whether to invoke ->fasync() before\npipe_fasync() takes pipe->mutex. Two enables of one O_RDWR FIFO can\ntherefore both enter the callback.\n\nfasync_helper() allocates before checking for an existing entry. If the\nfirst enable installs both entries, a second enable can update the\nreader entry and then fail the allocation for the writer entry. The\nerror path removes the pre-existing reader entry, clearing FASYNC while\nthe writer entry remains registered. __fput() then skips ->fasync(), so a\nlater pipe notification can dereference the freed file or its f_owner.\nAn unprivileged memory-pressure reproducer triggers a KASAN\nslab-use-after-free in send_sigio() through this path.\n\nKeep the reader helper's result and undo the registration only if this\ncall added it. The pipe mutex serializes changes to both lists, so a\nfailed new registration still removes its reader, while a failed\nduplicate preserves the existing registrations and FASYNC. Successful\nduplicate enables continue to update fa_fd as before.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "6041bcd185d4df051490fe166e64feae6c3b8291",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "7cdbfa22a7e270b155ddb958b1583a999c0c8abb",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "22c7f57b0c0b0b8e19cfb41a1bd85f55715ad386",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "94be790dd6fbe0912f35bb711bea8ef3687eaca9",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "9b0aa2a1d8df51f3dcb363c3a2d9531098e88dc6",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "4c42ce499ce4b1c787e61082e3b13df4f30c4eaa",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "2259809e5b7043c4ba20af7b14ba3e471cf55521",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "76398425bb06b07cc3a3b1ce169c67dc9d6874ed",
+              "lessThan": "40bb03d3ea6f6a915218508819ecc4d7a7fa260d",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.30",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.30",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00171,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99212",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/rds: don't let the rdma_cm destroy an id RDS still owns on route failure\n\nrds_rdma_cm_event_handler_cmn() hands the return value of\nrdma_resolve_route() straight back to the rdma_cm on\nRDMA_CM_EVENT_ADDR_RESOLVED.  A synchronous failure there - -ENOMEM\nfrom the route work allocation, an SA query that cannot be set up, a\nRoCE route with no usable device - makes addr_handler() destroy the\nid the event was delivered on.  That id is ic->i_cm_id, and nothing\nclears the pointer: the connection sits in RDS_CONN_CONNECTING with a\nfreed id until its shutdown calls rdma_disconnect() and\nrdma_destroy_id() on it.\n\nThe ROUTE_RESOLVED case already avoids this: rds_ib_cm_initiate_connect()\nforces a zero return while ic->i_cm_id == cm_id, as the comment there\nexplains.  Do the same here - drop the connection and return 0 - so\nthe id stays RDS's to destroy from the shutdown, and the reconnect\ngets a fresh one.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "664fd3205cbec71ac52c005ee705cd917bb6fb1a",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "b8f141f65885810e24fc23b8a71692db62d535bf",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "e677eda15df7d5ce256654343418043c7ffd6f9b",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "92143c5d80382588d5a3047a4f14023ee9ef6485",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "a7c7d0ff876377fea7ae876a28d6df8d9349df57",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "91ece3efa064f0b3b3c67b9b045d9eeb4a034e43",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "55b7ed0b582f9ff4bf3b9b44969cddda8c6763ea",
+              "lessThan": "98d446b7c013254a8a7b49720557676a3a851fde",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "2.6.30",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "2.6.30",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00167,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 7
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99213",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvsock: treat TCP_CLOSING as once-established\n\nHandle the TCP_ESTABLISHED -> TCP_CLOSING transition on OP_RST, which can\nrace with the connect loop. Immediately break and return 0 on\nESTABLISHED/CLOSING. The return value of connect() should reflect what\nhappened up to the point the connection was established or failed. Events\nthat occur afterwards must not affect it. E.g. even if OP_RW has already\nset sk_err, connect() should still return 0, not ENOBUFS because of it.\nAdapt the inaccurate comment above signal_pending().\n\nResetting a socket that is still present in connected_table can lead to\nmemory corruption. The reporter noted lost transports for in-flight skbs,\nand I have reproduced crashes caused by re-insertion into connected_table.\n\n  list_add double add: new=, prev=, next=.\n  kernel BUG at lib/list_debug.c:35!\n  Oops: invalid opcode: 0000 [#1] SMP KASAN NOPTI\n  Workqueue: vsock-loopback vsock_loopback_work\n  RIP: 0010:__list_add_valid_or_report+0x11f/0x130\n  Call Trace:\n   vsock_insert_connected.cold+0xe/0x13\n   virtio_transport_recv_pkt+0x10e9/0x1460\n   vsock_loopback_work+0x305/0x480\n   process_one_work+0xe4c/0x1560\n   worker_thread+0x4f1/0xd60\n   kthread+0x36e/0x470\n   ret_from_fork+0x47b/0x6b0\n   ret_from_fork_asm+0x1a/0x30\n\nThis fix is supplementary to commit 002541ef650b (\"vsock: Ignore\nsignal/timeout on connect() if already established\"). Details under Link.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "ea36ef3c229d54b552432d1290aee1d807f67fd5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "5f2ab77028602a22f0cc33cac063a313787cbeae",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "f89770c7365748d9d6a2ae07d1c23497ca21ec07",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "deb972c7eea8d0bc3109c35c30a1c86d4939f811",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "baf1b5715640e434249ce7f63f94bd1a00938ef9",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "c2c5359ef2c33684fa3f3652fd761a483db8d1e7",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "44d1ca05d6094a5d75c671a0545249186d790b8d",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "d021c344051af91f42c5ba9fdedc176740cbd238",
+              "lessThan": "4f6ac74fa594a918d41255c941256e1d51592d3b",
+              "status": "affected",
+              "versionType": "git"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "3.9",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "3.9",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00171,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-99216",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nDrivers: hv: Don't reset VMBus connection state on error/exit paths\n\nIn two places, current code forces vmbus_connection.conn_state to\nDISCONNECTED prior to calling vmbus_disconnect(). But vmbus_disconnect()\ncalls vmbus_initiate_unload(), which unloads the VMBus connection\nonly if the conn_state is CONNECTED. Consequently, the connection\nremains and the Hyper-V host might continue to send messages or post\nVMBus interrupts.\n\nThe problem was introduced in commit 74347a99e73ae (\"x86/Hyper-V:\nUnload vmbus channel in hv panic callback\"), in that\nvmbus_initiate_unload() started checking the current connection\nstate before doing the unload. This commit removed some occurrences\nwhere conn_state was forced to DISCONNECTED, but these two remained,\napparently due to an oversight at the time.\n\nFix this by not forcing conn_state to DISCONNECTED during VMBus exit,\nor if a failure occurs when establishing the connection in the first\nplace. Whatever value conn_state has at the time is then read by\nvmbus_initiate_unload() to determine if there is a connection to\nbe unloaded.",
+      "cvss_score": 8.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "2939215d57bc8e4189290544fca78f3809ac3ef8",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "a0ae955ba9a5067a157ebb8defb4a0a9cb1fc304",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "deef3ab5129ae4c45662c957cdab3739eb047fb1",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "2e5ffbf1e41abbf6e02ce28115107938f55ff646",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "2732210132f92aca0622b5134027990a809279d5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "f47ce27af80b87cc684d5c12b65506af498ac7e5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "3195546a377c2d8d176d837e8baad5ce15d11195",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "74347a99e73ae00b8385f1209aaea193c670f901",
+              "lessThan": "ec31dc39e835ccde0930daccece8c492d28282fc",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "5e059fc0f054309036d3f612bc8b0a502ca58545",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "9f38f7b46de0747c1909e8c557aa21715dce20c5",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "caeeb3787167c884b955404a7e669fd77f267e44",
+              "status": "affected",
+              "versionType": "git"
+            },
+            {
+              "version": "4.19.118",
+              "lessThan": "4.20",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.4.35",
+              "lessThan": "5.5",
+              "status": "affected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.6.7",
+              "lessThan": "5.7",
+              "status": "affected",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "linux",
+          "product": "linux",
+          "versions": [
+            {
+              "version": "5.7",
+              "status": "affected"
+            },
+            {
+              "version": "0",
+              "lessThan": "5.7",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.10.273",
+              "lessThanOrEqual": "5.10.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.15.224",
+              "lessThanOrEqual": "5.15.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.191",
+              "lessThanOrEqual": "6.1.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.161",
+              "lessThanOrEqual": "6.6.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.12.115",
+              "lessThanOrEqual": "6.12.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.18.59",
+              "lessThanOrEqual": "6.18.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.13",
+              "lessThanOrEqual": "7.2.*",
+              "status": "unaffected",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.3",
+              "lessThanOrEqual": "*",
+              "status": "unaffected",
+              "versionType": "original_commit_for_fix"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:linux",
+        "vendor:linux"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00171,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
       }
     },
     {

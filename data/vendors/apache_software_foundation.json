@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-31T22:30:41+00:00",
+  "generated_at": "2026-11-01T02:09:34+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1335,
+  "count": 1337,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -30307,6 +30307,70 @@
       }
     },
     {
+      "cve_id": "CVE-2026-118636",
+      "description": "**UNSUPPORTED WHEN ASSIGNED**\u00a0\n\nJavaNativeMessageDecoder in the MINA 3.0 codec module calls ObjectInputStream.readObject() on frame bytes with no class filter, so an\napplication that puts it in front of an untrusted peer is open to gadget-chain RCE.\n\nAs the 3.0.0 branch is inactive, we do not plan to release a version that fixes this issue. \n\nUsers are recommended to use the latest Apache MINA 2.2.X branch.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache mina",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThanOrEqual": "3.0.0-M2",
+              "versionType": "maven"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache mina",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-120135",
+      "description": "Uncontrolled Recursion vulnerability in Apache Thrift Java bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.24.0.\n\n\n\nUsers are recommended to upgrade to version 0.24.0, which fixes the issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache thrift",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "0.24.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache thrift",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-22022",
       "description": "Deployments of Apache Solr 5.3.0 through 9.10.0 that rely on Solr's \"Rule Based Authorization Plugin\" are vulnerable to allowing unauthorized access to certain Solr APIs, due to insufficiently strict input validation in those components.\u00a0 Only deployments that meet all of the following criteria are impacted by this vulnerability:\n\n  *  Use of Solr's \"RuleBasedAuthorizationPlugin\"\n  *  A RuleBasedAuthorizationPlugin config (see security.json) that specifies multiple \"roles\"\n  *  A RuleBasedAuthorizationPlugin permission list (see security.json) that uses one or more of the following pre-defined permission rules: \"config-read\", \"config-edit\", \"schema-read\", \"metrics-read\", or \"security-read\".\n  *  A RuleBasedAuthorizationPlugin permission list that doesn't define the \"all\" pre-defined permission\n  *  A networking setup that allows clients to make unfiltered network requests to Solr. (i.e. user-submitted HTTP/HTTPS requests reach Solr as-is, unmodified or restricted by any intervening proxy or gateway)\n\nUsers can mitigate this vulnerability by ensuring that their RuleBasedAuthorizationPlugin configuration specifies the \"all\" pre-defined permission and associates the permission with an \"admin\" or other privileged role.\u00a0 Users can also upgrade to a Solr version outside of the impacted range, such as the recently released Solr 9.10.1.",
       "cvss_score": 8.2,
@@ -36722,9 +36786,9 @@
           "product": "apache thrift",
           "versions": [
             {
-              "lessThan": "0.23.0",
               "status": "affected",
               "version": "0",
+              "lessThan": "0.23.0",
               "versionType": "semver"
             }
           ]
