@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-11-02T07:47:50+00:00`
+Generated: `2026-11-02T18:18:31+00:00`
 
 ## Executive Summary
 
@@ -169,10 +169,10 @@ Top critical items:
 | [CVE-2022-21971](https://www.cve.org/CVERecord?id=CVE-2022-21971) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-08 | 0.538 | 7.8 | ✅ | Windows Runtime Remote Code Execution Vulnerability |
 | [CVE-2023-41064](https://www.cve.org/CVERecord?id=CVE-2023-41064) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-10-02 | 0.534 | 7.8 | ✅ | A buffer overflow issue was addressed with improved memory handling. This issue is fixed in iOS 16.6.1 and iPadOS 16.6.1, macOS Monterey 12.6.9, macOS Ventura … |
 | [CVE-2024-9380](https://www.cve.org/CVERecord?id=CVE-2024-9380) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-10-30 | 0.583 | 7.2 | ✅ | An OS command injection vulnerability in the admin web console of Ivanti CSA before version 5.0.2 allows a remote authenticated attacker with admin privileges … |
-| [CVE-2022-44698](https://www.cve.org/CVERecord?id=CVE-2022-44698) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-03 | 0.763 | 5.4 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 | [CVE-2023-32434](https://www.cve.org/CVERecord?id=CVE-2023-32434) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-07-14 | 0.515 | 7.8 | ✅ | An integer overflow was addressed with improved input validation. This issue is fixed in watchOS 9.5.2, macOS Big Sur 11.7.8, iOS 15.7.7 and iPadOS 15.7.7, mac… |
 | [CVE-2023-4762](https://www.cve.org/CVERecord?id=CVE-2023-4762) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-27 | 0.414 | 8.8 | ✅ | Type Confusion in V8 in Google Chrome prior to 116.0.5845.179 allowed a remote attacker to execute arbitrary code via a crafted HTML page. (Chromium security s… |
 | [CVE-2022-21882](https://www.cve.org/CVERecord?id=CVE-2022-21882) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-02-18 | 0.592 | 7.0 | ✅ | Win32k Elevation of Privilege Vulnerability |
+| [CVE-2022-44698](https://www.cve.org/CVERecord?id=CVE-2022-44698) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-01-03 | 0.748 | 5.4 | ✅ | Windows SmartScreen Security Feature Bypass Vulnerability |
 | [CVE-2023-2033](https://www.cve.org/CVERecord?id=CVE-2023-2033) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-08 | 0.408 | 8.8 | ✅ | Type confusion in V8 in Google Chrome prior to 112.0.5615.121 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromi… |
 | [CVE-2022-4135](https://www.cve.org/CVERecord?id=CVE-2022-4135) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-12-19 | 0.319 | 9.6 | ✅ | Heap buffer overflow in GPU in Google Chrome prior to 107.0.5304.121 allowed a remote attacker who had compromised the renderer process to potentially perform … |
 | [CVE-2026-76461](https://www.cve.org/CVERecord?id=CVE-2026-76461) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-17 | 0.295 | 9.8 | ✅ | A vulnerability in the email parsing of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to execute arbitr… |
@@ -190,7 +190,7 @@ Top critical items:
 | [CVE-2023-20118](https://www.cve.org/CVERecord?id=CVE-2023-20118) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-03-24 | 0.541 | 6.5 | ✅ | A vulnerability in the web-based management interface of Cisco Small Business Routers RV016, RV042, RV042G, RV082, RV320, and RV325 Routers could allow an auth… |
 | [CVE-2022-21999](https://www.cve.org/CVERecord?id=CVE-2022-21999) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-04-15 | 0.410 | 7.8 | ✅ | Windows Print Spooler Elevation of Privilege Vulnerability |
 | [CVE-2025-31200](https://www.cve.org/CVERecord?id=CVE-2025-31200) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-05-08 | 0.209 | 9.8 | ✅ | A memory corruption issue was addressed with improved bounds checking. This issue is fixed in iOS 18.4.1 and iPadOS 18.4.1, macOS Sequoia 15.4.1, tvOS 18.4.1, … |
-| [CVE-2025-20352](https://www.cve.org/CVERecord?id=CVE-2025-20352) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-10-20 | 0.415 | 7.7 | ✅ | A vulnerability in the Simple Network Management Protocol (SNMP) subsystem of Cisco IOS Software and Cisco IOS XE Software could allow the following:   An a… |
+| [CVE-2025-20352](https://www.cve.org/CVERecord?id=CVE-2025-20352) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-10-20 | 0.406 | 7.7 | ✅ | A vulnerability in the Simple Network Management Protocol (SNMP) subsystem of Cisco IOS Software and Cisco IOS XE Software could allow the following:   An a… |
 | [CVE-2025-24085](https://www.cve.org/CVERecord?id=CVE-2025-24085) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-19 | 0.175 | 10.0 | ✅ | A use after free issue was addressed with improved memory management. This issue is fixed in iOS 18.3 and iPadOS 18.3, iPadOS 17.7.6, macOS Sequoia 15.3, macOS… |
 | [CVE-2024-7971](https://www.cve.org/CVERecord?id=CVE-2024-7971) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-16 | 0.210 | 9.6 | ✅ | Type confusion in V8 in Google Chrome prior to 128.0.6613.84 allowed a remote attacker to exploit heap corruption via a crafted HTML page. (Chromium security s… |
 | [CVE-2024-38178](https://www.cve.org/CVERecord?id=CVE-2024-38178) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-03 | 0.414 | 7.5 | ✅ | Scripting Engine Memory Corruption Vulnerability |
@@ -245,8 +245,8 @@ Top critical items:
 | [CVE-2025-30397](https://www.cve.org/CVERecord?id=CVE-2025-30397) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-03 | 0.273 | 7.5 | ✅ | Access of resource using incompatible type ('type confusion') in Microsoft Scripting Engine allows an unauthorized attacker to execute code over a network. |
 | [CVE-2024-49039](https://www.cve.org/CVERecord?id=CVE-2024-49039) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-12-03 | 0.142 | 8.8 | ✅ | Windows Task Scheduler Elevation of Privilege Vulnerability |
 | [CVE-2022-1364](https://www.cve.org/CVERecord?id=CVE-2022-1364) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-05-06 | 0.139 | 8.8 | ✅ | Type confusion in V8 Turbofan in Google Chrome prior to 100.0.4896.127 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. |
-| [CVE-2022-3075](https://www.cve.org/CVERecord?id=CVE-2022-3075) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-29 | 0.058 | 9.6 | ✅ | Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially… |
 | [CVE-2023-2136](https://www.cve.org/CVERecord?id=CVE-2023-2136) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2023-05-12 | 0.058 | 9.6 | ✅ | Integer overflow in Skia in Google Chrome prior to 112.0.5615.137 allowed a remote attacker who had compromised the renderer process to potentially perform a s… |
+| [CVE-2022-3075](https://www.cve.org/CVERecord?id=CVE-2022-3075) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-09-29 | 0.058 | 9.6 | ✅ | Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially… |
 | [CVE-2026-5281](https://www.cve.org/CVERecord?id=CVE-2026-5281) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-15 | 0.137 | 8.8 | ✅ | Use after free in Dawn in Google Chrome prior to 146.0.7680.178 allowed a remote attacker who had compromised the renderer process to execute arbitrary code vi… |
 
 ## Recent Changes (Last 7 Days)
@@ -303,4 +303,4 @@ Top critical items:
 | Oct 31 | [CVE-2026-59229](https://www.cve.org/CVERecord?id=CVE-2026-59229) | 🆕 New |
 | Oct 31 | [CVE-2026-59562](https://www.cve.org/CVERecord?id=CVE-2026-59562) | 🆕 New |
 | Oct 31 | [CVE-2026-61902](https://www.cve.org/CVERecord?id=CVE-2026-61902) | 🆕 New |
-| ... | | _and 195 more_ |
+| ... | | _and 204 more_ |
