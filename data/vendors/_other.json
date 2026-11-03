@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-03T16:13:21+00:00",
+  "generated_at": "2026-11-03T22:01:37+00:00",
   "vendor": "_other",
-  "count": 851,
+  "count": 852,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -48522,6 +48522,201 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-78"
+        ],
+        "cpe_count": 0,
+        "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-119977",
+      "description": "WordPress Core is vulnerable to Remote Code Execution in versions 4.7 through 7.1.3. This is due to predictable, web-accessible staging paths used during full-package core upgrades. This makes it possible for unauthenticated attackers to execute code on the server during the upgrade window.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "wordpress foundation",
+          "product": "wordpress",
+          "versions": [
+            {
+              "version": "4.7.0",
+              "status": "affected",
+              "lessThanOrEqual": "4.7.38",
+              "versionType": "semver"
+            },
+            {
+              "version": "4.8.0",
+              "status": "affected",
+              "lessThanOrEqual": "4.8.33",
+              "versionType": "semver"
+            },
+            {
+              "version": "4.9.0",
+              "status": "affected",
+              "lessThanOrEqual": "4.9.34",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.0.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.0.30",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.1.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.1.27",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.2.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.2.29",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.3.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.3.26",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.4.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.4.24",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.5.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.5.23",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.6.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.6.22",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.7.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.7.20",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.8.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.8.18",
+              "versionType": "semver"
+            },
+            {
+              "version": "5.9.0",
+              "status": "affected",
+              "lessThanOrEqual": "5.9.19",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.0.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.0.17",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.1.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.1.15",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.2.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.2.14",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.3.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.3.13",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.4.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.4.13",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.5.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.5.13",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.6.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.6.10",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.7.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.7.10",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.8.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.8.11",
+              "versionType": "semver"
+            },
+            {
+              "version": "6.9.0",
+              "status": "affected",
+              "lessThanOrEqual": "6.9.10",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.0.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.0.7",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1.0",
+              "status": "affected",
+              "lessThanOrEqual": "7.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.006,
+      "kev": {
+        "cveID": "CVE-2026-119977",
+        "vendorProject": "WordPress",
+        "product": "WordPress Core",
+        "vulnerabilityName": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+        "dateAdded": "2026-11-03",
+        "shortDescription": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-06",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-367"
         ],
         "cpe_count": 0,
         "reference_count": 8
