@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-04T17:07:30+00:00",
+  "generated_at": "2026-11-04T22:45:18+00:00",
   "vendor": "apple",
-  "count": 1279,
+  "count": 1280,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -38598,6 +38598,118 @@
         ],
         "cpe_count": 7,
         "reference_count": 15
+      }
+    },
+    {
+      "cve_id": "CVE-2024-27834",
+      "description": "The issue was addressed with improved checks. This issue is fixed in Safari 17.5, iOS 16.7.8 and iPadOS 16.7.8, iOS 17.5 and iPadOS 17.5, macOS Sonoma 14.5, tvOS 17.5, watchOS 10.5. An attacker with arbitrary read and write capability may be able to bypass Pointer Authentication.",
+      "cvss_score": 5.5,
+      "cvss_severity": "MEDIUM",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "safari",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "17.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "16.7.8",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "17.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "14.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "tvos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "17.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "apple",
+          "product": "watchos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "10.5",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
+      "matched_terms": [
+        "product:ios and ipados",
+        "product:macos",
+        "product:safari",
+        "product:tvos",
+        "product:watchos",
+        "vendor:apple"
+      ],
+      "active_threat": true,
+      "probability_score": 0.00598,
+      "kev": {
+        "cveID": "CVE-2024-27834",
+        "vendorProject": "Apple",
+        "product": "Multiple Products",
+        "vulnerabilityName": "Apple Multiple Products Improper Authentication Vulnerability",
+        "dateAdded": "2026-11-04",
+        "shortDescription": "Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-18",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 5.5,
+        "cvss_v3_severity": "MEDIUM",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-277"
+        ],
+        "cpe_count": 10,
+        "reference_count": 23
       }
     },
     {
