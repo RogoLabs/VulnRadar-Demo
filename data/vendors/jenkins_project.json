@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-03T22:01:37+00:00",
+  "generated_at": "2026-11-04T02:15:05+00:00",
   "vendor": "jenkins_project",
-  "count": 259,
+  "count": 267,
   "items": [
     {
       "cve_id": "CVE-2022-0538",
@@ -9826,6 +9826,394 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-404"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117612",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier does not apply its deserialization filter to classes referenced by the `resolves-to` attribute during XStream deserialization.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00409,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117614",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier converts the launch commands in older agent configurations into launchers provided by the Command Agent Launcher Plugin without checking whether they have been approved by an administrator, allowing attackers with Agent/Configure permission to execute arbitrary code in the context of the Jenkins controller JVM.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0044,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117616",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier provides an HTTP endpoint that loads agents by name without validating the name, allowing attackers with Overall/Read permission to load any config.xml file on the controller file system as an agent configuration, and to overwrite an arbitrary config.xml file when that agent is saved, potentially resulting in arbitrary code execution.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00606,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-22"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117617",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier checks for symbolic links in the path of an extracted file only before creating its parent directories, not immediately before writing it, and allows symbolic links in artifacts to replace existing files or empty directories, allowing attackers with Item/Configure permission to write files to arbitrary locations on the Jenkins controller file system.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00477,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-59"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117618",
+      "description": "In Jenkins 2.587 and earlier, LTS 2.580.1 and earlier, the HTTP endpoint for creating the first user account does not check whether the setup wizard has been completed, resulting in a race condition that allows unauthenticated attackers to create an administrator account while the initial user account is being replaced.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0026,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117619",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier allows requests authenticated using HTTP Basic authentication, including with an API token, to obtain a \"remember me\" cookie, allowing attackers who have obtained a user's API token to retain access to Jenkins using a \"remember me\" cookie after the API token is revoked or expires.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00347,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117620",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier allows attackers with Overall/Read permission to trigger warnings in the \"Manage Old Data\" feature that can be acted on by administrators to inject attacker-controlled data, overriding existing user account information, including login passwords.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00379,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-117624",
+      "description": "Jenkins 2.587 and earlier, LTS 2.580.1 and earlier does not consistently enforce the restriction on deserializing objects of types marked as storing their configuration in independent top-level configuration files as nested values, allowing attackers to bypass the root element check and potentially inject nested objects.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins",
+          "versions": [
+            {
+              "version": "2.588",
+              "versionType": "maven",
+              "lessThan": "*",
+              "status": "unaffected"
+            },
+            {
+              "version": "2.580.2",
+              "versionType": "maven",
+              "lessThan": "2.580.*",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00389,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
         ],
         "cpe_count": 2,
         "reference_count": 1
