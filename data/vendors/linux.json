@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-04T22:45:18+00:00",
+  "generated_at": "2026-11-05T03:29:27+00:00",
   "vendor": "linux",
-  "count": 7479,
+  "count": 7477,
   "items": [
     {
       "cve_id": "CVE-2022-0742",
@@ -798148,93 +798148,6 @@
       }
     },
     {
-      "cve_id": "CVE-2026-81010",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nio_uring/waitid: honor task_work cancellation\n\nio_waitid_cb() may run through the fallback task_work path when\ntask_work_add() can no longer queue work to the originating task. The\nfallback runs from a kworker and io_uring marks such task work as\ncanceled through tw.cancel.\n\nio_waitid_cb() currently ignores tw.cancel and calls __do_wait().\nwaitid is task-context dependent: __do_wait() performs child lookup\nrelative to current, and the retry path also uses\ncurrent->signal->wait_chldexit. If the callback runs from the fallback\nkworker, current is therefore not the task that submitted the request.\n\nHonor tw.cancel before entering __do_wait(). Complete the request with\n-ECANCELED and skip the siginfo copy, since canceled task work may run\nwithout the submitting task's userspace execution context.\n\nKeep the existing siginfo handling for normal waitid completion and\nexplicit cancellation.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "f31ecf671ddc498f20219453395794ff2383e06b",
-              "lessThan": "0879697520abda2383ed7be40572ad583b5c4b02",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "f31ecf671ddc498f20219453395794ff2383e06b",
-              "lessThan": "7bc98e2de8c58a2bfaf0f540eb096a386ecfc96c",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "f31ecf671ddc498f20219453395794ff2383e06b",
-              "lessThan": "14572de82e5022899e5856008bc9cac97004a88c",
-              "status": "affected",
-              "versionType": "git"
-            }
-          ]
-        },
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "6.7",
-              "status": "affected"
-            },
-            {
-              "version": "0",
-              "lessThan": "6.7",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.18.52",
-              "lessThanOrEqual": "6.18.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.2.4",
-              "lessThanOrEqual": "7.2.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.3",
-              "lessThanOrEqual": "*",
-              "status": "unaffected",
-              "versionType": "original_commit_for_fix"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:linux",
-        "vendor:linux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00182,
-      "nvd": {
-        "cvss_v3_score": 7.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": null,
-        "cpe_count": 0,
-        "reference_count": 3
-      }
-    },
-    {
       "cve_id": "CVE-2026-81011",
       "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nplatform/x86: hp-bioscfg: pass validated element count to package parsers\n\nThe per-type package parsers are handed the wrong element count.\n\nhp_init_bios_package_attribute() validates obj->package.count and then\ncalls one of the five hp_populate_*_package_data() wrappers (string,\ninteger, enumeration, ordered list, password). Each wrapper forwards a\ncount to its hp_populate_*_elements_from_package() parser, but instead\nof forwarding the validated obj->package.count it derives the count\nfrom elements[0]. elements[0] is the NAME field and is always an\nACPI_TYPE_STRING, so reading ->package.count from it in fact reads\n->string.length through the union acpi_object. The parsers thus bound\nthemselves against the length of the name string rather than against\nthe real number of elements in the package.\n\nThis is safe today because hp_init_bios_package_attribute() refuses any\npackage that has fewer than the type's element count, so a parser only\never runs on a full package and never reads past it regardless of the\nbogus bound.\n\nAn upcoming change relaxes that check to accept shorter packages. Once\na parser can receive fewer elements than its per-type count, a bound\ntaken from the name length no longer reflects the array size, and the\n\"elem < count\" loop conditions and \"elem + n >= count\" sub-loop guards\nread past the end of elements[] - an out-of-bounds heap read.\n\nForward the validated obj->package.count to every *_package_data()\nwrapper so the parsers bound themselves against the real package size.\nThis does not change behaviour for the packages that enumerate\ncorrectly today and is a prerequisite for accepting shorter packages\nsafely.",
       "cvss_score": 7.1,
@@ -902841,7 +902754,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 6
+        "reference_count": 7
       }
     },
     {
@@ -903000,7 +902913,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -903111,7 +903024,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 4
+        "reference_count": 5
       }
     },
     {
@@ -903222,7 +903135,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 3
+        "reference_count": 4
       }
     },
     {
@@ -903357,7 +903270,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 6
+        "reference_count": 7
       }
     },
     {
@@ -903516,7 +903429,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -903675,7 +903588,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -903774,7 +903687,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 3
+        "reference_count": 4
       }
     },
     {
@@ -903873,7 +903786,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 3
+        "reference_count": 4
       }
     },
     {
@@ -904079,7 +903992,7 @@
         "cvss_v2_severity": null,
         "cwe_ids": null,
         "cpe_count": 0,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -904218,136 +904131,16 @@
         "vendor:linux"
       ],
       "active_threat": false,
-      "probability_score": 0.00443
-    },
-    {
-      "cve_id": "CVE-2026-99264",
-      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nio_uring/net: don't retry recv on uncommitted buffers\n\nCommit 41b70df5b38b (\"io_uring/net: commit partial buffers on retry\")\ncommits ring provided buffers when a receive is going to be retried after\na partial transfer, so that another request using the same buffer group\ncan't be handed the memory the first one keeps receiving into. It commits\nthe number of bytes received so far. That does the job for a single\nbuffer which is consumed as a whole, but the request hangs on to all it\nhas mapped:\n\n- For a buffer ring with IOU_PBUF_RING_INC only these bytes are consumed.\n  The rest of the buffer stays at the head of the ring.\n- For a bundle only the buffers which hold these bytes are consumed, the\n  others that were peeked stay in the ring.\n\nIn both cases the next receive with that buffer group gets memory that\nthe retried request is still going to write to, and whoever comes last\noverwrites the data of the other. What the retry fills isn't committed at\nall, as the buffer list isn't known any more at that point. So the kernel\nhands it out again later on, while the CQE tells the application that it\nwas used, and for an incremental buffer that it is done with.\n\nThe remainder can't be committed in advance: if the request ends up\nreceiving less, there is no way to tell the application that more was\nconsumed than the CQE accounts for. Complete the request with what it has\ngot instead of retrying it. MSG_WAITALL is no longer honoured for\nreceives into incremental buffers or multi buffer bundles, they can\nreturn a short count, with the request marked as failed like for other\nshort MSG_WAITALL transfers.",
-      "cvss_score": 7.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-      "affected": [
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "fe9da1812f8697a38f7e30991d568ec199e16059",
-              "lessThan": "21cb1770a56a51266ab96d4ed2a3b6979db59694",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "41b70df5b38bc80967d2e0ed55cc3c3896bba781",
-              "lessThan": "fc8506eea4498ecba26ef8bf6dbbd74af3dc891d",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "41b70df5b38bc80967d2e0ed55cc3c3896bba781",
-              "lessThan": "97b8dc36ba3cb176b74a7929140aeaeb40d5cdc0",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "41b70df5b38bc80967d2e0ed55cc3c3896bba781",
-              "lessThan": "8444de681a179e41a4eb92d5bbe770a0677074a6",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "3b53dc1c641f2884d4750fc25aaf6c36b90db606",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "21a4ddb0f5e933f372808c10b9ac704505751bb1",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "2eb7937b5fc7fcd90eab7bebb0181214b61b9283",
-              "status": "affected",
-              "versionType": "git"
-            },
-            {
-              "version": "6.12.44",
-              "lessThan": "6.12.115",
-              "status": "affected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.6.103",
-              "lessThan": "6.7",
-              "status": "affected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.15.11",
-              "lessThan": "6.16",
-              "status": "affected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.16.2",
-              "lessThan": "6.17",
-              "status": "affected",
-              "versionType": "semver"
-            }
-          ]
-        },
-        {
-          "vendor": "linux",
-          "product": "linux",
-          "versions": [
-            {
-              "version": "6.17",
-              "status": "affected"
-            },
-            {
-              "version": "0",
-              "lessThan": "6.17",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.12.115",
-              "lessThanOrEqual": "6.12.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "6.18.60",
-              "lessThanOrEqual": "6.18.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.2.14",
-              "lessThanOrEqual": "7.2.*",
-              "status": "unaffected",
-              "versionType": "semver"
-            },
-            {
-              "version": "7.4-rc1",
-              "lessThanOrEqual": "*",
-              "status": "unaffected",
-              "versionType": "original_commit_for_fix"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": true,
-      "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [
-        "product:linux",
-        "vendor:linux"
-      ],
-      "active_threat": false,
-      "probability_score": 0.00156
+      "probability_score": 0.00443,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 8
+      }
     },
     {
       "cve_id": "CVE-2026-99269",
@@ -904413,7 +904206,16 @@
         "vendor:linux"
       ],
       "active_threat": false,
-      "probability_score": 0.00146
+      "probability_score": 0.00146,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-99270",
@@ -904478,7 +904280,16 @@
         "vendor:linux"
       ],
       "active_threat": false,
-      "probability_score": 0.0031
+      "probability_score": 0.0031,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": null,
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-99999",
