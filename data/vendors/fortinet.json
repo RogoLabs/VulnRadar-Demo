@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T21:33:35+00:00",
+  "generated_at": "2026-11-07T01:52:18+00:00",
   "vendor": "fortinet",
   "count": 242,
   "items": [
@@ -14494,7 +14494,7 @@
     },
     {
       "cve_id": "CVE-2025-52970",
-      "description": "A improper handling of parameters in Fortinet FortiWeb versions 7.6.3 and below, versions 7.4.7 and below, versions 7.2.10 and below, and 7.0.10 and below may allow an unauthenticated remote attacker with non-public information pertaining to the device and targeted user to gain admin privileges on the device via a specially crafted request.",
+      "description": "A improper handling of parameters vulnerability in Fortinet FortiWeb 7.6.0 through 7.6.3, FortiWeb 7.4.0 through 7.4.7, FortiWeb 7.2.0 through 7.2.10, FortiWeb 7.0.0 through 7.0.10 may allow an unauthenticated remote attacker with non-public information pertaining to the device and targeted user to gain admin privileges on the device via a specially crafted request.",
       "cvss_score": 7.7,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:X/RC:C",
@@ -16769,7 +16769,7 @@
     },
     {
       "cve_id": "CVE-2026-26083",
-      "description": "A missing authorization vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.1, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox Cloud 5.0.2 through 5.0.5, FortiSandbox PaaS 23.4 all versions, FortiSandbox PaaS 23.3 all versions, FortiSandbox PaaS 23.1 all versions, FortiSandbox PaaS 22.2 all versions, FortiSandbox PaaS 22.1 all versions, FortiSandbox PaaS 21.4 all versions, FortiSandbox PaaS 21.3 all versions, FortiSandbox PaaS 5.0.0 through 5.0.1, FortiSandbox PaaS 4.4.5 through 4.4.8 may allow an unauthenticated attacker to execute unauthorized code or commands via HTTP requests.",
+      "description": "A missing authorization vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.1, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox 4.2 all versions, FortiSandbox Cloud 5.0.0 through 5.0.1, FortiSandbox Cloud 4.4.5 through 4.4.8, FortiSandbox PaaS 23.4 all versions, FortiSandbox PaaS 23.3 all versions, FortiSandbox PaaS 23.1 all versions, FortiSandbox PaaS 22.2 all versions, FortiSandbox PaaS 22.1 all versions, FortiSandbox PaaS 21.4 all versions, FortiSandbox PaaS 21.3 all versions, FortiSandbox PaaS 5.0.0 through 5.0.1, FortiSandbox PaaS 4.4.5 through 4.4.8 may allow an unauthenticated attacker to execute unauthorized code or commands via HTTP requests.",
       "cvss_score": 9.1,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
@@ -16794,6 +16794,24 @@
               "versionType": "semver",
               "version": "4.2.1",
               "lessThanOrEqual": "4.2.8",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox cloud",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.0",
+              "lessThanOrEqual": "5.0.1",
+              "status": "affected"
+            },
+            {
+              "versionType": "semver",
+              "version": "4.4.5",
+              "lessThanOrEqual": "4.4.8",
               "status": "affected"
             }
           ]
@@ -16851,24 +16869,6 @@
               "status": "affected"
             }
           ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortisandbox cloud",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "5.0.0",
-              "lessThanOrEqual": "5.0.1",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "4.4.5",
-              "lessThanOrEqual": "4.4.8",
-              "status": "affected"
-            }
-          ]
         }
       ],
       "watchlist_hit": true,
@@ -16898,23 +16898,11 @@
     },
     {
       "cve_id": "CVE-2026-26084",
-      "description": "A improper access control vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.5, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox Cloud 5.0.4 through 5.0.5, FortiSandbox PaaS 5.0.4 through 5.0.5 may allow attacker to access sensitive information via crafted HTTP requests.",
+      "description": "A improper access control vulnerability in Fortinet FortiSandbox 5.0.0 through 5.0.5, FortiSandbox 4.4.0 through 4.4.8, FortiSandbox 4.2 all versions, FortiSandbox Cloud 5.0.4 through 5.0.5, FortiSandbox PaaS 5.0.4 through 5.0.5 may allow attacker to access sensitive information via crafted HTTP requests.",
       "cvss_score": 8.9,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:H/E:P/RL:O/RC:C",
       "affected": [
-        {
-          "vendor": "fortinet",
-          "product": "fortisandbox paas",
-          "versions": [
-            {
-              "versionType": "semver",
-              "version": "5.0.4",
-              "lessThanOrEqual": "5.0.5",
-              "status": "affected"
-            }
-          ]
-        },
         {
           "vendor": "fortinet",
           "product": "fortisandbox",
@@ -16942,6 +16930,18 @@
         {
           "vendor": "fortinet",
           "product": "fortisandbox cloud",
+          "versions": [
+            {
+              "versionType": "semver",
+              "version": "5.0.4",
+              "lessThanOrEqual": "5.0.5",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "fortinet",
+          "product": "fortisandbox paas",
           "versions": [
             {
               "versionType": "semver",
@@ -17152,26 +17152,6 @@
               "status": "affected"
             }
           ]
-        },
-        {
-          "vendor": "fortinet",
-          "product": "fortisandbox cloud",
-          "versions": [
-            {
-              "version": "24.1",
-              "status": "affected"
-            },
-            {
-              "version": "23.4",
-              "status": "affected"
-            },
-            {
-              "versionType": "semver",
-              "version": "5.0.4",
-              "lessThanOrEqual": "5.0.5",
-              "status": "affected"
-            }
-          ]
         }
       ],
       "watchlist_hit": true,
@@ -17181,7 +17161,6 @@
       "priority_label": "",
       "matched_terms": [
         "product:fortisandbox",
-        "product:fortisandbox cloud",
         "vendor:fortinet"
       ],
       "active_threat": false,
@@ -17243,7 +17222,7 @@
     },
     {
       "cve_id": "CVE-2026-44277",
-      "description": "A improper access control vulnerability in Fortinet FortiAuthenticator 8.0.2, FortiAuthenticator 8.0.0, FortiAuthenticator 6.6.0 through 6.6.8, FortiAuthenticator 6.5.0 through 6.5.6 may allow attacker to execute unauthorized code or commands via crafted requests.",
+      "description": "A improper access control vulnerability in Fortinet FortiAuthenticator 8.0.2, FortiAuthenticator 8.0.0, FortiAuthenticator 6.6.0 through 6.6.8, FortiAuthenticator 6.5.0 through 6.5.6, FortiAuthenticator 6.4.0 through 6.4.10 may allow attacker to execute unauthorized code or commands via crafted requests.",
       "cvss_score": 9.1,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
@@ -17480,7 +17459,7 @@
     },
     {
       "cve_id": "CVE-2026-84388",
-      "description": "A improper restriction of rendered ui layers or frames vulnerability in Fortinet FortiPAM Chrome Extension 8.0 all versions, FortiPAM Chrome Extension 7.4 all versions may allow attacker to information disclosure via remote unauthenticated attack",
+      "description": "A improper restriction of rendered ui layers or frames vulnerability in Fortinet FortiPAM Chrome Extension 8.0 all versions may allow attacker to information disclosure via remote unauthenticated attack",
       "cvss_score": 9.1,
       "cvss_severity": "CRITICAL",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:O/RC:C",
@@ -17490,7 +17469,9 @@
           "product": "fortipam chrome extension",
           "versions": [
             {
-              "version": "8.0.1",
+              "versionType": "semver",
+              "version": "8.0.0",
+              "lessThanOrEqual": "8.0.1",
               "status": "affected"
             }
           ]

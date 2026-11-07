@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-06T21:33:35+00:00",
+  "generated_at": "2026-11-07T01:52:18+00:00",
   "vendor": "_other",
-  "count": 873,
+  "count": 875,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -27389,6 +27389,53 @@
       }
     },
     {
+      "cve_id": "CVE-2026-123655",
+      "description": "A flaw was found in Moodle. Insufficient access control checks on H5P content files allow unauthenticated remote attackers to view restricted materials, including content stored in the system context and files belonging to hidden or unavailable course modules. This issue results in unauthorized information disclosure of protected content.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.5.0",
+              "lessThan": "4.5.15",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.0",
+              "lessThan": "5.0.11",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.1.0",
+              "lessThan": "5.1.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "5.2.0",
+              "lessThan": "5.2.4",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-13048",
       "description": "Data::MuForm::Localizer versions through 0.05 for Perl execute Perl from a message catalog header, reached at an arbitrary path because load_lexicon interpolates the language attribute into the catalog filename.\n\nload_lexicon builds the catalog path by appending `Messages/$lang.po` to the directory holding Localizer.pm, where $lang is the language attribute, with no check that it names a bare locale tag. A value holding `../` segments walks out of the message directory, so any readable path with a `.po` suffix is loaded. While parsing the catalog, extract_header_msgstr takes the `Plural-Forms:` header, prefixes `$` to the bare words nplurals, plural and n, and passes the rest verbatim into a string that is evaluated: the nplurals form evaluates the header expression immediately, and the plural_code form compiles it into a subroutine whose body runs when a plural message is localized. A header of `nplurals=2; plural=(system('...'),0);` therefore runs that command as the catalog loads. The evaluation inherits strict, so an expression that assigns to an undeclared variable fails to compile, while one built from calls alone does not.\n\nAn application that sets the language attribute from request data, an Accept-Language header or a locale parameter, and an attacker who can place a file with a `.po` suffix and chosen contents at a readable path, together give code execution as the application user. The message expansion path is not affected: expand_named substitutes only the placeholder names the caller supplies, and _mangle_value returns the value unchanged.",
       "cvss_score": 8.2,
@@ -33675,6 +33722,48 @@
         ],
         "cpe_count": 21,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-19868",
+      "description": "An authentication enforcement vulnerability in SonicOS SSLVPN service may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA).",
+      "cvss_score": null,
+      "cvss_severity": null,
+      "cvss_vector": null,
+      "affected": [
+        {
+          "vendor": "sonicwall",
+          "product": "sonicos",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "7.3.3-7015 and older versions"
+            },
+            {
+              "status": "affected",
+              "version": "8.2.2-8015 and older versions"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": null,
+      "kev": {
+        "cveID": "CVE-2026-19868",
+        "vendorProject": "SonicWall",
+        "product": "SonicOS SSLVPN",
+        "vulnerabilityName": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+        "dateAdded": "2026-11-06",
+        "shortDescription": "SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA).",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-20",
+        "knownRansomwareCampaignUse": "Unknown"
       }
     },
     {

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-06T21:33:35+00:00",
+  "generated_at": "2026-11-07T01:52:18+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1395,
+  "count": 1396,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -31018,13 +31018,13 @@
             {
               "status": "affected",
               "version": "3.9.0",
-              "lessThanOrEqual": "3.9.7",
+              "lessThanOrEqual": "3.9.6",
               "versionType": "maven"
             },
             {
               "status": "affected",
               "version": "3.8.0",
-              "lessThanOrEqual": "3.8.8",
+              "lessThanOrEqual": "3.8.7",
               "versionType": "maven"
             }
           ]
@@ -62504,6 +62504,50 @@
         "cpe_count": 1,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-85111",
+      "description": "Allocation of Resources Without Limits or Throttling in Apache James Mime4J library prior version 0.8.15 allows Denial of Service upon parsing Mime messages.\nUsers are recommended to upgrade to Apache James server 3.9.1 that relies on fixed MIME4J 0.8.15 which addresses the issue.\n\nSee\u00a0CVE-2026-85108 in Apache James MIME4J library.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache james",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.9.1",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "apache software foundation",
+          "product": "apache james",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.9.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache james",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-85250",
