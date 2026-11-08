@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-07T23:41:08+00:00",
+  "generated_at": "2026-11-08T05:36:49+00:00",
   "vendor": "apple",
-  "count": 1384,
+  "count": 1385,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -67370,7 +67370,8 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
-          "CWE-787"
+          "CWE-787",
+          "CWE-119"
         ],
         "cpe_count": 3,
         "reference_count": 3
@@ -68567,7 +68568,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -68622,7 +68623,7 @@
         "cwe_ids": [
           "CWE-732"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -68677,7 +68678,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -68732,7 +68733,7 @@
         "cwe_ids": [
           "CWE-284"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -68787,7 +68788,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -68955,7 +68956,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 10,
         "reference_count": 8
       }
     },
@@ -69065,7 +69066,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -69120,7 +69121,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 3
       }
     },
@@ -69194,7 +69195,7 @@
         "cwe_ids": [
           "CWE-125"
         ],
-        "cpe_count": 0,
+        "cpe_count": 7,
         "reference_count": 5
       }
     },
@@ -98604,6 +98605,61 @@
         ],
         "cpe_count": 6,
         "reference_count": 8
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86958",
+      "description": "The issue was addressed with improved memory handling. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An attacker with memory write capability may be able to bypass pointer authentication codes and run arbitrary code.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "macos",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "15.8.2",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7.2",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:macos",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00232,
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-119"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
       }
     },
     {

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-07T23:41:08+00:00",
+  "generated_at": "2026-11-08T05:36:49+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1396,
+  "count": 1404,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -29859,6 +29859,116 @@
       }
     },
     {
+      "cve_id": "CVE-2026-109083",
+      "description": "Improper isolation or compartmentalization vulnerability in Apache Syncope.\n\nAn administrator with adequate entitlements can import arbitrary BPMN process definitions via the REST API and then start the process. When a BPMN process containing a JUEL expression is imported and started, the expression is executed directly on the server, with no sandbox.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue by rejecting BPMN definitions including expression attributes.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00519,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-653"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-110535",
+      "description": "Improper Privilege Management vulnerability in Apache Syncope.\n\n\n\nAuthProfile self-updates allow non-admin users to configure impersonation for WA surrogate authentication.\nThis issue affects Apache Syncope: from 3.0.12 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.12",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00489,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-269"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-110985",
       "description": "A Kafka broker using SASL/OAUTHBEARER with the default validator\u00a0(sasl.oauthbearer.jwt.validator.class=DefaultJwtValidator) selects its implementation from\u00a0configuration. When sasl.oauthbearer.jwks.endpoint.url is set, the validator verifies the\u00a0JWT signature. When that URL is unset (the default) and no verification key resolver is\u00a0supplied, DefaultJwtValidator silently falls back to ClientJwtValidator, which does not\u00a0verify the JWT signature, algorithm, or issuer - and the broker starts with no warning or\u00a0error. This is the residual of CVE-2026-33557, whose fix restored signature verification\u00a0only on the path where the JWKS endpoint URL is set.\n\n\nImpact:\n\nA broker in this state accepts any structurally valid JWT, including \"alg\":\"none\" tokens. An\u00a0unauthenticated remote attacker who can reach the listener can forge a token asserting any\u00a0principal - including configured superusers - and gain full access to the cluster. Only\u00a0brokers that enable SASL/OAUTHBEARER validation without a JWKS endpoint URL (and without a\u00a0custom verification key resolver) are affected; brokers that set the URL verify signatures\u00a0and are not affected. Unlike CVE-2026-110952 (issuer/audience not enforced by default), here\u00a0no signature is verified at all.\n\n\nMitigation (all affected versions, no upgrade required):\n\nSet sasl.oauthbearer.jwks.endpoint.url for every listener/mechanism that uses\u00a0OAuthBearerValidatorCallbackHandler, or configure a signature-verifying\u00a0sasl.oauthbearer.jwt.validator.class.\n\nResolution:\n\nFrom Apache Kafka 4.2.2, 4.3.1, and 4.4.0: a broker that would fall back to the\u00a0non-verifying ClientJwtValidator fails to start with a ConfigException instead of running\u00a0without signature verification (secure by default).",
       "cvss_score": 9.1,
@@ -30895,6 +31005,123 @@
       }
     },
     {
+      "cve_id": "CVE-2026-111959",
+      "description": "Out-of-bounds read vulnerability in Apache Arrow Rust (`arrow` crate), from version 33.0.0 through to versions 57.3.1, 58.4.0, 59.3.1 and 60.0.0.\n\n\n\nImproper validation of RunEndEncoded arrays in the ArrayData interface can allow reading data beyond the bounds of the child values array.\n\n\n\nUsers are recommended to upgrade to versions 60.1.0, 59.3.2, 58.4.1, 57.3.2 which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache arrow rust",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "60.0.0",
+              "lessThan": "60.1.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "59.0.0",
+              "lessThanOrEqual": "59.3.1",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "58.0.0",
+              "lessThanOrEqual": "58.4.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "33.0.0",
+              "lessThanOrEqual": "57.3.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache arrow rust",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00554,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20",
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-113511",
+      "description": "Authorization bypass through User-Controlled key vulnerability in Apache Syncope.\n\n\n\nA delegated administrator can relocate a Realm subtree across administrative realm boundaries without permission for\u00a0the destination\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00433,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-639"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-113582",
       "description": "UNSUPPORTED WHEN ASSIGNED Improper restriction of XML external entity references in Apache Abdera allows an attacker to access sensitive data or make server-side requests when an application parses attacker-controlled XML with Abdera.\n\n\n\nThis issue affects Apache Abdera: all versions.\n\n\n\nApache Abdera is retired and no longer supported, so we do not plan to release a version that fixes this issue. Users are recommended to migrate to a maintained alternative. Applications that cannot migrate should ensure that untrusted XML cannot reach the affected Abdera parser or JDBC adapter parsing paths. Actively maintained downstream products may still be impacted if they include an affected Abdera artifact.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
       "cvss_score": 8.7,
@@ -30962,6 +31189,61 @@
       }
     },
     {
+      "cve_id": "CVE-2026-113687",
+      "description": "Improper isolation or compartmentalization vulnerability in Apache Syncope.\n\n\n\nAn administrator with adequate entitlements for Implementations can create a malicious Groovy class running untrusted code on a separate Thread, thus bypassing the Groovy security sandbox.\n\n\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00576,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-653"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-114230",
       "description": "When dispatching SASL frames to authenticate the peer, Proton will also dispatch AMQP frames if they claim to be SASL frames. This allows authentication bypass. However there will be no user name set so the effects depend on how the application deals with this condition - which otherwise means that authentication has not completed yet.\n\n\n\nThis issue affects Apache Qpid Proton C: through 0.40.0.\n\n\n\nUsers are recommended to upgrade to version 0.41.1, which fixes the issue.",
       "cvss_score": 9.8,
@@ -31002,6 +31284,61 @@
         ],
         "cpe_count": 0,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-114364",
+      "description": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Apache Syncope.\n\n\n\nThis CVE covers an incomplete fix for CVE-2026-77051: an administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized opEvent parameters.\nReference: https://cve.org/CVERecord?id=CVE-2026-77051\n\nThis issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache syncope",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0-M0",
+              "lessThanOrEqual": "3.0.16",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.0.0-M0",
+              "lessThanOrEqual": "4.0.8",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "4.1.0-M0",
+              "lessThanOrEqual": "4.1.3",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache syncope",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00453,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -31321,6 +31658,49 @@
         ],
         "cpe_count": 0,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-119724",
+      "description": "** UNSUPPORTED WHEN ASSIGNED ** Improper restriction of recursive entity references in DTDs ('XML entity expansion') vulnerability in Apache JClouds.\n\n\n\nThis issue affects Apache JClouds: all versions.\n\n\n\nAs this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache jclouds",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "*",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache jclouds",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0044,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-776"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -62547,7 +62927,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00388
+      "probability_score": 0.00388,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-85250",
@@ -63015,6 +63406,50 @@
         ],
         "cpe_count": 3,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-85627",
+      "description": "Improper Neutralization of Special Elements Used in a Template Engine ('Server-Side Template Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only a stock non-administrative account to execute arbitrary operating system commands as the OFBiz process user, by using the updateLayoutImage event, which writes DataResource fields with no permission check, to retype an attacker-created DataResource as an FTL template evaluating its own primary key, then using the resulting FreeMarker evaluation to plant an OFBiz Form Widget whose use-when attribute runs unsandboxed Groovy. Users are recommended to upgrade to version 24.09.08, which fixes this issue.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache ofbiz",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "24.09.08",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache ofbiz",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00418,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-425",
+          "CWE-1336"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
