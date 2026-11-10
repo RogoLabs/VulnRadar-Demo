@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T13:28:02+00:00",
+  "generated_at": "2026-11-10T20:51:06+00:00",
   "vendor": "cisco",
   "count": 590,
   "items": [
@@ -75121,7 +75121,7 @@
         "vendor:cisco"
       ],
       "active_threat": false,
-      "probability_score": 0.00594,
+      "probability_score": 0.00599,
       "nvd": {
         "cvss_v3_score": 8.6,
         "cvss_v3_severity": "HIGH",
@@ -324256,14 +324256,25 @@
       "watchlist_hit": true,
       "in_watchlist": true,
       "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "is_critical": true,
+      "priority_label": "CRITICAL (CISA KEV + Watchlist)",
       "matched_terms": [
         "product:cisco broadworks",
         "vendor:cisco"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.00385,
+      "kev": {
+        "cveID": "CVE-2026-20320",
+        "vendorProject": "Cisco",
+        "product": "BroadWorks",
+        "vulnerabilityName": "Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+        "dateAdded": "2026-11-10",
+        "shortDescription": "Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-24",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
