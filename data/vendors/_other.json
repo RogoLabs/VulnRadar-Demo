@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T20:51:06+00:00",
+  "generated_at": "2026-11-11T01:14:18+00:00",
   "vendor": "_other",
   "count": 903,
   "items": [
@@ -29295,7 +29295,7 @@
     },
     {
       "cve_id": "CVE-2026-65059",
-      "description": "Furl versions through 3.15 for Perl allow memory exhaustion via unbounded decompression of HTTP responses.\n\nFurl inflates a response body sent with a gzip, x-gzip or deflate Content-Encoding and appends the output to the response string with no size limit. It does this whether or not the request asked for compression, and no option caps the decompressed size. Responses read with write_file or write_code are streamed rather than held in memory.\n\nA malicious server, or an attacker on a plain HTTP connection, can send a small compressed response that expands to exhaust the client's memory and end the process.",
+      "description": "Furl versions before 3.16 for Perl allow memory exhaustion via unbounded decompression of HTTP responses.\n\nFurl inflates a response body sent with a gzip, x-gzip or deflate Content-Encoding and appends the output to the response string with no size limit. It does this whether or not the request asked for compression, and no option caps the decompressed size. Responses read with write_file or write_code are streamed rather than held in memory.\n\nA malicious server, or an attacker on a plain HTTP connection, can send a small compressed response that expands to exhaust the client's memory and end the process.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -29305,7 +29305,7 @@
           "product": "",
           "versions": [
             {
-              "lessThanOrEqual": "3.15",
+              "lessThan": "3.16",
               "status": "affected",
               "version": "0",
               "versionType": "custom"
@@ -50139,7 +50139,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],
@@ -50241,7 +50241,7 @@
       ],
       "watchlist_hit": false,
       "in_watchlist": false,
-      "in_patchthis": false,
+      "in_patchthis": true,
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [],

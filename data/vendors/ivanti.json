@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-10T20:51:06+00:00",
+  "generated_at": "2026-11-11T01:14:18+00:00",
   "vendor": "ivanti",
-  "count": 318,
+  "count": 321,
   "items": [
     {
       "cve_id": "CVE-2022-36971",
@@ -13747,6 +13747,69 @@
       }
     },
     {
+      "cve_id": "CVE-2026-105425",
+      "description": "OS command injection in Ivanti Sentry before versions 11.0.0, 10.8.3, and 10.7.4 as well as in Ivanti EPMM before versions 12.11.0.0, 12.10.0.1, and 12.9.0.3 allows a remote authenticated attacker with admin privileges to achieve remote code execution.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "sentry",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "11.0.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "10.8.3",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "10.7.4",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "ivanti",
+          "product": "endpoint manager mobile",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "12.11.0.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "12.10.0.1",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "12.9.0.3",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:endpoint manager mobile",
+        "product:sentry",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-106042",
       "description": "An External Control of File Name or Path vulnerability in Ivanti Xtraction before version 2026.4 allows a remote authenticated attacker to redirect application-generated requests to an attacker-controlled endpoint and obtain EPMM connector credentials transmitted by the application.",
       "cvss_score": 9.9,
@@ -14180,6 +14243,66 @@
         "cpe_count": 7,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-121653",
+      "description": "SQL injection in the Core of Ivanti Endpoint Manager before version 2024 SU8 allows a remote unauthenticated attacker to achieve remote code execution.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "endpoint manager",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "2024 SU8"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:endpoint manager",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-121683",
+      "description": "Missing authentication in Ivanti Cloud Services Application version 5.0.8 allows a remote unauthenticated attacker to add and delete arbitrary trusted EPM Core certificate entries.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "ivanti",
+          "product": "cloud services application",
+          "versions": [
+            {
+              "status": "unaffected",
+              "version": "5.0.8"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:cloud services application",
+        "vendor:ivanti"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-12645",
