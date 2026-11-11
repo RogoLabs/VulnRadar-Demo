@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-11T01:14:18+00:00",
+  "generated_at": "2026-11-11T09:10:21+00:00",
   "vendor": "google",
-  "count": 3899,
+  "count": 3930,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -62583,7 +62583,7 @@
           "CWE-693",
           "CWE-703"
         ],
-        "cpe_count": 5,
+        "cpe_count": 4,
         "reference_count": 3
       }
     },
@@ -62678,7 +62678,7 @@
           "CWE-285",
           "CWE-693"
         ],
-        "cpe_count": 4,
+        "cpe_count": 2,
         "reference_count": 3
       }
     },
@@ -79720,8 +79720,8 @@
           "CWE-252",
           "CWE-787"
         ],
-        "cpe_count": 46,
-        "reference_count": 22
+        "cpe_count": 94,
+        "reference_count": 24
       }
     },
     {
@@ -103820,6 +103820,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-121032",
+      "description": "Out of bounds read in Skia in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00265,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-121034",
       "description": "Use after free in Views in Google Chrome on on Windows prior to 157.0.8103.38 allowed a remote attacker leveraging social engineering to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
       "cvss_score": 9.6,
@@ -103858,7 +103901,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -103988,6 +104031,49 @@
           "CWE-787"
         ],
         "cpe_count": 2,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121040",
+      "description": "Incorrect authorization in Core in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00189,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -104376,6 +104462,92 @@
         ],
         "cpe_count": 1,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121062",
+      "description": "Incorrect authorization in API in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00224,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121063",
+      "description": "Incorrect authorization in CacheStorage in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to bypass site isolation via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00271,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -105282,6 +105454,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-121095",
+      "description": "Uninitialized resource in WebGL in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0027,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-121097",
       "description": "Use after free in Printing in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
       "cvss_score": 8.8,
@@ -105577,6 +105792,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-441"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121109",
+      "description": "Inadequate encryption strength in SSL in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to potentially bypass web origin policy via crafted network traffic. (Chromium security severity: Low)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00109,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-326"
         ],
         "cpe_count": 1,
         "reference_count": 2
@@ -106400,6 +106658,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-121143",
+      "description": "Uninitialized resource in GPU in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00239,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-121148",
       "description": "Use after free in ANGLE in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
       "cvss_score": 9.6,
@@ -106480,6 +106781,92 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-122"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121157",
+      "description": "Incorrect authorization in Chromoting in Google Chrome prior to 157.0.8103.38 allowed a local attacker to bypass system access restrictions via a local program. (Chromium security severity: Low)",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00211,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121160",
+      "description": "Out of bounds read in Skia in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00247,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
         ],
         "cpe_count": 1,
         "reference_count": 2
@@ -106568,6 +106955,49 @@
           "CWE-843"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121167",
+      "description": "Incorrect authorization in Permissions in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00224,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -106695,6 +107125,49 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-441"
+        ],
+        "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121173",
+      "description": "Uninitialized resource in WebGL in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0027,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-908"
         ],
         "cpe_count": 1,
         "reference_count": 2
@@ -107217,6 +107690,92 @@
       }
     },
     {
+      "cve_id": "CVE-2026-121196",
+      "description": "Privilege elevation in Mobile in Google Chrome on on iOS prior to 157.0.8103.38 allowed a remote attacker to bypass system access restrictions into a privileged page via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00232,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-250"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121197",
+      "description": "Out of bounds read in ANGLE in Google Chrome on on Mac prior to 157.0.8103.38 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00219,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 2,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-121198",
       "description": "Confused deputy in WebUI in Google Chrome prior to 157.0.8103.38 allowed a remote attacker leveraging social engineering to bypass web origin policy via a crafted HTML page. (Chromium security severity: Low)",
       "cvss_score": 8.8,
@@ -107514,6 +108073,49 @@
           "CWE-863"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121207",
+      "description": "Uninitialized resource in Dawn in Google Chrome on on Mac prior to 157.0.8103.38 allowed a remote attacker to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00239,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 2,
         "reference_count": 2
       }
     },
@@ -107862,6 +108464,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-121220",
+      "description": "Incorrect authorization in Core in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to bypass system access restrictions via a crafted HTML page. (Chromium security severity: Medium)",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00189,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-121221",
       "description": "Type confusion in V8 in Google Chrome prior to 157.0.8103.38 allowed a remote attacker to potentially execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
       "cvss_score": 8.8,
@@ -108030,6 +108675,49 @@
           "CWE-843"
         ],
         "cpe_count": 1,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121227",
+      "description": "Uninitialized resource in Skia in Google Chrome prior to 157.0.8103.38 allowed a remote attacker who had compromised the renderer process to read memory outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 7.4,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.38",
+              "status": "affected",
+              "lessThan": "157.0.8103.38",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00239,
+      "nvd": {
+        "cvss_v3_score": 7.4,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-908"
+        ],
+        "cpe_count": 0,
         "reference_count": 2
       }
     },
@@ -108722,11 +109410,226 @@
       }
     },
     {
+      "cve_id": "CVE-2026-125343",
+      "description": "Buffer overflow in Compositing in Google Chrome prior to 157.0.8103.50 allowed a remote attacker who had compromised the renderer process to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 8.3,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.50",
+              "status": "affected",
+              "lessThan": "157.0.8103.50",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.3,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-122"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-125344",
+      "description": "Type confusion in V8 in Google Chrome prior to 157.0.8103.50 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.50",
+              "status": "affected",
+              "lessThan": "157.0.8103.50",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-125346",
+      "description": "Use after free in XML in Google Chrome prior to 157.0.8103.50 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.50",
+              "status": "affected",
+              "lessThan": "157.0.8103.50",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-125347",
+      "description": "Incorrect authorization in FileSystem in Google Chrome prior to 157.0.8103.50 allowed a remote attacker leveraging social engineering to execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 9.6,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.50",
+              "status": "affected",
+              "lessThan": "157.0.8103.50",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 9.6,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-125348",
+      "description": "Out of bounds write in GPU in Google Chrome prior to 157.0.8103.50 allowed a remote attacker to potentially execute arbitrary code outside the sandbox via a crafted HTML page. (Chromium security severity: High)",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "chrome",
+          "versions": [
+            {
+              "version": "157.0.8103.50",
+              "status": "affected",
+              "lessThan": "157.0.8103.50",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:chrome",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-125350",
       "description": "Use after free in XML in Google Chrome prior to 157.0.8103.50 allowed a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. (Chromium security severity: High)",
-      "cvss_score": null,
-      "cvss_severity": null,
-      "cvss_vector": null,
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "google",
@@ -108762,6 +109665,17 @@
         "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
         "dueDate": "2026-11-24",
         "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 1,
+        "reference_count": 3
       }
     },
     {
@@ -134661,7 +135575,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -136775,7 +137689,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -136824,7 +137738,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -136881,7 +137795,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -136938,7 +137852,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -137142,7 +138056,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -137240,7 +138154,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -137383,7 +138297,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -137530,7 +138444,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -137587,7 +138501,7 @@
         "cwe_ids": [
           "CWE-248"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -137628,7 +138542,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -139518,6 +140432,88 @@
       }
     },
     {
+      "cve_id": "CVE-2026-58789",
+      "description": "In s_gen_tile_param of multiple files, there is a possible way to trigger an out of bounds write in tile parameter arrays due to an incorrect bounds check. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-787"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-58807",
+      "description": "In Retry_MtsMessageInPending of MtsMessageController.cpp, there is a possible way to trigger memory exhaustion via leaked message objects due to a logic error. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-58814",
       "description": "In parseContentType of PduParser.java, there is a possible denial of service due to an integer overflow. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 7.5,
@@ -139570,7 +140566,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -139815,7 +140811,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -139856,7 +140852,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -139897,7 +140893,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 5
       }
     },
@@ -139938,7 +140934,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -139979,7 +140975,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 5
       }
     },
@@ -140020,7 +141016,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -140118,7 +141114,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -140175,7 +141171,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -140327,7 +141323,7 @@
           "CWE-125",
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 10
       }
     },
@@ -140368,7 +141364,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -140450,7 +141446,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -140548,7 +141544,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -140663,7 +141659,7 @@
           "CWE-362",
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -140818,7 +141814,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -140875,7 +141871,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -140932,7 +141928,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -140989,7 +141985,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141030,7 +142026,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -141140,7 +142136,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141197,7 +142193,7 @@
         "cwe_ids": [
           "CWE-787"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141246,7 +142242,7 @@
         "cwe_ids": [
           "CWE-362"
         ],
-        "cpe_count": 5,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -141303,7 +142299,7 @@
         "cwe_ids": [
           "CWE-190"
         ],
-        "cpe_count": 0,
+        "cpe_count": 8,
         "reference_count": 1
       }
     },
@@ -141348,7 +142344,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -141405,7 +142401,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141446,7 +142442,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -141503,7 +142499,7 @@
         "cwe_ids": [
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141668,9 +142664,10 @@
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
+          "CWE-347",
           "CWE-451"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -141727,7 +142724,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141784,7 +142781,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141841,7 +142838,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -141923,7 +142920,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 3
       }
     },
@@ -141980,7 +142977,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142037,7 +143034,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142086,7 +143083,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -142143,7 +143140,7 @@
         "cwe_ids": [
           "CWE-121"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142200,7 +143197,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142257,7 +143254,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142314,7 +143311,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142371,7 +143368,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142428,7 +143425,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142485,7 +143482,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142542,7 +143539,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142587,7 +143584,7 @@
         "cwe_ids": [
           "CWE-121"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -142636,7 +143633,7 @@
         "cwe_ids": [
           "CWE-415"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -142693,7 +143690,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142750,7 +143747,7 @@
         "cwe_ids": [
           "CWE-269"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142807,7 +143804,7 @@
         "cwe_ids": [
           "CWE-119"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -142848,7 +143845,7 @@
         "cwe_ids": [
           "CWE-693"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 1
       }
     },
@@ -142901,7 +143898,7 @@
         "cwe_ids": [
           "CWE-416"
         ],
-        "cpe_count": 0,
+        "cpe_count": 4,
         "reference_count": 1
       }
     },
@@ -142950,7 +143947,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -142999,7 +143996,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 3,
         "reference_count": 1
       }
     },
@@ -143056,7 +144053,7 @@
         "cwe_ids": [
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -143113,7 +144110,7 @@
         "cwe_ids": [
           "CWE-122"
         ],
-        "cpe_count": 0,
+        "cpe_count": 5,
         "reference_count": 1
       }
     },
@@ -143158,7 +144155,7 @@
         "cwe_ids": [
           "CWE-441"
         ],
-        "cpe_count": 0,
+        "cpe_count": 2,
         "reference_count": 1
       }
     },
@@ -143581,6 +144578,334 @@
         ],
         "cpe_count": 1,
         "reference_count": 12
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59582",
+      "description": "In StartTimer of UcePublishManager.cpp, there is a possible way to trigger a process abort during timer calculation due to an integer overflow. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-190"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59585",
+      "description": "In SetDisplayName of RegInfoContact.cpp, there is a possible denial of service due to a missing null check. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59595",
+      "description": "In DecodeHeaderComponent of SipStack.cpp, there is a possible way to trigger stack exhaustion via unbounded mutual recursion due to a resource exhaustion. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59603",
+      "description": "In RespondReceivedMessage of MtsMessageController.cpp, there is a possible way to trigger a double free and process abort during message retry handling due to a use after free. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59611",
+      "description": "In multiple locations, there is a possible way to trigger a temporary denial of service via an integer overflow trap due to improper input validation. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59613",
+      "description": "In multiple locations, there is a possible way to trigger an out of bounds read and temporary denial of service due to improper input validation. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59623",
+      "description": "In CompareTelUris of SipAddress.cpp, there is a possible way to trigger an unhandled out of range exception and process crash due to an incorrect bounds check. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-119"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59632",
+      "description": "In RespondReceivedMessage of MtsMessageController.cpp, there is a possible way to trigger memory exhaustion via an undrained message queue due to a type confusion. This could lead to remote denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "Android kernel",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": null,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-843"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
