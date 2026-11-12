@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-11T23:31:33+00:00",
+  "generated_at": "2026-11-12T06:47:35+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1431,
+  "count": 1433,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -29088,6 +29088,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-105153",
+      "description": "Improper Restriction of XML External Entity Reference in Apache Roller 4.0 through 6.1.6 allows an authenticated user with no weblog permissions to read files readable by the Roller process and cause the server to issue outbound HTTP requests to attacker-chosen destinations, by submitting a crafted Atom entry to the AtomPub endpoint. The entry body is parsed with a parser configuration that permits external parameter entities and external DTD subsets, and the parse happens before any per-weblog authorization check and before any check of whether the AtomPub feature is enabled, so the endpoint is reachable by any authenticated account on a default installation. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which parses AtomPub entries with a hardened XML configuration and rejects AtomPub requests while the feature is disabled.",
+      "cvss_score": 7.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache roller",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "4.0",
+              "lessThanOrEqual": "6.1.6",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache roller",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-105325",
       "description": "Missing check for\u00a0\u00a0ACCOUNTING_UPDATE /\u00a0 ACCOUNTING_CREATE\u00a0in accounting in allows user with only ACCOUNTING_VIEW permission to update/create PaymentApplication.\n\nAffected versions before : 24.09.08\n\nUsers are recommended to upgrade to version 24.09.08 which fixes this issue.",
       "cvss_score": 7.5,
@@ -32207,6 +32239,38 @@
         "cpe_count": 0,
         "reference_count": 3
       }
+    },
+    {
+      "cve_id": "CVE-2026-118411",
+      "description": "Cross-Site Request Forgery (CSRF) in Apache Roller 5.0.1 through 6.1.6 allows an unauthenticated attacker to create an administrator account if a logged-in Roller administrator opens a link that the attacker controls. The request-token check applied only to POST requests, and administrative actions also accepted GET requests. Users are recommended to upgrade to Apache Roller 6.1.7 or later, which requires POST and a valid token for actions that change data.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache roller",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "5.0.1",
+              "lessThanOrEqual": "6.1.6",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache roller",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-118636",

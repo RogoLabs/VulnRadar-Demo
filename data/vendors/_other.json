@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-11T23:31:33+00:00",
+  "generated_at": "2026-11-12T06:47:35+00:00",
   "vendor": "_other",
-  "count": 920,
+  "count": 921,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -28645,6 +28645,35 @@
         "cpe_count": 0,
         "reference_count": 4
       }
+    },
+    {
+      "cve_id": "CVE-2026-125637",
+      "description": "A flaw was found in the Konflux UI proxy. Hostname values defined in the KonfluxUI custom resource are inserted directly into proxy configuration files without adequate validation or sanitization. An authenticated user with permissions to modify the custom resource can inject malicious configuration directives to bypass authentication and authorization controls, potentially exposing internal backend services. In addition, providing malformed input can cause the configuration generator to fail, resulting in a denial of service (DoS) by preventing the proxy from starting.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver",
+              "lessThanOrEqual": "0.2.2"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-13048",
@@ -59217,7 +59246,7 @@
             {
               "version": "12.5.0.2421",
               "versionType": "semver",
-              "lessThan": "2.6.0.*",
+              "lessThan": "12.6.0.*",
               "status": "affected"
             }
           ]
