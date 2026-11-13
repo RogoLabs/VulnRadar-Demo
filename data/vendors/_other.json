@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-13T12:06:42+00:00",
+  "generated_at": "2026-11-13T19:34:12+00:00",
   "vendor": "_other",
-  "count": 922,
+  "count": 924,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -8814,7 +8814,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.99728,
+      "probability_score": 0.9976,
       "kev": {
         "cveID": "CVE-2025-61882",
         "vendorProject": "Oracle",
@@ -17516,7 +17516,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.03439,
+      "probability_score": 0.03515,
       "kev": {
         "cveID": "CVE-2022-40139",
         "vendorProject": "Trend Micro",
@@ -23201,7 +23201,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00264,
+      "probability_score": 0.00283,
       "nvd": {
         "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
@@ -26692,7 +26692,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00352,
+      "probability_score": 0.00615,
       "nvd": {
         "cvss_v3_score": 7.5,
         "cvss_v3_severity": "HIGH",
@@ -38097,7 +38097,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.33259,
+      "probability_score": 0.33494,
       "kev": {
         "cveID": "CVE-2024-11182",
         "vendorProject": "MDaemon",
@@ -38798,7 +38798,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.00924,
+      "probability_score": 0.01173,
       "kev": {
         "cveID": "CVE-2026-84869",
         "vendorProject": "ConnectWise",
@@ -39253,6 +39253,90 @@
         ],
         "cpe_count": 20,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-123039",
+      "description": "The Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket (/tmp/dynamic_socket) without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "checkpoint",
+          "product": "quantum security gateway",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "R82.10 with Jumbo Hotfix Take 50 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R82.20 with Jumbo Hotfix Take 10 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R82 with Jumbo Hotfix Take 130 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81.20 with Jumbo Hotfix Take 173 or below"
+            }
+          ]
+        },
+        {
+          "vendor": "checkpoint",
+          "product": "quantum security management",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "R82.10 with Jumbo Hotfix Take 50 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R82.20 with Jumbo Hotfix Take 10 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R82 with Jumbo Hotfix Take 130 or below"
+            },
+            {
+              "status": "affected",
+              "version": "R81.20 with Jumbo Hotfix Take 173 or below"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01274,
+      "kev": {
+        "cveID": "CVE-2026-123039",
+        "vendorProject": "Check Point",
+        "product": "Multiple Products",
+        "vulnerabilityName": "Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+        "dateAdded": "2026-11-13",
+        "shortDescription": "Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-16",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-732",
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -43251,7 +43335,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.24066,
+      "probability_score": 0.22377,
       "kev": {
         "cveID": "CVE-2025-4632",
         "vendorProject": "Samsung",
@@ -43797,7 +43881,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.31309,
+      "probability_score": 0.3522,
       "kev": {
         "cveID": "CVE-2025-0994",
         "vendorProject": "Trimble",
@@ -44056,7 +44140,7 @@
         "vendor:franciscopalacios"
       ],
       "active_threat": false,
-      "probability_score": 0.00284,
+      "probability_score": 0.00304,
       "nvd": {
         "cvss_v3_score": 8.8,
         "cvss_v3_severity": "HIGH",
@@ -46159,7 +46243,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.62512,
+      "probability_score": 0.63245,
       "kev": {
         "cveID": "CVE-2025-47813",
         "vendorProject": "Wing FTP Server",
@@ -47397,7 +47481,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.99964,
+      "probability_score": 0.99919,
       "kev": {
         "cveID": "CVE-2025-5777",
         "vendorProject": "Citrix",
@@ -50904,7 +50988,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.06196,
+      "probability_score": 0.09082,
       "kev": {
         "cveID": "CVE-2026-111560",
         "vendorProject": "Barracuda Networks",
@@ -50955,7 +51039,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.08934,
+      "probability_score": 0.10947,
       "kev": {
         "cveID": "CVE-2026-116606",
         "vendorProject": "Barracuda Networks",
@@ -51315,6 +51399,57 @@
         ],
         "cpe_count": 4,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-114713",
+      "description": "The labeled-response module in UnrealIRCd 6.0.0 before 6.2.7.1 does not escape the IRCv3 \"label\" message tag when echoing it into replies, which allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+      "cvss_score": 8.6,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "unrealircd",
+          "product": "unrealircd",
+          "versions": [
+            {
+              "lessThan": "6.2.7.1",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00302,
+      "kev": {
+        "cveID": "CVE-2026-114713",
+        "vendorProject": "UnrealIRCd",
+        "product": "UnrealIRCd",
+        "vulnerabilityName": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+        "dateAdded": "2026-11-13",
+        "shortDescription": "UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-16",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.6,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-140"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
       }
     },
     {
@@ -53409,7 +53544,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.13525,
+      "probability_score": 0.13335,
       "kev": {
         "cveID": "CVE-2026-22769",
         "vendorProject": "Dell",
@@ -53778,7 +53913,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.60425,
+      "probability_score": 0.61515,
       "kev": {
         "cveID": "CVE-2026-33634",
         "vendorProject": "Aquasecurity",
