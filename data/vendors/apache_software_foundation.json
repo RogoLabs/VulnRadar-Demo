@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-13T19:34:12+00:00",
+  "generated_at": "2026-11-14T00:57:20+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1448,
+  "count": 1450,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -32867,6 +32867,70 @@
         "cpe_count": 0,
         "reference_count": 6
       }
+    },
+    {
+      "cve_id": "CVE-2026-124679",
+      "description": "Authentication bypass by spoofing vulnerability in Apache APISIX.\n\n\n\nOn routes using jwe-decrypt with strict: false and a\nforward_header distinct from the token header an unauthenticated\nclient can supply the value the upstream treats as gateway-decrypted\nplaintext. Similar can happen when\u00a0forward-auth is configured with allow_degradation: true, and the auth service is unavailable.\n\n\n\nThis issue affects Apache APISIX: from 3.18.0 through 3.19.0.\n\n\n\nUsers are recommended to upgrade to version 3.20.0, which fixes the issue.",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache apisix",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.18.0",
+              "lessThanOrEqual": "3.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache apisix",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-124680",
+      "description": "Interpretation Conflict, resulting in (Incorrect Authorization) vulnerability in Apache APISIX.\n\n\n\nAn unauthenticated client can reach upstream paths protected\nby a route-level auth plugin when a route without auth exists on the\nsame upstream and the upstream does not collapse encoded dot segments.\n\n\n\nThis issue affects Apache APISIX: from 0.9 through 3.19.0.\n\n\n\nUsers are recommended to upgrade to version 3.20.0, which fixes the issue.",
+      "cvss_score": 7.0,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache apisix",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.9",
+              "lessThanOrEqual": "3.19.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache apisix",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-22022",
