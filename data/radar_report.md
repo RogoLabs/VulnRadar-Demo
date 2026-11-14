@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-11-14T00:57:23+00:00`
+Generated: `2026-11-14T07:36:29+00:00`
 
 ## Executive Summary
 
@@ -253,6 +253,8 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Nov 14 | [CVE-2026-124679](https://www.cve.org/CVERecord?id=CVE-2026-124679) | 🆕 New |
+| Nov 14 | [CVE-2026-124680](https://www.cve.org/CVERecord?id=CVE-2026-124680) | 🆕 New |
 | Nov 13 | [CVE-2026-115864](https://www.cve.org/CVERecord?id=CVE-2026-115864) | 🆕 New |
 | Nov 13 | [CVE-2026-101031](https://www.cve.org/CVERecord?id=CVE-2026-101031) | 🆕 New |
 | Nov 13 | [CVE-2026-111395](https://www.cve.org/CVERecord?id=CVE-2026-111395) | 🆕 New |
@@ -301,6 +303,4 @@ Top critical items:
 | Nov 13 | [CVE-2026-126881](https://www.cve.org/CVERecord?id=CVE-2026-126881) | 🆕 New |
 | Nov 13 | [CVE-2026-126883](https://www.cve.org/CVERecord?id=CVE-2026-126883) | 🆕 New |
 | Nov 13 | [CVE-2026-126885](https://www.cve.org/CVERecord?id=CVE-2026-126885) | 🆕 New |
-| Nov 13 | [CVE-2026-126886](https://www.cve.org/CVERecord?id=CVE-2026-126886) | 🆕 New |
-| Nov 13 | [CVE-2026-126887](https://www.cve.org/CVERecord?id=CVE-2026-126887) | 🆕 New |
-| ... | | _and 1137 more_ |
+| ... | | _and 1134 more_ |
