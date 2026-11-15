@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-14T23:52:16+00:00",
+  "generated_at": "2026-11-15T05:53:22+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1450,
+  "count": 1451,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -32556,6 +32556,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-119618",
+      "description": "Concurrent Execution using Shared Resource with Improper Synchronization vulnerability in Apache HTTP Server's mod_http2 in assign_headers() can lead to RCE.\n\nThis issue affects Apache HTTP Server: from 2.4.55 through 2.4.70.\nAffected releases of mod_h2 from GitHub: from 2.0.8 through 2.0.42.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache http server",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.4.55",
+              "lessThanOrEqual": "2.4.70",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache http server",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0133,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-362"
+        ],
+        "cpe_count": 2,
+        "reference_count": 8
+      }
+    },
+    {
       "cve_id": "CVE-2026-119724",
       "description": "** UNSUPPORTED WHEN ASSIGNED ** Improper restriction of recursive entity references in DTDs ('XML entity expansion') vulnerability in Apache JClouds.\n\n\n\nThis issue affects Apache JClouds: all versions.\n\n\n\nAs this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
       "cvss_score": 7.5,
@@ -32898,7 +32941,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00496
+      "probability_score": 0.00496,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-290"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-124680",
@@ -32930,7 +32984,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00389
+      "probability_score": 0.00389,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-436"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-22022",
@@ -56451,9 +56516,9 @@
     {
       "cve_id": "CVE-2026-68982",
       "description": "Apache Airflow's CeleryExecutor ran callback workloads (`ExecuteCallback`, used for deadline-alert callbacks) without validating the workload's authentication token. Anyone able to write to the Celery broker could enqueue a forged callback and execute arbitrary code on every CeleryExecutor worker, without Airflow credentials. Deployments using the CeleryExecutor are affected.\n\nUsers are advised to upgrade to apache-airflow 3.4.0 or later, in which the worker claims the callback through the Execution API, validating the token, before running it.",
-      "cvss_score": 7.3,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "apache software foundation",
@@ -56480,8 +56545,8 @@
       "active_threat": false,
       "probability_score": 0.00687,
       "nvd": {
-        "cvss_v3_score": 7.3,
-        "cvss_v3_severity": "HIGH",
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
