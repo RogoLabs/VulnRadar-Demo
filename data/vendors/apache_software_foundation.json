@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-16T00:01:19+00:00",
+  "generated_at": "2026-11-16T05:55:28+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1451,
+  "count": 1452,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -20941,9 +20941,9 @@
       ],
       "watchlist_hit": true,
       "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [
         "product:apache tomcat",
         "vendor:apache software foundation"
@@ -32595,7 +32595,7 @@
           "CWE-362"
         ],
         "cpe_count": 2,
-        "reference_count": 8
+        "reference_count": 9
       }
     },
     {
@@ -32996,6 +32996,38 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-129349",
+      "description": "When authentication caching is enabled on DefaultLdapRealm, after a user logs in successfully once, subsequent logins for that user succeed with any password.\nA cached authentication skips the LDAP bind, and the AllowAllCredentialsMatcher\u00a0installed by default in DefaultLdapRealm\u00a0accepts any credentials, allowing an attacker who knows a valid username to authenticate as that user.\nThis issue affects all Apache Shiro versions through 3.0.0, only when using DefaultLdapRealm\u00a0(or JndiLdapRealm) with authenticationCachingEnabled\u00a0set to\u00a0true, which is not the default.\n\nMitigation: Upgrade to version 3.0.1 or later, which fixes the issue by no longer installing AllowAllCredentialsMatcher\u00a0by default.\nAlternatively, disable authentication caching on the LDAP realm (this is the default), or configure a credentials matcher, such as SimpleCredentialsMatcher, that verifies credentials against the cached authentication info.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/S:N/AU:Y/R:U/V:C/RE:L/U:Red",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache shiro",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "3.0.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache shiro",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00543
     },
     {
       "cve_id": "CVE-2026-22022",
