@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-17T07:55:36+00:00",
+  "generated_at": "2026-11-17T17:39:01+00:00",
   "vendor": "_other",
-  "count": 924,
+  "count": 925,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -245,7 +245,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.99787,
+      "probability_score": 0.99783,
       "kev": {
         "cveID": "CVE-2024-0012",
         "vendorProject": "Palo Alto Networks",
@@ -1958,7 +1958,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.01062,
+      "probability_score": 0.01595,
       "kev": {
         "cveID": "CVE-2022-22706",
         "vendorProject": "Arm",
@@ -4511,7 +4511,7 @@
       "probability_score": 0.68079,
       "kev": {
         "cveID": "CVE-2023-28461",
-        "vendorProject": "Array Networks ",
+        "vendorProject": "Array Networks",
         "product": "AG/vxAG ArrayOS",
         "vulnerabilityName": "Array Networks AG and vxAG ArrayOS Missing Authentication for Critical Function Vulnerability",
         "dateAdded": "2024-11-25",
@@ -6322,7 +6322,7 @@
       "probability_score": 0.66414,
       "kev": {
         "cveID": "CVE-2024-57726",
-        "vendorProject": "SimpleHelp ",
+        "vendorProject": "SimpleHelp",
         "product": "SimpleHelp",
         "vulnerabilityName": "SimpleHelp Missing Authorization Vulnerability",
         "dateAdded": "2026-04-24",
@@ -6371,7 +6371,7 @@
       "probability_score": 0.96833,
       "kev": {
         "cveID": "CVE-2024-57727",
-        "vendorProject": "SimpleHelp ",
+        "vendorProject": "SimpleHelp",
         "product": "SimpleHelp",
         "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
         "dateAdded": "2025-02-13",
@@ -6420,7 +6420,7 @@
       "probability_score": 0.64468,
       "kev": {
         "cveID": "CVE-2024-57728",
-        "vendorProject": "SimpleHelp ",
+        "vendorProject": "SimpleHelp",
         "product": "SimpleHelp",
         "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
         "dateAdded": "2026-04-24",
@@ -28727,6 +28727,46 @@
       }
     },
     {
+      "cve_id": "CVE-2026-126673",
+      "description": "Data::Dump::Streamer versions before 3.00 for Perl allow code injection via unescaped Regexp patterns in _dump_qr.\n\nA Regexp's pattern is written into a qr literal without escaping \"$\" or \"@\", so \"@{[ ... ]}\" and \"${\\ ... }\" in the pattern run as code when the dump is evaluated. An already escaped delimiter gets a second backslash, which leaves the delimiter bare and ends the qr literal early.\n\nAn attacker who supplies a pattern that an application compiles, dumps and later restores with eval or do can run arbitrary Perl code.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "",
+          "product": "",
+          "versions": [
+            {
+              "lessThan": "3.00",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": false,
+      "probability_score": 0.00466,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-13048",
       "description": "Data::MuForm::Localizer versions through 0.05 for Perl execute Perl from a message catalog header, reached at an arbitrary path because load_lexicon interpolates the language attribute into the catalog filename.\n\nload_lexicon builds the catalog path by appending `Messages/$lang.po` to the directory holding Localizer.pm, where $lang is the language attribute, with no check that it names a bare locale tag. A value holding `../` segments walks out of the message directory, so any readable path with a `.po` suffix is loaded. While parsing the catalog, extract_header_msgstr takes the `Plural-Forms:` header, prefixes `$` to the bare words nplurals, plural and n, and passes the rest verbatim into a string that is evaluated: the nplurals form evaluates the header expression immediately, and the plural_code form compiles it into a subroutine whose body runs when a plural message is localized. A header of `nplurals=2; plural=(system('...'),0);` therefore runs that command as the catalog loads. The evaluation inherits strict, so an expression that assigns to an undeclared variable fails to compile, while one built from calls alone does not.\n\nAn application that sets the language attribute from request data, an Accept-Language header or a locale parameter, and an attacker who can place a file with a `.po` suffix and chosen contents at a readable path, together give code execution as the application user. The message expansion path is not affected: expand_named substitutes only the placeholder names the caller supplies, and _mangle_value returns the value unchanged.",
       "cvss_score": 8.2,
@@ -29356,7 +29396,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.00642,
+      "probability_score": 0.00657,
       "nvd": {
         "cvss_v3_score": 7.2,
         "cvss_v3_severity": "HIGH",
@@ -29408,7 +29448,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": false,
-      "probability_score": 0.13829,
+      "probability_score": 0.1365,
       "nvd": {
         "cvss_v3_score": 7.2,
         "cvss_v3_severity": "HIGH",
@@ -32954,7 +32994,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.84734,
+      "probability_score": 0.84289,
       "kev": {
         "cveID": "CVE-2026-81578",
         "vendorProject": "PaperCut",
@@ -33017,7 +33057,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.63047,
+      "probability_score": 0.60891,
       "kev": {
         "cveID": "CVE-2026-82078",
         "vendorProject": "PaperCut",
@@ -34077,7 +34117,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.01207,
+      "probability_score": 0.01211,
       "kev": {
         "cveID": "CVE-2025-59374",
         "vendorProject": "ASUS",
@@ -39314,7 +39354,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.02191,
+      "probability_score": 0.01938,
       "kev": {
         "cveID": "CVE-2026-123039",
         "vendorProject": "Check Point",
@@ -39335,7 +39375,7 @@
           "CWE-732",
           "CWE-862"
         ],
-        "cpe_count": 0,
+        "cpe_count": 269,
         "reference_count": 2
       }
     },
@@ -41185,7 +41225,7 @@
           "CWE-824",
           "CWE-1325"
         ],
-        "cpe_count": 316,
+        "cpe_count": 317,
         "reference_count": 12
       }
     },
@@ -44346,7 +44386,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.92219,
+      "probability_score": 0.92455,
       "kev": {
         "cveID": "CVE-2025-9242",
         "vendorProject": "WatchGuard",
@@ -44641,7 +44681,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.9384,
+      "probability_score": 0.95208,
       "kev": {
         "cveID": "CVE-2025-24016",
         "vendorProject": "Wazuh",
@@ -48300,7 +48340,7 @@
       "probability_score": 0.0333,
       "kev": {
         "cveID": "CVE-2025-66644",
-        "vendorProject": "Array Networks ",
+        "vendorProject": "Array Networks",
         "product": "ArrayOS AG",
         "vulnerabilityName": "Array Networks ArrayOS AG OS Command Injection Vulnerability",
         "dateAdded": "2025-12-08",
@@ -48518,7 +48558,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.90479,
+      "probability_score": 0.90598,
       "kev": {
         "cveID": "CVE-2025-6218",
         "vendorProject": "RARLAB",
@@ -51428,7 +51468,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.00508,
+      "probability_score": 0.00467,
       "kev": {
         "cveID": "CVE-2026-114713",
         "vendorProject": "UnrealIRCd",
@@ -51441,14 +51481,14 @@
         "knownRansomwareCampaignUse": "Unknown"
       },
       "nvd": {
-        "cvss_v3_score": 8.6,
+        "cvss_v3_score": 7.7,
         "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-140"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 5
       }
     },
@@ -51741,7 +51781,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.01199,
+      "probability_score": 0.01586,
       "kev": {
         "cveID": "CVE-2026-119977",
         "vendorProject": "WordPress",
@@ -56510,7 +56550,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.26157,
+      "probability_score": 0.8234,
       "kev": {
         "cveID": "CVE-2026-45247",
         "vendorProject": "Mirasvit",
@@ -57451,7 +57491,7 @@
       "probability_score": 0.80251,
       "kev": {
         "cveID": "CVE-2026-48558",
-        "vendorProject": "SimpleHelp ",
+        "vendorProject": "SimpleHelp",
         "product": "SimpleHelp",
         "vulnerabilityName": "SimpleHelp Authentication Bypass Vulnerability",
         "dateAdded": "2026-06-29",
@@ -58526,7 +58566,7 @@
       "priority_label": "",
       "matched_terms": [],
       "active_threat": true,
-      "probability_score": 0.2239,
+      "probability_score": 0.7884,
       "kev": {
         "cveID": "CVE-2026-5430",
         "vendorProject": "WSO2",
