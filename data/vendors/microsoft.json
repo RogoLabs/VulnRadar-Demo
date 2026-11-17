@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-17T00:14:45+00:00",
+  "generated_at": "2026-11-17T07:55:36+00:00",
   "vendor": "microsoft",
-  "count": 7328,
+  "count": 7331,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -640209,7 +640209,7 @@
     },
     {
       "cve_id": "CVE-2026-105544",
-      "description": "Improper access control in .NET allows an authorized attacker to elevate privileges locally.",
+      "description": "Improper access control in .NET VSTest CLI allows an authorized attacker to elevate privileges locally.",
       "cvss_score": 7.5,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
@@ -703808,6 +703808,18 @@
         },
         {
           "vendor": "microsoft",
+          "product": "microsoft.dotnet.web.projecttemplates.11.0",
+          "versions": [
+            {
+              "version": "11.0.0-preview.1.26104.118",
+              "lessThan": "11.0.0",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
           "product": "microsoft.dotnet.web.projecttemplates.8.0",
           "versions": [
             {
@@ -703989,6 +704001,7 @@
         "product:microsoft.dotnet-scaffold-aspnet version 9.0.0-preview.8.24467.5",
         "product:microsoft.dotnet-scaffold-aspnet version 9.0.0-preview.9.24509.5",
         "product:microsoft.dotnet.web.projecttemplates.10.0",
+        "product:microsoft.dotnet.web.projecttemplates.11.0",
         "product:microsoft.dotnet.web.projecttemplates.8.0",
         "product:microsoft.dotnet.web.projecttemplates.9.0",
         "product:microsoft.visualstudio.web.codegeneration.design",
@@ -704031,9 +704044,7 @@
           "product": "azure front door",
           "versions": [
             {
-              "version": "1.0.0",
-              "lessThan": "publication",
-              "versionType": "custom",
+              "version": "-",
               "status": "affected"
             }
           ]
@@ -736793,6 +736804,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-124223",
+      "description": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft sharepoint server subscription edition",
+          "versions": [
+            {
+              "version": "16.0.0",
+              "lessThan": "16.0.20326.20278",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft sharepoint server subscription edition",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-124224",
       "description": "Improper link resolution before file access ('link following') in Windows PowerShell allows an authorized attacker to elevate privileges locally.",
       "cvss_score": 7.0,
@@ -738299,6 +738342,147 @@
         "cpe_count": 0,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-126526",
+      "description": "Heap-based buffer overflow in Microsoft Office OneNote allows an unauthorized attacker to execute code over a network.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft 365 apps for enterprise",
+          "versions": [
+            {
+              "version": "16.0.1",
+              "lessThan": "https://aka.ms/OfficeSecurityReleases",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office 365 for mac",
+          "versions": [
+            {
+              "version": "1.0.0",
+              "lessThan": "16.115.26110837",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office ltsc 2021",
+          "versions": [
+            {
+              "version": "16.0.1",
+              "lessThan": "16.0.14334.21048",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office ltsc 2024",
+          "versions": [
+            {
+              "version": "16.0.0",
+              "lessThan": "16.0.17932.21140",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office ltsc for mac 2021",
+          "versions": [
+            {
+              "version": "16.0.1",
+              "lessThan": "16.115.26110837",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office ltsc for mac 2024",
+          "versions": [
+            {
+              "version": "16.0.0",
+              "lessThan": "16.115.26110837",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft 365 apps for enterprise",
+        "product:microsoft office 365 for mac",
+        "product:microsoft office ltsc 2021",
+        "product:microsoft office ltsc 2024",
+        "product:microsoft office ltsc for mac 2021",
+        "product:microsoft office ltsc for mac 2024",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-129857",
+      "description": "Microsoft jxrlib through 1.1 and the mircomir jxrlib fork before 1.3.1 contain a heap buffer overflow in ReadBinaryData() in jxrgluelib/JXRMeta.c caused by integer overflow of the metadata count. Attackers can supply a JPEG XR file with a count of 0xFFFFFFFE or 0xFFFFFFFF, wrapping PKAlloc(uCount + 2) to an undersized buffer that the following file read overflows, corrupting heap memory in decoding applications.",
+      "cvss_score": 8.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "jxrlib",
+          "versions": [
+            {
+              "version": "0",
+              "lessThanOrEqual": "1.1",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "mircomir",
+          "product": "jxrlib",
+          "versions": [
+            {
+              "version": "0",
+              "lessThan": "1.3.1",
+              "versionType": "semver",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jxrlib",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-20803",
