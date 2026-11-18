@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-17T17:39:01+00:00",
+  "generated_at": "2026-11-18T00:56:57+00:00",
   "vendor": "_other",
-  "count": 925,
+  "count": 926,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -51490,6 +51490,82 @@
         ],
         "cpe_count": 1,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-115731",
+      "description": "Deserialization of untrusted data in the report-processing code of Puppet, as used by Puppet Server, in the affected releases, allows a client that holds any CA-signed agent certificate to execute arbitrary code on the Puppet Server as its service user by submitting a report containing a crafted rich-data type via PUT request. Where the certificate authority autosigns requests without strong verification, an unauthenticated network attacker can obtain such a certificate.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "perforce",
+          "product": "puppet enterprise",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2023.8.0",
+              "lessThan": "2023.8.13",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "2025.0.0",
+              "lessThan": "2025.12.1",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "2026.0.0",
+              "lessThan": "2026.0.1",
+              "versionType": "custom"
+            },
+            {
+              "status": "unaffected",
+              "version": "2023.8.13"
+            },
+            {
+              "status": "unaffected",
+              "version": "2025.12.1"
+            },
+            {
+              "status": "unaffected",
+              "version": "2026.0.1"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00366,
+      "kev": {
+        "cveID": "CVE-2026-115731",
+        "vendorProject": "Perforce",
+        "product": "Puppet Enterprise",
+        "vulnerabilityName": "Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
+        "dateAdded": "2026-11-17",
+        "shortDescription": "Perforce Puppet Enterprise contains a deserialization of untrusted data vulnerability in Puppet\u2019s report-processing code that allows a client with any CA-signed agent certificate to execute arbitrary code on the Puppet Server as the service user by submitting a report containing a crafted rich-data type through a PUT request. If the certificate authority automatically signs requests without strong verification, an unauthenticated network attacker can obtain a valid certificate and exploit the vulnerability.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-12-01",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94",
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
