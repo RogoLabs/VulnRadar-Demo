@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T18:04:15+00:00",
+  "generated_at": "2026-11-19T00:14:55+00:00",
   "vendor": "apache_software_foundation",
   "count": 1488,
   "items": [
@@ -68765,15 +68765,26 @@
       ],
       "watchlist_hit": true,
       "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [
         "product:apache axis 1.x (eol)",
         "vendor:apache software foundation"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.01128,
+      "kev": {
+        "cveID": "CVE-2026-90436",
+        "vendorProject": "Apache",
+        "product": "Axis",
+        "vulnerabilityName": "Apache Axis Unsafe Reflection Vulnerability",
+        "dateAdded": "2026-11-18",
+        "shortDescription": "Apache Axis contains an unsafe reflection vulnerability that could allow an unauthenticated remote attacker to execute arbitrary code via a crafted SOAP fault message that causes Axis to load and instantiate an attacker-specified class when a suitable class is available on the application classpath. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-21",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 9.8,
         "cvss_v3_severity": "CRITICAL",

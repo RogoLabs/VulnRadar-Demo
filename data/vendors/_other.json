@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-18T18:04:15+00:00",
+  "generated_at": "2026-11-19T00:14:55+00:00",
   "vendor": "_other",
-  "count": 926,
+  "count": 929,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -37778,6 +37778,105 @@
       }
     },
     {
+      "cve_id": "CVE-2024-10441",
+      "description": "Improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) before 1.1-65374 and Synology DiskStation Manager (DSM) before 7.2-64570-4, 7.2.1-69057-6 and 7.2.2-72806-1 allows remote attackers to execute arbitrary code via unspecified vectors.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "synology",
+          "product": "diskstation manager (dsm)",
+          "versions": [
+            {
+              "version": "7.2.2",
+              "status": "affected",
+              "lessThan": "7.2.2-72806-1",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2.1",
+              "status": "affected",
+              "lessThan": "7.2.1-69057-6",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.2",
+              "status": "affected",
+              "lessThan": "7.2-64570-4",
+              "versionType": "semver"
+            },
+            {
+              "version": "7.1",
+              "status": "affected",
+              "lessThan": "7.1.1-42962-7",
+              "versionType": "semver"
+            },
+            {
+              "version": "0",
+              "status": "unknown",
+              "lessThan": "7.0",
+              "versionType": "semver"
+            }
+          ]
+        },
+        {
+          "vendor": "synology",
+          "product": "beestation os (bsm)",
+          "versions": [
+            {
+              "version": "1.1",
+              "status": "affected",
+              "lessThan": "1.1-65374",
+              "versionType": "semver"
+            },
+            {
+              "version": "1.0",
+              "status": "affected",
+              "lessThan": "1.1-65374",
+              "versionType": "semver"
+            },
+            {
+              "version": "0",
+              "status": "unknown",
+              "lessThan": "1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.01251,
+      "kev": {
+        "cveID": "CVE-2024-10441",
+        "vendorProject": "Synology",
+        "product": "DiskStation Manager (DSM)",
+        "vulnerabilityName": "Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+        "dateAdded": "2026-11-18",
+        "shortDescription": "Synology DSM contains an improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) that could allow a remote attacker to execute arbitrary code via unspecified vectors.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-21",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-116"
+        ],
+        "cpe_count": 12,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2024-11120",
       "description": "Certain EOL GeoVision devices have an OS Command Injection vulnerability. Unauthenticated remote attackers can exploit this vulnerability to inject and execute arbitrary system commands on the device. Moreover, this vulnerability has already been exploited by attackers, and we have received related reports.",
       "cvss_score": 9.8,
@@ -55535,6 +55634,206 @@
       }
     },
     {
+      "cve_id": "CVE-2026-40217",
+      "description": "LiteLLM through 2026-04-08 allows remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "berriai",
+          "product": "litellm",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "bb0639701796218a3447160e55c0f1097446e4e6085df7dfd39f476d4143743f",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.1702,
+      "kev": {
+        "cveID": "CVE-2026-40217",
+        "vendorProject": "BerriAI",
+        "product": "LiteLLM",
+        "vulnerabilityName": "BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+        "dateAdded": "2026-11-18",
+        "shortDescription": "BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-12-02",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-420",
+          "CWE-94"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42208",
+      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. From version 1.81.16 to before version 1.83.7, a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. An unauthenticated attacker could send a specially crafted Authorization header to any LLM API route (for example POST /chat/completions) and reach this query through the proxy's error-handling path. An attacker could read data from the proxy's database and may be able to modify it, leading to unauthorised access to the proxy and the credentials it manages. This issue has been patched in version 1.83.7.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "berriai",
+          "product": "litellm",
+          "versions": [
+            {
+              "version": ">= 1.81.16, < 1.83.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.8942,
+      "kev": {
+        "cveID": "CVE-2026-42208",
+        "vendorProject": "BerriAI",
+        "product": "LiteLLM",
+        "vulnerabilityName": "BerriAI LiteLLM SQL Injection Vulnerability",
+        "dateAdded": "2026-05-08",
+        "shortDescription": "BerriAI LiteLLM contains a SQL injection vulnerability that allows an attacker to read data from the proxy's database and potentially modify it, leading to unauthorized access to the proxy and the credentials it manages.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-05-11",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-89"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
+      }
+    },
+    {
+      "cve_id": "CVE-2026-42271",
+      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. From version 1.74.2 to before version 1.83.7, two endpoints used to preview an MCP server before saving it \u2014 POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list \u2014 accepted a full server configuration in the request body, including the command, args, and env fields used by the stdio transport. When called with a stdio configuration, the endpoints attempted to connect, which spawned the supplied command as a subprocess on the proxy host with the privileges of the proxy process. The endpoints were gated only by a valid proxy API key, with no role check. Any authenticated user \u2014 including holders of low-privilege internal-user keys \u2014 could therefore run arbitrary commands on the host. This issue has been patched in version 1.83.7.",
+      "cvss_score": 8.7,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "berriai",
+          "product": "litellm",
+          "versions": [
+            {
+              "version": ">= 1.74.2, < 1.83.7",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.91445,
+      "kev": {
+        "cveID": "CVE-2026-42271",
+        "vendorProject": "BerriAI",
+        "product": "LiteLLM",
+        "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
+        "dateAdded": "2026-06-08",
+        "shortDescription": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "dueDate": "2026-06-22",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-77",
+          "CWE-78"
+        ],
+        "cpe_count": 4,
+        "reference_count": 9
+      }
+    },
+    {
+      "cve_id": "CVE-2026-59822",
+      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. Prior to 1.84.0, LiteLLM's MCP Streamable HTTP endpoint allowed an unauthenticated attacker to use a fabricated Authorization header to trigger an OAuth2 passthrough fallback path that replaced failed LiteLLM key validation with an empty UserAPIKeyAuth() object, allowing requests to reach MCP tooling without a valid LiteLLM key. This issue is fixed in version 1.84.0.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+      "affected": [
+        {
+          "vendor": "berriai",
+          "product": "litellm",
+          "versions": [
+            {
+              "version": "< 1.84.0",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00836,
+      "kev": {
+        "cveID": "CVE-2026-59822",
+        "vendorProject": "BerriAI",
+        "product": "LiteLLM",
+        "vulnerabilityName": "BerriAI LiteLLM Improper Authentication Vulnerability",
+        "dateAdded": "2026-09-02",
+        "shortDescription": "BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-09-16",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287",
+          "CWE-306"
+        ],
+        "cpe_count": 1,
+        "reference_count": 6
+      }
+    },
+    {
       "cve_id": "CVE-2026-41676",
       "description": "rust-openssl provides OpenSSL bindings for the Rust programming language.  From 0.9.27 to before 0.10.78, Deriver::derive (and PkeyCtxRef::derive) sets len = buf.len() and passes it as the in/out length to EVP_PKEY_derive, relying on OpenSSL to honor it. On OpenSSL 1.1.x, X25519, X448, DH and HKDF-extract ignore the incoming *keylen, unconditionally writing the full shared secret (32/56/prime-size bytes). A caller passing a short slice gets a heap/stack overflow from safe code. OpenSSL 3.x providers do check, so this only impacts older OpenSSL. This vulnerability is fixed in 0.10.78.",
       "cvss_score": 7.2,
@@ -56198,155 +56497,6 @@
         ],
         "cpe_count": 6,
         "reference_count": 3
-      }
-    },
-    {
-      "cve_id": "CVE-2026-42208",
-      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. From version 1.81.16 to before version 1.83.7, a database query used during proxy API key checks mixed the caller-supplied key value into the query text instead of passing it as a separate parameter. An unauthenticated attacker could send a specially crafted Authorization header to any LLM API route (for example POST /chat/completions) and reach this query through the proxy's error-handling path. An attacker could read data from the proxy's database and may be able to modify it, leading to unauthorised access to the proxy and the credentials it manages. This issue has been patched in version 1.83.7.",
-      "cvss_score": 9.3,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "berriai",
-          "product": "litellm",
-          "versions": [
-            {
-              "version": ">= 1.81.16, < 1.83.7",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.8942,
-      "kev": {
-        "cveID": "CVE-2026-42208",
-        "vendorProject": "BerriAI",
-        "product": "LiteLLM",
-        "vulnerabilityName": "BerriAI LiteLLM SQL Injection Vulnerability",
-        "dateAdded": "2026-05-08",
-        "shortDescription": "BerriAI LiteLLM contains a SQL injection vulnerability that allows an attacker to read data from the proxy's database and potentially modify it, leading to unauthorized access to the proxy and the credentials it manages.",
-        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-        "dueDate": "2026-05-11",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-89"
-        ],
-        "cpe_count": 1,
-        "reference_count": 6
-      }
-    },
-    {
-      "cve_id": "CVE-2026-42271",
-      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. From version 1.74.2 to before version 1.83.7, two endpoints used to preview an MCP server before saving it \u2014 POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list \u2014 accepted a full server configuration in the request body, including the command, args, and env fields used by the stdio transport. When called with a stdio configuration, the endpoints attempted to connect, which spawned the supplied command as a subprocess on the proxy host with the privileges of the proxy process. The endpoints were gated only by a valid proxy API key, with no role check. Any authenticated user \u2014 including holders of low-privilege internal-user keys \u2014 could therefore run arbitrary commands on the host. This issue has been patched in version 1.83.7.",
-      "cvss_score": 8.7,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "berriai",
-          "product": "litellm",
-          "versions": [
-            {
-              "version": ">= 1.74.2, < 1.83.7",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.91445,
-      "kev": {
-        "cveID": "CVE-2026-42271",
-        "vendorProject": "BerriAI",
-        "product": "LiteLLM",
-        "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
-        "dateAdded": "2026-06-08",
-        "shortDescription": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
-        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-        "dueDate": "2026-06-22",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.8,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-77",
-          "CWE-78"
-        ],
-        "cpe_count": 4,
-        "reference_count": 9
-      }
-    },
-    {
-      "cve_id": "CVE-2026-59822",
-      "description": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. Prior to 1.84.0, LiteLLM's MCP Streamable HTTP endpoint allowed an unauthenticated attacker to use a fabricated Authorization header to trigger an OAuth2 passthrough fallback path that replaced failed LiteLLM key validation with an empty UserAPIKeyAuth() object, allowing requests to reach MCP tooling without a valid LiteLLM key. This issue is fixed in version 1.84.0.",
-      "cvss_score": 8.8,
-      "cvss_severity": "HIGH",
-      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
-      "affected": [
-        {
-          "vendor": "berriai",
-          "product": "litellm",
-          "versions": [
-            {
-              "version": "< 1.84.0",
-              "status": "affected"
-            }
-          ]
-        }
-      ],
-      "watchlist_hit": false,
-      "in_watchlist": false,
-      "in_patchthis": true,
-      "is_critical": false,
-      "priority_label": "",
-      "matched_terms": [],
-      "active_threat": true,
-      "probability_score": 0.00836,
-      "kev": {
-        "cveID": "CVE-2026-59822",
-        "vendorProject": "BerriAI",
-        "product": "LiteLLM",
-        "vulnerabilityName": "BerriAI LiteLLM Improper Authentication Vulnerability",
-        "dateAdded": "2026-09-02",
-        "shortDescription": "BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.",
-        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-        "dueDate": "2026-09-16",
-        "knownRansomwareCampaignUse": "Unknown"
-      },
-      "nvd": {
-        "cvss_v3_score": 8.2,
-        "cvss_v3_severity": "HIGH",
-        "cvss_v2_score": null,
-        "cvss_v2_severity": null,
-        "cwe_ids": [
-          "CWE-287",
-          "CWE-306"
-        ],
-        "cpe_count": 1,
-        "reference_count": 6
       }
     },
     {
@@ -59882,6 +60032,68 @@
           "CWE-407"
         ],
         "cpe_count": 1,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-90817",
+      "description": "An unauthenticated Remote Code Execution vulnerability was found in the survey passthrough routing and Data Import processing logic, in which a malicious user could potentially exploit it by manipulating HTTP requests to access an unintended controller route from a public survey context and by supplying a crafted file-path/stream parameter during import handling. If successfully exploited, this could allow the attacker to remotely execute arbitrary code on the REDCap server. The attacker does not have to be authenticated in order to exploit this, but exploitation requires knowledge of a valid public survey hash. This vulnerability exists in REDCap 13.3.0 and higher.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vanderbilt university",
+          "product": "redcap",
+          "versions": [
+            {
+              "version": "13.3.0",
+              "status": "affected"
+            },
+            {
+              "version": "16.0.49",
+              "status": "unaffected"
+            },
+            {
+              "version": "17.3.10",
+              "status": "unaffected"
+            },
+            {
+              "version": "17.4.4",
+              "status": "unaffected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.03749,
+      "kev": {
+        "cveID": "CVE-2026-90817",
+        "vendorProject": "Vanderbilt University",
+        "product": "Research Electronic Data Capture (REDCap)",
+        "vulnerabilityName": "Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+        "dateAdded": "2026-11-18",
+        "shortDescription": "Vanderbilt University Research Electronic Data Capture (REDCap) contains a code injection vulnerability which could allow an unauthenticated attacker to execute arbitrary code on the server. An attacker could exploit this via crafted HTTP requests that access an unintended controller route from a public survey context and supply a crafted file-path or stream parameter during data import processing. Exploitation requires knowledge of a valid public survey hash.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-21",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-73",
+          "CWE-94"
+        ],
+        "cpe_count": 0,
         "reference_count": 1
       }
     },
