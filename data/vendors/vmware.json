@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T17:47:21+00:00",
+  "generated_at": "2026-11-20T23:58:28+00:00",
   "vendor": "vmware",
   "count": 74,
   "items": [
@@ -2889,17 +2889,28 @@
       ],
       "watchlist_hit": true,
       "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [
         "product:telco cloud infrastructure",
         "product:telco cloud platform",
         "product:vmware vcenter",
         "vendor:vmware"
       ],
-      "active_threat": false,
-      "probability_score": 0.00843
+      "active_threat": true,
+      "probability_score": 0.00843,
+      "kev": {
+        "cveID": "CVE-2026-123890",
+        "vendorProject": "Broadcom",
+        "product": "VMware vCenter",
+        "vulnerabilityName": "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "dateAdded": "2026-11-20",
+        "shortDescription": "Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthorized access to the system.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines",
+        "dueDate": "2026-11-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
     },
     {
       "cve_id": "CVE-2026-123891",

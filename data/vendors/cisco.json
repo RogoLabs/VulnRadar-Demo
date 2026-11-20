@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T17:47:21+00:00",
+  "generated_at": "2026-11-20T23:58:28+00:00",
   "vendor": "cisco",
   "count": 600,
   "items": [
@@ -360818,15 +360818,26 @@
       ],
       "watchlist_hit": true,
       "in_watchlist": true,
-      "in_patchthis": false,
-      "is_critical": false,
-      "priority_label": "",
+      "in_patchthis": true,
+      "is_critical": true,
+      "priority_label": "CRITICAL (Active Exploit in Stack)",
       "matched_terms": [
         "product:cisco telepresence video communication server (vcs) expressway",
         "vendor:cisco"
       ],
-      "active_threat": false,
+      "active_threat": true,
       "probability_score": 0.00417,
+      "kev": {
+        "cveID": "CVE-2026-76466",
+        "vendorProject": "Cisco",
+        "product": "Expressway Series",
+        "vulnerabilityName": "Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+        "dateAdded": "2026-11-20",
+        "shortDescription": "Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-23",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
       "nvd": {
         "cvss_v3_score": 9.8,
         "cvss_v3_severity": "CRITICAL",
