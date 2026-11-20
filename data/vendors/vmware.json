@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-19T18:11:29+00:00",
+  "generated_at": "2026-11-20T00:40:42+00:00",
   "vendor": "vmware",
-  "count": 71,
+  "count": 74,
   "items": [
     {
       "cve_id": "CVE-2022-22962",
@@ -2806,6 +2806,188 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-123890",
+      "description": "VMware vCenter contains an authentication bypass vulnerability in the VMware Directory Service.\nAffected versions: 9.1.x (fixed in 9.1.1.0200); 9.0.x (fixed in 9.0.2.0200); 8.0 (fixed in 8.0 U3m); 5.x (fixed in 5.2.5).\nTelco Cloud Platform 3.0, 4.x, 5.0.x, 5.1.x, 5.2 and Telco Cloud Infrastructure 3.0 are also affected (see KB463116).",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "vmware vcenter",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x",
+              "lessThan": "9.1.1.0200",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x",
+              "lessThan": "9.0.2.0200",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "8.0",
+              "lessThan": "8.0 U3m",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.x",
+              "lessThan": "5.2.5",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud platform",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "4.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.0.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.1.x",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.2",
+              "versionType": "custom"
+            }
+          ]
+        },
+        {
+          "vendor": "vmware",
+          "product": "telco cloud infrastructure",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:telco cloud infrastructure",
+        "product:telco cloud platform",
+        "product:vmware vcenter",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-123891",
+      "description": "SDDC Manager contains an SQL-injection vulnerability due to improper sanitization of user-supplied input.\nAffected versions: 9.1.x.x (fixed in 9.1.1.0200); 9.0.x.x (fixed in 9.0.2.0100); 5.x (fixed in 5.2.5).",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "sddc manager",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "9.1.1.0200",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "9.0.2.0100",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.x",
+              "lessThan": "5.2.5",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:sddc manager",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-123892",
+      "description": "SDDC Manager contains an authenticated command-injection vulnerability due to improper sanitization of user-supplied input.\nAffected versions: 9.1.x.x (fixed in 9.1.1.0200); 9.0.x.x (fixed in 9.0.2.0100); 5.x (fixed in 5.2.5).",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "vmware",
+          "product": "sddc manager",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.1.x.x",
+              "lessThan": "9.1.1.0200",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "9.0.x.x",
+              "lessThan": "9.0.2.0100",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "5.x",
+              "lessThan": "5.2.5",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:sddc manager",
+        "vendor:vmware"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-22719",
