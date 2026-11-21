@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-20T23:58:28+00:00",
+  "generated_at": "2026-11-21T06:37:25+00:00",
   "vendor": "openssl",
-  "count": 66,
+  "count": 70,
   "items": [
     {
       "cve_id": "CVE-2022-0778",
@@ -1630,6 +1630,61 @@
       }
     },
     {
+      "cve_id": "CVE-2026-107494",
+      "description": "Issue summary: The QUIC stack queues a RETIRE_CONNECTION_ID frame also for\nretransmitted NEW_CONNECTION_ID frames. This allows a remote malicious\nQUIC stack to queue an unlimited number of RETIRE_CONNECTION_ID frames.\n\nImpact summary: A malicious remote QUIC peer can trigger an out-of-memory\ncondition causing a Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The earlier fix for CVE-2026-84784 was not complete. It\nfailed to ignore retransmissions of the NEW_CONNECTION_ID frame. The QUIC\nimplementation created and inserted a RETIRE_CONNECTION_ID frame for every\nretransmitted NEW_CONNECTION_ID frame it received and there was no limit\non how many RETIRE_CONNECTION_ID frames were queued.\nThis allows a malicious remote QUIC stack to trigger an out-of-memory (OOM)\ncondition.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside the\nOpenSSL FIPS module boundary.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.1.1",
+              "status": "affected",
+              "version": "4.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.0.4",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.10",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0029,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-107496",
       "description": "Issue summary: Encrypting a CMS message to an EC certificate whose group order\nis 1 may cause CMS_encrypt() or CMS_encrypt_ex() to loop indefinitely.\n\nImpact summary: An attacker able to supply the recipient certificate to an\napplication performing CMS encryption can cause that application to loop\nindefinitely, consuming CPU and resulting in Denial of Service.\n\nCWE: CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')\n\nDescription: CMS_encrypt() and CMS_encrypt_ex() encrypt a message to one or\nmore recipient certificates and, for an EC recipient, generate an ephemeral\nkey in the recipient's group. If the certificate declares a group order of 1,\nrandom scalar generation can only produce zero. The key generation routine\nthen retries without limit while waiting for a nonzero private scalar, so the\ncall never returns.\n\nThe OpenSSL TLS and QUIC implementations do not use this path. An application\nis exposed only if it calls CMS_encrypt() or CMS_encrypt_ex() with a recipient\ncertificate whose EC parameters are attacker-controlled. Certificates with\nnormal EC group orders do not trigger the loop.\n\nOpenSSL 4.0 and later reject unknown explicit EC groups in default builds.\nThese versions are affected only when configured with the\nenable-ec_explicit_curves option.\n\nThe result is a hang that consumes a CPU core until the process is\ninterrupted, a Denial of Service. The severity is Low because the attacker\nmust supply the recipient certificate and the application must choose to\nencrypt to it; ordinary CMS encryption to trusted recipients is unaffected.\n\nThe fix makes EC key generation fail when the group has no valid nonzero\nprivate scalar, instead of retrying indefinitely.\n\nFIPS impact: no\nThe FIPS modules in 4.1, 4.0, 3.5 and 3.0 are not affected. The FIPS provider\ndoes not support arbitrary explicit EC domain parameters, so an order-1 group\nis rejected during key import before the vulnerable key generation path is\nreached.",
       "cvss_score": 7.5,
@@ -1700,6 +1755,110 @@
         ],
         "cpe_count": 0,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121481",
+      "description": "Issue summary: Calling EVP_EncodeBlock() with an input length close to INT_MAX\nmay overflow the calculation of the encoded output size and write past the end\nof the caller-supplied output buffer.\n\nImpact summary: No path by which an attacker can trigger this has been\nidentified. An application that passes an input length near INT_MAX to\nEVP_EncodeBlock() could suffer a heap buffer overflow, crashing or corrupting\nits own memory, but it must itself supply such a length.\n\nCWE: CWE-190: Integer Overflow or Wraparound\n\nDescription: EVP_EncodeBlock() base64-encodes a buffer of a caller-supplied\nlength into an output buffer that the caller allocates. The caller is expected\nto reserve 4*((len+2)/3)+1 bytes. For input lengths close to INT_MAX, the\narithmetic that computes the encoded length overflows a signed integer, so the\nfunction writes more data than the documented output size. The result is a\nheap buffer overflow in the calling process.\n\nReaching this requires an application to pass an input length near INT_MAX to\nEVP_EncodeBlock(). OpenSSL's TLS, QUIC and CMS implementations never encode\nbuffers of that size, and the command line tools cannot practically be made to\ndo so: the limits on reading a proxy password from a file and on bignum sizes\nprevent it. An application that accepts an attacker-controlled length and\nforwards it to EVP_EncodeBlock() without its own bound check is exposed.\n\nThe severity is Low because no attacker-controlled path to the overflow is\nknown. The caller must already hold a buffer of about two gigabytes before the\ndefect can be reached.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.1.1",
+              "status": "affected",
+              "version": "4.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.0.4",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00307,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-122"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-121482",
+      "description": "Verifying a maliciously crafted CMS or PKCS#7 SignedData message with CRL checking enabled may consume excessive CPU time, growing with the square of the message size.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.1.1",
+              "status": "affected",
+              "version": "4.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.0.4",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.10",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00263,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-400"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {
@@ -3773,6 +3932,73 @@
         ],
         "cpe_count": 4,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-84786",
+      "description": "Issue summary: A DANE-enabled TLS client may crash by dereferencing a NULL\npointer when processing an unusual combination of certificate and TLSA\nrecords.\n\nImpact summary: The impact is limited to a client crash (potential Denial\nof Service).\n\nCWE: CWE-476: NULL Pointer Dereference\n\nDescription: A DANE-enabled TLS client that supports TLSA records with at\nleast one of the PKIX-TA(0) or PKIX-EE(1) usages alongside the DANE-TA(2)\nusage may crash by dereferencing a NULL pointer if the server claims a trusted\nCA's certificate to be its end-entity certificate and has an unusual mix of\nassociated TLSA records.\n\nDANE SMTP clients should not be affected since only the\nDANE-TA(2) and DANE-EE(3) TLSA record usages are specified applicable\nin SMTP.  For example, the Postfix MTA is not affected, while the Exim\nMTA does not at present use OpenSSL's DANE implementation.\n\nUse of DANE in validation of RFC7250 raw public keys (RPKs) is also\nunaffected, as these only use DANE-EE(3) TLSA records.\n\nOnly applications that support combining the DANE PKI with a traditional PKI\nare potentially affected.  A DANE-enabled browser or similar, that uses\nOpenSSL's DANE API could be affected.\n\nFIPS impact: no\nThe DANE API is outside the FIPS module boundary.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "openssl",
+          "product": "openssl",
+          "versions": [
+            {
+              "lessThan": "4.1.1",
+              "status": "affected",
+              "version": "4.1.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "4.0.4",
+              "status": "affected",
+              "version": "4.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.5.10",
+              "status": "affected",
+              "version": "3.5.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "3.0.24",
+              "status": "affected",
+              "version": "3.0.0",
+              "versionType": "semver"
+            },
+            {
+              "lessThan": "1.1.1zk",
+              "status": "affected",
+              "version": "1.1.1",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:openssl",
+        "vendor:openssl"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00173,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
       }
     },
     {

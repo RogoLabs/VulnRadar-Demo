@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-20T23:58:28+00:00",
+  "generated_at": "2026-11-21T06:37:25+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1502,
+  "count": 1507,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -30455,6 +30455,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-110513",
+      "description": "Insufficient Session Expiration vulnerability in the Apache Iggy server HTTP transport. A self-issued JSON Web Token (JWT) identified the user only by numeric user ID, and a new user takes the lowest free ID. After an administrator deleted a user, that user's unexpired token, or a token refreshed from it while the ID was free, authenticated as the next account created with that ID and had that account's permissions. Only deployments with HTTP enabled are affected.\n\nThis issue affects Apache Iggy: through 0.9.0.\n\nUsers are recommended to upgrade to version 0.10.0, which fixes the issue.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iggy",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "0.9.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iggy",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00648,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-110535",
       "description": "Improper Privilege Management vulnerability in Apache Syncope.\n\n\n\nAuthProfile self-updates allow non-admin users to configure impersonation for WA surrogate authentication.\nThis issue affects Apache Syncope: from 3.0.12 through 3.0.16, from 4.0.0-M0 through 4.0.8, from 4.1.0-M0 through 4.1.3.\n\n\n\nUsers are recommended to upgrade to version 4.0.9 / 4.1.4, which fix this issue.",
       "cvss_score": 8.8,
@@ -33896,6 +33939,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-118493",
+      "description": "Insertion of Sensitive Information into Log File vulnerability in the Apache Iggy server. If Apache Iggy 0.9.0 started without IGGY_ROOT_USERNAME and IGGY_ROOT_PASSWORD, it generated a root password and wrote it to the server log file, which is enabled by default. The system snapshot command (GetSnapshot on the binary transports and POST /snapshot on HTTP) let a user with only the read_servers permission download the server log files. That user could read the generated root password and log in as root.\n\nThis issue affects Apache Iggy: 0.9.0.\n\nUsers are recommended to upgrade to version 0.10.0, which fixes the issue. Version 0.10.0 never generates a root password, and the snapshot requires the manage_servers permission. If a 0.9.0 server generated its root password, change that password.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iggy",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.9.0",
+              "lessThan": "0.10.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iggy",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00493,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-532"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
       "cve_id": "CVE-2026-118636",
       "description": "**UNSUPPORTED WHEN ASSIGNED**\u00a0\n\nJavaNativeMessageDecoder in the MINA 3.0 codec module calls ObjectInputStream.readObject() on frame bytes with no class filter, so an\napplication that puts it in front of an untrusted peer is open to gadget-chain RCE.\n\nAs the 3.0.0 branch is inactive, we do not plan to release a version that fixes this issue. \n\nUsers are recommended to use the latest Apache MINA 2.2.X branch.",
       "cvss_score": 9.8,
@@ -34783,6 +34869,48 @@
       }
     },
     {
+      "cve_id": "CVE-2026-128981",
+      "description": "** UNSUPPORTED WHEN ASSIGNED **\u00a0\n\n\n\nImproper Authentication in Apache SeaTunnel Web 1.0.2 allows a user whose account has been disabled to authenticate with valid credentials and obtain a new login token. The login query does not check the account status, so disabling an account does not prevent new logins or access to protected APIs using the newly issued token. This issue requires valid credentials for the disabled account; it is not a credential-free authentication bypass.\n\n\n\nApache SeaTunnel Web is no longer maintained. The affected 1.0.2 release does not contain the account-status check added to the main branch in pull request #264. There is no maintained fixed release. Users should discontinue use of this unsupported component.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache seatunnel web",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.0.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache seatunnel web",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00483,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-287"
+        ],
+        "cpe_count": 0,
+        "reference_count": 4
+      }
+    },
+    {
       "cve_id": "CVE-2026-129349",
       "description": "When authentication caching is enabled on DefaultLdapRealm, after a user logs in successfully once, subsequent logins for that user succeed with any password.\nA cached authentication skips the LDAP bind, and the AllowAllCredentialsMatcher\u00a0installed by default in DefaultLdapRealm\u00a0accepts any credentials, allowing an attacker who knows a valid username to authenticate as that user.\nThis issue affects all Apache Shiro versions through 3.0.0, only when using DefaultLdapRealm\u00a0(or JndiLdapRealm) with authenticationCachingEnabled\u00a0set to\u00a0true, which is not the default.\n\nMitigation: Upgrade to version 3.0.1 or later, which fixes the issue by no longer installing AllowAllCredentialsMatcher\u00a0by default.\nAlternatively, disable authentication caching on the LDAP realm (this is the default), or configure a credentials matcher, such as SimpleCredentialsMatcher, that verifies credentials against the cached authentication info.",
       "cvss_score": 9.1,
@@ -34877,6 +35005,92 @@
         ],
         "cpe_count": 0,
         "reference_count": 4
+      }
+    },
+    {
+      "cve_id": "CVE-2026-129509",
+      "description": "In the Apache Airflow Microsoft Azure provider 10.2.0 through 15.3.0, `S3ToAzureBlobStorageOperator` turned off TLS certificate verification for its connection to Amazon S3 by default (`s3_verify=False`), whatever the AWS connection's own verification settings were. An attacker positioned on the network between an Airflow worker and S3 could intercept that traffic, read the signed requests and alter the listed object keys and the copied file contents. Deployments are affected when a Dag uses `S3ToAzureBlobStorageOperator` without setting `s3_verify`. Users are advised to upgrade to apache-airflow-providers-microsoft-azure 15.3.1 or later, which uses the AWS connection's verification settings by default.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache airflow microsoft azure provider",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "10.2.0",
+              "lessThan": "15.3.1",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache airflow microsoft azure provider",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0024,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-295"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-132079",
+      "description": "Insufficient Session Expiration vulnerability in the Apache Iggy Go SDK. The TCP client method CreatePersonalAccessToken wrote the 32-bit expiry into the upper half of the 64-bit expiry field that the server reads. The server read a nonzero expiry as 2^32 times the requested value. A token created through the Go TCP client therefore stayed valid about four billion times longer than the caller asked for.\n\nThis issue affects Apache Iggy Go SDK: from 0.5.0 before 0.10.0.\n\nUsers are recommended to upgrade to version 0.10.0, which fixes the issue. Tokens that an earlier version created keep their long expiry on the server. Delete those tokens and create new ones.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iggy go sdk",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0.5.0",
+              "lessThan": "0.10.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iggy go sdk",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00456,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-613"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
       }
     },
     {
@@ -69400,7 +69614,7 @@
         "cwe_ids": [
           "CWE-470"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 4
       }
     },

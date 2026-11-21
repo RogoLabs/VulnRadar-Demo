@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T23:58:28+00:00",
+  "generated_at": "2026-11-21T06:37:25+00:00",
   "vendor": "apple",
   "count": 1388,
   "items": [
@@ -66993,11 +66993,29 @@
     },
     {
       "cve_id": "CVE-2026-112487",
-      "description": "A path handling issue was addressed with improved validation. This issue is fixed in macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
+      "description": "A path handling issue was addressed with improved validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. An app may be able to gain root privileges.",
       "cvss_score": 7.8,
       "cvss_severity": "HIGH",
       "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "26.7.2",
+              "versionType": "custom"
+            },
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27.2",
+              "versionType": "custom"
+            }
+          ]
+        },
         {
           "vendor": "apple",
           "product": "macos",
@@ -67029,6 +67047,7 @@
       "is_critical": false,
       "priority_label": "",
       "matched_terms": [
+        "product:ios and ipados",
         "product:macos",
         "vendor:apple"
       ],
