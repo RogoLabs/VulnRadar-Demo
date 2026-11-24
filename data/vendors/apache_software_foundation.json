@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-23T19:13:09+00:00",
+  "generated_at": "2026-11-24T04:48:42+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1517,
+  "count": 1518,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -68464,6 +68464,44 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-86312",
+      "description": "Under some configurations a request to the ping endpoint could carry out more than a simple health check. In deployments that rely on Solr's rule-based authorization, a client granted only the low-privilege health permission could thereby trigger behavior that should require higher privileges; where the shipped security.json template leaves the health permission unauthenticated, no credentials are required at all.\u00a0\n\n\nThis issue affects Apache Solr from 9.0.0 through the releases preceding the fixed versions. Users are recommended to upgrade to version 9.11.0 or 10.1.0, which resolve the issue.\n\n\n\n\nYou are affected if you run an affected version and allow the /admin/ping endpoint to be reached with only the health permission. This includes the default sample security configuration installed by the bin/solr CLI, where that endpoint is unauthenticated.\n\nUsers who cannot upgrade immediately should restrict access to the /admin/ping endpoint in their authorization configuration \u2014 for example by requiring a trusted role for that path \u2014 and ensure Solr is not reachable from untrusted clients or networks, as recommended for all Solr deployments.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache solr",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "9.0.0",
+              "lessThan": "9.11.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "10.0.0",
+              "lessThan": "10.1.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache solr",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-86336",

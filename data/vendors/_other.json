@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-23T19:13:09+00:00",
+  "generated_at": "2026-11-24T04:48:42+00:00",
   "vendor": "_other",
-  "count": 950,
+  "count": 952,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -50119,6 +50119,46 @@
       }
     },
     {
+      "cve_id": "CVE-2026-134624",
+      "description": "N-able MailAssure (SpamExperts) before 20261121.1943 does not restrict the destination of the LDAP synchronisation connection check performed when a relay is configured. An authenticated API user can cause the server to connect to arbitrary internal hosts and ports, determine which are reachable, and send crafted data to internal services.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "n-able",
+          "product": "mailassure",
+          "versions": [
+            {
+              "version": "0",
+              "lessThan": "20261121.1943",
+              "status": "affected",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00354,
+      "kev": {
+        "cveID": "CVE-2026-134624",
+        "vendorProject": "N-able",
+        "product": "MailAssure",
+        "vulnerabilityName": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+        "dateAdded": "2026-11-23",
+        "shortDescription": "N-able MailAssure (SpamExperts) contains a server-side request forgery vulnerability in the LDAP synchronization connection check that allows an authenticated API user to connect to arbitrary internal hosts and ports, determine which are reachable, and send crafted data to internal services.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    {
       "cve_id": "CVE-2026-18556",
       "description": "Authentication bypass using an alternate path or channel vulnerability in N-able N-central allows Authentication Bypass.\n\nThis issue affects N-central: through 2026.1.",
       "cvss_score": 8.2,
@@ -53654,6 +53694,57 @@
         ],
         "cpe_count": 19,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-133968",
+      "description": "monailabel (aka MONAI Label) before 0.8.6 allows directory traversal, with resultant remote code execution, via the image parameter to the PUT /datastore/image endpoint, as exploited in the wild starting in September 2026.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "project-monia",
+          "product": "monai label",
+          "versions": [
+            {
+              "lessThan": "0.8.6",
+              "status": "affected",
+              "version": "0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": true,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.03664,
+      "kev": {
+        "cveID": "CVE-2026-133968",
+        "vendorProject": "Project MONAI",
+        "product": "MONAI Label",
+        "vulnerabilityName": "Project MONAI MONAI Label Path Traversal Vulnerability",
+        "dateAdded": "2026-11-23",
+        "shortDescription": "Project MONAI MONAI Label contains a path traversal vulnerability that allows an unauthenticated remote attacker to write arbitrary files outside the intended datastore directory, potentially resulting in remote code execution.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-26",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-24"
+        ],
+        "cpe_count": 0,
+        "reference_count": 3
       }
     },
     {
