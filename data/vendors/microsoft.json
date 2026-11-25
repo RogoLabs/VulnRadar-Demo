@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-24T15:46:14+00:00",
+  "generated_at": "2026-11-25T00:36:37+00:00",
   "vendor": "microsoft",
-  "count": 7346,
+  "count": 7348,
   "items": [
     {
       "cve_id": "CVE-2022-21833",
@@ -658664,6 +658664,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-109484",
+      "description": "Failure to sanitize special elements into a different plane (special element injection) in Azure App Service allows an unauthorized attacker to elevate privileges over a network.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "azure app service for linux",
+          "versions": [
+            {
+              "version": "110.0.0.0",
+              "lessThan": "110.0.7.78, 111.0.7.3",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:azure app service for linux",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-109487",
       "description": "Use after free in Microsoft Office PowerPoint allows an unauthorized attacker to execute code over a network.",
       "cvss_score": 7.5,
@@ -665554,6 +665586,64 @@
         "cpe_count": 9,
         "reference_count": 1
       }
+    },
+    {
+      "cve_id": "CVE-2026-112732",
+      "description": "Double free in Microsoft Office Visio allows an unauthorized attacker to execute code over a network.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+      "affected": [
+        {
+          "vendor": "microsoft",
+          "product": "microsoft 365 apps for enterprise",
+          "versions": [
+            {
+              "version": "16.0.1",
+              "lessThan": "https://aka.ms/OfficeSecurityReleases",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office ltsc 2021",
+          "versions": [
+            {
+              "version": "16.0.1",
+              "lessThan": "16.0.14334.21048",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        },
+        {
+          "vendor": "microsoft",
+          "product": "microsoft office ltsc 2024",
+          "versions": [
+            {
+              "version": "16.0.0",
+              "lessThan": "16.0.17932.21140",
+              "versionType": "custom",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:microsoft 365 apps for enterprise",
+        "product:microsoft office ltsc 2021",
+        "product:microsoft office ltsc 2024",
+        "vendor:microsoft"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-112733",

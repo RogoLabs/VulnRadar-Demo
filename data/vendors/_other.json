@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-24T15:46:14+00:00",
+  "generated_at": "2026-11-25T00:36:37+00:00",
   "vendor": "_other",
-  "count": 952,
+  "count": 954,
   "items": [
     {
       "cve_id": "CVE-2022-0028",
@@ -53705,6 +53705,114 @@
         ],
         "cpe_count": 19,
         "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-131914",
+      "description": "Deserialization of untrusted data in double-submit cookie vs. form field validation in Idunno.AntiCsrf versions through 0.9.1 Beta on ASP.NET allows remote unauthenticated attackers to execute code via object injection",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A",
+      "affected": [
+        {
+          "vendor": "idunno",
+          "product": "anticsrf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "0.9.1.0",
+              "versionType": "custom"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "0.9.1 Beta",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00614,
+      "kev": {
+        "cveID": "CVE-2026-131914",
+        "vendorProject": "Idunno",
+        "product": "AntiCsrf",
+        "vulnerabilityName": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+        "dateAdded": "2026-11-24",
+        "shortDescription": "Idunno AntiCsrf contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via object injection. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-27",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-502"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-132224",
+      "description": "Optimizely Web Experimentation before 2026-11-17 mishandles the account signup flow, leading to presence of attacker-controlled code in the projectJS (aka Project JavaScript) field of certain cdn.optimizely.com assets.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:H/SI:H/SA:N",
+      "affected": [
+        {
+          "vendor": "optimizely",
+          "product": "web experimentation",
+          "versions": [
+            {
+              "lessThan": "2026-11-17",
+              "status": "affected",
+              "version": "0",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": false,
+      "in_watchlist": false,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [],
+      "active_threat": true,
+      "probability_score": 0.00411,
+      "kev": {
+        "cveID": "CVE-2026-132224",
+        "vendorProject": "Optimizely",
+        "product": "Web Experimentation",
+        "vulnerabilityName": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+        "dateAdded": "2026-11-24",
+        "shortDescription": "Optimizely Web Experimentation contains an external control of critical state data vulnerability in its account signup flow that could allow an attacker to impersonate existing customer users and modify Project JavaScript. Successful exploitation can result in attacker-controlled JavaScript being distributed through Optimizely-hosted assets and executed in browsers visiting affected customer websites.",
+        "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA\u2019s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA\u2019s \u201cForensics Triage Requirements\u201d (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+        "dueDate": "2026-11-27",
+        "knownRansomwareCampaignUse": "Unknown"
+      },
+      "nvd": {
+        "cvss_v3_score": 8.7,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-642"
+        ],
+        "cpe_count": 1,
+        "reference_count": 11
       }
     },
     {
