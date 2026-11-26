@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-25T19:59:42+00:00",
+  "generated_at": "2026-11-26T02:51:54+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1520,
+  "count": 1532,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -28290,7 +28290,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00694
+      "probability_score": 0.00694,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-103371",
@@ -33903,6 +33914,179 @@
       }
     },
     {
+      "cve_id": "CVE-2026-116001",
+      "description": "NULL pointer dereference vulnerability in Apache Perl.\n\n\n\nThis issue affects Apache Perl: from 1.99_04 through 2.0.13.\n\n\n\nUsers are recommended to upgrade to version 2.0.14, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache perl",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.99_04",
+              "lessThanOrEqual": "2.0.13",
+              "versionType": "cpan"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache perl",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00805,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-116005",
+      "description": "Fixed-size stack buffer overflow vulnerability in Apache Perl.\n\n\n\nThis issue affects Apache Perl: from 1.99_01 through 2.0.13.\n\n\n\nUsers are recommended to upgrade to version 2.0.14, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache perl",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.99_01",
+              "lessThanOrEqual": "2.0.13",
+              "versionType": "cpan"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache perl",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00864,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-121"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-116032",
+      "description": "Stack buffer overflow vulnerability in Apache Perl.\n\n\n\nThis issue affects Apache Perl: from 1.99_01 through 2.0.13.\n\n\n\nUsers are recommended to upgrade to version 2.0.14, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache perl",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.99_01",
+              "lessThanOrEqual": "2.0.13",
+              "versionType": "cpan"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache perl",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00847,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-121"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-116043",
+      "description": "NULL pointer dereference, Out-of-bounds read vulnerability in Apache Perl.\n\n\n\nThis issue affects Apache Perl: from 1.99_01 through 2.0.13.\n\n\n\nAlso fixes an out-of-bounds read in per-request $/ save/restore for which CVE-2026-116021 (now rejected) had previously been assigned.\n\n\n\nUsers are recommended to upgrade to version 2.0.14, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache perl",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.99_01",
+              "lessThanOrEqual": "2.0.13",
+              "versionType": "cpan"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache perl",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00843,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125",
+          "CWE-476"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-116561",
       "description": "Improper cleanup on thrown exception vulnerability in Apache Tomcat meant that an HTTP 200 response was sent rather than an HTTP 500 response after a AuthException was thrown during Jakarta Authentication secureResponse().\n\n\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.27, from 10.1.0-M1 through 10.1.61, from 9.0.0.M1 through 9.0.123.\n\n\n\nThe following versions were EOL at the time the CVE was created but are known to be affected:\u00a0from 8.5.0 through 8.5.100.\u00a0Other unsupported versions may also be affected.\n\n\n\nUsers are recommended to upgrade to version 11.0.29, 10.0.62 or 9.0.124, which fix the issue.\nNote: Tomcat 11.0.28 was not released",
       "cvss_score": 9.1,
@@ -34077,6 +34261,92 @@
         ],
         "cpe_count": 0,
         "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-116772",
+      "description": "OOB read vulnerability in Apache Perl.\n\n\n\nThis issue affects Apache Perl: from 1.99_07 through 2.0.13.\n\n\n\nUsers are recommended to upgrade to version 2.0.14, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache perl",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.99_07",
+              "lessThanOrEqual": "2.0.13",
+              "versionType": "cpan"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache perl",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00712,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-116799",
+      "description": "OOB read vulnerability in Apache Perl.\n\n\n\nThis issue affects Apache Perl: from 1.99_01 through 2.0.13.\n\n\n\nNote: The over-read data can be returned to the client in the response.\n\n\n\nUsers are recommended to upgrade to version 2.0.14, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache perl",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.99_01",
+              "lessThanOrEqual": "2.0.13",
+              "versionType": "cpan"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache perl",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00698,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-125"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -35277,6 +35547,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-124615",
+      "description": "The shell command ACL for the feature scope (etc/org.apache.karaf.command.acl.feature.cfg) restricts feature:install, feature:uninstall, feature:start and feature:stop to the admin role, but had no entry for feature:requirement-add or feature:requirement-remove.\n\nThe provisioning resolver turns a requirement into the same install/start (or uninstall) action as feature:install / feature:uninstall: a bundle: requirement causes an arbitrary bundle to be downloaded and started, and a feature: requirement installs that feature. Because the two commands had no ACL, a user authenticated with only the viewer (and ssh) role could invoke them and cause Apache Karaf to download, install and start an attacker-chosen bundle, which then runs with the full authority of the Karaf process \u2014 thereby bypassing the admin-only authorization enforced on feature:install and bundle:install.\n\nThis is the same class of issue as the feature:repo-add -i / feature:repo-remove -u bypass, on sibling commands not covered by that earlier fix.Mitigation:Upgrade to Apache Karaf 4.4.12 or 4.5.0 (or later), which restrict feature:requirement-add and feature:requirement-remove to the admin role.\n\nAs an interim workaround on affected versions, add the following two lines to etc/org.apache.karaf.command.acl.feature.cfg; the change is picked up at runtime without a restart:\n\nrequirement-add = admin\n\nrequirement-remove = admin",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00774,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-863"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-124679",
       "description": "Authentication bypass by spoofing vulnerability in Apache APISIX.\n\n\n\nOn routes using jwe-decrypt with strict: false and a\nforward_header distinct from the token header an unauthenticated\nclient can supply the value the upstream treats as gateway-decrypted\nplaintext. Similar can happen when\u00a0forward-auth is configured with allow_degradation: true, and the auth service is unavailable.\n\n\n\nThis issue affects Apache APISIX: from 3.18.0 through 3.19.0.\n\n\n\nUsers are recommended to upgrade to version 3.20.0, which fixes the issue.",
       "cvss_score": 7.8,
@@ -35357,6 +35670,67 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-436"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-125651",
+      "description": "Cleartext storage in encrypted parquet file vulnerability in Apache Arrow Rust (`parquet` crate), from version 55.0.0 through to 57.3.2, 58.4.1, 59.3.2 and 60.1.0.\n\n\n\nWhen writing an encrypted parquet file with a column with bloom filters, the header and bitsets of the bloom filter are written in plaintext in the final parquet.\n\n\n\nUsers are recommended to upgrade to versions 57.3.3, 58.4.2, 59.3.3 or 60.2.0 which fix the issue by raising an error when trying to write encrypted parquet files with bloom filters enabled, preventing such files from being written out.\n\n\n\nExisting encrypted parquet files written with bloom filters are still vulnerable, and it is recommended to rewrite those files with bloom filters disabled if possible.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache arrow rust",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "60.0.0",
+              "lessThanOrEqual": "60.1.0",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "59.0.0",
+              "lessThanOrEqual": "59.3.2",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "58.0.0",
+              "lessThanOrEqual": "58.4.1",
+              "versionType": "semver"
+            },
+            {
+              "status": "affected",
+              "version": "55.0.0",
+              "lessThanOrEqual": "57.3.2",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache arrow rust",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0048,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-313"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -35585,6 +35959,92 @@
         ],
         "cpe_count": 0,
         "reference_count": 3
+      }
+    },
+    {
+      "cve_id": "CVE-2026-129959",
+      "description": "When\u00a0sftpEnabled=true\u00a0(the default configuration in\u00a0etc/org.apache.karaf.shell.cfg), the SSH server exposes the\u00a0karaf.base\u00a0directory tree through the MINA SSHD SFTP subsystem and SCP command factory without verifying the authenticated user's roles beyond the initial\u00a0sshRole\u00a0login check. Consequently, an authenticated user with only low-privileged roles (such as\u00a0viewer\u00a0and\u00a0ssh) can read sensitive configuration and key files (including\u00a0etc/users.properties\u00a0and\u00a0etc/host.key) or write arbitrary bundles/configurations into monitored directories (such as\u00a0deploy/\u00a0or\u00a0etc/), leading to privilege escalation and arbitrary code execution.\n\n\nApache Karaf\u00a04.4.13\u00a0and\u00a04.5.0\u00a0introduce the\u00a0sftpRole\u00a0configuration property in\u00a0org.apache.karaf.shell\u00a0(defaulting to\u00a0admin) and enforce role-based access control on SFTP subsystem creation, SCP command execution, and virtual filesystem access.\n\nMitigation / WorkaroundUsers are recommended to upgrade to Apache Karaf\u00a04.4.13\u00a0or\u00a04.5.0.\n\n\n\n\nOn earlier versions where SFTP/SCP access is not required, set\u00a0sftpEnabled=false\u00a0in\u00a0etc/org.apache.karaf.shell.cfg\u00a0and restart the SSH server bundle (or Karaf instance).",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01757,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-130808",
+      "description": "In Apache Karaf, the default command ACL configuration for the\u00a0feature\u00a0scope (etc/org.apache.karaf.command.acl.feature.cfg, defined in\u00a0assemblies/features/standard/src/main/feature/feature.xml\u00a0and the child-instance template\u00a0instance/src/main/resources/org/apache/karaf/instance/resources/etc/org.apache.karaf.command.acl.feature.cfg) restricts\u00a0feature:install,\u00a0feature:uninstall,\u00a0feature:start, and\u00a0feature:stop\u00a0to users with the\u00a0admin\u00a0role, while leaving\u00a0feature:requirement-add\u00a0and feature:requirement-remove\u00a0without ACL entries.\n\n\nBecause Karaf's command guard (SecuredSessionFactoryImpl) allows commands with no matching ACL rule (NO_MATCH) to execute, an authenticated SSH user holding only the ssh and viewer roles can execute\u00a0feature:requirement-add bundle:<uri>\u00a0(or feature:<name>).\u00a0RequirementAdd\u00a0forwards the requirement directly to\u00a0FeatureService.addRequirements(), causing the resolver to download, install, and start an arbitrary bundle with the Karaf JVM process's full authority, bypassing the\u00a0admin-only restrictions on\u00a0feature:install\u00a0and\u00a0bundle:install. Similarly,\u00a0feature:requirement-remove\u00a0allows removing provisioning requirements and uninstalling features/bundles.\n\nMitigationUsers are recommended to upgrade to Apache Karaf 4.4.13 or 4.5.0.\n\n\n\n\nFor existing deployments or upgrades that preserve existing files in etc/, add the following rules to\u00a0etc/org.apache.karaf.command.acl.feature.cfg\u00a0(and any child instance\u00a0etc/org.apache.karaf.command.acl.feature.cfg\u00a0files):\n\n\n\n\nrequirement-add = admin\u00a0\n\nrequirement-remove = admin",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache karaf",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThanOrEqual": "4.4.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache karaf",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00774,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
       }
     },
     {
@@ -54005,6 +54465,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-60076",
+      "description": "Allocation of resources without limits or throttling vulnerability in Apache IoTDB.\u00a0Unbounded in-memory materialization in REST fastLastQuery cache-hit path enables heap-exhaustion DoS.\n\n\n\nThis issue affects Apache IoTDB: from 2.0.5 before 2.0.12.\n\n\n\nUsers are recommended to upgrade to version 2.0.12, which fixes the issue.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache iotdb",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.0.5",
+              "lessThan": "2.0.12",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache iotdb",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00871,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-770"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-60080",
       "description": "Use After Free vulnerability in the Rust deserialization logic of Apache Fory. This issue affects Apache Fory from 0.13.0 through 1.3.0.\n\n A crafted Fory payload could cause undefined behavior, process crash, or potential memory disclosure.\n\nUsers are recommended to upgrade to version 1.4.0, which fixes the issue.",
       "cvss_score": 7.3,
@@ -62804,6 +63307,38 @@
       }
     },
     {
+      "cve_id": "CVE-2026-78114",
+      "description": "Session Fixation in the login flow of Apache JSPWiki versions 2.10 through 3.0.0 on all platforms. The session identifier was not replaced when a user authenticated, so an attacker who could set a known session identifier in the browser of a victim could use the same identifier after the victim logged in.\n\n\n\nUsers are recommended to upgrade to version 3.0.1 (3.x) or 2.12.6 (2.x), which fix this issue.",
+      "cvss_score": 10.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache jspwiki",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "2.10.0",
+              "lessThanOrEqual": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache jspwiki",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
       "cve_id": "CVE-2026-78162",
       "description": "Deserialization of Untrusted Data vulnerability in Apache Camel.\n\n\n\nThis issue affects Apache Camel: from 4.0.0 before 4.18.5, from 4.19.0 before 4.22.1.\n\n\n\nThe camel-hazelcast component applies a default Hazelcast JavaSerializationFilterConfig to the instances it creates from its own configuration, a protection introduced by CVE-2026-43865. That change did not reach two of the configuration paths Camel builds itself, so those paths continued to create Hazelcast instances whose Java deserialization is unrestricted. ReplicatedHazelcastAggregationRepository extends HazelcastAggregationRepository but overrides doStart() without calling super.doStart(), keeping its own copy of the bootstrap block, and therefore never received the filter: a route using it without supplying a hazelcastInstance starts a Hazelcast member that deserializes values read from the backing ReplicatedMap with no class restriction. HazelcastDefaultComponent#getOrCreateHzClientInstance() builds its own ClientConfig when hazelcastMode=client is selected and neither a referenced ClientConfig nor hazelcastConfigUri is supplied, and likewise applied no filter, so client-mode endpoints behaved differently from node-mode endpoints for an otherwise identical configuration. In both cases an attacker able to publish into the Hazelcast cluster that the affected instance is attached to can cause a serialized Java object of their choosing to be deserialized inside Hazelcast's own serialization layer, before Camel processes the exchange, resulting in remote code execution. Hazelcast clusters have neither authentication nor TLS enabled by default. Selecting client mode is a topology choice rather than a security option, so neither path required the deployment to opt in to unsafe behaviour.\n\n\n\nUsers are recommended to upgrade to version 4.23.0, which fixes the issue. If users are on the 4.22.x releases stream, then they are suggested to upgrade to 4.22.1. If users are on the 4.18.x releases stream, then they are suggested to upgrade to 4.18.5. The 4.14.x releases stream and earlier reached end of life before this issue was resolved and will not receive a fix, so deployments on those lines must move to a supported release. For deployments that cannot upgrade immediately, supply an explicit Hazelcast configuration carrying a JavaSerializationFilterConfig, or inject a pre-built HazelcastInstance, since a user-supplied configuration is never overwritten by Camel. Alternatively set the JVM-wide filter -Djdk.serialFilter=!java.net.;java.;javax.;org.apache.camel.;!* and enable Hazelcast cluster authentication and TLS to restrict who can reach the cluster.",
       "cvss_score": 10.0,
@@ -68282,7 +68817,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.00813
+      "probability_score": 0.00813,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-918"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
     },
     {
       "cve_id": "CVE-2026-86243",

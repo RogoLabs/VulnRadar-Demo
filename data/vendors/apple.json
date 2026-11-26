@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-25T19:59:42+00:00",
+  "generated_at": "2026-11-26T02:51:54+00:00",
   "vendor": "apple",
-  "count": 1397,
+  "count": 1398,
   "items": [
     {
       "cve_id": "CVE-2022-22578",
@@ -73688,9 +73688,9 @@
     {
       "cve_id": "CVE-2026-114025",
       "description": "An out-of-bounds write was addressed with improved input validation. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, tvOS 27.2. A user may be able to cause unexpected app termination or arbitrary code execution.",
-      "cvss_score": 9.8,
-      "cvss_severity": "CRITICAL",
-      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "cvss_score": 7.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
       "affected": [
         {
           "vendor": "apple",
@@ -73761,8 +73761,8 @@
       "active_threat": false,
       "probability_score": 0.00282,
       "nvd": {
-        "cvss_v3_score": 9.8,
-        "cvss_v3_severity": "CRITICAL",
+        "cvss_v3_score": 7.8,
+        "cvss_v3_severity": "HIGH",
         "cvss_v2_score": null,
         "cvss_v2_severity": null,
         "cwe_ids": [
@@ -100245,6 +100245,49 @@
         ],
         "cpe_count": 7,
         "reference_count": 5
+      }
+    },
+    {
+      "cve_id": "CVE-2026-86987",
+      "description": "An authorization issue was addressed with improved entitlement checks. This issue is fixed in iOS 27.2 and iPadOS 27.2. A remote attacker may be able to access sensitive user data.",
+      "cvss_score": 7.5,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "affected": [
+        {
+          "vendor": "apple",
+          "product": "ios and ipados",
+          "versions": [
+            {
+              "version": "0",
+              "status": "affected",
+              "lessThan": "27.2",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:ios and ipados",
+        "vendor:apple"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00459,
+      "nvd": {
+        "cvss_v3_score": 7.5,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 2,
+        "reference_count": 1
       }
     },
     {
