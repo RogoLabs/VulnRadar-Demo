@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-26T22:19:42+00:00",
+  "generated_at": "2026-11-27T05:01:26+00:00",
   "vendor": "jenkins_project",
-  "count": 267,
+  "count": 271,
   "items": [
     {
       "cve_id": "CVE-2022-0538",
@@ -10220,6 +10220,178 @@
           "CWE-502"
         ],
         "cpe_count": 2,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-136834",
+      "description": "Sandbox protection in Jenkins Pipeline: Groovy Plugin 4403.v471713a_cea_19 and earlier can be circumvented through interface field initializers, allowing attackers with permission to define and run sandboxed Pipelines to bypass the sandbox protection and execute arbitrary code in the context of the Jenkins controller JVM.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins pipeline: groovy plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "4403.v471713a_cea_19",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins pipeline: groovy plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00996,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-136835",
+      "description": "Jenkins Script Security Plugin 1436.v1082791135e4 and earlier does not reject @Builder annotations whose builderStrategy member names an arbitrary class when the annotation is referred to using a partially qualified class name, allowing attackers with permission to define and run sandboxed scripts, including Pipelines, to execute code outside the sandbox if a suitable class is present on the classpath of the component that evaluates the script.",
+      "cvss_score": 9.9,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins script security plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "1436.v1082791135e4",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins script security plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01256,
+      "nvd": {
+        "cvss_v3_score": 9.9,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-136836",
+      "description": "Jenkins Gradle Plugin 2.21.1282.v024680ce00a_b_ and earlier does not configure its XML parser to prevent XML external entity (XXE) attacks when processing Maven extension configuration files from build workspaces.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins gradle plugin",
+          "versions": [
+            {
+              "version": "0",
+              "versionType": "maven",
+              "lessThanOrEqual": "2.21.1282.v024680ce00a_b_",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins gradle plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.0073,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-611"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-136837",
+      "description": "Jenkins Warnings Plugin 13.10251.va_452d3553728 through 13.10365.v85cd7a_c8110b_ (both inclusive) allows defining inline Groovy parsers whose Groovy scripts are compiled on the Jenkins controller without sandbox protection, allowing attackers able to define inline Groovy parsers to execute arbitrary code in the context of the Jenkins controller JVM.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "jenkins project",
+          "product": "jenkins warnings plugin",
+          "versions": [
+            {
+              "version": "13.10251.va_452d3553728",
+              "versionType": "maven",
+              "lessThanOrEqual": "13.10365.v85cd7a_c8110b_",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:jenkins warnings plugin",
+        "vendor:jenkins project"
+      ],
+      "active_threat": false,
+      "probability_score": 0.01165,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-94"
+        ],
+        "cpe_count": 0,
         "reference_count": 1
       }
     },

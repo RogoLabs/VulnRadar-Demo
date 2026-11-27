@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-26T22:19:42+00:00",
+  "generated_at": "2026-11-27T05:01:26+00:00",
   "vendor": "apache_software_foundation",
-  "count": 1532,
+  "count": 1539,
   "items": [
     {
       "cve_id": "CVE-2022-22719",
@@ -33271,6 +33271,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-112788",
+      "description": "Missing Authentication for Critical Function in Apache Texera (incubating).\n\n\n\nThe Python virtual environment (PVE) management endpoints of a computing unit are not authenticated by the application itself. In the local JVM and single-node Docker Compose deployments, which place no authenticating gateway in front of the services, these endpoints are reachable without credentials. The Kubernetes deployment gates them at the gateway, so only the Kubernetes deployment provides the full security model described in SECURITY.md.\n\n\n\nThis issue affects Apache Texera (incubating): from 1.1.0 through 1.2.0.\n\n\n\nUsers are recommended to use the Kubernetes deployment, which enforces the full security model, and to upgrade to 1.3.0-incubating, which documents that the local JVM and single-node Docker Compose deployments do not provide the full security model and should only be used by trusted users.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache texera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.1.0-incubating",
+              "lessThan": "1.3.0-incubating",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache texera",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00853,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
       "cve_id": "CVE-2026-113508",
       "description": "Apache Airflow's logout endpoint attempted to revoke the presented token on the server, but any failure during revocation was silently ignored and logout still reported success. When the auth manager redirects logout to an external logout URL (for example the FAB or Keycloak auth managers), server-side revocation is the only thing that invalidates the Airflow token; it failed on database errors and, reliably, for tokens from an external issuer accepted via `[api_auth] trusted_jwks_url` whose token identifier is longer than 32 characters. Anyone holding a copy of a user's token from before logout could keep using it against the Airflow API until it expired. Users are advised to upgrade to apache-airflow 3.4.0 or later.",
       "cvss_score": 7.5,
@@ -63307,6 +63350,49 @@
       }
     },
     {
+      "cve_id": "CVE-2026-78102",
+      "description": "Denial of Service in DefaultPluginManager in Apache JSPWIKI versions prior to the fixed version on all platforms allows an attacker to spawn multiple threads until resource exhaustion or to class load any class on the classpath and creating an instance of it.\nUsers are recommended to upgrade to version 3.0.1, which fixes this issue.",
+      "cvss_score": 8.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache jspwiki",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.6.1",
+              "lessThanOrEqual": "3.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache jspwiki",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00567,
+      "nvd": {
+        "cvss_v3_score": 8.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-470"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-78114",
       "description": "Session Fixation in the login flow of Apache JSPWiki versions 2.10 through 3.0.0 on all platforms. The session identifier was not replaced when a user authenticated, so an attacker who could set a known session identifier in the browser of a victim could use the same identifier after the victim logged in.\n\n\n\nUsers are recommended to upgrade to version 3.0.1 (3.x) or 2.12.6 (2.x), which fix this issue.",
       "cvss_score": 10.0,
@@ -63336,7 +63422,18 @@
         "vendor:apache software foundation"
       ],
       "active_threat": false,
-      "probability_score": 0.0062
+      "probability_score": 0.0062,
+      "nvd": {
+        "cvss_v3_score": null,
+        "cvss_v3_severity": null,
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-384"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
     },
     {
       "cve_id": "CVE-2026-78162",
@@ -66639,6 +66736,92 @@
         "cwe_ids": [
           "CWE-20",
           "CWE-639"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82442",
+      "description": "Description\n\n`HostURLFilter.configure` reads the `ignoreOutsideDomain` parameter but tests the node belonging to\n`ignoreOutsideHost` when deciding whether the domain mode was configured. A filter configuration that\nnames only `ignoreOutsideDomain`, which the class documentation presents as an independent mode, is\ntherefore discarded: the flag is forced to false, `filter` short-circuits on its guard and every URL is\nreturned unchanged. The filter enforces nothing while appearing to be configured, and the failure is\nsilent. The mirror-image configuration, naming only `ignoreOutsideHost`, fails with a\n`NullPointerException` while the topology is starting.\n\nThe effect is the loss of a scope control the operator configured, so a crawled page's outlinks are\nfollowed to hosts the operator intended to exclude. Impact beyond crawl scope depends on what the\ncrawler then fetches and is not claimed here. Projects generated from the StormCrawler Maven archetypes\nare not affected, because all three shipped filter configurations set both parameters.\n\nMitigation\n\nUpgrade to 4.0.0, where each parameter is tested independently. Operators whose configuration sets only\n`ignoreOutsideDomain` will find the crawl restricted to the source domain, as configured, which may\nreduce the number of outlinks accepted.\n\nUsers who cannot upgrade immediately should set both `ignoreOutsideHost` and `ignoreOutsideDomain`\nexplicitly in the `HostURLFilter` configuration, which produces the intended behaviour on affected\nversions.\n\nCredit\n\nIndependently reported to the Apache StormCrawler PMC by n0mi1k, with a proof of concept.\n\nAlso found by the ASF -- using Claude agents to study the security of open-source projects, validated\nand reported by Apache StormCrawler.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache stormcrawler",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "4.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache stormcrawler",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00664,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-1025"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-82445",
+      "description": "Description\n\nThe SQL status backend serialises per-URL metadata into a single column by concatenating a tabulation,\nthe key, an equals sign and the value, with no escaping. On read-back the string is split on the same\ntwo characters, so the round trip is not injective: a value that contains a tabulation returns as one\nor more additional keys that were never written.\n\nValues on that path are supplied by crawled servers. `FetcherBolt` records the raw `Location` header of\na redirect as `_redirTo`, and `_redirTo` is part of the default `metadata.persist` set, so a redirect\nwhose `Location` contains a tabulation followed by `key=value` pairs introduces those keys into the\ncrawler's own control metadata on the next scheduling cycle. Several control keys are read without a\nprefix, so the injected keys are live: `http.proxy.host`, `http.proxy.port`, `http.proxy.user` and\n`http.proxy.pass` among them, as well as scheduling and request-shaping keys such as `depth`,\n`max.depth`, `crawl.delay`, `http.content.limit` and `isSitemap`.\n\nWhere a proxy manager is configured, the consequence is not limited to corrupted scheduling data.\n`SingleProxyManager.getProxy(Metadata)` consults the per-URL metadata first and returns what it finds,\nso an injected proxy host and port take precedence over the operator's configured proxy and subsequent\nfetches, together with any configured `Authorization` header, are routed through a host the crawled\ncontent chose. A related defect in `AbstractStatusUpdaterBolt` compounds this: an injected\n`status.store.as.is.with.nextfetchdate` that is not a valid instant escapes the enclosing try/catch and\nstops the bolt, and because the stored row is replayed the failure repeats.\n\nDeployments using the OpenSearch or Solr status backends are unaffected, because those serialise\nmetadata structurally.\n\nMitigation\n\nUpgrade to 4.0.0, where the metadata column is written in an escaped form behind a format marker, rows\nwritten by earlier versions are still decoded unchanged, and the stored next-fetch-date is parsed\ndefensively.\n\nThe fix does not repair rows written before the upgrade. Operators using the SQL status backend should\ninspect the metadata column of an existing status table for tabulation characters and remove the\naffected rows, and should assume any proxy credentials configured for the crawl may have been exercised\nthrough an attacker-chosen proxy and rotate them. Users who cannot upgrade immediately can remove\n`_redirTo` from `metadata.persist` to close the demonstrated path, though other crawled values reaching\npersisted metadata remain.\n\nCredit\n\nIndependently reported to the Apache StormCrawler PMC by n0mi1k, with a proof of concept.\n\nAlso found by the ASF -- using Claude agents to study the security of open-source projects, validated\nand reported by Apache StormCrawler.",
+      "cvss_score": 7.2,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache stormcrawler",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "3.0.0",
+              "lessThan": "4.0.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache stormcrawler",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00502,
+      "nvd": {
+        "cvss_v3_score": 7.2,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-915"
         ],
         "cpe_count": 0,
         "reference_count": 2
@@ -74326,6 +74509,135 @@
         "cwe_ids": [
           "CWE-248",
           "CWE-755"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96296",
+      "description": "An API which can allow a user to delete any workflow execution results is missing authentication. This means that any workflow result could be deleted by someone able to reach the Texera instance.\n\n\n\nThis issue affects Apache Texera: from 1.1.0-incubating before 1.3.0-incubating.\n\n\n\nUsers are recommended to upgrade to version 1.3.0-incubating, which fixes the issue.",
+      "cvss_score": 9.1,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache texera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.1.0-incubating",
+              "lessThan": "1.3.0-incubating",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache texera",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00978,
+      "nvd": {
+        "cvss_v3_score": 9.1,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-306"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96298",
+      "description": "Missing Authorization vulnerability in the computing unit workflow websocket of Apache Texera (incubating) allows an authenticated user to view workflow results, control workflow executions, and run code in a computing unit they have not been granted. In local JVM and single-node Docker Compose deployments this is possible directly; in Kubernetes deployments it is possible from code running inside another computing unit in the cluster.\n\n\n\nThis issue affects Apache Texera : from 1.1.0 through 1.2.0.\n\n\n\nUsers are recommended to upgrade to version 1.3.0, which fixes the issue. Local JVM and Docker Compose deployments do not provide the full security model and should only be used by trusted users.",
+      "cvss_score": 8.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache texera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.1.0",
+              "lessThanOrEqual": "1.2.0",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache texera",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00856,
+      "nvd": {
+        "cvss_v3_score": 8.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
+        ],
+        "cpe_count": 0,
+        "reference_count": 2
+      }
+    },
+    {
+      "cve_id": "CVE-2026-96353",
+      "description": "Missing Authorization vulnerability in the project REST API of Apache Texera (incubating).\n\n\n\nThe project API did not check that the caller owns, or has been granted access to, the project being accessed. Any authenticated user with an approved account (the REGULAR or ADMIN role; new accounts need administrator approval by default) could view, modify or delete other users' projects, change which workflows those projects contain, and see the e-mail addresses of a project's owner and collaborators. The project feature is hidden in the web UI by default, but the API was reachable regardless of that setting.\n\n\n\nThis issue affects Apache Texera: from 1.1.0-incubating before 1.3.0-incubating.\n\n\n\nUsers are recommended to upgrade to version 1.3.0-incubating, which fixes the issue by removing the deprecated project feature and its data.\n\n\n\nIf you cannot upgrade immediately, configure the reverse proxy in front of Texera to reject every request whose path starts with /api/project, /api/public/project or /api/access/project, and every request whose path contains ';', which the Texera server ignores when routing. Respond with 403 or 404, not 401: from 1.2.0-incubating the web UI treats a 401 as an expired session, and the workflow pages request the project list when they load. Unless an administrator has enabled the project feature, this does not affect other functionality; those project-list requests are simply rejected. Make sure the Texera server is reachable only through that proxy.\n\n\n\nBlocking and upgrading do not undo access obtained earlier. Before upgrading, review the project, project_user_access and workflow_of_project tables, which remain empty unless someone has used the feature, and remove rows you do not expect; the upgrade deletes these tables. Do not copy project grants into workflow_user_access without checking each one.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N",
+      "affected": [
+        {
+          "vendor": "apache software foundation",
+          "product": "apache texera",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "1.1.0-incubating",
+              "lessThan": "1.3.0-incubating",
+              "versionType": "semver"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apache texera",
+        "vendor:apache software foundation"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00581,
+      "nvd": {
+        "cvss_v3_score": 7.1,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-862"
         ],
         "cpe_count": 0,
         "reference_count": 2

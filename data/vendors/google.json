@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-26T22:19:42+00:00",
+  "generated_at": "2026-11-27T05:01:26+00:00",
   "vendor": "google",
-  "count": 4204,
+  "count": 4208,
   "items": [
     {
       "cve_id": "CVE-2022-0096",
@@ -118871,7 +118871,7 @@
         "cwe_ids": [
           "CWE-20"
         ],
-        "cpe_count": 0,
+        "cpe_count": 1,
         "reference_count": 2
       }
     },
@@ -180061,6 +180061,129 @@
       }
     },
     {
+      "cve_id": "CVE-2026-95448",
+      "description": "In MediaFocusFidlImpl of media_focus_fidl_impl.cc, there is a possible use after free due to a race condition. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "unknown",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00543,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-95450",
+      "description": "In HandleRxPdu of channel.cc, there is a possible use after free due to the channel being destroyed while it is still processing a received frame. This could lead to remote (proximal/adjacent) code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "unknown",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00433,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-95451",
+      "description": "In LogicalLink::SignalError of logical_link.cc, there is a possible use after free due to an error callback that can synchronously destroy the link while its channels are still being iterated. This could lead to remote (proximal/adjacent) code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+      "cvss_score": 9.8,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "unknown",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00454,
+      "nvd": {
+        "cvss_v3_score": 9.8,
+        "cvss_v3_severity": "CRITICAL",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-416"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
       "cve_id": "CVE-2026-95453",
       "description": "In LogExportControllerImpl of log_export_fidl.cc, there is a possible use after free due to a service handler that is not unregistered when the object is destroyed. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
       "cvss_score": 7.8,
@@ -180260,6 +180383,47 @@
         "cvss_v2_severity": null,
         "cwe_ids": [
           "CWE-693"
+        ],
+        "cpe_count": 0,
+        "reference_count": 1
+      }
+    },
+    {
+      "cve_id": "CVE-2026-95460",
+      "description": "In Phase2SecureConnections::OnPeerPublicKey of phase_2_secure_connections.cc, there is a possible way to learn the passkey used during pairing due to an incomplete check for a reflected public key. This could lead to remote (proximal/adjacent) escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+      "cvss_score": 8.8,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "affected": [
+        {
+          "vendor": "google",
+          "product": "android",
+          "versions": [
+            {
+              "version": "unknown",
+              "status": "affected"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:android",
+        "vendor:google"
+      ],
+      "active_threat": false,
+      "probability_score": 0.00232,
+      "nvd": {
+        "cvss_v3_score": 8.8,
+        "cvss_v3_severity": "HIGH",
+        "cvss_v2_score": null,
+        "cvss_v2_severity": null,
+        "cwe_ids": [
+          "CWE-284"
         ],
         "cpe_count": 0,
         "reference_count": 1
