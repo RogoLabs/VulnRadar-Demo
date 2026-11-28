@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-27T23:26:29+00:00",
+  "generated_at": "2026-11-28T07:17:28+00:00",
   "vendor": "google_cloud",
-  "count": 57,
+  "count": 61,
   "items": [
     {
       "cve_id": "CVE-2025-0982",
@@ -1397,6 +1397,70 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-106169",
+      "description": "A Deserialization of Untrusted Data vulnerability in the eventbus execution in Google Cloud Application Integration versions prior to 2026-09-22 on Google Cloud Platform allows an authenticated attacker to achieve remote code execution using a crafted serialized Java object.\n\n\nThis vulnerability was patched on 22 September 2026, and no customer action is needed.",
+      "cvss_score": 9.4,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "application integration",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-09-22",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:application integration",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-110739",
+      "description": "An Incomplete List of Disallowed Inputs in the namespace onboarding API in Google Cloud GKE Fleet versions prior to 2026-09-25 on Google Cloud Platform allows an authenticated attacker to escalate privileges to project owner using a privileged system namespace onboarding request.\n\n\nThis vulnerability was patched on 25 September 2026, and no customer action is needed.",
+      "cvss_score": 9.0,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "gke fleet",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-09-25",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:gke fleet",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-126054",
@@ -2913,6 +2977,76 @@
         "cpe_count": 0,
         "reference_count": 2
       }
+    },
+    {
+      "cve_id": "CVE-2026-85252",
+      "description": "A SQL Injection vulnerability in the Revenue Reports API in Google Cloud Apigee Edge Monetization versions prior to 2026-07-16 (Public Cloud) and OPDK 4.54.00 (Private Cloud) on Apigee Edge Public Cloud and Apigee Edge for Private Cloud (OPDK) allows an authenticated attacker to gain unauthorized read access to the underlying database using crafted report filtering criteria.\n\n\nThis vulnerability was patched on 16 July 2026 in Apigee Edge Public Cloud and in OPDK version 4.54.00.",
+      "cvss_score": 7.1,
+      "cvss_severity": "HIGH",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/U:Amber",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "apigee edge monetization",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-07-16",
+              "versionType": "date"
+            },
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "4.54.00",
+              "versionType": "custom"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:apigee edge monetization",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
+    },
+    {
+      "cve_id": "CVE-2026-85258",
+      "description": "A Missing Authorization vulnerability in the private console API in Google Cloud Vertex AI (Vertex AI Assistant) versions prior to 2026-04-13 on Google Cloud Platform allows an unauthenticated remote attacker to list, read, create, and send messages in other users' chat sessions using crafted API requests.\n\n\nThis vulnerability was patched on 13 April 2026, and no customer action is needed.",
+      "cvss_score": 9.3,
+      "cvss_severity": "CRITICAL",
+      "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/U:Clear",
+      "affected": [
+        {
+          "vendor": "google cloud",
+          "product": "vertex ai (vertex ai assistant)",
+          "versions": [
+            {
+              "status": "affected",
+              "version": "0",
+              "lessThan": "2026-04-13",
+              "versionType": "date"
+            }
+          ]
+        }
+      ],
+      "watchlist_hit": true,
+      "in_watchlist": true,
+      "in_patchthis": false,
+      "is_critical": false,
+      "priority_label": "",
+      "matched_terms": [
+        "product:vertex ai (vertex ai assistant)",
+        "vendor:google cloud"
+      ],
+      "active_threat": false,
+      "probability_score": null
     },
     {
       "cve_id": "CVE-2026-85267",
