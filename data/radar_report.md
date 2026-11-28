@@ -1,6 +1,6 @@
 # VulnRadar Report
 
-Generated: `2026-11-28T07:17:30+00:00`
+Generated: `2026-11-28T16:53:18+00:00`
 
 ## Executive Summary
 
@@ -107,16 +107,17 @@ Top critical items:
 | [CVE-2025-4427](https://www.cve.org/CVERecord?id=CVE-2025-4427) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-06-09 | 0.692 | 5.3 | ✅ | An authentication bypass in the API component of Ivanti Endpoint Manager Mobile 12.5.0.0 and prior allows attackers to access protected resources without prope… |
 | [CVE-2026-129448](https://www.cve.org/CVERecord?id=CVE-2026-129448) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-11-23 | 0.242 | 9.8 | ✅ | Deserialization of Untrusted Data in Apache Roller versions 4.0.0 through 6.1.4 allows an unauthenticated remote attacker to execute arbitrary code. The XML-RP… |
 | [CVE-2025-33053](https://www.cve.org/CVERecord?id=CVE-2025-33053) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-07-01 | 0.339 | 8.8 | ✅ | External control of file name or path in Internet Shortcut Files allows an unauthorized attacker to execute code over a network. |
+| [CVE-2026-20131](https://www.cve.org/CVERecord?id=CVE-2026-20131) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-22 | 0.216 | 10.0 | ✅ | A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker… |
 | [CVE-2026-20963](https://www.cve.org/CVERecord?id=CVE-2026-20963) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-21 | 0.227 | 9.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an unauthorized attacker to execute code over a network. |
 | [CVE-2024-21413](https://www.cve.org/CVERecord?id=CVE-2024-21413) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2025-02-27 | 0.221 | 9.8 | ✅ | Microsoft Outlook Remote Code Execution Vulnerability |
 | [CVE-2026-50522](https://www.cve.org/CVERecord?id=CVE-2026-50522) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-07-25 | 0.216 | 9.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an unauthorized attacker to execute code over a network. |
-| [CVE-2026-20131](https://www.cve.org/CVERecord?id=CVE-2026-20131) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-22 | 0.191 | 10.0 | ✅ | A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker… |
 | [CVE-2024-21410](https://www.cve.org/CVERecord?id=CVE-2024-21410) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-03-07 | 0.182 | 9.8 | ✅ | Microsoft Exchange Server Elevation of Privilege Vulnerability |
 | [CVE-2026-1603](https://www.cve.org/CVERecord?id=CVE-2026-1603) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-03-23 | 0.300 | 8.6 | ✅ | An authentication bypass in Ivanti Endpoint Manager before version 2024 SU5 allows a remote unauthenticated attacker to leak specific stored credential data. |
 | [CVE-2022-20708](https://www.cve.org/CVERecord?id=CVE-2022-20708) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2022-03-17 | 0.143 | 10.0 | ✅ | Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbi… |
 | [CVE-2026-58644](https://www.cve.org/CVERecord?id=CVE-2026-58644) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-07-19 | 0.159 | 9.8 | ✅ | Deserialization of untrusted data in Microsoft Office SharePoint allows an unauthorized attacker to execute code over a network. |
+| [CVE-2026-104286](https://www.cve.org/CVERecord?id=CVE-2026-104286) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-04 | 0.157 | 9.8 | ✅ | An improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 thro… |
+| [CVE-2026-20079](https://www.cve.org/CVERecord?id=CVE-2026-20079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-12 | 0.130 | 10.0 | ✅ | A vulnerability in the web interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker to bypass authen… |
 | [CVE-2023-4762](https://www.cve.org/CVERecord?id=CVE-2023-4762) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-02-27 | 0.245 | 8.8 | ✅ | Type Confusion in V8 in Google Chrome prior to 116.0.5845.179 allowed a remote attacker to execute arbitrary code via a crafted HTML page. (Chromium security s… |
-| [CVE-2026-20079](https://www.cve.org/CVERecord?id=CVE-2026-20079) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-12 | 0.125 | 10.0 | ✅ | A vulnerability in the web interface of Cisco Secure Firewall Management Center (FMC) Software could allow an unauthenticated, remote attacker to bypass authen… |
 | [CVE-2024-7971](https://www.cve.org/CVERecord?id=CVE-2024-7971) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-16 | 0.158 | 9.6 | ✅ | Type confusion in V8 in Google Chrome prior to 128.0.6613.84 allowed a remote attacker to exploit heap corruption via a crafted HTML page. (Chromium security s… |
 | [CVE-2026-76460](https://www.cve.org/CVERecord?id=CVE-2026-76460) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-19 | 0.118 | 10.0 | ✅ | A vulnerability in an API of Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to bypass authentication.  This vulnerabili… |
 | [CVE-2026-21643](https://www.cve.org/CVERecord?id=CVE-2026-21643) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-04-16 | 0.205 | 9.1 | ✅ | An improper neutralization of special elements used in an sql command ('sql injection') vulnerability in Fortinet FortiClientEMS 7.4.4 may allow an unauthentic… |
@@ -158,7 +159,6 @@ Top critical items:
 | [CVE-2025-39682](https://www.cve.org/CVERecord?id=CVE-2025-39682) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-09-21 | 0.022 | 9.8 | ✅ | In the Linux kernel, the following vulnerability has been resolved:  tls: fix handling of zero-length records on the rx_list  Each recvmsg() call must process … |
 | [CVE-2026-65400](https://www.cve.org/CVERecord?id=CVE-2026-65400) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.017 | 9.8 | ✅ | An authentication issue was addressed with improved state management. This issue is fixed in macOS Golden Gate 27, macOS Sequoia 15.7.9, macOS Sonoma 14.8.9, m… |
 | [CVE-2026-33824](https://www.cve.org/CVERecord?id=CVE-2026-33824) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-08-21 | 0.017 | 9.8 | ✅ | Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network. |
-| [CVE-2026-104286](https://www.cve.org/CVERecord?id=CVE-2026-104286) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-04 | 0.015 | 9.8 | ✅ | An improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 thro… |
 | [CVE-2026-76504](https://www.cve.org/CVERecord?id=CVE-2026-76504) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-10-03 | 0.013 | 9.8 | ✅ | A vulnerability in the API session-based authentication management of Cisco Catalyst SD-WAN Manager could allow an unauthenticated, remote attacker to access a… |
 | [CVE-2024-7965](https://www.cve.org/CVERecord?id=CVE-2024-7965) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2024-09-18 | 0.112 | 8.8 | ✅ | Inappropriate implementation in V8 in Google Chrome prior to 128.0.6613.84 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML … |
 | [CVE-2026-76466](https://www.cve.org/CVERecord?id=CVE-2026-76466) | CRITICAL (Active Exploit in Stack) | CRITICAL | ✅ | ✅ | 2026-11-23 | 0.011 | 9.8 | ✅ | A vulnerability in the database service feature of Cisco Expressway Series could allow an unauthenticated, remote attacker with network access to a Cisco Expre… |
@@ -253,6 +253,10 @@ Top critical items:
 
 | Date | CVE | Status |
 |------|-----|--------|
+| Nov 28 | [CVE-2026-106169](https://www.cve.org/CVERecord?id=CVE-2026-106169) | 🆕 New |
+| Nov 28 | [CVE-2026-110739](https://www.cve.org/CVERecord?id=CVE-2026-110739) | 🆕 New |
+| Nov 28 | [CVE-2026-85252](https://www.cve.org/CVERecord?id=CVE-2026-85252) | 🆕 New |
+| Nov 28 | [CVE-2026-85258](https://www.cve.org/CVERecord?id=CVE-2026-85258) | 🆕 New |
 | Nov 27 | [CVE-2026-134880](https://www.cve.org/CVERecord?id=CVE-2026-134880) | 🆕 New |
 | Nov 27 | [CVE-2026-132165](https://www.cve.org/CVERecord?id=CVE-2026-132165) | 🔴 In CISA KEV |
 | Nov 27 | [CVE-2026-112788](https://www.cve.org/CVERecord?id=CVE-2026-112788) | 🆕 New |
@@ -299,8 +303,4 @@ Top critical items:
 | Nov 26 | [CVE-2026-116032](https://www.cve.org/CVERecord?id=CVE-2026-116032) | 🆕 New |
 | Nov 26 | [CVE-2026-116043](https://www.cve.org/CVERecord?id=CVE-2026-116043) | 🆕 New |
 | Nov 26 | [CVE-2026-116772](https://www.cve.org/CVERecord?id=CVE-2026-116772) | 🆕 New |
-| Nov 26 | [CVE-2026-116799](https://www.cve.org/CVERecord?id=CVE-2026-116799) | 🆕 New |
-| Nov 26 | [CVE-2026-124615](https://www.cve.org/CVERecord?id=CVE-2026-124615) | 🆕 New |
-| Nov 26 | [CVE-2026-125651](https://www.cve.org/CVERecord?id=CVE-2026-125651) | 🆕 New |
-| Nov 26 | [CVE-2026-129959](https://www.cve.org/CVERecord?id=CVE-2026-129959) | 🆕 New |
-| ... | | _and 219 more_ |
+| ... | | _and 223 more_ |
